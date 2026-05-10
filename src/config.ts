@@ -11,6 +11,7 @@ export const siteConfig: SiteConfig = {
     nav: [
         { label: "文章", href: "/" },
         { label: "標籤", href: "/tags" },
+        { label: "CV", href: "/cv" },
         { label: "關於", href: "/about" },
     ],
     socials: {
