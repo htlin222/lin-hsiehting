@@ -29,7 +29,8 @@ hsiehting.com Zone ID: 738c462199c52f092150fb20bb14f230
 CF Pages project name: lin-hsiehting
 GitHub repo: htlin222/lin-hsiehting (default branch: main)
 本地專案路徑: ~/lin-hsiehting
-Secrets / token 暫存: ~/.config/onco/env  (chmod 600)
+Secrets:  ~/lin-hsiehting/.env.local       (chmod 600, gitignored — 在 dotfiles 領域外)
+Template: ~/lin-hsiehting/.env.example     (committed，下次拷貝起手用)
 ```
 
 ## 已完成的 commits
@@ -54,7 +55,7 @@ ci: deploy via direct wrangler invocation
 
 ## 還沒做的事（依優先序）
 
-1. **撤掉外洩過的 CF API token**（在對話歷史出現過）。到 https://dash.cloudflare.com/profile/api-tokens 找 `physician-tw-migration` → Roll 或 Delete。Roll 後拿新 token 替換 GH secret + 本地 `~/.config/onco/env`。
+1. **撤掉外洩過的 CF API token**（在對話歷史出現過）。到 https://dash.cloudflare.com/profile/api-tokens 找 `physician-tw-migration` → Roll 或 Delete。Roll 後拿新 token 替換 GH secret + 本地 `~/lin-hsiehting/.env.local`。
 2. **砍掉 demo posts**：`src/posts/2022/` 跟 `src/posts/2026/` 是上游 theme 的範例文，留著有點假。準備寫第一篇前刪掉。
 3. **寫 `public/llms.txt`**（30 行內，列主要 URL，方便 AI 引擎索引）。
 4. **加基本 JSON-LD**：在 `Layout.astro` 加 `Person` schema，文章模板加 `BlogPosting`。
@@ -69,9 +70,9 @@ ci: deploy via direct wrangler invocation
 
 ## 我做了但失敗 / 該注意的事
 
-### `~/.config/onco/env` 被某個 hook 砍了
+### Secret 檔案路徑已從 `~/.config` 搬到專案內
 
-session 中段這個檔案突然消失（不在 `/tmp/graveyard-htlin/` 裡，所以**不是 rip 砍的**）。已經重建。如果再消失，去 `~/.claude/settings.json` 翻 hooks 或 PreToolUse 看誰會碰 `~/.config/onco/`。
+原本放 `~/.config/onco/env`，但 `~/.config` 落在 dotfiles 管理範圍，session 中段被同步機制清掉。**現在改放 `~/lin-hsiehting/.env.local`**（dotfiles 之外、被專案 `.gitignore` 蓋住、不會跨機器漂）。`.env.example` 是 committed 進 repo 的 template，新機器拷一份改值即可。
 
 ### CF API token 還在 chat 歷史
 
@@ -103,7 +104,7 @@ session 中段這個檔案突然消失（不在 `/tmp/graveyard-htlin/` 裡，�
 
 ```bash
 cd ~/lin-hsiehting
-source ~/.config/onco/env  # 載入 CF_API_TOKEN, CF_ACCOUNT_ID, ZONE_ID
+set -a && source .env.local && set +a   # 載入 CF_API_TOKEN, CF_ACCOUNT_ID 等
 git status
 git log --oneline -5
 gh run list --repo htlin222/lin-hsiehting --limit 3
