@@ -273,6 +273,42 @@
     .prose-blog ol li {
         list-style-type: decimal;
     }
+    .prose-blog .table-wrap {
+        @apply my-6 -mx-1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+    }
+    .prose-blog .table-wrap table {
+        border-collapse: collapse;
+        width: max-content;
+        min-width: 100%;
+        font-size: 15px;
+        line-height: 1.55;
+        margin: 0;
+    }
+    .prose-blog .table-wrap th,
+    .prose-blog .table-wrap td {
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+    }
+    .prose-blog .table-wrap th + th,
+    .prose-blog .table-wrap td + td {
+        border-left: 1px solid var(--border);
+    }
+    .prose-blog .table-wrap tr:last-child td {
+        border-bottom: none;
+    }
+    .prose-blog .table-wrap thead {
+        background-color: color-mix(in oklab, var(--foreground) 4%, transparent);
+    }
+    .prose-blog .table-wrap thead th {
+        font-weight: 600;
+        white-space: nowrap;
+    }
     .drop-cap::first-letter {
         font-size: 4.5rem;
         font-weight: 700;
