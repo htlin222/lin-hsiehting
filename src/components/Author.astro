@@ -1,289 +1,248 @@
 ---
-import { getCollection } from "astro:content";
 import {
-    Terminal,
-    GitMerge,
-    Rocket,
-    Cog,
-    PenTool,
-    Book,
-    Sparkles,
+    BookOpen,
+    Briefcase,
+    GraduationCap,
+    IdCard,
+    ShieldCheck,
+    ExternalLink,
     Github,
-    Twitter,
-    Linkedin,
 } from "@lucide/astro";
 
-import Separator from "./ui/Separator.astro";
-import ActivityCard from "./about/ActivityCard.astro";
-import DecorativeKanji from "./about/DecorativeKanji.astro";
-import ProjectCard from "./ProjectCard.astro";
-import Timeline from "./about/Timeline.astro";
+import { Image } from "astro:assets";
+import avatar from "@/assets/images/avatar.jpg";
 import { siteConfig } from "@/config";
 
-import mhrImage from "../assets/images/mhr.webp";
-import frierenImage from "../assets/images/frieren.webp";
-import pomImage from "../assets/images/pom.webp";
-import neffexImage from "../assets/images/neffex.webp";
+const certifications = [
+    "台灣內科醫學會 內科專科醫師",
+    "台灣癌症醫學會 腫瘤專科醫師",
+];
 
-const timeline = [
+const principles = [
     {
-        year: "2019",
-        title: "Wrote first line of code",
-        description: "Hello, World in Java",
-        icon: Terminal,
+        title: "依國際指引",
+        body: "臨床主題以 NCCN、ASCO、ESMO 最新版指引、以及 PubMed 索引論文為主要來源，並比對台灣腫瘤醫學會、國健署資料。",
     },
     {
-        year: "2021",
-        title: "Joined Github",
-        description: "Pushed my console based java projects",
-        icon: GitMerge,
+        title: "署名審稿、標註日期",
+        body: "每篇醫療相關文章皆由本人署名審稿，文末顯示審稿日期與最後更新日期；新版指引釋出時依年度重審。",
     },
     {
-        year: "Early 2022",
-        title: "Opened my first issue on Github",
-        description: "A bug issue on daisyUI",
-        icon: Rocket,
+        title: "符合醫療法 §87",
+        body: "本站屬醫療法第 87 條第 2 項所定之醫學新知與病人衛生教育，不從事醫療業務招徠，避免「保證、根治、最有效、永不復發」等違反法規之用語。",
     },
     {
-        year: "Mid 2022",
-        title: "Started building a ton of pet projects",
-        description: "It was hard at first!",
-        icon: Cog,
-    },
-    {
-        year: "Late 2022",
-        title: "Made a blog post",
-        description: "Just for documenting my progress",
-        icon: Book,
-    },
-    {
-        year: "2023",
-        title: "Started getting side hustle offers",
-        description: "Along with my friends",
-        icon: Terminal,
-    },
-    {
-        year: "2024 - 2025",
-        title: "Started my capstone",
-        description: "App development with Flutter",
-        icon: PenTool,
-    },
-    {
-        year: "Now",
-        title: "Building what's next",
-        description: "Always learning, always shipping",
-        icon: Sparkles,
+        title: "個案資料去識別化",
+        body: "若引用個案經驗，必經充分去識別化處理，並僅以教學、衛教為目的；不公開可辨識病人身分之內容。",
     },
 ];
 
-const projects = [
+const profileLinks = [
     {
-        title: "PCSO Lotto API",
-        description:
-            "A Node.js REST API that provides real-time PCSO lotto results via web scraping, with Redis-based caching and locking to ensure data freshness and prevent duplicate requests.",
-        link: "https://github.com/jiseeeh/pcso-lotto-api",
-        techStack: ["Node.js", "Cheerio", "Redis"],
+        label: "ORCID 0009-0002-3974-4528",
+        href: siteConfig.author.orcid,
     },
     {
-        title: "U Do Note",
-        description:
-            "Flutter note-taking app integrating Spaced Repetition, Leitner, Feynman techniques, and etc with OCR via Google ML Kit and AI summarization using OpenAI.",
-        link: "https://github.com/jiseeeh/u-do-note",
-        techStack: ["Flutter", "Firebase", "OpenAI"],
+        label: "Google Scholar",
+        href: siteConfig.author.scholar,
     },
-];
-
-const entries = await getCollection("post");
-
-let postsPerYear = 0;
-if (entries.length > 0) {
-    const years = entries.map((entry) => {
-        const [, , y] = entry.data.date.split("/");
-        return Number(y);
-    });
-    const minYear = Math.min(...years);
-    const maxYear = Math.max(...years);
-    const activeYears = Math.max(1, maxYear - minYear + 1);
-    postsPerYear = Math.ceil(entries.length / activeYears);
-}
+    {
+        label: "GitHub @htlin222",
+        href: siteConfig.socials.github,
+    },
+].filter((p) => p.href);
 ---
 
-<main class="page flex flex-col space-y-10">
-    <section class="relative flex flex-col items-start gap-4">
-        <span class="text-accent uppercase text-xs">// about the author</span>
-        <h1 class="text-5xl">Craft & Code</h1>
+<main class="page flex flex-col space-y-12 max-w-3xl mx-auto pb-20">
+    <section class="pt-6 flex flex-col sm:flex-row gap-6 items-start">
+        <Image
+            src={avatar}
+            alt={`${siteConfig.author.name} ${siteConfig.author.credentials ?? ""}`.trim()}
+            width={320}
+            height={320}
+            loading="eager"
+            class="shrink-0 rounded-full object-cover border border-border"
+            style="width: 7rem; height: 7rem;"
+        />
+        <div class="flex-1 min-w-0">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
+                林協霆 M.D.
+            </h1>
+            <p class="text-muted-foreground mt-1">
+                Hsieh-Ting Lin · {siteConfig.author.specialty}
+            </p>
+            <p class="mt-4 text-sm leading-relaxed">
+                {siteConfig.author.bio}
+            </p>
+            <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm">
+                {profileLinks.map((p) => (
+                    <li>
+                        <a
+                            href={p.href}
+                            target="_blank"
+                            rel="me noopener"
+                            class="inline-flex items-center gap-1 hover:text-primary transition-colors underline-offset-4 hover:underline"
+                        >
+                            <ExternalLink size={13} />
+                            {p.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    <section class="space-y-3 text-sm leading-relaxed">
+        <h2 class="text-xl font-semibold">關於本站</h2>
         <p>
-            {siteConfig.author.bio}
+            本站為腫瘤內科臨床筆記、衛教整理與閱讀記錄，主要服務兩種讀者：
         </p>
+        <ul class="list-disc list-outside ml-5 space-y-1.5">
+            <li>
+                <strong>病友與家屬</strong>：以「病人真正會問」的問題切入，整理治療選項、副作用、與決策時可帶去診間的問題清單。
+            </li>
+            <li>
+                <strong>同業與住院醫師</strong>：整理新藥臨床試驗、跨指引差異、以及臨床上未必能立刻找到實證的灰色地帶。
+            </li>
+        </ul>
+        <p>
+            本站不取代主治醫師之診療判斷，亦不從事醫療業務招徠。實際治療決策請與您的醫療團隊面對面討論。
+        </p>
+    </section>
 
-        {
-            (siteConfig.socials.github ||
-                siteConfig.socials.twitter ||
-                siteConfig.socials.linkedin) && (
-                <div class="flex items-center gap-4">
-                    {siteConfig.socials.github && (
-                        <a
-                            href={siteConfig.socials.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="GitHub"
-                            class="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Github size={20} />
-                        </a>
-                    )}
-                    {siteConfig.socials.twitter && (
-                        <a
-                            href={siteConfig.socials.twitter}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="Twitter"
-                            class="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Twitter size={20} />
-                        </a>
-                    )}
-                    {siteConfig.socials.linkedin && (
-                        <a
-                            href={siteConfig.socials.linkedin}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="LinkedIn"
-                            class="text-muted-foreground hover:text-primary transition-colors"
-                        >
-                            <Linkedin size={20} />
-                        </a>
-                    )}
+    <section class="space-y-4">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <ShieldCheck size={20} class="text-primary" /> 編輯方針 · Editorial
+            Policy
+        </h2>
+        <ol
+            class="list-decimal list-outside ml-5 space-y-3 text-sm leading-relaxed marker:text-muted-foreground"
+        >
+            {principles.map((p) => (
+                <li>
+                    <strong class="text-foreground">{p.title}</strong>
+                    <span class="text-muted-foreground"> — {p.body}</span>
+                </li>
+            ))}
+        </ol>
+    </section>
+
+    <section class="space-y-3">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <Briefcase size={20} class="text-muted-foreground" /> 現職
+        </h2>
+        <ul class="text-sm leading-relaxed">
+            <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                <span class="text-muted-foreground tabular-nums pt-0.5"
+                    >2023.08 –</span
+                >
+                <div>
+                    <p class="font-medium">血液腫瘤科專研醫師（Fellow）</p>
+                    <p class="text-muted-foreground">
+                        {siteConfig.author.affiliationUrl ? (
+                            <a
+                                href={siteConfig.author.affiliationUrl}
+                                target="_blank"
+                                rel="noopener"
+                                class="hover:text-primary transition-colors underline-offset-4 hover:underline"
+                            >
+                                {siteConfig.author.affiliation}
+                            </a>
+                        ) : (
+                            siteConfig.author.affiliation
+                        )}
+                    </p>
                 </div>
-            )
-        }
+            </li>
+        </ul>
+    </section>
 
-        <span
-            class="text-secondary -z-1 opacity-70 text-[10rem] absolute -top-16 -left-4 disable-select"
-            aria-hidden="true">匠</span
+    <section class="space-y-3">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <GraduationCap size={20} class="text-muted-foreground" /> 學歷
+        </h2>
+        <ul class="text-sm leading-relaxed">
+            <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                <span class="text-muted-foreground tabular-nums pt-0.5"
+                    >2013 – 2019</span
+                >
+                <div>
+                    <p class="font-medium">
+                        醫學系（Doctor of Medicine）
+                    </p>
+                    <p class="text-muted-foreground">
+                        國立成功大學 National Cheng Kung University
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="space-y-3">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <IdCard size={20} class="text-muted-foreground" /> 專科證照
+        </h2>
+        <ul
+            class="list-disc list-outside ml-5 space-y-1.5 text-sm marker:text-muted-foreground"
         >
+            {certifications.map((c) => <li>{c}</li>)}
+        </ul>
     </section>
 
-    <section
-        class="grid grid-cols-2 md:grid-cols-4 w-full border-l border-t border-border"
+    <section class="space-y-3">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <BookOpen size={20} class="text-muted-foreground" /> 完整學經歷與發表
+        </h2>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+            完整現職、經歷、發表、口頭報告與專科證照清單，請見
+            <a
+                href="/cv"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >CV 頁</a
+            >；學術發表與引用以
+            <a
+                href={siteConfig.author.scholar}
+                target="_blank"
+                rel="me noopener"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >Google Scholar</a
+            >
+            為準。
+        </p>
+    </section>
+
+    <section class="space-y-3 pt-2 border-t border-border">
+        <h2 class="flex items-center gap-2 text-xl font-semibold pt-6">
+            <Github size={20} class="text-muted-foreground" /> 聯絡與更新
+        </h2>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+            本站源碼與版本紀錄公開於
+            <a
+                href={siteConfig.socials.github}
+                target="_blank"
+                rel="me noopener"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >GitHub</a
+            >；內容修訂以 git commit 留下時間戳。學術合作、糾錯、衛教合作請開
+            issue 或透過
+            <a
+                href={siteConfig.author.orcid}
+                target="_blank"
+                rel="me noopener"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >ORCID</a
+            >
+            聯絡。
+        </p>
+    </section>
+
+    <footer
+        class="text-xs text-muted-foreground border-t border-border pt-6 leading-relaxed"
     >
-        <DecorativeKanji title="2+" subTitle="Years of exp" kanji="歴" />
-        <DecorativeKanji
-            title={projects.length.toString()}
-            subTitle="Projects Shipped"
-            kanji="造"
-        />
-        <DecorativeKanji title="∞" subTitle="Coffees / day" kanji="杯" />
-        <DecorativeKanji
-            title={`~${postsPerYear}`}
-            subTitle="Posts / year"
-            kanji="筆"
-        />
-    </section>
-
-    <div class="w-full h-1 bg-foreground"></div>
-
-    <section>
-        <section class="flex justify-between">
-            <div class="size-5 border border-b-0 border-r-0 border-foreground">
-            </div>
-            <div
-                class="size-5 border border-b-0 border-r-0 border-foreground rotate-90"
-            >
-            </div>
-        </section>
-        <section class="px-5 space-y-5">
-            <p>
-                I'm a backend developer who genuinely struggles to enjoy
-                frontend work — CSS is not my love language. What I do care
-                about is writing code that people can actually read: clear,
-                honest, and purposeful.
-            </p>
-            <p>
-                I'm still finding my footing — learning the craft of backend
-                engineering, and getting curious about software design and
-                architecture. How systems are shaped, and why some decisions age
-                better than others.
-            </p>
-            <p>
-                This blog is where I think out loud. Casual, occasionally
-                technical, and posted whenever something finally clicks. No
-                schedule — just thoughts worth putting into words.
-            </p>
-        </section>
-
-        <section class="flex justify-between">
-            <div
-                class="size-5 border border-b-0 border-r-0 border-foreground -rotate-90"
-            >
-            </div>
-            <div
-                class="size-5 border border-b-0 border-r-0 border-foreground rotate-180"
-            >
-            </div>
-        </section>
-    </section>
-
-    <Separator title="Currently" />
-
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-        <ActivityCard
-            imageSrc={mhrImage}
-            imageAlt="Monster Hunter Rise wallpaper"
-            label="Playing"
-            title="Monster Hunter Rise"
-            subtitle="Open-world action RPG"
-        />
-        <!-- https://wall.alphacoders.com/big.php?i=1367731  -->
-        <ActivityCard
-            imageSrc={frierenImage}
-            imageAlt="Illustration of a chibi Frieren looking up"
-            label="watching"
-            title="Frieren: Beyond Journey's End"
-            subtitle="Fantasy / Adventure"
-        />
-        <ActivityCard
-            imageSrc={pomImage}
-            imageAlt="Illustration of a brain shaped paper bills"
-            label="reading"
-            title="Psychology  of Money"
-            subtitle="by Morgan Housel"
-        />
-        <!-- https://i.ytimg.com/vi/83RUhxsfLWs/maxresdefault.jpg -->
-        <ActivityCard
-            imageSrc={neffexImage}
-            imageAlt="Logo of NEFFEX"
-            label="listening"
-            title="Grateful"
-            subtitle="by NEFFEX"
-        />
-    </section>
-
-    <Separator title="Projects" />
-
-    <section class="flex flex-col gap-4">
-        {
-            projects.map((project) => (
-                <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    url={project.link}
-                    techStack={project.techStack}
-                />
-            ))
-        }
-    </section>
-
-    <Separator title="Journey" />
-
-    <Timeline items={timeline} />
-
-    <div
-        class="flex items-center justify-center gap-4 text-muted-foreground text-sm pt-10 pb-4"
-    >
-        <div class="h-px w-full bg-foreground/10"></div>
-        <span class="whitespace-nowrap uppercase tracking-widest">終 - fin</span
-        >
-        <div class="h-px w-full bg-foreground/10"></div>
-    </div>
+        <p>
+            本站文章所提供之資訊，僅供醫學新知與病人衛生教育參考，<strong
+                >不構成個別醫療建議</strong
+            >，亦不取代主治醫師之診療判斷。實際治療、用藥、手術選項，請與您的主治團隊討論後決定。
+        </p>
+    </footer>
 </main>

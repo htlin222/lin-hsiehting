@@ -5,6 +5,8 @@ import Badge from "@/components/ui/Badge.astro";
 import MobileTOC from "@/components/posts/MobileTOC.astro";
 import DesktopTOC from "@/components/posts/DesktopTOC.astro";
 import ShareButtons from "@/components/posts/ShareButtons.astro";
+import MedicalReview from "@/components/posts/MedicalReview.astro";
+import AuthorBadge from "@/components/posts/AuthorBadge.astro";
 import { Image } from "astro:assets";
 import { siteConfig } from "@/config";
 import { parseDate } from "@/utils/date";
@@ -73,6 +75,100 @@ const postUrl = new URL(
     Astro.url.pathname,
     Astro.site || Astro.url.origin,
 ).href;
+
+const updatedIso = post.data.updatedDate
+    ? parseDate(post.data.updatedDate).toISOString()
+    : isoDate;
+const reviewedIso = post.data.reviewedDate
+    ? parseDate(post.data.reviewedDate).toISOString()
+    : updatedIso;
+
+const schemaAuthor: Record<string, unknown> = {
+    "@type": "Person",
+    name: siteConfig.author.name,
+};
+if (siteConfig.author.specialty)
+    schemaAuthor.jobTitle = siteConfig.author.specialty;
+if (siteConfig.author.affiliation)
+    schemaAuthor.affiliation = siteConfig.author.affiliation;
+if (siteConfig.author.orcid)
+    schemaAuthor.sameAs = [siteConfig.author.orcid].filter(Boolean);
+
+const schemaReviewer: Record<string, unknown> = {
+    "@type": "Person",
+    name: post.data.reviewer ?? siteConfig.author.name,
+};
+if (post.data.reviewerCredentials)
+    schemaReviewer.description = post.data.reviewerCredentials;
+
+const blogPostingSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    author: schemaAuthor,
+    datePublished: isoDate,
+    dateModified: updatedIso,
+    description: post.data.frontmatter,
+    inLanguage: "zh-TW",
+    keywords: post.data.tags.join(", "),
+    url: postUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+    publisher: {
+        "@type": "Organization",
+        name: siteConfig.title,
+        url: siteConfig.siteUrl,
+    },
+};
+if (ogImage) {
+    blogPostingSchema.image = new URL(
+        ogImage,
+        Astro.site || Astro.url.origin,
+    ).href;
+}
+
+const medicalSchema = post.data.medical
+    ? (() => {
+          const schema: Record<string, unknown> = {
+              "@context": "https://schema.org",
+              "@type": "MedicalWebPage",
+              url: postUrl,
+              name: post.data.title,
+              description: post.data.frontmatter,
+              inLanguage: "zh-TW",
+              audience: {
+                  "@type": "MedicalAudience",
+                  audienceType: "Patient",
+              },
+              author: schemaAuthor,
+              reviewedBy: schemaReviewer,
+              lastReviewed: reviewedIso,
+              dateModified: updatedIso,
+          };
+          if (post.data.medicalCondition) {
+              schema.about = {
+                  "@type": "MedicalCondition",
+                  name: post.data.medicalCondition,
+              };
+          }
+          return schema;
+      })()
+    : null;
+
+const faqSchema =
+    post.data.faq && post.data.faq.length > 0
+        ? {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: post.data.faq.map((item) => ({
+                  "@type": "Question",
+                  name: item.q,
+                  acceptedAnswer: {
+                      "@type": "Answer",
+                      text: item.a,
+                  },
+              })),
+          }
+        : null;
 
 const allEntries = await getCollection("post");
 const relatedPosts = allEntries
@@ -150,7 +246,8 @@ const relatedPosts = allEntries
                         }
                     </div>
                 </div>
-                <div class="mb-6">
+                <div class="mb-6 flex flex-wrap items-center gap-3">
+                    <AuthorBadge />
                     <ShareButtons url={postUrl} title={post.data.title} />
                 </div>
                 {
@@ -174,6 +271,17 @@ const relatedPosts = allEntries
                         <Content />
                     </div>
                 </div>
+                {
+                    post.data.medical && (
+                        <MedicalReview
+                            reviewer={post.data.reviewer}
+                            reviewerCredentials={post.data.reviewerCredentials}
+                            reviewedDate={post.data.reviewedDate}
+                            lastUpdated={post.data.updatedDate ?? post.data.date}
+                            medicalCondition={post.data.medicalCondition}
+                        />
+                    )
+                }
             </div>
 
             {headings.length > 0 && <DesktopTOC headings={headings} />}
@@ -266,24 +374,26 @@ const relatedPosts = allEntries
     <script
         is:inline
         type="application/ld+json"
-        set:html={JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.data.title,
-            image: ogImage
-                ? new URL(ogImage, Astro.site || Astro.url.origin).href
-                : undefined,
-            author: {
-                "@type": "Person",
-                name: siteConfig.author.name,
-            },
-            datePublished: isoDate,
-            description: post.data.frontmatter,
-            url: Astro.site
-                ? new URL(Astro.url.pathname, Astro.site).href
-                : Astro.url.href,
-        })}
+        set:html={JSON.stringify(blogPostingSchema)}
     />
+    {
+        medicalSchema && (
+            <script
+                is:inline
+                type="application/ld+json"
+                set:html={JSON.stringify(medicalSchema)}
+            />
+        )
+    }
+    {
+        faqSchema && (
+            <script
+                is:inline
+                type="application/ld+json"
+                set:html={JSON.stringify(faqSchema)}
+            />
+        )
+    }
 
     <script is:inline>
         let onScroll = null;

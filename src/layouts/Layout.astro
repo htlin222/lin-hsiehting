@@ -83,6 +83,68 @@ const isOnCurrentPath = (path: string) => {
             title={siteConfig.rss.title}
             href={new URL("feed.xml", Astro.url.origin)}
         />
+
+        <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: siteConfig.title,
+                url: siteConfig.siteUrl,
+                inLanguage: "zh-TW",
+                description: siteConfig.description,
+                publisher: {
+                    "@type": "Person",
+                    name: siteConfig.author.name,
+                    ...(siteConfig.author.specialty && {
+                        jobTitle: siteConfig.author.specialty,
+                    }),
+                    ...(siteConfig.author.affiliation && {
+                        affiliation: {
+                            "@type": "Organization",
+                            name: siteConfig.author.affiliation,
+                            ...(siteConfig.author.affiliationUrl && {
+                                url: siteConfig.author.affiliationUrl,
+                            }),
+                        },
+                    }),
+                    ...(siteConfig.socials.github && {
+                        sameAs: [siteConfig.socials.github].filter(Boolean),
+                    }),
+                },
+            })}
+        />
+        <script
+            is:inline
+            type="application/ld+json"
+            set:html={JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Physician",
+                name: siteConfig.author.name,
+                description: siteConfig.author.bio,
+                ...(siteConfig.author.specialty && {
+                    medicalSpecialty: siteConfig.author.specialty,
+                }),
+                ...(siteConfig.author.affiliation && {
+                    affiliation: {
+                        "@type": "Organization",
+                        name: siteConfig.author.affiliation,
+                        ...(siteConfig.author.affiliationUrl && {
+                            url: siteConfig.author.affiliationUrl,
+                        }),
+                    },
+                }),
+                url: siteConfig.siteUrl,
+                ...(siteConfig.socials.github && {
+                    sameAs: [
+                        siteConfig.socials.github,
+                        siteConfig.author.orcid,
+                        siteConfig.author.scholar,
+                    ].filter(Boolean),
+                }),
+            })}
+        />
         {
             siteConfig.analytics.umami.websiteId &&
                 siteConfig.analytics.umami.src && (

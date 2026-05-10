@@ -35,6 +35,12 @@ export interface RssConfig {
 export interface AuthorConfig {
     name: string;
     bio: string;
+    credentials?: string;
+    specialty?: string;
+    affiliation?: string;
+    affiliationUrl?: string;
+    orcid?: string;
+    scholar?: string;
 }
 
 export interface SiteConfig {

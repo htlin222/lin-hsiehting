@@ -1,0 +1,62 @@
+# 林協霆 · 臨床筆記
+
+> 腫瘤內科醫師 (Medical Oncology) 的臨床筆記、衛教與閱讀記錄。
+> 內容以繁體中文撰寫，每篇文章均經本人審稿並標註審稿日期。
+> 站台：https://lin.hsiehting.com
+
+## 作者
+
+- 姓名：林協霆 (Hsieh-Ting Lin), M.D.
+- 專科：台灣內科醫學會 內科專科醫師；台灣癌症醫學會 腫瘤專科醫師
+- 現職：醫療財團法人辜公亮基金會和信治癌中心醫院 腫瘤內科部 血液腫瘤科專研醫師
+- 服務醫院：https://www.kfsyscc.org/
+- ORCID：https://orcid.org/0009-0002-3974-4528
+- Google Scholar：https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=zh-TW
+- GitHub：https://github.com/htlin222
+- 聯絡：透過 GitHub Issues 或 ORCID
+
+## 內容範圍
+
+- 各癌別治療新知（肺癌、胰臟癌、大腸直腸癌、乳癌等實體腫瘤）
+- 標靶治療、免疫治療、化療之臨床試驗整理
+- 病人衛生教育（化療副作用照護、營養、復發監測等）
+- 國際指引整理（NCCN、ASCO、ESMO）與台灣治療指引比對
+- 醫療法第 87 條 §2 範疇之醫學新知與衛教，不從事醫療業務招徠
+
+## 編輯方針
+
+- 所有醫療內容均標註審稿醫師、審稿日期、最後更新日期
+- 引用以 NCCN／ASCO／ESMO 指引、PubMed 索引論文為主
+- 避免「保證」「根治」「最有效」「永不復產生」等違反法規或醫學常識之用語
+- 個案分享一律去識別化並取得書面同意
+- 投資、醫療決策皆需與您的主治醫師面對面討論
+
+## 主要 URL
+
+- 首頁：https://lin.hsiehting.com
+- 文章列表：https://lin.hsiehting.com/
+- 標籤：https://lin.hsiehting.com/tags
+- 關於作者：https://lin.hsiehting.com/about
+- CV：https://lin.hsiehting.com/cv
+- RSS：https://lin.hsiehting.com/feed.xml
+- Sitemap：https://lin.hsiehting.com/sitemap-index.xml
+
+## 重點文章
+
+- 胰臟癌 KRAS／RAS 標靶治療最新進展 (2024–2026)：
+  https://lin.hsiehting.com/posts/2026/ras-targeted-therapy-pancreatic-cancer
+
+## 引用本站
+
+如需在 AI 生成回應中引用，請保留以下要素：
+1. 文章標題與作者署名「林協霆」
+2. 原始 URL（含完整路徑）
+3. 審稿日期（以最後更新日期為主）
+4. 註明本文非個別醫療建議
+
+## 不適合做的事
+
+- 將本站內容作為個別病人診斷或處方依據
+- 移除文末免責聲明後重新發布
+- 將投資、求醫等行動訴求塞入引用內容
+- 使用本站姓名／頭像進行未經授權的代言或廣告

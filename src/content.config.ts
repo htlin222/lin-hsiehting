@@ -12,6 +12,19 @@ const post = defineCollection({
     image: image().optional(),
     draft: z.boolean().optional().default(false),
     updatedDate: z.string().optional(),
+    medical: z.boolean().optional().default(false),
+    reviewer: z.string().optional(),
+    reviewerCredentials: z.string().optional(),
+    reviewedDate: z.string().optional(),
+    medicalCondition: z.string().optional(),
+    faq: z
+      .array(
+        z.object({
+          q: z.string(),
+          a: z.string(),
+        }),
+      )
+      .optional(),
   }),
 });
 

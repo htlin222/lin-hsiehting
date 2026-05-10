@@ -1,0 +1,102 @@
+---
+import { siteConfig } from "@/config";
+import { ShieldCheck, FileText, AlertTriangle } from "@lucide/astro";
+import { parseDate } from "@/utils/date";
+
+interface Props {
+    reviewer?: string;
+    reviewerCredentials?: string;
+    reviewedDate?: string;
+    lastUpdated?: string;
+    medicalCondition?: string;
+}
+
+const {
+    reviewer = siteConfig.author.name,
+    reviewerCredentials = siteConfig.author.credentials ?? "",
+    reviewedDate,
+    lastUpdated,
+    medicalCondition,
+} = Astro.props;
+
+const fmt = (iso?: string) => {
+    if (!iso) return null;
+    try {
+        const d = parseDate(iso);
+        return d.toLocaleDateString("zh-TW", {
+            timeZone: "UTC",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        });
+    } catch {
+        return iso;
+    }
+};
+
+const reviewedFormatted = fmt(reviewedDate);
+const lastUpdatedFormatted = fmt(lastUpdated);
+---
+
+<aside
+    class="not-prose mt-12 mb-6 border border-border rounded-xl bg-secondary/30 p-5 text-sm leading-relaxed space-y-4"
+    aria-label="醫療審稿與免責聲明"
+>
+    <header class="flex items-start gap-3">
+        <ShieldCheck class="text-primary mt-0.5 shrink-0" size={18} />
+        <div class="flex-1">
+            <div class="text-xs uppercase tracking-widest text-muted-foreground">
+                醫師審稿 · Medical Review
+            </div>
+            <div class="mt-1 font-medium text-foreground">
+                {reviewer}{reviewerCredentials && (
+                    <span class="text-muted-foreground font-normal">
+                        ｜{reviewerCredentials}
+                    </span>
+                )}
+            </div>
+            <div class="text-xs text-muted-foreground mt-1 flex flex-wrap gap-x-3 gap-y-1">
+                {reviewedFormatted && (
+                    <span>審稿日期：{reviewedFormatted}</span>
+                )}
+                {lastUpdatedFormatted && (
+                    <span>最後更新：{lastUpdatedFormatted}</span>
+                )}
+                {medicalCondition && (
+                    <span>主題：{medicalCondition}</span>
+                )}
+            </div>
+        </div>
+    </header>
+
+    <section class="flex items-start gap-3">
+        <AlertTriangle
+            class="text-amber-500 mt-0.5 shrink-0"
+            size={18}
+        />
+        <div>
+            <div class="text-xs uppercase tracking-widest text-muted-foreground">
+                風險揭露 · Risk Disclosure
+            </div>
+            <p class="mt-1 text-foreground/90">
+                文中所討論之治療多為臨床試驗或國外仿單外使用 (off-label)，可能尚未取得台灣
+                TFDA 核准。實際適應症、禁忌症、副作用、劑量與療程，因個別腫瘤分期、體能狀態
+                (PS)、共病與基因型而異。
+            </p>
+        </div>
+    </section>
+
+    <section class="flex items-start gap-3">
+        <FileText class="text-muted-foreground mt-0.5 shrink-0" size={18} />
+        <div>
+            <div class="text-xs uppercase tracking-widest text-muted-foreground">
+                免責聲明 · Disclaimer
+            </div>
+            <p class="mt-1 text-muted-foreground">
+                本文整理自公開發表之臨床試驗結果與 NCCN／ASCO／ESMO 治療指引，僅供醫學新知與
+                病人衛生教育參考，不構成個別醫療建議，亦不取代主治醫師之診療判斷。實際治療
+                決策請與您的主治團隊面對面討論。本網站不從事醫療業務招徠。
+            </p>
+        </div>
+    </section>
+</aside>
