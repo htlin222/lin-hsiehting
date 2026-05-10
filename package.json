@@ -1,35 +1,40 @@
 {
-  "name": "serene-ink",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "new-post": "node --experimental-strip-types scripts/new-post.ts",
-    "new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
-    "audit:posts": "node scripts/audit-posts.mjs",
-    "audit:doi": "node scripts/audit-doi.mjs",
-    "audit:all": "pnpm run audit:posts && pnpm run audit:doi",
-    "zenodo:dry": "node --env-file=.env --env-file-if-exists=.env scripts/zenodo-mint.mjs --dry-run",
-    "zenodo:sandbox": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs",
-    "zenodo:production": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs --production"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^5.0.3",
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
-    "@lucide/astro": "^0.577.0",
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^6.0.5",
-    "astro-expressive-code": "^0.41.7",
-    "tailwindcss": "^4.2.1"
-  },
-  "devDependencies": {
-    "sharp": "^0.34.5"
-  }
+	"name": "serene-ink",
+	"type": "module",
+	"version": "0.0.1",
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"prebuild": "node scripts/og-image.mjs --all",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"new-post": "node --experimental-strip-types scripts/new-post.ts",
+		"new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
+		"og:preview": "node scripts/og-image.mjs",
+		"og": "node scripts/og-image.mjs",
+		"audit:posts": "node scripts/audit-posts.mjs",
+		"audit:doi": "node scripts/audit-doi.mjs",
+		"audit:all": "pnpm run audit:posts && pnpm run audit:doi",
+		"zenodo:dry": "node --env-file=.env --env-file-if-exists=.env scripts/zenodo-mint.mjs --dry-run",
+		"zenodo:sandbox": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs",
+		"zenodo:production": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs --production"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^5.0.3",
+		"@astrojs/rss": "^4.0.18",
+		"@astrojs/sitemap": "^3.7.2",
+		"@lucide/astro": "^0.577.0",
+		"@tailwindcss/vite": "^4.2.1",
+		"astro": "^6.0.5",
+		"astro-expressive-code": "^0.41.7",
+		"tailwindcss": "^4.2.1"
+	},
+	"devDependencies": {
+		"satori": "^0.26.0",
+		"satori-html": "^0.3.2",
+		"sharp": "^0.34.5"
+	}
 }

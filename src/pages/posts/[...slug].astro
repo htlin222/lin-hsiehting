@@ -70,7 +70,9 @@ if (post.data.updatedDate) {
     });
 }
 
-const ogImage = post.data.image?.src;
+// Fall back to the auto-generated OG card (1200x630) when the post does not
+// declare its own cover image. Path matches scripts/og-image.mjs output.
+const ogImage = post.data.image?.src ?? `/og/${post.id}.png`;
 const postUrl = new URL(
     Astro.url.pathname,
     Astro.site || Astro.url.origin,

@@ -208,11 +208,34 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
 
 `pnpm run build` 在本地必須先綠燈再 push；CI 失敗會在 Actions 頁顯示。
 
-## 11. Zenodo DOI 流程
+## 11. OG image 自動產生
+
+每篇文章建構期會自動產生一張 1200×630 的社群預覽圖（`public/og/<post-id>.png`），
+作為 `og:image` 與 `twitter:image` 的 fallback。
+
+### 11.0 設計與位置
+
+- 字型：Noto Sans TC Bold（首次跑時 cache 到 `node_modules/.cache/og-fonts/`）
+- 排版：site 名稱（eyebrow）+ 大標題（最多 3 行）+ 頭照／姓名／頭銜／URL（底部）
+- 觸發：`pnpm run build` 會先跑 `pnpm run prebuild` → 自動 `og --all`
+- 已存在的 PNG 會 skip（避免每次重生）；要強制重生用 `pnpm run og -- --slug=<sub> --force`
+
+### 11.1 Frontmatter 控制
+
+- 不設 `image` → 自動套用 `/og/<post-id>.png`
+- 自定 `image: ../../assets/images/cover.webp` → 用你指定的圖
+
+### 11.2 改設計
+
+改 `scripts/og-image.mjs` 的 `buildTree()`，重跑 `pnpm run og -- --all --force`，commit。
+
+---
+
+## 12. Zenodo DOI 流程
 
 文章可透過 Zenodo（DataCite DOI）取得永久學術引用標識。**每篇 = 1 個 record = 1 個 concept DOI + n 個 version DOI**，互不相干。
 
-### 11.1 一次性設定
+### 12.1 一次性設定
 
 1. **本地 token**（給 `pnpm run zenodo:*` 用）
    - 到 <https://zenodo.org/account/settings/applications/tokens/new/>
@@ -224,7 +247,7 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
    - `ZENODO_TOKEN`：production token（zenodo.org）— 給 `zenodo-on-push.yml` 用
    - `ZENODO_SANDBOX_TOKEN`：sandbox token（sandbox.zenodo.org，**獨立帳號**）— 給手動 dispatch 用
 
-### 11.2 mint 條件
+### 12.2 mint 條件
 
 只有同時滿足以下三條的文章才會被 mint：
 
@@ -234,7 +257,7 @@ citable: true   AND   draft != true   AND   doi: 還沒設
 
 `citable` 是**顯式 opt-in**。沒寫或寫 `false` = 不 mint，不會被 push 觸發誤動作。
 
-### 11.3 兩種觸發方式
+### 12.3 兩種觸發方式
 
 | 觸發 | 條件 | 用途 |
 |---|---|---|
@@ -242,7 +265,7 @@ citable: true   AND   draft != true   AND   doi: 還沒設
 | **手動 dispatch**（`zenodo-mint.yml`）| 在 GitHub Actions 介面選 sandbox/production + slug filter | 補 mint、sandbox 試水溫 |
 | **本地命令** | 跑下面的 pnpm script | 開發、debug、backfill |
 
-### 11.4 本地命令
+### 12.4 本地命令
 
 ```bash
 pnpm run zenodo:dry                          # 不打 API，預覽 metadata
@@ -257,13 +280,13 @@ mint 流程（自動）：
 3. `POST .../actions/publish` 發布 → 拿到 `doi` + `conceptDoi`
 4. 自動寫回 frontmatter `doi:` 與 `conceptDoi:`
 
-### 11.5 DOI 在站上會做什麼
+### 12.5 DOI 在站上會做什麼
 
 - `MedicalReview` 元件多一塊「引用本文 · Cite this」：concept DOI 連結 + 中英 AMA citation + BibTeX 折疊
 - `BlogPosting` JSON-LD 補 `identifier`（PropertyValue）+ `sameAs: doi.org/...`
 - `audit:doi` 會把這些 DOI 一併納入檢查（302 from doi.org = OK）
 
-### 11.6 修文章後要不要重 mint？
+### 12.6 修文章後要不要重 mint？
 
 | 情境 | 動作 |
 |---|---|
@@ -273,7 +296,7 @@ mint 流程（自動）：
 
 > v2 版本流程目前**還沒寫進腳本**，第一次重 mint 時要走 `/api/deposit/depositions/<id>/actions/newversion`。先不急。
 
-### 11.7 手動 GH Action 路線
+### 12.7 手動 GH Action 路線
 
 - 進入 repo Actions → "Mint DOIs via Zenodo" → Run workflow
 - target: `sandbox` / `production`
