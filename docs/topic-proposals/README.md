@@ -56,9 +56,51 @@
 
 > 並非由你決定發稿順序，但 SEO / 競爭性數據顯示先寫以下幾類最快建立站台權威：
 
-1. **Tier 1（高搜尋量 + 競品已老舊）**：#16, #17, #21, #30, #46, #54, #62, #67, #69, #79（治療總覽 + 副作用 + 篩檢）
-2. **Tier 2（醫師 + 病人都會搜，但中文內容極少）**：#10, #11, #20, #34, #36, #43, #51, #75（NGS / ctDNA / ADC / MDS / BCMA / 肝癌 / 高鈣）
-3. **Tier 3（深耕同業流量）**：#22, #41, #44, #61, #63（雙特異性抗體、T 淋巴瘤、MGUS、攝護腺 PARP、子宮內膜 dMMR）
+1. **Tier 0（101 反超：高搜尋量、用實證打贏內容農場）**：#02, #12, #13, #16, #18, #69, #77, #84, #86（腫瘤指數、AJCC 期別、遺傳、治療總覽、PD-L1、irAE、CTCAE 紅綠燈、保健食品等級、預防癌症 10 招）
+2. **Tier 1（高搜尋量 + 競品已老舊）**：#17, #21, #30, #46, #54, #62, #67, #79（精準醫療、CAR-T、RECIST、肺癌 adjuvant、dMMR CRC、卵巢 PARP、嘔吐、neutropenic diet）
+3. **Tier 2（醫師 + 病人都會搜，但中文內容極少）**：#10, #11, #20, #34, #36, #43, #51, #75（NGS / ctDNA / ADC / MDS / BCMA / 肝癌 / 高鈣）
+4. **Tier 3（深耕同業流量）**：#22, #41, #44, #61, #63（雙特異性抗體、T 淋巴瘤、MGUS、攝護腺 PARP、子宮內膜 dMMR）
+
+## 實證反超撰寫規範（Tier 0 必須遵守、其他 Tier 強烈建議）
+
+中文網路上「癌症 101」題目幾乎被內容農場、保健品 SEO、與十年前舊衛教文佔光。要在這個區段贏，**不是寫得更多，是寫得更嚴**。每篇 Tier 0 文章必須符合下列 8 條：
+
+1. **每個量化主張掛 DOI**
+   - 寫「ORR 60%」必附 DOI 連結與 n、95% CI
+   - 寫「五年存活率 30%」必標明來源（SEER / TCR / 試驗 arm）與年代
+   - 沒有 DOI 的數字 → 改寫成範圍或刪掉
+
+2. **使用 evidence grading**
+   - 介入：GRADE / NCCN category（1 / 2A / 2B / 3）
+   - 預防 / 飲食：WCRF-AICR Continuous Update（convincing / probable / limited / no link）/ SIO 2022 grade
+   - 篩檢：USPSTF grade（A / B / C / D / I）
+   - 在文中**明標等級**而不是只寫「研究顯示」
+
+3. **同期 / 同病不同預後要解釋**
+   - AJCC 期別、Gleason 分組、IPSS-R 等都不只是數字
+   - 把 nomogram、prognostic vs anatomic stage、molecular subtype 寫進去
+
+4. **含 negative evidence 章節**
+   - 必須有「沒有效 / 不建議 / 有害」的小節
+   - 例：scalp cooling 在 anthracycline-based 效果差；neutropenic diet 多中心試驗沒有降低感染；某保健品 RCT 為 null
+
+5. **誠實標示不確定性**
+   - 「目前無亞洲族群數據」「樣本數 < 50」「跨試驗比較須謹慎」要明寫
+   - 預印本（preprint）必標 *preprint*，不可當第一線實證
+
+6. **病人決策樹 ≥ 1**
+   - 必須有 mermaid 流程圖或 markdown 階層列表
+   - 對應「我該怎麼選」的實際決策節點
+
+7. **比較表 ≥ 1**
+   - AI Overviews 與 Perplexity 最高擷取率的格式
+   - 至少四欄：選項 / evidence / 副作用 / 適合誰
+
+8. **FAQ schema 至少 5 條**
+   - frontmatter `faq[]` 至少 5 條 patient query → answer
+   - 直接呼應 Google「People also ask」與 Perplexity 的 follow-up
+
+> 一篇 Tier 0 文章寫作成本約是 niche 文章的 1.3–1.5 倍（要為每個敘述句配引用），但被 AI 引擎引用的機率是 niche 文章的 3–5 倍，ROI 較高。
 
 ## 不在這 100 個內，刻意捨棄的題目
 

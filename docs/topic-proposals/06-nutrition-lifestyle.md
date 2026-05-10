@@ -60,13 +60,17 @@
 - **差異化**：WHO 2023 statement「沒有安全劑量」+ 7 種癌的 dose-response
 - **關鍵字**：alcohol、cancer risk、WHO、衛教
 
-### 86. 治療期間可以染髮、做指甲、刮鬍子嗎
+### 86. 預防癌症的「10 招」哪些是真的有效？實證版
 
-- **titleEn**: Daily-life questions during chemotherapy
-- **Slug**: `daily-life-chemo-cosmetic-shave`
-- **Patient query**: 「化療頭髮長回來可以染嗎？」「血小板低能不能刮鬍子？」
-- **差異化**：把民眾頻問的小細節（染髮 / 美甲 / 刺青 / 拔牙）整理成 FAQ
-- **關鍵字**：chemotherapy、daily care、衛教、FAQ
+- **titleEn**: Cancer prevention: which "10 tips" are actually evidence-based?
+- **Slug**: `cancer-prevention-evidence-graded`
+- **Patient query**: 「不抽菸不喝酒就不會得癌症嗎？」「常吃花椰菜可以防癌？」
+- **差異化（實證反超）**：
+  - 競品（網路文 / 保健品行銷）給「10 種防癌食物 / 飲食關鍵」之類的廣告化清單，幾乎不附證據等級
+  - 本篇直接拿 IARC Code Against Cancer (2024)、WCRF/AICR Continuous Update Project、USPSTF (2024) 三個權威來源並列，逐項標 evidence level（convincing / probable / limited / no link）
+  - 區分「人口層級」防癌建議 vs「個人」防癌建議的不同（很多競品搞混 RR vs ARR）
+  - 直接列出「沒有實證」的迷思（鹼性飲食、斷食抗癌、特定保健食品防癌）
+- **關鍵字**：cancer prevention、IARC、WCRF、USPSTF、evidence-based
 
 ### 87. 化療掉髮：頭皮冷凍帽（scalp cooling）真的有效嗎？
 

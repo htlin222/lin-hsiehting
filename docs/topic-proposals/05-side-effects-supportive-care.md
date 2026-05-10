@@ -84,13 +84,17 @@
 - **差異化**：紅旗症狀清單 + golden window 黃金治療時間 + 影像優先順序
 - **關鍵字**：SVC syndrome、cord compression、oncologic emergency
 
-### 77. 癌症併發肺栓塞、心包填塞：胸痛喘的鑑別
+### 77. 化療副作用 CTCAE 紅綠燈：什麼自己處理、什麼必須急診
 
-- **titleEn**: Cardiopulmonary emergencies in cancer patients
-- **Slug**: `cardiopulmonary-emergency-cancer`
-- **Patient query**: 「化療後胸痛喘要不要急診？」
-- **差異化**：rule out 順序（PE > tamponade > MI > pneumonitis）+ Wells score
-- **關鍵字**：PE、cardiac tamponade、myocarditis、Wells score
+- **titleEn**: Chemotherapy side effects by CTCAE grade: a self-triage guide
+- **Slug**: `chemo-side-effects-ctcae-triage`
+- **Patient query**: 「化療發燒要不要去急診？」「拉肚子幾次以上算嚴重？」
+- **差異化（實證反超）**：
+  - 競品（家天使、北榮、康健）給「會疲倦、會嘔吐、會掉髮」的列舉式衛教，沒有 grade 分級也沒有「立刻就醫」門檻
+  - 本篇用 NCI CTCAE v5.0 的 G1 / G2 / G3 / G4 對最常見 12 種副作用（嘔吐、腹瀉、便秘、發燒、皮疹、口腔黏膜炎、神經病變、肝功能、嗜中性球低下、出血、心跳異常、呼吸喘）逐個給「居家觀察 / 24 小時內回診 / 立刻急診」紅綠燈表
+  - 每個 threshold 引用 ASCO / ESMO / NCCN supportive care guideline 條文與 DOI
+  - 內鏈到 #67 嘔吐、#68 FN、#69 irAE、#71 CIPN 各專題深化
+- **關鍵字**：CTCAE、自我分級、急診、衛教
 
 ### 78. 化療後感染風險與預防：G-CSF、抗生素 prophylaxis 怎麼用
 

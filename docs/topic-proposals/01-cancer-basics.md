@@ -92,13 +92,17 @@
 - **差異化**：補上 MRD detection 與抗藥性追蹤的進階用途，中文網路極少寫
 - **關鍵字**：液態切片、ctDNA、MRD、基因檢測
 
-### 12. 腫瘤指數每三個月追蹤就足夠了嗎？復發追蹤策略
+### 12. 癌症期別 Stage 1/2/3/4 到底怎麼分？AJCC 9th 實證版
 
-- **titleEn**: Surveillance after curative-intent cancer treatment
-- **Slug**: `cancer-surveillance-strategy`
-- **Patient query**: 「治療結束後多久要回診？」「要不要每年做 PET？」
-- **差異化**：依癌別給 NCCN 建議追蹤頻率 + 何時可降頻
-- **關鍵字**：追蹤、復發、surveillance、衛教
+- **titleEn**: Cancer staging explained: AJCC 9th edition and same-stage heterogeneity
+- **Slug**: `cancer-staging-ajcc-9-explained`
+- **Patient query**: 「醫師說我是第三期是不是很嚴重？」「同樣第二期為什麼有人活得短？」
+- **差異化（實證反超）**：
+  - 競品（康健、Hello 醫師、Bowtie）只給籠統 1/2/3/4 + TNM 字面解釋
+  - 本篇用 AJCC 9th edition 並列 anatomic stage vs prognostic stage（乳癌、攝護腺、頭頸已採用），實際解釋「同期不同預後」原因
+  - 每個常見癌別（乳、肺、大腸、肝、胃、攝護腺）附 NCCN nomogram 連結 + 5-yr OS with 95% CI
+  - 直接破除「第四期 = 末期」迷思（與 #08 內鏈）
+- **關鍵字**：AJCC、TNM、staging、prognostic stage、衛教
 
 ### 13. 癌症會遺傳嗎？BRCA、Lynch 該不該做基因檢測？
 
