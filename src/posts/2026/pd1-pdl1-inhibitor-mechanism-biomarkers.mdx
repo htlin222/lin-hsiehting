@@ -1,0 +1,175 @@
+---
+title: "免疫治療 PD-1、PD-L1 怎麼運作？什麼人有效？"
+titleEn: "How PD-1 and PD-L1 inhibitors work and who benefits"
+date: "05/11/2026"
+frontmatter: "免疫治療不是萬靈丹：PD-L1 表現量、TMB、MSI 三個 biomarker 才是決定是否有效的關鍵；本文整理 PD-1／PD-L1 抑制劑的機轉差異、各癌別 biomarker 切點與 NCCN 選擇邏輯。"
+tags: ["免疫治療", "PD-1", "PD-L1", "biomarker", "TMB", "MSI", "衛教"]
+medical: true
+medicalCondition: "免疫檢查點抑制劑治療 (Immune checkpoint inhibitor therapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "免疫治療誰有效？"
+    a: "沒有單一 biomarker 能 100% 預測，但臨床上會看三個指標：(1) PD-L1 表現量（NSCLC 看 TPS、胃癌／子宮頸癌／三陰性乳癌看 CPS、泌尿上皮癌看 IC%），(2) 腫瘤突變負擔 TMB（≥ 10 mut/Mb 為 TMB-high），(3) 微衛星不穩定性 MSI-H／錯配修復缺失 dMMR。其中以 MSI-H／dMMR 對 PD-1 抑制劑反應最一致，跨癌別都有效。"
+  - q: "TPS 50% 是什麼意思？"
+    a: "TPS（Tumor Proportion Score）是非小細胞肺癌 PD-L1 IHC 的判讀方式，計算腫瘤細胞中 PD-L1 染色陽性的百分比。TPS ≥ 50% 屬於高表現，KEYNOTE-024 試驗顯示這群病人單用 pembrolizumab 第一線 mOS 達 26.3 個月，比化療延長近 12 個月，因此被列為第一線 category 1 preferred 選項。TPS 1–49% 仍可用免疫治療，但通常會合併化療。"
+  - q: "PD-L1 陰性還能打嗎？"
+    a: "可以，但效益較小，需要與化療合併或考慮其他 biomarker。例如 KEYNOTE-189 在 NSCLC 全族群（包含 TPS < 1%）顯示 pembrolizumab 加化療仍延長 mOS（22.0 vs. 10.7 個月）。若 PD-L1 陰性但 TMB-high 或 MSI-H／dMMR，免疫治療仍是合理選項；若三個 biomarker 都陰性，傳統化療或標靶可能比免疫治療更合適。"
+  - q: "TMB 與 MSI 是什麼？兩者有什麼不同？"
+    a: "TMB（Tumor Mutational Burden）是腫瘤每百萬鹼基的非同義突變數，反映腫瘤產生新抗原的潛能；FDA 以 ≥ 10 mut/Mb 作為 pembrolizumab 跨癌別適應症的切點（KEYNOTE-158）。MSI-H／dMMR 則是 DNA 錯配修復系統失能造成的高突變狀態，常見於大腸癌、子宮內膜癌、部分胃癌。MSI-H 通常 TMB 也偏高，但 TMB-high 不一定是 MSI-H；兩者都對 PD-1 抑制劑反應較好，但臨床判讀方式與檢驗平台不同。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+免疫治療不是「打了就有效」的萬靈丹。是否有效取決於三個 biomarker：(1) PD-L1 表現量、(2) 腫瘤突變負擔（TMB）、(3) 微衛星不穩定性（MSI）／錯配修復狀態。本文先解釋 PD-1 與 PD-L1 抑制劑為什麼能解除 T 細胞煞車、再對照 NSCLC、胃癌、三陰性乳癌、泌尿上皮癌、大腸癌的 biomarker 切點與代表試驗，並說明哪些族群不適合接受免疫治療。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知腫瘤可能適合免疫治療、想了解 PD-L1／TMB／MSI 報告怎麼看的病友與家屬，以及在門診常被詢問「TPS 多少才能打」的同業。實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## T 細胞為什麼需要被「解除煞車」？
+
+人體的細胞毒性 T 細胞（CD8+ T cell）能辨識腫瘤表面的新抗原並將其殺死。為避免免疫系統攻擊正常細胞，T 細胞表面有一套「免疫檢查點」（immune checkpoint），其中最重要的兩個是 CTLA-4 與 PD-1。當 PD-1 與腫瘤表面的 PD-L1 結合，T 細胞會收到「不要攻擊」訊號而停手——許多腫瘤就是利用大量表現 PD-L1 來逃避免疫殺傷。
+
+免疫檢查點抑制劑（immune checkpoint inhibitor, ICI）的作用，就是用單株抗體擋住 PD-1 或 PD-L1 之間的結合，讓 T 細胞重新辨認並攻擊腫瘤。這是一種「解除煞車」而非「踩油門」的策略，因此療效高度依賴病人本身有沒有可用的 T 細胞與可辨認的新抗原——這也解釋了為什麼 biomarker 這麼重要。
+
+## PD-1 抑制劑與 PD-L1 抑制劑有什麼差別？
+
+兩者作用在同一條訊號軸的不同端，但核准適應症與部分試驗結果略有差異。
+
+| 類別 | 代表藥物 | 結合對象 | 常見核准適應症（部分） |
+|---|---|---|---|
+| Anti-PD-1 | pembrolizumab、nivolumab | T 細胞上的 PD-1 | NSCLC、黑色素瘤、頭頸癌、胃癌、MSI-H／TMB-high 跨癌別 |
+| Anti-PD-L1 | atezolizumab、durvalumab、avelumab | 腫瘤／免疫細胞上的 PD-L1 | 泌尿上皮癌、肝癌、SCLC、Merkel cell carcinoma、NSCLC |
+
+<Callout type="tip" title="臨床上實務差異">
+PD-1 抑制劑同時阻斷 PD-L1 與 PD-L2 兩條配體訊號；PD-L1 抑制劑只擋 PD-L1，但會留下 PD-L2／PD-1 的訊號（部分研究認為這可能降低肺炎發生率）。實務上選擇仍以「該癌別、該線數的證據強度」為準，不是「PD-1 一定比 PD-L1 強」。
+</Callout>
+
+## 三個關鍵 biomarker：怎麼看、切點在哪？
+
+### Biomarker 與癌別對照表
+
+| Biomarker | 判讀方式 | 切點 | 主要癌別 | 代表試驗 |
+|---|---|---|---|---|
+| **PD-L1 TPS** | 腫瘤細胞 PD-L1 染色比例 | ≥ 50% / 1–49% / < 1% | NSCLC | KEYNOTE-024、KEYNOTE-189 |
+| **PD-L1 CPS** | （腫瘤＋免疫細胞 PD-L1+）／腫瘤總數 × 100 | ≥ 1、≥ 10 | 胃癌、食道癌、子宮頸癌、三陰性乳癌、頭頸癌 | KEYNOTE-355、KEYNOTE-590 |
+| **PD-L1 IC%** | 腫瘤浸潤免疫細胞 PD-L1 比例 | ≥ 5%（SP142） | 泌尿上皮癌（早期）、TNBC（已淘汰） | IMvigor130、IMpassion130 |
+| **TMB-high** | 全外顯子或大型 panel 計算 mut/Mb | ≥ 10 mut/Mb（FoundationOne CDx） | 跨癌別（FDA 2020 核准） | KEYNOTE-158 |
+| **MSI-H／dMMR** | PCR 微衛星片段／IHC 4 蛋白 | 任一陽性 | 大腸癌、子宮內膜癌、胃癌、部分胰臟癌 | KEYNOTE-177、KEYNOTE-164 |
+
+<Callout type="warning" title="CPS、TPS、IC% 不能互相換算">
+不同癌別、不同藥物使用不同的 PD-L1 抗體（22C3、28-8、SP263、SP142）與計分方式。NSCLC 看 TPS、胃癌與 TNBC 看 CPS、泌尿上皮癌（atezolizumab 早期）看 IC%——拿到病理報告時務必確認用的是哪一支抗體與哪一種分數，否則切點完全不同。
+</Callout>
+
+### 代表試驗：四組 biomarker × 癌別範例
+
+<Steps>
+  <div>
+    ### NSCLC × PD-L1 TPS ≥ 50%（KEYNOTE-024）
+
+    N = 305，TPS ≥ 50% 的轉移性 NSCLC 第一線。Pembrolizumab 單藥 vs. 含鉑化療：mOS 26.3 vs. 14.2 個月（HR 0.62），mPFS 7.7 vs. 5.5 個月。確立了「TPS ≥ 50% 第一線單用免疫治療」的策略。
+  </div>
+  <div>
+    ### NSCLC × 全 PD-L1 範圍（KEYNOTE-189）
+
+    N = 616，非鱗狀 NSCLC 第一線，pembrolizumab 加 pemetrexed／鉑類 vs. 化療。整體族群 mOS 22.0 vs. 10.7 個月（HR 0.56）；TPS < 1% 子族群仍有獲益（mOS HR 0.59）。確立了「PD-L1 不論高低都可加免疫治療」的化療合併策略。
+  </div>
+  <div>
+    ### 三陰性乳癌 × PD-L1 CPS ≥ 10（KEYNOTE-355）
+
+    N = 847，轉移性 TNBC 第一線，pembrolizumab 加化療。CPS ≥ 10 子族群 mOS 23.0 vs. 16.1 個月（HR 0.73）；CPS < 10 看不到顯著獲益。提示「CPS 切點的存在感」非常明確。
+  </div>
+  <div>
+    ### dMMR 大腸癌（KEYNOTE-177）與 TMB-high 跨癌別（KEYNOTE-158）
+
+    KEYNOTE-177：dMMR／MSI-H 第一線轉移性大腸癌，pembrolizumab vs. 化療，mPFS 16.5 vs. 8.2 個月（HR 0.60）。KEYNOTE-158：跨 10 種腫瘤類別、TMB ≥ 10 mut/Mb 的病人 ORR 29% vs. TMB < 10 的 6%，因此 FDA 於 2020 年核准 pembrolizumab 對 TMB-high 跨癌別第二線使用。
+  </div>
+</Steps>
+
+## 醫師建議免疫治療時，我該問什麼？
+
+<Steps>
+  <div>
+    ### Step 1：先問 biomarker 報告
+
+    要拿到三個檢驗結果：(1) PD-L1 IHC 分數（哪一支抗體？TPS、CPS 還是 IC%？）、(2) 是否有做 NGS／TMB、(3) MSI 或 MMR 蛋白 IHC。沒有 biomarker 而被推銷免疫治療，要請醫師說明證據來源。
+  </div>
+  <div>
+    ### Step 2：對照癌別與切點
+
+    用上面的對照表確認自己的 biomarker 是否落在「第一線單藥」、「第一線合併化療」、「第二線以後」哪一格。同樣 PD-L1 50% 在 NSCLC 是 first-line monotherapy 證據強，但在胃癌不是同樣切點與選擇。
+  </div>
+  <div>
+    ### Step 3：評估利弊與替代方案
+
+    確認：(1) 自己有沒有自體免疫疾病、器官移植史等禁忌；(2) 副作用（免疫相關不良反應, irAE）監測計畫；(3) 健保給付與自費差異；(4) 若 biomarker 不利，是否有更合適的化療、標靶或臨床試驗替代。
+  </div>
+</Steps>
+
+## 哪些族群不適合 PD-1／PD-L1 抑制劑？
+
+<Callout type="warning" title="禁忌與謹慎使用族群">
+這些情境並非絕對禁止，但需要與多專科團隊評估後再決定，部分族群在仿單上明列為禁忌。
+</Callout>
+
+- **活動性自體免疫疾病**：紅斑性狼瘡、發炎性腸道疾病、未控制的甲狀腺風暴、活動期類風濕性關節炎等；接受 ICI 後極可能加重原病或誘發致命性 irAE。
+- **實體器官或造血幹細胞移植受贈者**：ICI 可能誘發移植物排斥；腎、肝、心臟移植者通報排斥率高，需個案討論。
+- **使用全身性類固醇（潑尼松龍 ≥ 10 mg/day prednisone equivalent）**：可能降低 ICI 反應率；若是疾病必要使用，須權衡。
+- **EGFR 或 ALK 突變陽性的 NSCLC 第一線**：多項試驗顯示 ICI 對驅動突變陽性族群效益不如標靶藥物，NCCN 不建議第一線使用 ICI（含合併化療），應優先 EGFR-TKI 或 ALK 抑制劑。
+- **間質性肺病或既往放射性肺炎**：肺炎為 ICI 嚴重 irAE，既有肺纖維化會大幅提升風險。
+- **妊娠與哺乳期**：ICI 可能影響胎兒免疫耐受，建議避免使用。
+
+## 副作用：免疫相關不良反應（irAE）
+
+ICI 的副作用模式與化療完全不同：來自免疫系統「過度活化」攻擊正常組織，可發生於治療開始的任何時間點，甚至停藥數個月後。常見 irAE 包括：
+
+- **皮膚**：皮疹、白斑、搔癢（最常見，約 30–40%）
+- **腸道**：免疫相關大腸炎、腹瀉（嚴重時需高劑量類固醇，5–10%）
+- **內分泌**：甲狀腺異常（10–20%）、垂體炎、腎上腺功能不全、第 1 型糖尿病
+- **肺**：免疫相關肺炎（3–5%；anti-PD-1 較 anti-PD-L1 略高）
+- **肝**：免疫相關肝炎、轉胺酶上升
+- **心臟**：心肌炎（< 1%，但致死率高）
+- **神經**：重症肌無力、Guillain-Barré、腦炎（罕見但嚴重）
+
+整體第 3 級以上 irAE 比例：anti-PD-1／PD-L1 單藥約 10–15%、合併化療約 20–25%、合併 anti-CTLA-4 則上升至 40–55%。詳細監測與處置流程請見後續 irAE 專文（撰寫中）。
+
+## 「打不打得到」與「打了會不會贏」是兩回事
+
+<Callout type="warning" title="biomarker 不是 100%">
+PD-L1 高表現提高反應機會，但不是「打了一定有效」。臨床上仍見到 TPS ≥ 50% 卻完全無反應，或 PD-L1 陰性卻長期完全反應的案例。biomarker 是「機率工具」，無法直接預測個別病人的療效——任何醫師告訴你「打了一定會好」都應該謹慎。
+</Callout>
+
+此外要認識三個免疫治療特有的反應型態：
+
+1. **Pseudoprogression（偽惡化）**：影像上看似腫瘤變大，實際是免疫細胞浸潤。需配合症狀評估；iRECIST 標準允許在身體狀況穩定時，於 4–8 週後重新影像確認。
+2. **Hyperprogression（超快惡化）**：少數病人（約 9–29%，定義不一）治療後反而比預期更快惡化，可能與 MDM2 amplification、EGFR 突變等因素有關。
+3. **Primary resistance（原發抗藥）**：50–60% 病人對 PD-1／PD-L1 抑制劑沒有反應，原因包括 T 細胞缺乏、JAK1／2 突變、β2-微球蛋白缺失、腫瘤微環境免疫排斥型態等。
+
+## 重點整理
+
+- **機轉**：ICI 解除 PD-1／PD-L1 對 T 細胞的煞車，讓 T 細胞重新攻擊腫瘤。
+- **anti-PD-1 vs. anti-PD-L1**：訊號軸同一條，臨床選擇依「該癌別、該線數有沒有證據」而非「哪邊比較強」。
+- **三個 biomarker**：PD-L1（TPS／CPS／IC%）、TMB-high（≥ 10 mut/Mb）、MSI-H／dMMR。MSI-H／dMMR 預測力跨癌別最穩。
+- **不適合 ICI 的族群**：活動性自體免疫疾病、器官移植、EGFR／ALK 突變 NSCLC 第一線、活動性間質性肺病。
+- **biomarker 是機率，不是承諾**：PD-L1 高也可能無效、PD-L1 低也可能長期反應，需以臨床整體評估搭配。
+
+<Divider />
+
+## 參考文獻
+
+1. Reck M, Rodríguez-Abreu D, Robinson AG, et al. **Pembrolizumab versus Chemotherapy for PD-L1-Positive Non-Small-Cell Lung Cancer** (KEYNOTE-024). *N Engl J Med.* 2016;375(19):1823-1833. [doi:10.1056/NEJMoa1606774](https://doi.org/10.1056/NEJMoa1606774)
+2. Gandhi L, Rodríguez-Abreu D, Gadgeel S, et al. **Pembrolizumab plus Chemotherapy in Metastatic Non-Small-Cell Lung Cancer** (KEYNOTE-189). *N Engl J Med.* 2018;378(22):2078-2092. [doi:10.1056/NEJMoa1801005](https://doi.org/10.1056/NEJMoa1801005)
+3. Cortes J, Rugo HS, Cescon DW, et al. **Pembrolizumab plus Chemotherapy in Advanced Triple-Negative Breast Cancer** (KEYNOTE-355). *N Engl J Med.* 2022;387(3):217-226. [doi:10.1056/NEJMoa2202809](https://doi.org/10.1056/NEJMoa2202809)
+4. André T, Shiu KK, Kim TW, et al. **Pembrolizumab in Microsatellite-Instability-High Advanced Colorectal Cancer** (KEYNOTE-177). *N Engl J Med.* 2020;383(23):2207-2218. [doi:10.1056/NEJMoa2017699](https://doi.org/10.1056/NEJMoa2017699)
+5. Marabelle A, Fakih M, Lopez J, et al. **Association of tumour mutational burden with outcomes in patients with advanced solid tumours treated with pembrolizumab** (KEYNOTE-158). *Lancet Oncol.* 2020;21(10):1353-1365. [doi:10.1016/S1470-2045(20)30445-9](https://doi.org/10.1016/S1470-2045(20)30445-9)
+6. Wolchok JD, Chiarion-Sileni V, Gonzalez R, et al. **Overall Survival with Combined Nivolumab and Ipilimumab in Advanced Melanoma** (CheckMate-067). *N Engl J Med.* 2017;377(14):1345-1356. [doi:10.1056/NEJMoa1709684](https://doi.org/10.1056/NEJMoa1709684)
+7. Socinski MA, Jotte RM, Cappuzzo F, et al. **Atezolizumab for First-Line Treatment of Metastatic Nonsquamous NSCLC** (IMpower150). *N Engl J Med.* 2018;378(24):2288-2301. [doi:10.1056/NEJMoa1716948](https://doi.org/10.1056/NEJMoa1716948)
+8. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Management of Immunotherapy-Related Toxicities, v1.2026.** [nccn.org](https://www.nccn.org/guidelines/category_3)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

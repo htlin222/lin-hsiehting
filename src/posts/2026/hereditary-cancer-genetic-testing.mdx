@@ -1,0 +1,220 @@
+---
+title: "癌症會遺傳嗎？BRCA、Lynch 該不該做基因檢測"
+titleEn: "Hereditary cancer syndromes: when to test for BRCA and Lynch"
+date: "05/11/2026"
+frontmatter: "5–10% 癌症為遺傳性，BRCA1/2 與 Lynch 是最常見的兩個症候群；符合 NCCN 家族史條件者應接受 germline 檢測。本文整理檢測時機、台灣健保與自費差異、以及陽性後的監測與預防策略。"
+tags: ["遺傳性癌症", "BRCA", "Lynch", "HBOC", "基因檢測", "衛教"]
+medical: true
+medicalCondition: "遺傳性癌症症候群 (Hereditary cancer syndromes)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "媽媽是乳癌，我自己要不要驗 BRCA？"
+    a: "看媽媽診斷時的年齡、族系裡其他癌症、以及她本人是否驗過。若母親 50 歲前發病、有第二原發癌、家族裡還有其他乳癌／卵巢癌／攝護腺癌／胰臟癌，符合 NCCN HBOC 家族史條件，建議先讓母親（受影響者）驗；母親陽性，子女才有明確的 single-site 檢測標的。母親若已過世或無法取得檢體，符合條件的健康親屬可直接做 germline panel。"
+  - q: "Lynch syndrome 是什麼？"
+    a: "Lynch 是錯配修復基因（MLH1、MSH2、MSH6、PMS2、EPCAM）異常造成的遺傳性癌症症候群，會明顯提高大腸癌、子宮內膜癌、卵巢癌、胃癌、泌尿上皮癌等風險。約 1/279 一般族群帶因，但在所有大腸癌中佔 2–4%、子宮內膜癌中佔 2–3%。陽性者 25 歲起每 1–2 年大腸鏡，是目前實證最強的監測策略。"
+  - q: "台灣健保有給付 BRCA 檢測嗎？"
+    a: "有條件給付。健保自 2024 年起在乳癌、卵巢／輸卵管／原發腹膜癌、轉移性攝護腺癌、轉移性胰臟癌等族群下，當其結果會直接影響治療選擇（例如是否使用 PARP 抑制劑）時，提供 BRCA1/2 germline 或 somatic 檢測給付。健康親屬的 cascade 檢測仍多為自費，依檢驗範圍與實驗室約 NTD 7,000–25,000；多基因 panel 自費約 NTD 25,000–60,000。"
+  - q: "驗陽性之後會怎麼樣？"
+    a: "陽性不等於一定會得癌，但需要進入專屬監測流程。BRCA1/2 帶因者建議 25 歲起每年乳房 MRI（30 歲後加乳房攝影），並與婦產科討論 35–45 歲（BRCA1）或 40–45 歲（BRCA2）完成 risk-reducing salpingo-oophorectomy。Lynch 帶因者建議 20–25 歲起每 1–2 年大腸鏡，子宮內膜／卵巢風險可考慮停經後預防性切除。整個過程多以遺傳諮詢師主導，配合家族成員 cascade testing。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+約 5–10% 的癌症具有明確的遺傳致病基因，其中 **HBOC（BRCA1/2）與 Lynch syndrome（MLH1/MSH2/MSH6/PMS2/EPCAM）** 合計佔多數。NCCN HBOC v3.2025 與 NCCN Genetic/Familial High-Risk Assessment: Colorectal v1.2025 都把家族史條件寫得很清楚：母系或父系一等親有 50 歲前乳癌、男性乳癌、卵巢癌、雙側乳癌、家族裡 ≥ 2 一等親乳癌、或大腸癌 < 50 歲、子宮內膜癌 < 50 歲，都應轉介遺傳諮詢與 germline 檢測。台灣健保在 2024 年起對符合條件的乳癌、卵巢癌、攝護腺癌、胰臟癌族群提供 BRCA 給付；自費 multigene panel 約 NTD 25,000–60,000。本文整理「我該不該驗、什麼時候驗、驗了之後做什麼」。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為 (1) 家族裡有乳癌／卵巢癌／大腸癌、想知道自己要不要驗的健康親屬，(2) 已被診斷癌症、想理解 BRCA／Lynch 檢測會如何改變治療的病友與家屬，(3) 第一線臨床醫師複習 NCCN 轉介條件與台灣給付現況。所有檢測與監測決策請與您的主治醫師、遺傳諮詢師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼遺傳性癌症值得認真討論？
+
+一般族群的乳癌一生風險約 12%、大腸癌約 4%；但帶有 BRCA1 致病變異的女性，乳癌一生風險上升到 60–72%、卵巢癌 39–44%。Lynch 帶因者的大腸癌一生風險依基因不同，約 10–46%、子宮內膜癌 13–49%。**意義是：在症狀出現前，可以用 MRI、大腸鏡、預防性手術把這個風險拉回甚至低於一般族群水準。**
+
+研究顯示在 BRCA1/2 帶因者執行預防性卵巢輸卵管切除（RRSO）可顯著降低卵巢癌死亡率與整體死亡率；在 Lynch 帶因者每 1–2 年大腸鏡篩檢可顯著降低 CRC 相關死亡。這是少數「測得到、且有實證可改變預後」的場景。
+
+## 四個常見遺傳性癌症症候群一覽
+
+| 症候群 | 致病基因 | 主要相關癌種 | 代表性 lifetime risk | 建議檢測對象 |
+|---|---|---|---|---|
+| **HBOC**（遺傳性乳癌卵巢癌） | BRCA1, BRCA2 | 乳癌、卵巢癌、攝護腺癌、胰臟癌、男性乳癌 | 女性乳癌 60–72%（BRCA1）／55–69%（BRCA2）；卵巢癌 39–44% / 11–17% | 乳癌 < 50 歲、雙側乳癌、男性乳癌、卵巢／輸卵管癌、轉移性攝護腺癌、家族 ≥ 2 一等親乳癌 |
+| **PALB2 高風險** | PALB2 | 乳癌（女性）、胰臟癌 | 女性乳癌 53%（80 歲）；胰臟癌 2–3 倍 | HBOC 條件下 BRCA 陰性、家族有胰臟癌或乳癌 |
+| **Lynch syndrome** | MLH1, MSH2, MSH6, PMS2, EPCAM | 大腸癌、子宮內膜癌、卵巢癌、胃癌、泌尿上皮癌、小腸癌 | CRC 10–46%、子宮內膜癌 13–49%（依基因） | CRC < 50 歲、子宮內膜癌 < 50 歲、Amsterdam II / Bethesda 條件、腫瘤 MMR-deficient |
+| **Li-Fraumeni** | TP53 | 軟組織肉瘤、骨肉瘤、乳癌、腦瘤、腎上腺皮質癌、白血病 | 累積癌症風險 70–90%（70 歲） | 嬰幼兒 / 兒童多發癌、Chompret criteria、年輕雙側乳癌 BRCA 陰性 |
+| **HDGC**（遺傳性瀰漫性胃癌） | CDH1 | 瀰漫性胃癌、小葉乳癌 | 瀰漫性胃癌 ≈ 30–70%；小葉乳癌 ≈ 39% | Diffuse-type 胃癌 < 50 歲、家族有 diffuse 胃癌 + 小葉乳癌 |
+
+<Callout type="tip" title="為什麼 panel 不只是 BRCA">
+2024 ASCO/SSO germline testing 指引建議「符合 BRCA 檢測條件者，同時做 multigene panel」（含 PALB2、CHEK2、ATM、TP53、PTEN、CDH1 等），因為單驗 BRCA 會漏掉約 4–5% 其他高風險基因突變，而這些基因都有可執行的 surveillance 建議。
+</Callout>
+
+## 我該不該驗？四步驟流程
+
+<Steps>
+  <div>
+    ### 第一步 — 自己畫家族癌症圖
+
+    把母系與父系三代的癌症診斷、發病年齡寫下來（**特別是一等親、二等親**）。重點抓：
+
+    - 50 歲前乳癌、卵巢／輸卵管／原發腹膜癌、男性乳癌、雙側乳癌、三陰性乳癌 < 60 歲
+    - 大腸癌 < 50 歲、子宮內膜癌 < 50 歲、同一人多發癌、家族 ≥ 3 人 Lynch 相關癌
+    - 轉移性攝護腺癌、轉移性胰臟癌、彌漫性胃癌
+    - 已知家族中有人帶 BRCA／MMR 致病變異
+  </div>
+  <div>
+    ### 第二步 — 對照 NCCN 條件決定要不要轉介
+
+    NCCN HBOC v3.2025 與 NCCN Lynch v1.2025 把上面這些條件整理成清單。**符合任一條，就應轉介遺傳諮詢與檢測**。在台灣，臨床上常見窗口：腫瘤內科、乳房外科、大腸直腸外科、婦癌科、醫學遺傳科。
+  </div>
+  <div>
+    ### 第三步 — 先讓「最有可能陽性的人」驗
+
+    最具效益的策略是讓**已罹癌、且最早發病者**先驗（informative testing）。一旦找到家族特定變異，其他健康親屬只需做 single-site 檢測（自費約 NTD 3,000–8,000，便宜很多）。若無受影響者可驗，健康親屬直接做 multigene panel 也可，但解讀更複雜。
+  </div>
+  <div>
+    ### 第四步 — 陽性後接 surveillance / 預防策略
+
+    陽性結果應在遺傳諮詢回報門診詳細解釋：監測時程、預防性手術選擇、家族 cascade testing、心理支持與保險／隱私議題。陰性「無此家族變異」者可回到一般族群篩檢，但若家族裡尚未找到致病變異，**個人陰性不代表家族陰性**，仍需依家族史調整。
+  </div>
+</Steps>
+
+## 適應症（什麼條件下健保給付 / 自費值得做）
+
+### 健保給付範圍（台灣，2024 年起）
+
+健保針對下列族群給付 BRCA1/2 檢測（用於決定 PARP 抑制劑等治療）：
+
+- **乳癌**：HER2 陰性高風險早期、轉移性 HER2 陰性
+- **卵巢／輸卵管／原發腹膜癌**：診斷時 germline + somatic 檢測
+- **轉移性攝護腺癌**：mCRPC 並考慮 olaparib／talazoparib
+- **轉移性胰臟癌**：考慮 olaparib（POLO 試驗適應症）
+
+> 給付細節以最新健保署公告與各院檢驗合約為準；診斷醫師會在開單系統評估是否符合給付條件。
+
+### 自費場景（健保不給付，但臨床有價值）
+
+- 健康親屬 cascade testing（家族已找到致病變異）：single-site，約 NTD 3,000–8,000
+- 不符合健保給付的家族史驗證：multigene panel 約 NTD 25,000–60,000
+- 男性乳癌 / 早發攝護腺癌且家族史強烈
+- 未到 metastatic 階段、但臨床決策需要的攝護腺癌患者
+
+## 禁忌症與限制
+
+<Callout type="warning" title="VUS 與不確定變異（Variant of Uncertain Significance）">
+panel 越大，回報「VUS（意義未明變異）」的機率也越高，可達 20–40%。VUS **不應據以做預防性手術，也不應改變監測強度**；多數 VUS 數年後會被重新分類為良性（多）或致病（少）。請務必由遺傳諮詢師依 ACMG 2015 criteria 判讀，並在實驗室發布 reclassification 時主動更新。
+</Callout>
+
+其他需要審慎評估的情境：
+
+- **未成年人**：除非是 Li-Fraumeni、APC、RET 等兒童期就會發病的症候群，BRCA／Lynch 等成人發病基因建議**待 18 歲後本人決定**才檢測。
+- **保險與心理影響**：陽性結果可能影響商業保單核保（《健康保險法》在台灣對基因歧視保護尚不完整），需於遺傳諮詢時討論。
+- **直接面對消費者（DTC）試劑**：23andMe 等只測少數固定變異（如三個 Ashkenazi 創始者突變），**陰性不能排除 BRCA 帶因**，只有臨床等級全長定序才算完整。
+- **單純血液 NGS 報「BRCA somatic」**：腫瘤組織中的 BRCA 變異不一定是 germline，仍需另外抽血做 germline 確認才能做 cascade testing。
+
+## 健保 vs. 自費差異速查表
+
+| 情境 | 健保 | 自費 panel | 備註 |
+|---|---|---|---|
+| 乳癌 HER2−，有家族史 | ✅（指定條件下）| 可加做 panel | 有家族史但年紀 > 50、單側、無其他癌種者多需自費 |
+| 卵巢癌新診斷 | ✅ | – | 健保通常給付 BRCA1/2；panel 自費補 |
+| 轉移性攝護腺癌 | ✅（germline + somatic） | – | 用於決定 PARP 治療 |
+| 轉移性胰臟癌 | ✅ | – | POLO trial 適應症 |
+| 大腸癌 < 50 歲 | 多數院內以 IHC + MSI 先做 tumor screening；germline 自費或專案 | panel 約 NTD 30,000+ | 多採 universal MMR IHC tumor screening 後再決定 |
+| 子宮內膜癌 < 50 歲 / Lynch 家族 | 同上 | panel 自費 | 部分婦癌中心提供研究專案 |
+| 健康親屬 cascade testing | ❌ | single-site 約 NTD 3,000–8,000 | 已知家族變異最具成本效益 |
+| 健康人「我擔心遺傳」 | ❌ | panel 約 NTD 25,000–60,000 | 應先評估家族史是否符合 NCCN 條件 |
+
+## 陽性後 surveillance 建議
+
+### BRCA1/2 帶因者（女性）
+
+- **乳房**：18 歲起自我檢查；25 歲起每年 contrast-enhanced 乳房 MRI；30 歲後加上每年乳房攝影（mammography）
+- **卵巢／輸卵管**：建議 35–40 歲（BRCA1）或 40–45 歲（BRCA2）完成 risk-reducing salpingo-oophorectomy（RRSO），子宮可留可不留依個案
+- **預防性乳房切除**：可降低乳癌風險約 90%，是個人選擇而非強制
+- **男性 BRCA 帶因者**：35 歲起乳房自我檢查與每年理學檢查；40 歲起與泌尿科討論攝護腺特異抗原（PSA）監測（BRCA2 證據較強）
+
+### Lynch 帶因者
+
+- **大腸鏡**：MLH1/MSH2 自 20–25 歲起、MSH6/PMS2 自 30–35 歲起，每 1–2 年一次（PLSD 與 InSiGHT 證據最強）
+- **子宮內膜／卵巢**：30–35 歲起與婦產科討論年度經陰道超音波 ± 子宮內膜抽吸；40–45 歲完成生育後可考慮預防性子宮 + 雙側輸卵管卵巢切除
+- **胃 / 小腸 / 泌尿上皮**：依個案家族史與基因（特別是 MSH2、亞洲族群）考慮上消化道內視鏡與尿液細胞學
+- **阿斯匹靈**：CAPP2 試驗顯示每日 600 mg 阿斯匹靈持續 ≥ 2 年可降低 Lynch 帶因者 CRC 約 50%；目前共識劑量 75–300 mg/day，需與醫師評估出血風險
+
+### Li-Fraumeni 帶因者
+
+- 全身 MRI 每年；乳癌、腦瘤、軟組織肉瘤的個別監測；避免治療性放射線（RT 引發二次癌風險高）
+- Toronto / SickKids 研究顯示完整監測可顯著降低死亡率
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 把家族史寫成一張紙
+
+    條列三代血親每位的（1）癌症類型、（2）診斷年齡、（3）目前狀況。母系與父系都要寫。若有人在外院、外縣市治療，事先請家屬幫忙釐清病理報告與診斷年齡。
+  </div>
+  <div>
+    ### 找對窗口
+
+    台灣多數醫學中心有「遺傳諮詢門診／高風險諮詢門診」（例如和信治癌中心醫院、台大、林口長庚、北醫等），由腫瘤內科或醫學遺傳科主導，搭配遺傳諮詢師（genetic counselor）。也可以從目前主治醫師（乳房外科、大腸直腸外科、婦癌科、腫瘤內科）轉介。
+  </div>
+  <div>
+    ### 與醫師／諮詢師討論時可問的問題
+
+    1. 我的家族史符合哪一條 NCCN 條件？
+    2. 應該先讓誰驗？我自己驗 vs. 媽媽（已罹癌者）驗，差別是什麼？
+    3. 健保有沒有給付？若沒有，自費 panel 推薦哪個範圍？
+    4. 結果如果是 VUS 怎麼辦？多久會重新分類？
+    5. 結果若是陽性，哪間醫院的 surveillance 流程最完整？
+    6. 我的兄弟姊妹、子女接下來要怎麼安排 cascade testing？
+    7. 是否會影響我或家人未來投保？商業保單與健保的差別？
+  </div>
+  <div>
+    ### 不要自行買 DTC 套組做臨床決策
+
+    23andMe 等消費級檢測雖能報幾個常見變異，但**陰性不能排除 BRCA／Lynch 帶因**，臨床決策仍需以醫療等級實驗室報告為準。
+  </div>
+</Steps>
+
+## 哪些臨床試驗 / 註冊登錄正在進行？
+
+<LinkCard
+  href="https://clinicaltrials.gov/study/NCT02620852"
+  title="CAPP3 (NCT02620852)"
+  description="第三期、阿斯匹靈三劑量於 Lynch 帶因者 CRC 預防的劑量選擇試驗，2025–2026 開始陸續報告長期結果。"
+  domain="clinicaltrials.gov"
+/>
+
+<LinkCard
+  href="https://www.plsd.eu/"
+  title="PLSD - Prospective Lynch Syndrome Database"
+  description="國際 Lynch 帶因者前瞻性資料庫，目前提供分基因、分性別的累積癌症風險與監測效益估計。"
+  domain="plsd.eu"
+/>
+
+<LinkCard
+  href="https://clinicaltrials.gov/study/NCT00321802"
+  title="EMBRACE (NCT00321802)"
+  description="英國領導的 BRCA1/2 帶因者長期隊列研究，提供乳癌、卵巢癌風險與 RRSO 效益的世代資料。"
+  domain="clinicaltrials.gov"
+/>
+
+<Divider />
+
+## 參考文獻
+
+1. Tutt ANJ, Garber JE, Kaufman B, et al. **Adjuvant Olaparib for Patients with BRCA1- or BRCA2-Mutated Breast Cancer** (OlympiA). *N Engl J Med.* 2021;384(25):2394-2405. [doi:10.1056/NEJMoa2105215](https://doi.org/10.1056/NEJMoa2105215)
+2. Bedrosian I, Somerfield MR, Achatz MI, et al. **Germline Testing in Patients With Breast Cancer: ASCO–Society of Surgical Oncology Guideline.** *J Clin Oncol.* 2024;42(5):584-604. [doi:10.1200/JCO.23.02225](https://doi.org/10.1200/JCO.23.02225)
+3. Kuchenbaecker KB, Hopper JL, Barnes DR, et al. **Risks of Breast, Ovarian, and Contralateral Breast Cancer for BRCA1 and BRCA2 Mutation Carriers.** *JAMA.* 2017;317(23):2402-2416. [doi:10.1001/jama.2017.7112](https://doi.org/10.1001/jama.2017.7112)
+4. US Preventive Services Task Force, Owens DK, Davidson KW, et al. **Risk Assessment, Genetic Counseling, and Genetic Testing for BRCA-Related Cancer: USPSTF Recommendation Statement.** *JAMA.* 2019;322(7):652-665. [doi:10.1001/jama.2019.10987](https://doi.org/10.1001/jama.2019.10987)
+5. Dominguez-Valentin M, Sampson JR, Seppälä TT, et al. **Cancer risks by gene, age, and gender in 6350 carriers of pathogenic mismatch repair variants** (Prospective Lynch Syndrome Database). *Genet Med.* 2020;22(1):15-25. [doi:10.1038/s41436-019-0489-y](https://doi.org/10.1038/s41436-019-0489-y)
+6. Dominguez-Valentin M, Plazzer JP, Sampson JR, et al. **No Difference in Penetrance between Truncating and Missense/Aberrant Splicing Pathogenic Variants in MLH1 and MSH2: A PLSD Study.** *J Clin Med.* 2021;10(13):2856. [doi:10.3390/jcm10132856](https://doi.org/10.3390/jcm10132856)
+7. Golan T, Hammel P, Reni M, et al. **Maintenance Olaparib for Germline BRCA-Mutated Metastatic Pancreatic Cancer** (POLO). *N Engl J Med.* 2019;381(4):317-327. [doi:10.1056/NEJMoa1903387](https://doi.org/10.1056/NEJMoa1903387)
+8. Manchanda R, Patel S, Gordeev VS, et al. **Cost-effectiveness of Population-Based BRCA1, BRCA2, RAD51C, RAD51D, BRIP1, PALB2 Mutation Testing in Unselected General Population Women.** *Nat Med.* 2019;25(11):1733-1739. [doi:10.1038/s41591-019-0589-x](https://doi.org/10.1038/s41591-019-0589-x)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

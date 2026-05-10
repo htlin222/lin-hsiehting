@@ -1,0 +1,258 @@
+---
+title: "化療嘔吐怎麼控制？高致吐 vs 中致吐 vs 低致吐用藥差別"
+titleEn: "Chemotherapy-induced nausea and vomiting: prevention by emetogenic risk"
+date: "05/11/2026"
+frontmatter: "化療嘔吐照 NCCN 2025/2026 致吐分級給藥可控制 80% 以上：高致吐方案需 4 種藥併用，中致吐 3 種，低致吐 1–2 種；本文整理預防方案、breakthrough rescue 處置與居家紅旗症狀。"
+tags: ["化療副作用", "CINV", "止吐", "NCCN", "衛教"]
+medical: true
+medicalCondition: "化療所致噁心嘔吐 (Chemotherapy-induced nausea and vomiting, CINV)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "化療一定會吐嗎？打止吐針還是吐怎麼辦？"
+    a: "不一定。能不能吐取決於化療藥本身的致吐風險（HEC ≥ 90% / MEC 30–90% / LEC 10–30% / Min < 10%），以及用對的預防組合。HEC 配 4 藥（NK1 + 5-HT3 + dexamethasone + olanzapine）下，急性期完全反應率約 70–80%。若已照分級用足預防仍嘔吐，屬於『突破性嘔吐』，建議聯絡照護團隊加開 olanzapine 5–10 mg、prochlorperazine 或 metoclopramide 救援，並評估脫水。"
+  - q: "olanzapine 為什麼會被當止吐藥？"
+    a: "Olanzapine 是非典型抗精神病藥，對多巴胺 D2、血清素 5-HT2/3、組織胺 H1 等多重受體都有阻斷作用，剛好涵蓋 CINV 的訊號通路。Navari 2016 NEJM 第三期試驗（n = 380）顯示加 olanzapine 10 mg × 4 天，急性期無噁心比率 74% vs. 45%，整體 120 小時 37% vs. 22%（p = 0.002）；ASCO 2020 已正式納入 HEC 四藥標準方案，目前也接受 5 mg 劑量以減少嗜睡。"
+  - q: "為什麼有的人吐得很嚴重，有的人完全不吐？"
+    a: "個人風險因子很重要：年齡 < 50 歲、女性、暈車史、孕吐史、低酒精攝取、焦慮體質都會升高風險。此外，前一週期若曾嚴重嘔吐，下一週期會出現『預期性嘔吐』（anticipatory CINV），對止吐藥反應差，反而是行為治療（放鬆、認知療法）與低劑量 lorazepam 較有效。"
+  - q: "止吐藥會不會有副作用？要注意什麼？"
+    a: "5-HT3 拮抗劑（ondansetron、palonosetron）常見便秘、頭痛，少數會 QT 延長；NK1 拮抗劑（aprepitant、fosaprepitant）為 CYP3A4 中度抑制劑，與 dexamethasone、warfarin、口服化療藥併用時須調劑量；olanzapine 主要副作用是嗜睡、姿勢性低血壓、血糖上升；dexamethasone 短期使用要注意失眠、血糖、消化性潰瘍。任何新症狀都應回報照護團隊。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+化療嘔吐並不是「吃苦當吃補」，而是可預防、可分級處理的副作用。依 **NCCN Antiemesis v2.2025（2026 適用）** 的致吐風險分級——高致吐 (HEC, ≥ 90%)、中致吐 (MEC, 30–90%)、低致吐 (LEC, 10–30%)、極低 (Minimal, < 10%)——配對對應的 4 藥 / 3 藥 / 1–2 藥預防方案，急性期完全反應率可達 70–80% 以上。本文整理 2026 年最新指引、突破性嘔吐救援、預期性嘔吐、以及哪些症狀必須立刻回急診。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為即將開始或正在接受化療的病友與家屬，以及第一年腫瘤科住院醫師、藥師與護理師。所有實際處方仍以您主治醫師的判斷與當地健保／自費可及性為準。
+</Callout>
+
+<Divider />
+
+## 為什麼化療會吐？三條神經訊號通路
+
+化療所致噁心嘔吐 (Chemotherapy-induced nausea and vomiting, CINV) 不是單一受體事件，而是三條訊號的整合：
+
+1. **腸道 enterochromaffin 細胞釋放 5-HT（血清素）**：作用在迷走神經 5-HT3 受體 → 急性期（< 24 小時）。
+2. **腦幹 area postrema 與孤束核釋放 substance P**：作用在 NK1 受體 → 延遲期（24–120 小時）。
+3. **大腦皮質與邊緣系統**：認知 / 焦慮 / 條件反射 → 預期性嘔吐。
+
+這也是為什麼預防策略是「多通路並阻」——5-HT3 拮抗劑顧急性期、NK1 拮抗劑顧延遲期、dexamethasone 全期增效、olanzapine 額外蓋多巴胺與組織胺通路。
+
+## 致吐風險分級（NCCN / ASCO / MASCC 共識）
+
+不同化療藥本身致吐風險不同，預防方案就不同。
+
+| 分級 | 不用預防時嘔吐比率 | 代表化療藥（靜脈） | 預防策略總原則 |
+|---|---|---|---|
+| **高致吐 (HEC)** | ≥ 90% | Cisplatin（任何劑量）、AC（doxorubicin + cyclophosphamide，乳癌）、carmustine、dacarbazine、cyclophosphamide ≥ 1500 mg/m² | **4 藥**：NK1 + 5-HT3 + dexamethasone + olanzapine |
+| **中致吐 (MEC)** | 30–90% | Carboplatin AUC ≥ 4、oxaliplatin、irinotecan、cyclophosphamide < 1500、ifosfamide、daunorubicin、idarubicin、azacitidine、bendamustine | **3 藥**：5-HT3 + dexamethasone + NK1（carboplatin AUC ≥ 4 強建議加 NK1）；或 5-HT3 + dexamethasone + olanzapine |
+| **低致吐 (LEC)** | 10–30% | Paclitaxel、docetaxel、5-FU、gemcitabine、pemetrexed、cetuximab、trastuzumab、pembrolizumab 單藥 | **1–2 藥**：dexamethasone 8 mg 單次，或加 5-HT3 |
+| **極低 (Minimal)** | < 10% | Bevacizumab、bleomycin、vincristine、vinblastine、nivolumab 單藥 | 不需常規預防，視症狀給藥 |
+
+> 註：口服化療藥（capecitabine、temozolomide、everolimus、TKI 類）有獨立分級表，多數屬 LEC 或 Minimal；temozolomide ≥ 75 mg/m²/day 屬 MEC。
+
+<Callout type="tip" title="混合方案怎麼算？">
+若同一天合併使用多種化療藥，依「最高致吐風險者」決定預防方案。例如 paclitaxel + carboplatin AUC 5，要按 MEC 給藥；FOLFIRINOX（含 oxaliplatin + irinotecan + 5-FU）按 MEC 上限處理，可考慮加 NK1 與 olanzapine。
+</Callout>
+
+## HEC 四藥標準方案（cisplatin / AC）
+
+依 ASCO 2020 與 NCCN v2.2025：
+
+| 藥物類別 | 第 1 天（急性期） | 第 2–4 天（延遲期） |
+|---|---|---|
+| **NK1 拮抗劑** | Aprepitant 125 mg PO 或 fosaprepitant 150 mg IV，或 NEPA（netupitant 300 / palonosetron 0.5）PO × 1 次 | Aprepitant 80 mg PO（D2–3）；fosaprepitant 與 NEPA 不需再給 |
+| **5-HT3 拮抗劑** | Palonosetron 0.25 mg IV（首選，效果橫跨延遲期）；或 ondansetron 8–16 mg IV/PO、granisetron 1 mg IV | 通常不需重複；若用短效者可延伸 |
+| **Dexamethasone** | 12 mg IV/PO（合併 NK1 時） | 8 mg PO QD × 3 天（cisplatin 為 D2–4；AC 可只到 D2 或停） |
+| **Olanzapine** | 5 或 10 mg PO HS | 5 或 10 mg PO HS × D2–4 |
+
+> AC 方案的 dexamethasone 延遲期可考慮 steroid-sparing：因 olanzapine 與 NK1 同用時，第 2–4 天可省略 dexamethasone（J-FORCE 等研究支持）。
+
+## MEC 三藥方案
+
+選一組：
+
+- **5-HT3 + dexamethasone + NK1**：適合 carboplatin AUC ≥ 4（指引強建議加 NK1）
+- **5-HT3 + dexamethasone + olanzapine**：適合 oxaliplatin、irinotecan
+- **NEPA + dexamethasone**：將 NK1 與 5-HT3 合一錠（Aapro 系列研究支持），適合不耐多種錠劑者
+
+## LEC / Minimal 方案
+
+- **LEC**：dexamethasone 8 mg PO/IV 第 1 天單次，必要時再加 5-HT3。
+- **Minimal**：不常規預防；若病人有焦慮 / 暈車史可考慮 prochlorperazine 5–10 mg PRN。
+
+<Callout type="warning" title="跨試驗比較的限制">
+表格中的「完全反應率」「無噁心比率」來自不同年代、不同試驗族群（亞洲 vs. 歐美、cisplatin vs. AC、年齡層分布），請勿直接拿來互相排序選藥；實際選擇仍以個別病人耐受度、共病、健保／自費可及性為準。
+</Callout>
+
+## 急性 vs. 延遲 vs. 預期性嘔吐
+
+化療嘔吐依時序分三類，處理策略不同：
+
+| 類型 | 時間 | 主要機轉 | 預防 / 處理 |
+|---|---|---|---|
+| **急性 (Acute)** | 化療後 0–24 h | 腸道 5-HT 釋放 → 5-HT3 受體 | 5-HT3 + dexamethasone（± NK1, olanzapine） |
+| **延遲 (Delayed)** | 化療後 24–120 h（尤其 D2–3 高峰） | NK1 / substance P | NK1 拮抗劑（aprepitant D2–3、fosaprepitant 或 NEPA 單次涵蓋）+ dexamethasone + olanzapine |
+| **預期性 (Anticipatory)** | 下一週期化療「之前」 | 條件反射、焦慮 | 行為治療（放鬆、CBT）；前一晚 lorazepam 0.5–1 mg PRN；上一週期務必預防到位 |
+| **突破性 (Breakthrough)** | 預防方案下仍嘔吐 | 通路被旁路 | 加另一類機轉（見下節） |
+| **頑固性 (Refractory)** | 多週期反覆嘔吐 | 多通路失敗 | 改方案、加 olanzapine、會診支持照護 |
+
+## 突破性嘔吐怎麼救援？
+
+當已照 NCCN 分級給足預防方案後仍嘔吐，原則是「加另一類機轉」，不要重複同類藥。
+
+<Steps>
+  <div>
+    ### Step 1 — 確認當下方案
+
+    回顧病人這次循環打了什麼預防（4 藥 / 3 藥 / 1 藥），最近一次給藥時間，是否真的有吃下去（很多病人 PO aprepitant 一吐就吐掉）。
+  </div>
+  <div>
+    ### Step 2 — 加 olanzapine 或 prochlorperazine
+
+    - **Olanzapine 2.5–10 mg PO HS** × 3 天：橫跨多通路，是目前 NCCN/ASCO 的 breakthrough 首選。
+    - **Prochlorperazine 10 mg PO/IV q6h PRN**（多巴胺 D2 拮抗）。
+    - **Metoclopramide 10–20 mg PO/IV q6h PRN**（D2 + 高劑量也作用 5-HT3）；注意錐體外症候群風險，年長者減量。
+  </div>
+  <div>
+    ### Step 3 — 補水、評估電解質
+
+    嚴重嘔吐 6 小時以上 → 回診檢查 BUN/Cr、Na、K、Cl、Mg；必要時門診靜脈點滴補液 1–2 L 生理食鹽水或乳酸林格氏。
+  </div>
+  <div>
+    ### Step 4 — 下一週期升級預防
+
+    這次有突破性嘔吐 → 下一循環整個方案上升一級（例：MEC 3 藥 → 加 olanzapine 變 4 藥；HEC 4 藥 → 評估是否加 lorazepam 處理焦慮元素）。
+  </div>
+  <div>
+    ### Step 5 — 出現紅旗症狀立刻急診
+
+    脫水、意識改變、解黑便 / 吐血、合併發燒（尤其化療後嗜中性白血球低下期）等情況請見下方紅旗清單。
+  </div>
+</Steps>
+
+<Callout type="warning" title="脫水紅旗（任一條符合 → 立刻急診）">
+- **超過 24 小時無法進食或喝水**（包含吞口水會吐）
+- 24 小時內嘔吐 ≥ 5 次、或合併嚴重腹瀉（≥ 6 次水便 / 日）
+- 尿量明顯減少、深黃濃尿 ≥ 8 小時、站起來頭暈（姿勢性低血壓）
+- 體重 3 天內下降 ≥ 2 kg
+- 合併發燒 ≥ 38°C（化療嗜中性白血球低下期警急發燒，須立即急診抽血）
+- 意識改變、嗜睡到叫不太醒
+- 嘔吐物有鮮血或咖啡渣樣（疑似上消化道出血）
+- 解黑便、嚴重腹痛、腹脹（排除腸阻塞、腸缺血）
+</Callout>
+
+## 預期性嘔吐：一旦出現難治療
+
+預期性嘔吐 (anticipatory CINV) 是條件反射——病人可能還沒進診間、聞到醫院消毒水味、看到化療袋就開始想吐。一旦建立，藥物反應差，重點在預防：
+
+- **第一週期務必把預防方案開到位**：第一次經驗最關鍵。
+- 認知行為治療 (CBT)、漸進式肌肉放鬆、引導想像。
+- **前一晚 lorazepam 0.5–1 mg PO HS** + 化療當日清晨再 0.5–1 mg。
+- 必要時可加 olanzapine 2.5–5 mg HS（兼治焦慮 + 噁心）。
+
+## 副作用、適應症與禁忌症
+
+### 5-HT3 拮抗劑（ondansetron / palonosetron / granisetron）
+
+- **常見副作用**：便秘、頭痛、輕微疲倦
+- **嚴重少見**：QT 延長（特別是 ondansetron 8 mg IV 以上、與 methadone / 抗心律不整藥併用）
+- **謹慎使用**：先天性長 QT、嚴重肝功能障礙、低血鉀 / 低血鎂未矯正
+- Palonosetron 半衰期長（約 40 小時），延遲期保護優於 ondansetron
+
+### NK1 拮抗劑（aprepitant / fosaprepitant / NEPA）
+
+- **常見**：疲倦、便秘、打嗝、肝指數輕度上升
+- **藥物交互作用**：CYP3A4 中度抑制劑，與 dexamethasone 併用時 dexa 劑量需減半；warfarin INR 可能下降；口服化療藥（如 docetaxel、ifosfamide）需調整
+- **fosaprepitant**：注射部位反應、罕見過敏
+- **禁忌**：對成分過敏；嚴重肝功能障礙者個別評估
+
+### Dexamethasone
+
+- **短期使用副作用**：失眠、血糖上升、胃酸刺激、情緒亢奮、輕微體液滯留
+- **謹慎使用**：糖尿病控制不良、消化性潰瘍病史、活動性感染、骨鬆嚴重者
+- 與免疫檢查點抑制劑併用：依 ASCO 2020，不應為 ICI 而省略 dexamethasone
+
+### Olanzapine
+
+- **常見**：嗜睡、口乾、姿勢性低血壓
+- **代謝**：可能升血糖、體重；短期 4 天使用較不顯著
+- **謹慎使用**：年長者（建議 5 mg）、巴金森氏症、嚴重失智症（提高跌倒風險）；糖尿病控制不良時監測血糖
+- **黑盒警告**：失智症長者使用抗精神病藥死亡率上升（指 chronic 使用，CINV 短期療程不適用）
+
+### Metoclopramide / Prochlorperazine
+
+- **常見**：嗜睡、坐立不安
+- **嚴重少見**：錐體外症候群（EPS）、tardive dyskinesia（長期）、QT 延長
+- **謹慎使用**：年長者、巴金森氏症、腸阻塞或穿孔疑慮
+- 不建議連用超過 5 天（metoclopramide）
+
+### 一般禁忌
+
+- 對任一藥物成分過敏
+- 妊娠：dexamethasone、aprepitant、olanzapine 均屬 C 級風險，由醫師個別評估
+- 哺乳期建議停餵或改方案
+
+## 居家自我照顧建議
+
+- **少量多餐**：每 2–3 小時吃一點，避免空腹也避免一次大餐
+- **冷食 / 室溫食物**：氣味較淡，比熱食容易接受
+- **避免油膩、辛辣、過甜、強烈氣味**（咖哩、油炸、咖啡）
+- **薑茶 / 薑糖** 1–2 g/day：小型試驗顯示對輕度噁心有幫助
+- **化療當天避免吃喜歡的食物**：以免日後對該食物產生厭惡（taste aversion）
+- **記錄嘔吐日記**：時間、次數、誘因、用了哪些止吐藥，回診時帶給醫師看
+- **充分補水**：每天 1500–2000 mL（無腎臟 / 心臟限制者），可用運動飲料稀釋一半
+
+<Divider />
+
+## 給病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 化療「之前」
+
+    確認您打的是哪個化療方案、屬於哪一級致吐風險。可問主治醫師或藥師：「我這次是 HEC、MEC 還是 LEC？預防會打幾種止吐藥？」
+  </div>
+  <div>
+    ### 化療「當日」
+
+    準時服用所有預防藥（包含 D1 的 olanzapine 與當天的 dexamethasone），不要因為「還沒吐」就跳過。多數預防是要在嘔吐訊號還沒上來前就壓住通路。
+  </div>
+  <div>
+    ### 化療後 D2–D5
+
+    這幾天是延遲期高峰。把醫師開的 aprepitant D2–3、dexamethasone、olanzapine HS 都規律吃完，不要因為感覺好了就停。準備好突破性救援藥（prochlorperazine 或 metoclopramide）放在床邊。
+  </div>
+  <div>
+    ### 出現突破性嘔吐
+
+    先用 PRN 救援藥；若 6–12 小時內嘔吐 ≥ 3 次、或無法喝水進食，聯絡腫瘤照護團隊熱線。**任何紅旗症狀（前述清單）→ 直接急診**。
+  </div>
+  <div>
+    ### 下一週期回診時的問題清單
+
+    1. 上次哪幾天最嚴重？預防方案有沒有需要升級？
+    2. 是否要把口服 aprepitant 改 fosaprepitant IV？
+    3. 是否加 olanzapine 5 mg HS 預防？
+    4. 是否需要前一晚 lorazepam 處理預期性嘔吐？
+    5. 我的電解質、肝腎功能正常嗎？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Hesketh PJ, Kris MG, Basch E, et al. **Antiemetics: ASCO Guideline Update.** *J Clin Oncol.* 2020;38(24):2782-2797. [doi:10.1200/JCO.20.01296](https://doi.org/10.1200/JCO.20.01296)
+2. Navari RM, Qin R, Ruddy KJ, et al. **Olanzapine for the Prevention of Chemotherapy-Induced Nausea and Vomiting.** *N Engl J Med.* 2016;375(2):134-142. [doi:10.1056/NEJMoa1515725](https://doi.org/10.1056/NEJMoa1515725)
+3. Hesketh PJ, Grunberg SM, Gralla RJ, et al. **The oral neurokinin-1 antagonist aprepitant for the prevention of chemotherapy-induced nausea and vomiting: a multinational, randomized, double-blind, placebo-controlled trial in patients receiving high-dose cisplatin (Aprepitant Protocol 052).** *J Clin Oncol.* 2003;21(22):4112-4119. [doi:10.1200/JCO.2003.01.095](https://doi.org/10.1200/JCO.2003.01.095)
+4. Saito M, Aogi K, Sekine I, et al. **Palonosetron plus dexamethasone versus granisetron plus dexamethasone for prevention of nausea and vomiting during chemotherapy: a double-blind, double-dummy, randomised, comparative phase III trial.** *Lancet Oncol.* 2009;10(2):115-124. [doi:10.1016/S1470-2045(08)70314-0](https://doi.org/10.1016/S1470-2045(08)70314-0)
+5. Hesketh PJ, Rossi G, Rizzi G, et al. **Efficacy and safety of NEPA, an oral combination of netupitant and palonosetron, for prevention of chemotherapy-induced nausea and vomiting following highly emetogenic chemotherapy: a randomized dose-ranging pivotal study.** *Ann Oncol.* 2014;25(7):1340-1346. [doi:10.1093/annonc/mdt542](https://doi.org/10.1093/annonc/mdt542)
+6. Roila F, Molassiotis A, Herrstedt J, et al. **2016 MASCC and ESMO guideline update for the prevention of chemotherapy- and radiotherapy-induced nausea and vomiting and of nausea and vomiting in advanced cancer patients.** *Ann Oncol.* 2016;27(suppl 5):v119-v133. [doi:10.1093/annonc/mdw270](https://doi.org/10.1093/annonc/mdw270)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Antiemesis, v2.2025.** [nccn.org](https://www.nccn.org/guidelines/category_3)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 已透過 Crossref 與 doi.org 302 redirect 雙重驗證。

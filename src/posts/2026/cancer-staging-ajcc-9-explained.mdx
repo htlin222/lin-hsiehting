@@ -1,0 +1,172 @@
+---
+title: "癌症期別 Stage 1、2、3、4 怎麼分？AJCC 9th 實證版"
+titleEn: "Cancer staging explained: AJCC 9th edition and same-stage heterogeneity"
+date: "05/11/2026"
+frontmatter: "第四期不等於末期；AJCC 9 版（2024–2026 陸續上路）以肺癌、鼻咽癌、神經內分泌瘤領銜更新，並把預後分期擴展到乳癌、攝護腺、頭頸癌，本文用病人語言解釋 TNM 邏輯、同期不同預後的原因與 nomogram。"
+tags: ["癌症分期", "TNM", "AJCC", "預後", "衛教"]
+medical: true
+medicalCondition: "癌症 TNM 分期 (Cancer TNM staging)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "醫師說我是第三期是不是很嚴重？"
+    a: "不一定。第三期代表腫瘤已經侵犯到比較多的局部組織或淋巴結，但還沒有遠端轉移；許多第三期癌症（例如乳癌、大腸癌、頭頸癌、攝護腺癌）在標準治療後仍有相當高的長期存活率。AJCC 9 版引入「預後分期」（prognostic stage），會把腫瘤分級、荷爾蒙受體、HER2、PSA 等生物標記納入計算，因此同樣是「第三期」在 9 版可能會被重新歸類為更高或更低的風險組別。重點是「第幾期」只是起點，真正影響預後的是接下來的治療反應與生物標記。"
+  - q: "同樣第二期，為什麼有人活得短？"
+    a: "因為傳統的解剖分期（anatomic stage）只看腫瘤大小、淋巴結與遠端轉移（T、N、M），但同一個第二期裡，腫瘤的分化程度、荷爾蒙受體、HER2、Ki-67、PSA、EBV DNA、分子亞型等都會大幅影響預後。AJCC 8、9 版陸續把這些因子納入「預後分期」，讓乳癌的同期 5 年總存活率能從 90% 拉開到 60%。此外，年齡、共病、體能狀態、能否完成治療都是「同期不同命」的原因。"
+  - q: "第四期就一定是末期嗎？"
+    a: "不是。「第四期」在分期上代表「有遠端轉移」，但「末期」是臨床術語，指的是預期生存期非常有限、以症狀控制為主的階段。第四期 HER2 陽性乳癌、慢性骨髓性白血病（CML）、EGFR 突變肺癌、寡轉移大腸癌等，在標靶或免疫治療下已有不少 5 年甚至 10 年以上的長期存活案例，部分病人甚至能達到「無疾病證據」（NED）狀態。所以「第四期」是分期，不是宣判，請與主治醫師討論治療目標。"
+  - q: "TNM 是什麼意思？"
+    a: "TNM 是 AJCC／UICC 分期系統的三個欄位：T（Tumor）描述原發腫瘤的大小或侵犯深度（T1–T4）；N（Node）描述區域淋巴結轉移狀況（N0–N3）；M（Metastasis）描述是否有遠端轉移（M0 或 M1）。把 T、N、M 組合起來，再依癌別查表得到 Stage 0、I、II、III、IV。AJCC 9 版（2024 年起逐步上路）在某些癌別（乳癌、攝護腺、頭頸癌）會額外加入「分級」與分子標記，產生「預後分期」（prognostic stage），因此同一個 T3N1M0 在解剖分期可能是 IIIA，在預後分期可能落在 IB 或 IIIC。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**第四期不等於末期。** 癌症分期最常見的誤解，是把「Stage IV」直接讀成「臨終」。AJCC 第 9 版（Version 9）從 2024 年的神經內分泌瘤、外陰癌起跑，2025 年 1 月起依序更新肺癌、胸腺、肋膜間皮瘤、鼻咽癌等癌別；同時延續 8 版以來「預後分期（prognostic stage）」的精神，把腫瘤分級、荷爾蒙受體、HER2、PSA 等生物標記納入計算，讓乳癌、攝護腺、頭頸癌的同期病人預後可以細分。本文用病人語言解釋 TNM 三個字母、Stage 0–IV 的邏輯、同一期為什麼預後差很多、以及 NCCN／MSKCC nomogram 怎麼補足分期表的不足。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛拿到病理報告、想看懂「為什麼是第幾期」「同期病人預後差別怎麼來」的病友與家屬，以及對 AJCC 9 版分癌別更新進度有興趣的同業。任何治療決策請依您的主治醫師個別判斷。
+</Callout>
+
+<Divider />
+
+## TNM：三個字母先看懂
+
+AJCC／UICC 全球共用的分期語言，是 TNM 三個欄位：
+
+| 欄位 | 中文 | 內容 | 範例 |
+|---|---|---|---|
+| **T** | 原發腫瘤 | 腫瘤大小或侵犯深度 | T1（小於 2 cm）vs. T4（侵犯鄰近器官） |
+| **N** | 區域淋巴結 | 是否轉移、數目、位置 | N0（沒有）vs. N3（廣泛侵犯） |
+| **M** | 遠端轉移 | 是否擴散到肝、肺、骨等 | M0（無）vs. M1（有） |
+
+不同癌別的 T、N、M 細節定義不同——例如乳癌的 T1 是「腫瘤 ≤ 2 cm」，肺癌的 T1 是「腫瘤 ≤ 3 cm 且無胸膜侵犯」，鼻咽癌的 T1 則是「侷限於鼻咽或鼻咽腺樣體」。AJCC 9 版（2024–2026 陸續實施）的主要改動之一，就是把這些 T、N、M 的判讀標準寫得更精細，例如：
+
+- **肺癌 9 版**（2025/1 上路）：把 N2 細分為 N2a（單一站轉移）與 N2b（多站轉移），M1c 再依轉移器官數目分為 M1c1、M1c2。
+- **鼻咽癌 9 版**（2024/10 公布）：T3 必須是「明確的骨皮質破壞或骨髓侵犯」；影像可見的淋巴結外侵犯（ENE）併入 N3；M1 依轉移病灶數目分為 M1a（≤3 個）與 M1b（>3 個）。
+- **神經內分泌瘤 9 版**（2024）：胃腸胰 NET 與 MEN1、VHL 等遺傳症候群相關 NET 的分期標準明確化，並把 T1NXM0 納入 Stage I。
+
+## 從 TNM 到 Stage 0–IV
+
+T、N、M 分別寫好後，把三者組合查表，就會得到 Stage 0、I、II、III、IV。**這是「解剖分期」（anatomic stage）**——只看腫瘤跑了多遠。大致對應：
+
+| 期別 | 含意（一般原則，依癌別調整） | 治療目標 |
+|---|---|---|
+| **Stage 0** | 原位癌（in situ），未穿透基底膜 | 局部切除即可治癒機率高 |
+| **Stage I** | 腫瘤小、淋巴結陰性、無遠端轉移 | 局部治療為主（手術 ± 放療） |
+| **Stage II** | 腫瘤較大或有侷限淋巴結轉移、無遠端轉移 | 局部治療 ± 輔助性化療／標靶 |
+| **Stage III** | 腫瘤侵犯深、淋巴結較廣或鄰近器官受侵犯 | 多模式治療（手術 + 放療 + 系統性治療） |
+| **Stage IV** | 已有遠端轉移（M1） | 系統性治療為主；oligometastatic 可考慮局部治療 |
+
+<Callout type="warning" title="跨癌別比較注意">
+不同癌別的「同一期」預後可能差異極大。例如同樣是 Stage III，HER2 陽性乳癌經完整治療 5 年總存活率可達 80% 以上，但 Stage III 胰臟癌或膽管癌中位存活仍多在 12–18 個月。**請不要拿親友的「我也是第三期」來推估自己的預後**，要回到自己的癌別、生物標記與治療反應。
+</Callout>
+
+## 解剖分期 vs. 預後分期：8 版以來的大變革
+
+AJCC 8 版（2018 年實施）首次在乳癌引入「預後分期」（prognostic stage）：除了 T、N、M，還納入腫瘤分級（grade）、荷爾蒙受體（ER、PR）、HER2、以及 21-基因 Oncotype DX 分數。9 版延續並擴展這個思路到攝護腺癌、頭頸癌等癌別。
+
+| 項目 | 解剖分期（anatomic） | 預後分期（prognostic） |
+|---|---|---|
+| **計算依據** | T、N、M | T、N、M + 分級 + 生物標記（依癌別） |
+| **使用情境** | 全球流行病學、癌登、跨國比較 | 臨床預後預測、治療強度決策 |
+| **乳癌例子** | T2N0M0 一律是 Stage IIA | T2N0M0 + grade 1 + ER+/HER2− → Stage IB；T2N0M0 + grade 3 + 三陰性 → Stage IIB |
+| **攝護腺癌例子** | T2cN0M0 是 Stage II | 加入 Gleason grade group 與 PSA 後可細分 IIA／IIB／IIC |
+| **頭頸癌例子** | HPV 陽性與陰性混在一起 | HPV+ 口咽癌另立分期表（HPV-mediated stage I–IV） |
+| **預後鑑別力** | 中等 | 較佳；JAMA Oncol 驗證乳癌預後分期 5 年 BCSS 區辨優於解剖分期 |
+
+<Callout type="tip" title="為什麼要兩套分期？">
+解剖分期是全世界癌症登記與政策的共同語言（不需要病理染色設備也能算），預後分期則是臨床上預測「這個病人未來會怎麼走」的工具。AJCC 9 版同時保留兩套，是讓資源不同的國家／醫院都能用得上。
+</Callout>
+
+## 同一期，為什麼有人活得短？
+
+這是門診最常被問到的問題。同樣 Stage II 乳癌、同樣 Stage III 大腸癌，5 年存活率可能差到 30–40%，原因可拆成 4 大類：
+
+1. **生物標記與分子亞型** — 乳癌的 ER／PR／HER2／Ki-67、肺癌的 EGFR／ALK／KRAS、大腸癌的 MSI／RAS／BRAF、攝護腺癌的 Gleason grade group、淋巴瘤的 IPI／GCB vs. ABC，都不在 T、N、M 之中，但對預後與治療選擇影響極大。
+2. **腫瘤分級（Grade）** — 高分化（grade 1）vs. 低分化（grade 3）腫瘤即使 T、N 一樣，惡性度與復發風險差很多。AJCC 8、9 版在乳癌、攝護腺、軟組織肉瘤等癌別把分級納入預後分期。
+3. **病人因素** — 年齡、ECOG 體能狀態、共病（糖尿病、慢性腎病、心衰）、營養狀態，會影響能否完成標準治療。能完成完整治療的 Stage III 病人，預後通常優於只能做減量治療的 Stage II 病人。
+4. **治療反應** — 新輔助化療（neoadjuvant）後是否達到病理完全反應（pCR）、輔助治療能否如期完成、是否復發等，是臨床上最強的預後因子之一。
+
+## 拿到病理報告：怎麼讀懂分期欄位
+
+<Steps>
+  <div>
+    ### 第一步 — 找到 pT、pN、cM 三個欄位
+
+    病理報告上會看到例如「pT2N1M0」或「ypT1cN0」字樣。前面的 p 代表「pathological」（術後病理確認），c 代表「clinical」（影像／理學檢查推估），y 代表術前接受過新輔助治療。**手術前的分期叫 cTNM，手術後叫 pTNM**——兩者可能不同（最常見：影像看起來 N0，但手術病理發現 N1）。
+  </div>
+  <div>
+    ### 第二步 — 看分級（grade）與生物標記
+
+    乳癌看 ER／PR／HER2／Ki-67 與 grade；攝護腺看 Gleason grade group 與 PSA；大腸癌看 MSI／MMR；肺癌看 PD-L1、EGFR、ALK、KRAS、ROS1；頭頸癌看 HPV／p16；淋巴瘤看細胞起源。**如果報告上沒有這些欄位，主動問主治醫師「我有做哪些 biomarker？結果是什麼？」**
+  </div>
+  <div>
+    ### 第三步 — 算出（或請醫師算出）解剖期 + 預後期
+
+    AJCC 8、9 版的官方查表可在 ACS／NCCN／病理學會網站找到。乳癌、攝護腺、頭頸癌會看到「Anatomic stage」與「Prognostic stage」兩欄。**請主治醫師寫下兩個分期**，後續比對 NCCN 治療建議才不會誤讀。
+  </div>
+  <div>
+    ### 第四步 — 進階：用 nomogram 算個人化風險
+
+    NCCN 與 MSKCC 都有針對單一癌別的 prediction tools（nomograms.mskcc.org），把分期、年齡、生物標記、共病等丟進去，會得到「5 年存活率」「10 年復發率」等預測。**這些數字是統計平均，不是個人保命指數**，但能幫助與醫師討論治療強度。
+  </div>
+</Steps>
+
+## Nomogram：補足分期表的不足
+
+AJCC 分期把病人分成有限的格子（Stage I、II、III、IV），但同一格子內可能差距很大。**Nomogram（諾莫圖）是把多個變數權重化、輸出個人化預測**的工具，最早由 MSKCC 的 Kattan 等人在 1998 年發表攝護腺癌 nomogram，2008 年延伸到大腸癌復發預測，至今涵蓋 20 餘種癌別。
+
+### MSKCC vs. AJCC 分期的差別
+
+| 工具 | 輸出 | 變數數目 | 適用對象 |
+|---|---|---|---|
+| AJCC anatomic stage | Stage I–IV | 3（T、N、M） | 全球流行病學、政策、登記 |
+| AJCC prognostic stage | Stage I–IV（細分） | 4–8（加 grade、ER、HER2、PSA…） | 臨床預後、治療強度決策 |
+| MSKCC nomogram | 5 年／10 年機率（連續變數） | 5–10（依癌別） | 個人化風險溝通、輔助治療決策 |
+| NCCN 風險分組 | Low／Intermediate／High | 3–5（依癌別） | 治療指引選擇 |
+
+NCCN 在攝護腺癌、乳癌、淋巴瘤等癌別也有自己的風險分組（risk stratification），與 AJCC prognostic stage 概念類似。**這四個工具不是擇一，而是互補使用**：分期回答「我在哪一格」，nomogram 回答「在這格裡我的位置」。
+
+<Callout type="warning" title="nomogram 的限制">
+1. 訓練資料多為單一機構或西方人群，套用到亞洲人群時準確度可能下降。
+2. 預測的是「平均風險」，個案實際結果仍受治療反應、突變影響。
+3. 不能取代與主治醫師面對面討論。**請把 nomogram 結果當「討論起點」，不是「最終判決」。**
+</Callout>
+
+## 第四期不等於末期：那些「Stage IV 仍長期存活」的例子
+
+這是本文最重要的訊息之一。**Stage IV 在分期上代表「有遠端轉移」，但臨床上的「末期」（terminal）是預期壽命有限、以症狀控制為主的階段，兩者不同。** 以下是文獻記錄中 Stage IV 仍能長期存活的代表性情境：
+
+- **HER2 陽性轉移性乳癌**：使用 trastuzumab + pertuzumab + 化療後，部分寡轉移、ER 陽性病人可達到「無疾病證據」（NED）並維持多年；CLEOPATRA 試驗 8 年存活率約 37%。
+- **慢性骨髓性白血病（CML）**：在 imatinib 等酪胺酸激酶抑制劑問世後，10 年總存活率超過 80%，部分病人甚至能停藥維持深度分子反應。
+- **EGFR 突變晚期非小細胞肺癌**：使用 osimertinib 一線治療，FLAURA 試驗中位總存活約 38.6 個月，5 年存活率仍有 20–30%。
+- **寡轉移病灶（oligometastatic）**：定義為轉移病灶 ≤ 3–5 顆。乳癌、大腸癌、攝護腺癌的寡轉移病人合併局部治療（手術、SBRT 立體定位放療）+ 系統性治療，部分文獻報告 5 年存活率可達 30–50%。
+- **生殖細胞腫瘤（睪丸癌）**：即使 Stage IV，含 cisplatin 的合併化療總體治癒率仍可達 70–80%。
+
+<Callout type="warning" title="不要拿這些例子推估自己">
+這些是「具備特定生物標記、體能尚可、能耐受治療」的族群數據；個別病人能否走到長期存活，取決於分子亞型、寡轉移狀態、治療反應與共病。**請與主治醫師討論「以我的條件，這些長期存活數據是否適用」**，而非自行套用。
+</Callout>
+
+## 風險揭露與免責
+
+- 本文整理 AJCC／UICC 9 版主要更新概念，並非完整查表手冊；實際 T、N、M 與分期判讀請依各癌別最新 AJCC／UICC／NCCN 文件，且應由病理科與主治醫師共同確認。
+- 9 版各癌別實施日期不同（神經內分泌瘤 2024、肺癌／鼻咽癌等 2025、其他癌別陸續更新中），請查 ACS／NCCN 公告。
+- 本文不取代任何個別治療建議。
+
+<Divider />
+
+## 參考文獻
+
+1. Amin MB, Greene FL, Edge SB, et al. **The Eighth Edition AJCC Cancer Staging Manual: Continuing to build a bridge from a population-based to a more "personalized" approach to cancer staging.** *CA Cancer J Clin.* 2017;67(2):93-99. [doi:10.3322/caac.21388](https://doi.org/10.3322/caac.21388)
+2. Giuliano AE, Connolly JL, Edge SB, et al. **Breast Cancer-Major changes in the American Joint Committee on Cancer eighth edition cancer staging manual.** *CA Cancer J Clin.* 2017;67(4):290-303. [doi:10.3322/caac.21393](https://doi.org/10.3322/caac.21393)
+3. Hortobagyi GN, Connolly JL, D'Orsi CJ, et al. **Eighth Edition of the AJCC Cancer Staging Manual: Breast Cancer.** *Ann Surg Oncol.* 2018;25(7):1783-1785. [doi:10.1245/s10434-018-6486-6](https://doi.org/10.1245/s10434-018-6486-6)
+4. Rami-Porta R, Nishimura KK, Giroux DJ, et al. **The International Association for the Study of Lung Cancer Lung Cancer Staging Project: Proposals for Revision of the TNM Stage Groups in the Forthcoming (Ninth) Edition of the TNM Classification for Lung Cancer.** *J Thorac Oncol.* 2024;19(7):1007-1027. [doi:10.1016/j.jtho.2024.02.011](https://doi.org/10.1016/j.jtho.2024.02.011)
+5. Pan JJ, Mai HQ, Ng WT, et al. **Ninth Version of the AJCC and UICC Nasopharyngeal Cancer TNM Staging Classification.** *JAMA Oncol.* 2024;10(12):1627-1635. [doi:10.1001/jamaoncol.2024.4354](https://doi.org/10.1001/jamaoncol.2024.4354)
+6. Chauhan A, Halfdanarson TR, Bellizzi AM, et al. **Critical updates in neuroendocrine tumors: Version 9 American Joint Committee on Cancer staging system for gastroenteropancreatic neuroendocrine tumors.** *CA Cancer J Clin.* 2024;74(4):359-367. [doi:10.3322/caac.21840](https://doi.org/10.3322/caac.21840)
+7. Weiser MR, Landmann RG, Kattan MW, et al. **Individualized prediction of colon cancer recurrence using a nomogram.** *J Clin Oncol.* 2008;26(3):380-385. [doi:10.1200/JCO.2007.14.1291](https://doi.org/10.1200/JCO.2007.14.1291)
+8. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Risk stratification and staging references.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

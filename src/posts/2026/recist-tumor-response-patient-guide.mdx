@@ -1,0 +1,211 @@
+---
+title: "治療反應怎麼判斷？RECIST、CR、PR、SD、PD 中文版"
+titleEn: "Tumor response criteria for patients: RECIST 1.1 explained"
+date: "05/11/2026"
+frontmatter: "CR 完全反應、PR 部分反應、SD 穩定、PD 惡化是 RECIST 1.1 的四個結果；免疫治療另用 iRECIST 區分『假惡化』。本文用病人語言解釋影像報告上的數字怎麼看，以及不同癌別為什麼會用不同標準。"
+tags: ["RECIST", "治療反應", "影像評估", "iRECIST", "衛教"]
+medical: true
+medicalCondition: "腫瘤治療反應評估 (Tumor response assessment)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "報告寫 PR 是好還是壞？"
+    a: "PR（Partial Response，部分反應）是好的結果。代表所有可量測腫瘤的最長徑總和比治療前縮小至少 30%，且沒有出現新病灶。在大多數實體癌的臨床試驗，PR 與 CR 合計就是『治療反應率（ORR）』。"
+  - q: "SD 算成功嗎？"
+    a: "SD（Stable Disease，穩定）算半個成功。腫瘤既沒有縮小到 PR 的標準（≥ 30%），也沒有惡化到 PD 的標準（≥ 20%），介於中間。對某些慢性、生長緩慢的癌症（如腎細胞癌、神經內分泌瘤），長期 SD 配合無症狀就有臨床效益；但對快速進展的癌症，SD 不一定代表藥物有效。"
+  - q: "假惡化 (pseudoprogression) 是什麼？"
+    a: "假惡化是免疫治療早期才看得到的現象：影像上腫瘤『看起來變大或出現新病灶』，但其實是免疫細胞浸潤造成的暫時性腫脹，後續會縮小。若用傳統 RECIST 1.1 會被誤判為 PD 而停藥；iRECIST 引入『iUPD（未確認的進展）』，要求 4–8 週後再追蹤一次確認，避免誤停掉真正有效的免疫治療。"
+  - q: "為什麼不同癌症要用不同標準？"
+    a: "因為腫瘤生物學差異大：淋巴瘤多病灶且 PET 高敏感，所以用 Lugano；骨髓瘤主要看 M-protein 與骨髓漿細胞，用 IMWG；GIST 經 imatinib 治療後密度下降但體積不變，所以 Choi 標準同時看大小與 CT 密度（HU）；PET 反應比結構變化更早，Wahl 提出 PERCIST 用 SUL 量化代謝反應。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+拿到電腦斷層或核磁共振報告時，最常看到 **CR（完全反應）/ PR（部分反應）/ SD（穩定）/ PD（惡化）** 四個結果——這是 **RECIST 1.1**（Response Evaluation Criteria In Solid Tumours v1.1, *Eur J Cancer* 2009）的標準分類。簡單口訣：腫瘤總徑縮 ≥ 30% 是 PR、長 ≥ 20% 且絕對值增加 ≥ 5 mm 才算 PD、之間是 SD、所有病灶完全消失才是 CR。免疫治療另外有 **iRECIST**（Lancet Oncol 2017）來處理「假惡化」，淋巴瘤、骨髓瘤、GIST、PET 影像則各有專用標準。本文用病人語言把這些數字、規則、與臨床判讀差異一次講清楚。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛拿到第一份影像評估報告、想知道「PR 算不算進步」的病友與家屬，以及住院醫師、研究護理師需要快速複習各種 response criteria 差異的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼需要 RECIST？
+
+在 RECIST 出現之前，每個試驗都用自己的標準描述「腫瘤縮小」，導致跨試驗無法比較。1981 年 WHO 提出第一版二維面積（長 × 寬）標準，2000 年 RECIST 1.0 改用一維最長徑、2009 年 Eisenhauer 等人發表 **RECIST 1.1** 至今仍是實體癌試驗的共同語言。它規範三件事：
+
+1. **挑哪些病灶來追蹤**（target / non-target lesion）
+2. **怎麼量、怎麼算變化**（最長徑總和的百分比變化）
+3. **怎麼把變化分類成 CR / PR / SD / PD**
+
+藥廠送藥、健保給付、NCCN 指引引用，全都建立在這套規則上。
+
+## RECIST 1.1 的四個結果與數字界線
+
+| 分類 | 縮寫 | 數字定義 | 病人語言 | 下一步常見動作 |
+|---|---|---|---|---|
+| 完全反應 | **CR** | 所有 target 與 non-target 病灶完全消失；病態淋巴結短徑 < 10 mm；無新病灶 | 影像上看不到腫瘤了 | 多數情況繼續維持治療或進入觀察 |
+| 部分反應 | **PR** | target 病灶最長徑總和（SLD）下降 ≥ 30%；無新病灶 | 腫瘤明顯縮小 | 通常維持原方案 |
+| 穩定 | **SD** | 不到 PR、也不到 PD 的中間區間 | 沒縮也沒惡化 | 視症狀與生長速度決定維持或調整 |
+| 惡化 | **PD** | SLD 比觀察期間最低點增加 ≥ 20% **且**絕對值增加 ≥ 5 mm；或出現新病灶；或 non-target 明確進展 | 腫瘤長大或冒新點 | 換線、加做切片、討論臨床試驗 |
+
+<Callout type="tip" title="為什麼 PD 要同時滿足兩個條件？">
+RECIST 1.0 只看 ≥ 20% 增加。後來發現很小的病灶（例如最低點 6 mm 變 8 mm，剛好 33%）會被誤判為 PD。RECIST 1.1 加上「絕對值至少增加 5 mm」這條，讓判讀更穩定，這是兩版最大的差別之一。
+</Callout>
+
+## 從報告到分類：四個步驟
+
+<Steps>
+  <div>
+    ### 拿到影像報告，先找 target lesion
+
+    放射科醫師會在 baseline（治療前）挑出最多 5 個可量測病灶（每個器官最多 2 個），稱為 **target lesion**。挑選原則：
+    - 最長徑 ≥ 10 mm（CT 切面）；淋巴結用短徑 ≥ 15 mm
+    - 形狀規則、邊界清楚，方便重複量
+    - 涵蓋主要受侵器官
+
+    其他不量、只描述變化的病灶叫 **non-target lesion**。
+  </div>
+  <div>
+    ### 加總出最長徑總和（SLD）
+
+    把 target lesion 的最長徑（淋巴結用短徑）相加，得到 baseline SLD。例如肝轉移 22 mm + 肺轉移 18 mm + 骨盆淋巴結短徑 16 mm = SLD 56 mm。
+  </div>
+  <div>
+    ### 算變化百分比
+
+    後續每次追蹤都重新量同一批 target lesion，算出新的 SLD 與基準的比較：
+
+    - 變化 = (新 SLD − baseline SLD) ÷ baseline SLD × 100%
+    - 計算 PD 時，分母改用「觀察期間的最低 SLD（nadir）」而非 baseline，比較嚴格。
+  </div>
+  <div>
+    ### 對應到 CR / PR / SD / PD
+
+    - 變化 ≤ −100%（全消） → CR
+    - 變化 ≤ −30% → PR
+    - 變化 介於 −30% 與 +20% 之間 → SD
+    - 變化 ≥ +20% 且絕對值增加 ≥ 5 mm，或出現新病灶 → PD
+
+    出現任一新病灶（即使 SLD 還在縮小）也直接判 PD。
+  </div>
+</Steps>
+
+<Callout type="warning" title="SD 不一定 = 沒效">
+SD 是個「光譜」：可能是腫瘤本來就生長極慢（indolent disease）、可能是藥物把腫瘤打到僵持、也可能藥物完全沒作用但腫瘤還沒長到 PD 標準。臨床上會搭配 **PFS（無惡化存活）長度** 與 **腫瘤標誌物變化** 一起判斷。試驗多會回報 **CBR（clinical benefit rate）= CR + PR + SD ≥ 6 個月**，把「有意義的 SD」與「短期僵持」分開。
+</Callout>
+
+## iRECIST：免疫治療為什麼需要另一套？
+
+免疫治療（PD-1 / PD-L1、CTLA-4 抑制劑等）的反應動力學跟化療、標靶不同。腫瘤可能在治療早期看起來變大、甚至出現新病灶，原因不是腫瘤長大，而是 **免疫細胞浸潤造成的暫時性腫脹**——這就是 **假惡化（pseudoprogression）**。據估計約 5–10% 接受 PD-1 抑制劑的黑色素瘤、腎細胞癌病人會出現此現象。
+
+如果用傳統 RECIST 1.1，這些病人會被判 PD 然後停藥；但他們其實正在反應。Seymour 等人 2017 年在 *Lancet Oncol* 發表 **iRECIST**，新增兩個關鍵概念：
+
+| iRECIST 用語 | 意義 | 處理方式 |
+|---|---|---|
+| **iUPD**（unconfirmed progression）| 第一次看到 RECIST 1.1 的 PD（≥ 20% 或新病灶） | **不立即停藥**，4–8 週內再做一次影像 |
+| **iCPD**（confirmed progression）| 後續影像進一步惡化、或新病灶持續變大 | 確認 PD，討論換線 |
+| 若 iUPD 後反而縮小 | 假惡化 | 維持原免疫治療，繼續追蹤 |
+
+<Callout type="note" title="hyperprogression（過度進展）">
+與假惡化相反，少數病人開始免疫治療後 **腫瘤生長速度反而加快**（tumor growth rate 翻倍以上），預後極差。發生率約 4–29%（族群差異大），目前無公認預測因子。臨床觀察到體能狀況急速下降、出現大量新病灶、LDH 飆升時，必須警覺，不能再等 iUPD 確認，直接換線或進入安寧討論。
+</Callout>
+
+## 不同癌別的專用反應標準
+
+實體癌大多數試驗用 RECIST 1.1，但以下情境另有公認標準：
+
+| 標準 | 適用癌別 | 特色 | 文獻 |
+|---|---|---|---|
+| **Lugano** | 何杰金氏、非何杰金氏淋巴瘤 | PET-CT 為主、Deauville 5 分量表（DS 1–3 視為陰性）；以代謝為主、size 為輔 | Cheson, *J Clin Oncol* 2014 |
+| **IMWG** | 多發性骨髓瘤 | M-protein（血／尿）+ 骨髓漿細胞比例；含 sCR、CR、VGPR、PR、MR、SD、PD | Kumar, *Lancet Oncol* 2016 |
+| **Choi** | GIST、肉瘤接受標靶治療 | **大小 OR 密度**：SLD 縮 ≥ 10% 或 CT 平均 HU 下降 ≥ 15% 即算 PR | Choi, *J Clin Oncol* 2007 |
+| **PERCIST** | 用 PET 評估代謝反應 | SUL（體瘦質量校正 SUV）下降 ≥ 30% 為 PMR | Wahl, *J Nucl Med* 2009 |
+| **iRECIST** | 任何癌別接受免疫治療 | 引入 iUPD / iCPD 處理假惡化 | Seymour, *Lancet Oncol* 2017 |
+
+<Callout type="tip" title="Choi 為什麼重要？">
+GIST 用 imatinib 後，腫瘤體積常常維持不變，但內部囊性壞死讓 CT 密度（Hounsfield Unit）大幅下降。如果只看 RECIST 1.1，很多有效的病人會被誤判 SD。Choi 標準把「密度下降」也算進反應率，更貼近 GIST 的真實生物學。
+</Callout>
+
+## 臨床判讀 vs 影像判讀：兩者並不總是一致
+
+這是一個常被忽略的觀念：**RECIST 是『試驗用語言』，不是『治療決策的全部』**。實際門診常見三種落差：
+
+1. **影像 PR、症狀沒改善**：可能腫瘤縮小但壓迫到的神經、血管未復原；或壞死造成的局部發炎仍在。
+2. **影像 SD、症狀大幅改善**：尤其見於免疫治療早期，密度變化先於體積變化（這也是 Choi 標準的概念延伸）。
+3. **影像 PD、體能反而變好**：少數情況反映假惡化；應依 iRECIST 流程確認，不要單一次掃描就停藥。
+
+<Callout type="warning" title="影像之外，還要看的指標">
+腫瘤標誌物（CEA、CA19-9、PSA、AFP、β-hCG 等）、循環腫瘤 DNA（ctDNA）、症狀變化、體能狀態（ECOG）、體重，都應與影像一起判讀。試驗會嚴格遵守 RECIST，但臨床決策應整合多項證據，不能只看 SLD 數字。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+RECIST / iRECIST 本身是 **評估工具**，不是治療藥物，所以沒有藥理性副作用。但「依據 RECIST 結果決定治療」的過程仍有以下重點：
+
+### 適應症（哪些情境會用 RECIST 1.1）
+
+- 實體癌（含轉移性與局部進展期）的臨床試驗主要終點
+- 健保給付前後追蹤、藥物續用判斷
+- NCCN／ASCO 指引引用之治療反應評估
+
+### 不適用（要改用其他標準）
+
+- 淋巴瘤 → Lugano（PET 為主）
+- 骨髓瘤 → IMWG（血液／骨髓為主）
+- 原發性中樞神經腫瘤 → RANO
+- GIST 接受 imatinib → 加上 Choi
+- 接受免疫治療者 → iRECIST 補充
+- 純骨轉移、肋膜積液、腹水：屬「不可量測病灶」，不能單獨作為 target lesion
+
+### 影像評估本身的不良風險
+
+- **輻射暴露**：每 2–3 個月 CT 累積劑量；長期病人可考慮以 MRI 替代部分 CT
+- **顯影劑**：腎功能不全（eGFR < 30）、過敏者需評估
+- **影像判讀者間誤差**：跨機構、跨醫師間 reproducibility 並非 100%
+- **過度檢查**：在預期僅作支持性照護的情況，仍頻繁掃描可能無臨床效益
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 拿到報告先看四件事
+
+    1. **本次分類**（CR / PR / SD / PD 或 iUPD）
+    2. **變化百分比**（−45%、+12% 等）
+    3. **是否出現新病灶**
+    4. **跟哪一份報告比**（baseline 或 nadir）
+
+    這四項清楚了，就能跟主治醫師有效討論。
+  </div>
+  <div>
+    ### 不要被單次數字嚇到
+
+    一次 PD 不等於「沒救了」，免疫治療中尤其重要——iRECIST 的 iUPD 就是設計來避免單次掃描的誤判。一次大幅 PR 也不等於「治癒」，腫瘤可能在後續復發；CR 之後仍需依癌別與分期持續追蹤。
+  </div>
+  <div>
+    ### 跟主治醫師討論時可帶的問題
+
+    1. 我這次的影像比較對象是 baseline 還是 nadir？
+    2. 這次的變化百分比是多少？落在 SD 區間哪一端（接近 PR 或接近 PD）？
+    3. 我的腫瘤是否適合 RECIST 1.1，還是要看別的標準（Choi、IMWG、Lugano）？
+    4. 如果是 PD，是否屬於 iUPD？要不要 4–8 週後再確認一次？
+    5. 影像之外，腫瘤標誌物、ctDNA、症狀有沒有同步惡化？
+    6. 下一步治療策略？要不要做新切片或基因檢測？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Eisenhauer EA, Therasse P, Bogaerts J, et al. **New response evaluation criteria in solid tumours: revised RECIST guideline (version 1.1).** *Eur J Cancer.* 2009;45(2):228-247. [doi:10.1016/j.ejca.2008.10.026](https://doi.org/10.1016/j.ejca.2008.10.026)
+2. Seymour L, Bogaerts J, Perrone A, et al. **iRECIST: guidelines for response criteria for use in trials testing immunotherapeutics.** *Lancet Oncol.* 2017;18(3):e143-e152. [doi:10.1016/S1470-2045(17)30074-8](https://doi.org/10.1016/S1470-2045(17)30074-8)
+3. Cheson BD, Fisher RI, Barrington SF, et al. **Recommendations for initial evaluation, staging, and response assessment of Hodgkin and non-Hodgkin lymphoma: the Lugano classification.** *J Clin Oncol.* 2014;32(27):3059-3068. [doi:10.1200/JCO.2013.54.8800](https://doi.org/10.1200/JCO.2013.54.8800)
+4. Kumar S, Paiva B, Anderson KC, et al. **International Myeloma Working Group consensus criteria for response and minimal residual disease assessment in multiple myeloma.** *Lancet Oncol.* 2016;17(8):e328-e346. [doi:10.1016/S1470-2045(16)30206-6](https://doi.org/10.1016/S1470-2045(16)30206-6)
+5. Choi H, Charnsangavej C, Faria SC, et al. **Correlation of computed tomography and positron emission tomography in patients with metastatic gastrointestinal stromal tumor treated at a single institution with imatinib mesylate: proposal of new computed tomography response criteria.** *J Clin Oncol.* 2007;25(13):1753-1759. [doi:10.1200/JCO.2006.07.3049](https://doi.org/10.1200/JCO.2006.07.3049)
+6. Wahl RL, Jacene H, Kasamon Y, Lodge MA. **From RECIST to PERCIST: evolving considerations for PET response criteria in solid tumors.** *J Nucl Med.* 2009;50(Suppl 1):122S-150S. [doi:10.2967/jnumed.108.057307](https://doi.org/10.2967/jnumed.108.057307)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；上述六篇均經 Crossref 驗證 DOI 為有效註冊。

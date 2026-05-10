@@ -1,0 +1,223 @@
+---
+title: "免疫治療相關副作用 irAE：肺炎、肝炎、大腸炎、甲狀腺與皮疹"
+titleEn: "Immune-related adverse events: a clinical and patient field guide"
+date: "05/11/2026"
+frontmatter: "irAE 是免疫治療的代價：任何級別約 60–80%、第 3 級以上 10–20%（雙免疫合併更高）；早辨識、按 CTCAE 分級處置可救命。本文整理六大 irAE 紅旗症狀與 ASCO 2021 / SITC 2021 / ESMO 處置流程。"
+tags: ["免疫治療", "irAE", "副作用", "類固醇", "衛教"]
+medical: true
+medicalCondition: "免疫相關不良反應 (Immune-related adverse events, irAEs)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "免疫治療為什麼會傷肺？"
+    a: "免疫檢查點抑制劑（anti-PD-1 / anti-PD-L1 / anti-CTLA-4）的作用機轉是「鬆開」T 細胞煞車，讓免疫系統去攻擊腫瘤；但同樣的鬆綁也可能讓 T 細胞攻擊正常組織。肺部因為抗原暴露面積大、含豐富淋巴組織，是常見受影響器官之一。Anti-PD-(L)1 單藥肺炎發生率約 3–5%、雙免疫合併（如 ipilimumab + nivolumab）約 7–10%。"
+  - q: "免疫治療期間咳嗽要回診嗎？"
+    a: "新出現或惡化的咳嗽、活動喘、胸悶、低燒，即使症狀輕微，都建議回診評估，特別是免疫治療期間或停藥後 6 個月內。胸部 X 光與抽血（CRP、SpO2）是初步評估；若懷疑肺炎可進一步做 HRCT。CTCAE Grade 1（影像有變化但無症狀）可密切觀察，Grade 2 以上需要暫停免疫治療並開始類固醇。"
+  - q: "拉肚子幾次以上算嚴重？"
+    a: "依 CTCAE v5：相對基礎排便每日多 < 4 次為 Grade 1，多 4–6 次為 Grade 2，多 ≥ 7 次或失禁、需住院為 Grade 3。出現血便、夜間腹瀉、合併發燒或腹痛、無法進食，都是紅旗，要立刻就醫評估免疫相關大腸炎（colitis）。Grade 2 起須暫停免疫治療並開始 prednisolone 1 mg/kg/day；Grade 3 以上常需住院、靜脈高劑量類固醇，必要時加 infliximab 或 vedolizumab。"
+  - q: "停類固醇後可以重啟免疫治療嗎？"
+    a: "視 irAE 嚴重度與器官而定。一般 Grade 2 完全恢復、類固醇 taper 至 ≤ 10 mg prednisolone/day 即可考慮重啟；Grade 3 多數情況（除特定器官如內分泌補充後穩定）建議永久停藥；Grade 4、心肌炎、嚴重肺炎、神經系 irAE 一律永久停藥。重啟後再次發生 irAE 的風險約 25–55%，但多數仍可控制。實際決策需與腫瘤科醫師個別討論。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+免疫檢查點抑制劑（immune checkpoint inhibitor, ICI）改寫過去十年腫瘤學版圖，但代價是 **免疫相關不良反應（immune-related adverse events, irAEs）**：anti-PD-(L)1 單藥任何級別 irAE 約 60–70%、第 3 級以上 10–15%；雙免疫合併（ipilimumab + nivolumab）任何級別逾 90%、第 3 級以上 55–60%。最常見的依序是皮疹、甲狀腺、大腸炎、肝炎、肺炎、垂體炎；心肌炎雖罕見（< 1%），死亡率卻高達 25–50%。處置邏輯一致：依 **CTCAE v5 分級** 決定是否暫停免疫治療、何時開始類固醇、何時加上第二線免疫抑制劑（infliximab、vedolizumab、mycophenolate mofetil、IVIG）。本文整理 ASCO 2021、SITC 2021、ESMO 與 NCCN 的共識做法，並提供病人版紅旗症狀對照。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為正在或將要接受免疫治療（pembrolizumab、nivolumab、atezolizumab、durvalumab、ipilimumab、tremelimumab 等）的病友與家屬，以及第一線處置 irAE 的住院醫師、Fellow 與專科護理師。文末有實務檢查表。所有處置仍需與您的主治醫師個別討論。
+</Callout>
+
+<Divider />
+
+## 為什麼會有 irAE？
+
+免疫檢查點是 T 細胞活性的「煞車」。CTLA-4 在 T 細胞活化早期作用、PD-1/PD-L1 在效應期作用。藥物（如 pembrolizumab、ipilimumab）阻斷這些煞車，讓 T 細胞去攻擊腫瘤——但同樣的鬆綁，會讓自身組織暴露於 T 細胞攻擊，產生類似自體免疫疾病的器官發炎反應。
+
+幾個重要觀念：
+
+1. **發生時間**：皮疹、肝炎多在用藥 2–6 週出現；大腸炎、肺炎、甲狀腺多在 1–3 個月；垂體炎、糖尿病等內分泌相關 irAE 可晚至 4–12 個月，**停藥後仍可能首次出現**（最長記錄超過 1 年）。
+2. **與療效正相關**：發生 irAE（特別是甲狀腺、皮膚）的病人整體存活與反應率有偏高的趨勢，但不可因此追求 irAE。
+3. **既往自體免疫疾病不是絕對禁忌**：穩定、不在活動期的自體免疫疾病可慎重使用，但復發率較高（約 25–40%），需與風濕免疫科共照。
+4. **CTLA-4 比 PD-1 毒；雙免疫最毒**：ipilimumab 單藥任何級別 irAE > 80%；ipi + nivo（CheckMate 067）任何級別 irAE 95%、第 3 級以上 55–60%。
+
+## 六大 irAE 一表看懂
+
+下表整合 ASCO 2021 (Schneider JCO)、SITC 2021 (Brahmer JITC)、ESMO 2017 (Haanen Ann Oncol) 與 NCCN 2025 共識：
+
+| irAE | 任何級別發生率（單藥 / 雙免疫） | 典型症狀 | Grade 1 | Grade 2 | Grade 3 | 是否可重啟 ICI |
+|---|---|---|---|---|---|---|
+| 皮疹（rash / pruritus） | 30–40% / 50% | 紅疹、癢、白斑 | 局部類固醇 + 抗組織胺，續打 | 暫停 ICI；外用類固醇強效；考慮口服 prednisolone 0.5 mg/kg | 永久停藥（多數）；prednisolone 1 mg/kg；皮膚科會診排除 SJS/TEN | G2 恢復後可；G3 多永久停 |
+| 甲狀腺（thyroiditis） | 5–10% / 20% | 多數無症狀，TSH/fT4 異常；甲亢→甲低 | 觀察追蹤 | 甲低：levothyroxine 補充 | 甲亢危象罕見；β-blocker；嚴重者類固醇 | 補充穩定後可；不需停藥 |
+| 大腸炎（colitis） | 5–10% / 25–30% | 腹瀉、血便、腹痛、發燒 | 補水、止瀉觀察 | 暫停 ICI；prednisolone 1 mg/kg；糞便排除感染 | 住院；IV methylprednisolone 1–2 mg/kg；72h 無改善加 infliximab 5–10 mg/kg 或 vedolizumab 300 mg | G3 一般永久停藥 |
+| 肝炎（hepatitis） | 2–5% / 15–20% | 多無症狀；AST/ALT 上升 ± 黃疸 | 每週追蹤 LFT | 暫停 ICI；prednisolone 0.5–1 mg/kg；排除病毒、藥物、影像 | IV methylprednisolone 1–2 mg/kg；無改善加 MMF 1 g BID（不建議 infliximab，肝毒性疑慮） | G3 一般永久停 |
+| 肺炎（pneumonitis） | 3–5% / 7–10% | 乾咳、活動喘、低燒 | HRCT 追蹤 | 暫停 ICI；prednisolone 1 mg/kg；考慮預防性抗生素 | 住院；IV methylprednisolone 2–4 mg/kg；無改善加 infliximab 或 MMF 或 IVIG；考慮 cyclophosphamide | G2 恢復可；G3+ 多永久停 |
+| 垂體炎（hypophysitis） | < 1% / 5–10% | 頭痛、疲倦、低血壓、低血鈉 | 罕為 G1；多 G2 起 | 補充 hydrocortisone；類固醇高劑量爭議多，ASCO 不強制 | 急性腎上腺皮質危象：IV hydrocortisone；MRI 評估壓迫 | 補充穩定後可，多需終身荷爾蒙補充 |
+
+<Callout type="warning" title="心肌炎雖罕見但致死率高">
+ICI 相關心肌炎發生率 < 1%，但死亡率高達 **25–50%**（雙免疫族群更高）。**胸痛、活動喘、心律不整、心悸、暈厥** 任何一項出現，請立即急診。檢查至少包含 troponin、ECG、BNP、心臟超音波；必要時心臟 MRI 或心肌切片。處置：永久停藥 + IV methylprednisolone 1 g/day × 3–5 天；無改善時加 mycophenolate、infliximab、abatacept、ATG。**早期診斷 + 高劑量類固醇是改善預後的關鍵**（Salem Lancet Oncol 2018；Mahmood JACC 2018）。
+</Callout>
+
+## 病人端紅旗：症狀分級與何時打電話
+
+<Steps>
+  <div>
+    ### 第一步：辨識新症狀
+
+    免疫治療期間（包含停藥後 6 個月內），任何 **新出現或惡化** 的症狀都要記錄：起始日、頻率、嚴重度、是否影響日常活動、是否合併發燒。常被忽略的有「只是有點累」「比較容易喘」「最近老是上廁所」——這些都可能是 irAE 早期。
+  </div>
+  <div>
+    ### 第二步：自我分級（粗略對應 CTCAE v5）
+
+    - **Grade 1（輕度）**：症狀輕、不影響日常活動、不需介入。例：每日多 1–3 次軟便、稍癢但能忍。
+    - **Grade 2（中度）**：影響部分日常活動、需要介入。例：每日多 4–6 次腹瀉、活動時喘、皮疹影響睡眠、需口服止瀉。
+    - **Grade 3（重度）**：嚴重影響、可能需住院。例：每日多 ≥ 7 次或夜間腹瀉、靜止喘、SpO2 < 90%、嚴重皮疹合併水泡或發燒。
+    - **Grade 4（致命）**：危及生命，需加護病房。
+  </div>
+  <div>
+    ### 第三步：紅旗症狀立即就醫（不必等下次回診）
+
+    以下任何一項，請當天回急診或聯絡治療團隊：
+
+    - 胸痛、活動明顯喘、心悸、暈厥（疑心肌炎）
+    - 血便、夜間腹瀉、嚴重腹痛、合併發燒（疑大腸炎）
+    - 黃疸、茶色尿、右上腹痛（疑肝炎）
+    - 嚴重頭痛、視力模糊、複視、極度疲倦、低血壓（疑垂體炎、腎上腺危象）
+    - 持續多尿、口渴、體重下降、意識不清（疑 ICI 相關第 1 型糖尿病、酮酸中毒）
+    - 嚴重皮疹合併水泡、黏膜潰瘍、剝離（疑 SJS/TEN，致死急症）
+  </div>
+  <div>
+    ### 第四步：醫師端的初步處置流程
+
+    Grade 1 多數續打 ICI、加強監測；Grade 2 多數暫停 ICI + 口服 prednisolone 0.5–1 mg/kg/day；Grade 3 入院 + IV methylprednisolone 1–2 mg/kg/day；72 小時無改善加第二線（依器官選 infliximab、vedolizumab、MMF、IVIG）。Grade 4、心肌炎、嚴重神經系 irAE 一律永久停藥。
+  </div>
+</Steps>
+
+## 個別 irAE 重點補充
+
+### 皮疹
+
+最早出現、最常見。型態多樣：丘疹、扁平苔癬樣、大泡、白斑（vitiligo，特別常見於黑色素瘤病人）。**務必排除嚴重皮膚反應 SJS / TEN**（黏膜侵犯、水泡、皮膚剝離、Nikolsky 徵象陽性），罕見但致死率高，需立即停藥、皮膚科共照、燒傷單位處置。一般 G1–G2 可用外用類固醇（強效如 clobetasol）+ 抗組織胺處理；G3 起口服或 IV 類固醇。
+
+### 甲狀腺異常
+
+機轉接近破壞性甲狀腺炎（destructive thyroiditis）：先短暫甲亢（4–8 週）→ 自然進入甲低，多數需要終身 levothyroxine 補充。**ICI 不需因此停藥**——這是少數可在 ICI 持續期間補充處理的 irAE。建議每 4–6 週檢驗 TSH、fT4。甲亢期若有症狀可短暫使用 β-blocker（propranolol）；極少數需 prednisolone。
+
+### 大腸炎
+
+CTLA-4 比 PD-1 更易引發；雙免疫族群高達 25–30%。鑑別診斷：感染性腸炎（C. difficile、CMV、寄生蟲）、缺血性大腸炎、放射線腸炎。**糞便檢查排除感染** 是必要步驟。Grade 2 起暫停 ICI、口服 prednisolone 1 mg/kg；Grade 3 住院、IV 類固醇、72h 無改善加 infliximab 5–10 mg/kg（共 1–3 劑）或 vedolizumab 300 mg（腸道選擇性，副作用較少）。穿孔風險：類固醇期間若腹痛突然惡化、發燒、血壓下降，立即影像評估。
+
+### 肝炎
+
+AST/ALT 上升常無症狀，多在常規血檢發現。Grade 2（AST/ALT > 3–5× ULN）暫停 ICI + 口服 prednisolone 0.5–1 mg/kg；Grade 3（> 5–20× ULN）IV methylprednisolone 1–2 mg/kg。**第二線首選 mycophenolate mofetil 1 g BID**——不建議 infliximab，因有肝毒性報告。需同時排除：病毒性肝炎、HBV/HCV 再活化、藥物性肝炎、酒精、影像（排除轉移、膽道阻塞）。
+
+### 肺炎
+
+放射科表現多樣：器質性肺炎（OP）型、磨玻璃影（GGO）型、過敏型、急性間質型；HRCT 是必要工具。鑑別診斷：感染（特別是 PCP）、腫瘤淋巴管擴散、放射性肺炎、心衰肺水腫。**Grade 2 起暫停 ICI + prednisolone 1 mg/kg**；Grade 3 住院、IV methylprednisolone 2–4 mg/kg、考慮經驗性抗生素直到感染排除、72h 無改善加 infliximab、MMF、IVIG，極嚴重者 cyclophosphamide。Nishino NEJM 2015、JCO Precision Oncology 2017 為早期影像辨識代表性文獻。
+
+### 垂體炎
+
+CTLA-4 相關（ipilimumab 單藥約 5–10%、雙免疫高達 10%）。臨床三聯：頭痛、疲倦、複視（罕見）。LH/FSH/TSH/ACTH/cortisol 可能多軸線受損。MRI 早期可見垂體腫大，後期萎縮。**急性腎上腺皮質危象**（休克、低血鈉、低血糖）需立即 IV hydrocortisone 100 mg。多數需要終身荷爾蒙補充（hydrocortisone、levothyroxine、有時加 testosterone），但 ICI 在補充穩定後可重啟。
+
+### 罕見但致命：心肌炎、神經系（GBS、myasthenic crisis、encephalitis）、糖尿病酮酸中毒
+
+合稱「FATE-irAE」（fulminant），發生率 < 1%，但致死率高（心肌炎 25–50%、myocarditis + myositis + myasthenia overlap 死亡率更高）。**任一懷疑：永久停藥、IV methylprednisolone 1 g/day × 3–5 天、神經科 / 心臟科會診、加護病房評估**。早期診斷是預後關鍵。
+
+## 類固醇 taper 與第二線藥物選擇
+
+<Callout type="note" title="類固醇 taper 不要急">
+Grade 2 以上 irAE 控制後，**類固醇 taper 期間至少 4–6 週**（部分肺炎、心肌炎、神經系 irAE 需 8–12 週或更長）。每週減量 10 mg prednisolone（從 60 mg 起算）；若中途復發，回到上一個有效劑量並維持 1–2 週後再 taper。Taper 過快是 irAE 復發最常見的原因。劑量 ≥ 20 mg prednisolone 持續 ≥ 4 週者，需考慮 PJP 預防（trimethoprim-sulfamethoxazole）。
+</Callout>
+
+第二線（類固醇難治型，72 小時無改善）藥物選擇：
+
+| 第二線藥 | 適用 irAE | 機轉 | 注意 |
+|---|---|---|---|
+| Infliximab 5–10 mg/kg | 大腸炎、關節炎、肺炎 | anti-TNFα | 肝炎避免；活動性結核 / 嚴重感染禁忌 |
+| Vedolizumab 300 mg | 大腸炎 | 腸道選擇性 α4β7 整合素 | 較不易系統性免疫抑制；起效較慢 |
+| Mycophenolate mofetil 1 g BID | 肝炎、肺炎、神經系、皮膚 | 抑制 IMPDH | 需 1–2 週起效；血球追蹤 |
+| IVIG 2 g/kg（分 2–5 天） | 神經系、嚴重血液學、心肌炎 | 多重免疫調節 | 注意水分負荷、血栓風險 |
+| Tocilizumab 8 mg/kg | 關節炎、ICANS-like、CRS-like | anti-IL-6R | 可能掩蓋感染指標 |
+| Abatacept 10 mg/kg | 心肌炎（新興） | CTLA-4-Ig | 證據累積中（Salem 2019, Lancet Oncol） |
+
+## 重啟（rechallenge）ICI 的決策
+
+依 ASCO 2021 與 SITC 2021 共識：
+
+- **可考慮重啟**：Grade 1–2 完全恢復、類固醇 taper 至 ≤ 10 mg prednisolone/day；甲狀腺與其他內分泌 irAE 補充穩定後即可。
+- **個別評估（可能可重啟）**：Grade 3 大腸炎、肝炎、皮膚 irAE 完全恢復且病人腫瘤反應佳；常用「換另一類 ICI」（例如 ipi 引發肝炎，後續單用 nivo）。
+- **永久停藥**：所有 Grade 4、心肌炎、嚴重肺炎（G3+）、神經系 irAE（GBS、encephalitis、myasthenic crisis）、SJS/TEN、ICI 相關第 1 型糖尿病僅限該藥停藥（補充胰島素，可換另一 ICI）。
+
+重啟後再次發生 irAE 的風險約 25–55%，但多數仍可用同樣分級流程控制。建議重啟前與病人完整討論利弊，並安排更密集的監測（前 4 週每 2 週、4–12 週每 4 週）。
+
+## 副作用、適應症與禁忌症摘要（針對使用 ICI 的整體族群）
+
+### 適應症（常見）
+
+- 多種轉移性實體腫瘤（黑色素瘤、NSCLC、RCC、HCC、UC、HNSCC、TNBC PD-L1+、MSI-H/dMMR、cHL 等）
+- 部分早期癌術前 / 術後輔助治療（NSCLC、黑色素瘤、TNBC、食道 / 胃食道 / 胃癌等）
+- ECOG PS 0–1（部分試驗收 PS 2）
+
+### 一般禁忌症與謹慎使用
+
+- 活動性自體免疫疾病（如紅斑性狼瘡活動期、活動性 IBD、嚴重類風濕關節炎）
+- 接受長期高劑量免疫抑制治療（prednisolone > 10 mg/day 等效劑量）
+- 過去對 ICI 發生 Grade 4 irAE、嚴重心肌炎、神經系 irAE 病史
+- 接受實體器官移植（排斥風險顯著上升）
+- 妊娠期（動物實驗有胚胎毒性）
+- 活動性感染（TB、HBV / HCV 高病毒量、HIV 未控制等）需先處理
+
+### 不良反應監測項目（每次給藥前）
+
+- 血液學（CBC、LFT、Cr）
+- 內分泌（TSH、fT4；可選 ACTH、cortisol、Na）
+- 症狀問卷（咳嗽、喘、腹瀉、皮疹、頭痛、心悸）
+- 給藥前 baseline 與每 6–12 週 ECG（雙免疫高風險族群更密集）
+
+<Divider />
+
+## 給病人與家屬的實務檢查表
+
+<Steps>
+  <div>
+    ### 開始 ICI 前
+
+    確認團隊有給你「irAE 紅旗症狀卡 / 衛教單」與 24 小時聯絡方式；記錄基礎血壓、體重、排便習慣、皮膚狀況；既往自體免疫病史與目前用藥要主動告知。
+  </div>
+  <div>
+    ### 每次回診前
+
+    自我列出新出現的症狀（即使輕微）；帶體重變化、排便日記、體溫紀錄；把任何外院抽血、影像帶齊。
+  </div>
+  <div>
+    ### 出現紅旗症狀時
+
+    當下記下時間、嚴重度；先聯絡治療團隊（不要等下次回診）；急診掛號時主動告知「我目前在使用免疫治療，藥名為 ___，最近一次施打日期 ___」——這句話會直接改變值班醫師的處置思路。
+  </div>
+  <div>
+    ### 與主治醫師討論的問題清單
+
+    1. 我用的是哪一種 ICI？單藥還是雙免疫？
+    2. 我屬於 irAE 高風險嗎（既往自體免疫、雙免疫合併、特定癌別）？
+    3. 哪些症狀需要當天就醫、哪些可以等下次回診？
+    4. 如果出現 Grade 2 大腸炎 / 肝炎 / 肺炎，預期的處置流程是什麼？
+    5. 開始類固醇後，會 taper 多久？需要做哪些感染預防？
+    6. 萬一發生 irAE，我之後還能繼續免疫治療嗎？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Schneider BJ, Naidoo J, Santomasso BD, et al. **Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: ASCO Guideline Update.** *J Clin Oncol.* 2021;39(36):4073-4126. [doi:10.1200/JCO.21.01440](https://doi.org/10.1200/JCO.21.01440)
+2. Brahmer JR, Abu-Sbeih H, Ascierto PA, et al. **Society for Immunotherapy of Cancer (SITC) clinical practice guideline on immune checkpoint inhibitor-related adverse events.** *J Immunother Cancer.* 2021;9(6):e002435. [doi:10.1136/jitc-2021-002435](https://doi.org/10.1136/jitc-2021-002435)
+3. Haanen JBAG, Carbonnel F, Robert C, et al. **Management of toxicities from immunotherapy: ESMO Clinical Practice Guidelines for diagnosis, treatment and follow-up.** *Ann Oncol.* 2017;28(suppl_4):iv119-iv142. [doi:10.1093/annonc/mdx225](https://doi.org/10.1093/annonc/mdx225)
+4. Wolchok JD, Chiarion-Sileni V, Gonzalez R, et al. **Overall Survival with Combined Nivolumab and Ipilimumab in Advanced Melanoma** (CheckMate 067). *N Engl J Med.* 2017;377(14):1345-1356. [doi:10.1056/NEJMoa1709684](https://doi.org/10.1056/NEJMoa1709684)
+5. Moslehi JJ, Salem JE, Sosman JA, Lebrun-Vignes B, Johnson DB. **Increased reporting of fatal immune checkpoint inhibitor-associated myocarditis.** *Lancet Oncol.* 2018;19(11):e557-e564. [doi:10.1016/S1470-2045(18)30608-9](https://doi.org/10.1016/S1470-2045(18)30608-9)
+6. Nishino M, Sholl LM, Hatabu H, Ramaiya NH, Hodi FS. **Anti-PD-1-Related Pneumonitis during Cancer Immunotherapy.** *N Engl J Med.* 2015;373(3):288-290. [doi:10.1056/NEJMc1505197](https://doi.org/10.1056/NEJMc1505197)
+7. Nishino M, Hatabu H, Hodi FS, Ramaiya NH. **Drug-Related Pneumonitis in the Era of Precision Cancer Therapy.** *JCO Precis Oncol.* 2017;1:1-12. [doi:10.1200/PO.17.00026](https://doi.org/10.1200/PO.17.00026)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文僅供衛教與同業參考，不取代個別醫療判斷。

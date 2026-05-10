@@ -1,0 +1,231 @@
+---
+title: "化療、標靶、免疫療法、放療差在哪？一張表看懂"
+titleEn: "Chemotherapy vs targeted therapy vs immunotherapy vs radiotherapy"
+date: "05/11/2026"
+frontmatter: "四大治療各有不同攻擊機轉與適合對象；不是越新越貴越好，而是依疾病、biomarker 與體能狀態而定。本文用一張比較表 + 決策邏輯整理 2026 年的主流治療地圖。"
+tags: ["化療", "標靶治療", "免疫治療", "放射治療", "衛教"]
+medical: true
+medicalCondition: "癌症全身性與局部治療總覽 (Cancer systemic and local therapy overview)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+faq:
+  - q: "標靶跟化療差在哪？"
+    a: "化療攻擊所有快速分裂的細胞（包含癌細胞、骨髓、毛囊、腸道黏膜），所以才會掉髮、嗜中性白血球低下、口腔黏膜破。標靶則針對癌細胞特定的基因突變或受體（例如 EGFR、HER2、BCR-ABL）下手，副作用通常較侷限（皮疹、腹瀉、肝功能異常）。但前提是腫瘤要帶有對應的 biomarker，沒有突變的人即使吃了標靶藥也不會有效。"
+  - q: "免疫治療是化療嗎？"
+    a: "不是。免疫檢查點抑制劑（如 pembrolizumab、nivolumab、ipilimumab）並不直接殺死癌細胞，而是『鬆開 T 細胞的剎車』讓自身免疫系統去攻擊腫瘤。所以副作用 profile 和化療完全不同——比較常見的是免疫相關不良反應（irAE），例如肺炎、肝炎、大腸炎、甲狀腺異常與內分泌功能不全，需要類固醇處理而非調整劑量。"
+  - q: "放療會傷害正常組織嗎？"
+    a: "會，這也是放療規劃最重要的工作：用影像引導與多重射束角度，把高劑量集中在腫瘤、把正常組織暴露降到可耐受的閾值。現代強度調控放射治療（IMRT）、立體定位放射手術（SRS/SBRT）與質子治療都在朝這個方向努力。常見急性副作用包含照射部位皮膚反應、疲倦、黏膜炎；長期則需注意心肺、腸道與第二原發癌的風險，因此醫師會嚴格設定器官劑量上限（OAR constraints）。"
+  - q: "我可以選哪一種？"
+    a: "這不是病人單方面選擇的題目。腫瘤科醫師會依三件事決定：(1) 疾病類型與分期（局部 vs 轉移、是否可手術），(2) biomarker（EGFR、ALK、HER2、PD-L1、MSI、BRCA 等），(3) 你的體能狀態與共病。同一種癌症可能化療、標靶、免疫都能用，順序與組合會依上述條件搭配，必要時還會合併放療處理局部問題。"
+  - q: "細胞治療（CAR-T）是免疫治療嗎？跟 pembrolizumab 一樣？"
+    a: "都屬於『免疫治療』大類，但機轉完全不同。免疫檢查點抑制劑是現成藥物、靜脈注射，鬆開 T 細胞剎車。CAR-T 則是把病人自己的 T 細胞抽出來，用病毒載體裝上『嵌合抗原受體』（chimeric antigen receptor）後再回輸，是一次性的『活體藥物』。目前主要核准在難治型 B 細胞淋巴瘤、急性淋巴性白血病與多發性骨髓瘤，固體腫瘤仍在試驗階段。副作用以細胞激素釋放症候群（CRS）與神經毒性為主。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+癌症治療在 2026 年大致分四大類：**傳統化療、標靶治療、免疫治療、放射治療**，再加上崛起中的**抗體藥物複合體（ADC）**與**細胞治療（CAR-T）**。它們攻擊機轉、適用對象、副作用與療程模式各自不同，「越新越貴」並不等於「越適合」。本文用一張橫向比較表，加上 biomarker 主導的決策邏輯，整理 2026 年主流的治療地圖，幫助病友與家屬看懂醫師為什麼這樣建議。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷癌症、想了解全身性治療與局部治療差異的病友與家屬，以及希望快速複習主要治療類別代表試驗的住院醫師與護理同仁。實際治療決策仍應與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 一張表看懂四大治療
+
+| 治療類型 | 攻擊機轉 | 代表藥物 / 技術 | 適合誰 | 主要副作用 | 給付概況（台灣） |
+|---|---|---|---|---|---|
+| **傳統化療** | 干擾 DNA 合成、有絲分裂；攻擊所有快速分裂細胞 | 紫杉烷、鉑類（cisplatin、carboplatin）、5-FU、gemcitabine | 多數實體腫瘤一線骨幹；尤其無 actionable biomarker 者 | 嗜中性白血球下降、噁心嘔吐、掉髮、黏膜炎、神經毒性 | 健保大多給付，年資久 |
+| **小分子標靶（TKI）** | 抑制特定酪氨酸激酶受體，阻斷下游訊號 | osimertinib（EGFR）、imatinib（BCR-ABL）、alectinib（ALK） | 帶對應 driver mutation 的腫瘤（NSCLC、CML、GIST） | 皮疹、腹瀉、肝功能異常、QT 延長、間質性肺炎 | 多數需事前審查；部分藥物需自費或臨床試驗 |
+| **單株抗體標靶** | 結合腫瘤表面受體或可溶性配體 | trastuzumab（HER2）、cetuximab（EGFR）、bevacizumab（VEGF） | HER2+、KRAS wild-type、需抗血管新生者 | 輸注反應、心毒性、出血、腸穿孔 | HER2、VEGF 多有給付條件 |
+| **免疫檢查點抑制劑** | 鬆開 T 細胞剎車（PD-1 / PD-L1 / CTLA-4） | pembrolizumab、nivolumab、ipilimumab、atezolizumab | 高 PD-L1、MSI-H/dMMR、TMB-high；多種腫瘤一線 | 免疫相關肺炎、肝炎、大腸炎、甲狀腺與腎上腺異常 | 部分癌別給付（NSCLC、HCC、TNBC、UC 等），條件嚴格 |
+| **抗體藥物複合體（ADC）** | 抗體導引化療彈頭精準投放 | T-DXd（HER2）、sacituzumab govitecan（TROP-2）、enfortumab vedotin（Nectin-4） | HER2+/HER2-low、TROP-2 表現腫瘤、UC | 嗜中性白血球下降、間質性肺炎、神經毒性、眼毒性 | 部分藥物有條件給付，多數需自費 |
+| **細胞治療（CAR-T）** | 工程化 T 細胞表現嵌合抗原受體攻擊腫瘤 | tisagenlecleucel、axicabtagene、idecabtagene | 難治型 B 細胞淋巴瘤、ALL、多發性骨髓瘤 | 細胞激素釋放症候群（CRS）、神經毒性、長期低球蛋白血症 | 健保有條件給付特定適應症 |
+| **放射治療（RT）** | 高能粒子破壞 DNA 雙股，造成癌細胞死亡 | IMRT、SBRT、SRS、質子治療、近接治療 | 局部根除（早期）、症狀緩解（轉移）、術前/術後輔助 | 急性：皮膚反應、疲倦、黏膜炎；長期：纖維化、第二癌風險 | 健保給付主流療程，質子治療部分自費 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+不同治療類別的代表試驗（CheckMate-067、KEYNOTE-189、FLAURA、IRIS、ASCENT、IMbrave150）所收的族群、線數、終點、評估基準均不一致；上表的「適合誰、主要副作用」僅供分類概念，**不能用來跨類別排序何者較優**。實際選擇仍以個別病人 biomarker、共病與可及性綜合判斷。
+</Callout>
+
+## 醫師建議的治療怎麼選？三層決策邏輯
+
+<Steps>
+  <div>
+    ### 第一層：看疾病類型與分期
+
+    腫瘤的器官來源、組織學分型、TNM 分期決定**整體治療方向**：早期局部腫瘤以「手術 ± 放療 ± 輔助化療／標靶」為主；轉移腫瘤則以全身性治療為骨幹，放療多用於症狀緩解或寡轉移。淋巴瘤、白血病、骨髓瘤等血液腫瘤幾乎不靠手術、改以化療／標靶／細胞治療為核心。
+  </div>
+  <div>
+    ### 第二層：看 biomarker
+
+    確定治療方向後，**分子檢測決定具體藥物**。例如非小細胞肺癌一線：帶 EGFR 突變者優先 osimertinib（FLAURA），帶 ALK 重排者用 alectinib／lorlatinib，driver 陰性但 PD-L1 ≥ 50% 者用 pembrolizumab，三者皆陰性才考慮化療 + 免疫合併。沒做基因檢測就決定用藥，常常會錯過最有利的選項。
+  </div>
+  <div>
+    ### 第三層：看體能狀態與共病
+
+    同樣的 biomarker、同樣的疾病分期，**體能狀態（ECOG PS）與共病會修正治療強度**。PS 0–1 的年輕病人能耐受三藥併用；PS 2 的長者可能改成口服單藥或低劑量方案。間質性肺病史影響 ADC 與免疫藥選擇；自體免疫疾病活動期通常排除免疫檢查點抑制劑；嚴重心衰會限制 anthracycline、HER2 抗體與部分 TKI 的使用。
+  </div>
+</Steps>
+
+<Divider />
+
+## 傳統化療：仍是多數實體腫瘤的骨幹
+
+化療藥物泛指**干擾 DNA 合成、複製、有絲分裂**的細胞毒性藥物，包含烷化劑（cyclophosphamide）、鉑類（cisplatin、carboplatin）、抗代謝藥（5-FU、gemcitabine）、紫杉烷（paclitaxel、docetaxel）、拓樸異構酶抑制劑（irinotecan、etoposide）、長春花生物鹼（vinorelbine）等。它們不分「正常或癌細胞」，所以骨髓、毛囊、腸道黏膜、生殖細胞這些**也分裂得快的正常組織**會一起遭殃，這就是脫髮、嗜中性白血球低下、口腔潰瘍、不孕等副作用的來源。
+
+### 為什麼還要用化療？
+
+- **沒有 actionable mutation 時的主力**：例如 driver 陰性、PD-L1 低表現的非鱗狀 NSCLC，KEYNOTE-189 試驗證明 pembrolizumab + 鉑類化療優於單純化療（mOS 22.0 vs 10.7 個月，HR 0.56），但**化療仍是骨幹**，並非可省略。[1]
+- **手術前後輔助治療**：縮小腫瘤、清除微轉移殘存細胞，改善長期存活。
+- **症狀緩解**：轉移性腫瘤常用化療控制疼痛、阻塞、出血等緊急症狀。
+
+### 典型療程模式
+
+靜脈點滴居多，每 2–3 週一次為一個 cycle，4–6 個 cycle 一個療程；後續視疾病活性決定維持治療或停藥觀察。口服化療（capecitabine、etoposide、cyclophosphamide）愈來愈多用於門診治療。
+
+## 標靶治療：精準打擊，但需要 biomarker
+
+### 小分子 TKI
+
+口服酪氨酸激酶抑制劑是過去 20 年腫瘤治療最大革新之一。典型例子：
+
+- **Imatinib + 慢性骨髓性白血病（CML）**：IRIS 試驗（NEJM 2006，N = 1,106）十年後 imatinib 組整體存活率達 83.3%，徹底改寫 CML 預後。[4]
+- **Osimertinib + EGFR 突變 NSCLC**：FLAURA（NEJM 2018，N = 556）一線 osimertinib mPFS 18.9 vs gefitinib／erlotinib 10.2 個月（HR 0.46），mOS 38.6 vs 31.8 個月。[3]
+
+副作用較化療侷限，但仍包含皮疹（EGFR/HER2 抑制劑常見）、腹瀉、肝功能異常、QT 延長、間質性肺炎（尤其是 osimertinib、gefitinib），少數會心毒性（部分 ALK／TKI）。多數為口服方便居家服用，但要長期吃到疾病進展或不耐受。
+
+### 單株抗體
+
+靜脈注射抗體針對細胞表面受體（HER2、EGFR）或可溶性配體（VEGF）：
+
+- **Trastuzumab + HER2+ 乳癌、胃癌、CRC**：HER2 過度表現是必要 biomarker。
+- **Bevacizumab + atezolizumab + 不可切除 HCC**：IMbrave150（NEJM 2020，N = 501）mOS 19.2 vs sorafenib 13.4 個月（HR 0.66），確立免疫 + 抗血管新生為 HCC 一線標準。[5]
+
+主要副作用包含輸注反應、出血、傷口癒合不良、腸穿孔（bevacizumab）、心毒性（trastuzumab）。
+
+<Callout type="warning" title="標靶不等於沒副作用">
+「標靶」常被誤解成『只打癌細胞、不傷正常組織』。實際上，正常組織也會表現 EGFR、HER2、VEGF；皮疹、腹瀉、高血壓、心毒性、間質性肺炎都不是罕見事件。Imatinib、osimertinib 等多數標靶藥物需要長期持續服用，慢性副作用累積（疲倦、肌肉痠痛、皮膚指甲變化）對生活品質影響不容忽視。**每次回診請主動回報副作用嚴重度，醫師才能即時調整劑量或更換藥物。**
+</Callout>
+
+## 免疫檢查點抑制劑：鬆開 T 細胞剎車
+
+PD-1（pembrolizumab、nivolumab）、PD-L1（atezolizumab、durvalumab）、CTLA-4（ipilimumab）抑制劑改寫了 2014 年以後黑色素瘤、肺癌、腎細胞癌、肝癌、頭頸癌、膀胱癌、三陰性乳癌等多種腫瘤的治療地圖。代表性試驗：
+
+- **CheckMate-067 + 進展期黑色素瘤**：NEJM 2017，N = 945；nivolumab + ipilimumab 組 4 年 mOS 53%，遠超 ipilimumab 單獨（30%）與 nivolumab 單獨（46%），確立雙免疫合併在高風險族群的地位。[2]
+- **KEYNOTE-189 + 非鱗狀 NSCLC**：pembrolizumab + 鉑類 + pemetrexed 一線 mOS 22.0 vs 化療 10.7 個月（HR 0.56），無論 PD-L1 表現均有獲益。[1]
+
+### 副作用（免疫相關不良反應，irAE）
+
+機轉是過度活化的免疫系統攻擊正常組織：
+
+- **常見**：皮疹、甲狀腺功能異常（甲低或甲亢）、疲倦、關節痛
+- **嚴重**：間質性肺炎（5–10%，致命率 0.2–0.5%）、肝炎、大腸炎、腎炎、腎上腺功能不全、垂體炎、第 1 型糖尿病（罕見但可能酮酸中毒）
+- **處理**：第 2 級以上多需暫停藥物 + 類固醇；嚴重時需 infliximab、mycophenolate；部分內分泌副作用為終身
+
+### 不適合免疫治療的人
+
+- 活動期自體免疫疾病（紅斑性狼瘡、類風濕性關節炎活動期）
+- 接受實體器官移植服用免疫抑制劑者（排斥風險）
+- 既往嚴重 irAE（≥ Grade 3）或 idiopathic pneumonitis 病史
+- 慢性類固醇 prednisolone ≥ 10 mg/d 等量者，療效可能受影響
+
+## 放射治療：局部處理的精準工具
+
+放療藉**高能光子、質子或重粒子破壞 DNA 雙股**致癌細胞死亡，屬**局部治療**。現代技術包括 IMRT（強度調控）、SBRT（立體定位身體放射治療）、SRS（立體定位放射手術，腦病灶常用）、近接治療（brachytherapy）、質子治療。
+
+### 主要適應症
+
+- **以治癒為目標的療程**：早期 NSCLC（不適合手術者 SBRT）、局部頭頸癌、子宮頸癌、攝護腺癌、淋巴瘤
+- **術前/術後輔助**：局部進展直腸癌（NeoRT + 化療）、頭頸癌、乳癌保乳術後
+- **症狀緩解**：骨轉移疼痛、腦轉移、脊椎壓迫、上腔靜脈症候群、出血
+- **寡轉移病灶清除**：少量轉移病灶以 SBRT 達局部控制，搭配全身性治療
+
+### 副作用：器官劑量決定一切
+
+放療副作用與**照射部位、劑量、體積**密切相關。器官劑量上限（organ-at-risk constraints）為計畫核心：
+
+- **急性（治療中—治療後 3 個月）**：皮膚反應、疲倦、照射區域黏膜炎、噁心、骨髓抑制（大範圍照射時）
+- **慢性（≥ 6 個月）**：纖維化、放射性肺炎（胸部）、心臟病（縱膈）、放射性大腸炎（骨盆）、第二原發癌（年輕病人尤需注意）
+
+RTOG（Radiation Therapy Oncology Group）與 EORTC 多項三期試驗確立了現代放療的劑量分層、合併化療時機與技術選擇。隨著 IMRT 與 SBRT 普及，正常組織暴露已可大幅降低。
+
+## 細胞治療簡介：CAR-T 與固體腫瘤的距離
+
+CAR-T（chimeric antigen receptor T-cell therapy）將病人自己的 T 細胞抽出後，以病毒載體裝上嵌合抗原受體（多數針對 CD19 或 BCMA），再經單次回輸攻擊腫瘤。目前已核准適應症：
+
+- **CD19 CAR-T**（tisagenlecleucel、axicabtagene、lisocabtagene）：難治型瀰漫性大 B 細胞淋巴瘤、濾泡性淋巴瘤、套細胞淋巴瘤、急性淋巴性白血病
+- **BCMA CAR-T**（idecabtagene、ciltacabtagene）：難治型多發性骨髓瘤
+
+主要副作用為細胞激素釋放症候群（CRS，發燒、低血壓、缺氧）與免疫效應細胞相關神經毒性症候群（ICANS，譫妄、癲癇）；前者以 tocilizumab、後者以類固醇處理。長期可能出現低球蛋白血症、感染風險上升與 B 細胞清除。
+
+固體腫瘤的 CAR-T 仍受限於腫瘤微環境與 antigen heterogeneity，目前多在臨床試驗階段。TIL（tumour-infiltrating lymphocyte）治療於 2024 年由 lifileucel 取得 FDA 加速核准用於進展期黑色素瘤。
+
+## ADC（抗體藥物複合體）簡介：化療彈頭由抗體導引
+
+ADC 把高效化療藥物（payload，如 deruxtecan、SN-38、MMAE）以 linker 接到抗體上，由抗體先辨識腫瘤抗原，把彈頭精準送到細胞內釋放。代表藥物：
+
+- **T-DXd（trastuzumab deruxtecan）**：HER2+ 與 HER2-low 乳癌、胃癌、HER2-mutant 肺癌
+- **Sacituzumab govitecan**：TROP-2 表現腫瘤，三陰性乳癌（ASCENT 試驗，mPFS 5.6 vs 1.7 個月）[6]
+- **Enfortumab vedotin**：Nectin-4，膀胱癌
+- **Mirvetuximab soravtansine**：FRα，鉑抗藥卵巢癌
+
+ADC 介於化療與標靶之間：仍有化療相關骨髓抑制、神經毒性，並多了**間質性肺炎（T-DXd 約 10–15%，致命率 < 2%）、眼毒性（tisotumab vedotin、mirvetuximab）等獨特副作用**。
+
+<Callout type="note" title="新藥不一定先進就最適合">
+ADC、CAR-T、雙特異性抗體（bispecifics）這些新一代治療在特定族群效果驚人，但同時帶來複雜的副作用 profile（CRS、ICANS、ILD、眼毒性），需要熟悉這些併發症的多專科團隊處理。在資源有限的情境下，傳統化療仍可能是更務實、更安全的選擇——這是醫療現實，不是落後。
+</Callout>
+
+## 為什麼有些人不能用免疫治療？
+
+不是所有病人都能受益於免疫檢查點抑制劑。常見禁忌或謹慎使用情境：
+
+- **活動期自體免疫疾病**：irAE 風險加倍，且原疾病可能爆發
+- **慢性類固醇/免疫抑制劑使用**：療效降低
+- **實體器官移植史**：可誘發致命性排斥
+- **既往嚴重 irAE 病史**：再挑戰風險高
+- **PD-L1 陰性、MSS、TMB 低的腫瘤型**（如 EGFR/ALK 突變 NSCLC）：療效有限，搭配方式須個別評估
+- **體能狀態 ECOG ≥ 3**：療效有限，治療相關死亡風險上升
+
+對病人而言，這代表「免疫治療不見得人人有份」，與醫師討論時應主動告知**所有自體免疫病史、過往用藥、移植史與類固醇使用情形**。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認自己有沒有做基因檢測
+
+    非小細胞肺癌、結直腸癌、乳癌、卵巢癌、攝護腺癌、膽道癌、胰臟癌等多數實體腫瘤 2026 年都有不同層級的基因檢測建議。沒測就直接化療，可能錯過 EGFR、ALK、HER2、BRAF、KRAS G12C、MSI、HRD 等關鍵 actionable target。
+  </div>
+  <div>
+    ### 主動詢問各種治療的目標
+
+    要分清楚「根除性治療」、「輔助治療」、「轉移性疾病的疾病控制」三種目標——它們所能耐受的副作用強度與療程長度差異很大。請醫師明確說明：這次治療希望達到的是控制、延長存活、症狀緩解，還是根除？
+  </div>
+  <div>
+    ### 帶這份問題清單回診
+
+    1. 我的腫瘤類型與分期是什麼？這次治療目標是？
+    2. 我有做基因檢測嗎？做了哪幾項？有 actionable mutation 嗎？
+    3. 為什麼選這個方案？有沒有其他替代？
+    4. 副作用有哪些？哪些需要立即回報、哪些可以居家觀察？
+    5. 健保是否給付？需要事前審查嗎？自費部分大約多少？
+    6. 是否有臨床試驗可考慮？適合條件為何？
+    7. 治療多久後評估反應？評估方式？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Gandhi L, Rodríguez-Abreu D, Gadgeel S, et al. **Pembrolizumab plus Chemotherapy in Metastatic Non–Small-Cell Lung Cancer** (KEYNOTE-189). *N Engl J Med.* 2018;378(22):2078-2092. [doi:10.1056/NEJMoa1801005](https://doi.org/10.1056/NEJMoa1801005)
+2. Wolchok JD, Chiarion-Sileni V, Gonzalez R, et al. **Overall Survival with Combined Nivolumab and Ipilimumab in Advanced Melanoma** (CheckMate-067). *N Engl J Med.* 2017;377(14):1345-1356. [doi:10.1056/NEJMoa1709684](https://doi.org/10.1056/NEJMoa1709684)
+3. Soria JC, Ohe Y, Vansteenkiste J, et al. **Osimertinib in Untreated EGFR-Mutated Advanced Non–Small-Cell Lung Cancer** (FLAURA). *N Engl J Med.* 2018;378(2):113-125. [doi:10.1056/NEJMoa1713137](https://doi.org/10.1056/NEJMoa1713137)
+4. Druker BJ, Guilhot F, O'Brien SG, et al. **Five-Year Follow-up of Patients Receiving Imatinib for Chronic Myeloid Leukemia** (IRIS). *N Engl J Med.* 2006;355(23):2408-2417. [doi:10.1056/NEJMoa062867](https://doi.org/10.1056/NEJMoa062867)
+5. Finn RS, Qin S, Ikeda M, et al. **Atezolizumab plus Bevacizumab in Unresectable Hepatocellular Carcinoma** (IMbrave150). *N Engl J Med.* 2020;382(20):1894-1905. [doi:10.1056/NEJMoa1915745](https://doi.org/10.1056/NEJMoa1915745)
+6. Bardia A, Hurvitz SA, Tolaney SM, et al. **Sacituzumab Govitecan in Metastatic Triple-Negative Breast Cancer** (ASCENT). *N Engl J Med.* 2021;384(16):1529-1541. [doi:10.1056/NEJMoa2028485](https://doi.org/10.1056/NEJMoa2028485)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。
