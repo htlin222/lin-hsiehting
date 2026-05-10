@@ -1,159 +1,69 @@
-# Serene Ink
+# 林協霆 · 臨床筆記
 
-Serene Ink is a minimalist, elegant, and blazing-fast Astro blog template designed for developers, writers, and creators. It features a clean UI, dark/light mode toggle, and MDX support out of the box, ensuring you can focus entirely on your writing.
+> 腫瘤內科醫師的臨床筆記、衛教與閱讀記錄。
+> 站台：[lin.hsiehting.com](https://lin.hsiehting.com)
+> 作者：林協霆 M.D.（[ORCID](https://orcid.org/0009-0002-3974-4528) · [Google Scholar](https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=zh-TW)）
 
-## 🚀 Features
+依**醫療法第 87 條第 2 項**屬醫學新知與病人衛生教育，不從事醫療業務招徠。
 
-- **Modern Stack:** Built with Astro, MDX, and Tailwind CSS v4 for ultimate developer experience and performance (100/100 Lighthouse scores).
-- **Rich Blogging:** Includes tags, pagination, related posts, draft support, expressive code snippets, and a variety of custom MDX components out of the box.
-- **Premium UX/UI:** Dark/light mode toggle with view transitions, Cmd+K search, smooth custom cursor, reading progress bar, and a dynamic Table of Contents.
-- **SEO & Analytics:** Fully configured with RSS, canonical URLs, Open Graph, sitemaps, structured data, and a ready-to-use Umami analytics integration.
-- **Centralized Config:** Easily personalize the entire site from a single `src/config.ts` file without digging into component code.
-
-## 🧞 Setting Up
-
-1. **Clone the repository** (or use the template):
-   ```sh
-   git clone https://github.com/your-username/serene-ink.git my-blog
-   cd my-blog
-   ```
-
-2. **Install dependencies**:
-   ```sh
-   pnpm install
-   ```
-
-3. **Start the local development server**:
-   ```sh
-   pnpm dev
-   ```
-   Open `localhost:4321` in your browser.
-
-## ✍️ Personalization
-
-### Quick Start — `src/config.ts`
-
-This is the **primary configuration file**. Open it and update these values to make the template yours:
-
-```ts
-export const siteConfig = {
-  title: "Your Blog Name",
-  description: "Your blog description.",
-  siteUrl: "https://your-domain.com",
-  author: {
-    name: "Your Name",
-    bio: "A short bio about yourself.",
-  },
-  nav: [
-    { label: "Writing", href: "/" },
-    { label: "About", href: "/about" },
-  ],
-  socials: {
-    github: "https://github.com/your-username",
-    twitter: "",     // leave empty to hide
-    linkedin: "",    // leave empty to hide
-  },
-  postsPerPage: 5,
-  analytics: {
-    umami: {
-      websiteId: "", // e.g., "a1b2c3d4-..."
-      src: "",       // e.g., "https://cloud.umami.is/script.js"
-    },
-  },
-  rss: {
-    title: "Your Blog",
-    description: "Your RSS feed description.",
-  },
-};
-```
-
-### Additional Personalization
-
-1. **Domain config:** Open `astro.config.mjs` and update `site` to match your production URL.
-2. **Author Profile & Projects:** Open `src/components/Author.astro` to customize the About page — timeline, projects, activity cards, and introductory text.
-3. **Favicon:** Replace `/public/favicon.svg` and `/public/favicon.ico` with your brand's icon.
-
-## 📝 Adding New Blogs
-
-All content lives in the `src/posts/` folder.
-To create a new blog post, use the built-in command:
-
-```sh
-pnpm run new-post "Your Awesome Catchy Title"
-```
-
-Alternatively, create a new `.mdx` file and include the following frontmatter:
-
-```mdx
----
-title: "Your Awesome Catchy Title"
-date: "03/12/2024"
-frontmatter: "A short description or summary of your post."
-tags: ["astro", "learning", "random"]
-draft: false
-image: ""
 ---
 
-Your content goes here...
+## Stack
+
+- [Astro 6](https://astro.build/) + MDX + Tailwind v4，fork 自 [serene-ink](https://github.com/) 主題並客製為醫學內容站
+- 部署：GitHub Actions → Cloudflare Pages（`main` push 自動 build & deploy）
+- AI 引用優化：`public/llms.txt` + 全站 `WebSite + Physician` JSON-LD + 文章層 `BlogPosting + MedicalWebPage + FAQPage`
+
+## Quick Start
+
+```bash
+pnpm install
+pnpm dev                                 # 本地預覽 localhost:4321
+pnpm build                               # 靜態 build → dist/
 ```
 
-### Frontmatter Fields
+## 寫一篇文章
 
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `title` | string | ✅ | The post title |
-| `date` | string | ✅ | Publish date in `MM/DD/YYYY` format |
-| `frontmatter` | string | ✅ | Short summary (used on listing, RSS, and search) |
-| `tags` | string[] | ✅ | Array of tags for categorization |
-| `draft` | boolean | ❌ | Set to `true` to hide from all listings (default: `false`) |
-| `updatedDate` | string | ❌ | Last updated date in `MM/DD/YYYY` format |
-| `image` | string | ❌ | Path to a cover image (relative to `src/assets/`) |
+```bash
+# 一般文章（隨筆、書摘、coding 雜記）
+pnpm run new-post "你的標題"
 
-### Organizing Posts
+# 醫療文章（衛教、新藥整理、治療進展）— 含完整 frontmatter + 章節骨架
+pnpm run new-post:medical "你的標題"
 
-You can organize your posts into subdirectories inside `src/posts/` (e.g., `src/posts/2024/tutorials/my-post.mdx`). Astro will automatically generate the corresponding URL structure (`/posts/2024/tutorials/my-post`).
-
-When nesting posts, use the `@/` alias to comfortably import out-of-the-box components without worrying about relative path depths:
-
-```mdx
-import Callout from '@/components/ui/Callout.astro';
+# 上稿前必跑：法規禁用詞 + medical frontmatter + 參考文獻區塊
+pnpm run audit:posts
 ```
 
-*(Note that the `image` frontmatter property still requires relative paths like `../../../assets/images/cover.webp` when deeply nested.)*
+新檔案會落在 `src/posts/<YYYY>/<slug>.mdx`。
 
-## 📊 Analytics
+## Audit
 
-Serene Ink supports [Umami](https://umami.is/) analytics out of the box. To enable it:
+```bash
+pnpm run audit:posts
+```
 
-1. Create a free account at [umami.is](https://umami.is/) (or self-host).
-2. Add your website and get your **Website ID** and **Script URL**.
-3. Update `src/config.ts`:
-   ```ts
-   analytics: {
-     umami: {
-       websiteId: "your-website-id",
-       src: "https://cloud.umami.is/script.js",
-     },
-   },
-   ```
+檢查項目：
 
-When both fields are empty, no analytics script is injected.
+- **法規禁用詞**：保證 / 根治 / 最有效 / 永不復發 / 第一例 / 唯一 / 立即諮詢 / 歡迎預約
+- **frontmatter 完整性**（`medical: true` 文章必填）：reviewer、reviewedDate、medicalCondition、reviewerCredentials
+- **參考文獻區塊**：醫療文章需有「## 參考文獻」或「## References」標題與 ≥ 1 個 URL
+- **lead paragraph 長度**：≤ 30 字會被警告（建議前 100 字直接給答案）
 
-## 🌐 Deployment
+任一 ERR → 退出碼 1，**不可上稿**。
 
-This template is configured as a static site, compatible with hosts like **Cloudflare Pages**, **Vercel**, and **Netlify**.
+## 完整作業規範
 
-**Deploying to Cloudflare Pages:**
-1. Push your code to a GitHub or GitLab repository.
-2. Log in to your Cloudflare dashboard → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**.
-3. Select your repository and configure:
-   - **Framework preset:** Astro
-   - **Build command:** `pnpm run build`
-   - **Build output directory:** `dist`
-4. Click **Save and Deploy**.
+詳見 [`CLAUDE.md`](./CLAUDE.md)：目錄結構、frontmatter 全規範、OpenEvidence MCP 引用流程、JSON-LD 對照表、上稿 checklist。
 
-*(Don't forget to update your `site` URL in `astro.config.mjs` once deployed!)*
+## 編輯方針摘要
 
-## 📜 License
+1. 依 NCCN / ASCO / ESMO 最新指引、PubMed 索引論文
+2. 每篇醫療文章由本人署名審稿、文末標註審稿日期與最後更新日期
+3. 個案經驗一律去識別化，並僅以教學、衛教為目的
+4. 不寫個別醫療建議、不從事醫療業務招徠
 
-This project is open-source and released under the [MIT License](LICENSE). Feel free to use it for personal or commercial projects.
+## License
+
+文章內容（`src/posts/`）：[CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+程式碼（其他所有檔案）：[MIT](./LICENSE)
