@@ -234,6 +234,20 @@ const profileLinks = [
             >
             聯絡。
         </p>
+        {siteConfig.socials.line && (
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                <strong class="text-foreground">讀者回饋管道</strong>：LINE 官方帳號
+                <a
+                    href={siteConfig.socials.line}
+                    target="_blank"
+                    rel="noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >@927pjtfa</a
+                >
+                ，接受文章勘誤建議、衛教問題提問、學術討論。
+                <strong class="text-foreground">本管道不提供個別診療建議</strong>，亦不受理任何形式之醫療業務預約；具體病情、用藥、治療方案請與您的主治醫師面對面討論。
+            </p>
+        )}
     </section>
 
     <footer

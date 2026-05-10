@@ -16,6 +16,7 @@ export interface SocialLinks {
     github: string;
     twitter: string;
     linkedin: string;
+    line?: string;
 }
 
 export interface UmamiConfig {

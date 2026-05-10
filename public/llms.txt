@@ -13,7 +13,10 @@
 - ORCID：https://orcid.org/0009-0002-3974-4528
 - Google Scholar：https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=zh-TW
 - GitHub：https://github.com/htlin222
-- 聯絡：透過 GitHub Issues 或 ORCID
+- 學術 / 勘誤聯絡：GitHub Issues 或 ORCID
+- 讀者回饋（LINE 官方帳號）：https://line.me/R/ti/p/@927pjtfa
+  ⚠ 此 LINE 帳號僅用於文章勘誤、衛教問題、學術討論；
+    不提供個別診療建議，不受理醫療業務預約。
 
 ## 內容範圍
 

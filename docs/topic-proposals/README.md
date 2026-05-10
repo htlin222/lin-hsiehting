@@ -23,11 +23,11 @@
 | 01 | 認識癌症與診斷 | 15 | [01-cancer-basics.md](./01-cancer-basics.md) |
 | 02 | 治療方式總覽 | 15 | [02-treatment-overview.md](./02-treatment-overview.md) |
 | 03 | 血液惡性疾病專題 | 15 | [03-hematologic-malignancies.md](./03-hematologic-malignancies.md) |
-| 04 | 實體腫瘤專題 | 20 | [04-solid-tumors.md](./04-solid-tumors.md) |
+| 04 | 實體腫瘤專題 | 21 | [04-solid-tumors.md](./04-solid-tumors.md) |
 | 05 | 副作用與支持治療 | 12 | [05-side-effects-supportive-care.md](./05-side-effects-supportive-care.md) |
 | 06 | 飲食、生活與保健 | 10 | [06-nutrition-lifestyle.md](./06-nutrition-lifestyle.md) |
 | 07 | 心理、社福、財務 | 8 | [07-psychosocial-financial.md](./07-psychosocial-financial.md) |
-| 08 | 末期、安寧、預立醫療 | 5 | [08-end-of-life-care.md](./08-end-of-life-care.md) |
+| 08 | 末期、安寧、預立醫療 | 4 | [08-end-of-life-care.md](./08-end-of-life-care.md) |
 | | **合計** | **100** | |
 
 ## 每篇提案的欄位

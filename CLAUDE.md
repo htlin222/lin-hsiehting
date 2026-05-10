@@ -285,6 +285,7 @@ mint 流程（自動）：
 
 - **上稿前必跑** `pnpm run audit:all && pnpm run build`。沒跑、或有 ERR 還沒修，**不可以**對使用者說「文章好了 / 完成了 / 可以 push 了」。這是搶答，不是完成。
 - **醫療文章一律雙語標題**：`title`（zh-TW）+ `titleEn`（English）。英文標題出現在 AMA citation、BibTeX、Google Scholar 索引。
+- **LINE 官方帳號 (@927pjtfa) 僅用於文章勘誤、衛教提問、學術討論**。**禁止**寫成「諮詢病情」「預約看診」「個別治療建議」等可能踩到醫療法 §87 招徠紅線的字眼。提到 LINE 必同時聲明「不提供個別診療建議」。
 - 寫醫療文章前先 `oe_auth_status` 確認 OpenEvidence 可用。
 - 引用論文時若 `crossrefValidationPath` 顯示 DOI 無效 → **不要寫進文章**，改抓另一篇；`audit:doi` 是第二道防線，不是免責金牌。
 - 數字（ORR / mPFS / mOS）一律附「n = X」與信心區間，沒有 CI 的初步數據要在文中標明 `初步報告`。
