@@ -179,6 +179,20 @@ function checkReferences(file, body, bodyOffset, isMedical) {
     return failures;
 }
 
+function checkBilingualTitle(file, data) {
+    if (!data?.medical) return [];
+    if (data.titleEn) return [];
+    return [
+        {
+            file,
+            line: 1,
+            severity: "warn",
+            message:
+                "醫療文章建議補上英文標題 `titleEn`（用於 AMA citation 與 BibTeX）",
+        },
+    ];
+}
+
 function checkLeadParagraph(file, body, bodyOffset, isMedical) {
     if (!isMedical) return [];
     const lines = body.split("\n").filter((l) => l.trim() !== "");
@@ -220,6 +234,7 @@ async function main() {
         const failures = [
             ...checkBanned(file, body, bodyOffset),
             ...checkMedicalFrontmatter(file, data),
+            ...checkBilingualTitle(file, data),
             ...checkReferences(file, body, bodyOffset, isMedical),
             ...checkLeadParagraph(file, body, bodyOffset, isMedical),
         ];

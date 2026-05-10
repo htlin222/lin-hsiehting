@@ -1,0 +1,94 @@
+name: Mint DOIs via Zenodo
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "sandbox.zenodo.org (safe to throwaway) or zenodo.org (permanent)"
+        type: choice
+        options: [sandbox, production]
+        default: sandbox
+      slug:
+        description: "Optional substring filter (e.g. ras-targeted). Leave empty to mint every eligible post."
+        type: string
+        required: false
+      dry_run:
+        description: "Print metadata without creating deposits"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  mint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Pick token for target
+        id: pick-token
+        env:
+          PROD_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          SANDBOX_TOKEN: ${{ secrets.ZENODO_SANDBOX_TOKEN }}
+          TARGET: ${{ inputs.target }}
+        run: |
+          if [ "$TARGET" = "production" ]; then
+            if [ -z "$PROD_TOKEN" ]; then
+              echo "::error::ZENODO_TOKEN secret is not set"
+              exit 1
+            fi
+            echo "token=$PROD_TOKEN" >> "$GITHUB_OUTPUT"
+            echo "flag=--production" >> "$GITHUB_OUTPUT"
+          else
+            if [ -z "$SANDBOX_TOKEN" ]; then
+              echo "::error::ZENODO_SANDBOX_TOKEN secret is not set"
+              exit 1
+            fi
+            echo "token=$SANDBOX_TOKEN" >> "$GITHUB_OUTPUT"
+            echo "flag=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mint DOIs
+        env:
+          ZENODO_TOKEN: ${{ steps.pick-token.outputs.token }}
+        run: |
+          set -e
+          ARGS="${{ steps.pick-token.outputs.flag }}"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.slug }}" ]; then ARGS="$ARGS --slug=${{ inputs.slug }}"; fi
+          node scripts/zenodo-mint.mjs $ARGS
+
+      - name: Run audit on the new frontmatter
+        if: ${{ inputs.dry_run != true }}
+        run: pnpm run audit:posts
+
+      - name: Open PR with new DOIs
+        if: ${{ inputs.dry_run != true }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "chore: mint DOIs via Zenodo (${{ inputs.target }})"
+          commit-message: "chore: mint DOIs via Zenodo (${{ inputs.target }})"
+          branch: doi/${{ github.run_id }}
+          delete-branch: true
+          body: |
+            Automated DOI mint via Zenodo (`${{ inputs.target }}`).
+
+            Triggered by @${{ github.actor }} from workflow run
+            [${{ github.run_id }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+
+            **Production DOIs are permanent.** If this PR was opened against
+            sandbox, the DOIs in frontmatter point to sandbox.zenodo.org —
+            close without merging if you want to re-mint into production
+            instead.

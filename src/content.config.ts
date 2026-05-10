@@ -6,9 +6,11 @@ const post = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/posts" }),
   schema: ({ image }) => z.object({
     title: z.string(),
+    titleEn: z.string().optional(),
     date: z.string(),
     frontmatter: z.string(),
     tags: z.array(z.string()),
+    citable: z.boolean().optional().default(false),
     image: image().optional(),
     draft: z.boolean().optional().default(false),
     updatedDate: z.string().optional(),
@@ -25,6 +27,8 @@ const post = defineCollection({
         }),
       )
       .optional(),
+    doi: z.string().optional(),
+    conceptDoi: z.string().optional(),
   }),
 });
 

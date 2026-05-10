@@ -51,7 +51,8 @@ pnpm run new-post:medical "你的標題"
 
 | 欄位 | 必填 | 說明 |
 |---|---|---|
-| `title` | ✅ | 標題 |
+| `title` | ✅ | 中文標題 |
+| `titleEn` | ✅ | 英文標題（用於 AMA citation 英文版、BibTeX、`<title>` SEO 補強）|
 | `date` | ✅ | 首次發布 `MM/DD/YYYY` |
 | `frontmatter` | ✅ | 摘要（首頁 / RSS / 描述標籤共用），≤ 120 字 |
 | `tags` | ✅ | 含癌別、藥物或機轉、`衛教` 一律加上 |
@@ -60,9 +61,11 @@ pnpm run new-post:medical "你的標題"
 | `reviewer` | ✅ | 通常 `林協霆`；客座作者要由本人掛名審稿 |
 | `reviewerCredentials` | ✅ | 例：`MD, 內科專科醫師, 腫瘤內科` |
 | `reviewedDate` | ✅ | `MM/DD/YYYY` |
+| `citable` | △ | `true` = 准予 push 後自動 mint Zenodo DOI（見 §11）；空 / `false` = 不 mint |
 | `updatedDate` | △ | 重大修訂時更新（NCCN 改版、新藥核准等） |
 | `faq` | △ | `[{q, a}]`，會輸出為 FAQPage schema，被 Google AI Overviews / Perplexity 引用機率高 |
 | `image` | △ | 封面圖（相對路徑，深巢需 `../../../assets/...`） |
+| `doi` / `conceptDoi` | 自動 | 由 `zenodo-mint.mjs` 寫回，**不要手動設**（除非是 backfill 既有 Zenodo record）|
 
 ## 4. 法規紅線（**任何一條違反 = 重寫**）
 
@@ -99,11 +102,12 @@ pnpm run new-post:medical "你的標題"
 ## 5. 文章結構（讓 AI 引擎願意擷取）
 
 1. **前 100 字直接給答案** — Lead paragraph 開門見山交代結論（藥物名、ORR、是否核准）。
-2. **H2/H3 用病人問句** — 例：「目前有 RAS 標靶藥物獲准用於胰臟癌嗎？」「副作用有哪些？」
-3. **比較表** — 治療選項、跨試驗數據用 markdown table，AI Overviews 最愛擷取。
-4. **短段落、條列** — 每段 ≤ 4 行，避免 wall of text。
-5. **超連結引用** — 引用論文必附 `[doi:XXX](https://doi.org/XXX)`。
-6. **Topic cluster 內鏈** — 同癌別 / 同機轉文章互相 `[文字](/posts/...)`。
+2. **雙語標題** — 中文標題（`title`）＋ 英文標題（`titleEn`）兩個都要寫。英文標題會出現在 AMA citation 英文版、BibTeX `title` 與 cite key 內，方便英文讀者引用、也讓 Google Scholar / 國際資料庫能對得上。
+3. **H2/H3 用病人問句** — 例：「目前有 RAS 標靶藥物獲准用於胰臟癌嗎？」「副作用有哪些？」
+4. **比較表** — 治療選項、跨試驗數據用 markdown table，AI Overviews 最愛擷取。
+5. **短段落、條列** — 每段 ≤ 4 行，避免 wall of text。
+6. **超連結引用** — 引用論文必附 `[doi:XXX](https://doi.org/XXX)`。
+7. **Topic cluster 內鏈** — 同癌別 / 同機轉文章互相 `[文字](/posts/...)`。
 
 ## 6. OpenEvidence MCP 引用流程
 
@@ -170,16 +174,17 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
 
 ### 7.1 寫完一篇文章的 checklist（Claude 必跑，逐條打勾）
 
-- [ ] frontmatter 含 `medical / reviewer / reviewerCredentials / reviewedDate / medicalCondition`
+- [ ] frontmatter 含 `title / titleEn / medical / reviewer / reviewerCredentials / reviewedDate / medicalCondition`
 - [ ] 前 100 字直接給結論
 - [ ] 至少一張比較表（治療選項 / 跨試驗）
 - [ ] 副作用、適應症、禁忌症章節都有
 - [ ] 「## 參考文獻」+ 每筆含 `[doi:XX](https://doi.org/XX)`
 - [ ] 文末有「> 引用整理協力：OpenEvidence …查詢」標註
 - [ ] 全文沒有禁用詞（§4.1）
-- [ ] `pnpm run audit:all` ✅
+- [ ] `pnpm run audit:all` ✅（沒有 ERR、沒有 titleEn warn）
 - [ ] `pnpm run build` ✅
 - [ ] `draft: false`（或 frontmatter 沒設 draft）才算可上稿
+- [ ] 想要 DOI 才設 `citable: true`；不想要的就維持空白／`false`
 
 任何一項沒打勾 → **不要**告訴使用者「文章好了」。
 
@@ -203,9 +208,83 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
 
 `pnpm run build` 在本地必須先綠燈再 push；CI 失敗會在 Actions 頁顯示。
 
+## 11. Zenodo DOI 流程
+
+文章可透過 Zenodo（DataCite DOI）取得永久學術引用標識。**每篇 = 1 個 record = 1 個 concept DOI + n 個 version DOI**，互不相干。
+
+### 11.1 一次性設定
+
+1. **本地 token**（給 `pnpm run zenodo:*` 用）
+   - 到 <https://zenodo.org/account/settings/applications/tokens/new/>
+   - scopes：`deposit:write` + `deposit:actions`
+   - 寫進 `.env`：`ZENODO_PAT=<token>`（已 gitignored）
+   - 也可用 `ZENODO_TOKEN`（GH Action secret 慣例）；腳本兩個都吃
+
+2. **GitHub Action secrets**
+   - `ZENODO_TOKEN`：production token（zenodo.org）— 給 `zenodo-on-push.yml` 用
+   - `ZENODO_SANDBOX_TOKEN`：sandbox token（sandbox.zenodo.org，**獨立帳號**）— 給手動 dispatch 用
+
+### 11.2 mint 條件
+
+只有同時滿足以下三條的文章才會被 mint：
+
+```
+citable: true   AND   draft != true   AND   doi: 還沒設
+```
+
+`citable` 是**顯式 opt-in**。沒寫或寫 `false` = 不 mint，不會被 push 觸發誤動作。
+
+### 11.3 兩種觸發方式
+
+| 觸發 | 條件 | 用途 |
+|---|---|---|
+| **`git push` 自動**（`zenodo-on-push.yml`）| 任何 `src/posts/**.mdx` 變更，且 commit message 不含 `[skip mint]` | 日常上稿；mint 完自動 commit DOI 回 main |
+| **手動 dispatch**（`zenodo-mint.yml`）| 在 GitHub Actions 介面選 sandbox/production + slug filter | 補 mint、sandbox 試水溫 |
+| **本地命令** | 跑下面的 pnpm script | 開發、debug、backfill |
+
+### 11.4 本地命令
+
+```bash
+pnpm run zenodo:dry                          # 不打 API，預覽 metadata
+pnpm run zenodo:dry -- --slug=<sub>          # 只看某篇
+pnpm run zenodo:sandbox -- --slug=<sub>      # sandbox 試一次（要 sandbox token）
+pnpm run zenodo:production -- --slug=<sub>   # 真正 mint（永久！）
+```
+
+mint 流程（自動）：
+1. `POST /api/deposit/depositions` 建 draft
+2. `PUT <bucket>/<filename>` 上傳該篇 `.mdx`
+3. `POST .../actions/publish` 發布 → 拿到 `doi` + `conceptDoi`
+4. 自動寫回 frontmatter `doi:` 與 `conceptDoi:`
+
+### 11.5 DOI 在站上會做什麼
+
+- `MedicalReview` 元件多一塊「引用本文 · Cite this」：concept DOI 連結 + 中英 AMA citation + BibTeX 折疊
+- `BlogPosting` JSON-LD 補 `identifier`（PropertyValue）+ `sameAs: doi.org/...`
+- `audit:doi` 會把這些 DOI 一併納入檢查（302 from doi.org = OK）
+
+### 11.6 修文章後要不要重 mint？
+
+| 情境 | 動作 |
+|---|---|
+| 改錯字、補連結（檔案內容變） | 之後做 versioning：mint v2 → 新 version DOI、conceptDoi 不變 |
+| 只是改 metadata（title, keywords）| 直接到 Zenodo 網站編輯，無需新 DOI |
+| 改 frontmatter 但不影響可引用內容 | 不用動 |
+
+> v2 版本流程目前**還沒寫進腳本**，第一次重 mint 時要走 `/api/deposit/depositions/<id>/actions/newversion`。先不急。
+
+### 11.7 手動 GH Action 路線
+
+- 進入 repo Actions → "Mint DOIs via Zenodo" → Run workflow
+- target: `sandbox` / `production`
+- slug: 可選 substring filter
+- dry_run: 預覽用
+- Action 執行完會開 PR 把 DOI 寫進 frontmatter，你 review 後 merge
+
 ## 10. 給 Claude 的提醒
 
 - **上稿前必跑** `pnpm run audit:all && pnpm run build`。沒跑、或有 ERR 還沒修，**不可以**對使用者說「文章好了 / 完成了 / 可以 push 了」。這是搶答，不是完成。
+- **醫療文章一律雙語標題**：`title`（zh-TW）+ `titleEn`（English）。英文標題出現在 AMA citation、BibTeX、Google Scholar 索引。
 - 寫醫療文章前先 `oe_auth_status` 確認 OpenEvidence 可用。
 - 引用論文時若 `crossrefValidationPath` 顯示 DOI 無效 → **不要寫進文章**，改抓另一篇；`audit:doi` 是第二道防線，不是免責金牌。
 - 數字（ORR / mPFS / mOS）一律附「n = X」與信心區間，沒有 CI 的初步數據要在文中標明 `初步報告`。

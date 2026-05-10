@@ -1,5 +1,7 @@
 ---
 title: "胰臟癌 KRAS／RAS 標靶治療最新進展（2024–2026）"
+titleEn: "Recent Advances in KRAS/RAS-Targeted Therapy for Pancreatic Cancer (2024–2026)"
+citable: true
 date: "05/10/2026"
 frontmatter: "2026 年 NEJM 公布 daraxonrasib 於 RAS 突變胰臟癌可達 35% 客觀反應率；本文整理 G12C／G12D／泛 KRAS 抑制劑、組合策略與台灣可及性，附審稿日期與參考文獻。"
 tags: ["胰臟癌", "KRAS", "標靶治療", "臨床試驗", "衛教"]
@@ -16,18 +18,21 @@ faq:
     a: "約 90% 以上胰臟腺癌帶有 KRAS 突變，其中 G12D 約佔 40%、G12V 約 30%、G12R 約 15%、G12C 僅 1–2%。這也是泛 KRAS／泛 RAS 抑制劑（如 daraxonrasib）對胰臟癌格外重要的原因。"
   - q: "Daraxonrasib 的常見副作用有哪些？"
     a: "在第 1–2 期試驗中，最常見的不良反應為皮疹、腹瀉、噁心、口腔黏膜炎與疲倦；第 3 級以上治療相關不良反應約 30%，目前未報告因不良反應而停藥的個案。"
+doi: "10.5281/zenodo.20112141"
+conceptDoi: "10.5281/zenodo.20112140"
 ---
 
-import Callout from '@/components/ui/Callout.astro';
-import Steps from '@/components/ui/Steps.astro';
-import ProsCons from '@/components/ui/ProsCons.astro';
-import LinkCard from '@/components/ui/LinkCard.astro';
-import Divider from '@/components/ui/Divider.astro';
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import ProsCons from "@/components/ui/ProsCons.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+import Divider from "@/components/ui/Divider.astro";
 
 胰臟癌過去被視為「無法用藥」的 KRAS 驅動腫瘤；2024–2026 年間，**泛 RAS 抑制劑 daraxonrasib (RMC-6236)** 在第 1–2 期試驗中於 RAS 突變胰臟腺癌達到 35% 客觀反應率與 13.1 個月中位存活，並取得 FDA 突破性療法資格，是目前最受矚目的進展。本文整理 G12C／G12D／泛 KRAS 抑制劑現況、組合策略、以及台灣病人可能的取得途徑。
 
 <Callout type="note" title="閱讀對象">
-本文設定讀者為已被告知 KRAS 突變、希望了解新藥進展的胰臟癌病友與家屬，以及對基因導向治療感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+  本文設定讀者為已被告知 KRAS
+  突變、希望了解新藥進展的胰臟癌病友與家屬，以及對基因導向治療感興趣的同業。所有實際治療決策請與您的主治醫師討論。
 </Callout>
 
 <Divider />
@@ -36,13 +41,13 @@ import Divider from '@/components/ui/Divider.astro';
 
 胰臟腺癌 (PDAC) 是所有實體腫瘤中 KRAS 突變比例最高的：**超過 90% 的病人帶有 KRAS 驅動突變**。突變分布如下：
 
-| KRAS 變異 | 胰臟腺癌中比例 | 是否有臨床可用抑制劑 |
-|---|---|---|
-| G12D | ≈ 40% | 第 1 期 (setidegrasib, RMC-9805)；MRTX1133 已終止 |
-| G12V | ≈ 30% | 泛 RAS 抑制劑可涵蓋 |
-| G12R | ≈ 15% | 泛 RAS 抑制劑可涵蓋 |
-| G12C | 1–2% | 已有 sotorasib／adagrasib（仿單外） |
-| 其他 (Q61H 等) | 少數 | 泛 KRAS 抑制劑 (BI-2493 等) 研發中 |
+| KRAS 變異      | 胰臟腺癌中比例 | 是否有臨床可用抑制劑                              |
+| -------------- | -------------- | ------------------------------------------------- |
+| G12D           | ≈ 40%          | 第 1 期 (setidegrasib, RMC-9805)；MRTX1133 已終止 |
+| G12V           | ≈ 30%          | 泛 RAS 抑制劑可涵蓋                               |
+| G12R           | ≈ 15%          | 泛 RAS 抑制劑可涵蓋                               |
+| G12C           | 1–2%           | 已有 sotorasib／adagrasib（仿單外）               |
+| 其他 (Q61H 等) | 少數           | 泛 KRAS 抑制劑 (BI-2493 等) 研發中                |
 
 長期以來 KRAS 因蛋白表面缺乏可結合口袋而被視為 undruggable；G12C 在 2021 年被攻克後，研發重心快速轉向胰臟癌主流的 G12D 與多突變泛 RAS 平台。
 
@@ -61,6 +66,7 @@ import Divider from '@/components/ui/Divider.astro';
     <Callout type="tip" title="NCCN v2.2026 立場">
       NCCN 胰臟腺癌指引將 sotorasib 或 adagrasib 列為「特定情況下可考慮 (Useful in Certain Circumstances)」的後線選項，僅限 KRAS G12C 突變病人。
     </Callout>
+
   </div>
   <div>
     ### 2. KRAS G12D 抑制劑（涵蓋胰臟癌約 40%）
@@ -68,6 +74,7 @@ import Divider from '@/components/ui/Divider.astro';
     - **MRTX1133**：第一個非共價 G12D 選擇性抑制劑，動物模式中 73% 的胰臟癌 PDX 模型出現腫瘤縮小；但**早期臨床試驗已終止**，主要受限於口服生體可用率與 ERK 重啟的適應性抗藥性。
     - **Setidegrasib (ASP3082)**：首個 G12D 蛋白降解 (PROTAC)。第 1 期試驗 (NEJM, 2026/04) 21 名胰臟癌病人，ORR 24%，mPFS 3.0 個月，mOS 10.3 個月；腫瘤組織中 G12D 蛋白降解中位 95.5%。
     - **RMC-9805**：共價型 G12D(ON) 三複合體抑制劑，胰臟癌臨床數據尚未公布。
+
   </div>
   <div>
     ### 3. 泛 KRAS／泛 RAS 抑制劑（可涵蓋 > 90% 胰臟癌）
@@ -75,26 +82,31 @@ import Divider from '@/components/ui/Divider.astro';
     - **Daraxonrasib (RMC-6236)**：口服 RAS(ON) 多選擇性非共價三複合體抑制劑，可抑制 GTP 結合型突變與野生型 KRAS／HRAS／NRAS。第 1–2 期 (NEJM, 2026/05) 168 名 RAS 突變胰臟癌：第二線 G12 突變 300 mg 組 (n=26) **ORR 35%、mPFS 8.5 個月、mOS 13.1 個月**。第 3 級以上不良反應 30%，無因不良反應停藥案例。
     - **Elironrasib (RMC-6291)**：共價 G12C(ON) 三複合體抑制劑，目標族群為 G12C-OFF 抑制劑（sotorasib／adagrasib）後抗藥性病人。
     - **BI-2493**：突變不分型的泛 KRAS 抑制劑，動物模式中可同時抑制 G12D／G12C／G12R／Q61H。
+
   </div>
 </Steps>
 
 ### Daraxonrasib vs. G12C 抑制劑：跨試驗比較表（僅供概念對照）
 
-| 藥物 | 涵蓋 KRAS 變異 | 試驗 | 線數 | n | ORR | mPFS | mOS |
-|---|---|---|---|---|---|---|---|
-| Sotorasib | G12C (~2%) | CodeBreaK 100 | ≥ 2L | 38 | 21% | 4.0 mo | 6.9 mo |
-| Adagrasib | G12C (~2%) | KRYSTAL-1 | ≥ 2L | 21 | 33% | 5.4 mo | 8.2 mo |
-| Setidegrasib | G12D (~40%) | NCT05382559 | 2L–3L | 21 | 24% | 3.0 mo | 10.3 mo |
-| **Daraxonrasib** | **泛 RAS (~90%+)** | NCT05379985 | 2L | 26 | **35%** | **8.5 mo** | **13.1 mo** |
+| 藥物             | 涵蓋 KRAS 變異     | 試驗          | 線數  | n   | ORR     | mPFS       | mOS         |
+| ---------------- | ------------------ | ------------- | ----- | --- | ------- | ---------- | ----------- |
+| Sotorasib        | G12C (~2%)         | CodeBreaK 100 | ≥ 2L  | 38  | 21%     | 4.0 mo     | 6.9 mo      |
+| Adagrasib        | G12C (~2%)         | KRYSTAL-1     | ≥ 2L  | 21  | 33%     | 5.4 mo     | 8.2 mo      |
+| Setidegrasib     | G12D (~40%)        | NCT05382559   | 2L–3L | 21  | 24%     | 3.0 mo     | 10.3 mo     |
+| **Daraxonrasib** | **泛 RAS (~90%+)** | NCT05379985   | 2L    | 26  | **35%** | **8.5 mo** | **13.1 mo** |
 
 <Callout type="warning" title="跨試驗比較的限制">
-不同試驗的病人族群、線數、評估基準、隨訪期皆不一致；上表僅作為概念性參考，不應用於臨床選藥。NCCN 與 ASCO 並未推薦單純依據 ORR 進行藥物排序。
+  不同試驗的病人族群、線數、評估基準、隨訪期皆不一致；上表僅作為概念性參考，不應用於臨床選藥。NCCN
+  與 ASCO 並未推薦單純依據 ORR 進行藥物排序。
 </Callout>
 
 ## 沒被 FDA 核准能用嗎？台灣可能的取得途徑
 
 <Callout type="note" title="目前法規現況（2026/05）">
-**沒有任何 KRAS／RAS 抑制劑在 FDA 取得胰臟癌正式核准。** Sotorasib 與 adagrasib 的核准適應症為非小細胞肺癌（KRAS G12C）與大腸直腸癌（KRAS G12C, sotorasib 合併 panitumumab）；用於胰臟癌屬仿單外使用 (off-label)，需自費且健保不給付。
+  **沒有任何 KRAS／RAS 抑制劑在 FDA 取得胰臟癌正式核准。** Sotorasib 與
+  adagrasib 的核准適應症為非小細胞肺癌（KRAS G12C）與大腸直腸癌（KRAS G12C,
+  sotorasib 合併 panitumumab）；用於胰臟癌屬仿單外使用
+  (off-label)，需自費且健保不給付。
 </Callout>
 
 對台灣胰臟癌病人而言，目前合法的取得途徑通常是：
@@ -125,7 +137,7 @@ import Divider from '@/components/ui/Divider.astro';
 - 活動性間質性肺炎、未控制感染、嚴重心律不整為相對禁忌
 
 <Callout type="warning">
-個案是否符合上述條件，必須由主治醫師依完整病歷、影像、實驗室數據與基因報告綜合判斷。本文無法取代正式的醫療評估。
+  個案是否符合上述條件，必須由主治醫師依完整病歷、影像、實驗室數據與基因報告綜合判斷。本文無法取代正式的醫療評估。
 </Callout>
 
 ## 組合策略：為什麼單藥不夠？
@@ -134,15 +146,15 @@ import Divider from '@/components/ui/Divider.astro';
 
 <ProsCons
   pros={[
-    'KRAS + 化療：MRTX1133 + 5-FU 在細胞與動物模式有顯著協同作用',
-    'KRAS + 免疫治療：RAS 抑制可重塑 TME、增加 CD8+ T 細胞，與 PD-1 阻斷有協同',
-    'KRAS + SHP2 抑制：阻斷 RTK 反饋訊號、提升 G12C 抑制劑療效',
-    'KRAS + PARP 抑制：G12D 抑制下調 BRCA1／RAD51，與 olaparib 形成合成致死'
+    "KRAS + 化療：MRTX1133 + 5-FU 在細胞與動物模式有顯著協同作用",
+    "KRAS + 免疫治療：RAS 抑制可重塑 TME、增加 CD8+ T 細胞，與 PD-1 阻斷有協同",
+    "KRAS + SHP2 抑制：阻斷 RTK 反饋訊號、提升 G12C 抑制劑療效",
+    "KRAS + PARP 抑制：G12D 抑制下調 BRCA1／RAD51，與 olaparib 形成合成致死",
   ]}
   cons={[
-    '副作用相加（皮疹、腹瀉、口腔黏膜炎）需更嚴密處置',
-    '組合用藥的劑量、療程與療效，目前多停留在第 1–2 期',
-    '健保給付與費用負擔，臨床試驗以外幾乎都需自費'
+    "副作用相加（皮疹、腹瀉、口腔黏膜炎）需更嚴密處置",
+    "組合用藥的劑量、療程與療效，目前多停留在第 1–2 期",
+    "健保給付與費用負擔，臨床試驗以外幾乎都需自費",
   ]}
 />
 
@@ -176,11 +188,13 @@ import Divider from '@/components/ui/Divider.astro';
     ### 確認自己的 KRAS 變異型
 
     開始討論 RAS 標靶藥物之前，先確認腫瘤組織或液態活檢 (ctDNA) 已驗 KRAS 突變並有具體 codon（G12D／G12V／G12R／G12C 等）。沒有具體 codon，無法配對對應的試驗或仿單外用藥。
+
   </div>
   <div>
     ### 主動詢問臨床試驗
 
     胰臟癌領域 2026 年最具突破潛力的藥物（daraxonrasib、setidegrasib）目前**只能透過臨床試驗取得**。請主治醫師查詢台灣試驗中心、或是否能轉介至有開試驗的醫學中心。
+
   </div>
   <div>
     ### 與主治醫師討論時可帶的問題清單
@@ -190,6 +204,7 @@ import Divider from '@/components/ui/Divider.astro';
     3. 若申請仿單外使用 sotorasib／adagrasib，可能的療效、副作用與費用？
     4. 標靶治療失敗後還有哪些選項（化療、免疫治療、緩和照護）？
     5. 我的營養、體能狀態、共病是否足以支撐口服標靶治療？
+
   </div>
 </Steps>
 
@@ -197,14 +212,14 @@ import Divider from '@/components/ui/Divider.astro';
 
 ## 參考文獻
 
-1. Wolpin BM, Park W, Garrido-Laguna I, et al. **Daraxonrasib in Previously Treated Advanced RAS-Mutated Pancreatic Cancer.** *N Engl J Med.* 2026;394(18):1790-1802. [doi:10.1056/NEJMoa2505783](https://doi.org/10.1056/NEJMoa2505783)
-2. Park W, Kasi A, Spira AI, et al. **Setidegrasib in Advanced Non–Small-Cell Lung Cancer and Pancreatic Cancer.** *N Engl J Med.* 2026;394(14):1409-1420. [doi:10.1056/NEJMoa2600752](https://doi.org/10.1056/NEJMoa2600752)
-3. Strickler JH, Satake H, George TJ, et al. **Sotorasib in KRAS p.G12C-Mutated Advanced Pancreatic Cancer.** *N Engl J Med.* 2023;388(1):33-43. [doi:10.1056/NEJMoa2208470](https://doi.org/10.1056/NEJMoa2208470)
-4. Bekaii-Saab TS, Yaeger R, Spira AI, et al. **Adagrasib in Advanced Solid Tumors Harboring a KRAS G12C Mutation.** *J Clin Oncol.* 2023;41(25):4097-4106. [doi:10.1200/JCO.23.00434](https://doi.org/10.1200/JCO.23.00434)
-5. Yamamoto N, Yan D, Ganju V, et al. **Efficacy and safety of garsorasib in patients with KRAS G12C-mutated advanced pancreatic cancer.** *Br J Cancer.* 2025. [doi:10.1038/s41416-025-03286-w](https://doi.org/10.1038/s41416-025-03286-w)
-6. Tiede KOM, Teixeira MF, Moura M, et al. **Efficacy and safety signals from early-phase studies of KRAS inhibition in pancreatic cancer.** *Sci Rep.* 2026;16(1):13189. [doi:10.1038/s41598-026-40757-3](https://doi.org/10.1038/s41598-026-40757-3)
+1. Wolpin BM, Park W, Garrido-Laguna I, et al. **Daraxonrasib in Previously Treated Advanced RAS-Mutated Pancreatic Cancer.** _N Engl J Med._ 2026;394(18):1790-1802. [doi:10.1056/NEJMoa2505783](https://doi.org/10.1056/NEJMoa2505783)
+2. Park W, Kasi A, Spira AI, et al. **Setidegrasib in Advanced Non–Small-Cell Lung Cancer and Pancreatic Cancer.** _N Engl J Med._ 2026;394(14):1409-1420. [doi:10.1056/NEJMoa2600752](https://doi.org/10.1056/NEJMoa2600752)
+3. Strickler JH, Satake H, George TJ, et al. **Sotorasib in KRAS p.G12C-Mutated Advanced Pancreatic Cancer.** _N Engl J Med._ 2023;388(1):33-43. [doi:10.1056/NEJMoa2208470](https://doi.org/10.1056/NEJMoa2208470)
+4. Bekaii-Saab TS, Yaeger R, Spira AI, et al. **Adagrasib in Advanced Solid Tumors Harboring a KRAS G12C Mutation.** _J Clin Oncol._ 2023;41(25):4097-4106. [doi:10.1200/JCO.23.00434](https://doi.org/10.1200/JCO.23.00434)
+5. Yamamoto N, Yan D, Ganju V, et al. **Efficacy and safety of garsorasib in patients with KRAS G12C-mutated advanced pancreatic cancer.** _Br J Cancer._ 2025. [doi:10.1038/s41416-025-03286-w](https://doi.org/10.1038/s41416-025-03286-w)
+6. Tiede KOM, Teixeira MF, Moura M, et al. **Efficacy and safety signals from early-phase studies of KRAS inhibition in pancreatic cancer.** _Sci Rep._ 2026;16(1):13189. [doi:10.1038/s41598-026-40757-3](https://doi.org/10.1038/s41598-026-40757-3)
 7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Pancreatic Adenocarcinoma, v2.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
-8. Mahadevan KK, McAndrews KM, LeBleu VS, et al. **KRASG12D inhibition reprograms the microenvironment of early and advanced pancreatic cancer to promote FAS-mediated killing by CD8+ T cells.** *Cancer Cell.* 2023;41(9):1606-1620.e8. [doi:10.1016/j.ccell.2023.07.002](https://doi.org/10.1016/j.ccell.2023.07.002)
-9. Krupa K, Fudalej M, Włoszek E, et al. **Treatment of KRAS-Mutated Pancreatic Cancer: New Hope for the Patients?** *Cancers (Basel).* 2025;17(15):2453. [doi:10.3390/cancers17152453](https://doi.org/10.3390/cancers17152453)
+8. Mahadevan KK, McAndrews KM, LeBleu VS, et al. **KRASG12D inhibition reprograms the microenvironment of early and advanced pancreatic cancer to promote FAS-mediated killing by CD8+ T cells.** _Cancer Cell._ 2023;41(9):1606-1620.e8. [doi:10.1016/j.ccell.2023.07.002](https://doi.org/10.1016/j.ccell.2023.07.002)
+9. Krupa K, Fudalej M, Włoszek E, et al. **Treatment of KRAS-Mutated Pancreatic Cancer: New Hope for the Patients?** _Cancers (Basel)._ 2025;17(15):2453. [doi:10.3390/cancers17152453](https://doi.org/10.3390/cancers17152453)
 
 > 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/10 查詢)；本文之 32 篇引用全文與 BibTeX 已存於本機 OpenEvidence MCP artifacts 目錄。

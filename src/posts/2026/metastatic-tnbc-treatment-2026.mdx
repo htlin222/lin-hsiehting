@@ -1,0 +1,217 @@
+---
+title: "轉移性三陰性乳癌的最新治療進展（2024–2026）"
+titleEn: "Recent Advances in the Treatment of Metastatic Triple-Negative Breast Cancer (2024–2026)"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "2026 NEJM 公布 ASCENT-04：sacituzumab govitecan + pembrolizumab 於 PD-L1+ mTNBC 一線 mPFS 11.2 個月（HR 0.65），改寫 NCCN v3.2026 標準治療；本文整理 ADC、PARP、AKT 與 AR 標靶最新資料。"
+tags: ["乳癌", "三陰性乳癌", "TNBC", "ADC", "免疫治療", "衛教"]
+medical: true
+medicalCondition: "轉移性三陰性乳癌 (Metastatic Triple-Negative Breast Cancer, mTNBC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "PD-L1 陽性 mTNBC 第一線該打什麼？"
+    a: "依 NCCN v3.2026，PD-L1 CPS ≥ 10 的轉移性三陰性乳癌第一線同時建議『化療 + pembrolizumab』與『sacituzumab govitecan + pembrolizumab』兩個 category 1 preferred 選項；後者出自 2026 年 NEJM 的 ASCENT-04 試驗，mPFS 從 7.8 延長到 11.2 個月（HR 0.65）。"
+  - q: "BRCA 突變的 mTNBC 病人有沒有特別的選擇？"
+    a: "有。帶有 germline BRCA1/2 致病性突變（gBRCA1/2）的轉移性三陰性乳癌可在一線用 PARP 抑制劑（olaparib 或 talazoparib），mPFS 約 7.0–8.6 個月，比化療有顯著優勢。NCCN v3.2026 將其列為 category 1 preferred。建議所有轉移性乳癌病人接受 germline BRCA 檢測。"
+  - q: "T-DXd（trastuzumab deruxtecan）在 TNBC 也能用嗎？"
+    a: "可以，但限定 HER2-low（IHC 1+ 或 IHC 2+/ISH−）的族群。DESTINY-Breast04 的 HR-negative subset (n = 63) mPFS 8.5 個月。NCCN 將其列為 HER2-low TNBC 第二線『其他建議』。HER2 IHC 0 的病人目前不適用。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import ProsCons from "@/components/ui/ProsCons.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+轉移性三陰性乳癌（mTNBC）2024–2026 年最大的轉折是 **2026 年 1 月 NEJM 公布的 ASCENT-04 試驗**：sacituzumab govitecan + pembrolizumab 於 PD-L1 CPS ≥ 10 的 mTNBC 第一線，mPFS 從 7.8 個月延長到 11.2 個月（HR 0.65, 95% CI 0.51–0.84）。NCCN v3.2026 已將這組合與既有的「化療 + pembrolizumab」並列為第一線 category 1 preferred 選項。本文整理 PD-L1 / BRCA / HER2-low 三個 biomarker 對應的策略、ADC 之間的選擇、以及 2026 年 CAPItello-290 確定 capivasertib 不適用 mTNBC 的負面結果。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知三陰性乳癌復發或轉移、想了解第一線該怎麼選的病友與家屬，以及對 ADC 競爭格局與 NCCN v3.2026 變動感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 三陰性乳癌為什麼難治？三個關鍵 biomarker
+
+「三陰性」是指雌激素受體（ER）、黃體素受體（PR）、HER2 三個都陰性，因此荷爾蒙治療與傳統 HER2 標靶都用不上。但這並不代表沒有藥物選項——2024–2026 年間，**至少有三個 biomarker 會直接決定第一線怎麼開**：
+
+| Biomarker | 比例（mTNBC） | 怎麼影響治療 |
+|---|---|---|
+| **PD-L1 CPS ≥ 10** | ≈ 35–40% | 第一線可加 pembrolizumab（KEYNOTE-355）或併 sacituzumab govitecan（ASCENT-04） |
+| **gBRCA1/2 致病突變** | ≈ 10–15% | 第一線可改用 PARP 抑制劑（OlympiAD、EMBRACA） |
+| **HER2-low（IHC 1+ 或 2+/ISH−）** | ≈ 30–40% | 後線可用 trastuzumab deruxtecan（DESTINY-Breast04） |
+
+<Callout type="tip" title="基因檢測時機">
+ASCO/SSO 2024 指引建議所有轉移性乳癌病人（不分病理類型）都應接受 germline BRCA1/2 檢測，因為會直接影響治療選項。
+</Callout>
+
+## 第一線該怎麼選？
+
+依 PD-L1 與 gBRCA 狀態，NCCN v3.2026 建議的第一線策略：
+
+<Steps>
+  <div>
+    ### PD-L1 CPS ≥ 10（不分 gBRCA）
+
+    NCCN v3.2026 並列兩個 category 1 preferred：
+
+    - **化療 + pembrolizumab**（KEYNOTE-355）：N = 847，CPS ≥ 10 subgroup mOS 23.0 vs. 16.1 個月（HR 0.73, 95% CI 0.55–0.95），mPFS 9.7 vs. 5.6 個月。
+    - **Sacituzumab govitecan + pembrolizumab**（ASCENT-04, NEJM 2026/01）：N = 443，**mPFS 11.2 vs. 7.8 個月（HR 0.65）**，ORR 60% vs. 53%，mDOR 16.5 vs. 9.2 個月。OS 數據尚未成熟。第 3 級以上不良反應比例兩組相當，但因 AE 停藥率反而較低（12% vs. 31%）。
+  </div>
+  <div>
+    ### PD-L1 CPS < 10 且 gBRCA wild-type
+
+    免疫治療效益不明顯。NCCN v3.2026 並列三個 category 1 preferred：
+
+    - **Sacituzumab govitecan**（ASCENT-03, NEJM 2025/11，N = 558）：mPFS 9.7 vs. 6.9 個月（HR 0.62），ORR 48% vs. 46%，mDOR 12.2 vs. 7.2 個月。
+    - **Datopotamab deruxtecan**（TROPION-Breast02, Annals Oncol 2026/04，N = 644）：mPFS 10.8 vs. 5.6 個月（HR 0.57），mOS 23.7 vs. 18.7 個月（HR 0.79, P = 0.029）。
+    - **化療單藥**（紫杉烷、capecitabine、eribulin 等）：歷史標準。
+  </div>
+  <div>
+    ### gBRCA1/2 致病突變（不分 PD-L1）
+
+    PARP 抑制劑是 category 1 preferred：
+
+    - **Olaparib**（OlympiAD）：TNBC subset (n = 102) mPFS HR 0.39（95% CI 0.2–0.57）。延長追蹤後 first-line mOS 22.6 vs. 14.7 個月（HR 0.55）。
+    - **Talazoparib**（EMBRACA）：N = 431，mPFS 8.6 vs. 5.6 個月（HR 0.54），ORR 62.6% vs. 27.2%。
+  </div>
+</Steps>
+
+<Callout type="warning" title="跨試驗比較的限制">
+ASCENT-04、ASCENT-03、TROPION-Breast02 的試驗族群（PD-L1 status、是否曾接受過免疫治療、復發 vs. 原發轉移）並不完全一致；上述數字僅供概念性對照，不應用於跨試驗排序選藥。實際選擇仍以個別病人 biomarker、共病、可及性綜合判斷。
+</Callout>
+
+## 第二線及後線：ADC 戰場
+
+第一線失效後，TROP-2 ADC（sacituzumab govitecan、sacituzumab tirumotecan）與 HER2 / HER3 ADC（T-DXd、Dato-DXd、HER3-DXd）構成主要選項。
+
+### 主要 ADC 比較
+
+| 藥物 | 標靶 | 試驗 | n | ORR | mPFS | mOS |
+|---|---|---|---|---|---|---|
+| Sacituzumab govitecan（≥ 2L） | TROP-2 | ASCENT | 468 | 35% | 5.6 mo | 12.1 mo |
+| Sacituzumab tirumotecan（≥ 2L） | TROP-2 | OptiTROP-Breast01 | 263 | 45.4% | 6.7 mo | not reached |
+| T-DXd（≥ 2L, HER2-low TNBC） | HER2-low | DESTINY-Breast04 (HR-) | 63 | n/a | 8.5 mo | n/a |
+| Dato-DXd（pretreated TNBC） | TROP-2 | TROPION-PanTumor01 | — | 31.8% | 4.4 mo | n/a |
+| Patritumab deruxtecan（≥ 5L） | HER3 | Phase I/II | — | 22.6% | 5.5 mo | n/a |
+
+<Callout type="note" title="ADC 之後再用 ADC？">
+目前缺乏前瞻性數據說明 sacituzumab govitecan 失效後再用 T-DXd 或 Dato-DXd 的療效。臨床上會依 HER2 表現、病人耐受度、與毒性 profile 切換。ASCENT-05、SASCIA 等試驗結果出來前，這仍是一個證據不足的灰色地帶。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+### Sacituzumab govitecan 常見不良反應
+
+- 任何級別：嗜中性白血球下降、腹瀉、噁心、疲倦、掉髮
+- 第 3 級以上嗜中性白血球下降約 50%、腹瀉約 10%
+- 黑盒警告：嚴重嗜中性白血球減少與腹瀉
+- UGT1A1 \*28 同型合子者風險升高，建議檢測
+
+### Pembrolizumab 與化療組合
+
+- 免疫相關 AE：肺炎、肝炎、大腸炎、甲狀腺異常、腎上腺功能不全
+- ASCENT-04 中嚴重免疫相關 AE 約 5–8%
+- 嚴重時須暫停或永久停藥並用類固醇
+
+### PARP 抑制劑（olaparib / talazoparib）
+
+- 任何級別：貧血、噁心、疲倦、嗜中性白血球下降
+- 第 3 級以上貧血為最常見停藥原因
+- 罕見但嚴重：MDS／AML（< 1.5%，建議治療前完整評估）
+
+### 適應症（試驗中或已核准）
+
+- mTNBC，依 PD-L1 CPS、gBRCA 狀態與 HER2-low 表現決定方案
+- 體能狀態 ECOG PS 0–1，主要器官功能可耐受
+- 已接受過完整 staging 與基因檢測（PD-L1 IHC 22C3、gBRCA、HER2 IHC）
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 活動性間質性肺病（pembrolizumab、T-DXd、Dato-DXd 均需謹慎）
+- 嚴重肝功能異常
+- 妊娠與授乳期應避免使用
+- 自體免疫疾病活動期（影響免疫治療）
+
+## 失敗的試驗也要知道：CAPItello-290
+
+<Callout type="warning" title="Capivasertib 不適用 mTNBC（2026/01）">
+CAPItello-290 第三期試驗（N = 812，Annals Oncol 2026/01）顯示 **capivasertib + paclitaxel 在 mTNBC 第一線整體族群與 PIK3CA／AKT1／PTEN 變異族群均未達主要 OS 終點**：mOS 17.7 vs. 18.0 個月（HR 0.92，P = 0.32）。儘管早期 PAKT 第二期看起來樂觀（mOS 19.1 vs. 12.6），第三期否定該結果。**目前不建議在 mTNBC 使用 capivasertib**。
+</Callout>
+
+## AR+（LAR 亞型）：仍在試驗中
+
+約 15–20% TNBC 為 luminal androgen receptor (LAR) 亞型，AR 表現高、可能對抗雄性素治療反應。**START 試驗**（Lancet Oncol 2025）以 darolutamide 對 AR+ 進階 TNBC，並提出「MA-high」轉錄體標誌可預測反應。Enzalutamide 早期數據顯示 AR ≥ 10% subset 16-週 CBR 33%、mPFS 2.9–3.3 個月。**TBCRC 058 試驗**（NCT06099769，n = 201）正在收 enzalutamide ± mifepristone vs. TPC，結果未出。
+
+## 哪些臨床試驗正在進行？
+
+<LinkCard
+  href="https://clinicaltrials.gov/study/NCT05633654"
+  title="ASCENT-05 (NCT05633654)"
+  description="輔助治療：sacituzumab govitecan + pembrolizumab，針對 high-risk 早期 TNBC 術後仍有殘存病灶的病人。"
+  domain="clinicaltrials.gov"
+/>
+
+<LinkCard
+  href="https://clinicaltrials.gov/study/NCT06099769"
+  title="TBCRC 058 (NCT06099769)"
+  description="第二期、enzalutamide ± mifepristone vs. 醫師選擇之治療，針對 AR+ 轉移性 TNBC 與 ER-low 乳癌。"
+  domain="clinicaltrials.gov"
+/>
+
+<LinkCard
+  href="https://clinicaltrials.gov/study/NCT06797635"
+  title="HERTHENA-Breast03 (NCT06797635)"
+  description="第二期、neoadjuvant patritumab deruxtecan (HER3-DXd) + pembrolizumab，針對早期 TNBC 與 HR-low+/HER2−。"
+  domain="clinicaltrials.gov"
+/>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三個 biomarker 都做了
+
+    開始討論第一線治療之前，必備：(1) PD-L1 CPS（22C3 抗體），(2) germline BRCA1/2 檢測，(3) HER2 IHC（區分 0 vs. 1+ vs. 2+/ISH−）。三項缺一就有可能漏掉適合的標靶。
+  </div>
+  <div>
+    ### 主動詢問 ASCENT-04 / ASCENT-03 是否適用
+
+    2026 年 NCCN 改版後，PD-L1 CPS ≥ 10 病人多了 sacituzumab govitecan + pembrolizumab 這條路；PD-L1 CPS < 10 多了 sacituzumab govitecan 與 datopotamab deruxtecan 兩條路。請主治醫師說明你屬於哪一線、為什麼選 A 不選 B、健保給付與自費差異。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 PD-L1 CPS 多少？做的是哪一支抗體（22C3 才是 pembrolizumab 用的）？
+    2. 有沒有做 germline BRCA1/2？如果還沒，可以排嗎？
+    3. 我的 HER2 IHC 是 0、1+、還是 2+/ISH−？這會影響後線選擇。
+    4. 第一線打完之後，第二線有哪些 ADC 可以選？順序怎麼考慮？
+    5. 副作用怎麼監測？（嗜中性白血球、腹瀉、間質性肺炎、免疫相關 AE）
+    6. 體能狀態、共病與器官功能是否足以耐受所選治療？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Tolaney SM, de Azambuja E, Kalinsky K, et al. **Sacituzumab Govitecan plus Pembrolizumab for Advanced Triple-Negative Breast Cancer** (ASCENT-04). *N Engl J Med.* 2026;394(4):354-366. [doi:10.1056/NEJMoa2508959](https://doi.org/10.1056/NEJMoa2508959)
+2. Cortés J, Punie K, Barrios C, et al. **Sacituzumab Govitecan in Untreated, Advanced Triple-Negative Breast Cancer** (ASCENT-03). *N Engl J Med.* 2025;393(19):1912-1925. [doi:10.1056/NEJMoa2511734](https://doi.org/10.1056/NEJMoa2511734)
+3. Cortes J, Rugo HS, Cescon DW, et al. **Pembrolizumab plus Chemotherapy in Advanced Triple-Negative Breast Cancer** (KEYNOTE-355). *N Engl J Med.* 2022;387(3):217-226. [doi:10.1056/NEJMoa2202809](https://doi.org/10.1056/NEJMoa2202809)
+4. Bardia A, Hurvitz SA, Tolaney SM, et al. **Sacituzumab Govitecan in Metastatic Triple-Negative Breast Cancer** (ASCENT). *N Engl J Med.* 2021;384(16):1529-1541. [doi:10.1056/NEJMoa2028485](https://doi.org/10.1056/NEJMoa2028485)
+5. Modi S, Jacot W, Yamashita T, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer** (DESTINY-Breast04). *N Engl J Med.* 2022;387(1):9-20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+6. Modi S, Jacot W, Iwata H, et al. **DESTINY-Breast04 long-term survival.** *Nat Med.* 2025. [doi:10.1038/s41591-025-03981-4](https://doi.org/10.1038/s41591-025-03981-4)
+7. Dent R, Shao Z, Schmid P, et al. **Datopotamab deruxtecan in untreated mTNBC** (TROPION-Breast02). *Ann Oncol.* 2026. [doi:10.1016/j.annonc.2026.03.008](https://doi.org/10.1016/j.annonc.2026.03.008)
+8. Yin Y, Fan Y, Ouyang Q, et al. **Sacituzumab tirumotecan in pretreated mTNBC** (OptiTROP-Breast01). *Nat Med.* 2025;31(6):1969-1975. [doi:10.1038/s41591-025-03630-w](https://doi.org/10.1038/s41591-025-03630-w)
+9. Litton JK, Rugo HS, Ettl J, et al. **Talazoparib in BRCA-mutated Advanced Breast Cancer** (EMBRACA). *N Engl J Med.* 2018;379(8):753-763. [doi:10.1056/NEJMoa1802905](https://doi.org/10.1056/NEJMoa1802905)
+10. Senkus E, Delaloge S, Domchek SM, et al. **Olaparib subgroup analyses, OlympiAD trial.** *Int J Cancer.* 2023;153(4):803-814. [doi:10.1002/ijc.34525](https://doi.org/10.1002/ijc.34525)
+11. Schmid P, McArthur HL, Cortés J, et al. **Capivasertib plus paclitaxel in mTNBC** (CAPItello-290). *Ann Oncol.* 2026;37(5):650-662. [doi:10.1016/j.annonc.2025.12.012](https://doi.org/10.1016/j.annonc.2025.12.012)
+12. Bonnefoi H, Lerebours F, Pulido M, et al. **Darolutamide in AR+ TNBC** (UCBG 3-06 START). *Lancet Oncol.* 2025;26(3):355-366. [doi:10.1016/S1470-2045(24)00737-X](https://doi.org/10.1016/S1470-2045(24)00737-x)
+13. Bedrosian I, Somerfield MR, Achatz MI, et al. **Germline Testing in Breast Cancer: ASCO–SSO Guideline.** *J Clin Oncol.* 2024;42(5):584-604. [doi:10.1200/JCO.23.02225](https://doi.org/10.1200/jco.23.02225)
+14. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Breast Cancer, v3.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 30 篇引用全文與 BibTeX 已存於本機 OpenEvidence MCP artifacts 目錄。

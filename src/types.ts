@@ -45,6 +45,7 @@ export interface AuthorConfig {
 
 export interface SiteConfig {
     title: string;
+    titleEn?: string;
     description: string;
     siteUrl: string;
     author: AuthorConfig;

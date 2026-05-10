@@ -1,0 +1,61 @@
+name: Auto-mint DOIs on push
+
+# Triggered automatically when any post .mdx changes.
+# Mints DOIs for posts with `citable: true` && !draft && no `doi:` yet,
+# then commits the DOI back to main with `[skip mint]` tag (which both
+# (a) prevents this workflow from re-running on its own commit, and
+# (b) explicitly documents the source of the change in git log).
+#
+# Auto-mint uses production Zenodo. Sandbox flow lives in the manual
+# `Mint DOIs via Zenodo` workflow (zenodo-mint.yml).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/posts/**/*.mdx"
+
+permissions:
+  contents: write
+
+jobs:
+  mint:
+    if: ${{ !contains(github.event.head_commit.message, '[skip mint]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Mint DOIs (production)
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          if [ -z "$ZENODO_TOKEN" ]; then
+            echo "::warning::ZENODO_TOKEN not set — skipping mint"
+            exit 0
+          fi
+          node scripts/zenodo-mint.mjs --production
+
+      - name: Audit + commit minted DOIs
+        run: |
+          if git diff --quiet -- 'src/posts/**/*.mdx'; then
+            echo "no DOI changes to commit"
+            exit 0
+          fi
+          pnpm run audit:posts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'src/posts/**/*.mdx'
+          git commit -m "chore: mint DOI(s) via Zenodo [skip mint]"
+          git push

@@ -14,7 +14,10 @@
     "new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
     "audit:posts": "node scripts/audit-posts.mjs",
     "audit:doi": "node scripts/audit-doi.mjs",
-    "audit:all": "pnpm run audit:posts && pnpm run audit:doi"
+    "audit:all": "pnpm run audit:posts && pnpm run audit:doi",
+    "zenodo:dry": "node --env-file=.env --env-file-if-exists=.env scripts/zenodo-mint.mjs --dry-run",
+    "zenodo:sandbox": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs",
+    "zenodo:production": "node --env-file-if-exists=.env scripts/zenodo-mint.mjs --production"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

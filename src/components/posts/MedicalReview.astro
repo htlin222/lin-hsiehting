@@ -1,6 +1,11 @@
 ---
 import { siteConfig } from "@/config";
-import { ShieldCheck, FileText, AlertTriangle } from "@lucide/astro";
+import {
+    ShieldCheck,
+    FileText,
+    AlertTriangle,
+    BookMarked,
+} from "@lucide/astro";
 import { parseDate } from "@/utils/date";
 
 interface Props {
@@ -9,6 +14,11 @@ interface Props {
     reviewedDate?: string;
     lastUpdated?: string;
     medicalCondition?: string;
+    title?: string;
+    titleEn?: string;
+    date?: string;
+    doi?: string;
+    conceptDoi?: string;
 }
 
 const {
@@ -17,7 +27,124 @@ const {
     reviewedDate,
     lastUpdated,
     medicalCondition,
+    title,
+    titleEn,
+    date,
+    doi,
+    conceptDoi,
 } = Astro.props;
+
+const monthShortBibtex = [
+    "jan",
+    "feb",
+    "mar",
+    "apr",
+    "may",
+    "jun",
+    "jul",
+    "aug",
+    "sep",
+    "oct",
+    "nov",
+    "dec",
+];
+const monthFullEn = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+
+// Citation prefers concept DOI (永遠指向最新版); falls back to version DOI.
+const citationDoi = conceptDoi || doi;
+
+function fmtDateZh(d: Date) {
+    return `${d.getUTCFullYear()}年${d.getUTCMonth() + 1}月${d.getUTCDate()}日`;
+}
+function fmtDateEn(d: Date) {
+    return `${monthFullEn[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+}
+
+function buildAma() {
+    if (!citationDoi || !title || !date) return null;
+    const pubDate = parseDate(date);
+    const updatedDate = lastUpdated ? parseDate(lastUpdated) : null;
+    const updatedSameAsPub =
+        updatedDate &&
+        updatedDate.getTime() === pubDate.getTime();
+
+    const zhParts = [
+        `林協霆.`,
+        `${title}.`,
+        `${siteConfig.title}.`,
+        `發表於 ${fmtDateZh(pubDate)}.`,
+    ];
+    if (updatedDate && !updatedSameAsPub) {
+        zhParts.push(`更新於 ${fmtDateZh(updatedDate)}.`);
+    }
+    zhParts.push(`doi:${citationDoi}`);
+    const zh = zhParts.join(" ");
+
+    let en: string | null = null;
+    if (titleEn && siteConfig.titleEn) {
+        const enParts = [
+            `Lin HT.`,
+            `${titleEn}.`,
+            `${siteConfig.titleEn}.`,
+            `Published ${fmtDateEn(pubDate)}.`,
+        ];
+        if (updatedDate && !updatedSameAsPub) {
+            enParts.push(`Updated ${fmtDateEn(updatedDate)}.`);
+        }
+        enParts.push(`doi:${citationDoi}`);
+        en = enParts.join(" ");
+    }
+    return { zh, en };
+}
+
+function buildBibtex() {
+    if (!citationDoi || !title || !date) return null;
+    const d = parseDate(date);
+    const year = d.getUTCFullYear();
+    const month = monthShortBibtex[d.getUTCMonth()];
+    const today = new Date().toISOString().slice(0, 10);
+    const slugBase = (titleEn || title)
+        .replace(/[^A-Za-z0-9]/g, " ")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
+        .join("");
+    const citeKey = `Lin${year}${slugBase || "Post"}`;
+    return [
+        `@article{${citeKey},`,
+        `  author   = {Lin, Hsieh-Ting},`,
+        `  title    = {${titleEn || title}},`,
+        titleEn && title ? `  titleaddon = {${title}},` : null,
+        `  journal  = {${siteConfig.titleEn || siteConfig.title}},`,
+        `  year     = {${year}},`,
+        `  month    = ${month},`,
+        `  doi      = {${citationDoi}},`,
+        `  url      = {https://doi.org/${citationDoi}},`,
+        `  urldate  = {${today}},`,
+        `  language = {zh-TW}`,
+        `}`,
+    ]
+        .filter(Boolean)
+        .join("\n");
+}
+
+const ama = buildAma();
+const bibtex = buildBibtex();
 
 const fmt = (iso?: string) => {
     if (!iso) return null;
@@ -99,4 +226,73 @@ const lastUpdatedFormatted = fmt(lastUpdated);
             </p>
         </div>
     </section>
+
+    {citationDoi && (
+        <section class="flex items-start gap-3 border-t border-border pt-4">
+            <BookMarked
+                class="text-primary mt-0.5 shrink-0"
+                size={18}
+            />
+            <div class="flex-1 min-w-0 space-y-3">
+                <div>
+                    <div class="text-xs uppercase tracking-widest text-muted-foreground">
+                        引用本文 · Cite this
+                    </div>
+                    <p class="mt-1 break-all">
+                        DOI:{" "}
+                        <a
+                            href={`https://doi.org/${citationDoi}`}
+                            target="_blank"
+                            rel="noopener"
+                            class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                        >
+                            {citationDoi}
+                        </a>
+                        {conceptDoi && doi && conceptDoi !== doi && (
+                            <span class="text-muted-foreground">
+                                {" "}
+                                · 此版本{" "}
+                                <a
+                                    href={`https://doi.org/${doi}`}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="hover:text-primary underline-offset-4 hover:underline"
+                                >
+                                    {doi}
+                                </a>
+                            </span>
+                        )}
+                    </p>
+                </div>
+
+                {ama && (
+                    <div class="space-y-2">
+                        <div>
+                            <div class="text-xs text-muted-foreground mb-1">
+                                AMA 格式 · 中文
+                            </div>
+                            <pre class="p-3 bg-secondary/60 rounded text-xs whitespace-pre-wrap break-words leading-relaxed">{ama.zh}</pre>
+                        </div>
+                        {ama.en && (
+                            <div>
+                                <div class="text-xs text-muted-foreground mb-1">
+                                    AMA style · English
+                                </div>
+                                <pre class="p-3 bg-secondary/60 rounded text-xs whitespace-pre-wrap break-words leading-relaxed">{ama.en}</pre>
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {bibtex && (
+                    <details class="text-xs text-muted-foreground">
+                        <summary class="cursor-pointer hover:text-foreground select-none">
+                            BibTeX
+                        </summary>
+                        <pre class="mt-2 p-3 bg-secondary/60 rounded text-xs whitespace-pre-wrap break-words">{bibtex}</pre>
+                    </details>
+                )}
+            </div>
+        </section>
+    )}
 </aside>

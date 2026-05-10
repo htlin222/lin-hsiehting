@@ -2,6 +2,7 @@ import type { SiteConfig } from "./types";
 
 export const siteConfig: SiteConfig = {
     title: "林協霆 · 臨床筆記",
+    titleEn: "Hsieh-Ting Lin · Clinical Notes",
     description: "腫瘤內科醫師。臨床筆記與閱讀記錄。",
     siteUrl: "https://lin.hsiehting.com",
     author: {

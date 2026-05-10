@@ -125,6 +125,18 @@ if (ogImage) {
         Astro.site || Astro.url.origin,
     ).href;
 }
+if (post.data.doi) {
+    blogPostingSchema.identifier = {
+        "@type": "PropertyValue",
+        propertyID: "doi",
+        value: post.data.doi,
+    };
+    const sameAs = [`https://doi.org/${post.data.doi}`];
+    if (post.data.conceptDoi && post.data.conceptDoi !== post.data.doi) {
+        sameAs.push(`https://doi.org/${post.data.conceptDoi}`);
+    }
+    blogPostingSchema.sameAs = sameAs;
+}
 
 const medicalSchema = post.data.medical
     ? (() => {
@@ -279,6 +291,11 @@ const relatedPosts = allEntries
                             reviewedDate={post.data.reviewedDate}
                             lastUpdated={post.data.updatedDate ?? post.data.date}
                             medicalCondition={post.data.medicalCondition}
+                            title={post.data.title}
+                            titleEn={post.data.titleEn}
+                            date={post.data.date}
+                            doi={post.data.doi}
+                            conceptDoi={post.data.conceptDoi}
                         />
                     )
                 }

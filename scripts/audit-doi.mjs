@@ -39,7 +39,24 @@ async function walk(dir) {
     return out;
 }
 
-const DOI_RE = /https?:\/\/(?:dx\.)?doi\.org\/[^\s)\]"'<>]+/g;
+// Allow `(` and `)` inside the URL because Elsevier/Lancet DOIs use them
+// (e.g. 10.1016/S1470-2045(24)00737-x). After matching, balance the parens
+// so we strip the markdown link's closing `)` without truncating the DOI.
+const DOI_RE = /https?:\/\/(?:dx\.)?doi\.org\/[^\s\]"'<>]+/g;
+
+function balanceTrailingParens(url) {
+    let opens = 0;
+    let closes = 0;
+    for (const c of url) {
+        if (c === "(") opens++;
+        else if (c === ")") closes++;
+    }
+    while (closes > opens && url.endsWith(")")) {
+        url = url.slice(0, -1);
+        closes--;
+    }
+    return url;
+}
 
 function extractDois(text) {
     const hits = [];
@@ -47,8 +64,8 @@ function extractDois(text) {
     for (let i = 0; i < lines.length; i++) {
         const matches = lines[i].matchAll(DOI_RE);
         for (const m of matches) {
-            // Strip trailing markdown punctuation that may leak into the match.
-            const url = m[0].replace(/[.,;:!?]+$/, "");
+            let url = m[0].replace(/[.,;:!?]+$/, "");
+            url = balanceTrailingParens(url);
             hits.push({ line: i + 1, url });
         }
     }
