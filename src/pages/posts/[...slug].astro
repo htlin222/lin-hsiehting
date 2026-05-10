@@ -77,6 +77,19 @@ const postUrl = new URL(
     Astro.url.pathname,
     Astro.site || Astro.url.origin,
 ).href;
+const pdfUrl = `/pdf/${post.id}.pdf`;
+const pdfAbsoluteUrl = new URL(pdfUrl, Astro.site || Astro.url.origin).href;
+const printAbsoluteUrl = new URL(
+    `/print/${post.id}`,
+    Astro.site || Astro.url.origin,
+).href;
+const citationPubDate = (() => {
+    const d = parseDate(post.data.date);
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(d.getUTCDate()).padStart(2, "0");
+    return `${y}/${m}/${day}`;
+})();
 
 const updatedIso = post.data.updatedDate
     ? parseDate(post.data.updatedDate).toISOString()
@@ -207,6 +220,34 @@ const relatedPosts = allEntries
     type="article"
     image={ogImage}
 >
+    <Fragment slot="head">
+        <meta name="citation_title" content={post.data.title} />
+        {post.data.titleEn && (
+            <meta name="citation_title" content={post.data.titleEn} />
+        )}
+        <meta name="citation_author" content="Lin, Hsieh-Ting" />
+        <meta name="citation_publication_date" content={citationPubDate} />
+        <meta name="citation_journal_title" content={siteConfig.titleEn} />
+        <meta name="citation_language" content="zh-TW" />
+        {post.data.tags && (
+            <meta
+                name="citation_keywords"
+                content={post.data.tags.join("; ")}
+            />
+        )}
+        {post.data.doi && (
+            <meta name="citation_doi" content={post.data.doi} />
+        )}
+        <meta name="citation_pdf_url" content={pdfAbsoluteUrl} />
+        <meta name="citation_fulltext_html_url" content={postUrl} />
+        <link rel="alternate" type="application/pdf" href={pdfUrl} />
+        <link
+            rel="alternate"
+            media="print"
+            type="text/html"
+            href={`/print/${post.id}`}
+        />
+    </Fragment>
     <div class="fixed top-0 left-0 w-full z-50 bg-transparent">
         <div
             id="progress-bar"
@@ -298,6 +339,7 @@ const relatedPosts = allEntries
                             date={post.data.date}
                             doi={post.data.doi}
                             conceptDoi={post.data.conceptDoi}
+                            pdfUrl={pdfUrl}
                         />
                     )
                 }

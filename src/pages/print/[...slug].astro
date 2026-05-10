@@ -1,0 +1,131 @@
+---
+import { getCollection, render } from "astro:content";
+import Print from "@/layouts/Print.astro";
+import { siteConfig } from "@/config";
+import { parseDate } from "@/utils/date";
+
+export async function getStaticPaths() {
+    const allPosts = await getCollection("post");
+    return allPosts
+        .filter((p) => !p.data.draft)
+        .map((post) => ({
+            params: { slug: post.id },
+            props: { post },
+        }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const dateObj = parseDate(post.data.date);
+const reviewedObj = post.data.reviewedDate
+    ? parseDate(post.data.reviewedDate)
+    : null;
+const updatedObj = post.data.updatedDate
+    ? parseDate(post.data.updatedDate)
+    : null;
+
+const fmt = (d: Date) =>
+    d.toLocaleDateString("zh-TW", {
+        timeZone: "UTC",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    });
+
+const postUrl = `${siteConfig.siteUrl}/posts/${post.id}`;
+const pageTitle = post.data.titleEn
+    ? `${post.data.title} (${post.data.titleEn}) — ${siteConfig.title}`
+    : `${post.data.title} — ${siteConfig.title}`;
+const citationDoi = post.data.conceptDoi || post.data.doi;
+---
+
+<Print title={pageTitle} description={post.data.frontmatter}>
+    <header class="print-title-block">
+        <p class="print-eyebrow">
+            {siteConfig.title} · {siteConfig.titleEn}
+        </p>
+        <h1 class="print-title">{post.data.title}</h1>
+        {
+            post.data.titleEn && (
+                <p class="print-title-en">{post.data.titleEn}</p>
+            )
+        }
+        <p class="print-byline">
+            <strong>{siteConfig.author.name}</strong>, {siteConfig.author.credentials}
+            <br />
+            <span>{siteConfig.author.affiliation}</span>
+            {
+                siteConfig.author.orcid && (
+                    <span> · ORCID: <a href={siteConfig.author.orcid}>{siteConfig.author.orcid.replace("https://orcid.org/", "")}</a></span>
+                )
+            }
+        </p>
+        <p class="print-meta">
+            <span>發表日期：{fmt(dateObj)}</span>
+            {updatedObj && <span> · 最後更新：{fmt(updatedObj)}</span>}
+            {reviewedObj && (
+                <span>
+                    {" "}· 審稿：{post.data.reviewer ?? siteConfig.author.name} ({fmt(reviewedObj)})
+                </span>
+            )}
+            {
+                post.data.medicalCondition && (
+                    <span> · 主題：{post.data.medicalCondition}</span>
+                )
+            }
+        </p>
+        {
+            citationDoi && (
+                <p class="print-meta print-doi-line">
+                    DOI: <a href={`https://doi.org/${citationDoi}`}>{citationDoi}</a>
+                    {post.data.conceptDoi && post.data.doi && post.data.conceptDoi !== post.data.doi && (
+                        <span> · 此版本 {post.data.doi}</span>
+                    )}
+                    <span> · {postUrl}</span>
+                </p>
+            )
+        }
+    </header>
+
+    {
+        post.data.frontmatter && (
+            <section class="print-abstract">
+                <div class="print-abstract-label">摘要 · Abstract</div>
+                <div>{post.data.frontmatter}</div>
+            </section>
+        )
+    }
+
+    <div class="print-body">
+        <Content />
+    </div>
+
+    <footer class="print-footer">
+        <p>
+            <span class="label">Source</span>
+            {postUrl}
+        </p>
+        <p>
+            <span class="label">Citation</span>
+            {siteConfig.author.name}.
+            {post.data.title}.
+            {siteConfig.title}.
+            {fmt(dateObj)}.
+            {citationDoi && <span>doi:{citationDoi}</span>}
+        </p>
+        <p>
+            <span class="label">License</span>
+            CC BY-NC-ND 4.0 — 文章內容依
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+                Creative Commons 姓名標示-非商業性-禁止改作 4.0 國際
+            </a>
+            授權公開使用。
+        </p>
+        <p>
+            <span class="label">Disclaimer</span>
+            本文整理公開發表之臨床試驗結果與 NCCN／ASCO／ESMO 治療指引，僅供醫學新知與病人衛生教育參考，
+            不構成個別醫療建議，亦不取代主治醫師之診療判斷。實際治療決策請與您的主治團隊面對面討論。
+        </p>
+    </footer>
+</Print>

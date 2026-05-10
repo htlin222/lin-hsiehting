@@ -160,6 +160,7 @@ const isOnCurrentPath = (path: string) => {
                 }),
             })}
         />
+        <slot name="head" />
         {
             siteConfig.analytics.umami.websiteId &&
                 siteConfig.analytics.umami.src && (

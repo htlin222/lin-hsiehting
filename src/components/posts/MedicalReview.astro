@@ -5,6 +5,7 @@ import {
     FileText,
     AlertTriangle,
     BookMarked,
+    Download,
 } from "@lucide/astro";
 import { parseDate } from "@/utils/date";
 
@@ -19,6 +20,7 @@ interface Props {
     date?: string;
     doi?: string;
     conceptDoi?: string;
+    pdfUrl?: string;
 }
 
 const {
@@ -32,6 +34,7 @@ const {
     date,
     doi,
     conceptDoi,
+    pdfUrl,
 } = Astro.props;
 
 const monthShortBibtex = [
@@ -306,6 +309,37 @@ const lastUpdatedFormatted = fmt(lastUpdated);
                         <pre class="mt-2 p-3 bg-secondary/60 rounded text-xs whitespace-pre-wrap break-words">{bibtex}</pre>
                     </details>
                 )}
+
+                {pdfUrl && (
+                    <div>
+                        <a
+                            href={pdfUrl}
+                            class="inline-flex items-center gap-2 text-xs px-3 py-1.5 border border-border rounded-md hover:bg-secondary/60 hover:text-foreground transition-colors"
+                            download
+                        >
+                            <Download size={14} />
+                            下載期刊版 PDF · Download print PDF
+                        </a>
+                    </div>
+                )}
+            </div>
+        </section>
+    )}
+
+    {!citationDoi && pdfUrl && (
+        <section class="flex items-start gap-3 border-t border-border pt-4">
+            <Download class="text-primary mt-0.5 shrink-0" size={18} />
+            <div>
+                <div class="text-xs uppercase tracking-widest text-muted-foreground">
+                    下載 · Download
+                </div>
+                <a
+                    href={pdfUrl}
+                    class="mt-1 inline-flex items-center gap-2 text-xs px-3 py-1.5 border border-border rounded-md hover:bg-secondary/60 hover:text-foreground transition-colors"
+                    download
+                >
+                    期刊版 PDF · Print PDF
+                </a>
             </div>
         </section>
     )}

@@ -15,6 +15,8 @@
 		"new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
 		"og:preview": "node scripts/og-image.mjs",
 		"og": "node scripts/og-image.mjs",
+		"pdf": "node scripts/render-pdfs.mjs",
+		"pdf:force": "node scripts/render-pdfs.mjs --force",
 		"audit:posts": "node scripts/audit-posts.mjs",
 		"audit:doi": "node scripts/audit-doi.mjs",
 		"audit:all": "pnpm run audit:posts && pnpm run audit:doi",
@@ -33,6 +35,7 @@
 		"tailwindcss": "^4.2.1"
 	},
 	"devDependencies": {
+		"playwright": "^1.49.0",
 		"satori": "^0.26.0",
 		"satori-html": "^0.3.2",
 		"sharp": "^0.34.5"
