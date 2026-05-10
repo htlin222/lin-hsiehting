@@ -40,15 +40,21 @@ pnpm run audit:posts
 ## Audit
 
 ```bash
-pnpm run audit:posts
+pnpm run audit:posts        # 法規 / frontmatter / 參考文獻
+pnpm run audit:doi          # 每個 https://doi.org/ 連結是否在 Crossref 有註冊
+pnpm run audit:all          # 兩個一起跑
 ```
 
-檢查項目：
+`audit:posts` 檢查項目：
 
 - **法規禁用詞**：保證 / 根治 / 最有效 / 永不復發 / 第一例 / 唯一 / 立即諮詢 / 歡迎預約
 - **frontmatter 完整性**（`medical: true` 文章必填）：reviewer、reviewedDate、medicalCondition、reviewerCredentials
 - **參考文獻區塊**：醫療文章需有「## 參考文獻」或「## References」標題與 ≥ 1 個 URL
 - **lead paragraph 長度**：≤ 30 字會被警告（建議前 100 字直接給答案）
+
+`audit:doi` 只測 doi.org 的 redirect 是否存在（302/303 = OK，404 = ERR，
+5xx／timeout = WARN）。出版社的 landing page 403 不會被當作失敗 — 那是
+publisher 的 paywall，與 DOI 是否註冊無關。
 
 任一 ERR → 退出碼 1，**不可上稿**。
 

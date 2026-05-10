@@ -12,7 +12,9 @@
     "astro": "astro",
     "new-post": "node --experimental-strip-types scripts/new-post.ts",
     "new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
-    "audit:posts": "node scripts/audit-posts.mjs"
+    "audit:posts": "node scripts/audit-posts.mjs",
+    "audit:doi": "node scripts/audit-doi.mjs",
+    "audit:all": "pnpm run audit:posts && pnpm run audit:doi"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",

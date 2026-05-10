@@ -153,10 +153,15 @@ mcp__openevidence__oe_ask
 
 ```bash
 pnpm run audit:posts        # 法規禁用詞 + medical frontmatter 完整性 + 參考文獻區塊
+pnpm run audit:doi          # 抓每個 https://doi.org/ 連結，確認 Crossref 有註冊
+pnpm run audit:all          # 上面兩個一起跑
 pnpm run build              # type/schema 檢查（會驗 frontmatter zod schema）
 ```
 
-`audit:posts` 失敗 → 退出碼 1，**不可上稿**。失敗原因會印 `file:line — reason`。
+任一 audit 失敗 → 退出碼 1，**不可上稿**。失敗原因會印 `file:line — reason`。
+
+`audit:doi` 只檢查 doi.org 的 redirect（302/303），不深入到出版社頁面 —
+NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit 不會誤殺。
 
 外部進階 SEO 工具（已 clone，未 install）：
 - `~/.claude/skills/claude-seo`（AgriciDaniel/claude-seo, 6.3k ⭐）— 跑 `bash install.sh` 後可用 `/seo-audit`、`/seo-schema` 等 sub-skill。
