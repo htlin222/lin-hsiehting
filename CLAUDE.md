@@ -149,19 +149,39 @@ mcp__openevidence__oe_ask
 - **PubMed** (`mcp__claude_ai_PubMed__*`) — 補抓 abstract、找 related articles
 - **bioRxiv** (`mcp__claude_ai_bioRxiv__*`) — 找尚未 peer-review 的 preprint（要在文中標明 *preprint*，不可當第一線實證）
 
-## 7. 上稿前 audit
+## 7. 上稿前 audit（**強制** ritual — Claude 必須跑完才能宣告文章完成）
+
+```bash
+pnpm run audit:all          # = audit:posts + audit:doi
+pnpm run build              # type/schema 檢查（會驗 frontmatter zod schema）
+```
+
+或拆開來：
 
 ```bash
 pnpm run audit:posts        # 法規禁用詞 + medical frontmatter 完整性 + 參考文獻區塊
 pnpm run audit:doi          # 抓每個 https://doi.org/ 連結，確認 Crossref 有註冊
-pnpm run audit:all          # 上面兩個一起跑
-pnpm run build              # type/schema 檢查（會驗 frontmatter zod schema）
 ```
 
 任一 audit 失敗 → 退出碼 1，**不可上稿**。失敗原因會印 `file:line — reason`。
 
 `audit:doi` 只檢查 doi.org 的 redirect（302/303），不深入到出版社頁面 —
 NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit 不會誤殺。
+
+### 7.1 寫完一篇文章的 checklist（Claude 必跑，逐條打勾）
+
+- [ ] frontmatter 含 `medical / reviewer / reviewerCredentials / reviewedDate / medicalCondition`
+- [ ] 前 100 字直接給結論
+- [ ] 至少一張比較表（治療選項 / 跨試驗）
+- [ ] 副作用、適應症、禁忌症章節都有
+- [ ] 「## 參考文獻」+ 每筆含 `[doi:XX](https://doi.org/XX)`
+- [ ] 文末有「> 引用整理協力：OpenEvidence …查詢」標註
+- [ ] 全文沒有禁用詞（§4.1）
+- [ ] `pnpm run audit:all` ✅
+- [ ] `pnpm run build` ✅
+- [ ] `draft: false`（或 frontmatter 沒設 draft）才算可上稿
+
+任何一項沒打勾 → **不要**告訴使用者「文章好了」。
 
 外部進階 SEO 工具（已 clone，未 install）：
 - `~/.claude/skills/claude-seo`（AgriciDaniel/claude-seo, 6.3k ⭐）— 跑 `bash install.sh` 後可用 `/seo-audit`、`/seo-schema` 等 sub-skill。
@@ -185,8 +205,10 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
 
 ## 10. 給 Claude 的提醒
 
+- **上稿前必跑** `pnpm run audit:all && pnpm run build`。沒跑、或有 ERR 還沒修，**不可以**對使用者說「文章好了 / 完成了 / 可以 push 了」。這是搶答，不是完成。
 - 寫醫療文章前先 `oe_auth_status` 確認 OpenEvidence 可用。
-- 引用論文時若 `crossrefValidationPath` 顯示 DOI 無效 → **不要寫進文章**，改抓另一篇。
+- 引用論文時若 `crossrefValidationPath` 顯示 DOI 無效 → **不要寫進文章**，改抓另一篇；`audit:doi` 是第二道防線，不是免責金牌。
 - 數字（ORR / mPFS / mOS）一律附「n = X」與信心區間，沒有 CI 的初步數據要在文中標明 `初步報告`。
 - 跨試驗比較表必須附 `Callout type="warning"` 警語：不同試驗族群／線數／評估基準不一致。
 - 一律用「副作用 / 不良反應」、「治療反應」、「無惡化存活」這類繁中標準術語，不直接寫 ORR / PFS 的英文縮寫前要先寫一次中文全名。
+- `git push` 是部署動作（會觸發 Cloudflare Pages 重 build），**只在使用者明確說「push」「部署」「上線」時才執行**，不要自己決定。

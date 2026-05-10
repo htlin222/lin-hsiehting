@@ -160,10 +160,12 @@ console.log(`Created ${medical ? "medical" : "general"} post: "${title}"`);
 console.log(`File:     ${relPath}`);
 if (medical) {
     console.log("");
-    console.log("Next:");
+    console.log("Next (ritual — see CLAUDE.md §7.1 checklist):");
     console.log("  1. Edit frontmatter (medicalCondition, faq, tags)");
     console.log("  2. Pull evidence: oe_ask via OpenEvidence MCP");
-    console.log("  3. Run: pnpm run audit:posts");
-    console.log("  4. Set draft: false when ready");
+    console.log("  3. Lead paragraph ≤ 100 chars, H2 = patient questions");
+    console.log("  4. Run: pnpm run audit:all   (posts + doi, MUST pass)");
+    console.log("  5. Run: pnpm run build       (schema/type check)");
+    console.log("  6. Set draft: false when both audits are green");
 }
 console.log("");
