@@ -1,0 +1,248 @@
+---
+title: "NGS 癌症基因檢測：2026 健保 19 種癌別給付完整解析"
+titleEn: "NGS testing in oncology 2026: Taiwan NHI 19-cancer reimbursement guide"
+date: "05/11/2026"
+frontmatter: "健保自 2024/5 起對 19 種癌別給付 NGS（小 panel / 大 panel / WES 三規格），但限定『會影響治療決策』的晚期或復發病人；本文整理給付條件、自費 panel 比較、ESMO ESCAT 解讀分級、tier I–III 與 VUS 差別，以及何時不該做 NGS。"
+tags: ["NGS", "基因檢測", "精準醫療", "健保", "FoundationOne", "衛教"]
+medical: true
+medicalCondition: "癌症次世代基因定序檢測 (Cancer NGS testing)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "NGS 自費要 10 萬，到底值不值得做？"
+    a: "視情境而定。若您是健保給付的 19 種癌別之一（肺癌、CRC、卵巢癌、攝護腺癌、乳癌、膽道癌、胰臟癌、肉瘤、不明原發癌等）且為晚期或復發，原則上應先走健保 BRCA1/2 panel 或 100+ 基因小 panel；若已用過健保規格但仍需更廣篩檢（例如尋找臨床試驗、評估 TMB／MSI／HRD），再考慮自費大 panel（300+ 基因，約 7–12 萬）或全外顯子定序。早期 stage I–II 預後良好的病人通常 actionability 偏低，不建議自費做。"
+  - q: "健保 NGS 跟自費的 FoundationOne CDx 差在哪？"
+    a: "健保小 panel 涵蓋 100+ 個與台灣常見癌別治療決策直接相關的基因，足以指引大多數已核准標靶（EGFR、ALK、ROS1、BRAF、KRAS、HER2 等）。自費大 panel（如 FoundationOne CDx、Caris MI Profile、TruSight Oncology 500、AmoyDx 與本土 ACT Genomics）覆蓋 300–500+ 基因，並同時報告 TMB、MSI、HRD 等簽章，較適合考慮跨癌別 basket 試驗或 immunotherapy decision 的病人。"
+  - q: "我什麼時候該做 NGS？什麼時候不該做？"
+    a: "ESMO Precision Medicine Working Group 2024 建議：晚期（stage IV）或復發的非小細胞肺癌、攝護腺癌、卵巢癌、膽道癌、不明原發癌應該做；早期且已治癒可能性高的 stage I–II 不需例行做。若預期生命少於 3 個月、PS 4、或無治療意願者，做了也來不及執行下一步治療，建議與主治醫師共同決定。"
+  - q: "NGS 報告寫『VUS』是什麼意思？要不要照那個變異治療？"
+    a: "VUS（Variant of Uncertain Significance）指『目前證據不足以判斷是良性或致病』的變異。依 AMP/ASCO/CAP 分類為 tier III，臨床上不應據此給藥或排除藥物。建議列入追蹤、定期重評（資料庫每年更新），並避免因 VUS 衍生不必要焦慮。"
+doi: "10.5281/zenodo.20113020"
+conceptDoi: "10.5281/zenodo.20113019"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+健保自 **2024 年 5 月 1 日**起，將次世代基因定序（NGS）納入 19 種實體癌的給付，分三種規格：**BRCA1/2 雙基因 panel**、**100+ 基因小 panel**、與**全外顯子定序（WES）**，每位病人終生限給付一次、限晚期或復發、且須結果會影響治療決策。本文整理 19 種給付癌別、健保 vs 自費（FoundationOne CDx、Caris、TruSight Oncology 500、AmoyDx、ACT Genomics）規格差異、ESMO ESCAT actionability 分級、AMP/ASCO/CAP tier I–III 解讀、以及何時不該做 NGS。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知腫瘤晚期或復發、正考慮基因檢測的病友與家屬，以及對健保 NGS 給付條件、ESCAT 與分子腫瘤委員會（MTB）流程有興趣的同業。所有實際檢測選擇與治療決策請與您的主治醫師、基因諮詢師討論。
+</Callout>
+
+<Divider />
+
+## NGS 是什麼？跟單基因檢測差在哪？
+
+NGS（Next-Generation Sequencing，次世代基因定序）是一次同時讀數百到數萬個基因的技術。相對地，傳統「單基因檢測」（PCR、Sanger 定序、IHC、FISH）一次只能看一個或少數幾個目標。
+
+| 項目 | 單基因檢測 | NGS（小 panel） | NGS（大 panel） | 全外顯子（WES） |
+|---|---|---|---|---|
+| 一次讀的基因數 | 1–5 | 100–250 | 300–500+ | ≈ 20,000 |
+| 樣本量需求 | 少 | 中 | 中 | 中–多 |
+| 報告時間 | 3–7 天 | 10–14 天 | 14–21 天 | 21–28 天 |
+| TMB / MSI / HRD | ✗ | 部分有 | ✓ | ✓ |
+| 健保是否給付 | 各別給付 | ✓（19 癌別） | ✗ | ✓（特定癌別） |
+| 自費約略 | 0.3–1 萬／項 | — | 7–12 萬 | 10–18 萬 |
+
+NGS 的優勢是「一次採檢、同時看完」，在組織量有限（例如肺癌切片只有一小條 core）時尤其重要。
+
+## 健保 NGS 給付：19 種癌別、三種規格（2026 現況）
+
+健保 BNHI 公告自 2024 年 5 月 1 日施行，2025、2026 年度持續微調適應症。基本原則：**晚期 / 復發、有實證依據會影響治療決策、每人終生限給付一次**。
+
+### 給付癌別清單（19 種）
+
+| 類別 | 給付癌別 |
+|---|---|
+| 肺部 | 非小細胞肺癌（NSCLC） |
+| 消化道 | 大腸直腸癌（CRC）、胰臟癌、膽道癌、胃癌、肝癌 |
+| 婦癌 | 卵巢癌、乳癌、子宮內膜癌 |
+| 泌尿 | 攝護腺癌、尿路上皮癌、腎細胞癌 |
+| 皮膚 | 黑色素瘤 |
+| 血液 | 急性骨髓性白血病（AML，已分次審查） |
+| 罕見 / 其他 | 軟組織肉瘤、骨肉瘤、甲狀腺癌（未分化）、神經內分泌瘤、不明原發癌（CUP） |
+
+### 三種 panel 規格
+
+<Steps>
+  <div>
+    ### BRCA1/2 panel（雙基因）
+
+    給付對象：HER2-negative 晚期乳癌、卵巢癌、攝護腺癌、胰臟癌（評估 PARP 抑制劑使用）。屬於最入門級的 NGS 規格，台灣多家本土實驗室提供。
+  </div>
+  <div>
+    ### 小 panel（100+ 基因）
+
+    給付對象：非小細胞肺癌、CRC、膽道癌、肉瘤、不明原發癌等。涵蓋已核准標靶治療的核心 driver gene（EGFR、ALK、ROS1、KRAS、BRAF、HER2、NTRK、FGFR、IDH1/2、MET 等）。為健保最常使用的規格。
+  </div>
+  <div>
+    ### 全外顯子定序（WES）
+
+    給付對象：肉瘤、不明原發癌、罕見癌或前述 panel 未發現可治療突變、且預期會改變治療決策者。涵蓋約 20,000 個編碼基因，但解讀複雜度高，通常需分子腫瘤委員會（MTB）會議共識。
+  </div>
+</Steps>
+
+<Callout type="warning" title="健保給付的兩個現實限制">
+（1）**終生限一次**：第一次選錯規格、或腫瘤後續演化出新突變，重複健保檢測會被核刪。建議與主治醫師仔細討論初次選哪一種。
+（2）**樣本品質**：石蠟包埋切片若 ≥ 3 年或腫瘤含量 < 20%，可能 QC 失敗無結果，但仍會用掉終生額度。建議優先使用新鮮切片或近期樣本。
+</Callout>
+
+## 自費 panel：FoundationOne、Caris、TSO500、AmoyDx、ACT Genomics
+
+當健保規格不適用、想要更廣篩檢（特別是要參加跨癌別 basket trial 或評估 immunotherapy）時，可考慮自費大 panel。
+
+| 平台 | 基因數 | TMB | MSI | HRD | 報告時間 | 約略價格（NTD） |
+|---|---|---|---|---|---|---|
+| FoundationOne CDx | 324 | ✓ | ✓ | — | 10–14 天 | 9–12 萬 |
+| Caris MI Profile | 700+（含 RNA、IHC）| ✓ | ✓ | ✓ | 14 天 | 11–15 萬 |
+| TruSight Oncology 500 | 523 | ✓ | ✓ | — | 14–21 天 | 7–10 萬 |
+| AmoyDx Master Panel | 600+ | ✓ | ✓ | — | 10–14 天 | 6–9 萬 |
+| ACT Genomics ACTOnco+ | 440 | ✓ | ✓ | ✓ | 14 天 | 7–10 萬 |
+
+<Callout type="warning" title="跨平台比較的限制">
+不同 panel 的基因清單、報告 format、actionability 分級邏輯都不同。同一份檢體在 A 平台跑出 actionable mutation，B 平台不一定報告同樣結論（基因不在 panel 內、或 actionability 分級規則不同）。請優先選擇有完整 actionability 報告（含 ESCAT 或 OncoKB level）、且報告醫師熟悉的平台。
+</Callout>
+
+## NGS 結果怎麼讀？AMP/ASCO/CAP 的 tier I–III
+
+2017 年 AMP（分子病理學會）、ASCO、CAP 共同發布 somatic variant 解讀標準，將每個變異依「臨床意義強度」分為四 tier：
+
+| Tier | 名稱 | 定義 | 臨床作為 |
+|---|---|---|---|
+| **I** | Strong clinical significance | 在該癌別有 FDA 核准標靶、或 NCCN guideline 直接建議 | 可立即據此選藥 |
+| **II** | Potential clinical significance | 在其他癌別已有實證、或在該癌別有 phase II 試驗結果 | 考慮 off-label、basket trial |
+| **III** | Unknown clinical significance（VUS） | 證據不足，無法判斷致病或良性 | 不據此給藥，列入追蹤 |
+| **IV** | Benign / likely benign | 為 polymorphism 或良性變異 | 不需處理 |
+
+### ESMO ESCAT：跨癌別 actionability 分級
+
+歐洲腫瘤學會（ESMO）於 2018 年提出 ESCAT 分級（ESMO Scale for Clinical Actionability of molecular Targets），補強 tier I 內部的證據強度差異：
+
+| ESCAT level | 證據強度 | 例子 |
+|---|---|---|
+| **I-A** | 同癌別、phase III 試驗、達主要終點 | NSCLC EGFR + osimertinib |
+| **I-B** | 同癌別、phase III 試驗、未達 OS 終點但 PFS 顯著 | NSCLC ALK + alectinib |
+| **I-C** | 跨癌別 / basket trial 已核准 | NTRK fusion + larotrectinib |
+| **II-A** | 同癌別、phase II 證據 | KRAS G12C NSCLC + sotorasib（已升級） |
+| **II-B** | 跨癌別 phase II | BRAF V600E + dabrafenib/trametinib |
+| **III** | 推測有效但缺人體數據 | preclinical only |
+| **IV** | 動物 / 細胞模型 | hypothesis only |
+| **V** | 反向證據 | EGFR exon 20 + 第一代 EGFR-TKI（無效） |
+
+臨床上應優先依據 **ESCAT I-A / I-B 與 tier I** 結果決定治療；ESCAT II 以下與 tier II 為「可考慮 basket trial」的範疇；tier III（VUS）不應據此選藥。
+
+<Callout type="warning" title="VUS 與 actionable findings 的差別">
+報告上若寫「Tier III · Variant of Uncertain Significance」**不代表致病、也不代表可以據此選藥**。VUS 的常見來源包括：(1) 該變異在資料庫中過於罕見、(2) 功能研究尚不充分、(3) 與已知致病變異的 hotspot 不同。建議列入長期追蹤（資料庫每年更新）、勿因此焦慮、勿用於決策；遇到 VUS 而病人強烈期待用藥時，請主治醫師說明證據不足的事實。
+</Callout>
+
+## 報告出來之後：分子腫瘤委員會（MTB）
+
+當報告含複雜或非典型變異（多重 driver、tier II、罕見 fusion、高 TMB 但組織型態不典型），單一臨床醫師難以獨自判斷。**分子腫瘤委員會（Molecular Tumor Board, MTB）**是由腫瘤內科、病理、分子病理、藥理、生物資訊、基因諮詢師組成的跨領域會議，定期討論複雜病例。
+
+<Steps>
+  <div>
+    ### 主治醫師建議檢測
+
+    依癌別、分期、共病評估是否適合 NGS、選哪種規格（健保 vs 自費）。簽署知情同意，含 germline 變異揭露、保險法律後果、家族成員檢測建議。
+  </div>
+  <div>
+    ### 採檢與送驗
+
+    優先選擇腫瘤含量高、≤ 3 年的石蠟切片；若無，可考慮液態切片（ctDNA）。10–21 天報告回來。
+  </div>
+  <div>
+    ### 報告解讀
+
+    主治醫師對照 NCCN、ESCAT、OncoKB，判斷 tier 與 actionability。簡單案例（例：NSCLC EGFR L858R）可直接決策；複雜案例提交 MTB。
+  </div>
+  <div>
+    ### MTB 討論（複雜案例）
+
+    跨領域共識：是否有 actionable target、是否符合臨床試驗收案、是否需要再追加 germline 確認、是否要建議家族成員檢測。會議紀錄入病歷。
+  </div>
+  <div>
+    ### 治療決策與追蹤
+
+    依共識決定標靶、basket trial、或維持化療。3–6 個月後若惡化，考慮 ctDNA 追蹤抗藥機制（例：EGFR T790M、C797S）。
+  </div>
+</Steps>
+
+## 副作用與風險：NGS 不只是抽血
+
+NGS 本身屬於檢驗，主要「風險」來自結果解讀與後續決策：
+
+- **偶發 germline 發現**：自費大 panel 約 3–5% 病人會發現高 penetrance 的遺傳性癌症基因（BRCA1/2、TP53、Lynch 相關 MLH1/MSH2 等），會影響家族成員檢測建議，且可能影響保險投保；台灣《人體生物資料庫管理條例》規範相關保密義務。
+- **保險與職場顧慮**：已有商業保險疾病條款明訂遺傳性癌症免責；建議檢測前先確認家族保險規劃，必要時諮詢專業基因諮詢師。
+- **VUS 焦慮**：報告約 20–40% 的變異是 tier III VUS，可能引發病人不必要焦慮。需要主治醫師花時間解釋。
+- **重複給付限制**：健保終生一次原則 ⇒ 第一次選錯規格、QC 失敗、或日後出現 acquired resistance 想再驗，要全自費或不再驗。
+
+### 適應症（建議做 NGS 的情境）
+
+- 晚期或復發的非小細胞肺癌、攝護腺癌、卵巢癌、膽道癌、CRC、不明原發癌
+- 需要評估 PARP 抑制劑使用的 BRCA1/2 相關癌（乳癌、卵巢癌、攝護腺癌、胰臟癌）
+- 罕見癌、不明原發癌、診斷困難病例
+- 標準治療失敗、想找臨床試驗收案資格者
+- 體能狀態 ECOG PS 0–2、預期生命 ≥ 3 個月、有後續治療意願
+
+### 不建議做 NGS 的情境
+
+- 早期 stage I–II 且預後良好、暫無遠端轉移風險評估需求
+- 預期生命少於 3 個月、PS 4
+- 病人或家屬無治療意願（資訊到手也不會執行）
+- 樣本品質不佳（≥ 3 年石蠟切片、腫瘤含量 < 20%）但仍可重新切片時
+- 已對所有臨床試驗失去資格、且現行治療效果穩定
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認自己是否符合健保給付條件
+
+    （1）所患癌別是否在 19 種給付清單內？（2）是否為晚期 / 復發？（3）健保 NGS 是否會直接影響你的下一步治療決策？（4）腫瘤切片是否還可用、腫瘤含量足夠？
+  </div>
+  <div>
+    ### 與主治醫師討論：先走健保還是自費？
+
+    若 19 癌別之一且健保規格足夠 ⇒ 走健保。若已用過健保 panel 但需更廣篩檢、想參加跨癌別試驗、或要看 TMB／MSI／HRD ⇒ 考慮自費大 panel。
+  </div>
+  <div>
+    ### 知情同意：確認你了解 germline 揭露的後果
+
+    自費大 panel 約 3–5% 會偶發發現遺傳性癌症基因。簽同意書時務必詢問：(1) 結果會不會通知家屬？(2) 對保險的影響？(3) 是否需要轉介基因諮詢師？
+  </div>
+  <div>
+    ### 報告出來後：問清楚是哪一個 tier / ESCAT level
+
+    主治醫師應明確告知：tier I 可立即用、tier II 是試驗級、tier III VUS 不據此決策。不要因為「報告上看到變異」就堅持用藥。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我這個癌別有沒有在健保 19 種給付名單內？
+    2. 你建議我做小 panel、大 panel、還是 WES？為什麼？
+    3. 報告大概多久回來？回來之後會不會送 MTB 討論？
+    4. 我的腫瘤切片夠不夠？要不要重新切片或抽血做 ctDNA？
+    5. 報告 VUS 的比例大概多少？我心理上要怎麼面對？
+    6. 找到 actionable target 之後，藥物是健保、仿單外、還是要自費／參加試驗？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Mateo J, Chakravarty D, Dienstmann R, et al. **A framework to rank genomic alterations as targets for cancer precision medicine: the ESMO Scale for Clinical Actionability of molecular Targets (ESCAT).** *Ann Oncol.* 2018;29(9):1895-1902. [doi:10.1093/annonc/mdy263](https://doi.org/10.1093/annonc/mdy263)
+2. Li MM, Datto M, Duncavage EJ, et al. **Standards and Guidelines for the Interpretation and Reporting of Sequence Variants in Cancer: A Joint Consensus Recommendation of the Association for Molecular Pathology, American Society of Clinical Oncology, and College of American Pathologists.** *J Mol Diagn.* 2017;19(1):4-23. [doi:10.1016/j.jmoldx.2016.10.002](https://doi.org/10.1016/j.jmoldx.2016.10.002)
+3. AACR Project GENIE Consortium. **AACR Project GENIE: Powering Precision Medicine through an International Consortium.** *Cancer Discov.* 2017;7(8):818-831. [doi:10.1158/2159-8290.CD-17-0151](https://doi.org/10.1158/2159-8290.CD-17-0151)
+4. Frampton GM, Fichtenholtz A, Otto GA, et al. **Development and validation of a clinical cancer genomic profiling test based on massively parallel DNA sequencing.** *Nat Biotechnol.* 2013;31(11):1023-1031. [doi:10.1038/nbt.2696](https://doi.org/10.1038/nbt.2696)
+5. Mangat PK, Halabi S, Bruinooge SS, et al. **Rationale and Design of the Targeted Agent and Profiling Utilization Registry Study (TAPUR).** *JCO Precis Oncol.* 2018;2:1-14. [doi:10.1200/PO.18.00122](https://doi.org/10.1200/PO.18.00122)
+6. Jamal-Hanjani M, Wilson GA, McGranahan N, et al. **Tracking the Evolution of Non-Small-Cell Lung Cancer (TRACERx).** *N Engl J Med.* 2017;376(22):2109-2121. [doi:10.1056/NEJMoa1616288](https://doi.org/10.1056/NEJMoa1616288)
+7. Mosele F, Remon J, Mateo J, et al. **Recommendations for the use of next-generation sequencing (NGS) for patients with metastatic cancers: a report from the ESMO Precision Medicine Working Group.** *Ann Oncol.* 2020;31(11):1491-1505. [doi:10.1016/j.annonc.2020.07.014](https://doi.org/10.1016/j.annonc.2020.07.014)
+8. National Health Insurance Administration, Ministry of Health and Welfare, Taiwan. **次世代基因定序檢測（NGS）給付規範.** 2024-05-01 起施行. [nhi.gov.tw](https://www.nhi.gov.tw/)
+9. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Biomarkers Compendium, v2.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 ESCAT 與 AMP/ASCO/CAP 分級對照、健保給付清單已對照 BNHI 公告與 ESMO 2024 指引核對。

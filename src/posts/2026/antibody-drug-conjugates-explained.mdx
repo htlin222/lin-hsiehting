@@ -1,0 +1,183 @@
+---
+title: "抗體藥物複合體 (ADC) 是什麼？2026 全景整理"
+titleEn: "Antibody-drug conjugates (ADCs) in 2026: a clinical overview"
+date: "05/11/2026"
+frontmatter: "ADC 是「標靶藥的精準導引 + 化療彈頭」組合，2024–2026 已在乳癌、肺癌、泌尿上皮癌、淋巴瘤等改寫治療地圖；本文整理三要素機轉、bystander effect、12 種已上市產品與 ILD 等共通副作用 pattern。"
+tags: ["ADC", "trastuzumab deruxtecan", "sacituzumab govitecan", "標靶治療", "衛教"]
+medical: true
+medicalCondition: "抗體藥物複合體治療 (Antibody-drug conjugate therapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "Enhertu 是什麼藥？跟一般化療有什麼不同？"
+    a: "Enhertu（trastuzumab deruxtecan, T-DXd）是一種抗體藥物複合體（ADC），由 anti-HER2 抗體連接 deruxtecan（DXd，一種拓樸異構酶 I 抑制劑）組成。和傳統化療不同，T-DXd 會先以抗體段結合癌細胞表面的 HER2 蛋白，內噬後在細胞內釋出 DXd；DXd 還具有 bystander effect，可擴散到鄰近未表現 HER2 的癌細胞。臨床效益見於 HER2 陽性乳癌（DESTINY-Breast03）、HER2-low 乳癌（DESTINY-Breast04）、HER2 突變肺癌與胃癌。"
+  - q: "ADC 跟一般標靶藥的差別在哪裡？"
+    a: "傳統小分子標靶藥（如 EGFR、ALK 抑制劑）阻斷的是訊息傳遞路徑，需要癌細胞依賴該驅動突變才有效。ADC 把抗體當做「導引飛彈」，把化療彈頭（payload）精準送入表現特定抗原（HER2、TROP-2、Nectin-4 等）的癌細胞，再於細胞內釋放，因此可在「不一定需要驅動突變」的情境下發揮細胞毒性。代價是副作用會兼有「抗體相關」與「化療相關」兩套 pattern。"
+  - q: "為什麼打 ADC 還要監測肺部？"
+    a: "DXd 系列 ADC（T-DXd、Dato-DXd、HER3-DXd 等）已知會引發藥物相關間質性肺病（drug-related ILD/pneumonitis），整體發生率約 10–15%，致死性 ILD 約 0.5–2%；Powell 等人於 ESMO Open 2022 整理 9 個 T-DXd 試驗、1150 位病人，全 grade ILD 達 15.4%。建議治療前做 baseline 胸部影像與肺功能評估，並依症狀（咳嗽、喘、發燒）即時回診。"
+  - q: "我這個癌有 ADC 可以用嗎？"
+    a: "目前已核准的 ADC 涵蓋多個癌種：HER2 陽性與 HER2-low 乳癌（T-DXd）、TROP-2 表現之三陰性乳癌與荷爾蒙受體陽性乳癌（sacituzumab govitecan、datopotamab deruxtecan）、Nectin-4 表現之泌尿上皮癌（enfortumab vedotin）、CD30 陽性 Hodgkin 淋巴瘤（brentuximab vedotin）、CD79b 陽性彌漫大型 B 細胞淋巴瘤（polatuzumab vedotin）、葉酸受體 α 陽性卵巢癌（mirvetuximab soravtansine）、組織因子陽性子宮頸癌（tisotumab vedotin）等。實際是否合適需依癌別、biomarker、過去治療線數與健保／自費可及性綜合判斷。"
+doi: "10.5281/zenodo.20112999"
+conceptDoi: "10.5281/zenodo.20112998"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+抗體藥物複合體（antibody-drug conjugate, ADC）是「抗體 + linker + 化療彈頭」三件式組合，把化療藥像「導引飛彈」一樣送進表現特定抗原的癌細胞，再於胞內釋出造成 DNA 損傷或微管抑制。2019 年起以 trastuzumab deruxtecan（T-DXd, Enhertu）與 sacituzumab govitecan（Trodelvy）為首，2024–2026 年間已有 12 種以上 ADC 在乳癌、肺癌、胃癌、泌尿上皮癌、卵巢癌、子宮頸癌、淋巴瘤與部分白血病改寫一線或二線治療。本文整理三要素機轉、bystander effect、payload 分類、已上市產品比較表，以及共通副作用 pattern（嗜中性球低下、ILD、手足症、肝毒性）與後線抗藥策略。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被建議使用 ADC、想理解這類藥物如何作用與監測的病友與家屬，以及想要快速回顧 2026 年 ADC 全景的同業與住院醫師。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## ADC 是什麼？三要素機轉
+
+ADC 字面拆開：**A**ntibody（抗體）+ **D**rug（藥物，即化療 payload）+ **C**onjugate（透過 linker 連接）。完整結構由三個元件組成：
+
+1. **抗體（antibody）**：通常是 IgG1 單株抗體，負責辨識癌細胞表面的特定抗原（如 HER2、TROP-2、Nectin-4、CD30）。
+2. **Linker（連結子）**：把抗體與 payload 連在一起的化學鍵。可分為「可切斷型」（cleavable，如 maleimide caproyl-valine-citrulline）與「不可切斷型」（non-cleavable，如 thioether）。可切斷型容易釋出 payload 到鄰近細胞、形成 bystander effect；不可切斷型則需抗體完全降解才能釋出。
+3. **Payload（化療彈頭）**：細胞毒性極強的小分子，常見類別包括 DXd（topoisomerase I 抑制劑）、SN-38（topoisomerase I 抑制劑）、MMAE／MMAF（微管抑制劑）、calicheamicin（DNA 結合）、emtansine（DM1，微管抑制劑）。其單獨使用毒性過強無法直接靜注，必須靠抗體限制分布。
+
+完整作用流程：抗體段在循環中找到表現抗原的癌細胞 → 結合後發生 receptor-mediated endocytosis → ADC 進入溶酶體（lysosome）→ linker 被酸性環境或溶酶體酶切斷（或抗體被降解）→ payload 釋出 → 進入細胞核或細胞質 → DNA 損傷（topo I 抑制）或微管解聚（MMAE）→ 癌細胞凋亡。
+
+## Bystander effect：DXd 系列的特色
+
+可切斷型 linker 加上脂溶性 payload，可讓 payload 在被抗原陽性細胞釋出後，**擴散穿透細胞膜進入鄰近的抗原陰性癌細胞**，造成額外的細胞毒性。這就是所謂的 **bystander effect**。
+
+T-DXd（trastuzumab deruxtecan）以 DXd 為 payload，bystander effect 顯著，這也是它能在 HER2-low（IHC 1+ 或 IHC 2+/ISH-）甚至 HER2 ultralow 乳癌仍有臨床效益的機轉解釋。DESTINY-Breast04 試驗（Modi 等人 NEJM 2022）顯示 HER2-low 轉移性乳癌使用 T-DXd 的 mPFS 9.9 個月、mOS 23.4 個月，相對於醫師選擇化療顯著延長。
+
+相對地，T-DM1（trastuzumab emtansine）使用不可切斷型 linker 與 DM1，bystander effect 微弱，故只對 HER2 IHC 3+ 強表現族群有顯著效果，HER2-low 族群無顯著效益。
+
+## Payload 四大類別
+
+| Payload | 機轉 | 代表 ADC | 可切斷 linker？ | Bystander |
+|---|---|---|---|---|
+| DXd（exatecan 衍生物） | Topoisomerase I 抑制 | T-DXd, Dato-DXd, HER3-DXd | 可切斷 | 強 |
+| SN-38（irinotecan 活性物） | Topoisomerase I 抑制 | Sacituzumab govitecan | 可切斷（hydrolysable） | 中等 |
+| MMAE（monomethyl auristatin E） | 微管解聚（vedotin 系列） | Enfortumab vedotin, brentuximab vedotin, polatuzumab vedotin, tisotumab vedotin | 可切斷（valine-citrulline） | 中等 |
+| DM1／DM4（maytansine 衍生物） | 微管解聚 | T-DM1, mirvetuximab soravtansine | 不可切斷（DM1）/ 可切斷（DM4） | 弱（DM1）/ 中等（DM4） |
+| Calicheamicin | DNA 雙股斷裂 | Gemtuzumab ozogamicin, inotuzumab ozogamicin | 可切斷（hydrazone） | 弱 |
+
+不同 payload 對應不同的「典型副作用 pattern」：DXd 系列特別需要警惕間質性肺病（ILD）；vedotin 系列以周邊神經病變、皮疹、嗜中性球低下為主；ozogamicin 系列則有靜脈閉塞性疾病（VOD/SOS）與肝毒性風險。
+
+## 2026 年已上市 / 廣泛使用的 ADC 比較
+
+| ADC | 標靶 | Payload | 主要適應症 | 代表試驗 | 主要副作用 |
+|---|---|---|---|---|---|
+| Trastuzumab deruxtecan（T-DXd, Enhertu） | HER2 | DXd | HER2+ 乳癌, HER2-low 乳癌, HER2 突變 NSCLC, HER2+ 胃癌 | DESTINY-Breast03, -Breast04, -Lung02, -Gastric01 | ILD, 嗜中性球低下, 噁心 |
+| Sacituzumab govitecan（Trodelvy） | TROP-2 | SN-38 | 轉移性 TNBC（≥ 2L）, HR+ 乳癌, 泌尿上皮癌 | ASCENT, TROPiCS-02 | 嗜中性球低下, 腹瀉, 掉髮 |
+| Datopotamab deruxtecan（Dato-DXd） | TROP-2 | DXd | HR+ 乳癌, 非鱗 NSCLC | TROPION-Breast01, TROPION-Lung01 | 口腔黏膜炎, ILD, 結膜炎 |
+| Enfortumab vedotin | Nectin-4 | MMAE | 轉移性泌尿上皮癌（一線 + pembrolizumab） | EV-302 | 周邊神經病變, 皮疹, 高血糖 |
+| Brentuximab vedotin | CD30 | MMAE | Hodgkin lymphoma, sALCL, CD30+ PTCL | SGN35-003 (Younes 2010), ECHELON-1, -2 | 周邊神經病變, 嗜中性球低下 |
+| Polatuzumab vedotin | CD79b | MMAE | 一線 DLBCL（Pola-R-CHP）, R/R DLBCL | POLARIX | 周邊神經病變, 嗜中性球低下 |
+| Mirvetuximab soravtansine | FRα | DM4 | 葉酸受體 α 陽性鉑類抗藥性卵巢癌 | MIRASOL | 視力模糊, 角膜病變, 噁心 |
+| Tisotumab vedotin | Tissue Factor | MMAE | 復發 / 轉移性子宮頸癌 | innovaTV 204 / 301 | 結膜炎, 周邊神經病變, 出血 |
+| Patritumab deruxtecan（HER3-DXd） | HER3 | DXd | EGFR-mutant NSCLC（pretreated）；研究中乳癌 | HERTHENA-Lung01 | 嗜中性球低下, ILD, 倦怠 |
+| Trastuzumab emtansine（T-DM1, Kadcyla） | HER2 | DM1 | HER2+ 乳癌（術後 residual disease, ≥ 2L 轉移） | KATHERINE, EMILIA | 血小板低下, 肝功能異常 |
+| Gemtuzumab ozogamicin | CD33 | Calicheamicin | CD33+ AML | ALFA-0701 | 肝毒性 / VOD, 血球低下 |
+| Inotuzumab ozogamicin | CD22 | Calicheamicin | R/R B-ALL | INO-VATE ALL | 肝毒性 / VOD, 血球低下 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+上表的代表試驗族群、線數、評估基準各異，**不應**用來跨試驗排序選藥。各 ADC 應在自身核准適應症與生物標誌條件下評估，並對應到病人實際 biomarker、共病與可及性。
+</Callout>
+
+## ADC 治療前 4 個準備
+
+<Steps>
+  <div>
+    ### 1. 確認 biomarker 表現
+
+    每種 ADC 對應特定抗原：T-DXd 看 HER2 IHC（區分 0 / 1+ / 2+/ISH-）；sacituzumab govitecan 與 Dato-DXd 屬 TROP-2 ADC，目前在多數適應症不要求 IHC 篩選；mirvetuximab 需 FRα IHC ≥ 75% high；enfortumab vedotin 在泌尿上皮癌不需 Nectin-4 IHC；polatuzumab、brentuximab 對應的 CD79b、CD30 需病理確認。**未確認 biomarker 就用 ADC，等同打偏的飛彈。**
+  </div>
+  <div>
+    ### 2. Baseline 肺部影像與肺功能（DXd 系列特別重要）
+
+    使用 T-DXd、Dato-DXd、HER3-DXd 前建議做 baseline 胸部 CT 與肺功能（DLCO）；既有間質性肺病或活動性肺部感染者風險顯著升高。治療期間每週期回診評估呼吸症狀（咳嗽、喘、發燒）。出現任何 grade ≥ 1 ILD 即須暫停並啟動類固醇處置。
+  </div>
+  <div>
+    ### 3. 預備 corticosteroid 處置流程
+
+    Powell 等人於 ESMO Open 2022 提出的 T-DXd ILD 處置原則：grade 1 立即停藥、prednisolone 0.5 mg/kg/day；grade ≥ 2 永久停藥、prednisolone ≥ 1 mg/kg/day；早期介入可顯著降低致死率。每位病人開始 DXd 系列前，醫療團隊應確認可立即取得口服／靜注類固醇與胸腔科會診管道。
+  </div>
+  <div>
+    ### 4. 建立副作用回報路徑
+
+    嗜中性球低下併發感染、腹瀉脫水、周邊神經病變、結膜炎、口腔黏膜炎、皮疹等都需要早期介入。建議列出 24 小時可聯繫的護理師或 case manager，把「發燒 ≥ 38°C」「腹瀉 ≥ 4 次／日」「呼吸喘」「視力模糊」設為立即回診標準。
+  </div>
+</Steps>
+
+## 共通副作用 pattern：抗體 + 化療雙重 profile
+
+ADC 副作用分布同時帶有「抗體（單株抗體類過敏反應、輸注反應）」與「對應 payload（化療毒性）」兩套特徵，可大致歸納成下列 pattern：
+
+- **嗜中性白血球低下**：幾乎所有 ADC 都會出現，DXd 與 SN-38 系列尤甚。Sacituzumab govitecan 第 3 級以上嗜中性球低下約 50%，T-DXd 約 16–20%。
+- **間質性肺病 / 肺炎（ILD/pneumonitis）**：DXd 系列為主。T-DXd 整體 ILD 約 10–15%、致死性 ILD 0.5–2%（Powell 2022）；Dato-DXd、HER3-DXd 亦觀察到類似頻率。
+- **腹瀉、噁心、嘔吐**：sacituzumab govitecan、T-DXd、ozogamicin 系列皆常見；UGT1A1 *28 同型合子者使用 sacituzumab govitecan 風險升高。
+- **周邊神經病變**：vedotin（MMAE）系列特徵性副作用，brentuximab、polatuzumab、enfortumab、tisotumab vedotin 都需追蹤神經學症狀；常需減量或暫停。
+- **皮膚與黏膜毒性**：手足症（palmar-plantar erythrodysesthesia）見於 vedotin 系列；口腔黏膜炎見於 Dato-DXd；皮疹見於 enfortumab vedotin（含 Stevens-Johnson syndrome 罕見但致命）。
+- **眼部毒性**：mirvetuximab 角膜病變、tisotumab vedotin 結膜炎、Dato-DXd 結膜炎與乾眼。需常規預防性人工淚液與眼科會診。
+- **肝毒性 / VOD（靜脈閉塞性疾病）**：calicheamicin payload（gemtuzumab、inotuzumab ozogamicin）特有，準備接受異體幹細胞移植者特別需注意 VOD 風險。
+- **心臟毒性**：HER2 標靶抗體段帶來輕度 LVEF 下降風險（T-DXd, T-DM1），治療前後需 echo 或 MUGA 監測。
+
+<Callout type="warning" title="ILD 是 DXd 系列重大警訊">
+DXd 系列 ADC（T-DXd, Dato-DXd, HER3-DXd, patritumab deruxtecan）相關間質性肺病可從輕度無症狀影像變化、進展到致死性肺纖維化。**任何級別 ILD 都需暫停藥物**，grade ≥ 2 永久停藥並使用全身性類固醇。早期辨識與處置可顯著降低死亡率，請務必在治療前確認所有照護單位（門診、急診、放射）對 DXd-ILD 處置 protocol 一致。
+</Callout>
+
+## 適應症、禁忌症與一般注意事項
+
+### 適應症（依各 ADC 核准）
+
+- 病理確認對應抗原表現（HER2 IHC、FRα IHC、CD30、CD22、CD33 等），或符合癌別＋線數要求（如 enfortumab vedotin 一線轉移性泌尿上皮癌）
+- 體能狀態 ECOG PS 0–1（部分 ADC 可放寬至 PS 2）
+- 主要器官功能（肝、腎、骨髓）可耐受對應 payload 毒性
+- 已完成必要的基因／IHC 檢測
+
+### 一般禁忌症與謹慎使用
+
+- 對該 ADC 成分（抗體段或 payload）有嚴重過敏反應病史
+- DXd 系列：活動性或既往嚴重間質性肺病
+- Vedotin 系列：嚴重周邊神經病變（grade ≥ 2 持續存在）
+- Ozogamicin 系列：嚴重肝功能異常或近期肝靜脈閉塞性疾病
+- 妊娠與授乳期：所有 ADC 皆禁用，建議治療期間及停藥後一段時間採取避孕措施
+- 嚴重未控制感染、活動性 B 型肝炎（部分 ADC 須先抗病毒治療）
+
+## 抗藥機轉與後線策略
+
+ADC 抗藥的可能機轉包括：
+
+1. **抗原表現下降或喪失**（antigen loss）：例如 HER2+ 乳癌使用 T-DXd 後復發時 HER2 表現可能轉為 low 或 0；TROP-2 表現也可能下降。
+2. **內噬障礙**：某些細胞調節 receptor recycling，使 ADC 無法進入溶酶體。
+3. **Payload 抗藥**：topoisomerase I 突變或 efflux pump（ABCG2、P-gp）上調，使 SN-38、DXd 失效。
+4. **DNA 修復路徑改變**：影響 DXd、SN-38 引起 DNA 損傷的細胞反應。
+5. **微管調節改變**：影響 MMAE、DM1／DM4 的細胞毒性。
+
+後線策略仍在發展。目前臨床觀察到：sacituzumab govitecan 失效後仍可考慮 T-DXd（若 HER2-low）或 Dato-DXd；brentuximab vedotin 失效後 Hodgkin lymphoma 可考慮 PD-1 抑制劑；T-DXd 失效後可考慮 HER3-DXd（pretreated NSCLC 已有試驗數據）。**ADC 後再用 ADC 缺乏前瞻性試驗指引，多以毒性 profile 與 biomarker 動態變化為依據**。
+
+## 未來方向：2026 之後的 ADC pipeline
+
+1. **HER3-DXd（patritumab deruxtecan）**：HERTHENA-Lung01 已展示 EGFR-mutant 肺癌效益，乳癌試驗 HERTHENA-Breast 系列推進中。
+2. **ROR1 ADC（zilovertamab vedotin）**：B 細胞淋巴瘤、CLL 試驗中。
+3. **B7-H3 ADC（ifinatamab deruxtecan, MK-2870）**：小細胞肺癌 IDeate 系列試驗推進中。
+4. **CDH6 ADC（raludotatug deruxtecan）**：卵巢癌、腎細胞癌早期試驗中。
+5. **雙特異性 ADC（bispecific ADC）**：例如同時靶向 HER2 與 HER3 的 ADC，目標減少 antigen loss 抗藥。
+6. **新型 payload**：免疫激活 payload（如 TLR 激動劑）與 protein degrader payload 進入 phase 1。
+
+<Divider />
+
+## 參考文獻
+
+1. Cortés J, Kim S-B, Chung W-P, et al. **Trastuzumab Deruxtecan versus Trastuzumab Emtansine for Breast Cancer** (DESTINY-Breast03). *N Engl J Med.* 2022;386(12):1143-1154. [doi:10.1056/NEJMoa2115022](https://doi.org/10.1056/NEJMoa2115022)
+2. Modi S, Jacot W, Yamashita T, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer** (DESTINY-Breast04). *N Engl J Med.* 2022;387(1):9-20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+3. Bardia A, Hurvitz SA, Tolaney SM, et al. **Sacituzumab Govitecan in Metastatic Triple-Negative Breast Cancer** (ASCENT). *N Engl J Med.* 2021;384(16):1529-1541. [doi:10.1056/NEJMoa2028485](https://doi.org/10.1056/NEJMoa2028485)
+4. Powles T, Valderrama BP, Gupta S, et al. **Enfortumab Vedotin and Pembrolizumab in Untreated Advanced Urothelial Cancer** (EV-302). *N Engl J Med.* 2024;390(10):875-888. [doi:10.1056/NEJMoa2312117](https://doi.org/10.1056/NEJMoa2312117)
+5. Moore KN, Angelergues A, Konecny GE, et al. **Mirvetuximab Soravtansine in FRα-High Platinum-Resistant Ovarian Cancer** (MIRASOL). *N Engl J Med.* 2023;389(23):2162-2174. [doi:10.1056/NEJMoa2309169](https://doi.org/10.1056/NEJMoa2309169)
+6. Younes A, Bartlett NL, Leonard JP, et al. **Brentuximab Vedotin (SGN-35) for Relapsed CD30-Positive Lymphomas.** *N Engl J Med.* 2010;363(19):1812-1821. [doi:10.1056/NEJMoa1002965](https://doi.org/10.1056/NEJMoa1002965)
+7. Powell CA, Modi S, Iwata H, et al. **Pooled analysis of drug-related interstitial lung disease and/or pneumonitis in nine trials of trastuzumab deruxtecan monotherapy.** *ESMO Open.* 2022;7(4):100554. [doi:10.1016/j.esmoop.2022.100554](https://doi.org/10.1016/j.esmoop.2022.100554)
+8. Tilly H, Morschhauser F, Sehn LH, et al. **Polatuzumab Vedotin in Previously Untreated Diffuse Large B-Cell Lymphoma** (POLARIX). *N Engl J Med.* 2022;386(4):351-363. [doi:10.1056/NEJMoa2115304](https://doi.org/10.1056/NEJMoa2115304)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DXd ILD 處置原則參考 Powell 2022 ESMO Open pooled analysis。

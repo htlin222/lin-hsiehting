@@ -1,0 +1,198 @@
+---
+title: "癌症高鈣血症的緊急處置：機轉、紅旗症狀與治療"
+titleEn: "Hypercalcemia of malignancy: mechanisms and emergency management"
+date: "05/11/2026"
+frontmatter: "癌症高鈣血症 80% 由 PTHrP 引起，骨髓瘤、乳癌則多為 osteolytic；嚴重高鈣（≥14 mg/dL）伴意識改變、心律不整需立刻 IV NS + zoledronic acid 處置。本文整理機轉、紅旗症狀、治療階梯與 denosumab 在腎不全或 refractory 個案的角色。"
+tags: ["高鈣血症", "PTHrP", "zoledronic acid", "denosumab", "腫瘤急症", "衛教"]
+medical: true
+medicalCondition: "癌症高鈣血症 (Hypercalcemia of malignancy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "血鈣高會怎樣？什麼時候算急症？"
+    a: "輕度高鈣（10.5–11.9 mg/dL）多無症狀；中度（12–13.9）會出現口渴、多尿、便秘、疲倦；嚴重（≥14 mg/dL）可能意識改變、QT 縮短、心律不整、急性腎損傷甚至昏迷，屬腫瘤急症，必須立即住院處理。校正鈣（corrected calcium）= 測得鈣 + 0.8 ×（4 − 白蛋白），低白蛋白者更要算 ionized calcium 或校正值。"
+  - q: "為什麼骨頭轉移會讓鈣升高？"
+    a: "骨溶解性高鈣（osteolytic hypercalcemia）由腫瘤分泌 RANKL、IL-6、TNF 等細胞因子活化破骨細胞，把骨基質的鈣釋出進入血液；常見於多發性骨髓瘤、乳癌骨轉移、淋巴瘤。但整體而言，PTHrP 介導才是最常見機轉（約 80%），常見於肺鱗癌、頭頸癌、泌尿上皮癌、腎細胞癌與部分乳癌。"
+  - q: "Zoledronic acid 跟 denosumab 哪個比較好？"
+    a: "首選仍是 zoledronic acid 4 mg IV（OBoyle/Major 2001 vs pamidronate：完全反應率 88% vs 70%、效果維持較久）。但腎絲球濾過率 < 30 mL/min、bisphosphonate 失效、或多次住院反覆高鈣的病人，選 denosumab 120 mg SC（Hu 2014 JCEM：refractory 族群第 10 天反應率 64%）。Endocrine Society 2023 指引在 IV bisphosphonate 仍有效時將 denosumab 列為替代選項，腎不全則為首選。"
+  - q: "治完高鈣多久會復發？家人意識變差是高鈣嗎？"
+    a: "Bisphosphonate 一次給藥效果約 2–4 週，之後若抗腫瘤治療仍未見效就會復發；單純治高鈣不能延長存活，中位整體存活仍 < 6 個月。意識改變（嗜睡、混亂、譫妄）在校正鈣 ≥ 14 mg/dL 時要列入鑑別診斷，特別是已知有實體腫瘤、骨髓瘤、淋巴瘤的病人；同時要排除腦轉移、感染、藥物（鴉片類、苯二氮平類）與電解質（鈉、鎂）異常。"
+doi: "10.5281/zenodo.20113014"
+conceptDoi: "10.5281/zenodo.20113013"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+癌症高鈣血症（hypercalcemia of malignancy, HCM）是實體腫瘤與血液惡性疾病最常見的腫瘤急症之一，**約 20–30% 癌症病人一生中至少發生一次**，以校正鈣 ≥ 14 mg/dL 合併意識改變或心律不整最為兇險。**80% 由副甲狀腺荷爾蒙相關蛋白（PTHrP）介導**（肺鱗癌、頭頸癌、泌尿上皮癌、乳癌），其餘為骨溶解性（骨髓瘤、乳癌、淋巴瘤）、1,25-dihydroxyvitamin D 過度活化（淋巴瘤、肉芽腫）與罕見的異位 PTH。處置以 IV 正常生理食鹽水（normal saline, NS）水化為主軸，搭配 zoledronic acid 4 mg IV 抑制破骨；calcitonin 4 IU/kg q12h 用於 24–48 小時內快速降鈣；refractory 或腎不全則改用 denosumab 120 mg SC。出現高鈣不只是處理數字，**整體中位存活仍 < 6 個月**，根本治療還是要回到抗腫瘤策略。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為 (a) 主治醫師告知血鈣偏高、想了解後續處置與意義的病友與家屬；以及 (b) 內外科住院醫師、腫瘤科 fellow 在病房遇到高鈣症時的快速參考。所有實際治療決策請與主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 嚴重度怎麼分？校正鈣是什麼？
+
+血液裡約 40% 的鈣與白蛋白結合，10% 與其他陰離子結合，剩下 50% 才是有生理活性的 **ionized calcium**。實際解讀總鈣（total calcium）一定要先做白蛋白校正：
+
+> **校正鈣（mg/dL）= 測得總鈣 + 0.8 ×（4 − 血清白蛋白）**
+
+癌症病人常合併低白蛋白血症，未校正會嚴重低估真實鈣濃度。Endocrine Society 2023 指引以下列分級判斷處置強度：
+
+| 分級 | 校正鈣（mg/dL） | 校正鈣（mmol/L） | 典型症狀 |
+|---|---|---|---|
+| **輕度** | 10.5–11.9 | 2.6–2.99 | 多無症狀、輕度疲倦 |
+| **中度** | 12.0–13.9 | 3.0–3.49 | 口渴、多尿、便秘、噁心、肌肉無力 |
+| **重度** | ≥ 14.0 | ≥ 3.5 | 意識改變、QT 縮短、心律不整、急性腎損傷、昏迷 |
+
+<Callout type="warning" title="脫水會掩蓋真實高鈣">
+高鈣本身會抑制腎臟濃縮尿液（腎性尿崩）→ 多尿 → 脫水 → 血液濃縮，反而讓總鈣量看起來「沒那麼糟」。**實務上要先 IV NS 補水 6–12 小時、糾正血容量後再評估**，否則會低估嚴重度也低估 bisphosphonate 是否真的有效。
+</Callout>
+
+## 四大機轉：對應癌種與治療策略
+
+理解機轉直接決定治療選擇——例如 1,25-OH-vitamin D 過度活化的高鈣對 bisphosphonate 反應差，但對類固醇敏感。
+
+| 機轉 | 比例 | 代表癌種 | 關鍵治療 |
+|---|---|---|---|
+| **PTHrP-mediated（humoral hypercalcemia of malignancy, HHM）** | ≈ 80% | 肺鱗癌、頭頸癌、泌尿上皮癌、腎細胞癌、乳癌 | IV NS + bisphosphonate / denosumab；類固醇無效 |
+| **Osteolytic（骨溶解）** | ≈ 20% | 多發性骨髓瘤、乳癌骨轉移、淋巴瘤 | IV NS + bisphosphonate / denosumab；抗腫瘤治療最關鍵 |
+| **1,25-(OH)₂ vitamin D 過度活化** | < 1% | 淋巴瘤（特別是 Hodgkin、ATLL）、肉芽腫疾病 | **類固醇 prednisolone 40–60 mg/day** 是首選；bisphosphonate 反應差 |
+| **異位 PTH（ectopic PTH）** | 罕見 | 卵巢小細胞癌、神經內分泌瘤、極少數鱗癌 | 切除腫瘤；同時測 PTH、PTHrP、1,25-D 才能鑑別 |
+
+<Callout type="note" title="實驗室拼圖">
+鑑別機轉的最低標準三件組（intact PTH + PTHrP + 1,25-(OH)₂ vitamin D）。PTH 抑制（< 20 pg/mL）+ PTHrP 升高 → HHM；PTH 抑制 + 1,25-D 高 → 淋巴瘤或肉芽腫；PTH 不抑制 → 共病副甲狀腺亢進或極罕見的異位 PTH。
+</Callout>
+
+## 急診遇到高鈣：5 步驟處置
+
+<Steps>
+  <div>
+    ### 第 1 步：判斷是否為「症狀性 / 重度」高鈣
+
+    校正鈣 ≥ 14 mg/dL、或任何級別合併意識改變、嚴重脫水、急性腎損傷、QT 縮短或心律不整 → **立刻住院處理**。輕度（10.5–11.9）且無症狀者，可在門診排查機轉、密切追蹤。
+  </div>
+  <div>
+    ### 第 2 步：IV NS 200–500 mL/h 大量水化
+
+    這是所有治療的基礎。目標尿量 100–150 mL/h，需注意年長、心衰、慢性腎病者要逐次評估容量狀態，必要時加 furosemide（不再常規預防性給）。光是水化在 24–48 小時內可降鈣 1–3 mg/dL。
+  </div>
+  <div>
+    ### 第 3 步：Calcitonin 4 IU/kg SC/IM q12h（症狀性 / 重度才用）
+
+    可在 4–6 小時內降鈣 1–2 mg/dL，是最快的橋接藥物；但 **48–72 小時就會 tachyphylaxis 失效**，所以一定要同時打長效藥（bisphosphonate 或 denosumab）。劑量可加到 8 IU/kg q6h。
+  </div>
+  <div>
+    ### 第 4 步：Bisphosphonate（zoledronic acid 4 mg IV 為首選）
+
+    Major 2001 JCO 的 pooled analysis 顯示 zoledronic acid 4 mg 對校正鈣 ≥ 12.0 mg/dL 的完全反應率 88.4%，優於 pamidronate 90 mg 的 69.7%（P < 0.001），且效果維持較久（中位 32 vs. 18 天）。劑量：**zoledronic acid 4 mg IV over 15 min**（CrCl < 60 視 KDIGO 調降，CrCl < 30 不建議使用）；或 **pamidronate 60–90 mg IV over 2–24 h**。起效時間 **48–72 小時**，所以前期一定要靠 NS + calcitonin 撐著。
+  </div>
+  <div>
+    ### 第 5 步：Denosumab 120 mg SC（refractory 或腎不全）
+
+    Hu 2014 JCEM 的 phase 2 試驗收 33 位 bisphosphonate refractory 病人，第 10 天反應率 64%、完全反應 64%、中位反應期 104 天。腎絲球濾過率 < 30 mL/min 不需減量。Endocrine Society 2023 指引在 IV bisphosphonate 失效或腎不全時，**將 denosumab 列為首選**。注意：(1) 開始 7–10 天內可能出現低鈣血症，需補鈣與維生素 D；(2) 停藥後 6 個月內有反彈性骨流失與椎體骨折報告。
+  </div>
+</Steps>
+
+<Callout type="warning" title="嚴重 + 腎衰竭：考慮血液透析">
+校正鈣 ≥ 18 mg/dL、合併少尿性急性腎衰竭、或心律不整不穩定者，**用無鈣或低鈣透析液血液透析**可在數小時內降鈣 3–12 mg/dL，是 bisphosphonate 起效前的橋接救命手段。
+</Callout>
+
+## 維持治療：抗腫瘤才是根本
+
+bisphosphonate 或 denosumab 一次給藥效果約 2–4 週，之後若抗腫瘤治療未跟上就會復發。維持策略：
+
+- **多發性骨髓瘤、實體癌骨轉移**：zoledronic acid 4 mg IV q4w 或 denosumab 120 mg SC q4w（這個劑量是骨轉移用劑量，不是骨鬆的 60 mg q6m）
+- **淋巴瘤、肉芽腫機轉**：prednisolone 20–40 mg/day 漸減，同時治療底層淋巴瘤
+- **HHM**：源頭治療最關鍵——抗腫瘤反應一旦出現，PTHrP 跟著下降，鈣才會穩定
+
+> 整個治療過程中，**抗腫瘤治療**（化療、標靶、免疫治療、放療）才是讓高鈣長期不再復發的根本方式。bisphosphonate 與 denosumab 只是維持血鈣不要再衝高。
+
+## 適應症、禁忌症與注意事項
+
+### 適應症
+
+- 校正鈣 ≥ 12 mg/dL，或任何級別合併症狀 → IV NS + 抑制破骨類藥物
+- 已確診活動性惡性腫瘤（病理或影像）
+- 體能狀態 ECOG PS 0–3 仍可耐受積極處置（4 分以上需與家屬討論安寧化處置）
+
+### 一般禁忌症與謹慎使用
+
+- **Bisphosphonate**：腎絲球濾過率 < 30 mL/min（zoledronic acid）；過去 5 年內顎骨壞死病史；正在進行口腔大手術（建議延後 1 個月）；正在懷孕或授乳
+- **Denosumab**：未矯正的低鈣血症（先補鈣與維他命 D 才能用）；嚴重肝病慎用
+- **Calcitonin**：對魚類蛋白過敏者；長效給藥（> 72 h）會 tachyphylaxis，沒意義
+- **類固醇**：糖尿病控制差、活動性感染、消化性潰瘍等，需個別評估
+
+### 不良反應 / 副作用
+
+| 藥物 | 常見副作用 | ≥ Grade 3 比例 |
+|---|---|---|
+| Zoledronic acid 4 mg IV | 急性期反應（發燒、肌肉痠痛 ~30%）、低鈣血症、急性腎損傷 | 顎骨壞死 < 2%；嚴重腎損傷 < 5% |
+| Denosumab 120 mg SC | 低鈣血症、低磷血症、皮疹 | 顎骨壞死 1–2%；嚴重低鈣血症 5–10% |
+| Calcitonin 4 IU/kg | 噁心、潮紅、注射部位反應 | < 1%（短期使用） |
+| Pamidronate 60–90 mg IV | 急性期反應、低鈣血症 | 腎功能異常 < 5%；顎骨壞死 < 2% |
+
+### 風險揭露
+
+- Calcitonin 為短期橋接藥（≤ 72 h），長期使用無臨床效益
+- Bisphosphonate / denosumab **長期使用（> 5 年）**有非典型股骨骨折與顎骨壞死風險，需開始前先做口腔評估
+- 高鈣本身是疾病進展的指標——治療有效不等於生命延長；台灣健保對 zoledronic acid、denosumab 在癌症高鈣血症的給付規範請參考健保署最新公告
+
+## 紅旗症狀：什麼時候要回急診
+
+<Callout type="warning" title="出現以下任何一項，請立即就醫">
+1. 意識改變、嗜睡、譫妄、不易喚醒
+2. 持續嘔吐、無法進食喝水
+3. 心跳過慢、胸悶、暈厥
+4. 24 小時內尿量明顯減少
+5. 已知有癌症診斷，校正鈣 ≥ 12 mg/dL 並出現任何上述症狀
+</Callout>
+
+特別提醒家屬：**癌症病人若突然意識變差，先想到三個可能**——(1) 高鈣，(2) 腦轉移或顱內出血，(3) 感染敗血症；前兩者皆可由急診抽血、影像在 1–2 小時內初步排除。
+
+## 整體存活與預後
+
+癌症高鈣血症的出現本身就是預後不佳指標。多項回顧性研究顯示**中位整體存活約 30–60 天**，三個月存活率 ≈ 50%，一年存活率 < 20%。但這不代表「治療沒意義」——快速控制血鈣可恢復意識、改善生活品質、讓病人有時間與家人討論治療目標、或啟動抗腫瘤治療。是否進入安寧緩和路徑，要與病人、家屬充分討論。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 主動詢問血鈣
+
+    癌症病人住院、抽血追蹤時，特別是出現口渴、多尿、便秘、疲倦時，可以主動請醫師檢查血鈣與白蛋白。早發現、早處理可避免嚴重併發症。
+  </div>
+  <div>
+    ### 認識「校正鈣」這個數字
+
+    報告上的總鈣若 < 10 mg/dL 不一定就安全，要看白蛋白。可以請醫師說明你的「校正鈣」與血鈣化驗的解讀方式。
+  </div>
+  <div>
+    ### 治療選項與目標清單
+
+    與主治醫師討論時可帶的問題：
+    1. 我的高鈣是哪一種機轉（PTHrP / 骨溶解 / 維他命 D / 異位 PTH）？
+    2. 預計的治療階梯是什麼？bisphosphonate 還是 denosumab？
+    3. 副作用怎麼監測（顎骨、腎功能、低鈣）？
+    4. 抗腫瘤治療何時開始？是否有效將決定高鈣是否會復發。
+    5. 預後與治療目標：以延長生命為主，還是以維持生活品質、減少急診為主？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. El-Hajj Fuleihan G, Clines GA, Hu MI, et al. **Treatment of Hypercalcemia of Malignancy in Adults: An Endocrine Society Clinical Practice Guideline.** *J Clin Endocrinol Metab.* 2023;108(3):507-528. [doi:10.1210/clinem/dgac621](https://doi.org/10.1210/clinem/dgac621)
+2. Guise TA, Wysolmerski JJ. **Cancer-Associated Hypercalcemia.** *N Engl J Med.* 2022;386(15):1443-1451. [doi:10.1056/NEJMcp2113128](https://doi.org/10.1056/NEJMcp2113128)
+3. Stewart AF. **Clinical practice. Hypercalcemia associated with cancer.** *N Engl J Med.* 2005;352(4):373-379. [doi:10.1056/NEJMcp042806](https://doi.org/10.1056/NEJMcp042806)
+4. Burtis WJ, Brady TG, Orloff JJ, et al. **Immunochemical characterization of circulating parathyroid hormone-related protein in patients with humoral hypercalcemia of cancer.** *N Engl J Med.* 1990;322(16):1106-1112. [doi:10.1056/NEJM199010253231703](https://doi.org/10.1056/NEJM199010253231703)
+5. Major P, Lortholary A, Hon J, et al. **Zoledronic acid is superior to pamidronate in the treatment of hypercalcemia of malignancy: a pooled analysis of two randomized, controlled clinical trials.** *J Clin Oncol.* 2001;19(2):558-567. [doi:10.1200/JCO.2001.19.2.558](https://doi.org/10.1200/JCO.2001.19.2.558)
+6. Nussbaum SR, Younger J, Vandepol CJ, et al. **Single-dose intravenous therapy with pamidronate for the treatment of hypercalcemia of malignancy: comparison of 30-, 60-, and 90-mg dosages.** *Am J Med.* 1993;95(3):297-304. [doi:10.1016/0002-9343(93)90282-T](https://doi.org/10.1016/0002-9343(93)90282-T)
+7. Hu MI, Glezerman IG, Leboulleux S, et al. **Denosumab for treatment of hypercalcemia of malignancy.** *J Clin Endocrinol Metab.* 2014;99(9):3144-3152. [doi:10.1210/jc.2014-1001](https://doi.org/10.1210/jc.2014-1001)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 經 Crossref 驗證皆有效。

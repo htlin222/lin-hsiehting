@@ -1,0 +1,253 @@
+---
+title: "液態切片 ctDNA 可以取代組織切片嗎？2026 實證版"
+titleEn: "Liquid biopsy (ctDNA) vs tissue biopsy: complement or replacement?"
+date: "05/11/2026"
+frontmatter: "ctDNA 抽血基因檢測在非小細胞肺癌與大腸癌已有成熟用途（抗藥性監測、MRD），但敏感度多低於組織切片，CHIP 偽陽性與 tumor shedding 低是兩大限制；本文整理 2026 適應症、平台選擇與健保現況。"
+tags: ["液態切片", "ctDNA", "MRD", "EGFR", "NGS", "衛教"]
+medical: true
+medicalCondition: "循環腫瘤 DNA 與液態切片 (Circulating tumor DNA, liquid biopsy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "抽血就能驗癌症基因，準嗎？"
+    a: "看用途。對「腫瘤已轉移、循環中 DNA 量充足」的非小細胞肺癌、大腸癌、乳癌，主流平台（Guardant360 CDx、FoundationOne Liquid CDx）與組織 NGS 的關鍵驅動基因一致率約 80–90%；但若血中 ctDNA 濃度低（早期、腦轉移、低惡性度腫瘤），抽血結果可能 false negative。一般原則：陽性可信、陰性不能放心。"
+  - q: "為什麼確定要做組織切片，還要再抽血？"
+    a: "兩者互補。組織切片提供病理分型、PD-L1 染色、HER2 IHC 等抽血做不到的訊息；ctDNA 則在組織不足、病人體弱不適合切片、或要動態追蹤抗藥性時更便利。例如 EGFR 突變肺癌使用 osimertinib 後若疾病惡化，可先抽 ctDNA 找 C797S；陰性才考慮再切片。"
+  - q: "ctDNA 可以監測復發嗎？健保有給付嗎？"
+    a: "目前最有實證的是大腸癌術後 MRD（minimal residual disease）監測：DYNAMIC（NEJM 2022）顯示以 ctDNA 指引輔助化療，可以在不影響復發風險下減少約一半的化療使用。台灣 2026 年健保尚未常規給付 MRD 檢測，自費約新台幣 6 萬至 12 萬一次（依平台與檢測時點數而異），完整療程多次抽血更貴。"
+  - q: "ctDNA 陰性是不是代表沒癌症了？"
+    a: "不一定。ctDNA 偵測下限取決於 tumor fraction 與檢測 LOD（limit of detection），多數平台對微小殘留病灶的敏感度仍在 50–90% 之間。腦轉移因為血腦屏障，ctDNA 釋出極少，陰性結果完全不能排除。臨床判讀必須結合影像（CT、MRI）、腫瘤標記與症狀。"
+doi: "10.5281/zenodo.20113016"
+conceptDoi: "10.5281/zenodo.20113015"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+液態切片（liquid biopsy）以一管血偵測腫瘤釋放至循環中的 DNA 片段（circulating tumor DNA, ctDNA），2026 年已是非小細胞肺癌、大腸癌、乳癌標準照護的一部分，但**仍無法全面取代組織切片**。本文整理三大臨床用途——起始基因檢測、抗藥性追蹤、MRD（minimal residual disease）——的實證等級、主流平台敏感度差異、CHIP（clonal hematopoiesis）偽陽性陷阱、以及台灣健保與自費現況；結論：**ctDNA 陽性可信、陰性需謹慎**，組織切片在病理分型與 PD-L1 / HER2 染色仍不可替代。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被建議做 NGS 基因檢測（不論組織或抽血）的病友與家屬，以及對 MRD ctDNA 在大腸癌與肺癌應用感興趣的同業。所有實際檢測時機與平台選擇請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## ctDNA 是什麼？為什麼一管血就能驗癌症基因？
+
+腫瘤細胞每天都在生長與凋亡，凋亡（apoptosis）或壞死（necrosis）後會把 DNA 片段釋放至血液中。這些片段稱為「cell-free DNA（cfDNA）」，其中來自腫瘤的部分就是 ctDNA。一般循環血漿中 cfDNA 濃度約每毫升 5–50 ng，其中 ctDNA 通常只佔 0.01–10%（稱為 tumor fraction）。
+
+液態切片就是用兩個技術核心把這些極稀的腫瘤片段抓出來：
+
+1. **超深定序（ultra-deep sequencing）**：對每段 DNA 重複讀取數千至上萬次，把 0.1% 等級的低頻變異從背景雜訊中辨識出來。
+2. **分子條碼（unique molecular identifiers, UMIs）**：每段 DNA 加上獨特標籤，過濾 PCR 與定序錯誤，提升真實突變的判讀準確度。
+
+主流商業平台（Guardant360 CDx、FoundationOne Liquid CDx 等）已可在 0.1–0.4% 的 variant allele frequency（VAF）下穩定偵測 SNV、indel、CNV 與融合，並做出 FDA 核准的 companion diagnostic 報告。
+
+## 三大臨床用途：實證等級不一樣
+
+| 用途 | 代表試驗 | 實證等級 | 備註 |
+|---|---|---|---|
+| **起始基因檢測**（組織不足或無法切片） | Aggarwal NILE、Leighl BFAST | NCCN 收錄、可作 companion Dx | 陰性需 tissue reflex |
+| **抗藥性追蹤**（如 EGFR T790M、C797S） | AURA3 ctDNA cohort | NCCN 收錄、FDA 核准 | 陽性即可改藥；陰性需切片 |
+| **MRD（術後微小殘留病灶）監測** | DYNAMIC（CRC）、CIRCULATE-Japan GALAXY | 第三期 RCT、改變實作 | 多數國家未常規給付 |
+| **早期癌症篩檢**（multi-cancer early detection） | Galleri、PATHFINDER 2 | 仍在累積證據 | 2026 尚未列入標準 |
+
+四個用途中，**前三個已有第三期 RCT 或大型前瞻性世代支持**，後者目前實證仍不足以列入 NCCN／ASCO 第一線指引。
+
+## 起始檢測：組織不足時的「先抽血再說」策略
+
+對 stage IV 非小細胞肺癌（NSCLC），ASCO／NCCN v2.2026 指引接受**「組織切片基因檢測 + 同時抽血 ctDNA」的並行（concurrent）策略**——抽血約 7 天就能拿到結果，組織 NGS 常需 2–3 週；若抽血先驗到 EGFR、ALK、ROS1 等可標靶之驅動基因，可立即開始標靶治療。
+
+ESMO 2022 Precision Medicine Working Group 的建議將此策略列為 IIA 等級（見參考文獻 5）：液態切片可作起始基因檢測，**但若關鍵驅動基因陰性，應 reflex（後送）至組織切片**，因為 ctDNA 在 tumor shedding 低的腫瘤（早期、腦轉移、低惡性度）會 false negative。
+
+<Callout type="tip" title="什麼樣的肺癌適合先抽血？">
+最好的適應症是「stage IV 腺癌、組織量不足、體能狀態差不適合再切片」。研究中 ctDNA 與組織 NGS 在 EGFR、ALK、ROS1 上的一致率約 80–90%，但對 MET exon 14 skipping 與融合基因（如 RET）的偵測敏感度較低。
+</Callout>
+
+## 主流液態切片平台比較
+
+下表整理 2026 年常見於台灣的液態切片平台，**注意：每個平台的設計目標、基因 panel 大小、validated indication 不同，不能直接比較**。
+
+| 平台 | 基因數 | 主要用途 | 報告 LOD | 備註 |
+|---|---|---|---|---|
+| **Guardant360 CDx** | ~74 | 進階實體癌起始與抗藥性 | VAF ~0.1% | FDA 核准；NSCLC EGFR、BRCA pan-tumor companion Dx（見參考文獻 6） |
+| **FoundationOne Liquid CDx** | 311+ | 進階實體癌起始與抗藥性 | VAF ~0.4% | FDA 核准；MSI、TMB、HRD 報告 |
+| **MSK-ACCESS** | 129 | 進階實體癌（學術機構） | VAF ~0.1% | 含白血球同步定序排除 CHIP |
+| **AmoyDx 液態 ddPCR / NGS** | 視 panel | 亞洲市場、EGFR 抗藥性監測 | 視 panel | 台灣常見；費用較低 |
+| **Signatera (tumor-informed)** | 客製 16 個 mutation | 大腸癌等 MRD 監測 | VAF ~0.01% | 須先做組織 WES 設計專屬 panel |
+
+<Callout type="warning" title="LOD 不是判斷平台優劣的單一指標">
+Tumor-agnostic（如 Guardant360）與 tumor-informed（如 Signatera）平台的設計哲學完全不同：前者用固定 panel，後者根據病人腫瘤客製化 panel；後者偵測 MRD 的敏感度遠高於前者，但須先有組織做 WES 才能設計 panel。比較時要先確認「臨床問題」而不是 panel 大小。
+</Callout>
+
+## 抗藥性追蹤：EGFR T790M 與 C797S
+
+EGFR 突變肺癌使用第一、二代 TKI（gefitinib、erlotinib、afatinib）後，約 50–60% 病人會因 T790M 抗藥性突變失效。AURA3 第三期 RCT（見參考文獻 7，n = 419）證實 osimertinib 在 T790M 陽性對照 platinum-pemetrexed 化療，mPFS 10.1 vs. 4.4 個月（HR 0.30），確立**「失效後驗 T790M」**的臨床路徑。
+
+實作上，FDA 已核准 cobas EGFR Mutation Test v2（plasma）與 Guardant360 CDx 作 T790M companion diagnostic：
+
+<Steps>
+  <div>
+    ### 出現惡化跡象（影像或症狀）
+
+    第一代 TKI 治療中突然腫瘤標記上升、CT 顯示新病灶、或臨床症狀加重時，啟動抗藥性檢測流程。
+  </div>
+  <div>
+    ### 先抽 ctDNA 驗 T790M
+
+    plasma cobas 或 Guardant360 約 7 天可拿報告。**陽性 → 直接換 osimertinib**，不必再切片。AURA3 子分析顯示 plasma T790M 陽性者，osimertinib 反應率與組織陽性者相當。
+  </div>
+  <div>
+    ### 抽血陰性 → 後送組織切片
+
+    plasma 對 T790M 的 sensitivity 約 60–70%，所以陰性無法排除。建議再做組織切片並重新 NGS（含 MET 擴增、HER2 擴增、組織學轉化等其他抗藥性機轉）。
+  </div>
+  <div>
+    ### Osimertinib 失效後再追 C797S
+
+    Osimertinib 後常見抗藥性為 EGFR C797S（順式或反式排列影響後線選藥）、MET 擴增、CDK4/6 擴增等。再次抽 ctDNA 仍是優先順序，但需注意此時可能進入腦轉移期（ctDNA shedding 降低）。
+  </div>
+</Steps>
+
+## MRD（術後微小殘留病灶）監測：大腸癌領跑
+
+MRD 是 2024–2026 年液態切片最熱的應用：腫瘤手術切除後，理論上影像應該乾淨，但仍有部分病人會復發；ctDNA 可在影像復發前數月偵測到 trace amount 的腫瘤訊號。
+
+### DYNAMIC：第一個改變實作的 ctDNA 第三期 RCT
+
+DYNAMIC 試驗（見參考文獻 2，n = 455，stage II 大腸癌）將病人隨機分為「ctDNA 指引 vs. 標準臨床病理判讀」兩組決定是否輔助化療：
+
+- **ctDNA 指引組**：術後第 4、第 7 週各驗一次，**陽性才打化療、陰性 observe**
+- **標準組**：依傳統病理因子決定化療
+
+結果：兩組 2 年 RFS 相當（93.5% vs. 92.4%，non-inferior），但 ctDNA 組化療使用率從 28% 降到 15%。**等於用 ctDNA 篩出真正會復發的高風險族群，避免另外一半病人被打不必要的化療**。這是首次以 RCT 證實 ctDNA-guided de-escalation 安全。
+
+### CIRCULATE-Japan GALAXY：更新到 2,240 人
+
+GALAXY 觀察性研究最新更新（見參考文獻 3，n = 2,240）以 Signatera tumor-informed 平台監測 stage II–IV 大腸癌術後 ctDNA：
+
+| 4 週 ctDNA 狀態 | 2-year DFS | HR for recurrence |
+|---|---|---|
+| 陽性 | 41.8% | reference |
+| 陰性 | 90.1% | 6.59（陽性 vs. 陰性） |
+
+ctDNA 陽性病人接受輔助化療有顯著效益（HR 0.42），陰性者則無明顯效益。**支持「ctDNA 陽性 = 適應症」、「陰性 = 觀察」的策略**，與 DYNAMIC 結論一致。
+
+<Callout type="warning" title="MRD 還沒列入台灣健保">
+2026 年 5 月，台灣健保尚未將 ctDNA-MRD 列入大腸癌術後常規給付，自費單次約新台幣 6–12 萬，完整 1–2 年追蹤需 4–8 次抽血。決定要不要做 MRD 之前，請與主治醫師討論：(1) 是否屬於 high-risk 族群（stage III、術後病理因子差），(2) 結果會不會真的改變治療決定（陽性會願意打／延長化療？），(3) 經濟負擔。
+</Callout>
+
+## CHIP：液態切片最大的偽陽性陷阱
+
+**Clonal hematopoiesis of indeterminate potential（CHIP）**指年長者的造血幹細胞累積體細胞突變（最常見：DNMT3A、TET2、ASXL1、TP53、PPM1D），這些突變會跑進白血球的 cfDNA 而被液態切片偵測到，**誤判為腫瘤訊號**。
+
+Razavi 等人 2019 年 Nature Medicine（見參考文獻 4，MSK-IMPACT high-intensity sequencing）系統性分析 124 位轉移性癌症病人的 plasma + matched buffy coat，發現：
+
+- 約 53% 的 plasma 變異實際上來自白血球（CHIP），而非腫瘤
+- 高頻偽陽性基因：DNMT3A、TET2、TP53、ATM、CHEK2
+- 不做白血球同步定序，**無法區分腫瘤訊號與 CHIP**
+
+這是為什麼學術型平台（如 MSK-ACCESS）會強制做 white blood cell paired sequencing；而商業平台多以 panel 設計（避開 CHIP 高頻基因）+ 變異年齡相關性 filter 處理，**但仍無法 100% 排除**。
+
+<Callout type="warning" title="ctDNA 陽性 ≠ 沒有突變">
+看到 plasma TP53 突變時要小心：可能是腫瘤、也可能是 CHIP。判讀原則：(1) VAF 明顯偏低（< 1%）且病人 > 60 歲 → CHIP 機率高；(2) 同時驗到病理已知的腫瘤特異突變（EGFR、KRAS、BRAF）→ 較可信；(3) 重要決策（換藥、加標靶）前，建議 cross-check 組織或要求白血球同步定序。
+</Callout>
+
+## ctDNA 限制：什麼時候組織切片不可少？
+
+| 情境 | 為什麼 ctDNA 不夠 |
+|---|---|
+| **病理分型尚未確認**（首次診斷） | ctDNA 不能告訴你「腺癌 vs. 鱗癌 vs. 小細胞」 |
+| **PD-L1 IHC 染色** | 抽血做不出來，只能在組織做 |
+| **HER2 IHC（乳癌、胃癌）** | 抽血只能驗擴增，不能區分 IHC 0、1+、2+ |
+| **腦轉移為主病灶** | 血腦屏障使 ctDNA shedding 極低，敏感度差 |
+| **早期或低惡性度腫瘤** | Tumor fraction 低於 LOD，常 false negative |
+| **融合基因偵測（如 NTRK、RET、ROS1）** | 部分平台對融合敏感度不如組織 RNA-seq |
+| **MSI / HRD / TMB（部分平台）** | 需要足夠 ctDNA 量；低 shedding 時不可信 |
+
+**底線**：ctDNA 是補充工具，不是萬能取代。Cescon 等人 2020 年 Nature Cancer 綜論文章（見參考文獻 1）總結為：「液態切片提供時間維度上的彈性與便利，但組織切片提供解析度與 multi-omic 整合，兩者互補。」
+
+## 健保與自費現況（台灣，2026/05）
+
+- **NSCLC EGFR 突變檢測**：健保有條件給付（限非小細胞肺癌、特定族群、術後或進階期）；液態切片多需自費，約新台幣 1.5–3 萬一次。
+- **多基因 NGS panel（組織或抽血）**：健保 2024 年開始有條件給付（限特定癌別、特定期別、需事前審查），給付平台限定，許多廣泛 panel 仍需自費。
+- **MRD ctDNA**：健保未給付，自費 6–12 萬一次，全程 4–8 次抽血。
+- **多癌篩檢液態切片（Galleri 等）**：無健保給付，自費約 1.5–2.5 萬，**目前不建議作為一般族群篩檢工具**。
+
+## 何時用 ctDNA、何時不能取代組織？實務 cheat sheet
+
+<Steps>
+  <div>
+    ### 起始基因檢測（首次診斷進階期）
+
+    **同時做**：組織 NGS 是金標準，但若 (1) 組織量不足、(2) 病人體弱不適合切片、(3) 結果急著用——可並行抽 ctDNA。**抽血陰性必後送組織**。
+  </div>
+  <div>
+    ### 治療中追蹤抗藥性
+
+    **優先抽血**：以 EGFR T790M、ESR1 突變監測為例，ctDNA 陽性即可改藥。陰性才考慮再切片。可省下侵入性處置的風險。
+  </div>
+  <div>
+    ### 術後 MRD 監測（目前主要在大腸癌）
+
+    **考慮做**：若屬 high-risk（stage III、有不良病理因子）且願意接受結果決定治療強度。需先確認經濟負擔與平台選擇。**stage I 或低風險族群目前實證不足**。
+  </div>
+  <div>
+    ### 早期癌症一般人篩檢
+
+    **暫不建議**：實證仍不足。Galleri 等多癌篩檢平台 sensitivity 在 stage I 仍只有 17–24%，false positive 率與後續工作量、心理負擔比例不成。
+  </div>
+</Steps>
+
+## 副作用、限制與風險揭露
+
+### 抽血本身
+
+抽血幾乎沒有風險，可能的不良反應：注射處淤青、暫時不適。對需要凝血功能異常或抗凝藥物治療的病人，務必告知主治醫師。
+
+### 解讀風險
+
+- **偽陰性**（false negative）：陰性結果不代表沒突變、沒復發、沒癌症
+- **偽陽性**（false positive）：CHIP、germline 變異未排除
+- **臨床意義不明的變異（VUS）**：報告中常見，不應據此換藥
+- **健保未給付項目自費**：費用差距大，需確認檢測平台是否獲認證
+
+### 適應症
+
+- 進階期或轉移性實體癌、需做基因檢測規劃治療
+- EGFR、KRAS、BRAF、HER2 等已有標靶藥物的癌別
+- 大腸癌術後 MRD 監測（須符合 high-risk 條件並充分知情）
+- 已接受 TKI／PARP／免疫治療出現惡化跡象、需追蹤抗藥性
+
+### 一般禁忌與謹慎使用
+
+- 急性感染、創傷期：cfDNA 背景升高，影響判讀
+- 近期接受化療、放療、手術：可能短暫提升 cfDNA 釋放
+- 妊娠：胎兒 cfDNA 會混淆訊號，平台設計多排除妊婦
+- 報告需由具基因檢測判讀經驗的腫瘤科醫師解讀，不應自行據此換藥
+
+## 與主治醫師討論時可帶的問題清單
+
+1. 我這個癌別、這個分期，**ctDNA 能取代組織切片嗎？還是只能輔助？**
+2. 如果做液態切片，平台是哪家？涵蓋哪些基因？是否含 PD-L1、HER2、TMB？
+3. 結果預計多久回來？陽性、陰性各會怎麼影響治療決定？
+4. **我的年紀屬於 CHIP 高風險，平台會做白血球同步定序嗎？**
+5. 自費金額多少？健保有沒有可申請的條件？
+6. MRD 監測對我這個分期有沒有實證支持？陽性與陰性各會怎麼處理？
+
+<Divider />
+
+## 參考文獻
+
+1. Cescon DW, Bratman SV, Chan SM, Siu LL. **Circulating tumor DNA and liquid biopsy in oncology.** *Nat Cancer.* 2020;1(3):276-290. [doi:10.1038/s43018-020-0043-5](https://doi.org/10.1038/s43018-020-0043-5)
+2. Tie J, Cohen JD, Lahouel K, et al. **Circulating Tumor DNA Analysis Guiding Adjuvant Therapy in Stage II Colon Cancer** (DYNAMIC). *N Engl J Med.* 2022;386(24):2261-2272. [doi:10.1056/NEJMoa2200075](https://doi.org/10.1056/NEJMoa2200075)
+3. Nakamura Y, Watanabe J, Akazawa N, et al. **ctDNA-based molecular residual disease and survival in resectable colorectal cancer** (CIRCULATE-Japan GALAXY). *Nat Med.* 2024;30(11):3272-3283. [doi:10.1038/s41591-024-03254-6](https://doi.org/10.1038/s41591-024-03254-6)
+4. Razavi P, Li BT, Brown DN, et al. **High-intensity sequencing reveals the sources of plasma circulating cell-free DNA variants.** *Nat Med.* 2019;25(12):1928-1937. [doi:10.1038/s41591-019-0652-7](https://doi.org/10.1038/s41591-019-0652-7)
+5. Pascual J, Attard G, Bidard FC, et al. **ESMO recommendations on the use of circulating tumour DNA assays for patients with cancer: a report from the ESMO Precision Medicine Working Group.** *Ann Oncol.* 2022;33(8):750-768. [doi:10.1016/j.annonc.2022.05.520](https://doi.org/10.1016/j.annonc.2022.05.520)
+6. Odegaard JI, Vincent JJ, Mortimer S, et al. **Validation of a Plasma-Based Comprehensive Cancer Genotyping Assay Utilizing Orthogonal Tissue- and Plasma-Based Methodologies** (Guardant360). *Clin Cancer Res.* 2018;24(15):3539-3549. [doi:10.1158/1078-0432.CCR-17-3831](https://doi.org/10.1158/1078-0432.CCR-17-3831)
+7. Mok TS, Wu YL, Ahn MJ, et al. **Osimertinib or Platinum–Pemetrexed in EGFR T790M–Positive Lung Cancer** (AURA3). *N Engl J Med.* 2017;376(7):629-640. [doi:10.1056/NEJMoa1612674](https://doi.org/10.1056/NEJMoa1612674)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 7 篇引用之 DOI 均經 Crossref 驗證可解析。

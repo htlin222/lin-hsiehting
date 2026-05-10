@@ -1,0 +1,209 @@
+---
+title: "早期肺癌也要做基因檢測嗎？osimertinib 輔助治療角色（ADAURA OS 終局）"
+titleEn: "Adjuvant osimertinib in early-stage EGFR-mutant NSCLC: ADAURA OS update"
+date: "05/11/2026"
+frontmatter: "ADAURA OS update（NEJM 2023）證實術後 osimertinib 3 年使早期 EGFR 突變肺癌 5 年總存活率從 78% 提升到 88%（HR 0.49）；本文整理適應症、健保條件、副作用與失效後的再激起策略。"
+tags: ["肺癌", "EGFR", "osimertinib", "ADAURA", "輔助治療", "衛教"]
+medical: true
+medicalCondition: "早期 EGFR 突變非小細胞肺癌 (Early-stage EGFR-mutant NSCLC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "肺癌一期還要吃標靶嗎？"
+    a: "依 ADAURA 試驗（NEJM 2020 主分析、NEJM 2023 OS update），完全切除術後病理分期 IB–IIIA、帶有 EGFR exon 19 deletion 或 L858R 突變的非小細胞肺癌病人，術後輔助 osimertinib 3 年可將 5 年總存活率從 78% 提升到 88%（HR 0.49, 95% CI 0.34–0.70）。即使是 IB 期，無病存活率也顯著改善。台灣健保自 2024 年起對 II–IIIA 期符合條件者部分給付。"
+  - q: "osimertinib 術後輔助治療要吃多久？"
+    a: "依試驗設計與仿單，osimertinib 術後輔助治療療程為 3 年。試驗中超過 3 年並未常規續用，因此目前指引建議滿 3 年後停藥追蹤。長期使用是否能進一步降低復發風險仍未有第三期試驗證據。"
+  - q: "ADAURA 的 OS 結果應該怎麼讀？"
+    a: "ADAURA OS update（NEJM 2023, N = 682）顯示整體族群 5 年 OS 88% vs. 78%，HR 0.49（95.03% CI 0.33–0.73, P < 0.001）。II–IIIA 次族群 HR 0.49、IB 次族群 HR 0.44。需注意：對照組僅約 38% 在復發後實際接受 osimertinib，因此「osimertinib 提早給」與「等復發再給」這兩種策略的差距，可能在真實世界中（復發後普遍使用 osimertinib）會略小於試驗數字。"
+  - q: "停藥後復發的人可以再用 osimertinib 嗎？"
+    a: "可以。ADAURA 顯示停藥後若復發，多數病人腫瘤仍對 osimertinib 敏感，因此重新挑戰（rechallenge）仍是合理選項。實務上會依復發時間、再切片是否出現抗藥機轉（如 C797S、MET 擴增、SCLC 轉化）決定下一步。"
+  - q: "其他輔助治療試驗（IMpower010、KEYNOTE-091）跟 ADAURA 有什麼不同？"
+    a: "ADAURA 鎖定 EGFR 突變族群，使用 osimertinib；IMpower010（Lancet 2021）使用 atezolizumab 1 年於 PD-L1 陽性 II–IIIA；KEYNOTE-091（Lancet Oncol 2022）使用 pembrolizumab 1 年於 IB（≥ 4 cm）–IIIA。三者 biomarker 與藥物不同，臨床上是「先做 EGFR 檢測 → 陽性走 ADAURA 路線；陰性才考慮 PD-L1 與免疫輔助治療」這個順序。"
+doi: "10.5281/zenodo.20113009"
+conceptDoi: "10.5281/zenodo.20113008"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+早期非小細胞肺癌（NSCLC）術後是否需要標靶治療，過去十年最關鍵的證據來自 **ADAURA 試驗**：完全切除後病理分期 IB–IIIA、帶有 EGFR exon 19 deletion 或 L858R 突變的病人，接受 3 年 osimertinib 輔助治療，**5 年總存活率從 78% 提升到 88%（HR 0.49, 95.03% CI 0.33–0.73, P < 0.001；NEJM 2023 OS update）**。這份 OS 終局數據改寫了「肺癌一期不用做基因檢測」的舊觀念——只要病理拿到，EGFR 檢測就應該立刻送，因為結果會直接影響術後三年。本文整理 ADAURA 設計、適應症與健保條件、副作用、停藥後復發的再激起策略，以及與 IMpower010、KEYNOTE-091 等其他術後輔助治療試驗的對照。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛接受肺癌手術、正在考慮是否需要術後標靶或免疫治療的病友與家屬，以及想快速複習 ADAURA OS 結果與台灣健保條件的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼早期肺癌也要做 EGFR 檢測？
+
+過去常見的觀念是「肺癌切乾淨就好，化療頂多打四個療程」。但 NSCLC 即使在病理分期 IB–IIIA 完全切除後，5 年復發率仍可達 30–60%。亞洲族群的肺腺癌約有 50–60% 帶有 EGFR 致敏感突變（exon 19 del、L858R），這些病人若沒先做基因檢測，就可能錯過 osimertinib 輔助治療帶來的存活率提升。
+
+| 試驗 | Biomarker | 適應症（術後） | 主要結果 |
+|---|---|---|---|
+| **ADAURA**（osimertinib 3 年） | EGFR exon 19 del / L858R | IB–IIIA 完全切除、化療後 | DFS HR 0.20（II–IIIA），5 年 OS 88% vs. 78%（HR 0.49） |
+| **IMpower010**（atezolizumab 1 年） | PD-L1 ≥ 1%（TC ≥ 1%） | II–IIIA 完全切除、化療後 | PD-L1 ≥ 1% subgroup DFS HR 0.66（Lancet 2021） |
+| **KEYNOTE-091**（pembrolizumab 1 年） | 不限 PD-L1（PD-L1 ≥ 50% 為次要） | IB（≥ 4 cm）–IIIA 完全切除、化療後 | 整體族群 DFS HR 0.76（Lancet Oncol 2022），PD-L1 ≥ 50% 未達顯著 |
+| **ALCHEMIST**（A081105/E4512 子計畫） | EGFR / ALK / PD-L1 平台試驗 | IB–IIIA | 子試驗陸續報告，部分結果與 ADAURA 一致（早期 erlotinib DFS 改善但 OS 未顯著） |
+
+<Callout type="tip" title="檢測時機">
+病理確診為 NSCLC 非鱗狀型（腺癌或 NOS）後，**EGFR 突變（exon 19 del、L858R 至少要做）與 PD-L1 IHC 22C3** 應在病理科同一塊蠟塊上一併送驗，不要等化療打完才補做。亞洲族群也建議同時測 ALK 重排，因為若是 ALK+ 則目前沒有第三期 OS 證據，但可循 ALCHEMIST/ALINA 等試驗考慮 alectinib 輔助治療（已於 2024 年獲 FDA 核准）。
+</Callout>
+
+## ADAURA 試驗設計與結果
+
+ADAURA 是雙盲、安慰劑對照的第三期國際試驗，2015–2019 年間收 682 位病人，1:1 隨機分到 osimertinib 80 mg QD vs. 安慰劑，療程最長 3 年或復發為止。
+
+### 主要結果（DFS, NEJM 2020）
+
+- **II–IIIA 主要族群**（n = 470）：2 年 DFS 90% vs. 44%，**HR 0.17（99.06% CI 0.11–0.26, P < 0.001）**
+- **整體 IB–IIIA 族群**（n = 682）：2 年 DFS 89% vs. 53%，**HR 0.20（99.12% CI 0.14–0.30, P < 0.001）**
+- 中樞神經系統復發風險：HR 0.18（95% CI 0.10–0.33）
+
+### OS update（NEJM 2023）
+
+延長追蹤後發布的次要終點 OS：
+
+- **II–IIIA 主要族群**：5 年 OS 85% vs. 73%，**HR 0.49（95.03% CI 0.33–0.73, P < 0.001）**
+- **整體 IB–IIIA 族群**：5 年 OS 88% vs. 78%，HR 0.49
+- IB 次族群：HR 0.44（事件數少，作為支持性證據）
+- 死亡事件數：osimertinib 組 51/339 vs. 安慰劑組 91/343
+
+<Callout type="warning" title="跨試驗比較限制">
+ADAURA、IMpower010、KEYNOTE-091 三項試驗的 biomarker 族群、化療策略（adjuvant 化療比例）、納入分期、隨機化時點均不同。不能用「HR 高低」直接比較。實務上 EGFR+ 走 ADAURA 路線、EGFR− 才考慮 PD-L1 與免疫輔助治療；跨類別「先用免疫再用 osimertinib」或「兩者併用」目前**沒有**前瞻性數據支持。
+</Callout>
+
+## 適應症、禁忌症、術後流程
+
+### 適應症（osimertinib 輔助治療）
+
+- 病理分期 IB–IIIA（依 AJCC 第 8 版）的 NSCLC
+- **完全切除（R0）**——若手術為 R1 或 R2 應依術後狀況另行討論
+- EGFR exon 19 deletion 或 L858R 點突變
+- ECOG PS 0–1，主要器官功能可耐受
+- 已完成（或不適合）術後輔助化療（含順鉑為基礎之雙藥化療 4 cycles）
+
+### 禁忌症與謹慎使用
+
+- 對 osimertinib 成分過敏
+- 活動性間質性肺病（ILD）或既往 osimertinib 引發 ILD 史
+- QTc 間期顯著延長（> 500 ms）或先天性長 QT 症候群
+- 嚴重肝功能異常（依肝功能劑量調整尚無充分資料）
+- 妊娠與授乳期：osimertinib 在動物研究有胚胎毒性，治療期間及停藥後需避孕
+- 同時服用強效 CYP3A4 誘導劑（如 rifampin、phenytoin、St. John's Wort）會降低 osimertinib 血中濃度，應避免
+
+### 標準術後流程
+
+<Steps>
+  <div>
+    ### 手術切除（lobectomy + systematic LN dissection）
+
+    病理確認為非鱗狀 NSCLC、R0 切除、AJCC 第 8 版分期 IB–IIIA。手術病理同時取材送 biomarker。
+  </div>
+  <div>
+    ### Biomarker 檢測（病理確診後立刻送）
+
+    必做：EGFR 突變（含 exon 19 del、L858R 等致敏感突變）、PD-L1 IHC 22C3。建議同步：ALK、ROS1、KRAS。NGS 大 panel 若可及最佳。
+  </div>
+  <div>
+    ### 術後輔助化療（4 cycles，含順鉑為基礎雙藥）
+
+    依分期決定：II–IIIA 強烈建議；IB 視腫瘤大小、淋巴血管侵犯等高風險特徵討論。化療不會與 osimertinib 同時使用，需先打完。
+  </div>
+  <div>
+    ### Osimertinib 80 mg QD × 3 年
+
+    化療結束後 10 週內啟動，每日一次空腹或隨餐皆可。療程 3 年或至復發、無法耐受副作用為止。
+  </div>
+  <div>
+    ### 追蹤（含腦部 MRI）
+
+    建議每 12 週一次胸腹部 CT、每 6 個月一次腦部 MRI（osimertinib 雖能降低 CNS 復發，仍應監測）；3 年療程結束後改為標準術後追蹤頻率。
+  </div>
+</Steps>
+
+## 副作用與處理
+
+osimertinib 整體耐受性比第一代 EGFR-TKI（gefitinib、erlotinib）好，但仍有需要警覺的不良反應：
+
+| 副作用 | 任何級別 | ≥ Grade 3 | 處理原則 |
+|---|---|---|---|
+| 腹瀉 | 47% | 2% | 飲食調整、loperamide；持續 ≥ G3 暫停 |
+| 皮疹 / 痤瘡樣疹 | 25% | < 1% | 保濕、外用四環素或類固醇；G3 暫停並降劑量 |
+| 口腔炎 | 18% | < 1% | 含漱劑、避免刺激性食物 |
+| 甲溝炎 | 14% | < 1% | 保持乾燥、外用抗生素 |
+| **間質性肺病 / 肺炎**（ILD） | 3% | 1% | 任何疑似 ILD 立即停藥、影像評估、必要時類固醇；確診後永久停藥 |
+| QTc 延長 | 7% | < 1% | 治療前 ECG，避免併用其他延長 QT 藥物 |
+| 心臟功能異常（LVEF 下降） | 3% | < 1% | 治療前心臟超音波，期間視臨床評估 |
+
+<Callout type="warning" title="間質性肺病警訊">
+osimertinib 引發的 ILD 雖比例不高，但在亞洲族群的真實世界資料中發生率略高於試驗（約 3–5%）。出現乾咳、活動性呼吸困難、發燒時應立即就醫，不要自行歸因為感冒。確診 osimertinib-related ILD 後依共識應永久停藥。
+</Callout>
+
+## 台灣健保給付現況（2024 起）
+
+健保署於 2024 年起公告 osimertinib 術後輔助治療部分給付，主要條件包括：
+
+- 病理分期 II–IIIA（AJCC 第 8 版）、完全切除（R0）NSCLC
+- EGFR exon 19 deletion 或 L858R 點突變
+- 已接受（或經評估不適合）術後輔助化療
+- 治療期程上限為 3 年
+
+IB 期目前**未列入**健保給付範圍，僅能自費；自費約一個月新台幣十多萬元，三年總費用相當可觀，需事先與家屬討論財務負擔與保險理賠。實際給付條件以健保署最新公告為準，建議在啟動治療前由主治醫師與藥師再次核對。
+
+## 停藥後復發怎麼辦？
+
+ADAURA 採取「滿 3 年停藥、復發後再評估」的策略。OS update 顯示對照組（一直未用 osimertinib）約 38% 病人在復發後接受 osimertinib，而 osimertinib 組停藥後復發者，相當比例仍可重新使用 osimertinib 並獲得控制。
+
+實務上：
+
+1. **停藥後復發**：建議再次切片或 liquid biopsy，檢查是否出現 T790M 之外的抗藥機轉（C797S、MET 擴增、HER2 擴增、SCLC 轉化）。若無新抗藥機轉，重新挑戰 osimertinib 多數仍敏感。
+2. **若出現 C797S** 與 T790M 在不同 allele（trans）：可考慮 osimertinib + gefitinib 組合或加入第四代 TKI 試驗。
+3. **若 MET 擴增**：可考慮 osimertinib + savolitinib、tepotinib 等組合（仍多在試驗階段）。
+4. **若 SCLC 轉化**：依小細胞肺癌標準方案處理。
+
+第一線轉移性 EGFR+ NSCLC 的 osimertinib 證據（FLAURA, NEJM 2018 / OS update NEJM 2020）顯示 mPFS 18.9 個月、mOS 38.6 個月，這個數字提供 ADAURA 停藥後復發再用的合理性參考。
+
+<Callout type="note" title="輔助治療 ≠ 治癒承諾">
+即便 ADAURA 大幅降低復發風險，仍有約 12% 的整體族群在 5 年內復發或死亡。輔助治療的目的是「降低復發風險、延長無病存活與總存活」，不是免於復發。完整的術後追蹤、戒菸、肺功能維護仍是長期照護的重點。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三件事都做了
+
+    (1) 病理分期是 IB–IIIA 完全切除？(2) EGFR 檢測結果是什麼（exon 19 del / L858R / 其他 / wild-type）？(3) PD-L1 IHC 22C3 結果。三項缺一就有可能漏掉適合的輔助治療。
+  </div>
+  <div>
+    ### 主動詢問健保給付條件與自費差異
+
+    II–IIIA 已可健保部分給付，但條件嚴格；IB 期目前需自費。主治醫師端常因案件量大可能未即時告知最新公告，請主動詢問「我這個分期、這個 EGFR 結果，是否符合 osimertinib 健保條件？」
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理分期、EGFR 突變型、PD-L1 都是多少？
+    2. 是否需要術後輔助化療？化療結束後何時啟動 osimertinib？
+    3. 健保是否給付？自費需要多少？
+    4. 副作用怎麼監測（特別是 ILD）？三年期間需要做哪些檢查？
+    5. 滿 3 年後的追蹤計畫怎麼安排？
+    6. 若停藥後復發，下一步怎麼處理？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Wu YL, Tsuboi M, He J, et al. **Osimertinib in Resected EGFR-Mutated Non–Small-Cell Lung Cancer** (ADAURA). *N Engl J Med.* 2020;383(18):1711-1723. [doi:10.1056/NEJMoa2027071](https://doi.org/10.1056/NEJMoa2027071)
+2. Tsuboi M, Herbst RS, John T, et al. **Overall Survival with Osimertinib in Resected EGFR-Mutated NSCLC** (ADAURA OS update). *N Engl J Med.* 2023;389(2):137-147. [doi:10.1056/NEJMoa2304594](https://doi.org/10.1056/NEJMoa2304594)
+3. Felip E, Altorki N, Zhou C, et al. **Adjuvant atezolizumab after adjuvant chemotherapy in resected stage IB–IIIA non-small-cell lung cancer (IMpower010): a randomised, multicentre, open-label, phase 3 trial.** *Lancet.* 2021;398(10308):1344-1357. [doi:10.1016/S0140-6736(21)02098-5](https://doi.org/10.1016/S0140-6736(21)02098-5)
+4. O'Brien M, Paz-Ares L, Marreaud S, et al. **Pembrolizumab versus placebo as adjuvant therapy for completely resected stage IB–IIIA non-small-cell lung cancer (PEARLS/KEYNOTE-091): an interim analysis of a randomised, triple-blind, phase 3 trial.** *Lancet Oncol.* 2022;23(10):1274-1286. [doi:10.1016/S1470-2045(22)00518-6](https://doi.org/10.1016/S1470-2045(22)00518-6)
+5. Soria JC, Ohe Y, Vansteenkiste J, et al. **Osimertinib in Untreated EGFR-Mutated Advanced Non–Small-Cell Lung Cancer** (FLAURA). *N Engl J Med.* 2018;378(2):113-125. [doi:10.1056/NEJMoa1713137](https://doi.org/10.1056/NEJMoa1713137)
+6. Ramalingam SS, Vansteenkiste J, Planchard D, et al. **Overall Survival with Osimertinib in Untreated, EGFR-Mutated Advanced NSCLC** (FLAURA OS). *N Engl J Med.* 2020;382(1):41-50. [doi:10.1056/NEJMoa1913662](https://doi.org/10.1056/NEJMoa1913662)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；ADAURA、IMpower010、KEYNOTE-091、FLAURA 全文與 BibTeX 已存於本機 OpenEvidence MCP artifacts 目錄。

@@ -1,0 +1,254 @@
+---
+title: "早期大腸癌 dMMR / MSI-H 為什麼可以免開刀？免疫治療新路線"
+titleEn: "Neoadjuvant immunotherapy in dMMR colorectal cancer: organ preservation era"
+date: "05/11/2026"
+frontmatter: "dMMR / MSI-H 大腸癌約佔 10–15%，對 PD-1 抑制劑反應率極高：NICHE-2 結腸癌 pCR 達 68%、3 年無疾病存活 100%；Cercek 團隊 dostarlimab 直腸癌延伸至 42 例，全數達臨床完全反應，部分病人可免手術。本文整理檢測、適應症與追蹤策略。"
+tags: ["大腸癌", "直腸癌", "dMMR", "MSI-H", "免疫治療", "衛教"]
+medical: true
+medicalCondition: "錯配修復缺失大腸癌 (dMMR / MSI-H colorectal cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "大腸癌真的可以不開刀嗎？"
+    a: "目前只有少數族群有此可能：腫瘤經病理證實為錯配修復缺失（dMMR）或微衛星高度不穩定（MSI-H）的局部進展期直腸癌，在 Cercek 團隊延伸至 42 例的研究中，給予 dostarlimab 6 個月後全數達臨床完全反應，無人接受手術或放化療，中位追蹤 26.3 個月仍持續無復發；其他病理類型與其他癌別目前仍以手術為標準。"
+  - q: "dMMR / MSI-H 是什麼？我的腫瘤是嗎？"
+    a: "dMMR 指腫瘤內負責修復 DNA 錯配的蛋白（MLH1、MSH2、MSH6、PMS2）缺失，常以免疫組織化學染色（IHC）判讀；MSI-H 則是以 PCR 或次世代定序檢測微衛星區段不穩定性。兩者實質意義相近，約 10–15% 的大腸癌屬此族群，常見於 Lynch syndrome 家族遺傳。建議所有新診斷大腸癌患者皆接受 MMR IHC 篩檢。"
+  - q: "Cercek 團隊 dostarlimab 對直腸癌的數據是真的嗎？"
+    a: "是真的，但須留意樣本數仍小、追蹤時間不長。最初 NEJM 2022 報告 14 例皆達臨床完全反應；2024 年延伸到 42 例，全數仍達臨床完全反應，中位追蹤 26.3 個月（範圍 12.4–50.5）。雖然 100% 反應率令人振奮，但仍須等待 AZUR-1（n ≈ 100）等驗證性試驗結果，再普遍推廣至非試驗環境。"
+  - q: "免疫治療結束後要追蹤多久？要追什麼？"
+    a: "依目前各試驗 protocol，前 2 年每 3–4 個月做直腸鏡（直腸癌）或大腸鏡（結腸癌）+ 直腸 MRI（直腸癌）+ CEA + 影像（CT 或 PET-CT），第 3–5 年可拉長到每 6 個月，5 年後可比照一般大腸癌追蹤。部分研究中心會加做循環腫瘤 DNA（ctDNA）監測作為輔助。出現任何疑似復發訊號（ctDNA 轉陽、影像新病灶）需重新評估手術。"
+doi: "10.5281/zenodo.20113007"
+conceptDoi: "10.5281/zenodo.20113006"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+dMMR / MSI-H 大腸癌約佔所有大腸癌的 10–15%，對 PD-1 抑制劑反應率遠高於一般大腸癌。**Cercek 團隊（MSK）將 dostarlimab 用於局部進展期 dMMR 直腸癌**，從 2022 年 NEJM 的 14 例（全數臨床完全反應）擴展至 2024 年 NEJM 更新的 42 例，仍維持全數達臨床完全反應，中位追蹤 26.3 個月無人接受手術或放化療。**NICHE-2 試驗**則於 2024 年 NEJM 發表，115 例局部進展期 dMMR 結腸癌術前接受 nivolumab + ipilimumab 兩劑，病理完全反應率 68%、3 年無疾病存活 100%。本文整理檢測流程、適應症與追蹤策略，並說明這些數據在實務上的限制。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷大腸癌（特別是局部進展期直腸癌或結腸癌）並想了解免疫治療是否適用的病友與家屬，以及對 NICHE-2、Cercek dostarlimab 與 CheckMate-8HW 數據如何整合進臨床決策有興趣的同業。所有實際治療決策請與您的主治醫師討論，特別是 organ preservation 路線必須在有經驗的多專科團隊中執行。
+</Callout>
+
+<Divider />
+
+## dMMR / MSI-H 是什麼？為什麼對免疫治療特別敏感？
+
+人體細胞每次分裂時，DNA 複製可能出現少量錯配。**錯配修復系統（mismatch repair, MMR）**由 MLH1、MSH2、MSH6、PMS2 四個蛋白組成，負責即時校正這些錯誤。當其中一個蛋白功能缺失（**deficient MMR, dMMR**），錯配累積就會在微衛星區段呈現**高度不穩定（microsatellite instability-high, MSI-H）**——這也代表整個基因組產生大量突變，每顆腫瘤細胞表面浮現許多異常蛋白片段（neoantigen），對免疫系統而言極為「醒目」，是 PD-1 抑制劑可以發揮最大效果的腫瘤生物學基礎。
+
+### 為什麼大腸癌特別常見 dMMR？
+
+- **散發型（≈ 70% of dMMR CRC）**：最常見原因為 *MLH1* 啟動子高甲基化（CIMP-high），常合併 *BRAF* V600E 突變，多發於右側結腸與年長女性。
+- **遺傳型（≈ 30% of dMMR CRC，即 Lynch syndrome）**：MMR 基因（*MLH1 / MSH2 / MSH6 / PMS2 / EPCAM*）家族遺傳變異，年輕、家族史明顯，需家族基因諮詢。
+
+dMMR / MSI-H 約占所有大腸癌的 10–15%，但比例隨病期下降：第二期約 20%、第三期約 12%、第四期僅 4–5%——這也是為什麼免疫治療在早期局部疾病的角色比轉移性疾病更顯著。
+
+## 怎麼檢測？什麼時候做？
+
+| 檢測方式 | 原理 | 適用時機 | 健保現況（台灣） |
+|---|---|---|---|
+| **MMR IHC** | 直接染 MLH1 / MSH2 / MSH6 / PMS2 四個蛋白，缺失者為 dMMR | 所有新診斷大腸癌建議 reflex 篩檢 | 多數醫院常規執行 |
+| **MSI PCR**（Bethesda panel） | 比對 5 個微衛星標誌；≥ 2 個不穩定為 MSI-H | IHC 不確定或要二次確認 | 部分醫院執行 |
+| **NGS panel**（含 MSI score） | 基因組層級評估 microsatellite signature | 已有 NGS 報告者順便檢視；亦可同時看 KRAS / BRAF / NTRK | 自費為主 |
+
+<Callout type="tip" title="實務建議">
+所有新診斷大腸癌都應該在病理階段做 MMR IHC，這是「最便宜、最早可知」的關鍵分子訊息。若 IHC 顯示 MLH1 缺失，下一步應檢測 BRAF V600E 與 MLH1 啟動子甲基化，以區分 Lynch syndrome 與散發型。
+</Callout>
+
+<Steps>
+  <div>
+    ### Step 1：診斷大腸癌
+
+    病理切片同時開立 MMR IHC（四蛋白）。若已先做 NGS panel 並顯示 MSI-H，可省略此步驟。
+  </div>
+  <div>
+    ### Step 2：判讀 MMR 結果
+
+    四個蛋白皆陽性 → **MMR proficient (pMMR / MSS)**，免疫治療效益不明顯，依一般大腸癌指引處置。
+
+    任一蛋白缺失 → **dMMR / MSI-H**，進入下一步。
+  </div>
+  <div>
+    ### Step 3：確認分期，討論治療路線
+
+    依 cTNM 分期與是否可切除：
+
+    - **局部進展期可切除直腸癌（cT3–4 或 N+）**：可考慮加入或諮詢 dostarlimab organ preservation 試驗。
+    - **局部進展期可切除結腸癌（cT3–4 或 N+，非梗阻）**：可考慮加入 NICHE-2 類型 neoadjuvant 試驗。
+    - **轉移性（mCRC）**：第一線可選 pembrolizumab（KEYNOTE-177）或 nivolumab + ipilimumab（CheckMate-8HW）。
+  </div>
+  <div>
+    ### Step 4：與多專科團隊（MDT）討論
+
+    免疫治療路線（特別是免手術 organ preservation）必須在有經驗的多專科團隊（外科、腫瘤內科、放射腫瘤、消化內科、影像、病理）中執行，不適合在資源不足的環境推廣。
+  </div>
+</Steps>
+
+## 轉移性大腸癌：KEYNOTE-177 與 CheckMate-8HW
+
+### KEYNOTE-177（pembrolizumab vs. 化療）
+
+KEYNOTE-177（André et al., NEJM 2020）是第一個在 mMSI-H 大腸癌證實單藥免疫治療優於化療的第三期試驗：
+
+| 項目 | Pembrolizumab | 化療（含或不含 bevacizumab / cetuximab） |
+|---|---|---|
+| n | 153 | 154 |
+| mPFS | **16.5 個月** | 8.2 個月 |
+| HR (PFS) | **0.60**（95% CI 0.45–0.80, P = 0.0002） | — |
+| ORR | 43.8% | 33.1% |
+| 第 3–5 級治療相關 AE | 22% | 66% |
+
+長期追蹤（Diaz et al., JCO 2022 update）顯示中位追蹤 44.5 個月時，pembrolizumab 組 mOS 因 cross-over 約一半病人後線改用免疫治療而**未達顯著差異**（mOS 未達 vs. 36.7 個月，HR 0.74，P = 0.0359 但未達預設 alpha），但 PFS 長期優勢仍維持。
+
+<Callout type="note" title="cross-over 對 OS 的影響">
+KEYNOTE-177 OS 結果未達統計顯著，主要是因為化療組失敗後約 60% 病人 cross-over 到免疫治療。換算 inverse probability of censoring weighting (IPCW) 後 mOS HR 約 0.66。臨床上不影響「dMMR / MSI-H mCRC 第一線應優先使用免疫治療」此結論。
+</Callout>
+
+### CheckMate-8HW（nivolumab + ipilimumab vs. nivolumab vs. 化療）
+
+CheckMate-8HW（André et al., NEJM 2024）擴大設計為三組比較：
+
+| 比較 | 中位追蹤 | mPFS（實驗組 vs. 對照） | HR | 24 個月 PFS 比例 |
+|---|---|---|---|---|
+| Nivo + Ipi vs. 化療（first-line） | 24.3 個月 | 未達 vs. 5.9 個月 | **0.21**（95% CI 0.13–0.35） | 72% vs. 14% |
+| Nivo + Ipi vs. Nivo 單藥（all lines） | — | 未達 vs. 39.3 個月 | 0.62 | — |
+
+第 3–4 級治療相關 AE：實驗組 23% vs. 化療組 48%。FDA 已於 2025 年 4 月核准 nivolumab + ipilimumab 用於 unresectable / metastatic dMMR / MSI-H 大腸癌。
+
+### 第一線選擇：單藥還是雙免疫？
+
+- **Pembrolizumab 單藥**：方便、毒性低，適合年長或共病多者。
+- **Nivolumab + Ipilimumab**：PFS 優勢更大（HR 0.21 vs. 化療），但免疫相關 AE 比例略高，年輕、體能狀態佳、希望最大化 PFS 者可考慮。
+
+兩者皆是 NCCN category 1 preferred 選項；目前**沒有頭對頭試驗**直接比較 pembrolizumab vs. nivolumab + ipilimumab，臨床選擇需綜合 AE profile、可及性與病人偏好。
+
+## Neoadjuvant 路線：NICHE-2（結腸癌）
+
+NICHE-2（Chalabi et al., NEJM 2024）將 neoadjuvant 雙免疫應用於非轉移性 dMMR 結腸癌：
+
+| 項目 | 數值 |
+|---|---|
+| 試驗設計 | Phase 2，single-arm |
+| n（enrolled / efficacy） | 115 / 111 |
+| 治療方案 | Day 1: nivolumab 3 mg/kg + ipilimumab 1 mg/kg；Day 15: nivolumab 3 mg/kg；之後手術 |
+| 及時手術率 | 113/115 (98%) |
+| 主要病理反應（MPR, ≤ 10% 殘存腫瘤） | 105/111 (95%) |
+| 病理完全反應（pCR） | 75/111 (**68%**) |
+| 第 3–4 級免疫相關 AE | 5/115 (4%) |
+| 中位術後追蹤 | 36.5 個月 |
+| **3 年無疾病存活（DFS）** | **100%**（無人復發） |
+
+NICHE-2 的意義在於：(1) 證實兩個劑量、6 週內完成的 neoadjuvant 雙免疫可達到接近全數有反應；(2) pCR 比例遠高於傳統化療（FOLFOX 約 4%）；(3) 沒有任何病人因 AE 延後手術。後續 NICHE-3（n ≈ 60）以 nivolumab + relatlimab（anti-LAG-3）顯示類似療效，但 NICHE-2 仍是目前最完整、最長追蹤的數據。
+
+## Organ preservation：Cercek 團隊 dostarlimab 直腸癌
+
+直腸癌的標準治療為：化放療 → 手術 → 輔助化療。手術常需做永久性人工肛門、影響排便與性功能。**Cercek et al. NEJM 2022** 首度報告 14 例 dMMR 局部進展期直腸癌單用 dostarlimab 6 個月（500 mg q3w × 9 doses）後**全數（14/14）達臨床完全反應（cCR）**，皆免手術、免化放療進入觀察。
+
+**2024 年 NEJM 更新**（Cercek et al., NEJM 2024，*Nonoperative Management of Mismatch Repair-Deficient Tumors*）將佈局擴大：
+
+| 項目 | 2022 年 NEJM | 2024 年 NEJM update |
+|---|---|---|
+| 完成治療 n（直腸癌） | 14 | 42 |
+| 臨床完全反應 cCR | 14/14 (**100%**) | 42/42 (**100%**) |
+| 中位追蹤 | 6.8 個月 | **26.3 個月**（範圍 12.4–50.5） |
+| ≥ 12 個月 sustained cCR | — | 24 例 |
+| 接受手術或放化療人數 | 0 | 0 |
+
+<Callout type="warning" title="樣本數仍小、追蹤仍短，普及前需驗證">
+Cercek 試驗為 single-center、single-arm 設計，n = 42 全數來自 MSK；追蹤中位數 26.3 個月雖已比 2022 年延長，但相對 5 年復發率仍嫌不足。**AZUR-1 試驗（NCT05723562，n ≈ 100）**正在多中心驗證 dostarlimab 對 stage II/III dMMR 直腸癌的療效，結果尚未發布。在試驗結果出來前，organ preservation 仍應在多專科團隊內、最好是試驗框架下進行；不應在資源不足的環境推廣。
+</Callout>
+
+## Le et al. 2017：dMMR 跨癌別反應率的源頭
+
+回顧研究脈絡，Le 等人於 *Science* 2017 提出 **mismatch repair status predicts response to PD-1 blockade across tumor types**：86 例 12 種 dMMR 癌別接受 pembrolizumab，ORR 53%、CR 21%，**支持 FDA 於 2017 年首次以 biomarker（不分組織）核准 pembrolizumab**。這是 dMMR / MSI-H 在腫瘤學上由「特殊個案」躍升為「跨癌別共同治療標靶」的轉折。
+
+## 副作用、適應症與禁忌症
+
+### 免疫相關不良反應（irAE）摘要
+
+PD-1 / CTLA-4 抑制劑可能引發任何器官的免疫攻擊，最常見：
+
+- **內分泌**：甲狀腺功能異常（10–20%）、腎上腺功能不全、垂體炎、第 1 型糖尿病
+- **腸胃道**：免疫相關大腸炎、肝炎（雙免疫 ≥ Grade 3 約 10–15%）
+- **肺部**：間質性肺炎（雙免疫 ≥ Grade 3 約 3–5%）
+- **皮膚**：皮疹、白斑、嚴重時出現 Stevens-Johnson syndrome
+- **罕見但嚴重**：心肌炎、腦膜炎、重症肌無力、horizontal myelitis
+
+NICHE-2 的第 3–4 級 irAE 僅 4%，CheckMate-8HW 第 3–4 級治療相關 AE 23%，皆比化療組（化療通常 40–66%）低。但 irAE 可能延遲出現（治療結束後數月），需長期警覺。
+
+### 適應症（已核准或主要試驗）
+
+- **轉移性 dMMR / MSI-H 大腸癌第一線**：pembrolizumab（FDA 2020）、nivolumab + ipilimumab（FDA 2025）。
+- **轉移性 MSI-H 任何實體癌**：pembrolizumab（FDA 2017，tissue-agnostic）。
+- **局部進展期 dMMR 直腸癌**：dostarlimab 仍屬試驗階段（Cercek 系列、AZUR-1）。
+- **局部進展期 dMMR 結腸癌 neoadjuvant**：仍屬試驗階段（NICHE-2、NICHE-3）。
+
+### 禁忌症與謹慎使用
+
+- 對藥物成分過敏
+- 活動期自體免疫疾病（紅斑性狼瘡、類風濕關節炎活動期、發炎性腸道疾病等）
+- 接受長期高劑量類固醇或免疫抑制劑者
+- 已接受同種異體幹細胞或實體器官移植者（再次免疫激活可能誘發 GVHD 或排斥）
+- 嚴重肝功能異常（Child-Pugh C）
+- 妊娠與授乳期應避免使用
+
+## 治療結束後怎麼追蹤？
+
+dMMR / MSI-H 病人若達 cCR 或 pCR 而免手術，需密集監測復發。各試驗追蹤頻率略有不同，整體共識：
+
+| 時期 | 直腸鏡 / 大腸鏡 | 影像（MRI / CT / PET） | CEA | ctDNA |
+|---|---|---|---|---|
+| 第 1–2 年 | 每 3–4 個月 | 每 3–4 個月（直腸 MRI / 全身 CT） | 每 3 個月 | 視中心而定，常每 3 個月 |
+| 第 3 年 | 每 4–6 個月 | 每 6 個月 | 每 3–6 個月 | 每 3–6 個月 |
+| 第 4–5 年 | 每 6–12 個月 | 每 6–12 個月 | 每 6 個月 | 視中心而定 |
+
+任何一項異常（腫瘤再現、ctDNA 轉陽、CEA 持續上升），需重新評估，多數情況可改回手術或補化放療。Cercek 系列至今 42 例皆未復發，但仍須維持密集追蹤。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認病理報告有 MMR IHC 結果
+
+    所有新診斷大腸癌都建議做 MMR IHC（四個蛋白）。若報告沒有，主動向主治醫師詢問是否補做。
+  </div>
+  <div>
+    ### 若為 dMMR / MSI-H，主動詢問免疫治療路線
+
+    - 局部進展期直腸癌：是否有機會加入 dostarlimab organ preservation 試驗（AZUR-1 等）？
+    - 局部進展期結腸癌：是否有機會加入 NICHE 系列或類似 neoadjuvant 試驗？
+    - 轉移性：第一線就應使用 pembrolizumab 或 nivolumab + ipilimumab，不應先打化療。
+  </div>
+  <div>
+    ### 若為 Lynch syndrome 高度懷疑，安排家族基因諮詢
+
+    若 IHC 為 dMMR 但 MLH1 啟動子甲基化陰性、或年輕（< 50 歲）、或家族多人罹癌，應安排遺傳諮詢與家族篩檢。早期介入可預防其他癌別（子宮內膜癌、胃癌、卵巢癌、泌尿道癌）。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理報告 MMR IHC 結果是什麼？四個蛋白都正常嗎？
+    2. 如果是 dMMR，是 Lynch syndrome 還是散發型？需不需要做 BRAF 與 MLH1 甲基化？
+    3. 我的分期可以考慮 neoadjuvant 免疫治療嗎？哪裡有相關試驗？
+    4. 如果走 organ preservation，追蹤頻率與內容怎麼安排？
+    5. 免疫治療常見的副作用有哪些？我有哪些既有疾病需要先評估？
+    6. 健保給付狀況如何？自費負擔約多少？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. André T, Shiu KK, Kim TW, et al. **Pembrolizumab in Microsatellite-Instability–High Advanced Colorectal Cancer** (KEYNOTE-177). *N Engl J Med.* 2020;383(23):2207-2218. [doi:10.1056/NEJMoa2017699](https://doi.org/10.1056/NEJMoa2017699)
+2. Diaz LA Jr, Shiu KK, Kim TW, et al. **Pembrolizumab versus chemotherapy for microsatellite instability-high or mismatch repair-deficient metastatic colorectal cancer (KEYNOTE-177): final analysis of a randomised, open-label, phase 3 trial.** *J Clin Oncol.* 2022;40(2). [doi:10.1200/JCO.22.00046](https://doi.org/10.1200/JCO.22.00046)
+3. Cercek A, Lumish M, Sinopoli J, et al. **PD-1 Blockade in Mismatch Repair–Deficient, Locally Advanced Rectal Cancer.** *N Engl J Med.* 2022;386(25):2363-2376. [doi:10.1056/NEJMoa2201445](https://doi.org/10.1056/NEJMoa2201445)
+4. Cercek A, Foote MB, Rousseau B, et al. **Nonoperative Management of Mismatch Repair–Deficient Tumors.** *N Engl J Med.* 2025;392(17). [doi:10.1056/NEJMoa2404512](https://doi.org/10.1056/NEJMoa2404512)
+5. Chalabi M, Verschoor YL, Tan PB, et al. **Neoadjuvant Immunotherapy in Locally Advanced Mismatch Repair–Deficient Colon Cancer** (NICHE-2). *N Engl J Med.* 2024;390(21):1949-1958. [doi:10.1056/NEJMoa2400634](https://doi.org/10.1056/NEJMoa2400634)
+6. André T, Elez E, Van Cutsem E, et al. **Nivolumab plus Ipilimumab in Microsatellite-Instability–High Metastatic Colorectal Cancer** (CheckMate-8HW). *N Engl J Med.* 2024;391(21):2014-2026. [doi:10.1056/NEJMoa2402141](https://doi.org/10.1056/NEJMoa2402141)
+7. Le DT, Durham JN, Smith KN, et al. **Mismatch repair deficiency predicts response of solid tumors to PD-1 blockade.** *Science.* 2017;357(6349):409-413. [doi:10.1126/science.aan6733](https://doi.org/10.1126/science.aan6733)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 7 篇引用均經 doi.org 解析確認。

@@ -1,0 +1,192 @@
+---
+title: "「精準醫療」到底是什麼？跟基因檢測差在哪？2026 實證版"
+titleEn: "What is precision oncology in 2026? Beyond the buzzword"
+date: "05/11/2026"
+frontmatter: "精準腫瘤醫療不是新口號，而是用 biomarker（基因突變、表現量、免疫標記）來決定哪個藥對哪一群病人有效；2026 在 NSCLC、CML、HER2 乳癌、MSI-H 任何癌、BRCA 突變癌等情境已成熟，但多數實體癌轉移後仍處於混合階段。"
+tags: ["精準醫療", "biomarker", "基因檢測", "個人化醫療", "衛教"]
+medical: true
+medicalCondition: "精準腫瘤醫療 (Precision oncology)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "精準醫療是噱頭嗎？跟一般化療差別在哪？"
+    a: "不是噱頭，但也不是萬靈丹。精準腫瘤醫療的核心是：先驗 biomarker（基因突變、表現量、免疫標記），再根據 biomarker 決定用哪一類藥。CML 慢性骨髓性白血病自 2001 年 imatinib 起即進入精準時代，5 年存活率從不到 30% 提升到約 90%；非小細胞肺癌的 EGFR 突變、ALK 融合也從 2009 年起改寫一線治療。但對多數實體癌轉移後二線以後，目前仍以傳統化療與免疫治療為主，精準藥物只能覆蓋一部分病人。"
+  - q: "精準醫療跟個人化醫療有差嗎？"
+    a: "兩者意思接近，但學術上有微妙差別。Precision medicine 強調以「分子分群」為基礎，把病人依 biomarker 分到合適的治療組（不是真的一人一藥）；Personalized medicine 則早期偏向「為個別病人量身打造」的概念。目前美國 NIH 與 ASCO 多採 precision oncology，避開 personalized 帶來的「一人一藥」誤解。Targeted therapy 則是更窄的詞，特指針對某個分子（EGFR、HER2、BRAF 等）的標靶藥，是精準醫療的工具之一，不等於整個概念。"
+  - q: "我要不要做基因檢測，才能進入精準醫療？"
+    a: "看癌別與分期。NCCN 與 ESMO 對轉移性非小細胞肺癌、轉移性大腸癌、轉移性乳癌、轉移性攝護腺癌、卵巢癌、胰臟癌等族群均建議在治療前做次世代定序（NGS panel）；早期癌症則多數情況尚未進入常規。檢測結果若有可治療突變（actionable mutation），會直接影響第一線選擇；若沒有，仍會回到化療或免疫治療。建議與主治醫師討論「我的癌別、分期、現有檢體量是否足以做 NGS、健保是否給付」。"
+  - q: "精準醫療會 100% 有效嗎？為什麼有人吃了還是惡化？"
+    a: "不會。即使是最成熟的 EGFR 突變肺癌，第三代 osimertinib 一線中位無惡化存活也約 18.9 個月，多數病人仍會出現抗藥性。原因包括：(1) subclonal heterogeneity（腫瘤內不同細胞群帶不同突變）、(2) 抗藥性突變（T790M、C797S 等）、(3) bypass pathway（MET 擴增、HER2 擴增）、(4) 表型轉變（NSCLC 轉成小細胞癌）。所以精準醫療延長存活、提升生活品質是事實，但長期治癒仍是少數情境。"
+doi: "10.5281/zenodo.20113024"
+conceptDoi: "10.5281/zenodo.20113023"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+「精準腫瘤醫療（precision oncology）」不是新口號，而是過去 25 年腫瘤學最大的方法學轉變：用 biomarker（基因突變、蛋白表現量、免疫標記）來決定**哪個藥對哪一群病人最有可能有效**，而不是把同一種化療丟給所有同一癌別的病人。2026 年的現況是：CML、非小細胞肺癌（NSCLC）的 EGFR / ALK / ROS1 / RET / KRAS G12C、HER2 陽性乳癌、BRCA1/2 突變的卵巢／乳／胰／攝護腺癌、MSI-H／dMMR 任何癌、NTRK 融合任何癌等情境已經非常成熟；但多數實體癌轉移後二線以後仍以傳統化療與免疫治療為主，精準藥物只覆蓋部分病人。本文釐清三個常被混用的詞、回顧關鍵里程碑、整理 2026 哪些癌已進入精準醫療、並回答病人最常問的「我要不要做基因檢測」。
+
+<Callout type="note" title="閱讀對象">
+本文設定的讀者為 (a) 想知道「精準醫療到底有沒有用、用在誰身上」的病友與家屬，以及 (b) 在門診常被問同樣問題、想要一份能直接拿來解釋的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 三個常被混用的詞：精準醫療、個人化醫療、標靶治療
+
+| 詞 | 定義 | 範圍 |
+|---|---|---|
+| **Precision medicine（精準醫療）** | 以分子 biomarker 把病人分群，再選擇對該群最可能有效的治療策略 | 涵蓋預防、篩檢、診斷、治療 |
+| **Personalized medicine（個人化醫療）** | 早期常與 precision medicine 互用，但語感上偏向「為個別病人量身打造」 | 易被誤解為「一人一藥」 |
+| **Targeted therapy（標靶治療）** | 針對特定分子（EGFR、HER2、BRAF、ALK 等）的藥物 | 是精準醫療的工具之一 |
+| **Biomarker-driven treatment** | 治療決策由 biomarker 結果驅動 | 與 precision medicine 同義使用 |
+| **Tumor-agnostic therapy** | 不分癌別、依 biomarker 開藥（如 NTRK、MSI-H、TMB-H、BRAF V600E） | 精準醫療的延伸應用 |
+
+簡單記憶：**精準醫療是策略、標靶治療是工具、Tumor-agnostic 是極端應用**。三者不能互換。
+
+## 25 年的關鍵里程碑：從 imatinib 到 tumor-agnostic
+
+精準腫瘤醫療不是某一年突然發生，而是一連串逐步擴張的成功經驗：
+
+| 年 | 里程碑 | Biomarker | 代表藥 / 試驗 |
+|---|---|---|---|
+| 2001 | 慢性骨髓性白血病進入分子標靶時代 | BCR-ABL | Imatinib（IRIS）[1] |
+| 2001 | HER2 陽性乳癌建立標靶治療標準 | HER2 過量表現 | Trastuzumab（Slamon NEJM）[2] |
+| 2009 | EGFR 突變 NSCLC 改寫一線治療 | EGFR ex19del / L858R | Gefitinib（IPASS）[3] |
+| 2014 | ALK 融合 NSCLC 建立標靶治療 | ALK 融合 | Crizotinib（PROFILE 1014） |
+| 2015 | BRAF V600E 籃子試驗證明 tumor-agnostic 可行 | BRAF V600E | Vemurafenib（NCI-MATCH 前驅）[8] |
+| 2017 | 第一個不分癌別的 FDA 核准 | MSI-H / dMMR | Pembrolizumab（Le 等 Science）[4] |
+| 2018 | NTRK 融合 tumor-agnostic 核准 | NTRK1/2/3 融合 | Larotrectinib（Drilon NEJM）[5] |
+| 2019 | NTRK 第二個 tumor-agnostic 藥獲准 | NTRK1/2/3 融合 | Entrectinib（STARTRK-2）[6] |
+| 2020 | KRAS G12C 從「不可成藥」變可成藥 | KRAS G12C | Sotorasib、adagrasib |
+| 2022 | HER2-low 乳癌出現新治療類別 | HER2 IHC 1+ / 2+ ISH− | Trastuzumab deruxtecan（DESTINY-Breast04）[7] |
+
+每一個里程碑共通模式都是：**先用分子工具找出可治療的亞群，再針對該亞群跑試驗**。這也是精準腫瘤醫療最核心的方法學。
+
+## 2026 年：哪些癌算「進入精準醫療」？
+
+不是每個癌別、每個分期都同步進入精準時代。下表整理 2026 年主要實體癌與血液癌的精準覆蓋程度：
+
+<Steps>
+  <div>
+    ### 已成熟（一線就以 biomarker 決定治療）
+
+    - **非小細胞肺癌（轉移）**：EGFR、ALK、ROS1、RET、BRAF V600E、KRAS G12C、MET ex14 跳躍、HER2 變異、NTRK 等至少 9 個 biomarker 進入常規檢測；NCCN 與 ESMO 均建議**所有腺癌一線前必做 NGS**。EGFR ex19del / L858R 一線 osimertinib 中位無惡化存活約 18.9 個月。
+    - **慢性骨髓性白血病（CML）**：BCR-ABL TKI 為標準一線，5 年存活率約 90%。
+    - **HER2 陽性乳癌**：早期及轉移性均依 HER2 IHC / ISH 決定治療。
+    - **BRCA1/2 致病突變的卵巢／乳／胰／攝護腺癌**：PARP 抑制劑（olaparib、talazoparib、niraparib、rucaparib）為一線或維持治療標準。
+    - **MSI-H / dMMR 任何癌**：免疫治療 pembrolizumab、dostarlimab 在多種癌別取得 tumor-agnostic 核准。
+    - **NTRK 融合任何癌（< 1% 罕見）**：larotrectinib、entrectinib tumor-agnostic 核准，ORR 約 70–80%。
+  </div>
+  <div>
+    ### 部分進入（部分病人受益）
+
+    - **轉移性大腸癌**：RAS / BRAF / HER2 / MSI / NTRK 影響治療路線；BRAF V600E 已有 encorafenib + cetuximab，但仍多數病人靠化療為主。
+    - **轉移性攝護腺癌**：BRCA、ATM 等 HRR 突變約 20–25%；可使用 olaparib、niraparib + abiraterone。
+    - **轉移性胰臟腺癌（PDAC）**：gBRCA 約 5–7% 可用 olaparib 維持治療；KRAS G12C 約 1–2% 可用 sotorasib／adagrasib；2026 年起 RAS(ON) 抑制劑 daraxonrasib 進入後線試驗。
+    - **轉移性乳癌（HR+ / HER2−）**：PIK3CA、ESR1、HER2-low、BRCA 變異各自影響選藥。
+    - **黑色素瘤**：BRAF V600 約 50%、可用 BRAF/MEK 雙標靶；其餘以免疫治療為主。
+  </div>
+  <div>
+    ### 尚未進入（精準藥物覆蓋極低）
+
+    - **小細胞肺癌（SCLC）**：分子標靶仍少，主要靠化療 + 免疫治療。
+    - **多數肝癌、食道鱗癌、頭頸鱗癌**：少數可治療突變，主流仍是化療 + 免疫治療。
+    - **多數實體癌的二線後**：抗藥後新生突變的偵測與對應藥物仍在試驗階段。
+  </div>
+</Steps>
+
+<Callout type="warning" title="精準 ≠ 100% 有效">
+精準腫瘤醫療大幅延長中位存活、改善生活品質，但**長期完全反應仍是少數情境**。原因包括：(1) 腫瘤亞群異質性（subclonal heterogeneity）、(2) 抗藥性突變（如 EGFR T790M、C797S）、(3) bypass pathway 活化（MET 擴增、HER2 擴增）、(4) 表型轉變（NSCLC 轉成小細胞癌）、(5) 檢體量不足或檢測失敗。任何「精準藥物 = 治癒」的說法都過度簡化。
+</Callout>
+
+## 精準醫療的真實限制：不是只有藥物
+
+| 限制 | 內容 |
+|---|---|
+| **腫瘤異質性** | 同一顆腫瘤內不同細胞群帶不同突變；切片可能漏掉小族群 |
+| **抗藥性必然發生** | 多數標靶藥中位反應時間 1–3 年，之後幾乎都會抗藥 |
+| **檢測成功率** | NGS panel 即使在學術中心成功率約 80–90%，社區醫院常更低 |
+| **檢體量不足** | 小切片、細針抽吸常難以做完整 NGS |
+| **時間壓力** | NGS 結果通常 2–3 週，有些病人撐不到結果就需先治療 |
+| **健保 / 自費差異** | 台灣 2024 起健保部分給付 NGS，但僅限特定癌別與條件；自費約 5–15 萬元 |
+| **可用藥物落差** | 即使檢出可治療突變，仍可能因健保限制、仿單外使用而需自費 |
+| **後線匱乏** | 第一線抗藥後，是否有第二、三線精準藥物，因癌別差異極大 |
+
+## 病人實務：什麼時候要主動問醫師「我有做相關基因檢測嗎？」
+
+精準醫療的好處只有在**檢測有做、結果有讀、結果有用到治療決策**時才會出現。下列情境建議主動詢問：
+
+<Steps>
+  <div>
+    ### 1. 確認自己癌別需要哪些檢測
+
+    在第一次與主治醫師討論治療前，把自己的癌別、分期、是否轉移寫下來，問：「依 NCCN 或 ESMO 指引，**我這個癌別在這個分期**有沒有需要做的 biomarker 或 NGS 檢測？」例如轉移性肺腺癌、轉移性大腸癌、轉移性乳癌、轉移性攝護腺癌、卵巢癌、胰臟癌通常都建議檢測。
+  </div>
+  <div>
+    ### 2. 確認檢體量與檢測時程
+
+    詢問：「我的切片或手術檢體還夠不夠做 NGS？需不需要再切片？結果大約多久會出？」如果切片不足，現在已可做液態切片（liquid biopsy / ctDNA），但敏感度較低（轉移性病灶約 60–80%）。
+  </div>
+  <div>
+    ### 3. 拿到報告時主動讀「actionable mutation」
+
+    報告通常會分 Tier I（已有核准標靶藥）、Tier II（試驗中或仿單外）、Tier III/IV（意義不明）。請主治醫師說明：「我有沒有 Tier I 或 Tier II 的可治療突變？對應藥物是哪一個？健保有沒有給付？沒給付的話自費約多少？」
+  </div>
+  <div>
+    ### 4. 抗藥或惡化時，再問一次
+
+    第一線標靶藥惡化後，部分癌別（如 NSCLC、HR+ 乳癌、攝護腺癌）建議再做一次 NGS 或 ctDNA，找抗藥性突變（T790M、C797S、ESR1 等），決定第二線。**不要假設第一次的檢測結果一直有效**。
+  </div>
+</Steps>
+
+## 適應症、禁忌症與風險揭露
+
+### 哪些情境適合考慮精準腫瘤醫療
+
+- 多數轉移性實體癌與血液癌，於治療決策前
+- 某些早期癌的輔助治療決策（如 HER2 陽性乳癌、Oncotype DX 復發風險評估）
+- 第一線標靶治療抗藥惡化後，重新規劃下一線
+- 罕見癌或原發部位不明癌（CUP），用 NGS 找可治療突變
+
+### 哪些情境精準醫療幫助有限
+
+- 體能狀態極差、預期壽命以週計算
+- 已知無 actionable mutation 且無新試驗可進入
+- 檢體量極少、無法重新切片，且 ctDNA 也無法檢出
+- 僅在意「有沒有突變」、不打算依結果改變治療
+
+### 風險揭露
+
+- NGS 為自費或部分健保給付，不同實驗室與 panel 結果可能有差
+- 部分對應藥物為**仿單外使用（off-label）**或**臨床試驗中**，健保不給付
+- 檢測可能找到 germline（生殖系）變異，對家族成員有遺傳諮詢意涵，須事前同意
+- 「找到突變 ≠ 一定有藥」、「有藥 ≠ 一定有效」、「有效 ≠ 永久有效」三件事要先說清楚
+
+<Callout type="warning" title="跨試驗比較的限制">
+本文表格中各情境的反應率、無惡化存活時間取自不同年代、不同族群、不同對照組的試驗，**不可用來跨癌別跨試驗排序**。實際治療決策需以個別病人的癌別、分期、共病、檢測結果與可及性綜合判斷。
+</Callout>
+
+<Divider />
+
+## 給病人與家屬的一句話總結
+
+精準腫瘤醫療在 2026 年已不是宣傳詞，而是非小細胞肺癌、CML、HER2 乳癌、BRCA 突變癌、MSI-H 任何癌、NTRK 融合癌等情境的標準作業流程。但「進入精準醫療」需要三件事同時發生：**(1) 適合的癌別與分期、(2) 完成的 biomarker / NGS 檢測、(3) 有可對應且可取得的藥物**。任何一環缺失，精準的好處就打折。最有用的一句話是：在第一次與主治醫師討論治療前，問清楚「我的癌別在指引上需要做哪些檢測，已經做了沒有」。
+
+## 參考文獻
+
+1. O'Brien SG, Guilhot F, Larson RA, et al. **Imatinib Compared with Interferon and Low-Dose Cytarabine for Newly Diagnosed Chronic-Phase Chronic Myeloid Leukemia** (IRIS). *N Engl J Med.* 2003;348(11):994-1004. [doi:10.1056/NEJMoa022457](https://doi.org/10.1056/NEJMoa022457)
+2. Slamon DJ, Leyland-Jones B, Shak S, et al. **Use of Chemotherapy plus a Monoclonal Antibody against HER2 for Metastatic Breast Cancer That Overexpresses HER2.** *N Engl J Med.* 2001;344(11):783-792. [doi:10.1056/NEJM200103153441101](https://doi.org/10.1056/NEJM200103153441101)
+3. Mok TS, Wu Y-L, Thongprasert S, et al. **Gefitinib or Carboplatin–Paclitaxel in Pulmonary Adenocarcinoma** (IPASS). *N Engl J Med.* 2009;361(10):947-957. [doi:10.1056/NEJMoa0810699](https://doi.org/10.1056/NEJMoa0810699)
+4. Le DT, Durham JN, Smith KN, et al. **Mismatch repair deficiency predicts response of solid tumors to PD-1 blockade.** *Science.* 2017;357(6349):409-413. [doi:10.1126/science.aan6733](https://doi.org/10.1126/science.aan6733)
+5. Drilon A, Laetsch TW, Kummar S, et al. **Efficacy of Larotrectinib in TRK Fusion–Positive Cancers in Adults and Children.** *N Engl J Med.* 2018;378(8):731-739. [doi:10.1056/NEJMoa1714448](https://doi.org/10.1056/NEJMoa1714448)
+6. Doebele RC, Drilon A, Paz-Ares L, et al. **Entrectinib in patients with advanced or metastatic NTRK fusion-positive solid tumours: integrated analysis of three phase 1-2 trials.** *Lancet Oncol.* 2020;21(2):271-282. [doi:10.1016/S1470-2045(19)30691-6](https://doi.org/10.1016/S1470-2045(19)30691-6)
+7. Modi S, Jacot W, Yamashita T, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer** (DESTINY-Breast04). *N Engl J Med.* 2022;387(1):9-20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+8. Hyman DM, Puzanov I, Subbiah V, et al. **Vemurafenib in Multiple Nonmelanoma Cancers with BRAF V600 Mutations** (basket trial). *N Engl J Med.* 2015;373(8):726-736. [doi:10.1056/NEJMoa1502309](https://doi.org/10.1056/NEJMoa1502309)
+9. Robson M, Im S-A, Senkus E, et al. **Olaparib for Metastatic Breast Cancer in Patients with a Germline BRCA Mutation** (OlympiAD). *N Engl J Med.* 2017;377(6):523-533. [doi:10.1056/NEJMoa1706450](https://doi.org/10.1056/NEJMoa1706450)
+10. Mateo J, Steuten L, Aftimos P, et al. **Delivering precision oncology to patients with cancer.** *Nat Med.* 2022;28(4):658-665. [doi:10.1038/s41591-022-01717-2](https://doi.org/10.1038/s41591-022-01717-2)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

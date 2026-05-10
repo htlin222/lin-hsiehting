@@ -1,0 +1,272 @@
+---
+title: "骨髓增生不良症候群 (MDS) 是癌症嗎？什麼時候要治療？"
+titleEn: "Myelodysplastic syndromes (MDS): is it cancer and when to treat"
+date: "05/11/2026"
+frontmatter: "MDS 是骨髓造血幹細胞的單株病變，介於『血球減少』與『急性骨髓性白血病 (AML)』之間，年齡中位數約 70 歲。IPSS-M（2022）整合 31 個基因突變後比 IPSS-R 預測更精準；本文整理低、高風險治療策略與 luspatercept、imetelstat 等新藥。"
+tags: ["MDS", "骨髓增生不良", "白血病", "azacitidine", "luspatercept", "衛教"]
+medical: true
+medicalCondition: "骨髓增生不良症候群 (Myelodysplastic syndrome, MDS)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "血球低就是 MDS 嗎？"
+    a: "不一定。慢性血球減少 (cytopenia) 的鑑別診斷很多，包括營養素缺乏（B12、葉酸、鐵）、藥物、慢性感染、自體免疫、肝腎疾病、其他血液腫瘤等。MDS 的診斷需要骨髓穿刺與切片，看到形態學上的異常造血 (dysplasia) 達 ≥ 10% 任一系列、或原始細胞 (blast) 增加、或具有 MDS 定義性細胞遺傳學異常 (例如 −7 / del(5q) / 複雜核型) 才會成立。"
+  - q: "老人家可以做骨髓移植嗎？"
+    a: "年齡本身不是絕對禁忌，但異體造血幹細胞移植 (allo-HCT) 對 MDS 仍是高風險療程。目前一般建議：IPSS-R / IPSS-M 中高、高、極高風險，且體能狀態 (ECOG) 與共病指數 (HCT-CI) 可耐受、有合適捐贈者者，可考慮減量強度 (RIC) 移植，年齡上限多放寬至 70–75 歲。70 歲以上仍要逐案評估，不能一刀切。"
+  - q: "MDS 會變成白血病嗎？"
+    a: "會，這是 MDS 的自然病程之一。整體而言，約 25–30% 的 MDS 病人會在 5 年內進展為急性骨髓性白血病 (AML)；風險視 IPSS-M 分組而異：極低風險組 5 年 AML 進展率 < 5%，極高風險組 > 50%。即使沒有進展為 AML，多數死因仍與骨髓衰竭、感染、出血相關，因此風險評估與治療時機決策非常重要。"
+  - q: "luspatercept 是什麼？"
+    a: "Luspatercept 是一種與 TGF-β 超家族訊號有關的紅血球成熟劑 (erythroid maturation agent)，作用機轉與紅血球生成素 (ESA) 不同。MEDALIST 試驗顯示在環狀鐵母細胞 (ring sideroblasts) 陽性、ESA 失效的低風險 MDS 病人中，可達 38% 的 8 週以上脫離輸血依賴；COMMANDS 試驗進一步在未曾打過 ESA 的低風險 MDS 一線使用，輸血脫離率達 58.5%（vs. epoetin alfa 31.2%）。台灣健保已條件性給付。"
+  - q: "MDS 是癌症嗎？"
+    a: "依 WHO 2022 與 ICC 2022 分類，MDS 屬於『骨髓樣腫瘤 (myeloid neoplasms)』類別，因此醫學上被視為一種血液惡性腫瘤。但它與一般理解的『癌症』在治療目標上不同：低風險 MDS 多以改善血球、輸血脫離、生活品質為主，未必需要化學治療；高風險 MDS 則治療策略接近 AML，會用 hypomethylating agent (HMA) 與評估移植。"
+doi: "10.5281/zenodo.20113018"
+conceptDoi: "10.5281/zenodo.20113017"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+骨髓增生不良症候群 (Myelodysplastic syndrome, MDS) 是骨髓造血幹細胞的單株 (clonal) 病變，特徵是**慢性血球減少 (cytopenia)**、骨髓**異常造血 (dysplasia)**，可能合併原始細胞 (blast) 增加與細胞遺傳學或分子標記異常。發病年齡中位數約 70 歲，台灣年發生率約 4–5/10 萬。決定治療時機的關鍵不是「有沒有得病」，而是 IPSS-R（2012）或更新的 IPSS-M（2022）風險分組——後者整合 31 個基因突變後，重新分類了約四成原本被 IPSS-R 歸類的病人，預測 OS 與 AML 進展更精準。**低風險主要靠紅血球生成素 (ESA)、luspatercept、必要時 lenalidomide；高風險則以 azacitidine 等 HMA 為骨幹，並評估異體造血幹細胞移植。**
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知血球低、需要進一步骨髓檢查或已被診斷 MDS 的病友與家屬，以及對 IPSS-M、luspatercept、imetelstat 等近年更新感興趣的同業。所有實際治療決策請與您的主治血液腫瘤科醫師討論。
+</Callout>
+
+<Divider />
+
+## 一、MDS 是什麼？
+
+MDS 不是單一疾病，而是一群骨髓造血幹細胞 (hematopoietic stem cell) 因獲得性突變而**無效造血 (ineffective hematopoiesis)** 的疾病。臨床上呈現三種特徵：
+
+1. **持續性血球減少**：紅血球（貧血最常見）、嗜中性白血球或血小板任一以上長期低下。
+2. **形態學異常**：骨髓中可見紅血球系、骨髓系、巨核細胞系任一系列 ≥ 10% 細胞出現 dysplasia（如核濃縮、多核、低分葉等）。
+3. **細胞遺傳學或分子標記異常**：del(5q)、−7、+8、複雜核型，或 *SF3B1*、*TP53*、*ASXL1*、*RUNX1*、*EZH2* 等 MDS 相關突變。
+
+WHO 2022 與 ICC 2022 兩套新分類已**取代**舊有的 RA、RARS、RAEB 等名稱，改以遺傳學特徵命名（例如 *MDS with SF3B1 mutation*、*MDS with biallelic TP53 inactivation*）。
+
+## 二、流行病學與台灣現況
+
+- **發病年齡中位數**：約 70 歲，男性略多。
+- **歐美年發生率**：約 4–5/10 萬；70 歲以上可上升至 20–50/10 萬。
+- **台灣**：依健保資料庫推估年發生率約 4–5/10 萬，整體有效病人數隨人口老化逐年上升。
+- **危險因子**：年齡、過去化療或放射治療史（therapy-related MDS）、苯類有機溶劑接觸、先天性骨髓衰竭症候群、家族性 MDS（*DDX41*、*RUNX1*、*GATA2* 突變家系）。
+
+## 三、診斷流程：從血球低到 MDS 確診
+
+<Steps>
+  <div>
+    ### 1. 血球低 → 先排除可逆因素
+
+    完整血球計數 (CBC + differential)、網狀紅血球、周邊血液抹片、鐵 / B12 / 葉酸 / 銅、肝腎功能、甲狀腺功能、HIV、肝炎病毒、自體免疫篩檢、藥物史。可逆因素未排除前，不應急著做骨髓檢查。
+  </div>
+  <div>
+    ### 2. 骨髓穿刺與切片
+
+    確認 (a) 骨髓細胞密度與系列分布、(b) 各系 dysplasia 比例、(c) blast 比例（< 5%、5–9%、10–19%、≥ 20% 為 AML）、(d) 環狀鐵母細胞比例。
+  </div>
+  <div>
+    ### 3. 細胞遺傳學 (karyotype) + FISH
+
+    至少分析 20 個分裂相；針對 −5/del(5q)、−7/del(7q)、+8、20q−、複雜核型分組。
+  </div>
+  <div>
+    ### 4. 次世代定序 (NGS) myeloid panel
+
+    至少涵蓋 IPSS-M 所需的 31 個基因（含 *TP53*、*SF3B1*、*ASXL1*、*RUNX1*、*EZH2*、*ETV6*、*SRSF2*、*U2AF1*、*DNMT3A*、*TET2*、*IDH1/2*、*FLT3*、*NPM1*、*NRAS*、*KRAS*、*CBL*、*BCOR*、*STAG2* 等）。沒做 NGS 就無法計算 IPSS-M。
+  </div>
+  <div>
+    ### 5. WHO 2022 / ICC 2022 分類 + IPSS-R / IPSS-M 風險分組
+
+    結合形態、細胞遺傳學、分子標記，給出疾病亞型與風險分組，再決定治療路線。
+  </div>
+</Steps>
+
+## 四、IPSS-R vs. IPSS-M：為什麼要換新計分？
+
+IPSS-R（2012）以血色素、嗜中性白血球、血小板、骨髓 blast、細胞遺傳學共 5 個變項計分；**IPSS-M（2022）**保留前述變項並加入 31 個基因突變，重新校準分組。Bernard 等人（NEJM Evid 2022）發現：
+
+- 約 **46% 的病人 IPSS-R 與 IPSS-M 分組不一致**，其中約 7% 升組、39% 降組。
+- IPSS-M 的中位 OS 與 AML 進展預測 c-index 都優於 IPSS-R。
+- *TP53* multi-hit、*FLT3*、*KMT2A*-PTD、*SF3B1* 等突變獨立影響預後。
+
+### IPSS-R vs. IPSS-M 對照
+
+| 面向 | IPSS-R（2012） | IPSS-M（2022） |
+|---|---|---|
+| 變項數 | 5（血球三系 + blast + 細胞遺傳學） | 同 IPSS-R + 31 個基因突變 |
+| 分組數 | 5 組（極低 / 低 / 中 / 高 / 極高） | 6 組（極低 / 低 / 中低 / 中高 / 高 / 極高） |
+| 中位 OS（極低 vs. 極高） | 約 8.8 vs. 0.8 年 | 約 10.6 vs. 1.0 年 |
+| 5 年 AML 累積發生率（極低 vs. 極高） | 約 3% vs. > 50% | 約 0.5% vs. > 70% |
+| 是否需要 NGS | 否 | **是**（沒有 NGS 無法計算） |
+| 線上計算器 | IPSS-R calculator | [mds-risk-model.com](https://mds-risk-model.com/) |
+
+<Callout type="tip" title="實務上怎麼用？">
+2022 年後若診斷時的 NGS 報告完整，建議**直接用 IPSS-M**；若分子標記不齊全，可先用 IPSS-R 過渡，但治療策略決策（特別是「要不要移植」）強烈建議補做 NGS 後重算 IPSS-M。
+</Callout>
+
+## 五、治療策略總覽：低風險 vs. 高風險
+
+風險分組是 MDS 治療最重要的決策節點。**低風險 (lower risk) = IPSS-R 極低 / 低 / 中（部分）或 IPSS-M 極低 / 低 / 中低**；**高風險 (higher risk) = IPSS-R 高 / 極高或 IPSS-M 中高 / 高 / 極高**。中段風險病人需個別判斷。
+
+### 低風險 vs. 高風險治療策略
+
+| 面向 | 低風險 MDS | 高風險 MDS |
+|---|---|---|
+| 治療目標 | 改善血球、減少輸血、維持生活品質 | 延緩 AML 進展、延長存活、走向移植 |
+| 第一線 | ESA（內生 EPO < 500 mU/mL）、luspatercept、del(5q) → lenalidomide | Azacitidine 或 decitabine（HMA） |
+| 第二線 | Luspatercept（若先用 ESA）、imetelstat、輸血支持、鐵螯合 | 異體造血幹細胞移植 (allo-HCT) 評估、臨床試驗 |
+| 移植角色 | 一般不建議 | 體能、年齡、捐贈者允許者強烈建議 |
+| 健保（台灣） | Azacitidine 條件給付、luspatercept 部分給付 | Azacitidine 給付、移植給付 |
+
+## 六、低風險 MDS 的治療選項
+
+### 6.1 紅血球生成素 (ESA)
+
+- **適用**：症狀性貧血、內生 EPO < 500 mU/mL、輸血量 < 4 U/8 週者反應率較高（約 40–60%）。
+- **藥物**：epoetin alfa、darbepoetin alfa。
+- **限制**：輸血量大、高內生 EPO 者反應差。
+
+### 6.2 Luspatercept（紅血球成熟劑）
+
+- **MEDALIST**（NEJM 2020, n = 229）：環狀鐵母細胞陽性、ESA 失效的低風險 MDS，**8 週以上脫離輸血依賴 38% vs. 13%**（P < 0.001）。
+- **COMMANDS**（Lancet 2023, n = 363）：未曾打過 ESA 的低風險 MDS 一線比較 luspatercept vs. epoetin alfa，**24 週同時達『脫離輸血依賴 + 血色素上升 ≥ 1.5 g/dL』比例 58.5% vs. 31.2%**（P < 0.0001）；非 RS+ 與 RS+ 病人皆有獲益。
+- **常見不良反應**：疲倦、暈眩、腹瀉、噁心；高血壓需監測。
+- **台灣現況**：已部分健保給付，依適應症與輸血條件審核。
+
+### 6.3 Lenalidomide（限 del(5q)）
+
+- **適用**：del(5q) 為單一細胞遺傳學異常或加上至多一個其他異常者，反應率達 67%、輸血脫離率約 50–60%。
+- **限制**：非 del(5q) 者反應率僅約 25%。
+- **常見不良反應**：嗜中性白血球減少、血小板低下、靜脈血栓、致畸性。
+
+### 6.4 Imetelstat（端粒酶抑制劑，2024 新藥）
+
+- **IMerge**（Lancet 2024, n = 178）：ESA 失效或不適用的低風險 MDS，**8 週以上脫離輸血依賴 39.8% vs. 安慰劑 15%**（P < 0.001），中位脫離輸血時間 51.6 週。
+- **適應症**：輸血依賴的非 del(5q) 低風險 MDS。
+- **常見不良反應**：第 3 級以上嗜中性白血球減少 68%、血小板低下 62%；可逆，不增加 AML 風險。
+- **核准狀態**：FDA 2024 年核准；台灣未上市，仍須透過試驗或專案進口。
+
+### 6.5 支持性治療
+
+- **輸血**：依症狀決定門檻，多以血色素 7–8 g/dL 為起始。
+- **鐵螯合**：長期輸血者建議監測 ferritin，> 1000–2500 ng/mL 且預期存活 ≥ 1 年者可考慮 deferasirox 等口服螯合劑。
+- **G-CSF**：嗜中性白血球減少合併感染時短期使用。
+
+<Callout type="warning" title="輸血依賴的鐵負荷">
+每單位濃縮紅血球含約 200–250 mg 鐵；每月輸 2–4 U、累計 20 U 以上者，鐵負荷會明顯升高。建議每 3 個月監測 ferritin、肝功能；ferritin > 1000–2500 ng/mL 且預期存活 ≥ 1 年的病人，國際指引建議啟動鐵螯合（deferasirox 為主）。鐵負荷不只造成肝心衰竭，也與感染、移植成績不佳相關。
+</Callout>
+
+## 七、高風險 MDS 的治療選項
+
+### 7.1 Azacitidine（HMA 第一線骨幹）
+
+- **AZA-001**（Lancet Oncol 2009, n = 358）：azacitidine vs. 傳統治療在高風險 MDS，**中位 OS 24.5 vs. 15.0 個月**（HR 0.58, P = 0.0001），2 年 OS 50.8% vs. 26.2%。
+- **使用建議**：每 28 天為一週期，每週期皮下或靜脈施打 7 天；至少完成 4–6 週期再評估反應，反應後續用至失效。
+- **常見不良反應**：嗜中性白血球減少、血小板低下、注射部位反應。
+
+### 7.2 Decitabine
+
+- **適用**：與 azacitidine 反應族群類似；十日方案 (10-day) 對 *TP53* mutated 反應率較高（早期觀察）但仍未顯著延長存活。
+- 口服劑型 decitabine + cedazuridine（ASTX727）2020 年起成為門診替代方案。
+
+### 7.3 異體造血幹細胞移植 (allo-HCT)
+
+目前少數具有治癒潛力的療法，建議考慮的條件如下：
+
+- **風險分組**：IPSS-R 高 / 極高、IPSS-M 中高 / 高 / 極高。
+- **年齡 / 體能**：減量強度 (RIC) 移植可放寬至 70–75 歲，需綜合 HCT-CI、ECOG。
+- **捐贈者**：HLA 全相合手足、無關捐贈者、半相合 (haplo-identical)。
+- **時機**：建議**先以 HMA 或加強化療降低 blast 至 < 10%** 再進入移植，但具體 bridging 策略仍有爭議。
+
+### 7.4 試驗中的組合療法
+
+- **Venetoclax + azacitidine**：在 AML 已標準，於高風險 MDS 仍為 phase II/III（VERONA 試驗），尚未取代單方 HMA。
+- **Magrolimab (anti-CD47)**：ENHANCE 第三期 2023 年因無效性提前終止，**目前不建議使用**。
+- **Imetelstat、roxadustat、APR-246 (eprenetapopt)** 等仍在試驗中。
+
+<Callout type="tip" title="高風險 MDS 的決策樹">
+診斷高風險 MDS 後，**第一個問題不是『打哪個藥』而是『會不會走移植』**。會走移植的病人，HMA 是 bridging；不會走移植的病人，HMA 是長期疾病控制。兩者副作用監測與療程長度判斷不同，建議由血液腫瘤科 + 移植團隊聯合評估。
+</Callout>
+
+## 八、異體造血幹細胞移植：適合誰？
+
+### 八個應該被問的問題
+
+1. **疾病風險夠不夠高？** IPSS-R 高 / 極高、IPSS-M 中高 / 高 / 極高。
+2. **年齡與體能？** 一般 ≤ 70–75 歲、ECOG 0–1。
+3. **共病指數 (HCT-CI) 多少？** 0–2 為低風險、3–4 中、≥ 5 高。
+4. **有沒有合適 donor？** 全相合手足 → 無關 → 半相合。
+5. **目前 blast 多少？** ≥ 10% 通常先 HMA 降載再移植。
+6. **有沒有 *TP53* multi-hit？** 預後最差，移植仍可考慮但需充分溝通。
+7. **病人意願？** 移植住院 1–2 個月、急慢性 GVHD、感染風險，需充分知情。
+8. **照顧者支持？** 移植後 100 天內需密集回診與居家照護。
+
+## 九、副作用、適應症與禁忌症摘要
+
+### 適應症（依風險分組）
+
+- **低風險 MDS**：症狀性貧血或輸血依賴 → ESA、luspatercept、del(5q) → lenalidomide、imetelstat（試驗 / 進口）。
+- **高風險 MDS**：azacitidine 或 decitabine；符合條件評估 allo-HCT。
+
+### 一般禁忌症與謹慎使用
+
+- **重度感染或敗血症未控制**：暫緩 HMA 與細胞毒性藥物。
+- **嚴重肝腎功能異常**：依說明書調整劑量或避免使用。
+- **妊娠與授乳**：lenalidomide 強烈致畸，須兩種避孕；HMA 也應避免。
+- **過敏 / 不耐受**：對藥物成分過敏者禁用。
+- **未充分評估前不建議移植**：年齡、共病、感染、心肺功能未評估完整不應倉促進入。
+
+### 風險揭露
+
+- **AML 進展**：低風險 5 年 < 10%，高風險 > 50%；治療不能完全阻斷此自然病程。
+- **健保給付**：azacitidine 在台灣已給付高風險 MDS；luspatercept 部分給付；imetelstat 尚未上市。
+- **試驗中藥物**：imetelstat 在台灣多須臨床試驗或專案進口。
+- **移植相關死亡率 (TRM)**：依年齡、HCT-CI 與 donor type 約 10–30%。
+
+## 十、給病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三件事都做了
+
+    (1) 完整骨髓檢查（穿刺 + 切片 + 染色體 + FISH），(2) myeloid NGS panel 看突變，(3) 用 IPSS-M（不是只用舊的 IPSS-R）算風險分組。三項缺一可能讓治療策略誤判。
+  </div>
+  <div>
+    ### 主動問清楚自己屬於哪一組
+
+    請主治醫師寫下 IPSS-M 風險分組（極低 / 低 / 中低 / 中高 / 高 / 極高）、預期中位 OS、5 年 AML 進展率，再討論治療目標是「改善血球」還是「準備移植」。
+  </div>
+  <div>
+    ### 移植評估宜早不宜晚
+
+    高風險 MDS 病人若有移植可能，建議在第 2–4 週期 HMA 期間就同步啟動 HLA typing 與 donor search，不要等 HMA 失效再開始；donor search 平均要 2–3 個月。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我屬於 WHO 2022 / ICC 2022 哪個亞型？
+    2. IPSS-R 與 IPSS-M 分組各是什麼？兩者一致嗎？
+    3. 有沒有 *TP53* 突變？是 mono- 還是 multi-hit？
+    4. 我的內生 EPO 多少？適合 ESA 嗎？或要直接 luspatercept？
+    5. 健保給付狀況如何？哪些要自費？金額？
+    6. 移植評估的標準在哪一條線？目前我達標了嗎？
+    7. 副作用怎麼監測？（血球、感染、輸血鐵負荷、HMA 注射反應）
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Bernard E, Tuechler H, Greenberg PL, et al. **Molecular International Prognostic Scoring System for Myelodysplastic Syndromes (IPSS-M).** *NEJM Evid.* 2022;1(7):EVIDoa2200008. [doi:10.1056/EVIDoa2200008](https://doi.org/10.1056/EVIDoa2200008)
+2. Khoury JD, Solary E, Abla O, et al. **The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours: Myeloid and Histiocytic/Dendritic Neoplasms.** *Leukemia.* 2022;36(7):1703-1719. [doi:10.1038/s41375-022-01613-1](https://doi.org/10.1038/s41375-022-01613-1)
+3. Arber DA, Orazi A, Hasserjian RP, et al. **International Consensus Classification of Myeloid Neoplasms and Acute Leukemias: integrating morphologic, clinical, and genomic data.** *Blood.* 2022;140(11):1200-1228. [doi:10.1182/blood.2022015850](https://doi.org/10.1182/blood.2022015850)
+4. Fenaux P, Platzbecker U, Mufti GJ, et al. **Luspatercept in Patients with Lower-Risk Myelodysplastic Syndromes** (MEDALIST). *N Engl J Med.* 2020;382(2):140-151. [doi:10.1056/NEJMoa1908892](https://doi.org/10.1056/NEJMoa1908892)
+5. Platzbecker U, Della Porta MG, Santini V, et al. **Efficacy and safety of luspatercept versus epoetin alfa in erythropoiesis-stimulating agent-naive, transfusion-dependent, lower-risk myelodysplastic syndromes (COMMANDS): interim analysis of a phase 3, open-label, randomised controlled trial.** *Lancet.* 2023;402(10399):373-385. [doi:10.1016/S0140-6736(23)00874-7](https://doi.org/10.1016/S0140-6736(23)00874-7)
+6. Fenaux P, Mufti GJ, Hellstrom-Lindberg E, et al. **Efficacy of azacitidine compared with that of conventional care regimens in the treatment of higher-risk myelodysplastic syndromes** (AZA-001). *Lancet Oncol.* 2009;10(3):223-232. [doi:10.1016/S1470-2045(09)70003-8](https://doi.org/10.1016/S1470-2045(09)70003-8)
+7. Platzbecker U, Santini V, Fenaux P, et al. **Imetelstat in patients with lower-risk myelodysplastic syndromes who have relapsed or are refractory to erythropoiesis-stimulating agents (IMerge): a multinational, randomised, double-blind, placebo-controlled, phase 3 trial.** *Lancet.* 2024;403(10423):249-260. [doi:10.1016/S0140-6736(23)01724-5](https://doi.org/10.1016/S0140-6736(23)01724-5)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

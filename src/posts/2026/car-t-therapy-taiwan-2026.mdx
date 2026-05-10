@@ -1,0 +1,238 @@
+---
+title: "CAR-T 細胞治療：台灣健保給付條件與費用 2026 版"
+titleEn: "CAR-T cell therapy in Taiwan: 2026 reimbursement and access guide"
+date: "05/11/2026"
+frontmatter: "CAR-T 自 2023/11 起在台灣健保給付 25 歲以下 r/r ALL 與成人 r/r DLBCL（≥ 2L），單次給付 819 萬／人；本文整理 2026 年給付條件、7 家可執行醫院、CRS／ICANS 副作用處置，與第二代 ide-cel／cilta-cel 對骨髓瘤的可及性。"
+tags: ["CAR-T", "細胞治療", "白血病", "淋巴瘤", "健保", "衛教"]
+medical: true
+medicalCondition: "嵌合抗原受體 T 細胞治療 (CAR-T cell therapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "CAR-T 健保有給付嗎？819 萬怎麼算？"
+    a: "有條件給付。健保署自 2023 年 11 月起以「暫時性支付」方式納入 tisagenlecleucel（Kymriah），單次藥費上限 819 萬元，外加白血球分離、住院、輔助治療費用全數給付，總成本接近千萬／人。給付對象限定兩類：(1) 25 歲以下復發或難治型 B 細胞急性淋巴性白血病（r/r B-ALL）；(2) 成人復發或難治型瀰漫性大 B 細胞淋巴瘤（r/r DLBCL），且已接受過至少二線標準治療。其他癌別（包括成人 ALL、骨髓瘤、套細胞淋巴瘤）目前仍須自費。"
+  - q: "副作用 CRS 與 ICANS 嚴重嗎？要住院多久？"
+    a: "細胞激素釋放症候群（cytokine release syndrome, CRS）發生率約 60–80%，第 3 級以上約 20–25%；免疫效應細胞相關神經毒性（ICANS）發生率 20–40%，第 3 級以上約 10–15%。標準處置為 tocilizumab（IL-6 受體單抗）救援，必要時加類固醇。多數病人輸注後需住院監測 7–14 天，前 30 天內須停留醫院附近以利急性處理。長期須注意 B 細胞發育不全與低免疫球蛋白血症，部分病人需定期補充 IVIG。"
+  - q: "成人骨髓瘤有 CAR-T 可以打嗎？台灣價格多少？"
+    a: "有兩種 BCMA-CAR-T 已於台灣 TFDA 核准用於 r/r 多發性骨髓瘤：idecabtagene vicleucel（ide-cel, Abecma）與 ciltacabtagene autoleucel（cilta-cel, Carvykti）。目前健保「尚未」給付，全程自費，單次藥費約新台幣 1,200–1,500 萬元，且不包含白血球分離、住院、橋接治療等費用。CARTITUDE-4 與 KarMMa-3 兩個第三期試驗已證實與標準治療相比可顯著延長無惡化存活，未來是否納入健保仍待 HTA 評估。"
+  - q: "全台哪些醫院可以做健保給付的 CAR-T？"
+    a: "依健保署 2023 年 11 月起公告，目前共有 7 家醫院取得執行資格：台大醫院、台大醫院癌醫中心分院、林口長庚紀念醫院、中國醫藥大學附設醫院、台中榮民總醫院、高雄醫學大學附設中和紀念醫院、花蓮慈濟醫院。實際個案需經主治醫師評估後，由醫院送件至健保署事前審查，審查通過才會啟動白血球分離與製造程序。"
+doi: "10.5281/zenodo.20113003"
+conceptDoi: "10.5281/zenodo.20113002"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import LinkCard from "@/components/ui/LinkCard.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+CAR-T（嵌合抗原受體 T 細胞）治療自 **2023 年 11 月起在台灣健保正式有條件給付**，單次藥費上限 **新台幣 819 萬元**，外加白血球分離、住院、輔助治療全數由健保負擔，使台灣成為亞洲少數將 CAR-T 納入公費的地區之一。給付對象僅限兩類：**25 歲以下復發或難治型 B 細胞急性淋巴性白血病（r/r B-ALL）**，以及**成人復發或難治型瀰漫性大 B 細胞淋巴瘤（r/r DLBCL，已接受過至少二線治療）**。本文整理 2026 年最新給付條件、申請流程、7 家可執行醫院、CRS／ICANS 副作用處置，以及第二代 BCMA-CAR-T（ide-cel、cilta-cel）對骨髓瘤的自費可及性。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為：(a) 正在評估 CAR-T 是否合適的病友與家屬；(b) 想快速掌握台灣健保給付規則與轉介流程的住院醫師、血液腫瘤科同業。所有實際治療決策請與您的主治醫師及執行醫院血液腫瘤團隊討論。
+</Callout>
+
+<Divider />
+
+## CAR-T 是什麼？三句話講完機轉
+
+CAR-T 是把病人自身的 T 細胞抽出來，**透過病毒載體將「嵌合抗原受體（CAR）」的基因送進 T 細胞**，使其表面出現可辨識特定癌細胞抗原（例如 B 細胞表面的 CD19）的人工受體。改造後的 T 細胞在實驗室內擴增到數億個，再回輸給病人；這些 CAR-T 細胞一旦遇到帶有目標抗原的癌細胞便會被活化、增殖、釋放細胞毒素並大量分泌細胞激素。
+
+目前台灣可取得的 CAR-T 產品依靶點分為兩類：
+
+- **抗 CD19**：tisagenlecleucel（Kymriah，Novartis）— 用於 B-ALL 與 DLBCL，**台灣健保給付**。
+- **抗 BCMA**：idecabtagene vicleucel（ide-cel, Abecma）、ciltacabtagene autoleucel（cilta-cel, Carvykti）— 用於多發性骨髓瘤，**台灣自費**。
+
+## 健保給付條件（2026 版）
+
+健保署自 2023 年 11 月起以「暫時性支付」（temporary reimbursement）將 tisagenlecleucel 納入，原訂評估期 2 年，2025 年再延續審查。給付規則摘要如下：
+
+| 項目 | r/r B-ALL | r/r DLBCL |
+|---|---|---|
+| 適用年齡 | **3–25 歲** | **18 歲以上** |
+| 疾病狀態 | 第二次以後復發、誘導後難治、移植後復發 | 至少二線標準治療失敗 |
+| 排除 | 中樞神經侵犯活動期、嚴重器官功能不全 | 原發中樞淋巴瘤、Burkitt 淋巴瘤 |
+| 給付金額 | **新台幣 819 萬／人**（藥費上限） | **新台幣 819 萬／人**（藥費上限） |
+| 一生次數 | **每人僅給付 1 次** | **每人僅給付 1 次** |
+| 其他費用 | 白血球分離、橋接化療、住院、tocilizumab 救援均由健保支付 | 同左 |
+
+<Callout type="warning" title="一生只給付 1 次">
+健保 CAR-T 為「一生一次」原則。若 CAR-T 之後再復發，後續治療（例如另一款 CAR-T、雙特異性抗體 blinatumomab／glofitamab、異體造血幹細胞移植）需走另案申請，CAR-T 本身不會二次給付。
+</Callout>
+
+## 從評估到輸注：5 步申請流程
+
+<Steps>
+  <div>
+    ### 由原醫療團隊判斷是否「可能符合」
+
+    主治醫師評估三件事：(1) 病理確認為 CD19+ B-ALL 或 DLBCL；(2) 已接受、且未對標準治療反應的病史完整；(3) 體能狀態（ECOG）、心肺、肝腎功能足以耐受 lymphodepletion 化療與 CAR-T 後可能的 ICU 級照護。若皆符合，由原院或經轉介至 7 家執行醫院之一。
+  </div>
+  <div>
+    ### 健保署事前審查
+
+    執行醫院備齊病歷摘要、近期影像、骨髓報告、過去治療紀錄，送健保署「事前審查（prior authorization）」。審查時程約 2–4 週。審查通過才會啟動下一步。
+  </div>
+  <div>
+    ### 白血球分離（apheresis）
+
+    病人住院或門診接受 1 次（約 4–6 小時）白血球分離，採集約 1×10⁹ 個 T 細胞。採集後檢體會經低溫物流送至 Novartis 海外製造廠（美國紐澤西或瑞士），平均製造時間 **3–4 週**（約 28 天）。製造期間若疾病進展，醫師可給予「橋接治療（bridging therapy）」維持。
+  </div>
+  <div>
+    ### Lymphodepletion 化療 + CAR-T 輸注
+
+    輸注前 3–5 天先給 fludarabine + cyclophosphamide 化療壓低淋巴球，幫助 CAR-T 擴增。完成後輸注 CAR-T 細胞，全程約 30–60 分鐘，類似一般輸血。輸注當天即住院。
+  </div>
+  <div>
+    ### 住院監測 7–14 天 + 院外觀察期
+
+    輸注後前 14 天為 CRS 與 ICANS 高峰期，須住院密切監測生命徵象、神經學評估與細胞激素。多數病人 7–14 天可出院，但仍須在執行醫院附近停留至輸注後第 28–30 天，並簽署「30 天內不可駕車」聲明。整體療程結束後仍需長期回診監測 B 細胞功能與感染風險。
+  </div>
+</Steps>
+
+## 主要臨床試驗成績
+
+CAR-T 在血液腫瘤的核心數據來自下列三個第二／三期試驗。注意這些試驗的族群、線數、主要終點不同，**不可跨試驗排序選藥**。
+
+| 產品 | 試驗 | 適應症 | n | ORR | 12 個月 EFS／PFS | 台灣給付狀態 |
+|---|---|---|---|---|---|---|
+| **Tisagenlecleucel**（Kymriah） | **ELIANA** | r/r B-ALL（≤ 25 歲） | 75 | **CR + CRi 81%** | 12 個月 EFS 50% | **健保給付** |
+| **Tisagenlecleucel**（Kymriah） | **JULIET** | r/r DLBCL（≥ 2L） | 93（治療組） | **52%（CR 40%）** | 12 個月 PFS 35% | **健保給付** |
+| **Axicabtagene ciloleucel**（Yescarta） | **ZUMA-1** | r/r DLBCL（≥ 2L） | 101 | **82%（CR 54%）** | 18 個月 PFS 41% | 台灣自費 |
+| **Idecabtagene vicleucel**（ide-cel, Abecma） | **KarMMa-3** | r/r 多發性骨髓瘤（2–4L） | 386 | **71% vs. 42%（標準）** | mPFS 13.3 vs. 4.4 個月（HR 0.49） | 台灣自費 |
+| **Ciltacabtagene autoleucel**（cilta-cel, Carvykti） | **CARTITUDE-4** | r/r 多發性骨髓瘤（1–3L） | 419 | **85%（CR 73%）** | 12 個月 PFS 76%（HR 0.26） | 台灣自費 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+ELIANA、JULIET、ZUMA-1、KarMMa-3、CARTITUDE-4 五個試驗收案族群（兒童 vs. 成人、線數、是否曾接受過 ASCT）、評估方式（IRC vs. investigator）與隨訪時間皆不一致。上表的 ORR 與 PFS 僅供概念性對照，臨床實務請以個別病人疾病狀態、共病、可及性綜合判斷。
+</Callout>
+
+## 副作用：CRS 與 ICANS
+
+CAR-T 兩個最具特色、也最危險的不良反應是 **CRS** 與 **ICANS**。兩者皆來自 CAR-T 活化後大量釋放細胞激素（IL-6、IFN-γ、TNF）造成的全身發炎反應。
+
+### CRS（細胞激素釋放症候群）
+
+依 ASTCT 共識（Lee 2019, Blood）分為 4 級：
+
+| 級別 | 定義 | 處置 |
+|---|---|---|
+| Grade 1 | 發燒 ≥ 38°C，無低血壓、無缺氧 | 支持性治療、退燒、補充體液 |
+| Grade 2 | 低血壓對輸液有反應；缺氧需 < 6 L/min O₂ | **加 tocilizumab 8 mg/kg IV**（必要時 ± 類固醇） |
+| Grade 3 | 低血壓需單一升壓劑；缺氧需 ≥ 6 L/min | tocilizumab + dexamethasone 10 mg q6h |
+| Grade 4 | 多重升壓劑、需正壓通氣 | 加大類固醇至 methylprednisolone 1g/day，ICU 照護 |
+
+整體 CRS 發生率約 60–80%，**第 3 級以上約 20–25%**，輸注後 1–14 天內為高峰期。台灣 7 家執行醫院皆備有 tocilizumab 庫存。
+
+### ICANS（免疫效應細胞相關神經毒性）
+
+表現包括譫妄、書寫困難（最早警訊）、命名困難、意識改變，嚴重時抽搐、腦水腫。臨床用 **ICE score**（immune effector cell-associated encephalopathy）每日評分，10 分滿分。
+
+- 發生率 20–40%，第 3 級以上 10–15%。
+- 處置以 dexamethasone 為主；tocilizumab 對 ICANS 效果較差（無法穿過血腦障壁）。
+- 高風險族群：高腫瘤負荷、ALL 兒童、輸注前發炎指標高。
+
+<Callout type="warning" title="CRS 與 ICANS 紅旗：立即通知團隊">
+輸注後 28 天內出現以下任一情況請**立刻**聯絡執行醫院 24 小時急救專線：(1) 體溫 ≥ 38°C；(2) 收縮壓 < 90 mmHg 或感覺頭暈站不穩；(3) 意識模糊、寫字突然不會、手抖；(4) 呼吸困難、血氧降低；(5) 抽搐。**不要先去附近急診**——CAR-T 後的併發症處置有專屬流程，需直接回原執行醫院。
+</Callout>
+
+### 其他不良反應
+
+- **B 細胞發育不全 / 低 IgG 血症**：CAR-T 同時清除正常 B 細胞，多數病人需長期 IVIG 補充。
+- **延遲性血球低下（cytopenia）**：嗜中性白血球與血小板可低下數月，須定期回診。
+- **感染**：細菌、病毒（HBV reactivation、CMV）、伺機性感染風險顯著升高。
+- **二次惡性腫瘤**：FDA 2024 年起對所有 CAR-T 產品增列黑盒警告，提醒少數 T 細胞淋巴瘤的風險（< 0.5%）。
+
+## 適應症與禁忌症
+
+### 適應症（台灣健保 tisagenlecleucel）
+
+- 25 歲以下 r/r B-ALL（CD19+），第二次以後復發或誘導後難治
+- 成人 r/r DLBCL（CD19+），已接受 ≥ 2 線標準治療
+- ECOG PS 0–1，主要器官功能可耐受 lymphodepletion 化療
+- 預期存活 ≥ 12 週，可耐受製造期 3–4 週
+
+### 禁忌症與謹慎使用
+
+- 中樞神經系統活動性侵犯（B-ALL 例外，需與團隊討論）
+- 活動性 HBV、HCV、HIV、結核
+- 心衰竭 NYHA III–IV、肝功能 Child-Pugh C、肌酸酐廓清率 < 30 mL/min
+- 妊娠／哺乳期
+- 對 fludarabine、cyclophosphamide、tisagenlecleucel 任何成分過敏
+
+## 第二代產品：骨髓瘤路線
+
+對於 r/r 多發性骨髓瘤，**ide-cel** 與 **cilta-cel** 兩款 BCMA-CAR-T 在台灣 TFDA 已核准但**健保尚未給付**。費用須完全自付：
+
+| 產品 | 試驗 | 線數 | 對照組 | mPFS |
+|---|---|---|---|---|
+| **ide-cel**（KarMMa-3） | n = 386 | 2–4 線 | 醫師選擇治療 | 13.3 vs. 4.4 個月（HR 0.49） |
+| **cilta-cel**（CARTITUDE-4） | n = 419 | 1–3 線 | DPd / PVd | 12 個月 PFS 76% vs. 49%（HR 0.26） |
+
+兩個產品的 ORR 都在 70–85% 之間，cilta-cel 在較早線（1–3 線）使用反應與深度更佳。**自費價格約新台幣 1,200–1,500 萬元**（藥費），不含白血球分離、橋接治療、住院、tocilizumab、長期 IVIG 補充等費用，總成本接近 1,800–2,000 萬。是否值得自費，與病人預期存活、共病、家屬經濟狀況須仔細討論。
+
+<Callout type="note" title="健保納入時程">
+健保署 2025 年起多次討論將 BCMA-CAR-T 納入給付，但因預算衝擊評估超過 30 億／年，目前仍在 HTA（醫療科技評估）階段。建議自費前先與執行醫院確認最新動態。
+</Callout>
+
+## 7 家執行醫院（健保給付路線）
+
+健保署 2023 年 11 月公告之 CAR-T 執行醫院共 7 家，分布於北、中、南、東：
+
+- **北部**：台大醫院、台大醫院癌醫中心分院、林口長庚紀念醫院
+- **中部**：中國醫藥大學附設醫院、台中榮民總醫院
+- **南部**：高雄醫學大學附設中和紀念醫院
+- **東部**：花蓮慈濟醫院
+
+非健保適應症（自費，包括成人 ALL、骨髓瘤）的 CAR-T 執行醫院更多，請與血液腫瘤科門診直接洽詢。
+
+## 病友與家屬實務建議
+
+<Steps>
+  <div>
+    ### 確認病理 CD19（或 BCMA）表達
+
+    所有 CAR-T 都需先確認目標抗原存在。B-ALL／DLBCL 需 CD19+，骨髓瘤需 BCMA+。複發後若有條件再切片，可重新確認靶點，避免抗原丟失（antigen loss）導致無效治療。
+  </div>
+  <div>
+    ### 主動詢問轉介到 7 家執行醫院
+
+    若原醫院非執行醫院，可請主治醫師寫轉介單並準備完整病歷摘要。轉介時請帶：(1) 病理報告與分子分型；(2) 過去所有治療線數與反應；(3) 近期 PET-CT／骨髓報告；(4) 心電圖與心臟超音波；(5) 健保 IC 卡與身分證。
+  </div>
+  <div>
+    ### 預先安排製造期 28 天的橋接
+
+    白血球分離後到輸注之間有 3–4 週空窗，疾病可能進展。請與主治醫師討論橋接方案（化療、標靶、放療等），並安排製造期間的住院預約。
+  </div>
+  <div>
+    ### 安排輸注後 30 天內的家屬陪同
+
+    輸注後 28–30 天內需有 24 小時可即時送醫的陪同者。許多家屬會請假或安排輪班；建議提早討論並準備備用聯絡名單，以及執行醫院的 24 小時急診專線。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理分型確定符合健保給付條件（CD19+、線數、年齡）嗎？
+    2. 事前審查預計多久？製造期間如何橋接？
+    3. CRS／ICANS 的院內處置流程？tocilizumab、dexamethasone 庫存？
+    4. 輸注後預期住院多久？需要 ICU 的機率？
+    5. 治療失敗後還有哪些選項（雙特異性抗體、異體移植、其他試驗）？
+    6. 長期 B 細胞發育不全與感染防護需要做哪些準備？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Maude SL, Laetsch TW, Buechner J, et al. **Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia** (ELIANA). *N Engl J Med.* 2018;378(5):439-448. [doi:10.1056/NEJMoa1709866](https://doi.org/10.1056/NEJMoa1709866)
+2. Schuster SJ, Bishop MR, Tam CS, et al. **Tisagenlecleucel in Adult Relapsed or Refractory Diffuse Large B-Cell Lymphoma** (JULIET). *N Engl J Med.* 2019;380(1):45-56. [doi:10.1056/NEJMoa1804980](https://doi.org/10.1056/NEJMoa1804980)
+3. Neelapu SS, Locke FL, Bartlett NL, et al. **Axicabtagene Ciloleucel CAR T-Cell Therapy in Refractory Large B-Cell Lymphoma** (ZUMA-1). *N Engl J Med.* 2017;377(26):2531-2544. [doi:10.1056/NEJMoa1707447](https://doi.org/10.1056/NEJMoa1707447)
+4. Rodriguez-Otero P, Ailawadhi S, Arnulf B, et al. **Ide-cel or Standard Regimens in Relapsed and Refractory Multiple Myeloma** (KarMMa-3). *N Engl J Med.* 2023;388(11):1002-1014. [doi:10.1056/NEJMoa2213614](https://doi.org/10.1056/NEJMoa2213614)
+5. San-Miguel J, Dhakal B, Yong K, et al. **Cilta-cel or Standard Care in Lenalidomide-Refractory Multiple Myeloma** (CARTITUDE-4). *N Engl J Med.* 2023;389(4):335-347. [doi:10.1056/NEJMoa2303379](https://doi.org/10.1056/NEJMoa2303379)
+6. Lee DW, Santomasso BD, Locke FL, et al. **ASTCT Consensus Grading for Cytokine Release Syndrome and Neurologic Toxicity Associated with Immune Effector Cells.** *Blood.* 2019;133(20):2212-2220. [doi:10.1182/blood-2018-12-893396](https://doi.org/10.1182/blood-2018-12-893396)
+7. 衛生福利部中央健康保險署. **CAR-T 細胞治療暫時性支付公告（112 年 11 月）.** [nhi.gov.tw](https://www.nhi.gov.tw/)
+8. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Pediatric Acute Lymphoblastic Leukemia & B-Cell Lymphomas, v1.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 已通過 Crossref `audit:doi` 驗證。

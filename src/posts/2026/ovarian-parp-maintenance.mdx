@@ -1,0 +1,237 @@
+---
+title: "卵巢癌 PARP 抑制劑維持治療：誰能用、用多久？"
+titleEn: "PARP maintenance in advanced ovarian cancer: BRCA, HRD, and beyond"
+date: "05/11/2026"
+frontmatter: "SOLO-1 七年追蹤（JCO 2023）BRCA 突變晚期卵巢癌一線 olaparib 維持兩年，中位整體存活從 75.2 個月延長到尚未到達（HR 0.55）；PRIMA 全族群、PAOLA-1 HRD 陽性也擴展選項，但效益隨 biomarker 弱化而遞減。本文整理一線、復發後、HRD 檢測與健保條件。"
+tags: ["卵巢癌", "PARP", "olaparib", "niraparib", "BRCA", "HRD", "衛教"]
+medical: true
+medicalCondition: "卵巢上皮性癌的維持治療 (Ovarian cancer maintenance therapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "Lynparza（olaparib）健保有給付嗎？條件是什麼？"
+    a: "有條件給付。健保署自 2022 年起逐步擴大 olaparib 在卵巢癌的給付範圍：(1) 一線維持限新診斷晚期（FIGO III/IV）高級別漿液性或子宮內膜樣卵巢上皮癌，BRCA1/2 致病性突變（germline 或 somatic 皆可）、第一線含鉑化療達完全或部分反應者，最長 24 個月；(2) 鉑敏感性復發後維持限 BRCA 突變且至少對兩線含鉑化療反應者，最長至疾病惡化。實際資格與品項請以健保署最新公告與主治醫師評估為準。"
+  - q: "沒有 BRCA 突變還能吃 PARP 抑制劑嗎？"
+    a: "可以，但效益較小。PRIMA 試驗（NEJM 2019）顯示 niraparib 一線維持在 BRCA 野生型族群仍可延長無惡化存活（HRD 陽性 HR 0.43、HRD 陰性 HR 0.68），故美國 FDA 把 niraparib 的一線維持核准範圍擴及全族群（不限 biomarker）。台灣健保目前對非 BRCA 族群的一線維持給付較保守，多數仍須自費。決策時要把實際存活效益、副作用負擔（特別是貧血、嗜中性白血球低下）、藥費納入綜合考量。"
+  - q: "HRD 是什麼？怎麼測？要不要做？"
+    a: "HRD（同源重組修復缺陷，homologous recombination deficiency）指腫瘤無法用同源重組修復雙股 DNA 斷裂，對 PARP 抑制劑與含鉑化療較敏感。BRCA1/2 致病突變是最強指標，但只佔晚期卵巢癌約 20%；其他基因變異（如 RAD51C/D、PALB2）或基因體損傷分數（genomic instability score, GIS）也可判定 HRD。常用商業檢測為 Myriad MyChoice CDx 與 AmoyDx HRD focus；健保未給付，自費約新台幣 4–8 萬元。若考慮 olaparib + bevacizumab（PAOLA-1 方案）一線維持，HRD 檢測會直接影響選擇，建議與主治醫師討論。"
+  - q: "PARP 維持治療要吃多久？什麼時候停？"
+    a: "依試驗設計與藥物有所不同：SOLO-1 olaparib 一線維持以 24 個月為計畫上限（達完全反應者可在 2 年時停藥，仍持續延長存活）；PRIMA niraparib 與 PAOLA-1 olaparib + bevacizumab 設計為 36 個月或至疾病惡化／不可耐受。鉑敏感復發後維持（SOLO-2、ARIEL3、NOVA）多採疾病惡化或不可耐受才停。停藥決策還要考慮：(1) 累積骨髓抑制毒性、(2) 是否出現次發性骨髓化生不良症候群／急性骨髓性白血病訊號、(3) 病人耐受度與生活品質。"
+doi: "10.5281/zenodo.20113022"
+conceptDoi: "10.5281/zenodo.20113021"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+晚期卵巢癌一線含鉑化療達反應後加上 PARP 抑制劑維持，是過去十年最具改變治療典範意義的進展。**SOLO-1 七年追蹤（JCO 2023）顯示：BRCA1/2 致病突變晚期卵巢癌新診斷者，olaparib 維持兩年讓中位整體存活從安慰劑組的 75.2 個月延長到尚未到達（HR 0.55, 95% CI 0.40–0.76）**；七年存活率 67.0% 對比 46.5%。PRIMA 把 niraparib 推上全族群一線維持（NEJM 2019），PAOLA-1 在 HRD 陽性族群以 olaparib + bevacizumab 取得 5 年存活率 65.5% vs 48.4% 的優勢。然而，效益隨 biomarker 弱化遞減：BRCA 突變 > HRD 陽性（含 BRCA）> HRD 陰性／野生型；PRIMA 整體族群最終整體存活分析（Ann Oncol 2024）並未達顯著差異。本文整理一線維持選擇樹、鉑敏感復發後維持、HRD 檢測，以及副作用與停藥決策。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知卵巢癌、想了解化療打完後該不該接 PARP 維持的病友與家屬，以及對 SOLO-1 長期追蹤、PRIMA 整體存活更新與 HRD 檢測選擇感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼需要維持治療？PARP 抑制劑機轉
+
+晚期卵巢上皮癌（FIGO III/IV 期）即使一線含鉑化療達完全反應，三年內仍有六到七成病人復發。維持治療的目的是「延長無惡化存活與整體存活，把第一次反應的時間最大化」。
+
+PARP 抑制劑利用「合成致死」（synthetic lethality）原理：
+
+- PARP1 是細胞修復單股 DNA 斷裂的關鍵酵素；抑制 PARP 會把單股斷裂累積成雙股斷裂。
+- 細胞用同源重組（homologous recombination, HR）修復雙股斷裂；BRCA1/2、RAD51C/D、PALB2 等基因功能缺失時，HR 失效。
+- HR 缺陷 + PARP 抑制 = 雙重打擊，腫瘤細胞因無法修復 DNA 而死亡。
+
+因此，**HR 缺陷越深（BRCA 突變最強），PARP 抑制劑效益越大**；HR 完整（HRD 陰性）腫瘤效益相對小，副作用負擔仍在。
+
+## 一線維持治療怎麼選？三大關鍵試驗
+
+<Steps>
+  <div>
+    ### Step 1：BRCA1/2 + HRD 檢測
+
+    新診斷 III/IV 期高級別漿液性／子宮內膜樣卵巢癌，務必在化療早期或反應評估時取得：
+
+    - **Germline BRCA1/2**（血液檢體，台灣多家實驗室可做）
+    - **Somatic BRCA1/2**（腫瘤組織 NGS panel）
+    - **HRD 分數**（若考慮 PAOLA-1 方案 olaparib + bevacizumab）
+
+    沒有 biomarker 結果就無法套用一線維持的最強證據。
+  </div>
+  <div>
+    ### Step 2：含鉑化療 ± bevacizumab，評估反應
+
+    一般 6 cycles carboplatin/paclitaxel ± bevacizumab。維持治療的試驗對象多為含鉑化療達完全或部分反應者；治療抗性者不適用。
+  </div>
+  <div>
+    ### Step 3：依 biomarker 開維持治療
+
+    - **BRCA1/2 突變**：olaparib 24 個月（SOLO-1）為首選；亦可選 olaparib + bevacizumab（若已用 bev）。
+    - **HRD 陽性 / BRCA 野生型**：olaparib + bevacizumab（PAOLA-1）效益最明確；niraparib 單藥（PRIMA）為替代。
+    - **HRD 陰性**：niraparib 單藥（PRIMA）有 PFS 效益但較小；建議與病人討論效益／副作用平衡，臨床試驗也是合理選項。
+  </div>
+</Steps>
+
+### 一線維持三大試驗比較
+
+| 試驗 | 藥物 | 族群 | n | mPFS（藥 vs 對照） | mOS / 5–7 年 OS |
+|---|---|---|---|---|---|
+| **SOLO-1**（NEJM 2018 / JCO 2023） | Olaparib 24 個月 | BRCA1/2 突變 | 391 | 56.0 vs 13.8 個月（HR 0.33）| 7 年 OS 67.0% vs 46.5%（HR 0.55, P = 0.0004）|
+| **PRIMA**（NEJM 2019 / Ann Oncol 2024） | Niraparib 36 個月 | 全族群 | 733 | 全族群 13.8 vs 8.2 個月（HR 0.62）；HRD+ 21.9 vs 10.4（HR 0.43）| 全族群 mOS 46.6 vs 48.8 個月（HR 1.01, P = 0.88）|
+| **PAOLA-1**（NEJM 2019 / Ann Oncol 2023） | Olaparib + bev vs bev | 全族群（含 bev）| 806 | HRD+ 37.2 vs 17.7 個月（HR 0.33）| HRD+ 5 年 OS 65.5% vs 48.4%（HR 0.62）；ITT mOS 56.5 vs 51.6（HR 0.92, P = 0.41）|
+
+<Callout type="warning" title="跨試驗比較的限制">
+SOLO-1、PRIMA、PAOLA-1 的試驗族群（是否含 bevacizumab、是否限 BRCA 突變、是否含部分反應者、HRD 檢測平台）並不完全一致；上述數字僅供概念性對照，不應用於跨試驗排序選藥。實際選擇仍以個別病人 BRCA / HRD 結果、是否已用 bev、共病、可及性綜合判斷。
+</Callout>
+
+## 鉑敏感復發後的維持治療
+
+鉑敏感復發定義為一線含鉑化療結束六個月以上才復發。再次達反應後，PARP 抑制劑維持有三大試驗：
+
+| 試驗 | 藥物 | 族群 | n | mPFS（藥 vs 對照） |
+|---|---|---|---|---|
+| **SOLO-2**（Lancet Oncol 2017）| Olaparib | BRCA1/2 突變、≥ 2 線含鉑反應 | 295 | 19.1 vs 5.5 個月（HR 0.30）|
+| **ARIEL3**（Lancet 2017）| Rucaparib | 全族群、含鉑反應 | 564 | BRCA 突變 16.6 vs 5.4；HRD 13.6 vs 5.4；ITT 10.8 vs 5.4 個月 |
+| **NOVA**（NEJM 2016）| Niraparib | 全族群、含鉑反應 | 553 | gBRCA 21.0 vs 5.5；non-gBRCA HRD+ 12.9 vs 3.8；non-gBRCA HRD− 6.9 vs 3.8 個月 |
+
+<Callout type="note" title="一線已用過 PARP，復發還能再用嗎？">
+證據相對有限。OReO/ENGOT-ov38 第二期試驗（Pujade-Lauraine 等，Ann Oncol 2023）顯示曾用過 PARP 維持的鉑敏感復發病人再用 olaparib 仍可延長 PFS，但效益小於從未用過者；建議優先考慮非 PARP 機轉藥物（如 mirvetuximab soravtansine、bevacizumab、ADC 試驗）或臨床試驗。
+</Callout>
+
+## HRD 檢測：怎麼選、結果怎麼看
+
+「HRD 陽性」泛指腫瘤具備同源重組修復缺陷的特徵。常見定義：
+
+- **BRCA1/2 致病突變**（germline 或 somatic）— 最強訊號。
+- **基因體損傷分數（genomic instability score, GIS）** — 由腫瘤組織 NGS 計算 LOH、TAI、LST 三項指標的綜合分數；Myriad MyChoice CDx 取 ≥ 42 為陽性。
+- **AmoyDx HRD focus**（中國／台灣常用）— GSS（genome scar score） ≥ 50 為陽性。
+
+### 檢測注意事項
+
+- 採檢需腫瘤含量 ≥ 30%（病理科確認）。
+- 福馬林固定石蠟包埋（FFPE）切片需保存品質佳；過舊切片可能 DNA 降解導致無法分析。
+- HRD 結果只在「整體基因體損傷夠多」這個切點劃分，腫瘤異質性與動態變化（治療後 reversion mutation）未涵蓋。
+- 自費約新台幣 4–8 萬元；健保目前不給付。
+
+### 結果如何解讀
+
+- **BRCA 突變 / HRD 陽性**：olaparib + bevacizumab（PAOLA-1）效益最明確。
+- **HRD 陰性 + BRCA 野生型**：PARP 抑制劑效益較小；以 bevacizumab 維持或臨床試驗為主要考量。
+- **HRD 結果不確定（quality not sufficient）**：盡量重送或補做 BRCA1/2，避免單憑陰性即排除 PARP。
+
+## 副作用與不良反應
+
+### Olaparib（Lynparza）
+
+- 任何級別：噁心（70%）、疲倦（60%）、貧血（40%）、嘔吐（35%）、味覺異常、頭痛。
+- 第 3 級以上：貧血約 22%、嗜中性白血球低下約 8%。
+- 監測：CBC 每月一次、肝腎功能。
+
+### Niraparib（Zejula）
+
+- 血小板低下最為突出（任何級別 60%、第 3 級以上 30%），需要早期劑量調整。
+- 任何級別：貧血、噁心、疲倦、便秘、高血壓。
+- PRIMA 後改採體重、基線血小板分層的個人化起始劑量（200 vs 300 mg），明顯降低嚴重血液毒性。
+
+### Rucaparib（Rubraca）
+
+- 任何級別：噁心、疲倦、貧血、肝指數上升、肌酸酐輕度上升（OCT2 抑制造成的可逆現象）。
+- 第 3 級以上：貧血約 19%、ALT/AST 上升約 10%。
+
+### MDS / AML 風險（重要警語）
+
+<Callout type="warning" title="次發性骨髓化生不良症候群與急性骨髓性白血病">
+PARP 抑制劑長期使用後出現 MDS / AML 的累積發生率約 0.5–1.5%（一線維持族群），略高於僅化療對照組。**治療前必備項目**：(1) 完整全血球計數與血液抹片；(2) 排除既存血球異常（如不明原因之長期血小板偏低）。**治療中**：CBC 至少每月追蹤；若出現持續性血球異常無法以劑量調整或暫停藥物恢復，應停藥並請血液科會診（骨髓檢查）。**累積風險**與藥物總劑量、年齡、先前化療線數正相關；建議完整告知病人並記錄於知情同意書。
+</Callout>
+
+## 適應症、禁忌症、謹慎使用
+
+### 適應症（依試驗與多國核准）
+
+- **一線維持**：新診斷 III/IV 期高級別漿液性／子宮內膜樣卵巢癌、輸卵管癌、腹膜原發癌；含鉑化療達完全或部分反應；依 BRCA / HRD biomarker 與是否合併 bevacizumab 選擇藥物。
+- **鉑敏感復發後維持**：至少對兩線含鉑化療反應；BRCA 突變者證據最強。
+
+### 禁忌症與謹慎使用
+
+- 對藥物成分過敏。
+- 妊娠與哺乳期。
+- 嚴重腎功能不全（依藥物 GFR 切點調整劑量）。
+- 嚴重肝功能異常（rucaparib 須謹慎）。
+- 有 MDS / AML 病史或基線骨髓功能無法耐受。
+- 與強效 CYP3A 抑制劑／誘導劑共用須調整劑量（olaparib、rucaparib）。
+
+## 健保給付與費用速覽
+
+<Callout type="note" title="健保給付狀態（截至 2026/05，以健保署最新公告為準）">
+- **Olaparib 一線維持（24 個月）**：限新診斷 III/IV 期高級別漿液性／子宮內膜樣卵巢癌、BRCA1/2 致病突變（germline 或 somatic）、含鉑化療達完全／部分反應者。
+- **Olaparib 鉑敏感復發後維持**：BRCA 突變且對至少兩線含鉑化療反應者。
+- **Niraparib**：給付條件較窄，多數情境仍須自費；部分復發後維持品項依當期給付公告。
+- **HRD 檢測**：未給付，自費新台幣 4–8 萬元。
+- **Bevacizumab**：依適應症與品項另有規範。
+
+實際給付資格、申請程序與品項，請以健保署當期公告及醫院個案管理師／藥師確認為準。
+</Callout>
+
+## 停藥決策怎麼做？
+
+<Steps>
+  <div>
+    ### 計畫內停藥（一線維持達上限）
+
+    SOLO-1 olaparib 一線維持以 24 個月為設計上限，達完全反應者於 2 年時停藥，七年追蹤仍延長存活；對 BRCA 突變一線維持完成 2 年是合理停藥點。PRIMA niraparib 與 PAOLA-1 olaparib + bev 設計為 36 個月或至疾病惡化。
+  </div>
+  <div>
+    ### 計畫外停藥（毒性 / 安全）
+
+    嚴重血液毒性（嗜中性白血球低下、血小板低下、貧血需輸血）經劑量調整與暫停藥物仍無法恢復；持續性血球異常需排除 MDS／AML；嚴重非血液毒性（肝指數異常、間質性肺炎）。
+  </div>
+  <div>
+    ### 計畫外停藥（疾病進展）
+
+    影像學或 CA-125 持續上升並符合 RECIST 1.1 進展定義時停藥；下一線治療依鉑敏感／抗性、先前藥物選擇而定。
+  </div>
+</Steps>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認 biomarker 都做了
+
+    開始討論一線維持前，必備：(1) germline BRCA1/2，(2) somatic BRCA1/2（若 germline 陰性），(3) 視情況 HRD 分數。三項缺一就可能漏掉適合的維持選項。
+  </div>
+  <div>
+    ### 主動詢問維持治療的時機與時長
+
+    化療後三到八週內就需要決定是否進入維持，越早討論越好。請主治醫師說明：(a) 維持藥物選擇與證據強度，(b) 計畫療程長度（24 vs 36 個月或至惡化），(c) 健保／自費差異。
+  </div>
+  <div>
+    ### 列出與主治醫師討論的問題清單
+
+    1. 我的 BRCA1/2 結果是什麼？做的是 germline 還是 somatic？
+    2. HRD 檢測有沒有做？分數多少？影響哪些選項？
+    3. 一線維持建議哪一個藥？為什麼選這個不選那個？
+    4. 計畫吃多久？吃完之後若沒復發要繼續嗎？
+    5. 副作用怎麼監測？需要多久回診抽血一次？
+    6. 健保給付條件我符合嗎？需要附哪些檢查報告？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Moore K, Colombo N, Scambia G, et al. **Maintenance Olaparib in Patients with Newly Diagnosed Advanced Ovarian Cancer** (SOLO-1). *N Engl J Med.* 2018;379(26):2495-2505. [doi:10.1056/NEJMoa1810858](https://doi.org/10.1056/NEJMoa1810858)
+2. DiSilvestro P, Banerjee S, Colombo N, et al. **Overall Survival With Maintenance Olaparib at a 7-Year Follow-Up in Patients With Newly Diagnosed Advanced Ovarian Cancer and a BRCA Mutation: The SOLO1/GOG 3004 Trial.** *J Clin Oncol.* 2023;41(3):609-617. [doi:10.1200/JCO.22.01549](https://doi.org/10.1200/JCO.22.01549)
+3. González-Martín A, Pothuri B, Vergote I, et al. **Niraparib in Patients with Newly Diagnosed Advanced Ovarian Cancer** (PRIMA / ENGOT-OV26 / GOG-3012). *N Engl J Med.* 2019;381(25):2391-2402. [doi:10.1056/NEJMoa1910962](https://doi.org/10.1056/NEJMoa1910962)
+4. Monk BJ, Parkinson C, Lim MC, et al. **Niraparib First-Line Maintenance Therapy in Patients with Newly Diagnosed Advanced Ovarian Cancer: Final Overall Survival Results from the PRIMA / ENGOT-OV26 / GOG-3012 Trial.** *Ann Oncol.* 2024;35(11):981-992. [doi:10.1016/j.annonc.2024.08.2241](https://doi.org/10.1016/j.annonc.2024.08.2241)
+5. Ray-Coquard I, Pautier P, Pignata S, et al. **Olaparib plus Bevacizumab as First-Line Maintenance in Ovarian Cancer** (PAOLA-1 / ENGOT-ov25). *N Engl J Med.* 2019;381(25):2416-2428. [doi:10.1056/NEJMoa1911361](https://doi.org/10.1056/NEJMoa1911361)
+6. Ray-Coquard I, Leary A, Pignata S, et al. **Olaparib plus Bevacizumab First-Line Maintenance in Ovarian Cancer: Final Overall Survival Results from the PAOLA-1 / ENGOT-ov25 Trial.** *Ann Oncol.* 2023;34(8):681-692. [doi:10.1016/j.annonc.2023.05.005](https://doi.org/10.1016/j.annonc.2023.05.005)
+7. Pujade-Lauraine E, Ledermann JA, Selle F, et al. **Olaparib Tablets as Maintenance Therapy in Patients with Platinum-Sensitive, Relapsed Ovarian Cancer and a BRCA1/2 Mutation** (SOLO-2 / ENGOT-Ov21). *Lancet Oncol.* 2017;18(9):1274-1284. [doi:10.1016/S1470-2045(17)30469-2](https://doi.org/10.1016/S1470-2045(17)30469-2)
+8. Coleman RL, Oza AM, Lorusso D, et al. **Rucaparib Maintenance Treatment for Recurrent Ovarian Carcinoma after Response to Platinum Therapy** (ARIEL3). *Lancet.* 2017;390(10106):1949-1961. [doi:10.1016/S0140-6736(17)32440-6](https://doi.org/10.1016/S0140-6736(17)32440-6)
+9. Mirza MR, Monk BJ, Herrstedt J, et al. **Niraparib Maintenance Therapy in Platinum-Sensitive, Recurrent Ovarian Cancer** (NOVA / ENGOT-OV16). *N Engl J Med.* 2016;375(22):2154-2164. [doi:10.1056/NEJMoa1611310](https://doi.org/10.1056/NEJMoa1611310)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 經 Crossref redirect 驗證。
