@@ -67,7 +67,7 @@ tags: ["衛教"]
 medical: true
 medicalCondition: "癌別中文名 (English Name)"
 reviewer: "林協霆"
-reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
 reviewedDate: "${formattedDate}"
 faq:
   - q: "病人最常問的問題 1？"

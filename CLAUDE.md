@@ -59,7 +59,7 @@ pnpm run new-post:medical "你的標題"
 | `medical` | ✅ | 設為 `true` 啟用 MedicalReview + JSON-LD |
 | `medicalCondition` | ✅ | 例：`胰臟腺癌 (Pancreatic Ductal Adenocarcinoma, PDAC)` |
 | `reviewer` | ✅ | 通常 `林協霆`；客座作者要由本人掛名審稿 |
-| `reviewerCredentials` | ✅ | 例：`MD, 內科專科醫師, 腫瘤內科` |
+| `reviewerCredentials` | ✅ | 例：`MD, 內科專科醫師, 腫瘤內科專科醫師` |
 | `reviewedDate` | ✅ | `MM/DD/YYYY` |
 | `citable` | △ | `true` = 准予 push 後自動 mint Zenodo DOI（見 §11）；空 / `false` = 不 mint |
 | `updatedDate` | △ | 重大修訂時更新（NCCN 改版、新藥核准等） |
