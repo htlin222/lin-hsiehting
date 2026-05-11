@@ -76,26 +76,49 @@ import {
                     <FileDown size={14} />
                     One-page CV (English PDF)
                 </a>
-                <a
-                    href="#cv-zh"
-                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
-                >
-                    <Languages size={14} />
-                    繁中
-                </a>
-                <a
-                    href="#cv-en"
-                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
+            </div>
+
+            <div
+                role="tablist"
+                aria-label="CV language"
+                class="mt-6 inline-flex rounded-md border border-border overflow-hidden text-sm"
+            >
+                <button
+                    type="button"
+                    role="tab"
+                    id="tab-en"
+                    aria-controls="cv-en"
+                    aria-selected="true"
+                    data-cv-tab="en"
+                    class="cv-tab inline-flex items-center gap-1.5 px-4 py-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary aria-selected:bg-foreground aria-selected:text-background"
                 >
                     <Languages size={14} />
                     English
-                </a>
+                </button>
+                <button
+                    type="button"
+                    role="tab"
+                    id="tab-zh"
+                    aria-controls="cv-zh"
+                    aria-selected="false"
+                    data-cv-tab="zh"
+                    class="cv-tab inline-flex items-center gap-1.5 px-4 py-1.5 border-l border-border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary aria-selected:bg-foreground aria-selected:text-background"
+                >
+                    <Languages size={14} />
+                    繁體中文
+                </button>
             </div>
         </header>
 
-        {/* ── ENGLISH SECTION (at top, per request) ── */}
-        <section id="cv-en" class="pt-10">
-            <h2 class="text-2xl font-bold tracking-tight">Curriculum Vitae · English</h2>
+        {/* ── ENGLISH SECTION (default active tab) ── */}
+        <section
+            id="cv-en"
+            role="tabpanel"
+            aria-labelledby="tab-en"
+            data-cv-panel="en"
+            class="pt-10"
+        >
+            <h2 class="sr-only">Curriculum Vitae · English</h2>
             <p class="text-sm text-muted-foreground mt-1">
                 {cvHeader.taglineEn}
             </p>
@@ -240,11 +263,16 @@ import {
             </div>
         </section>
 
-        <div class="my-12 border-t border-border" />
-
-        {/* ── 中文版 ── */}
-        <section id="cv-zh">
-            <h2 class="text-2xl font-bold tracking-tight">履歷 · 繁體中文</h2>
+        {/* ── 中文版（tab-controlled） ── */}
+        <section
+            id="cv-zh"
+            role="tabpanel"
+            aria-labelledby="tab-zh"
+            data-cv-panel="zh"
+            hidden
+            class="pt-10"
+        >
+            <h2 class="sr-only">履歷 · 繁體中文</h2>
             <p class="text-sm text-muted-foreground mt-1">{cvHeader.taglineZh}</p>
 
             <div class="mt-8 space-y-10">
@@ -407,3 +435,80 @@ import {
         </footer>
     </main>
 </Layout>
+
+<script>
+    type Lang = "en" | "zh";
+
+    const tabs = Array.from(
+        document.querySelectorAll<HTMLButtonElement>("[data-cv-tab]"),
+    );
+    const panels = Array.from(
+        document.querySelectorAll<HTMLElement>("[data-cv-panel]"),
+    );
+
+    function activate(name: Lang) {
+        for (const t of tabs) {
+            const active = t.dataset.cvTab === name;
+            t.setAttribute("aria-selected", String(active));
+            t.tabIndex = active ? 0 : -1;
+        }
+        for (const p of panels) {
+            p.hidden = p.dataset.cvPanel !== name;
+        }
+        try {
+            localStorage.setItem("cv-lang", name);
+        } catch {}
+        if (location.hash !== `#${name}`) {
+            history.replaceState(null, "", `#${name}`);
+        }
+    }
+
+    function initialLang(): Lang {
+        const hash = location.hash.replace("#", "");
+        if (hash === "zh" || hash === "en" || hash === "cv-zh" || hash === "cv-en") {
+            return hash.endsWith("zh") ? "zh" : "en";
+        }
+        try {
+            const saved = localStorage.getItem("cv-lang");
+            if (saved === "zh" || saved === "en") return saved;
+        } catch {}
+        return "en";
+    }
+
+    for (const t of tabs) {
+        t.addEventListener("click", () => {
+            const name = t.dataset.cvTab as Lang | undefined;
+            if (name) activate(name);
+        });
+        t.addEventListener("keydown", (e) => {
+            if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+            e.preventDefault();
+            const order: Lang[] = ["en", "zh"];
+            const current = order.indexOf(t.dataset.cvTab as Lang);
+            const next =
+                order[(current + (e.key === "ArrowRight" ? 1 : -1) + order.length) % order.length];
+            const target = document.querySelector<HTMLButtonElement>(
+                `[data-cv-tab="${next}"]`,
+            );
+            target?.focus();
+            activate(next);
+        });
+    }
+
+    activate(initialLang());
+
+    window.addEventListener("hashchange", () => {
+        const hash = location.hash.replace("#", "");
+        if (hash === "zh" || hash === "cv-zh") activate("zh");
+        else if (hash === "en" || hash === "cv-en") activate("en");
+    });
+</script>
+
+<style>
+    /* When printing, show both panels so the printed page is complete regardless of tab state. */
+    @media print {
+        [data-cv-panel][hidden] {
+            display: block !important;
+        }
+    }
+</style>
