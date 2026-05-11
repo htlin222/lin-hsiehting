@@ -1,0 +1,251 @@
+---
+title: "新診斷多發性骨髓瘤的四聯誘導：PERSEUS 與 daratumumab 時代"
+titleEn: "Quadruplet induction in newly-diagnosed multiple myeloma"
+date: "05/11/2026"
+frontmatter: "PERSEUS 試驗（NEJM 2024）確立 daratumumab + VRd 為新診斷骨髓瘤的標準誘導，48 個月無惡化存活 84.3% vs 67.7%（HR 0.42），治療反應達微量殘存疾病陰性比例倍增；本文整理四聯誘導、自體幹細胞移植適合對象、與維持治療策略。"
+tags: ["多發性骨髓瘤", "daratumumab", "VRd", "ASCT", "PERSEUS", "衛教"]
+medical: true
+medicalCondition: "多發性骨髓瘤 (Multiple myeloma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "daratumumab 是什麼藥？"
+    a: "Daratumumab 是針對骨髓瘤細胞表面 CD38 抗原的單株抗體，可透過抗體依賴性細胞毒殺、補體活化、與直接誘導凋亡等機轉清除骨髓瘤細胞。自 2015 年起陸續核准用於復發／難治與新診斷骨髓瘤；目前皮下注射型（daratumumab + hyaluronidase）已取代靜脈注射，每次注射約 3–5 分鐘。在 PERSEUS 試驗（NEJM 2024）中，於 VRd（bortezomib + lenalidomide + dexamethasone）三藥之上加 daratumumab 形成四聯誘導，48 個月無惡化存活由 67.7% 提升至 84.3%（HR 0.42）。"
+  - q: "四種藥一起打安全嗎？"
+    a: "PERSEUS 試驗（n = 709）顯示，四聯 Dara-VRd 與三聯 VRd 相比，第 3 級以上不良反應發生率相當（57% vs 49%），最常見的差異在嗜中性白血球低下與感染。第 3 級以上感染率四聯組約 34%、三聯組約 27%，因此抗生素／抗病毒預防（如 acyclovir、PJP 預防）與疫苗評估是標準照護。整體治療相關死亡率兩組接近（< 2%）。安全性可接受，但仍需密切監測血球、感染、與輸注反應。"
+  - q: "我能不能做自體幹細胞移植？"
+    a: "自體幹細胞移植（ASCT）目前仍是新診斷骨髓瘤適移植族群的標準鞏固治療。一般考量年齡（多以 ≤ 70 歲為界，但個案化判斷更重要）、體能狀態（ECOG 0–2）、心肺腎肝功能、與共病。IFM 2009（NEJM 2017）與 DETERMINATION（NEJM 2022）兩個第三期試驗均顯示，誘導後立刻接 ASCT 可顯著延長無惡化存活；DETERMINATION 在中位 76 個月追蹤下，整體存活仍無顯著差異（HR 1.10），代表延後移植在部分病人也是合理選項。台灣健保對符合條件的初診多發性骨髓瘤給付一次 ASCT。"
+  - q: "四聯誘導後要不要繼續吃 lenalidomide？"
+    a: "需要。多項試驗（CALGB 100104、IFM 2005-02、Myeloma XI、DETERMINATION）已證實 lenalidomide 維持治療可延長無惡化存活與整體存活。PERSEUS 試驗的維持期採 daratumumab + lenalidomide（D-R），48 個月無惡化存活達 84.3%。對於高風險細胞遺傳學病人（del(17p)、t(4;14)、t(14;16)、1q gain），多數指引建議 D-R 或加入 bortezomib 的更強化維持。健保目前對符合條件者給付 lenalidomide 維持。一般持續至疾病惡化或無法耐受；DETERMINATION 試驗中 lenalidomide 維持中位治療時間達 41.5 個月，但需注意第二原發癌（約 10.7%）與長期血液毒性。"
+doi: "10.5281/zenodo.20115053"
+conceptDoi: "10.5281/zenodo.20115052"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+新診斷多發性骨髓瘤（newly-diagnosed multiple myeloma, NDMM）在 2024 年迎來最具改變治療標準的試驗：**PERSEUS 試驗於 NEJM 2024 公布結果**，於適合自體幹細胞移植（ASCT）的初診病人，將 daratumumab 加入經典三聯 VRd（bortezomib + lenalidomide + dexamethasone）形成四聯誘導，**48 個月無惡化存活由 67.7% 提升至 84.3%（HR 0.42, 95% CI 0.32–0.56）**，治療反應達微量殘存疾病（measurable residual disease, MRD）陰性比例倍增。**IsKia**（Gay 2025, NEJM Evid）以 isatuximab + KRd 也得到一致方向的結果；**MAIA 試驗**（Facon NEJM 2019）則確立非移植族群的 Dara-Rd 標準。本文整理四聯誘導、ASCT 角色、維持治療策略、與台灣健保現況。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知多發性骨髓瘤、正在決定誘導方案的病友與家屬，以及對 PERSEUS、IsKia 等四聯誘導試驗與 ASCT 角色變動感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 多發性骨髓瘤是什麼？為什麼治療這麼複雜？
+
+多發性骨髓瘤是骨髓中的漿細胞（plasma cell）惡性增殖性疾病，會分泌單株免疫球蛋白（M protein），造成骨頭破壞、貧血、腎功能異常、高鈣血症（合稱 CRAB 症狀）。它仍屬於難以治癒（incurable）但可長期控制的血液惡性疾病——隨著免疫調節劑（IMiD）、蛋白酶體抑制劑（PI）、抗 CD38 單株抗體、與 CAR-T／雙特異性抗體等武器陸續加入，目前移植適合（transplant-eligible, TE）族群的中位整體存活已超過 8 年。
+
+治療決策的第一步是分流：
+
+| 分流 | 條件 | 標準策略（2026） |
+|---|---|---|
+| **移植適合 (TE)** | 多以 ≤ 70 歲、ECOG 0–2、器官功能可耐受高劑量 melphalan | **Dara-VRd** 誘導 → ASCT → Dara-Rd 維持 |
+| **移植不適合 (TIE)** | 高齡、共病或體能狀態不佳 | **Dara-Rd**（MAIA）或 **Dara-VMP**（ALCYONE）長期治療 |
+| **高風險** | del(17p) / t(4;14) / t(14;16) / 1q gain / ≥ 2 個高風險基因 | 在標準四聯之外考慮更強化／更長維持 |
+
+<Callout type="tip" title="必備的初診評估">
+診斷時建議完整評估：(1) 血清與尿液蛋白電泳 + 免疫固定電泳、(2) 血清游離輕鏈、(3) 骨髓檢查含 FISH 細胞遺傳學（del(17p)、t(4;14)、t(14;16)、t(11;14)、1q gain）、(4) 全身低劑量 CT 或 PET-CT、(5) β2 微球蛋白／白蛋白／LDH 算 R-ISS 分期、(6) 腎肝功能、HBV／HCV／HIV／結核篩檢。
+</Callout>
+
+## 為什麼從三聯走到四聯？PERSEUS 改寫了標準
+
+VRd 三聯（bortezomib + lenalidomide + dexamethasone）來自 SWOG S0777，是 2017 年以後最廣用的誘導方案。**PERSEUS 試驗**（Sonneveld NEJM 2024, n = 709）首次以第三期隨機對照證明：在 VRd 上加 daratumumab（皮下注射）形成四聯，可顯著延長無惡化存活。
+
+主要結果（中位追蹤 47.5 個月）：
+
+- **48 個月無惡化存活：84.3% vs 67.7%（HR 0.42, 95% CI 0.32–0.56, P < 0.001）**
+- **MRD 陰性（10⁻⁵）比例：75.2% vs 47.5%**
+- **持續 MRD 陰性（≥ 12 個月）：64.8% vs 29.7%**
+- 完全反應（CR）以上：87.9% vs 70.1%
+- 整體存活：目前 HR 0.74，未達統計顯著（追蹤期尚短）
+
+**IsKia 試驗**（Gay 2025, NEJM Evid, n = 302）以 isatuximab（另一個抗 CD38 抗體）+ KRd（carfilzomib + lenalidomide + dexamethasone）對 KRd，誘導與鞏固後 MRD 陰性（10⁻⁵）比例 77% vs 67%（OR 1.67, P = 0.049），方向一致。
+
+**GMMG-HD7 試驗**（Goldschmidt Lancet Haematology 2022, n = 660）採 isatuximab + VRd 誘導 vs VRd，誘導結束 MRD 陰性比例 50.1% vs 35.6%（OR 1.82, P < 0.001），是更早期的四聯佐證。
+
+### 四聯誘導試驗比較
+
+| 試驗 | 方案 | n | 設計／族群 | 主要終點與結果 |
+|---|---|---|---|---|
+| **PERSEUS** | Dara-VRd vs VRd | 709 | TE NDMM，誘導 → ASCT → 維持 | 48mo PFS 84.3% vs 67.7%（HR 0.42）; MRD− 75% vs 48% |
+| **IsKia** | Isa-KRd vs KRd | 302 | TE NDMM，誘導 + 鞏固 | 後鞏固 MRD− 77% vs 67%（OR 1.67, P = 0.049） |
+| **GMMG-HD7** | Isa-VRd vs VRd（誘導期） | 660 | TE NDMM，誘導結束評估 | 誘導後 MRD− 50% vs 36%（OR 1.82, P < 0.001） |
+| **MAIA**（非移植） | Dara-Rd vs Rd | 737 | TIE NDMM | mPFS 61.9 vs 34.4 個月（HR 0.55）；5 年 OS 66.3% vs 53.1% |
+
+<Callout type="warning" title="跨試驗比較的限制">
+PERSEUS、IsKia、GMMG-HD7 採用不同的骨幹（VRd vs KRd）、不同的抗 CD38 抗體（daratumumab vs isatuximab）、不同的療程設計（誘導 vs 誘導 + 鞏固）、不同的維持策略；MRD 評估時點與深度也不一致。上述數字僅供概念性對照，**不應直接拿來排序選藥**。台灣目前最成熟、可及性最高的選項仍是 Dara-VRd。
+</Callout>
+
+## 治療流程：從新診斷到維持
+
+<Steps>
+  <div>
+    ### 1. 確診與分期
+
+    完成骨髓檢查、FISH 細胞遺傳學、影像學（PET-CT 或低劑量全身 CT）、與生化／免疫球蛋白評估。確認 CRAB 或 SLiM-CRAB 條件達到，符合 IMWG 2014 診斷標準的活動性骨髓瘤。
+  </div>
+  <div>
+    ### 2. 風險分層
+
+    依 R-ISS（白蛋白、β2 微球蛋白、LDH、細胞遺傳學）或 R2-ISS（加入 1q gain）區分。**高風險細胞遺傳學**包含 del(17p)、t(4;14)、t(14;16)、1q gain（特別是 amplification）。≥ 2 個高風險基因稱「ultra-high risk」或「雙重打擊」。
+  </div>
+  <div>
+    ### 3. 評估 ASCT 適合度
+
+    年齡並非絕對禁忌，目前多以 ≤ 70 歲為起點，個案化判斷生理年齡、心肺腎肝功能、共病、與病人意願。腎功能受損非絕對禁忌但需調整 melphalan 劑量。
+  </div>
+  <div>
+    ### 4. 誘導治療
+
+    - **移植適合**：Dara-VRd 四聯 4–6 個療程（PERSEUS 用法為誘導 4 cycles + 鞏固 2 cycles）
+    - **移植不適合**：Dara-Rd（MAIA）或 Dara-VMP（ALCYONE）長期治療直到惡化或無法耐受
+    - 高風險病人考慮 Dara-KRd 或在標準後加入鞏固
+  </div>
+  <div>
+    ### 5. 自體幹細胞移植（ASCT）
+
+    完成 4 個療程誘導後採集幹細胞，接著高劑量 melphalan（200 mg/m²）後再回輸。住院約 2–3 週。IFM 2009 與 DETERMINATION 試驗顯示誘導後立即 ASCT 可延長 PFS；DETERMINATION 中位 76 個月追蹤下 OS 無顯著差異（延後移植仍是部分病人合理選項）。
+  </div>
+  <div>
+    ### 6. 鞏固與維持
+
+    ASCT 後續 2 個療程鞏固（如 PERSEUS 設計），之後進入維持期：
+    - 標準風險：Dara-R 或 lenalidomide 單藥維持
+    - 高風險：Dara-R ± bortezomib，維持時間更長
+    - 維持持續至疾病惡化、不能耐受、或依臨床判斷停藥
+  </div>
+</Steps>
+
+## 自體幹細胞移植還重要嗎？IFM 2009 vs DETERMINATION
+
+當四聯誘導已能讓 ≥ 75% 病人達到 MRD 陰性，許多病人會問：「我還需要 ASCT 嗎？」
+
+- **IFM 2009 試驗**（Attal NEJM 2017, n = 700）：VRd × 3 → ASCT vs VRd × 8（無 ASCT，惡化時補救 ASCT），4 年 PFS 47% vs 35%（HR 0.65），但 4 年 OS 81% vs 82%（無差異）。
+- **DETERMINATION 試驗**（Richardson NEJM 2022, n = 722）：類似設計（lenalidomide 維持直到惡化），中位 76 個月追蹤下 mPFS 67.5 vs 46.2 個月（HR 0.45），但 mOS 並無差異（HR 1.10, 95% CI 0.73–1.65）。
+
+**結論**：ASCT 仍是 PFS 的最強因子，但若 OS 無差異，且接受四聯誘導的深度反應愈來愈普遍，部分標準風險病人選擇「延後 ASCT」（先採集幹細胞但暫存）是合理的個別化決策。**但對於高風險細胞遺傳學病人，目前資料仍建議盡早 ASCT**。
+
+### Tandem ASCT 還有角色嗎？
+
+**StaMINA 試驗**（Stadtmauer Lancet Oncol 2019, n = 758）比較單次 ASCT、雙次 ASCT、單次 ASCT + VRd 鞏固三種策略，6 年 PFS 與 OS 均無顯著差異。**對標準風險病人，單次 ASCT 已足夠**；雙次 ASCT 僅在歐洲對高風險族群仍有部分中心採用。
+
+## Maintenance：lenalidomide 為什麼非吃不可？
+
+DETERMINATION 試驗的 lenalidomide 維持持續至惡化，中位治療時間達 41.5 個月，是目前最長期的維持數據之一。多項試驗的綜合分析顯示：
+
+- 維持治療延長 PFS：HR 約 0.50（5 年 PFS 增加 ≈ 20%）
+- 維持治療延長 OS：HR 約 0.75（McCarthy meta-analysis, JCO 2017）
+
+### 雙藥維持還是單藥維持？
+
+PERSEUS 試驗的維持期採 daratumumab + lenalidomide（D-R）至少 24 個月，然後依 MRD 結果決定是否停 daratumumab。對於**高風險細胞遺傳學病人**，多數指引建議至少 D-R 雙藥維持；ultra-high risk 病人甚至考慮加入 bortezomib（三藥維持）。
+
+<Callout type="note" title="維持治療的副作用監測">
+Lenalidomide 維持期主要不良反應包括：(1) 嗜中性白血球低下、(2) 第二原發癌（SPM，10 年累積約 10.7%，特別是非黑色素皮膚癌與血液惡性病）、(3) 腹瀉、(4) 疲倦。建議定期完整血球追蹤、皮膚科年檢、與糞便潛血／大腸鏡篩檢。Daratumumab 維持期需注意感染（特別是上呼吸道）、輸注反應、與低 γ 球蛋白血症（必要時 IVIG 補充）。
+</Callout>
+
+## 非移植族群（TIE）：MAIA 試驗的標準
+
+對於高齡或共病無法承受 ASCT 的病人，**MAIA 試驗**（Facon NEJM 2019, n = 737）以 daratumumab + Rd 對 Rd（持續到惡化），mPFS 61.9 vs 34.4 個月（HR 0.55）、5 年 OS 66.3% vs 53.1%（HR 0.68）。**Dara-Rd 是目前 TIE NDMM 的標準**。台灣健保亦給付 Dara-Rd 用於不適合 ASCT 的初診病人。
+
+另一選項為 **Dara-VMP（ALCYONE 試驗）**，主要在歐洲使用，台灣較少採用。**Dara-VRd（IMROZ 試驗）** 亦顯示在 TIE 族群可進一步延長 PFS，但毒性需謹慎。
+
+## 副作用、適應症與禁忌症摘要
+
+### Daratumumab（抗 CD38 單株抗體）
+
+- **常見不良反應**：輸注／注射反應（皮下劑型 ≈ 13%、靜脈劑型 ≈ 50%）、上呼吸道感染、疲倦、咳嗽、嗜中性白血球低下、淋巴球低下、低 γ 球蛋白血症
+- **第 3 級以上感染**：約 25–35%（特別在四聯方案）
+- **特殊監測**：可能干擾輸血前的間接抗球蛋白檢驗（IAT），治療前需通知輸血醫學部建立基線
+- **HBV reactivation 風險**：治療前必驗 HBsAg / anti-HBc，必要時預防性抗病毒
+
+### Bortezomib（蛋白酶體抑制劑）
+
+- **常見不良反應**：周邊神經病變（皮下注射可降低）、血小板低下、胃腸道症狀、帶狀皰疹再活化
+- **預防性 acyclovir**：所有使用 bortezomib 或 daratumumab 的病人建議全程預防性 acyclovir
+
+### Lenalidomide（免疫調節劑）
+
+- **常見不良反應**：嗜中性白血球低下、血栓栓塞（需常規預防性抗凝／aspirin）、腹瀉、疲倦、皮疹
+- **長期風險**：第二原發癌、血栓
+- **腎功能調整**：CrCl 30–60 mL/min 需減量
+
+### Dexamethasone（類固醇）
+
+- **常見不良反應**：失眠、情緒波動、高血糖、感染、骨質疏鬆、白內障、消化性潰瘍
+- 多採每週 40 mg（高齡者 20 mg）並於早晨給予
+
+### 適應症（臨床試驗中或已核准）
+
+- 新診斷有症狀（活動性）多發性骨髓瘤
+- 體能狀態 ECOG 0–2，重要器官功能可耐受
+- 已完成完整 staging 與 FISH 細胞遺傳學
+- 移植適合性已評估（生理年齡、心肺腎功能、共病）
+
+### 一般禁忌症與謹慎使用
+
+- 對任一藥物成分過敏者
+- 嚴重未控制感染（如活動性 HBV、HCV、HIV 未經處理）
+- 嚴重肝功能異常（dexamethasone、lenalidomide）
+- 妊娠與授乳期應避免使用（lenalidomide 為 talidomide 衍生物，致畸風險高，REMS 嚴格遵守）
+- 第 3–4 級周邊神經病變應避免 bortezomib，改用 carfilzomib 或 ixazomib
+- 嚴重心衰竭（carfilzomib 風險高）
+
+<Callout type="warning" title="高風險細胞遺傳學特別注意">
+帶有 del(17p)、t(4;14)、t(14;16)、雙重打擊或 1q amplification 的病人，即便接受四聯誘導與 ASCT，5 年 PFS 仍偏低（< 50%）。建議納入臨床試驗，並於誘導後及早討論強化維持（Dara-R + bortezomib）或合適的 CAR-T／雙特異性抗體臨床試驗。一線即面臨高風險的病人，請主動詢問院內是否有正進行的試驗。
+</Callout>
+
+## 給病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三件事：分期、細胞遺傳學、移植適合度
+
+    開始討論誘導方案前，請確認：(1) R-ISS 或 R2-ISS 分期、(2) FISH 細胞遺傳學是否包含 del(17p)、t(4;14)、t(14;16)、1q gain、(3) 是否被評估為移植適合（TE）或不適合（TIE）。三者直接決定方案選擇。
+  </div>
+  <div>
+    ### 主動詢問：是否使用四聯（Dara-VRd）誘導
+
+    PERSEUS 已是 2024 年以後 TE NDMM 的標準誘導。若主治醫師建議三聯 VRd，可詢問背後考量（如健保給付、共病、感染風險）。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 R-ISS／R2-ISS 分期是多少？細胞遺傳學是否有高風險變異？
+    2. 我屬於移植適合還是移植不適合？年齡／心肺功能哪個是主要考量？
+    3. 誘導方案會用三聯還是四聯？daratumumab 是皮下還是靜脈？
+    4. ASCT 的時機是誘導後立即還是延後？預估住院多久？
+    5. 維持期會用 lenalidomide 單藥還是 D-R 雙藥？預計持續多久？
+    6. 如何監測微量殘存疾病（MRD）？頻率？
+    7. 副作用怎麼預防與監測？（帶狀皰疹、血栓、感染、第二原發癌）
+    8. 健保給付與自費差異？是否有臨床試驗適合我？
+  </div>
+</Steps>
+
+## 健保現況（台灣，2026 年初）
+
+台灣健保對新診斷多發性骨髓瘤的給付逐步追上國際標準：
+
+- **Daratumumab**：目前已給付於新診斷不適合 ASCT 病人（Dara-Rd, MAIA），與部分移植適合族群的誘導治療；給付條件與更新請以健保署最新公告為準。
+- **Bortezomib**：給付於誘導、ASCT 鞏固、與部分維持。
+- **Lenalidomide**：給付於誘導與符合條件之維持治療。
+- **ASCT**：符合條件的初診病人給付一次。
+
+實際給付條件、申請流程、與自費差額請與主治醫師、個案管理師、或健保署官方公告確認。
+
+<Divider />
+
+## 參考文獻
+
+1. Sonneveld P, Dimopoulos MA, Boccadoro M, et al. **Daratumumab, Bortezomib, Lenalidomide, and Dexamethasone for Multiple Myeloma** (PERSEUS). *N Engl J Med.* 2024;390(4):301-313. [doi:10.1056/NEJMoa2312054](https://doi.org/10.1056/NEJMoa2312054)
+2. Facon T, Kumar S, Plesner T, et al. **Daratumumab plus Lenalidomide and Dexamethasone for Untreated Myeloma** (MAIA). *N Engl J Med.* 2019;380(22):2104-2115. [doi:10.1056/NEJMoa1817249](https://doi.org/10.1056/NEJMoa1817249)
+3. Moreau P, Attal M, Hulin C, et al. **Bortezomib, thalidomide, and dexamethasone with or without daratumumab before and after autologous stem-cell transplantation for newly diagnosed multiple myeloma** (CASSIOPEIA). *Lancet.* 2019;394(10192):29-38. [doi:10.1016/S0140-6736(19)31240-1](https://doi.org/10.1016/S0140-6736(19)31240-1)
+4. Attal M, Lauwers-Cances V, Hulin C, et al. **Lenalidomide, Bortezomib, and Dexamethasone with Transplantation for Myeloma** (IFM 2009). *N Engl J Med.* 2017;376(14):1311-1320. [doi:10.1056/NEJMoa1611750](https://doi.org/10.1056/NEJMoa1611750)
+5. Stadtmauer EA, Pasquini MC, Blackwell B, et al. **Autologous transplantation, consolidation, and maintenance therapy in multiple myeloma: results of the BMT CTN 0702 trial** (StaMINA). *Lancet Oncol.* 2019;20(10):1378-1390. [doi:10.1016/S1470-2045(19)30246-3](https://doi.org/10.1016/S1470-2045(19)30246-3)
+6. Richardson PG, Jacobus SJ, Weller EA, et al. **Triplet Therapy, Transplantation, and Maintenance until Progression in Myeloma** (DETERMINATION). *N Engl J Med.* 2022;387(2):132-147. [doi:10.1056/NEJMoa2204925](https://doi.org/10.1056/NEJMoa2204925)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

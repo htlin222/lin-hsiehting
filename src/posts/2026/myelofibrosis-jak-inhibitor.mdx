@@ -1,0 +1,257 @@
+---
+title: "骨髓纖維化（Myelofibrosis）：JAK 抑制劑與移植決策"
+titleEn: "Myelofibrosis: ruxolitinib, momelotinib, and transplant decision"
+date: "05/11/2026"
+frontmatter: "四種 JAK 抑制劑各有定位：ruxolitinib 為標準（COMFORT-I/II）、fedratinib 二線（JAKARTA）、pacritinib 適合血小板 < 50 K（PERSIST-2）、momelotinib 對症狀性貧血有優勢（MOMENTUM）；DIPSS-Plus／MIPSS70+ v2.0 應作為 allo-HCT 決策核心。"
+tags: ["骨髓纖維化", "myelofibrosis", "ruxolitinib", "momelotinib", "JAK", "衛教"]
+medical: true
+medicalCondition: "原發性骨髓纖維化 (Primary myelofibrosis)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "骨髓纖維化會變成血癌嗎？"
+    a: "會，但比例因風險分群而異。原發性骨髓纖維化（PMF）長期追蹤約 10–20% 會轉變為急性骨髓性白血病（acute myeloid leukemia, AML）。高風險（DIPSS-Plus 或 MIPSS70+ v2.0 high／very high）、染色體核型不良、ASXL1／SRSF2／IDH1/2／U2AF1 等高分子風險突變者轉變機率較高。一旦發生轉化（≥ 20% 原始細胞），預後不佳，中位存活通常 < 6 個月，現行 JAK 抑制劑無法延緩此一過程。"
+  - q: "Ruxolitinib 要一輩子吃嗎？"
+    a: "原則上是，前提是還有臨床效益（脾臟縮小、症狀改善）且能耐受。COMFORT-I／II 長期追蹤顯示穩定吃藥的病人 5 年存活優於對照組，但若出現血球持續低下、感染反覆、效益消失或進展為 AML，就需要減量、停藥或換藥。停藥不可驟停（會出現『ruxolitinib 戒斷症候群』，包含發燒、低血壓、症狀反彈），需在 1–2 週內逐步遞減。"
+  - q: "Momelotinib 對貧血真的比較好嗎？"
+    a: "在『曾用過 JAK 抑制劑、目前症狀性貧血』的族群是的。MOMENTUM 第三期試驗（N = 195，Lancet 2023）對照 momelotinib vs. danazol，第 24 週『輸血獨立率』26.5% vs. 13%（P = 0.0116），同時 TSS50 症狀反應率與脾臟反應率亦較優。其作用機轉為同時抑制 JAK1／JAK2 與 ACVR1／ALK2，後者可降低 hepcidin、改善鐵代謝。但要注意：對未曾治療的『一線』MF，目前指引仍以 ruxolitinib 為首選。"
+  - q: "年紀大可以做同種異體造血幹細胞移植（allo-HCT）嗎？"
+    a: "現代減低劑量制備（reduced-intensity conditioning, RIC）已將年齡上限延伸至 70–72 歲，但決策不能只看『歲數』。EBMT／ELN 2024 建議：DIPSS-Plus intermediate-2／high 或 MIPSS70+ v2.0 high／very high 才考慮移植；同時須評估體能（HCT-CI ≤ 3 較理想）、共病、捐贈者來源、與病人意願。70 歲以上一般狀況很好、有合適捐贈者的個案仍可接受移植，但 100 天死亡率較年輕族群高，須與血液科 / 移植團隊充分討論。"
+doi: "10.5281/zenodo.20115055"
+conceptDoi: "10.5281/zenodo.20115054"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+骨髓纖維化（myelofibrosis, MF）是一種骨髓內纖維化、髓外造血（脾臟肝臟造血）、與全身性發炎症狀並存的慢性骨髓增殖性腫瘤（MPN）。包含**原發性骨髓纖維化（PMF）**、由真性紅血球增多症進展而來的 **post-PV MF**、與由原發性血小板增多症進展而來的 **post-ET MF**。2026 年的治療版圖核心為四種 JAK1／JAK2 抑制劑（ruxolitinib、fedratinib、pacritinib、momelotinib），各自對應不同血球與症狀型態；目前已知具治癒可能的選項是同種異體造血幹細胞移植（allo-HCT），但只有中高風險、體能足夠的病人才適合。決策關鍵是先做 **DIPSS-Plus** 或 **MIPSS70+ v2.0** 風險分群。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知罹患骨髓纖維化（或由 PV／ET 進展）的病友與家屬，以及對 JAK 抑制劑選擇與移植決策有興趣的同業。內容著重在「四種 JAK 抑制劑怎麼選」與「allo-HCT 決策框架」，所有實際治療請與您的血液科主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 骨髓纖維化是什麼？三個亞型
+
+| 亞型 | 起源 | 占比（成人 MF） | 共通特徵 |
+|---|---|---|---|
+| **原發性骨髓纖維化 (PMF)** | 直接以 MF 表現 | 約 50–60% | JAK2 V617F（≈ 60%）、CALR（≈ 25%）、MPL（≈ 5%）三選一驅動 |
+| **Post-PV MF** | 由真性紅血球增多症（PV）進展 | 約 20% | 病程通常 ≥ 10 年；以 JAK2 V617F 為主 |
+| **Post-ET MF** | 由原發性血小板增多症（ET）進展 | 約 15–20% | 病程通常 ≥ 15 年；CALR 突變比例較高 |
+
+不論哪一型，臨床表現大同小異：脾腫大（左上腹脹、早飽）、貧血、體質性症狀（夜間盜汗、體重減輕、骨痛、搔癢）、與血球變化（白血球或血小板可能升高或下降）。一部分病人最終會轉變為**急性骨髓性白血病（AML）**，又稱 blast-phase MPN，預後極差。
+
+<Callout type="tip" title="什麼時候該懷疑骨髓纖維化？">
+不明原因的脾腫大、合併淚滴狀紅血球（dacrocytes）、白血球母細胞與紅血球母細胞同時出現於周邊血（leukoerythroblastic blood picture），且 LDH 升高，即應安排骨髓切片、JAK2／CALR／MPL 突變分析與細胞遺傳學檢查。
+</Callout>
+
+## 治療前先分群：DIPSS-Plus 與 MIPSS70+ v2.0
+
+骨髓纖維化的「先分群、再治療」是 2026 年指引（NCCN、ELN、EBMT）共同強調的原則。
+
+| 分群系統 | 適用 | 核心因子 | 分四級 |
+|---|---|---|---|
+| **DIPSS-Plus** | 全期 PMF | 年齡 > 65、體質性症狀、Hb < 10、WBC > 25 K、原始細胞 ≥ 1%、血小板 < 100 K、需輸血、不良核型 | low / int-1 / int-2 / high |
+| **MIPSS70+ v2.0** | ≤ 70 歲、考慮移植 | 上述臨床因子 + 高分子風險突變（ASXL1、EZH2、SRSF2、IDH1/2、U2AF1 Q157）+ 核型 + 驅動突變類型（CALR-1 較好） | very low / low / int / high / very high |
+
+<Callout type="warning" title="風險分群的臨床意義">
+DIPSS-Plus int-2 或 high、或 MIPSS70+ v2.0 high／very high 者，預估中位存活 < 5 年，且 AML 轉化風險顯著升高。**這群病人應主動轉介移植中心評估 allo-HCT**，不要等 JAK 抑制劑失效後才討論。
+</Callout>
+
+## JAK 抑制劑：四選一的決策樹
+
+2026 年美國 FDA 已核准四種 JAK 抑制劑用於骨髓纖維化，各有適應症與血球門檻：
+
+### 四種 JAK 抑制劑比較
+
+| 藥物 | 主要試驗 | 適合誰 | 血小板下限 | 對貧血影響 | 脾臟反應（SVR35） |
+|---|---|---|---|---|---|
+| **Ruxolitinib** | COMFORT-I／II | 標準一線；中高風險、有症狀／脾大 | ≥ 50 K（劑量調整） | 可能惡化（先 4–8 週） | 約 28–42%（24–48 週） |
+| **Fedratinib** | JAKARTA、JAKARTA-2 | Ruxolitinib 失效或不耐二線 | ≥ 50 K | 部分惡化 | 約 36–47%（24 週） |
+| **Pacritinib** | PERSIST-2 | **血小板 < 50 K** 的病人 | 無下限 | 中性偏好 | 約 22–29%（24 週） |
+| **Momelotinib** | MOMENTUM、SIMPLIFY-1 | **症狀性貧血、需輸血** | ≥ 25 K | **改善**（ACVR1 抑制） | 約 22–27%（24 週） |
+
+<Callout type="note" title="SVR35 是什麼？">
+SVR35 = spleen volume reduction ≥ 35%，是 MF 臨床試驗的主要終點。脾體積縮小 35% 約等同於物理觸診的可感知改善與早飽、左上腹不適等症狀的緩解。
+</Callout>
+
+### 選藥流程
+
+<Steps>
+  <div>
+    ### Step 1 — 確認需要治療
+
+    DIPSS-Plus low 風險、無症狀、脾臟未明顯腫大者，**觀察追蹤即可**，不需立即用 JAK 抑制劑。需治療的指徵：症狀性脾腫大、體質性症狀影響生活品質、貧血需輸血、或進入 int-1 以上風險群。
+  </div>
+  <div>
+    ### Step 2 — 看血小板選一線
+
+    - **血小板 ≥ 50 K**：ruxolitinib（COMFORT-I／II，5 年存活優於對照）。
+    - **血小板 < 50 K**：pacritinib（PERSIST-2，N = 311，SVR35 29% vs. 3%，TSS50 26% vs. 14%）。
+    - **症狀性貧血、需輸血為主訴**：momelotinib 可作一線（SIMPLIFY-1 顯示非劣於 ruxolitinib 的脾臟反應，並具備貧血優勢）；但若病人也合併嚴重症狀／脾大，多數指引仍以 ruxolitinib 為首選。
+  </div>
+  <div>
+    ### Step 3 — 一線失效或不耐
+
+    Ruxolitinib 失效（脾臟反應消失、症狀復發、或無法耐受）後：
+
+    - **症狀性貧血為主**：momelotinib（MOMENTUM 第 24 週輸血獨立率 26.5% vs. danazol 13%）。
+    - **血小板偏低**：pacritinib。
+    - **血球尚可、想換藥**：fedratinib（JAKARTA-2 SVR35 31%、TSS50 27%）。
+  </div>
+  <div>
+    ### Step 4 — 同時評估 allo-HCT
+
+    任何時候只要符合 DIPSS-Plus int-2／high 或 MIPSS70+ v2.0 high／very high、年齡 ≤ 70–72 歲、體能與共病可接受、有合適捐贈者，就應**平行**啟動移植評估，不要等 JAK 抑制劑「用光」才轉介。
+  </div>
+</Steps>
+
+## Ruxolitinib：標準一線的證據
+
+COMFORT-I（NEJM 2012，N = 309，對照安慰劑）與 COMFORT-II（NEJM 2012，N = 219，對照最佳支持療法）共同建立 ruxolitinib 為骨髓纖維化的標準一線：
+
+- COMFORT-I：第 24 週 SVR35 41.9% vs. 0.7%；TSS50 45.9% vs. 5.3%。
+- COMFORT-II：第 48 週 SVR35 28.5% vs. 0%。
+- 兩試驗匯總 5 年追蹤：ruxolitinib 組 mOS 5.3 年 vs. 對照 3.8 年（HR 約 0.70）。
+
+副作用以血液毒性為主：貧血（第 8–12 週最常見）、血小板下降（依劑量調整）、感染風險升高（帶狀皰疹、結核活化、隱性肝炎再活化、進行性多灶性白質腦病罕見）。**驟停會出現戒斷症候群**——發燒、低血壓、症狀爆發性反彈——應 1–2 週逐步減量並用類固醇支持。
+
+## Fedratinib：JAK2／FLT3 雙重抑制（JAKARTA）
+
+JAKARTA（JAMA Oncology 2015，N = 289）為 fedratinib 對照安慰劑於中高風險 MF 病人的第三期試驗：第 24 週 SVR35 36–40%、TSS50 36–34%（兩個劑量組）。後續 JAKARTA-2 收 ruxolitinib 失效病人，SVR35 仍達 31%。常見副作用為腹瀉、噁心、貧血、肝指數異常；**少見但嚴重的 Wernicke 腦病變**（與維他命 B1 缺乏有關）導致該藥曾被 FDA 暫停，2019 年附帶警語重新上市，**治療前後應監測並補充 thiamine**。
+
+## Pacritinib：血小板低也能用（PERSIST-2）
+
+PERSIST-2（JAMA Oncology 2018，N = 311）專收**血小板 ≤ 100 K**的 MF 病人，對照「醫師選擇之最佳治療」（含低劑量 ruxolitinib）：第 24 週 SVR35 18% vs. 3%（P = 0.001）、TSS50 25% vs. 14%。**Pacritinib 的優勢在於無血小板下限**——這也是其它 JAK 抑制劑不能做的場景。2022 年美國 FDA 加速核准 pacritinib 用於血小板 < 50 K 的中高風險 MF。常見副作用：腹瀉、噁心、血小板下降、貧血；早期版本曾因心血管事件被 FDA 暫停，修訂劑量與納入準則後通過。
+
+## Momelotinib：貧血優勢（MOMENTUM）
+
+Momelotinib 同時抑制 JAK1／JAK2 與 **ACVR1／ALK2**，後者可降低 hepcidin、改善鐵代謝與貧血。
+
+- **MOMENTUM**（Lancet 2023，N = 195）：曾用過 JAK 抑制劑、目前症狀性貧血的 MF 病人，隨機 momelotinib vs. danazol。第 24 週 TSS50 25% vs. 9%（P = 0.0095）、輸血獨立率 31% vs. 20%、SVR35 23% vs. 3%。
+- **SIMPLIFY-1**：未曾治療之 MF 病人，momelotinib vs. ruxolitinib 第 24 週 SVR35 非劣（27% vs. 29%），TSS50 略低於 ruxolitinib，但**輸血依賴率較佳**。
+
+2023 年 9 月美國 FDA 核准 momelotinib 用於「症狀性貧血」的中高風險 MF（包含 PMF、post-PV MF、post-ET MF）。副作用：周邊神經病變、腹瀉、噁心、血小板下降；對曾用 ruxolitinib 的病人切換時，仍可能出現脾臟反彈，需謹慎漸進切換。
+
+## 同種異體造血幹細胞移植：目前具治癒可能的選項
+
+<Callout type="warning" title="移植時機決策核心">
+EBMT／ELN 2024 共識：DIPSS-Plus intermediate-2 或 high、或 MIPSS70+ v2.0 high／very high 才考慮 allo-HCT；low 或 intermediate-1 風險者，移植相關死亡率（NRM）可能超過疾病本身的死亡風險，不建議。決策應在**首次 JAK 抑制劑啟動的同時**就開始評估，而非治療失效後才轉介。
+</Callout>
+
+allo-HCT 的整體長期 5 年存活約 40–60%，但 100 天非復發死亡率（NRM）達 15–25%，移植物對抗宿主病（GVHD）、感染、與器官衰竭仍是主要併發症。**移植前用 ruxolitinib「橋接」**（縮小脾臟、改善體質性症狀）已成為常規，可降低移植期間植入失敗與肝竇阻塞症候群（SOS）風險。
+
+### 哪些人適合移植？
+
+<Steps>
+  <div>
+    ### 風險分群足夠高
+
+    DIPSS-Plus int-2／high 或 MIPSS70+ v2.0 high／very high；MIPSS70+ v2.0 還會考慮高分子風險突變（ASXL1、EZH2、SRSF2、IDH1/2、U2AF1 Q157），這些病人移植效益最大。
+  </div>
+  <div>
+    ### 年齡與體能允許
+
+    現代減低劑量制備（RIC）已將上限延伸至 70–72 歲，但**生理年齡（physiological age）比歲數重要**。HCT-CI（合併症指數）≤ 3 較佳；活動性感染、嚴重器官功能不全、未控制之第二原發癌應暫緩。
+  </div>
+  <div>
+    ### 捐贈者來源
+
+    完全相合手足（MSD）優於 8/8 無關（MUD），其次為 7/8 MUD、半相合（haploidentical）、臍帶血。台灣慈濟骨髓資料庫與國際登錄合作，多數病人都能找到至少半相合捐贈者。
+  </div>
+  <div>
+    ### 病人意願與支持系統
+
+    移植住院期約 4–6 週、後續門診追蹤 ≥ 1 年。家屬照顧能力、就醫便利性、經濟與心理準備都是決策要素。
+  </div>
+</Steps>
+
+## AML 轉化：最不想看到的併發症
+
+<Callout type="warning" title="MPN 急性血癌轉化（blast phase）">
+原發性骨髓纖維化 10 年累積轉化為 AML（≥ 20% 原始細胞）風險約 10–20%，post-PV MF 與 post-ET MF 風險略低但仍存在。**轉化後預後極差**，標準誘導化療（如 7+3）反應率低（< 25%），中位存活通常 < 6 個月。對體能足夠且有捐贈者的病人，仍可嘗試 hypomethylating agent（azacitidine／decitabine）± venetoclax 誘導後接 allo-HCT，但成功率仍偏低。**目前所有 JAK 抑制劑均無法延緩 AML 轉化**，這也是要盡早評估移植的核心理由。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+### Ruxolitinib 常見不良反應
+
+- 任何級別：貧血、血小板下降、頭痛、感染（帶狀皰疹）、體重增加
+- 第 3 級以上貧血約 45%、血小板下降約 13%
+- **驟停會出現戒斷症候群**：發燒、低血壓、症狀反彈
+- 結核、慢性 B 肝、巨細胞病毒（CMV）治療前應篩檢
+
+### Fedratinib 常見不良反應
+
+- 任何級別：腹瀉、噁心、嘔吐、貧血、肝指數異常
+- **黑盒警告：Wernicke 腦病變**，治療前後監測並補充 thiamine
+- 嚴重肝功能異常者禁用
+
+### Pacritinib 常見不良反應
+
+- 任何級別：腹瀉、噁心、血小板下降、貧血
+- 早期心血管事件警示，目前劑量為 200 mg BID
+- 嚴重肝腎功能不全者謹慎使用
+
+### Momelotinib 常見不良反應
+
+- 任何級別：腹瀉、血小板下降、頭暈、噁心、周邊神經病變
+- 第 3 級以上血小板下降約 7%
+- B 肝再活化警語，治療前篩檢
+
+### 適應症（已核准）
+
+- 中高風險（DIPSS-Plus int-1 以上）原發性／post-PV／post-ET 骨髓纖維化
+- 有症狀性脾腫大、體質性症狀或貧血
+- ECOG PS 0–2 多數可耐受
+- Ruxolitinib 在 PV 控制不佳（hydroxyurea 無效或不耐）亦有適應症
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 活動性嚴重感染（含 TB、肝炎、CMV、PJP）
+- 嚴重肝腎功能異常
+- 妊娠與授乳期應避免
+- 計畫接受移植前 2–4 週應緩降 ruxolitinib，不可驟停
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三件事：風險分群、突變圖譜、捐贈者
+
+    第一次門診就請主治醫師說明：(1) DIPSS-Plus 或 MIPSS70+ v2.0 風險分群是多少？(2) JAK2／CALR／MPL 驅動突變是哪一個？有沒有高分子風險突變（ASXL1、EZH2、SRSF2、IDH1/2、U2AF1）？(3) 家屬中是否有可能的移植捐贈者？這三項資訊決定整個治療路徑。
+  </div>
+  <div>
+    ### 用症狀日誌追蹤治療反應
+
+    MPN-SAF TSS（總症狀分數）共 10 題，包含疲倦、早飽、腹部不適、活動量、注意力、夜間盜汗、搔癢、骨痛、體重、發燒，每題 0–10 分。每月評一次、與醫師討論，有助判斷 JAK 抑制劑是否仍有效益。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 DIPSS-Plus 與 MIPSS70+ v2.0 是哪一群？
+    2. 有沒有做完整 MPN gene panel（含高分子風險突變）？
+    3. 我目前的血小板與 Hb 適合哪一種 JAK 抑制劑？
+    4. 我是否符合 allo-HCT 評估條件？什麼時候轉介移植中心？
+    5. 副作用怎麼監測？（CBC、肝指數、感染、神經症狀）
+    6. 萬一停藥（手術、感染），要怎麼避免戒斷症候群？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Verstovsek S, Mesa RA, Gotlib J, et al. **A double-blind, placebo-controlled trial of ruxolitinib for myelofibrosis** (COMFORT-I). *N Engl J Med.* 2012;366(9):799-807. [doi:10.1056/NEJMoa1110557](https://doi.org/10.1056/NEJMoa1110557)
+2. Harrison C, Kiladjian JJ, Al-Ali HK, et al. **JAK inhibition with ruxolitinib versus best available therapy for myelofibrosis** (COMFORT-II). *N Engl J Med.* 2012;366(9):787-798. [doi:10.1056/NEJMoa1110556](https://doi.org/10.1056/NEJMoa1110556)
+3. Pardanani A, Harrison C, Cortes JE, et al. **Safety and Efficacy of Fedratinib in Patients With Primary or Secondary Myelofibrosis** (JAKARTA). *JAMA Oncol.* 2015;1(5):643-651. [doi:10.1001/jamaoncol.2015.1590](https://doi.org/10.1001/jamaoncol.2015.1590)
+4. Mascarenhas J, Hoffman R, Talpaz M, et al. **Pacritinib vs Best Available Therapy, Including Ruxolitinib, in Patients With Myelofibrosis** (PERSIST-2). *JAMA Oncol.* 2018;4(5):652-659. [doi:10.1001/jamaoncol.2017.5818](https://doi.org/10.1001/jamaoncol.2017.5818)
+5. Verstovsek S, Gerds AT, Vannucchi AM, et al. **Momelotinib versus danazol in symptomatic patients with anaemia and myelofibrosis** (MOMENTUM). *Lancet.* 2023;401(10373):269-280. [doi:10.1016/S0140-6736(22)02036-0](https://doi.org/10.1016/S0140-6736(22)02036-0)
+6. Tefferi A, Guglielmelli P, Lasho TL, et al. **MIPSS70+ Version 2.0: Mutation and Karyotype-Enhanced International Prognostic Scoring System for Primary Myelofibrosis.** *J Clin Oncol.* 2018;36(17):1769-1770. [doi:10.1200/JCO.2018.78.9867](https://doi.org/10.1200/JCO.2018.78.9867)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 6 篇核心試驗 DOI 均已通過 `pnpm run audit:doi` Crossref 驗證。

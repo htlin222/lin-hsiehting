@@ -1,0 +1,248 @@
+---
+title: "早期肝癌怎麼治？手術切除、消融、TACE、移植選擇邏輯"
+titleEn: "Early-stage HCC: surgery vs ablation vs TACE vs transplant"
+date: "05/11/2026"
+frontmatter: "早期肝細胞癌的治療不只看腫瘤大小，肝功能（Child-Pugh、ALBI）、門脈高壓、肝硬化程度同樣決定方案。本文依 BCLC 2022 整理手術切除、射頻消融、TACE 與肝移植的選擇邏輯，附 IMbrave050 輔助治療新證據。"
+tags: ["肝癌", "HCC", "手術", "消融", "TACE", "BCLC", "衛教"]
+medical: true
+medicalCondition: "早期肝細胞癌 (Early-stage hepatocellular carcinoma, HCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "肝癌 3 公分要開刀還是燒（射頻消融）？"
+    a: "≤ 3 公分的單顆 HCC，若肝功能保留（Child-Pugh A）、無門脈高壓且位置不貼近大血管或膽管，手術切除與射頻消融（RFA）在 5 年整體存活上接近（meta-analysis 顯示無顯著差異），但切除的局部復發率較低。對於肝硬化較重、共病多、或腫瘤位於肝實質深處不易切除者，RFA 是合理首選。實務上由肝外科、肝臟內科與影像介入科多專科討論後決定。"
+  - q: "BCLC 分期是什麼？跟 TNM 不一樣嗎？"
+    a: "BCLC（Barcelona Clinic Liver Cancer）是肝癌專用的分期系統，整合三個面向：(1) 腫瘤負荷（顆數、大小、是否侵犯血管或遠端轉移）、(2) 肝功能（Child-Pugh、ALBI）、(3) 體能狀態（ECOG PS），並直接對應治療建議。分為 0（極早期）、A（早期）、B（中期）、C（晚期）、D（末期）。TNM 只描述腫瘤本身，BCLC 多了肝功能與體能狀態，臨床決策更實用。2022 年更新版進一步加入 multiparametric 個別化建議。"
+  - q: "肝硬化會怎麼影響治療選擇？"
+    a: "肝硬化決定病人能承受多少肝臟切除。Child-Pugh A 通常可考慮切除或移植；Child-Pugh B 多走向消融、TACE 或全身治療；Child-Pugh C 則考慮移植或最佳支持治療。另外，門脈高壓（脾腫大、血小板 < 100,000、食道靜脈瘤）會大幅升高切除後肝衰竭風險，是 BCLC 將病人從「可切除」推向「消融 / 移植」的關鍵因素。"
+  - q: "米蘭標準與肝移植是什麼？"
+    a: "Milan criteria 是 Mazzaferro 等於 1996 年 NEJM 發表的肝移植篩選標準：單顆 ≤ 5 公分，或最多 3 顆且每顆 ≤ 3 公分，且無大血管侵犯與遠端轉移。符合者 4 年存活約 75%、無復發存活約 83%，是全球肝移植列名的基本門檻。後來 UCSF 提出較寬鬆的標準（單顆 ≤ 6.5 公分，或最多 3 顆且每顆 ≤ 4.5 公分、合計 ≤ 8 公分），在部分中心也被接受。"
+doi: "10.5281/zenodo.20115041"
+conceptDoi: "10.5281/zenodo.20115040"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+早期肝細胞癌（early-stage hepatocellular carcinoma, HCC）的治療不能只看腫瘤大小，**肝功能（Child-Pugh、ALBI）、門脈高壓有無、肝硬化嚴重度同樣決定方案**。依 BCLC 2022 更新版（Reig et al., J Hepatol 2022），極早期（BCLC 0）首選消融，早期（BCLC A）依肝功能與門脈壓力在切除、消融、移植之間選擇；中期（BCLC B）走 TACE 或系統性治療。2023 年 IMbrave050 試驗（Qin et al., Lancet 2023）首次證實 atezolizumab + bevacizumab 作為**高復發風險切除/消融後輔助治療**可顯著延長無復發存活，使早期 HCC 治療正式進入「術後免疫輔助」時代。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知早期肝癌、面對手術 / 消融 / 移植 / TACE 多個選項的病友與家屬，以及想複習 BCLC 2022 分期邏輯與 IMbrave050 影響的同業。所有實際治療決策請與您的肝臟團隊（肝外科、肝臟內科、影像介入科、移植科）共同討論。
+</Callout>
+
+<Divider />
+
+## BCLC 2022 分期：腫瘤、肝功能、體能狀態三軸並行
+
+BCLC（Barcelona Clinic Liver Cancer）是肝癌專用、能直接對應治療策略的分期系統，2022 年更新版（Reig 等）整合三軸資訊：
+
+1. **腫瘤負荷**：顆數、最大徑、是否侵犯大血管、是否遠端轉移
+2. **肝功能**：Child-Pugh 分級、ALBI score、門脈高壓有無
+3. **體能狀態**：ECOG performance status
+
+下表為主要分期與對應的治療策略（簡化版）：
+
+| BCLC 分期 | 腫瘤條件 | 肝功能 / PS | 主要治療 | 5 年整體存活（典型） | 適合誰 |
+|---|---|---|---|---|---|
+| **0（極早期）** | 單顆 ≤ 2 cm | Child A、PS 0 | 消融（RFA / MWA）首選；亦可切除 | 70–80% | 早期偵測、肝功能佳 |
+| **A（早期）** | 單顆 ≤ 5 cm，或 ≤ 3 顆且 ≤ 3 cm | Child A–B、PS 0 | 切除 / 消融 / 移植 | 50–70% | 視門脈壓力、腫瘤位置、共病決定 |
+| **B（中期）** | 多發、超過 BCLC A 範圍 | Child A–B、PS 0 | TACE（首選）或系統性治療 | 30–50% | 肝內多發、無血管侵犯 |
+| **C（晚期）** | 大血管侵犯或遠端轉移 | Child A–B、PS 1–2 | 系統性治療（免疫 + VEGF / TKI） | 15–25% | 肉眼可見之 portal vein 侵犯或轉移 |
+| **D（末期）** | 不限 | Child C、PS 3–4 | 最佳支持治療、移植評估 | < 10% | 肝衰竭末期 |
+
+<Callout type="tip" title="ALBI score 補位 Child-Pugh">
+Child-Pugh 含主觀的腹水與肝性腦病評估，跨評估者一致性不佳。ALBI score（僅用 albumin 與 bilirubin）由 Johnson 等於 2015 年提出，**僅靠兩項客觀檢驗值**就能將 Child A 病人進一步分成 ALBI 1（更佳）與 ALBI 2（較差），對術後肝衰竭與長期存活的預測力優於 Child-Pugh 單獨使用。2022 年 BCLC 更新版正式把 ALBI 列入決策補位工具。
+</Callout>
+
+## 四個治療選項一次看懂
+
+早期 HCC 的四大主軸：手術切除、消融、TACE、肝移植。
+
+| 治療 | 適合腫瘤 | 適合肝功能 | 5 年 OS（典型） | 3 年復發率 | 侵入性 |
+|---|---|---|---|---|---|
+| **手術切除（resection）** | 單顆、可切、無大血管侵犯 | Child A、無門脈高壓、ICG R15 ≤ 15% | 50–70% | ≈ 50% | 大手術，住院 5–10 天 |
+| **射頻 / 微波消融（RFA / MWA）** | ≤ 3 cm（≤ 3 顆）、不貼近大血管或膽管 | Child A–B | ≤ 3 cm 與切除接近 | 與切除接近，局部復發略高 | 經皮、住院 1–3 天 |
+| **TACE（經動脈化療栓塞）** | 多發、無血管侵犯、肝內為主 | Child A、部分 Child B | 約 30–50%（中期） | 高（多用作橋接） | 經血管導管 |
+| **肝移植（liver transplant）** | 符合 Milan / UCSF 標準 | 任何 Child 級別（含 C） | 65–75%（Milan）（5 年無復發 70%+） | 低（< 15%） | 需等待者、終身免疫抑制 |
+
+<Callout type="warning" title="跨研究比較的限制">
+不同治療的 5 年 OS 數字來自不同的觀察性世代與隨機試驗，**族群、地區、肝炎病因（HBV vs. HCV vs. NASH）、腫瘤大小分佈、後續挽救治療均不同**。上表僅供概念性對照，不能用於跨方法直接排序。實際決策需依個別病人 BCLC、Child-Pugh、ALBI、共病、可及性綜合判斷。
+</Callout>
+
+## 手術切除：適合誰？
+
+依 AASLD 2023 指引（Singal et al., Hepatology 2023）與 BCLC 2022：
+
+- **腫瘤條件**：單顆、可解剖性切除、無大血管侵犯、無遠端轉移
+- **肝功能**：Child-Pugh A，**無臨床顯著門脈高壓**（HVPG ≥ 10 mmHg 屬高風險）
+- **未來肝餘量（FLR）**：非肝硬化者 FLR ≥ 30% 體積；肝硬化者 FLR ≥ 40%
+- **ICG R15**：≤ 15%（部分中心更嚴格）
+- **體能狀態**：ECOG PS 0–1，可耐受全身麻醉與大手術
+
+切除的優勢是**可取得完整病理**（grade、microvascular invasion, MVI、衛星結節），對日後復發風險評估有用。劣勢是 3 年內復發率約 50%，多數為肝內新生病灶，反映背景肝硬化的「整體癌變傾向」（field effect）。
+
+## 消融（RFA / MWA）：什麼時候比手術划算？
+
+Cucchetti 等 2013 J Hepatol 的 Markov 模型分析（系統性回顧與成本效益比較）顯示，**單顆 ≤ 2 cm 的 HCC，RFA 與切除在 quality-adjusted life expectancy 上接近**；2–3 cm 則切除略勝，但差距在中度肝硬化時縮小。後續多項 RCT 與 meta-analysis 結論一致：**≤ 3 cm 是消融的甜蜜點**。
+
+消融的優勢與劣勢：
+
+- **優勢**：經皮（超音波或 CT 引導），住院 1–3 天；對肝功能影響小，重複施行容易；2 cm 以下與切除 OS 接近
+- **劣勢**：> 3 cm 局部復發率明顯上升；貼近大血管會被血流「散熱」（heat sink effect）導致消融不完全；貼近膽管或腸道有併發症風險
+- **微波消融（MWA）相對 RFA**：升溫更快、可達更大 ablation zone，部分研究顯示 3–4 cm 病灶優於 RFA
+
+## TACE：早期 HCC 的角色
+
+TACE（trans-arterial chemoembolization）是 BCLC B（中期，多發無血管侵犯）的首選局部治療。在早期 HCC（BCLC 0/A）的角色多為：
+
+- **橋接（bridging）**：等待肝移植期間控制腫瘤、避免 dropout
+- **降階（downstaging）**：將超出 Milan 標準的腫瘤降至 Milan 範圍以利移植
+- **替代方案**：當病灶位置不利切除或消融、或病人不適合手術時
+
+TACE 在真正的 BCLC A 並不是首選，因為切除與消融的長期存活通常較佳。
+
+## 肝移植：Milan 標準與 UCSF 擴大標準
+
+Mazzaferro 等於 1996 年 NEJM 發表的 **Milan criteria** 是全球肝移植列名的基本門檻：
+
+- **單顆 ≤ 5 cm**，或
+- **最多 3 顆且每顆 ≤ 3 cm**
+- 且**無大血管侵犯與遠端轉移**
+
+該世代 4 年整體存活約 75%、無復發存活約 83%。UCSF 於 2001 年提出擴大標準（單顆 ≤ 6.5 cm，或最多 3 顆且每顆 ≤ 4.5 cm、合計 ≤ 8 cm），在部分中心結果與 Milan 接近，但 down-staging 後再移植的策略已成更主流的「擴大適應症」方式。
+
+肝移植的核心優勢是**同時治療腫瘤與背景肝硬化**，3 年復發率可降至 < 15%。劣勢是受限於器官供給、需要長時間等待（dropout 風險），以及終身免疫抑制治療帶來的感染、腎功能下降與第二原發癌風險。
+
+## 切除 / 消融後復發：50% 在 3 年內
+
+即使達到完全切除（R0）或完全消融，HCC 的 3 年復發率仍約 50%，多為肝內新生病灶。這帶來兩個臨床問題：
+
+1. **追蹤頻率**：AASLD 2023 建議術後前兩年每 3 個月做 dynamic CT / MRI 加 AFP；之後改為每 6 個月。
+2. **能否輔助治療降低復發？** — 過去 sorafenib（STORM 試驗）失敗，曾讓「術後輔助」陷入空白十年。直到 IMbrave050 才出現第一個正面結果。
+
+### IMbrave050：免疫 + VEGF 輔助治療
+
+<Callout type="tip" title="IMbrave050（Qin et al., Lancet 2023）">
+**設計**：N = 668，高復發風險（大顆、多發、MVI、低分化）的 HCC 病人，切除或消融達完全反應後 1:1 隨機分派 atezolizumab 1200 mg q3w + bevacizumab 15 mg/kg q3w × 1 年 vs. 主動監測。
+
+**主要終點**：獨立中央審查之 recurrence-free survival（RFS）。
+中位追蹤 17.4 個月，**RFS HR 0.72（95% CI 0.56–0.93, P = 0.012）**；12 個月 RFS 78% vs. 65%。OS 數據尚未成熟。
+第 3/4 級不良反應 41%，主要為高血壓、蛋白尿、AST/ALT 上升。
+**美國 FDA 尚未核准此適應症**；中國 NMPA 於 2024 年核准。
+</Callout>
+
+**EMERALD-2**（durvalumab ± bevacizumab vs. 安慰劑於切除 / 消融 / TACE 後輔助）為平行設計大型試驗，主要終點亦為 RFS，已於 2024 年 ESMO 發表 durvalumab + bevacizumab 組 RFS 顯著延長（HR 0.72，與 IMbrave050 數值相近）；單獨 durvalumab 組亦達顯著但 effect size 較小。兩試驗合起來，**支持高復發風險早期 HCC 在切除 / 消融後加上「免疫 + 抗血管」輔助治療**已成新興標準，惟健保 / 藥證在各國仍在跟進。
+
+## 治療決策流程（早期 HCC, BCLC 0/A）
+
+<Steps>
+  <div>
+    ### 確認分期與肝功能
+
+    完成 dynamic CT 或 MRI（雙時相肝臟 contrast）、AFP / PIVKA-II、肝功能（Albumin、Bilirubin、INR、Platelet）。算出：
+    - **Child-Pugh 分級**（A / B / C）
+    - **ALBI score / grade**
+    - **是否有臨床顯著門脈高壓**（脾大、血小板 < 100 K、食道靜脈瘤、HVPG ≥ 10 mmHg）
+  </div>
+  <div>
+    ### 評估可切除性與肝餘量
+
+    可切除性由肝外科判斷：腫瘤位置（解剖性切除是否可行）、與大血管 / 膽管的關係、未來肝餘量。肝硬化者 FLR ≥ 40%、非肝硬化者 ≥ 30%。ICG R15 ≤ 15% 為一般可耐受門檻。
+  </div>
+  <div>
+    ### 決定主要治療
+
+    - **單顆 ≤ 2 cm（BCLC 0）**：消融首選，亦可切除。
+    - **單顆 ≤ 5 cm 或 ≤ 3 顆 ≤ 3 cm（BCLC A）、Child A、無門脈高壓**：手術切除為主，亦可考慮消融或移植。
+    - **同上但有門脈高壓 / Child B**：消融或移植優先。
+    - **符合 Milan 標準**：與移植科討論是否進入移植 list；等待期可用 TACE / 消融做 bridging。
+  </div>
+  <div>
+    ### 高復發風險者討論輔助治療
+
+    若切除標本顯示 MVI、多發、大顆、低分化、不規則邊緣等 IMbrave050 / EMERALD-2 定義的高復發風險，**主動與主治醫師討論術後免疫 + 抗血管藥輔助治療**（atezolizumab + bevacizumab 或 durvalumab + bevacizumab），權衡 RFS 益處與高血壓 / 出血 / 蛋白尿等不良反應。
+  </div>
+  <div>
+    ### 規劃長期追蹤
+
+    AASLD 2023 建議前兩年每 3 個月 dynamic CT / MRI + AFP；之後每 6 個月。早期偵測復發是延長存活的關鍵，因為再切除、再消融、移植在復發初期都還是可行選項。
+  </div>
+</Steps>
+
+## 適應症、禁忌症與不良反應
+
+### 手術切除
+
+- **適應症**：BCLC 0 / A，Child A，無門脈高壓，FLR 足夠，ECOG 0–1
+- **禁忌症**：Child C；大血管侵犯（除特定中心經選擇之 PVTT 病例）；遠端轉移；嚴重共病不耐手術
+- **主要併發症**：術後肝衰竭（5–10%）、膽漏、腹水、感染；30 天死亡率 1–3%
+
+### 射頻 / 微波消融
+
+- **適應症**：≤ 3 cm（≤ 3 顆）、不貼近大血管或腸道、Child A–B
+- **禁忌症**：腫瘤過大或多發、貼近膽道或腸道、無法經皮接近、嚴重凝血異常
+- **主要併發症**：發燒、疼痛、肝包膜下血腫、罕見之膽道損傷、針道種植（< 1%）
+
+### TACE
+
+- **適應症**：BCLC B 中期；早期病人之 bridging / downstaging
+- **禁忌症**：Child C；門脈主幹完全阻塞（非癌栓）；嚴重肝外轉移；造影劑過敏；腎功能差
+- **主要併發症**：post-embolization syndrome（發燒、噁心、右上腹痛）、肝功能急性惡化、罕見之膽汁瘤、肝衰竭
+
+### 肝移植
+
+- **適應症**：符合 Milan 或可 down-staging 至 Milan、Child B–C 或 Child A 合併嚴重門脈高壓
+- **禁忌症**：肝外轉移、大血管侵犯、嚴重共病、活動性感染、不能配合終身免疫抑制
+- **主要併發症**：手術期死亡、急性 / 慢性排斥、感染、腎功能下降、第二原發癌、移植後 HCC 復發（< 15%）
+
+### IMbrave050 輔助治療（atezolizumab + bevacizumab）
+
+- **常見不良反應**：高血壓（30%+）、蛋白尿、AST/ALT 上升、疲倦、甲狀腺異常
+- **嚴重不良反應**：嚴重出血（特別是有食道靜脈瘤者）、腸穿孔、免疫相關肺炎 / 肝炎 / 大腸炎
+- **使用前**：建議完成胃鏡評估食道靜脈瘤，必要時先處理；確認蛋白尿與血壓基線
+
+<Callout type="warning" title="若同時帶 B 肝或 C 肝">
+台灣大多數 HCC 帶 HBV 或 HCV 背景。**任何 HCC 治療前後都應確認抗病毒治療已啟動或維持**：HBV → entecavir 或 TAF；HCV → DAA 治癒性療法。未控制的病毒複製會升高肝功能惡化、TACE 後肝衰竭、與術後新生 HCC 風險。台灣 KASL 與 AASLD 指引皆強調此點。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 看清楚自己的 BCLC 與 Child-Pugh
+
+    請主治醫師明確告訴你：腫瘤目前是 BCLC 0、A、B、C 或 D？Child-Pugh 是 A、B、C？有沒有臨床顯著門脈高壓？這三項決定了你能用哪些治療。
+  </div>
+  <div>
+    ### 多專科團隊（MDT）討論不是奢侈品
+
+    早期 HCC 的最佳治療常常不是「最積極」而是「最適合」的方案。理想流程是肝外科、肝臟內科、影像介入科、放射科、（必要時）移植科、腫瘤內科共同討論。台灣大型醫院多設有 HCC MDT meeting，請主治醫師排入討論。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 BCLC 是哪一期？Child-Pugh 與 ALBI 多少？有沒有門脈高壓？
+    2. 我的腫瘤可不可以切？理由是肝功能？位置？還是門脈高壓？
+    3. 如果不開刀，消融、TACE、移植分別是什麼角色？
+    4. 我符合 Milan 標準嗎？是否考慮排移植 list 或先做 down-staging？
+    5. 切除後高復發風險嗎？要不要討論 IMbrave050 那類的術後輔助治療？
+    6. 病毒性肝炎抗病毒治療開始了嗎？
+    7. 術後追蹤頻率、項目是什麼？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Reig M, Forner A, Rimola J, et al. **BCLC strategy for prognosis prediction and treatment recommendation: The 2022 update.** *J Hepatol.* 2022;76(3):681-693. [doi:10.1016/j.jhep.2021.11.018](https://doi.org/10.1016/j.jhep.2021.11.018)
+2. Singal AG, Llovet JM, Yarchoan M, et al. **AASLD Practice Guidance on prevention, diagnosis, and treatment of hepatocellular carcinoma.** *Hepatology.* 2023;78(6):1922-1965. [doi:10.1097/HEP.0000000000000466](https://doi.org/10.1097/HEP.0000000000000466)
+3. Mazzaferro V, Regalia E, Doci R, et al. **Liver transplantation for the treatment of small hepatocellular carcinomas in patients with cirrhosis.** *N Engl J Med.* 1996;334(11):693-699. [doi:10.1056/NEJM199603143341104](https://doi.org/10.1056/NEJM199603143341104)
+4. Qin S, Chen M, Cheng AL, et al. **Atezolizumab plus bevacizumab versus active surveillance in patients with resected or ablated high-risk hepatocellular carcinoma (IMbrave050): a randomised, open-label, multicentre, phase 3 trial.** *Lancet.* 2023;402(10415):1835-1847. [doi:10.1016/S0140-6736(23)01796-8](https://doi.org/10.1016/S0140-6736(23)01796-8)
+5. Llovet JM, Ricci S, Mazzaferro V, et al. **Sorafenib in advanced hepatocellular carcinoma** (SHARP). *N Engl J Med.* 2008;359(4):378-390. [doi:10.1056/NEJMoa0708857](https://doi.org/10.1056/NEJMoa0708857)
+6. Cucchetti A, Piscaglia F, Cescon M, et al. **Cost-effectiveness of hepatic resection versus percutaneous radiofrequency ablation for early hepatocellular carcinoma.** *J Hepatol.* 2013;59(2):300-307. [doi:10.1016/j.jhep.2013.02.005](https://doi.org/10.1016/j.jhep.2013.02.005)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

@@ -1,0 +1,214 @@
+---
+title: "慢性骨髓性白血病（CML）：吃 TKI 標靶可以停藥嗎？"
+titleEn: "Chronic myeloid leukemia in 2026: TKI choice and treatment-free remission"
+date: "05/11/2026"
+frontmatter: "CML 在 imatinib 等 BCR::ABL1 TKI 之後 10 年總存活率 > 80%；長期穩定達到 MR4.5 ≥ 2 年的病人，可在嚴密分子監測下嘗試停藥（TFR）。EURO-SKI 顯示 6 個月分子復發約 50%，但多數重啟 TKI 仍能恢復深度反應。本文整理 TKI 選擇邏輯、停藥條件與 asciminib 的位置。"
+tags: ["CML", "慢性骨髓性白血病", "imatinib", "asciminib", "TFR", "衛教"]
+medical: true
+medicalCondition: "慢性骨髓性白血病 (Chronic myeloid leukemia, CML)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "CML 算癌症嗎？"
+    a: "算。慢性骨髓性白血病（CML）是骨髓造血幹細胞的惡性腫瘤，源自 9 號與 22 號染色體互換產生的 BCR::ABL1 融合基因，導致顆粒球系增生。但與多數實體癌不同，慢性期 CML 在 TKI 治療下 10 年總存活率 > 80%（IRIS 研究），多數病人可長期維持與健康族群相近的存活與生活品質，因此被視為慢性病化的血液惡性腫瘤。"
+  - q: "imatinib 跟 dasatinib／nilotinib／bosutinib 怎麼選？"
+    a: "第一線可用 imatinib 或第二代 TKI（dasatinib、nilotinib、bosutinib）。DASISION、ENESTnd、BFORE 顯示第二代 TKI 達深度分子反應（MR4.5）較快、3 個月 BCR::ABL1 ≤ 10% 比例較高，對想嘗試停藥（TFR）的年輕病人較有利。但 10 年總存活率與 imatinib 相當，且 imatinib 副作用較溫和、便宜、長期經驗最完整。實務上會依年齡、共病（心血管、肺、糖尿病）、TFR 意願與健保給付綜合決定。"
+  - q: "達到什麼條件才能停藥？"
+    a: "ELN 2020 與 NCCN 共識：(1) 慢性期 CML，未曾進入加速期或急變期；(2) 接受 TKI 治療 ≥ 5 年（第二代 TKI 可放寬到 4 年）；(3) 持續達到深度分子反應 MR4 或 MR4.5 ≥ 2 年；(4) 有定期且可靠的 BCR::ABL1 PCR 監測管道（停藥後第一年每月一次）；(5) 病人理解復發機率與重啟 TKI 的安排。符合條件後第一年約 50% 病人會分子復發，但重啟 TKI 後絕大多數仍能再次達到深度反應。"
+  - q: "asciminib 是什麼新藥？什麼時候會用到？"
+    a: "Asciminib 是首個 STAMP（specifically targeting ABL myristoyl pocket）抑制劑，作用機轉與傳統 ATP-binding site TKI 不同，因此對許多 ATP-binding site 抗藥突變（包含 T315I 在較高劑量下）仍有效。ASCEMBL 第三期試驗中，asciminib 對曾接受 ≥ 2 線 TKI 的病人，24 週主要分子反應率 25.5% vs. bosutinib 13.2%（P = 0.029），且副作用相對輕。目前位置主要在第三線及之後；2024 年起亦有第一線（ASC4FIRST）數據。"
+doi: "10.5281/zenodo.20115031"
+conceptDoi: "10.5281/zenodo.20115030"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+慢性骨髓性白血病（Chronic myeloid leukemia, CML）是現代精準腫瘤學最早、也最成功的範例。自 2001 年 imatinib 上市後，CML 從一個 5 年存活率不到 30%、必須仰賴骨髓移植的疾病，變成多數病人能透過一天一顆口服標靶藥控制的慢性病——IRIS 研究 10 年追蹤顯示總存活率 83.3%。2010 年之後問世的第二代 TKI（dasatinib、nilotinib、bosutinib）讓更多病人能更快達到深度分子反應（deep molecular response, DMR），開啟「停藥（treatment-free remission, TFR）」的可能；2021 年的 asciminib 則為 ATP-binding site 抗藥的病人提供另一條路。本文整理 BCR::ABL1 機轉、五種 TKI 的選擇邏輯、ELN 2020 milestones、以及停藥的條件與風險。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知 CML 診斷、想了解第一線 TKI 怎麼選的病友與家屬，以及正在考慮停藥（TFR）的長期 CML 追蹤者。所有實際治療與停藥決策請與您的血液腫瘤科醫師討論。
+</Callout>
+
+<Divider />
+
+## 什麼是 BCR::ABL1？為什麼 TKI 有效？
+
+CML 的核心病變是 9 號染色體（ABL1）與 22 號染色體（BCR）發生互換，形成俗稱費城染色體（Philadelphia chromosome）的 t(9;22)(q34;q11)。融合基因 **BCR::ABL1** 編碼的融合蛋白具有持續活化的酪胺酸激酶（tyrosine kinase）功能，驅動骨髓中顆粒球系幹／祖細胞不受控增生，臨床上表現為慢性期（chronic phase, CP）的白血球大幅升高、脾腫大、疲倦。
+
+TKI（tyrosine kinase inhibitor）就是針對這個融合激酶設計的口服小分子標靶藥。imatinib 是第一個被開發出來的選擇性 ABL TKI，1998 年進入臨床、2001 年獲美國 FDA 核准，徹底改變了 CML 的命運。
+
+<Callout type="tip" title="三個分期">
+CML 分為慢性期（CP）、加速期（accelerated phase, AP）、急變期（blast phase, BP）。約 90% 病人於 CP 時診斷，TKI 反應最好。AP／BP 進展速度快、TKI 反應差，仍可能需要造血幹細胞移植（HSCT）。
+</Callout>
+
+## TKI 怎麼選？五種藥物的比較
+
+目前台灣健保給付下，第一線 TKI 主要有 imatinib、dasatinib、nilotinib、bosutinib；asciminib 多用在後線（亦有一線試驗 ASC4FIRST 數據）。各藥物的特徵：
+
+| 藥物 | 世代 | 常見一日劑量 | 達 MR4.5 速率 | 主要副作用 | 一般族群定位 |
+|---|---|---|---|---|---|
+| **Imatinib** | 第一代 | 400 mg QD | 較慢（5 年 MR4.5 ≈ 32%） | 水腫、肌肉痙攣、噁心、皮疹、低血球 | 高齡、心血管共病、不急著追 DMR、不打算停藥者 |
+| **Dasatinib** | 第二代 | 100 mg QD | 較快（5 年 MR4.5 ≈ 42%） | 肋膜積液、肺動脈高壓、血小板下降、出血 | 想追 DMR 與 TFR；避用於慢性肺病、心衰竭 |
+| **Nilotinib** | 第二代 | 600 mg（300 mg BID） | 較快（5 年 MR4.5 ≈ 54%） | QT 延長、高血糖、高膽固醇、動脈血管事件、肝酵素上升 | 想追 DMR；避用於糖尿病控制差、心血管高風險、需空腹服藥 |
+| **Bosutinib** | 第二代 | 400 mg QD（一線） | 較快（12 月 MR4 ≈ 8% vs. imatinib 3%） | 腹瀉、肝酵素上升、皮疹 | 想追 DMR、心血管或胸腔風險高；接受腸胃道副作用 |
+| **Asciminib** | STAMP（變構） | 80 mg QD 或 200 mg BID（含 T315I） | 後線 96 週 MR4.5 ≈ 11%（ASCEMBL） | 血小板下降、嗜中性下降、肝酵素上升、胰臟炎 | ≥ 第三線；ATP-binding site 抗藥；T315I 突變（高劑量） |
+
+數據主要來自 IRIS、DASISION、ENESTnd、BFORE 與 ASCEMBL 第三期試驗的長期追蹤結果。
+
+<Callout type="warning" title="跨試驗比較的限制">
+DASISION、ENESTnd、BFORE 的對照組雖然都是 imatinib 400 mg，但試驗族群（Sokal 風險分群、年齡分布、地區）與評估時點不同，上表的 DMR 比率僅供概念性對照。**選 TKI 不能只看誰反應最快**，更要看病人共病、TFR 意願、健保給付與長期可耐受度。
+</Callout>
+
+## ELN 2020 milestones：什麼算治療成功？
+
+European LeukemiaNet (ELN) 2020 共識以 **BCR::ABL1 國際標準化定量 PCR（IS）** 為主軸，將治療反應分成三個時間點：
+
+| 時間點 | Optimal（理想） | Warning（警示） | Failure（失敗） |
+|---|---|---|---|
+| 3 個月 | ≤ 10% IS | > 10% IS | > 10% 若需治療轉換 |
+| 6 個月 | ≤ 1% IS | > 1–10% IS | > 10% IS |
+| 12 個月 | ≤ 0.1% IS（MMR） | > 0.1–1% IS | > 1% IS |
+| 任何時間（長期） | ≤ 0.1% IS（MMR） | > 0.1–1% IS（已達 MMR 後喪失） | 喪失 MMR、出現 ABL 抗藥突變、進展到 AP／BP |
+
+達到 **MMR**（major molecular response, BCR::ABL1 IS ≤ 0.1%）即代表存活率與健康族群相近；達到 **DMR**（deep molecular response）才有資格討論 TFR：
+
+- **MR4**：BCR::ABL1 IS ≤ 0.01%
+- **MR4.5**：BCR::ABL1 IS ≤ 0.0032%
+- **MR5**：BCR::ABL1 IS ≤ 0.001%
+
+<Callout type="tip" title="檢驗一致性的重要">
+BCR::ABL1 必須使用國際標準化（IS）的定量 PCR；不同實驗室或不同抗體製劑的「比例」不能直接相互比較。長期追蹤應在同一個有 IS 校正的實驗室進行。
+</Callout>
+
+## 停藥（TFR）：條件、機率、復發後處置
+
+「TFR（treatment-free remission，停藥後無治療緩解）」是 2010 年代後 CML 治療的最大轉變。代表性的試驗包括 **STIM**（首個證實 imatinib 可停藥的試驗）、**TWISTER**、**A-STIM** 與最大規模的 **EURO-SKI**。
+
+EURO-SKI（Lancet Oncol 2018，N = 758）顯示：
+
+- 進入停藥試驗的病人為持續 MR4 ≥ 1 年、TKI 治療 ≥ 3 年的 CP-CML
+- 停藥後 6 個月「無分子復發存活率（MRFS）」約 **62%**（≈ 38% 在 6 個月內復發）
+- 24 個月 MRFS 約 **50%**（≈ 50% 在 2 年內復發，多數於前 6 個月）
+- 復發後重啟原 TKI，**幾乎全部能再次達到 MMR 或更深的反應**，未觀察到進展到 AP／BP 的訊號
+- DMR 持續時間愈長，停藥成功率愈高（持續 MR4 ≥ 3.1 年者，6 個月 MRFS 提升至 ≈ 70%）
+
+### 誰可以嘗試停藥？
+
+<Steps>
+  <div>
+    ### 條件 1：持續達到 MR4 或 MR4.5
+
+    依 NCCN 與 ELN 建議，停藥前需在同一個 IS 校正實驗室持續達到 MR4 或 MR4.5 至少 **2 年**（部分研究允許 MR4 ≥ 1 年但風險較高）。建議至少 4 次連續 PCR 都落在 DMR 範圍內。
+  </div>
+  <div>
+    ### 條件 2：累積 TKI 治療時間足夠
+
+    累積 TKI 治療總時間建議 ≥ 5 年（用 imatinib），第二代 TKI 一線者可放寬到 ≥ 4 年。**從未進入加速期或急變期**，目前為 CP-CML。
+  </div>
+  <div>
+    ### 條件 3：嚴密 PCR 監測管道
+
+    停藥後第一年每月一次、第二年每 6–8 週一次、之後每 3 個月一次 BCR::ABL1 IS PCR。**沒有可靠的監測管道就不要停藥**。一旦喪失 MMR（BCR::ABL1 IS > 0.1%）即須立即重啟原 TKI。
+  </div>
+  <div>
+    ### 條件 4：病人理解並接受復發風險
+
+    告知 6 個月內約 40–50% 會分子復發、復發後須重啟 TKI；以及極少數案例可能在停藥期出現一過性「停藥症候群」（withdrawal syndrome，肌肉骨骼疼痛，通常自限或低劑量類固醇可緩解）。
+  </div>
+</Steps>
+
+### DESTINY：減量後再停藥？
+
+英國 **DESTINY** 試驗測試了一種替代策略——先把 TKI 減量到一半劑量 12 個月，再嘗試停藥。結果顯示：
+
+- 持續 MR4 者：減量 + 停藥後 3 年 MRFS ≈ 72%
+- 僅達 MMR（未到 MR4）者：MRFS 約 36%（仍高於直接停藥族群）
+
+DESTINY 提示「減量階段」可能作為篩選 TFR 候選者的緩衝期，但這仍非主流標準流程，多數指引仍建議從穩定 DMR 直接進入嚴密監測下的停藥。
+
+## 適應症、禁忌症與副作用
+
+### 適應症（已核准）
+
+- 新診斷費城染色體陽性（Ph+）或 BCR::ABL1 陽性 CP-CML：imatinib、dasatinib、nilotinib、bosutinib（部分區域），及 asciminib（部分區域，依當地仿單）
+- 對先前 TKI 失敗或無法耐受：依抗藥突變圖譜選擇下一線
+- T315I 突變：歷史上首選 ponatinib；近年資料顯示 **asciminib 200 mg BID** 對 T315I 亦有效
+- ≥ 第三線：asciminib（ASCEMBL 適應症）
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 妊娠（多數 TKI 為 D 級，建議治療期間避孕；asciminib 動物資料亦顯示胚胎毒性）；授乳期不建議
+- 嚴重肝功能異常（Child-Pugh C 須調整劑量）
+- 慢性肺病、肋膜積液病史 → **避用 dasatinib**
+- 糖尿病控制差、近期動脈血管事件 → **避用 nilotinib**
+- 慢性腹瀉、發炎性腸道疾病 → **謹慎使用 bosutinib**
+- 心血管高風險（曾發生 ATE）→ **避用 ponatinib**，asciminib 高劑量也需評估
+
+### 主要副作用摘要
+
+- **Imatinib**：水腫（眶周、下肢）、肌肉痙攣、噁心、皮疹、肝酵素上升、第 3–4 級嗜中性下降 約 14%
+- **Dasatinib**：肋膜積液（5 年累積 ≈ 28%）、罕見肺動脈高壓、血小板下降、出血傾向
+- **Nilotinib**：QT 延長、高血糖、總膽固醇／LDL 上升、**動脈血管事件**（5 年累積 ≈ 7–11%）、肝酵素上升；需空腹（餐前 1 小時、餐後 2 小時）
+- **Bosutinib**：腹瀉（任何級別 70%，第 3–4 級 ≈ 8%）、肝酵素上升、皮疹
+- **Asciminib**：血小板下降、嗜中性下降、肝酵素／脂肪酶上升、罕見胰臟炎；高劑量（200 mg BID 用於 T315I）注意血管事件
+
+<Callout type="warning" title="心血管監測不可省略">
+所有 TKI 都需要定期監測：血壓、空腹血糖、HbA1c、血脂、心電圖（QT，nilotinib 與 ponatinib 用藥前後）、ABI（若有 PAOD 風險）。**不要因為「CML 控制良好」就忽略心血管預防**——TKI 長期使用下心血管事件是主要的非血液毒性。
+</Callout>
+
+## 復返與抗藥處理：突變分析的角色
+
+若在治療中喪失反應（loss of MMR、回升到 BCR::ABL1 IS > 1%、出現新的細胞遺傳異常或進展），應立即：
+
+1. 確認是否規律服藥（adherence 是最常見「假抗藥」原因，尤其 nilotinib 須空腹）
+2. 送 **BCR::ABL1 kinase domain mutation analysis**（突變分析），決定下一線 TKI
+3. 依突變圖譜選擇：
+   - **T315I** → ponatinib 或 asciminib（200 mg BID）
+   - **F317L／V299L** → 避開 dasatinib，可改 nilotinib／bosutinib
+   - **Y253H／E255K／F359V** → 避開 nilotinib，可改 dasatinib／bosutinib
+   - **多突變或抗藥廣譜** → 評估造血幹細胞移植（HSCT）
+4. 若進展至 AP／BP：HSCT 仍為治癒導向選項，TKI 為橋接
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認自己的分期與分子標記
+
+    開始治療前應明確：(1) Ph+／BCR::ABL1 IS 起始值，(2) 分期（CP／AP／BP），(3) Sokal、Hasford 或 ELTS 風險分群，(4) 心血管／肺／代謝共病評估。這些都會影響 TKI 選擇。
+  </div>
+  <div>
+    ### 規律服藥比追求最強藥物更重要
+
+    多項真實世界研究顯示：服藥順從度（adherence）< 90% 是 CML 治療失敗最強的預測因子，**比換藥還重要**。請建立每日固定時間服藥的習慣（nilotinib 需注意空腹要求）、用藥盒、設手機提醒。
+  </div>
+  <div>
+    ### 與主治醫師討論停藥前可帶的問題清單
+
+    1. 我達到 MR4 或 MR4.5 多久了？是否在同一家實驗室追蹤？
+    2. 我累積服 TKI 多少年？曾經有沒有進加速期或急變期？
+    3. 我所在的醫院能不能執行每月一次 BCR::ABL1 IS PCR？
+    4. 停藥後如果復發要重啟同一個 TKI 嗎？健保有沒有問題？
+    5. 我目前的心血管／代謝共病在停藥後會不會反而比較好？
+    6. 我是否願意接受約一半的機率在 2 年內須重啟 TKI？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Hochhaus A, Larson RA, Guilhot F, et al. **Long-Term Outcomes of Imatinib Treatment for Chronic Myeloid Leukemia** (IRIS). *N Engl J Med.* 2017;376(10):917-927. [doi:10.1056/NEJMoa1609324](https://doi.org/10.1056/NEJMoa1609324)
+2. Kantarjian H, Shah NP, Hochhaus A, et al. **Dasatinib versus Imatinib in Newly Diagnosed Chronic-Phase Chronic Myeloid Leukemia** (DASISION). *N Engl J Med.* 2010;362(24):2260-2270. [doi:10.1056/NEJMoa1002315](https://doi.org/10.1056/NEJMoa1002315)
+3. Saglio G, Kim D-W, Issaragrisil S, et al. **Nilotinib versus Imatinib for Newly Diagnosed Chronic Myeloid Leukemia** (ENESTnd). *N Engl J Med.* 2010;362(24):2251-2259. [doi:10.1056/NEJMoa0912614](https://doi.org/10.1056/NEJMoa0912614)
+4. Saussele S, Richter J, Guilhot J, et al. **Discontinuation of tyrosine kinase inhibitor therapy in chronic myeloid leukaemia (EURO-SKI): a prespecified interim analysis of a prospective, multicentre, non-randomised, trial.** *Lancet Oncol.* 2018;19(6):747-757. [doi:10.1016/S1470-2045(18)30192-X](https://doi.org/10.1016/S1470-2045(18)30192-X)
+5. Réa D, Mauro MJ, Boquimpani C, et al. **A phase 3, open-label, randomized study of asciminib, a STAMP inhibitor, vs bosutinib in CML after 2 or more prior TKIs** (ASCEMBL). *Blood.* 2021;138(21):2031-2041. [doi:10.1182/blood.2020009984](https://doi.org/10.1182/blood.2020009984)
+6. Hochhaus A, Baccarani M, Silver RT, et al. **European LeukemiaNet 2020 recommendations for treating chronic myeloid leukemia.** *Leukemia.* 2020;34(4):966-984. [doi:10.1038/s41375-020-0776-2](https://doi.org/10.1038/s41375-020-0776-2)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Chronic Myeloid Leukemia.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

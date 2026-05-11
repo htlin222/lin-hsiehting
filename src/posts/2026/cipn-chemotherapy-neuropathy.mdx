@@ -1,0 +1,205 @@
+---
+title: "化療造成的周邊神經病變（CIPN）：實證預防與治療"
+titleEn: "Chemotherapy-induced peripheral neuropathy: prevention and management"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "化療所致周邊神經病變（CIPN）是 oxaliplatin、紫杉烷、vincristine、bortezomib、cisplatin 等藥物常見的長期副作用；ASCO 2020 指引明確指出 duloxetine 是目前唯一被推薦的治療藥物，多數預防策略（calcium/magnesium、維生素 E、glutamine、acetyl-L-carnitine）證據不足或不建議。"
+tags: ["化療副作用", "周邊神經病變", "CIPN", "duloxetine", "oxaliplatin", "衛教"]
+medical: true
+medicalCondition: "化療所致周邊神經病變 (Chemotherapy-induced peripheral neuropathy, CIPN)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "手腳麻多久會好？"
+    a: "依藥物而定。Oxaliplatin 的急性麻木通常在輸注後數小時至數天內緩解；慢性 CIPN 則可在停藥後 6–12 個月持續改善，但約 30–40% 的病人在停藥兩年後仍有殘留症狀。紫杉烷與 bortezomib 引起的 CIPN 可逆性相對較佳，cisplatin 與 vincristine 則較容易留下長期感覺異常。"
+  - q: "duloxetine 真的有效嗎？"
+    a: "是目前最具證據的選項。Smith 等人 2013 年 JAMA 隨機雙盲試驗（N = 231）顯示 duloxetine 60 mg/day 連用 5 週後，疼痛分數平均下降 1.06 分（10 分量表），59% 病人疼痛改善，安慰劑組為 38%。ASCO 2020 指引將 duloxetine 列為唯一中等證據推薦藥物，但僅適用於已有疼痛性 CIPN，且效果為「部分緩解」而非完全消除。"
+  - q: "冷凍手套（frozen gloves）有用嗎？"
+    a: "證據不一致，ASCO 2020 指引未明確推薦。Hanai 等人 2018 年 JNCI 研究顯示紫杉烷化療期間使用冷凍手套可降低 CIPN 嚴重度，但其他試驗結果不一，且冷凍手套耐受度差、缺血風險與雷諾現象禁忌使其難以普及。屬於「可考慮、但證據強度有限」的措施。"
+  - q: "停化療後麻木會消失嗎？"
+    a: "部分會、部分不會。約 60–70% 的病人在停藥後一年內症狀顯著改善，但 oxaliplatin、cisplatin 與高累積劑量 vincristine 引起的感覺神經元損傷可能持續超過 2 年。早期辨識、及時減量或停藥是降低長期殘留風險最重要的策略。"
+doi: "10.5281/zenodo.20115029"
+conceptDoi: "10.5281/zenodo.20115028"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+化療所致周邊神經病變（CIPN）是接受 oxaliplatin、紫杉烷（paclitaxel、docetaxel）、vincristine、bortezomib、cisplatin 等藥物的病人最常見、也最難處理的長期副作用之一，發生率依藥物與累積劑量介於 30–70%。**ASCO 2020 更新指引（Loprinzi JCO 2020）明確指出：目前沒有任何藥物或營養補充品有足夠證據可預防 CIPN**；已產生的疼痛性 CIPN，僅 duloxetine 有中等強度證據推薦。本文整理五大類化療藥的神經毒性機轉、ASCO 預防與治療建議的證據等級、ECOG-CIPN20 / CTCAE 評估工具、以及實務上的劑量調整原則。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為正在接受神經毒性化療、開始出現手腳麻木的病友與家屬，以及希望快速複習 ASCO 2020 CIPN 指引、釐清哪些補充品「實證上不該再開」的同業。所有實際劑量調整與停藥決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼會麻？五大類化療藥的機轉差異
+
+CIPN 主要影響感覺神經，典型表現為手腳遠端對稱性麻木、刺痛或感覺異常（手套襪套式分布）。不同藥物造成神經損傷的機轉與症狀型態不同，**這也決定了可逆性、急慢性與最佳介入時機**：
+
+| 藥物 | 主要機轉 | 典型症狀 | 可逆性 |
+|---|---|---|---|
+| **Oxaliplatin** | 急性：軸突鈉離子通道病變；慢性：背根神經節 DNA 加合物累積 | 急性：寒冷誘發喉部與肢端感覺異常；慢性：手套襪套式麻木 | 急性可逆；慢性 30–40% 持續 > 2 年 |
+| **紫杉烷（paclitaxel、docetaxel）** | 微管聚合過度、軸突運輸受損、粒線體功能失調 | 對稱性遠端感覺異常、振動覺降低；少數有運動症狀 | 多數於停藥 6–12 個月改善 |
+| **Vincristine** | 微管解聚抑制、軸突運輸阻斷 | 感覺與運動混合：手指笨拙、垂足、深部肌腱反射消失 | 兒童族群多可恢復；成人累積劑量高者可長期殘留 |
+| **Bortezomib** | 蛋白酶體抑制、粒線體功能失調、小纖維神經受損 | 疼痛性感覺神經病變、有時伴隨自主神經失調 | 改皮下注射後發生率與嚴重度顯著下降 |
+| **Cisplatin** | 背根神經節 DNA-platinum 加合物、軸突壞死 | 振動覺與本體感覺喪失、Lhermitte 徵象 | 多數不完全可逆；累積劑量 > 300 mg/m² 風險升高 |
+
+<Callout type="tip" title="Oxaliplatin 的急性 vs. 慢性是兩件事">
+Oxaliplatin 的「急性 cold-induced 感覺異常」與「慢性累積性周邊神經病變」機轉不同——前者源自軸突鈉離子通道功能異常，可在數小時至數天內緩解；後者與背根神經節損傷有關，可能持續數年。臨床上不應把急性發作當作必須停藥的指標，但若慢性症狀達 grade 2 持續存在，則需考慮減量或改成 stop-and-go 策略。
+</Callout>
+
+## 預防策略：ASCO 2020 指引怎麼說？
+
+ASCO 2020 更新版指引（Loprinzi 等人，JCO 2020）系統性回顧後，對各項預防介入給出明確證據等級。**最重要的訊息是：沒有任何藥物或營養補充品被推薦用來「預防」CIPN**：
+
+| 介入 | ASCO 2020 證據等級 | 結論 |
+|---|---|---|
+| Acetyl-L-carnitine | 不建議使用（基於危害證據） | SWOG S0715 顯示反而惡化神經病變 |
+| Calcium / Magnesium 輸注 | 不建議使用 | N08CB 等試驗未顯示效益 |
+| Glutamine | 證據不足，不建議 | 小型試驗結果不一致 |
+| 維生素 E（α-tocopherol） | 證據不足，不建議 | 試驗品質差異大，結果矛盾 |
+| Glutathione | 證據不足，不建議 | 試驗結果不一致 |
+| Omega-3 脂肪酸 | 證據不足，不建議 | 一篇正面結果未被重複 |
+| 冷凍手套 / 冰敷 | 證據不一致，可選擇性考慮 | Hanai 2018 JNCI 顯示有效，但其他試驗結果不穩定 |
+| 壓力手套 / 壓力襪 | 證據不足，可選擇性考慮 | 小型試驗顯示可能有益 |
+| 運動 | 證據不足但風險低，可考慮 | 早期 RCT 顯示有訊號，仍需大型試驗 |
+
+<Callout type="warning" title="不要再開 acetyl-L-carnitine 預防 CIPN">
+SWOG S0715 隨機試驗顯示 acetyl-L-carnitine 不只無效，使用組 24 週後神經病變反而比安慰劑組更嚴重（差異具統計顯著性）。ASCO 將其列為「基於危害的不建議使用」。同樣地，calcium/magnesium 輸注於 N08CB 大型 RCT 中亦未顯示預防效果，目前不應作為常規預防用藥。
+</Callout>
+
+## 治療策略：已產生的 CIPN 怎麼處理？
+
+ASCO 2020 指引對「已產生的疼痛性 CIPN」有明確推薦：
+
+<Steps>
+  <div>
+    ### 首選：Duloxetine 60 mg/day
+
+    Smith 等人 2013 年 JAMA 雙盲隨機試驗（N = 231，紫杉烷或 oxaliplatin 後疼痛性 CIPN）顯示 duloxetine 5 週後疼痛分數平均下降 1.06 分（10 分量表，95% CI 0.72–1.40），安慰劑組下降 0.34 分；59% 接受 duloxetine 者疼痛改善，安慰劑組為 38%。**目前在 ASCO 2020 指引中僅此藥獲得中等強度證據推薦**。
+
+    - 起始劑量：30 mg/day 連用 1 週，再上調至 60 mg/day
+    - 常見副作用：噁心、嗜睡、口乾、便秘
+    - 注意：避免突然停藥（discontinuation syndrome）；肝功能不全者慎用
+  </div>
+  <div>
+    ### 次選：考慮 gabapentin / pregabalin / 三環抗鬱劑
+
+    雖然在 CIPN 專屬 RCT 中無強證據，但因屬於糖尿病神經病變等其他周邊神經痛的標準治療，ASCO 2020 認為「可在 duloxetine 無效或不耐受時嘗試」。劑量自低劑量開始（如 gabapentin 100–300 mg 睡前）逐步上調至有效劑量，並監測鎮靜與跌倒風險。
+  </div>
+  <div>
+    ### 物理性介入：Scrambler therapy 與針灸
+
+    Scrambler therapy（一種經皮電刺激）與針灸在小型 RCT 中對 CIPN 疼痛有訊號，ASCO 指引描述為「可能有效（probably effective）」，但證據不足以強烈推薦。可在跨領域照護（疼痛科、復健科）中視為輔助。
+  </div>
+  <div>
+    ### 局部介入：含 baclofen / amitriptyline / ketamine 之外用藥膏
+
+    BAK 三合一外用藥膏在小型 RCT 中顯示對局部疼痛性 CIPN 可能有益，但效益小、證據有限。屬於可在無系統性治療選項時考慮的二線輔助。
+  </div>
+  <div>
+    ### 不推薦：opioid 作為第一線處理 CIPN
+
+    神經病變性疼痛對 opioid 反應通常較差。除非合併侵犯性疼痛或其他適應症，否則不建議將 opioid 列為 CIPN 第一線。
+  </div>
+</Steps>
+
+## 評估工具：CTCAE vs. 病人自評（ECOG-CIPN20）
+
+**CTCAE（Common Terminology Criteria for Adverse Events）** 是臨床最常用的醫師評估工具：
+
+| Grade | 感覺神經病變定義 |
+|---|---|
+| Grade 1 | 無症狀；僅臨床檢查或診斷異常 |
+| Grade 2 | 中度症狀；影響工具性日常活動（IADL） |
+| Grade 3 | 嚴重症狀；影響自我照護（ADL） |
+| Grade 4 | 危及生命；需緊急處置 |
+
+CTCAE 醫師評估有低估病人實際感受的傾向，因此 EORTC 與 ECOG 開發了病人自評工具 **ECOG-CIPN20**（Postma 等人 EurJC 2005），包含 20 個項目，涵蓋感覺、運動與自主神經面向，分數越高代表症狀越嚴重。臨床試驗與長期追蹤研究越來越多採用病人自評，因為更能反映 IADL 影響與生活品質。
+
+<Callout type="tip" title="實務建議：每次回診都問三個問題">
+1. **「目前麻木的範圍變大、變小、還是差不多？」**——監測時間趨勢比一次性分級更能掌握神經損傷的進展。
+2. **「會不會痛？是麻麻的還是有電擊樣痛？」**——區分「感覺異常（無痛性麻木）」與「疼痛性 CIPN」，後者才是 duloxetine 的適應範圍。
+3. **「會不會踢到家具、扣不上釦子？」**——評估是否已影響 IADL（grade 2），是判斷是否需要劑量調整的關鍵指標。
+</Callout>
+
+## 何時減量、何時停藥？
+
+CIPN 的處理原則是**及早辨識、適時減量、必要時停藥**。一般建議：
+
+- **Grade 1**：通常不需改變劑量，但需更密切追蹤
+- **Grade 2 持續超過 1 個療程**：考慮減量 20–25%
+- **Grade 2 持續且影響 IADL**，或 grade 3 出現：暫停治療，待症狀改善至 grade ≤ 1 再恢復（減量 25%）
+- **Grade 3 反覆出現** 或 **grade 4**：永久停用該藥物
+
+<Callout type="warning" title="效益與毒性的權衡">
+減量或停藥可能犧牲腫瘤控制效益，特別是輔助治療情境（如 oxaliplatin-based 大腸直腸癌輔助療程）。CIPN 並非「越早停越好」，而是需個別評估病人預後、治療目的（curative vs. palliative）、症狀嚴重度與其他治療選項。臨床決策應由主治醫師與病人共同討論。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+### Duloxetine 常見不良反應
+
+- 任何級別：噁心（最常見）、嗜睡、口乾、便秘、頭暈、食慾下降
+- 偶見：性功能障礙、出汗增加、心跳加速
+- 嚴重但罕見：肝功能異常、自殺意念（年輕族群需警覺）、停藥症候群
+
+### 適應症（用於 CIPN）
+
+- 已產生的疼痛性 CIPN，CTCAE grade ≥ 2 或病人自評影響日常活動
+- 既往接受 oxaliplatin、紫杉烷或其他神經毒性化療
+- 排除其他可治療的神經病變病因（B12 缺乏、糖尿病、酒精、甲狀腺異常）
+
+### 禁忌症與謹慎使用
+
+- 對 duloxetine 過敏者
+- 未經治療的閉角性青光眼
+- 嚴重肝功能異常
+- 同時使用 MAO 抑制劑或大量酒精
+- 妊娠與授乳期慎用
+- 服用 tamoxifen 者需評估交互作用（duloxetine 為中等 CYP2D6 抑制劑，可能降低 tamoxifen 活性代謝物濃度）
+
+## 預防比治療重要：什麼時候該主動討論劑量？
+
+雖然 ASCO 指引沒有特效預防藥，但**及早辨識症狀並適時調整劑量**是目前少數已被證據支持、能降低長期 CIPN 風險的核心策略：
+
+<Steps>
+  <div>
+    ### 開始治療前先建立基線
+
+    化療前完成基本神經學評估：振動覺、本體感覺、深部肌腱反射、平衡測試。已有糖尿病、酒精相關或 B12 缺乏性神經病變的病人 CIPN 風險顯著上升，需特別告知並監測。
+  </div>
+  <div>
+    ### 每個療程都自我檢查
+
+    使用「衣物按鈕」、「拿筷子」、「站立平衡」三個簡單動作做日常監測。若一週內突然惡化，請主動回診不要等下一個排定療程。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我用的化療藥物 CIPN 發生率有多高？哪些症狀代表必須回診？
+    2. 是否有累積劑量上限？我已經接受到第幾個 cycle？
+    3. 如果 grade 2 出現，治療目標是否需要重新評估？
+    4. 已產生的疼痛性 CIPN 可以開 duloxetine 嗎？
+    5. 我的其他疾病（糖尿病、B12 缺乏）是否會放大 CIPN 風險？
+    6. 停藥後神經症狀預期多久會改善？需要哪些復健資源？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Loprinzi CL, Lacchetti C, Bleeker J, et al. **Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers: ASCO Guideline Update.** *J Clin Oncol.* 2020;38(28):3325-3348. [doi:10.1200/JCO.20.01399](https://doi.org/10.1200/JCO.20.01399)
+2. Smith EML, Pang H, Cirrincione C, et al. **Effect of Duloxetine on Pain, Function, and Quality of Life Among Patients With Chemotherapy-Induced Painful Peripheral Neuropathy: A Randomized Clinical Trial.** *JAMA.* 2013;309(13):1359-1367. [doi:10.1001/jama.2013.2813](https://doi.org/10.1001/jama.2013.2813)
+3. Hanai A, Ishiguro H, Sozu T, et al. **Effects of Cryotherapy on Objective and Subjective Symptoms of Paclitaxel-Induced Neuropathy: Prospective Self-Controlled Trial.** *J Natl Cancer Inst.* 2018;110(2):141-148. [doi:10.1093/jnci/djx178](https://doi.org/10.1093/jnci/djx178)
+4. Argyriou AA, Cavaletti G, Briani C, et al. **Clinical pattern and associations of oxaliplatin acute neurotoxicity: a prospective study in 170 patients with colorectal cancer.** *Crit Rev Oncol Hematol.* 2014;89(2):166-175. [doi:10.1016/j.critrevonc.2013.07.001](https://doi.org/10.1016/j.critrevonc.2013.07.001)
+5. Staff NP, Fehrenbacher JC, Caillaud M, et al. **Pathogenesis of paclitaxel-induced peripheral neuropathy: A current review of in vitro and in vivo findings using rodent and human model systems.** *Exp Neurol.* 2020;324:113121. [doi:10.1016/j.expneurol.2019.113121](https://doi.org/10.1016/j.expneurol.2019.113121)
+6. Postma TJ, Aaronson NK, Heimans JJ, et al. **The development of an EORTC quality of life questionnaire to assess chemotherapy-induced peripheral neuropathy: the QLQ-CIPN20.** *Eur J Cancer.* 2005;41(8):1135-1139. [doi:10.1016/j.ejca.2005.02.012](https://doi.org/10.1016/j.ejca.2005.02.012)
+7. Hershman DL, Unger JM, Crew KD, et al. **Randomized Double-Blind Placebo-Controlled Trial of Acetyl-L-Carnitine for the Prevention of Taxane-Induced Neuropathy (SWOG S0715).** *J Clin Oncol.* 2013;31(20):2627-2633. [doi:10.1200/JCO.2012.44.8738](https://doi.org/10.1200/JCO.2012.44.8738)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。本文僅供衛生教育與學術討論，不構成個別醫療建議。

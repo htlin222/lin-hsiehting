@@ -1,0 +1,264 @@
+---
+title: "瀰漫性大 B 細胞淋巴瘤（DLBCL）第一線：R-CHOP vs Pola-R-CHP"
+titleEn: "DLBCL first-line therapy: R-CHOP versus Pola-R-CHP"
+date: "05/11/2026"
+frontmatter: "POLARIX 試驗（NEJM 2022, N = 879）證實 Pola-R-CHP 比 R-CHOP 多出 6.5% PFS 絕對好處（HR 0.73），IPI ≥ 2 與 ABC 子型獲益較大；本文整理 IPI 分層、子型差異、副作用與復發後 CAR-T 路線。"
+tags: ["淋巴瘤", "DLBCL", "polatuzumab", "R-CHOP", "POLARIX", "衛教"]
+medical: true
+medicalCondition: "瀰漫性大 B 細胞淋巴瘤 (Diffuse large B-cell lymphoma, DLBCL)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "R-CHOP 是什麼？為什麼是 DLBCL 第一線的標準？"
+    a: "R-CHOP 是 rituximab（抗 CD20 單株抗體）+ cyclophosphamide + doxorubicin + vincristine + prednisone 的組合，每 21 天一次、共 6–8 個療程。2002 年 GELA 試驗（Coiffier et al., NEJM）首次證實在老年 DLBCL 加上 rituximab 比單用 CHOP 提高 2 年 EFS（57% vs. 38%）與 OS（70% vs. 57%），自此確立 R-CHOP 為 DLBCL 第一線標準。RICOVER-60（Lancet Oncol 2008）進一步證實 6 個療程 R-CHOP-14 已足夠，不必打到 8 個療程。"
+  - q: "Pola-R-CHP 真的比 R-CHOP 好嗎？"
+    a: "依 POLARIX 第三期試驗（NEJM 2022, N = 879）：Pola-R-CHP 把 vincristine 換成 polatuzumab vedotin（抗 CD79b 抗體—藥物結合物），2 年無惡化存活（PFS）76.7% vs. 70.2%（HR 0.73，95% CI 0.57–0.95），絕對差距 6.5%。但 2 年整體存活（OS）兩組未達統計顯著差異（88.7% vs. 88.6%）。子群分析顯示 IPI ≥ 2、年齡 > 60、ABC 子型獲益較明顯；IPI 0–1 與 GCB 子型差異不顯著。FDA 於 2023 年 4 月核准 Pola-R-CHP 用於 IPI ≥ 2 的 DLBCL 第一線治療。"
+  - q: "IPI 分數高要打不一樣的治療嗎？"
+    a: "IPI（International Prognostic Index）依年齡、LDH、ECOG、Ann Arbor 分期、淋巴結外侵犯數量算 0–5 分。POLARIX 子群分析顯示 IPI ≥ 2 是 Pola-R-CHP 獲益最明顯的族群，因此 FDA 核准範圍即限定 IPI ≥ 2。對於 IPI 0–1（低風險）的年輕病人，R-CHOP × 6 仍是合理選項；high-grade B-cell lymphoma with MYC and BCL2 rearrangements（double-hit / DHL）目前不建議單用 R-CHOP，多採 DA-EPOCH-R。"
+  - q: "化療結束復發要做 CAR-T 嗎？"
+    a: "依 2022 年同步發表於 NEJM 的 ZUMA-7（axi-cel）與 Lancet 的 TRANSFORM（liso-cel）：第一線 R-CHOP 或 Pola-R-CHP 後 12 個月內復發、或對第一線治療治療反應不佳（primary refractory）的 DLBCL 病人，第二線直接走 CAR-T 細胞治療比傳統高劑量化療 + 自體幹細胞移植（HDT-ASCT）顯著延長 EFS。ZUMA-7 中 axi-cel 的 mEFS 8.3 vs. 2.0 個月（HR 0.40），TRANSFORM 的 liso-cel 也達到主要終點。NCCN 已將 axi-cel、liso-cel 列為早期復發 / 治療反應不佳 DLBCL 的第二線 category 1 preferred 選項。"
+doi: "10.5281/zenodo.20115037"
+conceptDoi: "10.5281/zenodo.20115036"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+瀰漫性大 B 細胞淋巴瘤（DLBCL）第一線治療在 2022 年迎來 20 年來第一次成功的改寫：**POLARIX 第三期試驗**（NEJM 2022, N = 879）以 polatuzumab vedotin 取代 R-CHOP 裡的 vincristine，2 年無惡化存活（PFS）從 70.2% 提升到 76.7%（HR 0.73, 95% CI 0.57–0.95），絕對差距 6.5%；2024 年 EHA 公布的 5 年追蹤資料顯示 PFS 差距依然維持。雖然整體存活（OS）尚未達到統計顯著，FDA 已於 2023 年 4 月核准 Pola-R-CHP 用於 IPI ≥ 2 的成人 DLBCL 第一線治療。本文整理 R-CHOP 的歷史證據、POLARIX 子群分析、IPI 與 GCB/ABC 子型分層、副作用差異，以及第一線失敗後走 CAR-T 的二線路線。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷瀰漫性大 B 細胞淋巴瘤、想了解第一線 R-CHOP 與 Pola-R-CHP 怎麼選的病友與家屬，以及對 POLARIX 後 IPI 分層、CAR-T 二線路線感興趣的同業。所有實際治療決策請與您的主治血液腫瘤科醫師討論。
+</Callout>
+
+<Divider />
+
+## DLBCL 是什麼？為什麼第一線那麼重要？
+
+瀰漫性大 B 細胞淋巴瘤（DLBCL）是成人最常見的侵襲性非何杰金氏淋巴瘤，約佔所有非何杰金氏淋巴瘤的 30–40%。它「侵襲性」的意思是進展快，但弔詭的是——**正因為它細胞分裂快，化療效果反而比慢性淋巴瘤好，第一線就有機會治療反應達到完全緩解（complete response）並長期不復發**。換句話說，DLBCL 第一線治療不是「延長生命」，而是真正帶有治療反應達到完全緩解的目標。
+
+但若第一線失敗（治療反應不佳 / 12 個月內復發），預後會大幅惡化。這也是為什麼：
+
+1. **第一線方案的選擇要非常謹慎**——你只有一次黃金機會。
+2. **IPI、子型、double-hit 狀態**會直接決定要不要偏離標準 R-CHOP。
+3. **CAR-T 細胞治療**改寫了第二線格局，把「早期復發」從幾乎絕望變成有機會治療反應達到完全緩解。
+
+## 三個必須先確認的分層因子
+
+| 分層因子 | 怎麼算 / 怎麼測 | 怎麼影響治療 |
+|---|---|---|
+| **IPI 分數** | 年齡 > 60、LDH 上升、ECOG ≥ 2、Stage III/IV、≥ 2 處淋巴結外侵犯，各 1 分；總和 0–5 分 | IPI ≥ 2 是 Pola-R-CHP 的 FDA 核准範圍；POLARIX 子群分析中亦此族群獲益較明顯 |
+| **GCB vs. ABC 子型**（cell-of-origin） | Hans IHC 演算法或 GEP（gene expression profiling） | ABC 子型對 R-CHOP 反應較差；POLARIX 子群分析顯示 ABC 獲益更明顯 |
+| **MYC + BCL2 / BCL6 rearrangement** | FISH 必驗 | Double-hit（DHL）或 triple-hit（THL）預後較差，多採 DA-EPOCH-R 而非 R-CHOP |
+
+<Callout type="tip" title="切片時要主動詢問的檢查">
+DLBCL 診斷切片時，請主治醫師同步安排：(1) Hans IHC（CD10、BCL6、MUM1）分 GCB vs. ABC；(2) MYC、BCL2、BCL6 FISH；(3) TP53 IHC 或 NGS（若條件允許）。這三項缺一就有可能漏掉 double-hit 或預後極差的族群。
+</Callout>
+
+## R-CHOP 的歷史證據：從 GELA 到 RICOVER-60
+
+R-CHOP 之所以是 20 年來無法被撼動的標準，建立在兩個經典試驗之上：
+
+- **GELA 試驗（Coiffier et al., NEJM 2002, N = 399）**：60–80 歲新診斷 DLBCL 隨機分配到 CHOP × 8 或 R-CHOP × 8。R-CHOP 組 2 年 EFS 57% vs. CHOP 組 38%（P < 0.001），2 年 OS 70% vs. 57%（P = 0.007）。10 年延長追蹤顯示優勢一路維持。
+- **RICOVER-60 試驗（Pfreundschuh et al., Lancet Oncol 2008, N = 1,222）**：在 61–80 歲 DLBCL 病人，比較 6 vs. 8 個療程 CHOP-14（每 14 天）與是否加 rituximab。**結論：R-CHOP-14 × 6 已足夠，不必打到 8 個療程**——3 年 EFS 66.5%（R-CHOP-14 × 6）vs. 63.1%（R-CHOP-14 × 8），無差異；但 8 個療程毒性顯著上升。
+
+這兩個試驗共同奠定了當代 DLBCL 第一線標準：**R-CHOP × 6 個療程**（部分機構在 stage III/IV 時打到 6+2 rituximab 鞏固）。
+
+## POLARIX：20 年來第一次改寫 R-CHOP
+
+POLARIX 第三期試驗（Tilly et al., NEJM 2022）是過去 20 年第一個成功改寫 R-CHOP 的試驗。設計上極為單純——**把 vincristine 換成 polatuzumab vedotin**（抗 CD79b 抗體—藥物結合物，ADC）：
+
+- N = 879，新診斷 DLBCL、IPI 2–5、年齡 18–80
+- 隨機分配：Pola-R-CHP × 6 + R × 2 vs. R-CHOP × 6 + R × 2
+- 主要終點：2 年 PFS
+
+結果：
+
+| 終點 | Pola-R-CHP | R-CHOP | HR (95% CI) |
+|---|---|---|---|
+| 2 年 PFS | 76.7% | 70.2% | 0.73 (0.57–0.95) |
+| 2 年 OS | 88.7% | 88.6% | 0.94 (0.65–1.37) |
+| CR rate（EOT） | 78% | 74% | — |
+| 後續治療需求 | 22.5% | 30.3% | — |
+
+**2024 年 EHA 公布的 5 年追蹤資料顯示 PFS 差距（約 6%）依然維持，OS 仍未達顯著差異**。FDA 於 2023 年 4 月正式核准 Pola-R-CHP 用於 IPI ≥ 2 的成人 DLBCL 第一線。
+
+### 子群分析：哪些病人獲益最明顯？
+
+<Steps>
+  <div>
+    ### IPI ≥ 2（高風險）
+
+    POLARIX 主要分析族群即為 IPI 2–5，亦為 FDA 核准範圍。IPI ≥ 2 病人 PFS HR 約 0.70–0.75，趨勢一致。
+  </div>
+  <div>
+    ### ABC（activated B-cell）子型
+
+    Hans IHC 或 GEP 判定為 ABC 的病人在 POLARIX 中 PFS HR 約 0.40–0.50，獲益最明顯；GCB 子型病人 HR 接近 1.0，差異不顯著。
+  </div>
+  <div>
+    ### 年齡 > 60、bulky disease
+
+    年齡 > 60 的次族群 HR 約 0.70；bulky disease（> 7.5 cm）的次族群 HR 約 0.55–0.65。
+  </div>
+  <div>
+    ### IPI 0–1 / GCB / 年齡 < 40
+
+    這些「相對低風險」族群中，Pola-R-CHP 並未顯示一致優勢；對年輕、低風險病人，R-CHOP × 6 仍是合理選項。
+  </div>
+</Steps>
+
+## 第一線治療選項一覽
+
+| 方案 | 適合誰 | 2 年 PFS | 2 年 OS | 主要毒性 |
+|---|---|---|---|---|
+| **R-CHOP × 6** | IPI 0–1、年輕、GCB 子型；不適合 ADC 者 | 約 70% | 約 89% | 嗜中性白血球下降、神經病變（vincristine）、心毒性（doxorubicin） |
+| **Pola-R-CHP × 6** | IPI ≥ 2、ABC 子型、年齡 > 60 | 76.7%（POLARIX） | 88.7%（POLARIX） | 嗜中性白血球下降、周邊神經病變、感染 |
+| **R-CHOEP-14**（加 etoposide） | 年輕、高 IPI、CNS 風險高 | 約 70–75% | 約 80% | 較高骨髓抑制 |
+| **DA-EPOCH-R** | Double-hit / triple-hit lymphoma、primary mediastinal B-cell lymphoma | 約 70%（DHL） | 約 80%（DHL） | 較長住院、嗜中性白血球減少性發燒、心毒性累積 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+上述 PFS / OS 數字來自不同年代、不同族群、不同 IPI 分布的試驗（POLARIX 限 IPI 2–5；DA-EPOCH-R 的 DHL 數據來自前瞻性多中心觀察）。**不應用於跨試驗排序選藥**。實際選擇仍以個別病人 IPI、子型、共病、年齡、可及性綜合判斷。
+</Callout>
+
+## 治療流程概觀
+
+<Steps>
+  <div>
+    ### 確定診斷與分期
+
+    淋巴結切片送病理；同步排 Hans IHC（GCB vs. ABC）、MYC/BCL2/BCL6 FISH。分期：頸—胸—腹—骨盆 CT 或 PET-CT、骨髓切片（部分中心以 PET-CT 取代）、LDH、HBV/HCV/HIV serology、心臟超音波（doxorubicin 前必驗 LVEF）。
+  </div>
+  <div>
+    ### 計算 IPI 與 NCCN-IPI
+
+    依年齡、LDH、ECOG、Stage、淋巴結外侵犯處數算 IPI（0–5）或 NCCN-IPI（更精細的年齡與 LDH 加權）。NCCN-IPI 高風險族群（≥ 6 分）5 年 OS 約 33%，明顯比傳統 IPI 高分組差。
+  </div>
+  <div>
+    ### 第一線選擇
+
+    依 IPI 與子型決定：IPI 0–1 → R-CHOP × 6；IPI ≥ 2 → 與主治醫師討論 Pola-R-CHP × 6；DHL/THL → DA-EPOCH-R；中樞神經風險高（CNS-IPI 高分）加 HD-MTX 預防性療程。
+  </div>
+  <div>
+    ### 治療中與治療後評估
+
+    第 3–4 療程做 interim PET-CT（Deauville 評分）；療程結束做 end-of-treatment PET-CT。Deauville 1–3 視為完全代謝反應（complete metabolic response, CMR）；4–5 需考慮活檢確認復發或 progression。
+  </div>
+  <div>
+    ### 復發 / 治療反應不佳時走 CAR-T
+
+    若 12 個月內復發或第一線治療反應不佳（primary refractory），第二線直接走 CD19 CAR-T（axi-cel / liso-cel）優於傳統 HDT-ASCT；> 12 個月才復發者，HDT-ASCT 仍是合理選項。
+  </div>
+</Steps>
+
+## 適應症與禁忌症
+
+### Pola-R-CHP 適應症（FDA / NCCN v3.2025）
+
+- 成人新診斷 DLBCL 或 high-grade B-cell lymphoma
+- IPI ≥ 2
+- 體能狀態 ECOG PS 0–2
+- LVEF ≥ 50%（doxorubicin 需求）
+- 無嚴重周邊神經病變
+- 已完成 HBV/HCV/HIV serology 篩檢
+
+### R-CHOP 適應症
+
+- 所有新診斷 DLBCL，特別是 IPI 0–1
+- 各年齡層（含 > 80 歲低劑量 mini-R-CHOP）
+
+### 一般禁忌症與謹慎使用
+
+- 對 rituximab、polatuzumab、doxorubicin、cyclophosphamide 任一成分過敏
+- 嚴重肝功能異常
+- LVEF < 50%（doxorubicin）
+- 嚴重周邊神經病變 ≥ Grade 2（vincristine / polatuzumab）
+- 活動性 HBV 感染未經抗病毒治療
+- 妊娠與授乳期
+
+## 副作用 / 不良反應比較
+
+### Pola-R-CHP 與 R-CHOP 副作用對照（POLARIX 試驗）
+
+| 不良反應（任何級別 / ≥ Grade 3） | Pola-R-CHP | R-CHOP |
+|---|---|---|
+| 嗜中性白血球下降 | 53% / 28% | 50% / 31% |
+| 嗜中性白血球減少性發燒 | 10% / 10% | 12% / 12% |
+| 貧血 | 35% / 12% | 33% / 8% |
+| 血小板下降 | 23% / 5% | 19% / 5% |
+| 周邊神經病變 | 53% / 1.6% | 54% / 1.1% |
+| 感染（任何級別 / ≥ Grade 3） | 53% / 14% | 50% / 12% |
+| 因 AE 停藥 | 6.2% | 6.6% |
+
+整體而言 Pola-R-CHP 與 R-CHOP 的安全性 profile 相當，**沒有顯著的新毒性 signal**。
+
+### 共同須注意
+
+- **HBV 再活化**：rituximab 用前必驗 HBsAg、anti-HBc；HBsAg+ 或 anti-HBc+ 須在治療中與治療後接受 entecavir / TAF 預防性抗病毒治療
+- **B 型肝炎、結核、PJP 感染**：高 IPI、長期類固醇暴露者建議 PJP 預防
+- **心毒性**：doxorubicin 累積劑量 ≤ 400 mg/m²；治療前 LVEF ≥ 50%
+- **腫瘤崩解症候群（TLS）**：bulky disease、高 LDH 病人第一個療程須水化、allopurinol 或 rasburicase 預防
+- **罕見但嚴重**：間質性肺炎、進行性多灶性白質腦病（PML，與 rituximab 相關，極罕見）
+
+## 第一線失敗了怎麼辦？CAR-T 改寫的第二線
+
+2022 年同步發表的兩個試驗，把 DLBCL 第二線從 HDT-ASCT 改寫成 CAR-T：
+
+| 試驗 | 藥物 | n | 主要終點 mEFS | HR (95% CI) |
+|---|---|---|---|---|
+| **ZUMA-7** (NEJM 2022) | Axi-cel vs. SOC（HDT-ASCT） | 359 | 8.3 vs. 2.0 個月 | 0.40 (0.31–0.51) |
+| **TRANSFORM** (Lancet 2022) | Liso-cel vs. SOC（HDT-ASCT） | 184 | 10.1 vs. 2.3 個月 | 0.35 (0.23–0.53) |
+
+**兩個試驗的入選條件都是「第一線治療反應不佳（primary refractory）或 12 個月內復發」**。這個族群以往用 HDT-ASCT 預後很差，現在直接走 CAR-T 顯著改善。**> 12 個月才復發的病人**目前仍可考慮 HDT-ASCT，但 CAR-T 也是合理選項，須與血液腫瘤科團隊個別討論。
+
+<Callout type="warning" title="CAR-T 的風險不容忽視">
+CAR-T 細胞治療在 ZUMA-7 與 TRANSFORM 中分別有 ≥ Grade 3 細胞激素風暴（CRS）約 6–11%、≥ Grade 3 神經毒性 / ICANS 約 4–10%。**必須在有 CAR-T 經驗的中心執行**，且需配備 ICU、神經內科、急重症照護。台灣目前已有部分醫學中心提供 axi-cel、tisa-cel；健保自 2023 年 11 月起有條件給付。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 切片時就要把分層因子驗齊
+
+    Hans IHC（GCB vs. ABC）、MYC/BCL2/BCL6 FISH、TP53 都建議在第一次切片時一次驗完。這些檢查在病理玻片上就能完成，不必額外活檢。
+  </div>
+  <div>
+    ### 算清楚自己的 IPI 與 NCCN-IPI
+
+    主治醫師應該告訴你 IPI 是幾分、屬於 low / low-intermediate / high-intermediate / high 哪一組。IPI ≥ 2 是討論 Pola-R-CHP 的關鍵門檻。
+  </div>
+  <div>
+    ### 主動詢問是否適合 Pola-R-CHP
+
+    若 IPI ≥ 2，請主治醫師說明：(1) 為什麼建議 / 不建議 Pola-R-CHP；(2) 健保是否給付（台灣自費約一個療程數十萬）；(3) 副作用差異；(4) ABC 子型是否獲益更明顯。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 IPI 是幾分？NCCN-IPI 呢？
+    2. 我是 GCB 還是 ABC 子型？做的是 Hans IHC 還是 GEP？
+    3. MYC、BCL2、BCL6 FISH 有沒有 rearrangement？是不是 double-hit？
+    4. 第一線打 R-CHOP 還是 Pola-R-CHP？為什麼？
+    5. interim PET-CT 大概什麼時候做？怎麼判讀？
+    6. 萬一 12 個月內復發，CAR-T 是不是可行？哪家中心有經驗？
+    7. HBV/HCV/HIV 篩檢做了嗎？要不要預防性抗病毒治療？
+    8. 心臟超音波 LVEF 多少？doxorubicin 是否安全？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Tilly H, Morschhauser F, Sehn LH, et al. **Polatuzumab Vedotin in Previously Untreated Diffuse Large B-Cell Lymphoma** (POLARIX). *N Engl J Med.* 2022;386(4):351-363. [doi:10.1056/NEJMoa2115304](https://doi.org/10.1056/NEJMoa2115304)
+2. Coiffier B, Lepage E, Brière J, et al. **CHOP chemotherapy plus rituximab compared with CHOP alone in elderly patients with diffuse large-B-cell lymphoma** (GELA LNH-98.5). *N Engl J Med.* 2002;346(4):235-242. [doi:10.1056/NEJMoa011795](https://doi.org/10.1056/NEJMoa011795)
+3. Pfreundschuh M, Schubert J, Ziepert M, et al. **Six versus eight cycles of bi-weekly CHOP-14 with or without rituximab in elderly patients with aggressive CD20+ B-cell lymphomas: a randomised controlled trial** (RICOVER-60). *Lancet Oncol.* 2008;9(2):105-116. [doi:10.1016/S1470-2045(08)70002-0](https://doi.org/10.1016/S1470-2045(08)70002-0)
+4. Locke FL, Miklos DB, Jacobson CA, et al. **Axicabtagene Ciloleucel as Second-Line Therapy for Large B-Cell Lymphoma** (ZUMA-7). *N Engl J Med.* 2022;386(7):640-654. [doi:10.1056/NEJMoa2116133](https://doi.org/10.1056/NEJMoa2116133)
+5. Kamdar M, Solomon SR, Arnason J, et al. **Lisocabtagene maraleucel versus standard of care with salvage chemotherapy followed by autologous stem cell transplantation as second-line treatment in patients with relapsed or refractory large B-cell lymphoma** (TRANSFORM). *Lancet.* 2022;399(10343):2294-2308. [doi:10.1016/S0140-6736(22)00662-6](https://doi.org/10.1016/S0140-6736(22)00662-6)
+6. Zhou Z, Sehn LH, Rademaker AW, et al. **An enhanced International Prognostic Index (NCCN-IPI) for patients with diffuse large B-cell lymphoma treated in the rituximab era.** *Blood.* 2014;123(6):837-842. [doi:10.1182/blood-2013-09-524108](https://doi.org/10.1182/blood-2013-09-524108)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — B-Cell Lymphomas, v3.2025.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

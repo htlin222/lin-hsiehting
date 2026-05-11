@@ -1,0 +1,213 @@
+---
+title: "癌症相關血栓（CAT）：DOAC vs LMWH 怎麼選"
+titleEn: "Cancer-associated thrombosis: DOAC versus LMWH in 2026"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "癌症病人靜脈血栓栓塞風險高出一般人 4–7 倍。CARAVAGGIO、Hokusai-VTE Cancer、SELECT-D 三個隨機試驗確立 DOAC（apixaban、edoxaban、rivaroxaban）於癌症 VTE 不亞於 LMWH，但胃腸與泌尿道腫瘤的出血風險仍需小心。本文整理 ITAC 2022 與 ASCO 2020 指引，給出實務選藥流程。"
+tags: ["癌症血栓", "VTE", "抗凝血", "apixaban", "rivaroxaban", "dalteparin", "衛教"]
+medical: true
+medicalCondition: "癌症相關靜脈血栓栓塞 (Cancer-associated venous thromboembolism, CAT)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "癌症為什麼容易血栓？"
+    a: "癌細胞會釋放組織因子（tissue factor）與促凝物質、活化血小板與內皮細胞，再加上化療、手術、住院、中央靜脈導管等因素，使整體靜脈血栓栓塞（VTE）風險比一般人高出 4–7 倍。胰臟癌、胃癌、肺癌、卵巢癌與惡性腦瘤屬於高風險族群。"
+  - q: "rivaroxaban 用在癌症病人安全嗎？"
+    a: "SELECT-D 試驗（Young JCO 2018, n = 406）顯示 rivaroxaban 與 dalteparin 相比，6 個月 VTE 復發率較低（4% vs. 11%），但臨床相關非大出血上升（13% vs. 4%），尤其見於胃腸道腫瘤。對非胃腸道癌的 VTE 病人，rivaroxaban 是合理選擇；胃癌、上消化道癌或近期上消化道出血者，多數指引偏好 apixaban 或 LMWH。"
+  - q: "胃癌、膀胱癌的病人可以用 DOAC 嗎？"
+    a: "可以但需個別評估。Hokusai-VTE Cancer 與 SELECT-D 都觀察到胃腸道與泌尿道癌使用 edoxaban / rivaroxaban 時大出血率高於 dalteparin。ITAC 2022 與 ASCO 2020 指引建議：上消化道病灶未切除、近期 GI 出血、嚴重黏膜炎或腫瘤侵犯泌尿道者，優先考慮 apixaban（CARAVAGGIO 顯示與 dalteparin 出血率相當）或 LMWH。"
+  - q: "癌症血栓的抗凝血藥要吃多久？"
+    a: "目前指引建議至少 6 個月。6 個月後若癌症仍處於活動期（未根除、轉移、仍在接受全身性治療），多數指引建議繼續抗凝血直到癌症緩解或風險明顯下降；若已完全緩解且無持續危險因子，可考慮停藥。停藥前必須評估復發風險、出血史與病人偏好。"
+doi: "10.5281/zenodo.20115023"
+conceptDoi: "10.5281/zenodo.20115022"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+癌症病人發生靜脈血栓栓塞（VTE）的風險是一般人的 **4–7 倍**，是僅次於癌症本身的第二大死因。過去 20 年，CLOT 試驗（Lee NEJM 2003）讓低分子量肝素（LMWH，dalteparin）取代 warfarin，成為癌症血栓的標準治療；2018 年起 Hokusai-VTE Cancer 與 SELECT-D 證明口服抗凝血劑（DOAC）edoxaban、rivaroxaban 不亞於 dalteparin；2020 年 CARAVAGGIO 進一步顯示 apixaban 同樣有效且出血風險與 dalteparin 相當。本文整理四個關鍵試驗、ITAC 2022 與 ASCO 2020 指引建議，以及初級預防（Khorana score、AVERT、CASSINI）的角色。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷出深部靜脈血栓（DVT）或肺栓塞（PE）、正在接受癌症治療的病友與家屬，以及對 DOAC vs LMWH 抉擇感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 癌症為什麼容易血栓？
+
+癌症本身就是一個全身性的促凝狀態。Trousseau 在 1865 年就觀察到反覆遊走性血栓與隱藏的腹腔內惡性腫瘤有關。現代研究確認背後機轉至少有四層：
+
+1. **腫瘤分泌組織因子**（tissue factor）與 cancer procoagulant，直接啟動凝血瀑布
+2. **發炎細胞激素**（IL-6、TNF-α）使內皮細胞由抗凝轉為促凝
+3. **腫瘤微粒**（tumor-derived microparticles）與 NETs（neutrophil extracellular traps）放大凝血訊號
+4. **治療相關因素**：化療（cisplatin、5-FU、bevacizumab、來那度胺）、手術、住院臥床、中央靜脈導管、紅血球生成素
+
+不同癌別的 VTE 風險差異很大，胰臟癌、胃癌、惡性腦瘤、卵巢癌、肺癌與血液惡性腫瘤屬於高風險族群；攝護腺癌、乳癌風險相對較低。
+
+### Khorana score：初診時就能算
+
+Khorana score（Khorana Blood 2008）是目前最常用、外部驗證最多的門診化療病人 VTE 風險評估工具：
+
+| 變項 | 分數 |
+|---|---|
+| 高風險癌別（胃、胰臟） | 2 |
+| 中風險癌別（肺、淋巴、婦科、膀胱、睪丸） | 1 |
+| 化療前血小板 ≥ 350,000/µL | 1 |
+| 血紅素 < 10 g/dL 或正在用 ESA | 1 |
+| 化療前白血球 > 11,000/µL | 1 |
+| 身體質量指數 BMI ≥ 35 kg/m² | 1 |
+
+**總分 ≥ 2 分為高風險**，2.5 個月內症狀性 VTE 累積發生率約 6.7%；0 分者約 0.8%。
+
+## 治療：四個隨機試驗的整理
+
+DOAC 取代 LMWH 的轉折來自 2018–2020 年連續三個第三期試驗。以下整理 CLOT、Hokusai-VTE Cancer、SELECT-D、CARAVAGGIO 的關鍵終點：
+
+| 試驗 | 比較組 | n | 6 個月 VTE 復發 | 大出血（major bleeding） | 出處 |
+|---|---|---|---|---|---|
+| **CLOT**（2003） | Dalteparin vs. warfarin | 672 | 9% vs. 17%（HR 0.48） | 6% vs. 4%（NS） | NEJM 2003 |
+| **Hokusai-VTE Cancer**（2018） | Edoxaban vs. dalteparin | 1,050 | 7.9% vs. 11.3% | 6.9% vs. 4.0%（P = 0.04） | NEJM 2018 |
+| **SELECT-D**（2018） | Rivaroxaban vs. dalteparin | 406 | 4% vs. 11%（HR 0.43） | 6% vs. 4%（NS）；CRNMB 13% vs. 4% | JCO 2018 |
+| **CARAVAGGIO**（2020） | Apixaban vs. dalteparin | 1,170 | 5.6% vs. 7.9%（HR 0.63） | 3.8% vs. 4.0%（NS） | NEJM 2020 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+四個試驗的納入條件（活動性癌定義、是否允許上消化道腫瘤、是否排除腦轉移、追蹤時間）並不完全一致；上表數字僅供概念性對照，不應用於跨試驗排序選藥。實際選擇應依個別病人癌別、出血風險、共病、藥物交互作用、可及性綜合判斷。
+</Callout>
+
+幾個臨床上要記得的觀察：
+
+- **Edoxaban 與 rivaroxaban 出血風險偏高**，尤其在胃腸道腫瘤；SELECT-D 後續分析顯示上消化道癌使用 rivaroxaban 大出血率高達 19%。
+- **CARAVAGGIO 是目前少數 DOAC 出血率不顯著高於 dalteparin** 的試驗；其族群有 ~ 32% 為胃腸道癌，但有些限制如排除原發或轉移性腦瘤、急性白血病。
+- **CLOT 的 dalteparin 仍是 GI 出血高風險、嚴重血小板低下、藥物交互作用複雜時的可靠選項**。
+
+## DOAC vs LMWH：誰適合哪種？
+
+ITAC 2022（Farge Lancet Oncol 2022）、ASCO 2020 與 NCCN VTE v1.2026 三套指引的綜合建議：
+
+| 臨床情境 | 首選 | 理由 |
+|---|---|---|
+| 非胃腸道、非泌尿道腫瘤的 VTE | **Apixaban / Edoxaban / Rivaroxaban**（任一 DOAC） | 口服方便、療效不亞於 LMWH、CARAVAGGIO 顯示 apixaban 出血率最低 |
+| 上消化道癌（食道、胃、未切除的上 GI 病灶） | **Apixaban 或 LMWH** | 避開 edoxaban / rivaroxaban GI 出血風險 |
+| 泌尿道腫瘤（膀胱、上泌尿道） | **Apixaban 或 LMWH** | 同上，避開出血疑慮 |
+| 腦轉移或原發腦瘤 | **LMWH** | DOAC 試驗多排除腦瘤族群，證據不足 |
+| 嚴重肝功能異常（Child-Pugh B/C） | **LMWH** | DOAC 多經肝臟代謝，劑量調整困難 |
+| 嚴重腎功能異常（CrCl < 30 mL/min） | **LMWH（依 anti-Xa 監測）或 apixaban** | Edoxaban、rivaroxaban 在 CrCl < 30 不建議 |
+| 嚴重藥物交互作用（強 P-gp / CYP3A4 抑制劑或誘導劑） | **LMWH** | DOAC 血中濃度難以預測 |
+| 嚴重嘔吐 / 黏膜炎 / 短腸症 | **LMWH** | 口服吸收不穩定 |
+| 血小板 30–50 × 10⁹/L | **減量抗凝血**（LMWH 半量、密切監測） | 國際共識建議減量而非停藥 |
+| 血小板 < 30 × 10⁹/L | **暫停抗凝血、輸血支持** | 維持血小板 ≥ 40–50 × 10⁹/L 後再評估 |
+
+## 實務流程：診斷到追蹤
+
+<Steps>
+  <div>
+    ### 1. 確診 VTE 與初步評估
+
+    急性 DVT 以下肢靜脈超音波確認、PE 以 CT pulmonary angiography（CTPA）確認。同時評估：血色素、血小板、肝腎功能、體重、共病、共用藥物（化療、強 CYP3A4 / P-gp 影響藥）、過去出血史。
+  </div>
+  <div>
+    ### 2. 選擇抗凝血藥
+
+    依上表決定 DOAC 或 LMWH。沒有上消化道、泌尿道病灶、腦瘤、嚴重藥物交互作用的標準病人，apixaban 5 mg twice daily（前 7 天 10 mg twice daily）是最常見的起始方案。胃腸或泌尿道腫瘤、嚴重藥物交互作用、嚴重肝腎異常者，選 dalteparin 200 IU/kg sc once daily × 1 個月，之後 150 IU/kg。
+  </div>
+  <div>
+    ### 3. 療程至少 6 個月，再依癌症狀態決定
+
+    所有指引建議起始療程至少 6 個月。6 個月後若癌症仍為活動性（未根除、有轉移、仍在化療 / 標靶 / 免疫治療），多數指引建議**繼續抗凝血**；若已完全緩解且無持續危險因子，可與病人共同決策後停藥。停藥前再算一次出血／復發風險。
+  </div>
+  <div>
+    ### 4. 定期追蹤血液與症狀
+
+    每 1–3 個月評估：(a) 是否再發 DVT / PE 症狀（單側肢體腫脹、突發呼吸困難、胸痛），(b) 出血徵象（黑便、血尿、紫斑、結膜出血、頭痛），(c) 血色素、血小板、腎功能。若需手術、侵入性檢查（內視鏡切片、中心靜脈導管置放）前 24–48 小時暫停 DOAC，依術後出血風險決定何時再開始。
+  </div>
+  <div>
+    ### 5. 初級預防：高風險門診化療病人考慮 apixaban / rivaroxaban
+
+    Khorana score ≥ 2 的門診化療病人，AVERT（apixaban 2.5 mg twice daily）與 CASSINI（rivaroxaban 10 mg daily）兩個第三期試驗都顯示可顯著降低 6 個月 VTE 風險（HR 0.41–0.66），但代價是大出血風險上升（特別是 AVERT，apixaban 組 3.5% vs. 安慰劑 1.8%）。ASCO 2020 與 ITAC 2022 將其列為**可考慮**，須與病人個別討論。**胰臟癌與骨髓瘤族群獲益最明顯**。
+  </div>
+</Steps>
+
+## 適應症（試驗中或已核准）
+
+- 經影像確診的急性近端 DVT 或症狀性 PE，發生於活動性癌症期間（過去 6 個月內診斷、未完全緩解、有遠端轉移、正在接受全身性抗癌治療）
+- 體能狀態可耐受口服或皮下注射、預期存活 ≥ 1 個月
+- 高 Khorana score（≥ 2）門診化療病人作為初級預防（個別評估）
+
+## 一般禁忌症與謹慎使用
+
+- **絕對禁忌**：活動性大出血、近期顱內出血、嚴重血小板低下（< 30 × 10⁹/L）未經輸血支持
+- **相對禁忌**：近期顱內 / 脊椎手術、未控制的高血壓（> 180/110 mmHg）、活動性消化性潰瘍、嚴重肝功能異常、近期大手術 24–48 小時內
+- **藥物交互作用**：DOAC 與強 CYP3A4 / P-gp 抑制劑（azole 類抗黴菌、HIV protease inhibitor）或誘導劑（rifampin、phenytoin、carbamazepine、St. John's Wort）併用須極謹慎，部分組合應改用 LMWH
+- **腎功能**：edoxaban 在 CrCl 15–50 mL/min 需減量至 30 mg；rivaroxaban、edoxaban 在 CrCl < 15 mL/min 不建議；apixaban 在嚴重腎功能異常的證據雖較有限，但臨床上仍是 DOAC 中較被接受的選項
+
+## 常見副作用
+
+抗凝血藥的核心副作用都是**出血**，差別在出血部位與嚴重度：
+
+- **大出血**（major bleeding，定義：血色素下降 ≥ 2 g/dL、輸血 ≥ 2 單位、發生於關鍵部位如顱內 / 腹膜後 / 眼內、致死性出血）：4 個試驗中 3–7%
+- **臨床相關非大出血**（CRNMB）：12–15%，最常見是腸胃道輕度滲血、月經量增多、皮下瘀青
+- **小出血**：牙齦出血、流鼻血、皮膚紫斑
+- **LMWH 特有**：注射部位瘀青／硬塊、肝素誘發血小板低下症（HIT，發生率 < 1%）、長期使用可能骨質疏鬆
+- **DOAC 特有**：消化道滲血（特別是 rivaroxaban、edoxaban）
+
+<Callout type="warning" title="GI 出血是 DOAC 的關鍵警訊">
+若出現黑便、咖啡渣樣嘔吐物、解血便、暈眩、心跳過快或血色素急速下降，請**立即就醫並停止口服抗凝血藥**。上消化道癌、未切除的胃部病灶、嚴重黏膜炎、近期 GI 出血史的病人，應從一開始就避免 edoxaban 與 rivaroxaban，改用 apixaban 或 LMWH。
+</Callout>
+
+## 特殊情境：血小板低下與重大出血
+
+癌症病人常因化療、骨髓侵犯出現血小板低下。國際共識（ISTH 2022）建議：
+
+- **血小板 ≥ 50 × 10⁹/L**：照標準劑量抗凝血
+- **血小板 30–50 × 10⁹/L**：LMWH 減量（半量）或維持血小板輸注後使用標準劑量；DOAC 證據不足
+- **血小板 < 30 × 10⁹/L**：暫停抗凝血、輸血支持並評估血栓 vs 出血風險
+
+若已發生急性 PE 影響血流動力學，或 IVC 內血栓延伸風險高，可考慮**暫時性下腔靜脈濾網**（IVC filter），但證據顯示濾網無法降低死亡率，使用時須計畫日後取出。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 認識血栓警訊
+
+    任何**單側**下肢腫脹、紅熱、壓痛；或**突發**胸痛、呼吸困難、心跳加快、頭暈昏厥，應立刻就醫。癌症治療期間，這些症狀都應優先排除 DVT 與 PE。
+  </div>
+  <div>
+    ### 用藥時的日常注意
+
+    - 固定時間服藥（apixaban 每 12 小時、rivaroxaban 每天同一時間隨餐）
+    - 不要自己加保健食品（魚油、銀杏、紅麴、薑黃高劑量）會增加出血風險
+    - 跌倒高風險的長輩請評估居家環境
+    - 牙科治療、內視鏡、手術前一定要告知醫師正在服用抗凝血藥
+    - DOAC 漏服處置：apixaban 12 小時內補吃；rivaroxaban 同日內補吃；逾時跳過下一劑、不要加倍
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的血栓是 DVT、PE，還是兩者都有？嚴不嚴重？
+    2. 我屬於上消化道、泌尿道癌嗎？這會影響選 DOAC 或 LMWH。
+    3. 我的腎功能與肝功能是否適合 DOAC？
+    4. 我目前正在吃的化療、標靶、抗黴菌藥有沒有與 DOAC 衝突？
+    5. 治療多久？6 個月後要不要繼續？依據是什麼？
+    6. 若要做切片、內視鏡或手術，停藥幾天？什麼時候可以再吃？
+    7. 我屬於 Khorana score 高風險嗎？需不需要做初級預防？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Agnelli G, Becattini C, Meyer G, et al. **Apixaban for the Treatment of Venous Thromboembolism Associated with Cancer** (CARAVAGGIO). *N Engl J Med.* 2020;382(17):1599-1607. [doi:10.1056/NEJMoa1915103](https://doi.org/10.1056/NEJMoa1915103)
+2. Raskob GE, van Es N, Verhamme P, et al. **Edoxaban for the Treatment of Cancer-Associated Venous Thromboembolism** (Hokusai-VTE Cancer). *N Engl J Med.* 2018;378(7):615-624. [doi:10.1056/NEJMoa1711948](https://doi.org/10.1056/NEJMoa1711948)
+3. Lee AYY, Levine MN, Baker RI, et al. **Low-Molecular-Weight Heparin versus a Coumarin for the Prevention of Recurrent Venous Thromboembolism in Patients with Cancer** (CLOT). *N Engl J Med.* 2003;349(2):146-153. [doi:10.1056/NEJMoa025313](https://doi.org/10.1056/NEJMoa025313)
+4. Young AM, Marshall A, Thirlwall J, et al. **Comparison of an Oral Factor Xa Inhibitor With Low Molecular Weight Heparin in Patients With Cancer With Venous Thromboembolism** (SELECT-D). *J Clin Oncol.* 2018;36(20):2017-2023. [doi:10.1200/JCO.2018.78.8034](https://doi.org/10.1200/JCO.2018.78.8034)
+5. Carrier M, Abou-Nassar K, Mallick R, et al. **Apixaban to Prevent Venous Thromboembolism in Patients with Cancer** (AVERT). *N Engl J Med.* 2019;380(8):711-719. [doi:10.1056/NEJMoa1814468](https://doi.org/10.1056/NEJMoa1814468)
+6. Khorana AA, Soff GA, Kakkar AK, et al. **Rivaroxaban for Thromboprophylaxis in High-Risk Ambulatory Patients with Cancer** (CASSINI). *N Engl J Med.* 2019;380(8):720-728. [doi:10.1056/NEJMoa1814630](https://doi.org/10.1056/NEJMoa1814630)
+7. Farge D, Frere C, Connors JM, et al. **2022 international clinical practice guidelines for the treatment and prophylaxis of venous thromboembolism in patients with cancer** (ITAC 2022). *Lancet Oncol.* 2022;23(7):e334-e347. [doi:10.1016/S1470-2045(22)00160-7](https://doi.org/10.1016/S1470-2045(22)00160-7)
+8. Khorana AA, Kuderer NM, Culakova E, Lyman GH, Francis CW. **Development and validation of a predictive model for chemotherapy-associated thrombosis.** *Blood.* 2008;111(10):4902-4907. [doi:10.1182/blood-2007-10-116327](https://doi.org/10.1182/blood-2007-10-116327)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

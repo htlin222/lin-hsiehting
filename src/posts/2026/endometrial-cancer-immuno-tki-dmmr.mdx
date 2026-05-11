@@ -1,0 +1,206 @@
+---
+title: "晚期子宮內膜癌：pembrolizumab + lenvatinib、dMMR 與分子分型決策"
+titleEn: "Endometrial cancer: pembrolizumab + lenvatinib and dMMR-directed therapy"
+date: "05/11/2026"
+frontmatter: "晚期子宮內膜癌 2023–2024 年改寫教科書：NRG-GY018、RUBY、AtTEnd 三大第三期試驗將 PD-1 阻斷劑加入第一線化療，dMMR 族群 mPFS 翻倍；KEYNOTE-775 的 pembro+lenva 為失效後標準二線；TCGA 四亞型（POLE / dMMR / p53 / NSMP）開始指導 adjuvant 強度。"
+tags: ["子宮內膜癌", "pembrolizumab", "lenvatinib", "dMMR", "POLE", "衛教"]
+medical: true
+medicalCondition: "晚期子宮內膜癌 (Advanced endometrial carcinoma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "子宮內膜癌轉移可以打免疫嗎？"
+    a: "可以，且 2023 年起已成為第一線標準。NRG-GY018（pembrolizumab + paclitaxel/carboplatin）、RUBY（dostarlimab + 化療）、AtTEnd（atezolizumab + 化療）三個第三期試驗一致顯示：在晚期或復發性子宮內膜癌的第一線加入 PD-1 / PD-L1 抑制劑，可顯著延長 mPFS；dMMR / MSI-H 族群效益最大（RUBY dMMR mPFS HR 0.28），pMMR 族群也有中等收益。"
+  - q: "dMMR / MSI-H 跟 pMMR 差別是什麼？為什麼影響治療？"
+    a: "dMMR（mismatch repair deficient）指癌細胞修復 DNA 錯配的四個蛋白（MLH1、MSH2、MSH6、PMS2）至少一個失效，導致大量突變、產生新抗原，因此對免疫治療反應好；MSI-H 是同一概念用 PCR / NGS 測 microsatellite 重複序列得到的結果。約 25–30% 子宮內膜癌為 dMMR / MSI-H。pMMR 指修復系統完好，腫瘤突變負荷較低，單獨免疫治療反應差，但與化療或抗血管生成 TKI 合用仍有效。"
+  - q: "pembrolizumab + lenvatinib 副作用很重嗎？"
+    a: "確實偏重，KEYNOTE-775 中第 3 級以上不良反應達 88.9%，主要為高血壓（38%）、體重下降、腹瀉、蛋白尿、手足症候群、甲狀腺低下。停藥率約 33%。但延長存活有意義（mOS 18.3 vs 11.4 個月），多數副作用以 lenvatinib 減量、降壓藥、抗腹瀉、營養支持可控。所有 pMMR 病人在化療免疫失效後仍建議與主治醫師討論這條路線。"
+  - q: "TCGA 四個分子亞型怎麼影響治療？"
+    a: "TCGA 2013 把子宮內膜癌分為四群：(1) POLE-ultramutated（≈ 7%，預後極佳，正評估降階 adjuvant）；(2) dMMR / MSI-H（≈ 28%，免疫治療反應好，第一線化免標準）；(3) p53-abnormal / copy number high（≈ 26%，預後差，需強化 adjuvant ± HER2 標靶）；(4) NSMP / copy number low（≈ 39%，中間預後，依 ER、grade、stage 個別化）。PORTEC-4a、RAINBO 等 prospective 試驗正以分子亞型指導 adjuvant 強度。"
+doi: "10.5281/zenodo.20115043"
+conceptDoi: "10.5281/zenodo.20115042"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+晚期或復發性子宮內膜癌的第一線在 2023–2024 年間被三個 NEJM / Lancet Oncol 第三期試驗改寫：**NRG-GY018**（pembrolizumab + paclitaxel/carboplatin）、**RUBY**（dostarlimab + 化療）、**AtTEnd**（atezolizumab + 化療）一致顯示，將 PD-1 / PD-L1 抑制劑加入第一線化療可延長無惡化存活，**dMMR / MSI-H 族群效益最大**（RUBY dMMR mPFS HR 0.28；NRG-GY018 dMMR HR 0.30）。化免失效後，**KEYNOTE-775 確立 pembrolizumab + lenvatinib 為標準二線**（mOS 18.3 vs 11.4 個月）。同時，TCGA 四個分子亞型（POLE / dMMR / p53-abn / NSMP）開始進入臨床決策，指導 adjuvant 強度與第一線方案選擇。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛確診晚期、復發性或高風險子宮內膜癌、想了解第一線是否該打免疫的病友與家屬，以及對 NRG-GY018 / RUBY / AtTEnd 三足鼎立與 TCGA 分子分型臨床落地感興趣的同業。本文不取代主治醫師的個別評估。
+</Callout>
+
+<Divider />
+
+## 為什麼子宮內膜癌的治療地圖在 2023 年大翻盤？
+
+過去十年子宮內膜癌晚期治療幾乎沒有突破，第一線就是 paclitaxel + carboplatin，mPFS 約 13 個月，復發後選擇有限。轉折點是兩件事：
+
+1. **MMR / MSI 成為可治療標記**：2017 年 pembrolizumab 在 MSI-H 實體癌取得 tissue-agnostic 核准，子宮內膜癌的 dMMR 比例高達 25–30%，遠高於大多數實體癌。
+2. **TCGA 分子分型成熟**：2013 年 Kandoth 等人在 *Nature* 將子宮內膜癌分為四個分子亞型，其中 POLE-mut 與 dMMR 兩群本身就是「高突變、高新抗原、高免疫浸潤」表型，提供生物學基礎，預測對免疫治療有反應。
+
+接著 2022 年 KEYNOTE-775 顯示 pembrolizumab + lenvatinib 在化療失效族群延長存活；2023 年 NRG-GY018 與 RUBY 同月 NEJM 同步發表，把免疫治療從二線推到一線。2024 年 AtTEnd 與 DUO-E 補強這個格局。
+
+## 一線標準：三大化免試驗怎麼選？
+
+### NRG-GY018 / RUBY / AtTEnd / DUO-E 比較表
+
+| 試驗 | 方案 | 對照 | n（總/dMMR） | dMMR mPFS（HR） | pMMR mPFS（HR） | 主要 endpoint |
+|---|---|---|---|---|---|---|
+| **NRG-GY018** | pembrolizumab + PC ×6 → pembro 維持 | placebo + PC | 816 / 225 | NR vs 7.6（HR 0.30） | 13.1 vs 8.7（HR 0.54） | PFS ✓ |
+| **RUBY part 1** | dostarlimab + PC ×6 → dostar 維持 | placebo + PC | 494 / 118 | NR vs 7.7（HR 0.28） | 9.9 vs 7.9（HR 0.76） | PFS / OS ✓（OS 16.4% 改善）|
+| **AtTEnd** | atezolizumab + PC ×6–8 → atezo 維持 | placebo + PC | 549 / 125 | NR vs 6.9（HR 0.36） | 10.1 vs 8.9（HR 0.74） | PFS ✓（dMMR）/ OS borderline |
+| **DUO-E** | durvalumab + PC → durva + olaparib 維持 | placebo + PC | 718 / 143 | 31.8 vs 7.0（HR 0.41，dMMR durva）| 15.0 vs 9.7（HR 0.55，pMMR durva+olap）| PFS ✓ |
+| **KEYNOTE-775（≥ 2L）** | pembrolizumab + lenvatinib | doxorubicin 或 paclitaxel | 827 / 130 | — | mOS 17.4 vs 12.0（HR 0.68）| OS / PFS ✓ |
+
+> PC = paclitaxel + carboplatin；NR = not reached；mPFS 單位月。dMMR / pMMR 為次群 stratified analysis。
+
+<Callout type="warning" title="跨試驗比較的限制">
+NRG-GY018、RUBY、AtTEnd、DUO-E 雖然設計相似，但 stage 分布（含 stage III vs 復發性）、histology（含或不含 carcinosarcoma）、之前 adjuvant 化療間隔（≥ 6 vs ≥ 12 個月）、PD-1 vs PD-L1 抗體、維持治療時長都不同。上表 HR 與 mPFS 用來理解效益方向，不應作為跨藥物 head-to-head 排序。台灣現況以健保給付與藥物可及性為實務考量。
+</Callout>
+
+### dMMR 怎麼選？
+
+dMMR / MSI-H 病人在四個試驗都看到極顯著效益（HR 約 0.28–0.41）。實務上：
+
+- **NRG-GY018 dMMR cohort**：pembrolizumab 是目前較多臨床醫師熟悉的選項，藥物可及性高。
+- **RUBY dMMR**：dostarlimab + 化療有 **OS 整體族群顯著改善**（part 1 OS HR 0.69），是目前少數在 ITT 族群達到 OS 統計顯著的化免試驗。
+- 任一方案 dMMR 第一線 mPFS 都未達到（NR），整體 ORR 約 70–80%。
+
+### pMMR 怎麼選？
+
+pMMR 族群效益較小但仍顯著。重點：
+
+- NRG-GY018 pMMR mPFS HR 0.54、AtTEnd HR 0.74、RUBY HR 0.76、DUO-E（durva + olaparib 維持）HR 0.55。
+- DUO-E 在 pMMR 加 olaparib 維持，是目前 pMMR 表現最好的方案，但代價是更多血液毒性與 olaparib 副作用。
+- 美國 FDA 2024 對 DUO-E 的核准限定在 **dMMR**（durvalumab + 化療）與 **pMMR**（durvalumab + olaparib 維持）兩個分群分別有適應症。
+
+## 二線標準：KEYNOTE-775 pembrolizumab + lenvatinib
+
+化免失效（或不適合一線免疫、僅曾接受過化療）的晚期子宮內膜癌，**pembrolizumab + lenvatinib** 是 NCCN / ESMO 共識的標準二線：
+
+- **KEYNOTE-775**（Makker NEJM 2022）：N = 827，pembro+lenva vs 醫師選擇之化療（doxorubicin / paclitaxel）。
+- 整體族群 **mOS 18.3 vs 11.4 個月（HR 0.62）**，mPFS 7.2 vs 3.8 個月（HR 0.56）。
+- pMMR subset（n = 697）mOS 17.4 vs 12.0（HR 0.68），mPFS 6.6 vs 3.8（HR 0.60）。
+- ORR 整體 31.9% vs 14.7%。
+- 在化免主導第一線的時代，KEYNOTE-775 主要適用：(a) 一線只用過化療、未用免疫；(b) 一線化免失效後 ≥ 6 個月復發、再嘗試 lenva 加 pembro 維持；(c) dMMR 但僅接受過 PD-1 單藥的二線。
+
+<Callout type="note" title="一線化免後 pembro+lenva 還有效嗎？">
+這是 2024–2026 年最大未答疑問。KEYNOTE-775 是「免疫 naïve」族群，化免取代第一線後，pembro+lenva 在「曾用過 anti-PD-1」族群效益尚未被前瞻 RCT 驗證。回顧分析顯示反應率約降至 15–20%，但仍優於單藥化療。LEAP-001 與多個 IIT 正在前線評估 pembro+lenva 取代化療的可能性。
+</Callout>
+
+## TCGA 分子分型：四個亞型怎麼分、怎麼用
+
+2013 年 Kandoth 等人在 *Nature* 公布 TCGA 子宮內膜癌泛癌分析，將 373 例分為四群。後續 ProMisE、TransPORTEC 演算法用 IHC + sequencing 做臨床版本，2023 年 WHO 第 5 版婦科腫瘤分類正式納入：
+
+### 四個分子亞型臨床特徵
+
+| 亞型 | 比例 | 診斷方式 | 預後 | 治療意涵 |
+|---|---|---|---|---|
+| **POLE-ultramutated** | ≈ 7% | POLE exonuclease domain hotspot mutations（NGS） | 極佳（5-yr OS > 95%）| PORTEC-4a 等試驗評估降階或省略 adjuvant；不論 grade 都可能省略放化療 |
+| **dMMR / MSI-H** | ≈ 28% | MLH1 / MSH2 / MSH6 / PMS2 IHC，或 MSI PCR / NGS | 中間 | 第一線化免（NRG-GY018 / RUBY）；考慮 Lynch syndrome 諮詢 |
+| **p53-abnormal / copy number high** | ≈ 26% | p53 IHC（aberrant pattern）或 TP53 NGS | 差（5-yr OS ≈ 50%）| 需強化 adjuvant（放化療 sandwich）；HER2 陽性可加 trastuzumab；DUO-E pMMR + p53-abn 是潛在 olaparib 受惠族群 |
+| **NSMP / copy number low** | ≈ 39% | 排除前三型 | 中間 | 依 grade、ER、stage 個別化；ER+ 可考慮荷爾蒙治療；RAINBO blue arm 評估 progestin ± 內分泌 |
+
+### 怎麼把分子分型整合到臨床流程？
+
+<Steps>
+  <div>
+    ### 第一步：新診斷子宮內膜癌就做 MMR IHC
+
+    所有新診斷子宮內膜癌應接受 **MLH1 / MSH2 / MSH6 / PMS2 四項 IHC**。任一項缺失 → 進一步做 MLH1 promoter methylation（區分散發性 vs Lynch syndrome）。MMR IHC 是分子分型的入口，也是是否轉介遺傳諮詢的依據。
+  </div>
+  <div>
+    ### 第二步：高風險或晚期病人加做 POLE 與 p53
+
+    Stage II 以上、Grade 3、深肌肉層浸潤、淋巴血管侵犯、或非子宮內膜樣組織型（serous、clear cell、carcinosarcoma），建議同時做 **POLE exonuclease domain sequencing**（NGS panel 含）與 **p53 IHC**。這三項加 MMR 即可分到 ProMisE 四群。
+  </div>
+  <div>
+    ### 第三步：分子分型導向治療選擇
+
+    - **POLE-mut**：考慮加入 PORTEC-4a / RAINBO 試驗，避免不必要的 adjuvant 化放療。
+    - **dMMR**：第一線晚期 / 復發優先化免（NRG-GY018 pembro 或 RUBY dostar）；Lynch syndrome 篩查。
+    - **p53-abn**：強化 adjuvant、HER2 IHC + ISH（陽性可加 trastuzumab）、考慮 PARP 研究。
+    - **NSMP**：依 ER、grade、stage 個別化；ER+ low-grade 可保守觀察或荷爾蒙。
+  </div>
+  <div>
+    ### 第四步：晚期 / 復發第一線
+
+    - dMMR → pembrolizumab + PC ×6 → pembro 維持（NRG-GY018）或 dostarlimab + PC ×6 → dostar 維持（RUBY）。
+    - pMMR → pembrolizumab + PC ×6 → pembro 維持 或 durvalumab + PC → durva + olaparib 維持（DUO-E pMMR）。
+    - 完全無法用免疫（自體免疫嚴重活動）→ paclitaxel + carboplatin 單獨。
+  </div>
+  <div>
+    ### 第五步：失效後二線
+
+    - 化免失效 ≥ 6 個月：pembrolizumab + lenvatinib（KEYNOTE-775）。
+    - 化免失效 < 6 個月 或 lenva 不耐受：考慮 trastuzumab deruxtecan（HER2-low 或 HER2+，DESTINY-PanTumor02 ORR 57.5%）、cabozantinib + nivolumab、或臨床試驗。
+  </div>
+</Steps>
+
+## 適應症、禁忌症、副作用整理
+
+### 適應症（已核准或國際指引納入）
+
+- **NRG-GY018 / RUBY / AtTEnd**：stage III–IV 或復發性子宮內膜癌、上一次化療 ≥ 6（NRG-GY018）或 ≥ 12 個月（RUBY）以上、ECOG PS 0–1、可測量病灶。
+- **KEYNOTE-775 pembro+lenva**：晚期或復發性子宮內膜癌、曾接受過至少一線 platinum-based 化療失效、非 dMMR 為主要適應族群（dMMR 可考慮 pembro 單藥）。
+- 所有方案均要求主要器官功能完好（血液、肝、腎、心）。
+
+### 一般禁忌症與謹慎使用
+
+- **免疫相關**：活動性自體免疫疾病（lupus、IBD、活動性甲狀腺炎）使用 PD-1 / PD-L1 抑制劑須權衡；曾因免疫治療發生第 3 級以上 irAE 者通常不再嘗試。
+- **Lenvatinib 特有**：未控制的高血壓、近 3 個月內動脈血栓事件、活動性出血、嚴重蛋白尿、QTc 顯著延長者不建議；接受 lenva 前須優化降壓、評估甲狀腺與心臟。
+- **PARP 抑制劑（olaparib）**：嚴重骨髓抑制、未恢復的化療毒性、活動性 MDS / AML 病史。
+- 妊娠與授乳期一律避免。
+
+### 主要副作用與管理重點
+
+- **化免方案**：嗜中性白血球下降、貧血、周邊神經病變、過敏、免疫相關甲狀腺炎（15–25%）、肺炎（3–5%）、肝炎、大腸炎、腎上腺功能不全。
+- **Pembrolizumab + lenvatinib（KEYNOTE-775）**：第 3 級以上不良反應 88.9%、停藥率 33%。最常見：高血壓（38%）、體重下降、腹瀉、手足症候群、蛋白尿、疲倦、甲狀腺低下、QTc 延長。多數可靠 lenva 減量（standard 20 mg → 14 mg → 10 mg → 8 mg）控制。
+- **Durvalumab + olaparib（DUO-E）**：除化免常見毒性外加 olaparib 之貧血、噁心、疲倦；長期維持需監測 MDS / AML 風險（< 1.5%）。
+
+<Callout type="warning" title="特別提醒：lenvatinib 高血壓不是小事">
+KEYNOTE-775 中第 3 級以上高血壓達 38%，是 lenva 最常見的 grade ≥ 3 不良反應。開始治療前血壓應 < 140/90 mmHg；治療期間建議每日自測，第一週至少測 2 次／日。出現持續 > 150/100 mmHg 或頭痛、視力模糊應立即聯絡團隊，先優化降壓藥再考慮 lenva 減量，不可自行停藥。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認你的 MMR / MSI 狀態
+    所有新診斷子宮內膜癌都應做 MMR IHC 或 MSI 測試。這一項就決定一半的治療方向，沒做就無法判斷該不該優先用免疫。
+  </div>
+  <div>
+    ### 詢問醫師關於分子分型
+    高風險或晚期病人請主動詢問：「我有沒有做 POLE 與 p53？我屬於哪一個 ProMisE 亞型？」這會影響 adjuvant 強度與第一線方案選擇。
+  </div>
+  <div>
+    ### 一線就是化免，不再只是化療
+    2023 年後的標準是 PD-1 / PD-L1 + paclitaxel/carboplatin，dMMR 病人收益尤其大。若被建議單獨化療而沒有討論免疫，請詢問原因。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+    1. MMR IHC 四個蛋白結果？有沒有 Lynch syndrome 風險？
+    2. 有沒有做 POLE、p53、HER2？分子亞型是哪一群？
+    3. 第一線是 NRG-GY018、RUBY 還是 DUO-E 路線？為什麼？
+    4. 若 lenva 副作用太重，有沒有替代方案？
+    5. 是否適合加入臨床試驗（PORTEC-4a、RAINBO、LEAP-001 等）？
+    6. 副作用怎麼監測？血壓、甲狀腺、肝腎功能多久測一次？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Makker V, Colombo N, Casado Herráez A, et al. **Lenvatinib plus Pembrolizumab for Advanced Endometrial Cancer** (KEYNOTE-775 / Study 309). *N Engl J Med.* 2022;386(5):437-448. [doi:10.1056/NEJMoa2108330](https://doi.org/10.1056/NEJMoa2108330)
+2. Eskander RN, Sill MW, Beffa L, et al. **Pembrolizumab plus Chemotherapy in Advanced Endometrial Cancer** (NRG-GY018). *N Engl J Med.* 2023;388(23):2159-2170. [doi:10.1056/NEJMoa2302312](https://doi.org/10.1056/NEJMoa2302312)
+3. Mirza MR, Chase DM, Slomovitz BM, et al. **Dostarlimab for Primary Advanced or Recurrent Endometrial Cancer** (RUBY). *N Engl J Med.* 2023;388(23):2145-2158. [doi:10.1056/NEJMoa2216334](https://doi.org/10.1056/NEJMoa2216334)
+4. Colombo N, Biagioli E, Harano K, et al. **Atezolizumab and chemotherapy for advanced or recurrent endometrial cancer** (AtTEnd). *Lancet Oncol.* 2024;25(9):1135-1146. [doi:10.1016/S1470-2045(24)00334-6](https://doi.org/10.1016/S1470-2045(24)00334-6)
+5. Westin SN, Moore K, Chon HS, et al. **Durvalumab plus Carboplatin/Paclitaxel followed by Maintenance Durvalumab with or without Olaparib in Endometrial Cancer** (DUO-E). *J Clin Oncol.* 2024;42(3):283-299. [doi:10.1200/JCO.23.02132](https://doi.org/10.1200/JCO.23.02132)
+6. Kandoth C, Schultz N, Cherniack AD, et al. **Integrated genomic characterization of endometrial carcinoma.** *Nature.* 2013;497(7447):67-73. [doi:10.1038/nature12113](https://doi.org/10.1038/nature12113)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

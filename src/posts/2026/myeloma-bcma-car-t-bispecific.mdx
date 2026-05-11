@@ -1,0 +1,281 @@
+---
+title: "復發 / 抗藥多發性骨髓瘤的 BCMA CAR-T 與雙特異性抗體"
+titleEn: "BCMA-targeted CAR-T and bispecifics in relapsed/refractory multiple myeloma"
+date: "05/11/2026"
+frontmatter: "BCMA CAR-T（cilta-cel、ide-cel）與雙特異性抗體（teclistamab、elranatamab、talquetamab）在 ≥3 線後 ORR 60–98%；本文整理 CARTITUDE-4 / KarMMa-3 / MajesTEC-1 序列決策、step-up dosing 抑 CRS 與台灣 2026 可及性。"
+tags: ["多發性骨髓瘤", "BCMA", "CAR-T", "雙特異性抗體", "teclistamab", "衛教"]
+medical: true
+medicalCondition: "復發 / 抗藥多發性骨髓瘤 (Relapsed / refractory multiple myeloma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "Carvykti（cilta-cel）跟 Tecvayli（teclistamab）有什麼差別？"
+    a: "Carvykti 是一次性輸注的 BCMA CAR-T 細胞治療，CARTITUDE-4 在 1–3 線復發 / 抗藥族群中 ORR 84.6%、CR 73%、24 個月 PFS 60.5%；Tecvayli 是每週一次的皮下注射 BCMA × CD3 雙特異性抗體，MajesTEC-1 在 ≥4 線族群 ORR 63%。CAR-T 反應深、需 lymphodepletion 與住院觀察 CRS；雙特異性抗體上手快、可門診給藥，但需長期治療並監測感染與低 IgG。"
+  - q: "在台灣自費要多少？健保給付嗎？"
+    a: "2026 年 5 月為止，台灣健保尚未給付 BCMA CAR-T 或 BCMA / GPRC5D 雙特異性抗體；Carvykti、Abecma、Tecvayli、Talvey、Elrexfio 都還在臨床試驗或恩慈使用 / 自費階段。國際自費估價 CAR-T 約 USD 45 萬上下（不含住院與支援治療），雙特異性抗體月費約 USD 2–4 萬。實際金額與可近性請洽各院血液腫瘤科個案管理師。"
+  - q: "我這個治療失敗後還能再用 BCMA 藥物嗎？"
+    a: "可以，但反應率會明顯下降。MajesTEC-1 中 BCMA pre-exposed 子集（n = 40）teclistamab ORR 約 52%，比 BCMA-naive 的 63% 低；elranatamab MagnetisMM-3 BCMA pre-exposed 隊列 ORR 33%。若前線 BCMA 失敗，可優先考慮機轉不同的 GPRC5D 雙特異性抗體 talquetamab（MonumenTAL-1 BCMA 暴露後 ORR 約 64–65%）或臨床試驗。"
+  - q: "CRS、ICANS 出現時要怎麼處理？"
+    a: "依 ASTCT 2019 共識，CRS 第 1 級僅發燒可支持治療；≥ 第 2 級（發燒 + 低血壓或低氧）給 tocilizumab 8 mg/kg ± 類固醇；ICANS 任何級別主要用 dexamethasone，重度（第 3–4 級）加 methylprednisolone 並評估腦壓。step-up dosing（teclistamab 0.06 → 0.3 → 1.5 mg/kg，elranatamab 12 → 32 → 76 mg）已將任何級別 CRS 比例壓到 60–70%、≥ 第 3 級 < 1%，ICANS 任何級別 < 6%。"
+doi: "10.5281/zenodo.20115057"
+conceptDoi: "10.5281/zenodo.20115056"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+復發 / 抗藥多發性骨髓瘤（relapsed/refractory multiple myeloma, RRMM）在 2022–2025 年因 **BCMA 標靶免疫治療**徹底改寫：一次性輸注的 BCMA CAR-T（ciltacabtagene autoleucel、idecabtagene vicleucel）在 1–3 線復發族群把無惡化存活從約 11 個月推到 ≥ 36 個月；可門診給藥的 BCMA × CD3 與 GPRC5D × CD3 雙特異性抗體在 ≥ 4 線族群仍能達到 ORR 60–74%。本文整理 CARTITUDE-4 / KarMMa-3 / MajesTEC-1 / MonumenTAL-1 / MagnetisMM-3 五個樞紐試驗、序列決策、step-up dosing 抑 CRS 的實務，以及 2026 年 5 月台灣的可及性現況。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為已接受過 lenalidomide、bortezomib、daratumumab 三類藥物（triple-class exposed）後復發或抗藥的骨髓瘤病友與家屬，以及對 BCMA / GPRC5D 雙特異性抗體與 CAR-T 排序感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼 BCMA 變成 RRMM 的主戰場？
+
+B-cell maturation antigen（**BCMA**，TNFRSF17）在所有骨髓瘤漿細胞表面高度表達，正常細胞幾乎只見於成熟 B 細胞與漿細胞，是少數兼具「**幾乎全表達、毒性可控**」條件的靶點。2020 年起，三類 BCMA 導向藥物相繼上市：
+
+| 類別 | 機轉 | 代表藥物 | 給藥方式 |
+|---|---|---|---|
+| BCMA CAR-T | 自體 T 細胞工程改造 | cilta-cel（Carvykti）、ide-cel（Abecma） | 一次性靜脈輸注，需 lymphodepletion |
+| BCMA × CD3 雙特異性抗體 | 直接把 T 細胞帶到漿細胞 | teclistamab（Tecvayli）、elranatamab（Elrexfio） | 皮下注射，每週或雙週一次 |
+| BCMA ADC | 細胞毒素連接抗 BCMA 抗體 | belantamab mafodotin | 靜脈注射（眼毒性高，全球部分上市） |
+
+此外，GPRC5D（**G protein-coupled receptor, class C group 5 member D**）在漿細胞同樣高表達，提供 BCMA 失效後的「換靶」選項，代表藥物為 talquetamab（Talvey）。
+
+## 五個樞紐試驗一張表
+
+| 試驗（藥物） | 機轉 | 入選線數 | n | ORR | ≥ CR | mPFS | 監管狀態 |
+|---|---|---|---|---|---|---|---|
+| **CARTITUDE-4**（cilta-cel） | BCMA CAR-T | 1–3 線、lenalidomide 抗藥 | 419 | 84.6% | 73.1% | NR；24-mo PFS 60.5% | FDA 2024/04 擴展至 ≥ 2L |
+| **KarMMa-3**（ide-cel） | BCMA CAR-T | 2–4 線、triple-class exposed | 386 | 71% | 39% | 13.3 mo（vs. 4.4） | FDA 2024/04 擴展至 ≥ 2L |
+| **MajesTEC-1**（teclistamab） | BCMA × CD3 BiTE | ≥ 3 線、triple-class exposed | 165 | 63.0% | 39.4% | 11.3 mo | FDA / EMA 2022 加速核准 |
+| **MagnetisMM-3**（elranatamab） | BCMA × CD3 BiTE | ≥ 3 線、triple-class exposed | 123（BCMA-naive A） | 61.0% | 35.0% | NR（15-mo PFS 50.9%） | FDA 2023/08 加速核准 |
+| **MonumenTAL-1**（talquetamab） | GPRC5D × CD3 BiTE | ≥ 3 線、triple-class exposed | 288 | 71.7%（0.4 mg/kg QW）/ 74.1%（0.8 mg/kg Q2W） | 32–33% | 7.5–14.2 mo | FDA 2023/08 加速核准 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+五個試驗的對照組、線數定義、是否允許 BCMA 預暴露、CR 評估時間點都不同。CARTITUDE-4 與 KarMMa-3 為隨機分派、對照組為醫師選擇之標準治療；MajesTEC-1、MagnetisMM-3、MonumenTAL-1 為單臂或單臂為主的第 1/2 期試驗。表中數字僅作概念對照，不應用於跨試驗排序選藥。
+</Callout>
+
+## CAR-T：cilta-cel vs. ide-cel 的差別
+
+兩個 BCMA CAR-T 都採自體 T 細胞、外加 4-1BB 共刺激分子，但 CAR 構造與結合臂不同：
+
+<Steps>
+  <div>
+    ### cilta-cel（Carvykti, JNJ-4528）
+
+    雙抗原結合 BCMA scFv（two BCMA-binding domains），CARTITUDE-4 在 1–3 線、lenalidomide 抗藥 RRMM 中對比醫師選擇之三藥組合（PVd 或 DPd）：
+
+    - ORR **84.6% vs. 67.3%**，≥ CR **73.1% vs. 21.8%**
+    - mPFS **未達到（24-mo 60.5%）vs. 11.8 個月**（HR 0.26, P < 0.001）
+    - OS HR 0.55，cilta-cel 組顯著占優
+    - 任何級別 CRS 76%、≥ Grade 3 CRS 1.1%；ICANS 4.5%
+    - 移動 / 神經系統毒性（cranial nerve palsy 9.1%、parkinsonism 0.5%）需專中心管理
+  </div>
+  <div>
+    ### ide-cel（Abecma, bb2121）
+
+    單抗原結合 BCMA scFv，KarMMa-3 在 2–4 線、triple-class exposed RRMM 中對比醫師選擇之五種標準治療之一：
+
+    - ORR **71% vs. 42%**，≥ CR **39% vs. 5%**
+    - mPFS **13.3 vs. 4.4 個月**（HR 0.49, P < 0.001）
+    - 任何級別 CRS 88%、≥ Grade 3 CRS 5%；ICANS 15%、≥ Grade 3 3%
+    - 36 個月追蹤無新增神經學風險
+  </div>
+  <div>
+    ### 怎麼選？
+
+    兩者均經 FDA 擴展至 ≥ 2L（2024 年 4 月），實務上選擇取決於：
+
+    1. **製造時間與橋接需求**：cilta-cel 製造週期較長，橋接治療失敗風險須評估
+    2. **體能與神經學風險**：cilta-cel 有 cranial nerve / parkinsonism 風險，年長或基礎神經疾病者需審慎
+    3. **疾病侵襲性**：高風險細胞遺傳學（del(17p)、t(4;14)、t(14;16)）或 extramedullary disease 多選 cilta-cel
+    4. **試驗 / 自費可及性**：以個案管理師資訊為準
+  </div>
+</Steps>
+
+## 雙特異性抗體：BiTE 三劍客
+
+BiTE（bispecific T-cell engager）一端結合腫瘤抗原（BCMA 或 GPRC5D），另一端結合 T 細胞 CD3，直接把細胞毒殺帶到漿細胞，**不需要採集自體 T 細胞、不需要 lymphodepletion**，可在門診或短期住院內完成 step-up dosing。
+
+### teclistamab（Tecvayli）
+
+MajesTEC-1 第 1/2 期，165 位 ≥ 3 線、triple-class exposed RRMM：
+
+- ORR 63.0%、≥ CR 39.4%、≥ VGPR 58.8%
+- mPFS 11.3 個月、mDOR 18.4 個月、18-mo OS 57%
+- CRS 任何級別 72%、≥ Grade 3 0.6%（拜 step-up dosing 之賜）
+- ICANS 任何級別 3%；嚴重感染（≥ Grade 3）45%；hypogammaglobulinemia → 建議定期 IVIG
+
+### elranatamab（Elrexfio）
+
+MagnetisMM-3 第 2 期，cohort A（BCMA-naive, n = 123）：
+
+- ORR 61.0%、≥ CR 35.0%、15-mo PFS 50.9%
+- step-up dosing 後 CRS 任何級別 57.7%、≥ Grade 3 0%；ICANS 3.3%
+- cohort B（BCMA-pre-exposed, n = 64）ORR 33%；資料證實 BCMA 序列效益會打折
+
+### talquetamab（Talvey, GPRC5D）
+
+MonumenTAL-1 第 1/2 期，**換靶**選項，288 位 triple-class exposed RRMM 分兩劑量：
+
+- 0.4 mg/kg 週給：ORR 74.1%、mPFS 7.5 個月
+- 0.8 mg/kg 雙週給：ORR 71.7%、mPFS 14.2 個月
+- 特殊副作用：**口乾 / 味覺異常 50–63%**、皮膚 / 指甲毒性、體重下降；GPRC5D 在口腔黏膜、皮膚附屬器表達是主因
+- 在 BCMA 預暴露族群 ORR 仍 64–65%，是 BCMA 失效後的合理下一步
+
+## step-up dosing：把 CRS 變成可預測
+
+雙特異性抗體會在第一次達到目標劑量時引發強烈 T 細胞活化、釋出 IL-6 / IFNγ → CRS。為了把這個風險拉低，三個藥都採 **2–3 步 step-up dosing**，第一次與第二次給低劑量，第三次才達目標：
+
+| 藥物 | Step 1 | Step 2 | Step 3（目標） | 觀察住院 |
+|---|---|---|---|---|
+| teclistamab | 0.06 mg/kg | 0.3 mg/kg | 1.5 mg/kg QW | 每次給藥 48 hr 內監測 |
+| elranatamab | 12 mg | 32 mg | 76 mg QW（後改 Q2W） | 同上 |
+| talquetamab | 0.01 mg/kg | 0.06 mg/kg | 0.4 mg/kg QW 或 0.8 mg/kg Q2W | 同上 |
+
+實證：step-up dosing 把任何級別 CRS 從歷史的 80–90% 壓到 57–72%、**≥ Grade 3 CRS 幾乎為 0–1%**，使這些藥從專責 CAR-T 中心擴展到一般血液科病房可給藥。
+
+## 序列決策：先 CAR-T 還是 BiTE？
+
+2026 年仍無前瞻性 head-to-head；以下為實務考量：
+
+<Steps>
+  <div>
+    ### 體能佳、可等候製造（≈ 4–6 週）→ 優先 CAR-T
+
+    CARTITUDE-4 / KarMMa-3 顯示 CAR-T 反應深、PFS 長、可達 **treatment-free interval**，是少數能讓 RRMM 病人「停藥追蹤」的選項。橋接治療失敗或快速進展者可改 BiTE 拉住病情。
+  </div>
+  <div>
+    ### 疾病進展快、無法等製造 → 先 BiTE 拉住
+
+    teclistamab / elranatamab 可在 1–2 週內 ramp-up 完成。BiTE 取得反應後再評估是否轉 CAR-T（注意：BCMA pre-exposed 會降低後續 BCMA CAR-T 反應率約 15–20%，需與病人事先溝通）。
+  </div>
+  <div>
+    ### BCMA 失敗後 → 換靶 GPRC5D 或臨床試驗
+
+    teclistamab / cilta-cel / ide-cel 失敗後，talquetamab（GPRC5D）是合理的下一線；MonumenTAL-1 在 BCMA-exposed subgroup ORR 64–65%。其他臨床試驗包括 FcRH5（cevostamab）、ABBV-383（BCMA × CD3 with low-CRS design）等。
+  </div>
+  <div>
+    ### 高齡 / 共病多 → 個別評估
+
+    ≥ 75 歲、CrCl < 40 mL/min、ECOG ≥ 2、嚴重心肺共病者，CAR-T 風險較高；可優先 BiTE 並嚴控感染。雙特異性抗體治療期間 ≥ Grade 3 感染率 35–45%，需常規預防性 IVIG（IgG < 400 mg/dL）、PJP 預防、CMV / EBV / HBV 監測。
+  </div>
+</Steps>
+
+## 適應症與禁忌症
+
+### 適應症（依台灣 / FDA 標籤）
+
+- **cilta-cel**：1–3 線後復發或抗藥、且對 lenalidomide 抗藥之 RRMM（FDA 2024/04 擴展）
+- **ide-cel**：2–4 線後復發或抗藥、triple-class exposed 之 RRMM（FDA 2024/04 擴展）
+- **teclistamab / elranatamab**：≥ 4 線（含 PI、IMiD、anti-CD38），triple-class exposed RRMM
+- **talquetamab**：同上，常用於 BCMA 預暴露族群
+- 體能狀態 ECOG 0–1（CAR-T）、ECOG 0–2（BiTE）；主要器官功能可耐受
+- 已完成完整 staging、cytogenetics（FISH 高風險：del(17p)、t(4;14)、t(14;16)、1q gain/amp）
+
+### 禁忌症與謹慎使用
+
+- 活動性感染（細菌、病毒、黴菌）未控制
+- 嚴重心肺功能不全（LVEF < 40%、未矯正之 ≥ Grade 3 心律不整）
+- 中樞神經系統活動性骨髓瘤侵犯（CAR-T 神經毒性風險升高）
+- 過去 6 個月內有腦中風、TIA、癲癇病史（ICANS 風險）
+- 同時使用強效免疫抑制劑、活性疫苗 ≤ 4 週
+- 妊娠與授乳期應避免使用
+- 對藥物成分或 CAR 工程載體（lentivirus）成分過敏者
+
+## 副作用一覽
+
+| 不良反應 | CAR-T（cilta / ide） | BiTE（tec / elra / talq） | 管理 |
+|---|---|---|---|
+| CRS 任何級別 | 76–88% | 57–72% | tocilizumab ± 類固醇；step-up dosing 預防 |
+| CRS ≥ Grade 3 | 1–5% | 0–1% | ICU、tocilizumab 多劑、anakinra 救援 |
+| ICANS 任何級別 | 4.5–15% | 3–6% | dexamethasone；嚴重者 methylprednisolone |
+| Cranial nerve / parkinsonism | cilta-cel 0.5–9% | 罕見 | 早期辨識、神經科會診 |
+| Hypogammaglobulinemia | 普遍（持續數月–數年） | 持續（治療期間） | IVIG（IgG < 400 mg/dL） |
+| ≥ Grade 3 感染 | 20–30% | 35–45% | PJP / 抗病毒預防、CMV 監測 |
+| 嗜中性白血球下降 ≥ Grade 3 | 50–90%（lymphodepletion 後） | 25–35% | G-CSF |
+| 口乾 / 味覺異常 / 皮膚毒性 | 罕見 | talquetamab 50–63% | 對症、必要時減量 |
+| 黑盒警告 | CRS、ICANS、續發性 T 細胞惡性病、parkinsonism、guillain-barré | CRS、ICANS、感染 | REMS 計畫 |
+
+<Callout type="warning" title="CRS / ICANS 紅旗：什麼時候要打 119？">
+治療後 28 天（CAR-T）或每次 step-up 後 48 小時（BiTE）內若出現：(1) 體溫 ≥ 38.5 °C 合併寒顫、(2) 收縮壓 ≤ 90 mmHg 或頭暈跌倒、(3) 血氧飽和度 ≤ 92%、(4) 意識改變、講話含糊、無法寫出自己名字（ICE score ≤ 7）、(5) 抽搐 — 任一項都必須立即回到開立治療的醫院或撥 119。**不要在家觀察、不要先吃退燒藥**。每位接受 BCMA 治療的病人都應隨身攜帶 wallet card 標示藥名、給藥日期與緊急聯絡電話。
+</Callout>
+
+## 台灣 2026/05 可及性現況
+
+| 藥物 | 台灣狀態 | 取得管道 |
+|---|---|---|
+| cilta-cel（Carvykti） | 未上市、未健保 | 臨床試驗（多中心招募中）、海外自費 |
+| ide-cel（Abecma） | 未上市、未健保 | 臨床試驗、海外自費 |
+| teclistamab（Tecvayli） | 已 TFDA 核准、未健保 | 自費（月費約 USD 2–4 萬等值新台幣）、恩慈使用 |
+| elranatamab（Elrexfio） | 未上市、未健保 | 臨床試驗、恩慈使用 |
+| talquetamab（Talvey） | 已 TFDA 核准、未健保 | 自費、恩慈使用 |
+
+<Callout type="tip" title="健保動態">
+健保署 2025 年第四季已就 teclistamab、talquetamab 進入醫療科技評估（HTA）與藥物給付協議（MEA）討論，但 2026 年 5 月為止尚未公告納入給付。最新進度請洽中華民國血液病學會、台灣骨髓瘤研究學會（TMSG），或您的個案管理師。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 治療前
+
+    1. 完整 staging：血液 M-protein、free light chain、24 小時尿液電泳、骨髓檢查、PET-CT 或 MRI
+    2. Cytogenetics / FISH：del(17p)、t(4;14)、t(14;16)、1q gain/amp（影響預後與治療強度）
+    3. 心肺評估：EKG、心臟超音波、肺功能（LVEF、DLCO）
+    4. 感染篩檢：HBV、HCV、HIV、CMV、結核
+    5. 牙科評估、預防性疫苗（活性疫苗需 ≥ 4 週前）
+    6. 與家屬討論預立醫療決定（AD）、住院預期天數與照顧人力
+  </div>
+  <div>
+    ### 治療期間
+
+    1. 隨身攜帶 wallet card（藥名、給藥日、緊急電話）
+    2. 每日量體溫 × 28 天（CAR-T）或每次 step-up 後 7 天
+    3. 出現發燒、低血壓、意識改變 → 立即回醫院
+    4. 避免人群、戴口罩；接種需求預先與醫師討論
+    5. talquetamab 用藥者：補充水分、口腔護理、體重監測
+  </div>
+  <div>
+    ### 治療後追蹤
+
+    1. M-protein 與 free light chain 每月評估反應深度
+    2. MRD（minimal residual disease）次世代定序或流式檢測，每 3–6 個月
+    3. IgG 每 1–3 個月，< 400 mg/dL 給予 IVIG
+    4. 神經學症狀（震顫、寫字變慢、表情變少）— cilta-cel 後須監測 parkinsonism
+    5. 續發性惡性病（T 細胞淋巴瘤、MDS）— 長期追蹤血球計數
+  </div>
+</Steps>
+
+## 與主治醫師討論時可帶的問題清單
+
+1. 我屬於哪一線？是 triple-class exposed 還是 penta-refractory？
+2. 我的 cytogenetics 風險是哪一級？是否有 extramedullary disease？
+3. 我適合 CAR-T 還是 BiTE？為什麼選 A 不選 B？
+4. 製造期間我需要做什麼橋接治療？失敗會怎樣？
+5. 台灣有沒有開放的臨床試驗？我符合資格嗎？
+6. 自費要多少？是否有恩慈使用或藥廠補助方案？
+7. CRS / ICANS 發生時，要回哪一家醫院？聯絡誰？
+8. 治療後幾個月內不能搭飛機、不能開車？
+
+<Divider />
+
+## 參考文獻
+
+1. San-Miguel J, Dhakal B, Yong K, et al. **Cilta-cel or Standard Care in Lenalidomide-Refractory Multiple Myeloma** (CARTITUDE-4). *N Engl J Med.* 2023;389(4):335-347. [doi:10.1056/NEJMoa2303379](https://doi.org/10.1056/NEJMoa2303379)
+2. Rodriguez-Otero P, Ailawadhi S, Arnulf B, et al. **Ide-cel or Standard Regimens in Relapsed and Refractory Multiple Myeloma** (KarMMa-3). *N Engl J Med.* 2023;388(11):1002-1014. [doi:10.1056/NEJMoa2213614](https://doi.org/10.1056/NEJMoa2213614)
+3. Moreau P, Garfall AL, van de Donk NWCJ, et al. **Teclistamab in Relapsed or Refractory Multiple Myeloma** (MajesTEC-1). *N Engl J Med.* 2022;387(6):495-505. [doi:10.1056/NEJMoa2203478](https://doi.org/10.1056/NEJMoa2203478)
+4. Lesokhin AM, Tomasson MH, Arnulf B, et al. **Elranatamab in relapsed or refractory multiple myeloma: phase 2 MagnetisMM-3 trial results.** *Nat Med.* 2023;29(9):2259-2267. [doi:10.1038/s41591-023-02528-9](https://doi.org/10.1038/s41591-023-02528-9)
+5. Chari A, Minnema MC, Berdeja JG, et al. **Talquetamab, a T-Cell-Redirecting GPRC5D Bispecific Antibody for Multiple Myeloma** (MonumenTAL-1). *N Engl J Med.* 2022;387(24):2232-2244. [doi:10.1056/NEJMoa2204591](https://doi.org/10.1056/NEJMoa2204591)
+6. Lee DW, Santomasso BD, Locke FL, et al. **ASTCT Consensus Grading for Cytokine Release Syndrome and Neurologic Toxicity Associated with Immune Effector Cells.** *Biol Blood Marrow Transplant / Blood.* 2019;25(4):625-638. [doi:10.1182/blood-2018-12-893396](https://doi.org/10.1182/blood-2018-12-893396)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；CARTITUDE-4 24-月追蹤資料、MajesTEC-1 / MagnetisMM-3 長期更新依 ASH 2024 / IMS 2025 報告交叉核對。
+
+— 林協霆 M.D.（和信治癌中心醫院腫瘤內科部 Fellow）

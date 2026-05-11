@@ -1,0 +1,246 @@
+---
+title: "轉移性腎細胞癌（mRCC）一線治療：免疫雙聯 vs 免疫+TKI 怎麼挑"
+titleEn: "First-line therapy in advanced clear-cell RCC: dual ICI vs ICI+TKI"
+date: "05/11/2026"
+frontmatter: "晚期透明細胞腎癌一線已從單一 TKI 走入免疫雙聯（ipi+nivo）與三組免疫+TKI（pembro+axi、nivo+cabo、lenva+pembro）並列。本文整理 IMDC 風險分組、CR rate、mPFS、mOS 與健保現況，協助病人與醫師選擇。"
+tags: ["腎癌", "RCC", "cabozantinib", "lenvatinib", "pembrolizumab", "免疫治療", "衛教"]
+medical: true
+medicalCondition: "晚期透明細胞腎細胞癌 (Advanced clear-cell renal cell carcinoma, mRCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "腎癌標靶這麼多種，第一線怎麼選？"
+    a: "在透明細胞型晚期腎癌（clear-cell mRCC），目前 NCCN 與 ESMO 同列四個 category 1 preferred 組合：ipilimumab + nivolumab（免疫雙聯）、pembrolizumab + axitinib、nivolumab + cabozantinib、lenvatinib + pembrolizumab。IMDC 中／高風險族群以免疫雙聯為主；中／低風險或腫瘤負荷高、需要快速縮腫瘤時，多選免疫+TKI；IMDC favorable 風險族群因 ipi+nivo 在這個族群未顯示明確存活優勢，多傾向免疫+TKI 或單用 TKI。"
+  - q: "IMDC 風險分組是什麼？"
+    a: "IMDC（International Metastatic RCC Database Consortium）由 Heng 等人於 2013 年提出，用 6 項臨床參數（自診斷到開始全身治療 < 1 年、KPS < 80、貧血、矯正後高血鈣、嗜中性白血球升高、血小板升高）將病人分為 favorable（0 項）、intermediate（1–2 項）、poor（≥ 3 項）三組。它是目前 NCCN/ESMO 一線治療選擇的標準分層工具，也用於試驗 stratification。"
+  - q: "免疫雙聯 vs 免疫+TKI 主要差別在哪？"
+    a: "免疫雙聯（ipi+nivo）的特色是『深度反應』與『治療後可停藥』：完全反應（CR）率在 IMDC intermediate/poor 約 11–12%、長期追蹤後 5 年 OS 約 43%。但前 6 個月若 TKI 還沒上場，腫瘤可能持續長大（早期 PD 約 20%），不適合腫瘤負荷大、症狀明顯的病人。免疫+TKI 的優點是 ORR 高（60–71%）、PD 比例低（5–10%），缺點是必須長期吃 TKI、副作用較持續（高血壓、手足症、腹瀉）。"
+  - q: "健保有給付嗎？"
+    a: "截至 2026 年 5 月，台灣健保已將部分 ICI + TKI 組合納入晚期腎癌一線給付，但條件相當嚴格（IMDC intermediate/poor、PS 良好、需事前審查）。實務上仍有相當比例病人需要自費或申請 PAP（病人協助方案）。具體給付條件每年會修，請以健保署最新公告與主治醫師、個案管理師確認為準。"
+doi: "10.5281/zenodo.20115059"
+conceptDoi: "10.5281/zenodo.20115058"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+晚期透明細胞腎細胞癌（advanced clear-cell renal cell carcinoma, mRCC）一線治療在 2018 年後從「TKI 單藥」全面走向免疫合併治療：**CheckMate-214**（ipilimumab + nivolumab）、**KEYNOTE-426**（pembrolizumab + axitinib）、**CheckMate-9ER**（nivolumab + cabozantinib）、**CLEAR**（lenvatinib + pembrolizumab）四個第三期試驗皆相對於 sunitinib 顯示 OS 或 PFS 優勢，NCCN 與 ESMO 同列為 category 1 preferred。本文以 IMDC 風險分組為主軸，整理四個方案的反應率、無惡化存活、整體存活與毒性差異，並說明何時偏好雙免疫、何時偏好免疫+TKI，最後補充非透明細胞型與台灣健保現況的實務要點。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知腎癌復發或轉移、想了解一線治療怎麼選的病友與家屬，以及希望快速回顧四個 pivotal 試驗、IMDC 分層、與台灣健保給付邏輯的內科同業。實際治療決策請與您的主治醫師（泌尿腫瘤或腫瘤內科）討論。
+</Callout>
+
+<Divider />
+
+## 為什麼腎癌「一線選對」特別重要？
+
+腎癌與其他常見癌別不同的三個特性：
+
+1. **化療幾乎沒用。** 透明細胞型 mRCC 對細胞毒性化療反應率 < 10%，臨床上不列為一線選項。
+2. **TKI（VEGFR 標靶）與免疫治療是兩大主力。** 自 2005 年 sunitinib、sorafenib 上市後，TKI 把 mOS 從 13 個月推到 20–28 個月；2018 年 CheckMate-214 之後，免疫合併再推到 50 個月以上。
+3. **長期反應者比例上升。** 免疫合併治療出現後，IMDC intermediate/poor 族群的 5 年 OS 已 > 40%，少數病人甚至可在停藥後維持完全反應數年。
+
+換句話說，**一線選擇直接決定「能不能爭取長期生存」**——這是腎癌與其他幾個免疫敏感腫瘤（黑色素瘤、肺癌）共有的特徵。
+
+## IMDC 風險分組怎麼算？
+
+IMDC（International Metastatic RCC Database Consortium，又稱 Heng score）由 Heng 等人於 2013 年發表於 JCO，是目前最常用的 mRCC 預後分層工具：
+
+| IMDC 風險因子 | 切點 |
+|---|---|
+| 從診斷到開始全身治療的時間 | < 12 個月 |
+| Karnofsky performance status | < 80% |
+| 血紅素 | < 正常下限 |
+| 矯正血鈣 | > 正常上限 |
+| 嗜中性白血球 | > 正常上限 |
+| 血小板 | > 正常上限 |
+
+依符合幾項分為三組：
+
+- **Favorable**：0 項 → 5 年 OS ≈ 50–60%
+- **Intermediate**：1–2 項 → 5 年 OS ≈ 25–35%
+- **Poor**：≥ 3 項 → 5 年 OS ≈ 8–10%
+
+<Callout type="tip" title="為什麼分組要做？">
+NCCN 與 ESMO 的一線治療建議依 IMDC 分組不同：免疫雙聯 ipi+nivo 在 favorable 風險族群並未顯示 OS 優勢（subgroup HR 約 1.0），所以 favorable 通常選免疫+TKI；intermediate/poor 則四個組合都是 category 1。
+</Callout>
+
+## 四個 pivotal 試驗一次比較
+
+下表彙整四個 NCCN category 1 preferred 一線組合於最新（長期追蹤）讀出時的核心數據，全部 vs sunitinib：
+
+| 試驗 / 組合 | n | 機轉 | ORR | CR rate | mPFS | mOS | mOS HR (95% CI) |
+|---|---|---|---|---|---|---|---|
+| **CheckMate-214** Ipi + Nivo（intermediate/poor） | 1,096（IMDC I/P 847） | CTLA-4 + PD-1 | 42% | 11% | 11.6 mo | 47.0 mo (I/P) | 0.68 (0.58–0.81)¹ |
+| **KEYNOTE-426** Pembro + Axi（全族群） | 861 | PD-1 + VEGFR-TKI | 60% | 10% | 15.7 mo | 45.7 mo | 0.73 (0.60–0.88)² |
+| **CheckMate-9ER** Nivo + Cabo（全族群） | 651 | PD-1 + VEGFR-TKI | 56% | 12% | 16.6 mo | 49.5 mo | 0.70 (0.56–0.87)³ |
+| **CLEAR** Lenva + Pembro（全族群） | 1,069（兩比較組 + sunitinib） | PD-1 + VEGFR-TKI | 71% | 16% | 23.9 mo | 53.7 mo | 0.79 (0.63–0.99)⁴ |
+
+¹ CheckMate-214 長期追蹤（≥ 5 年；Tannir 2022）；² KEYNOTE-426 43 個月追蹤；³ CheckMate-9ER ≥ 44 個月追蹤；⁴ CLEAR ≥ 49 個月追蹤。所有 HR 對照 sunitinib 單藥。
+
+<Callout type="warning" title="跨試驗比較的限制">
+四個試驗的族群並不完全可比：CheckMate-214 隨機族群是 intermediate/poor，KEYNOTE-426 / CheckMate-9ER / CLEAR 是 ITT（含 favorable）；隨機時間相差 2–4 年，影像評估與支持性照護也有變化。**跨試驗比較不能用來宣稱「A 一定比 B 好」**，僅供概念性對照。實際選擇仍以個別病人 IMDC 風險、共病、毒性耐受度與藥物可及性綜合判斷。
+</Callout>
+
+## IMDC 分組下的選擇邏輯
+
+<Steps>
+  <div>
+    ### Step 1：先確認組織學
+
+    透明細胞型（clear cell）占成人腎癌約 70–80%。若是非透明細胞（papillary、chromophobe、collecting duct、sarcomatoid 分化、translocation 等），上述四個試驗的證據強度大幅下降，建議優先考慮臨床試驗或免疫+TKI（KEYNOTE-B61、SUNNIFORECAST 等小型試驗顯示 pembrolizumab + lenvatinib、ipi + nivo 仍有反應）。Sarcomatoid 分化雖屬不良預後，但對免疫合併反應率高，CheckMate-214 sarcomatoid subset ORR 達 60%。
+  </div>
+  <div>
+    ### Step 2：計算 IMDC 風險
+
+    依前述 6 個因子算出 favorable / intermediate / poor。需要的資料：診斷日期、PS、血紅素、矯正血鈣、嗜中性白血球、血小板。
+  </div>
+  <div>
+    ### Step 3：依 IMDC 與臨床情境選一線
+
+    **Favorable（0 項風險因子）**
+
+    - 偏好免疫+TKI：pembro + axi、nivo + cabo、lenva + pembro 三選一。
+    - Ipi + nivo 在這個族群 OS 未顯著優於 sunitinib（subgroup HR ≈ 0.94–1.13），多數指引不建議優先使用。
+    - 少數低腫瘤負荷、無症狀、共病多的病人仍可選 sunitinib 或 pazopanib 單藥（NCCN preferred for select cases）。
+
+    **Intermediate（1–2 項）/ Poor（≥ 3 項）**
+
+    - 四個 category 1 組合皆可用。
+    - 若**腫瘤負荷大、症狀明顯、需要快速縮腫瘤** → 偏好免疫+TKI（ORR 56–71%、早期 PD 5–10%）。
+    - 若**追求深度反應、希望未來有機會停藥、可以承受前 3–6 個月的腫瘤波動** → 考慮 ipi + nivo（CR 11%、5 年 OS 43%、ipi 完成 4 劑後可進入單免疫維持）。
+    - **Sarcomatoid 分化** → 偏好 ipi + nivo 或 lenva + pembro。
+  </div>
+  <div>
+    ### Step 4：依毒性 profile 與病人共病微調
+
+    - **心血管病史、控制不佳的高血壓** → 避開高血壓發生率高的 lenva + pembro。
+    - **慢性腹瀉、克隆氏／潰瘍性大腸炎** → 避開 ipi + nivo（免疫相關大腸炎風險高）。
+    - **嚴重肝功能不全** → cabozantinib、lenvatinib 需減量或避開。
+    - **體能狀態 ECOG ≥ 2** → 多數試驗排除，需個案討論減量起始或選毒性溫和方案。
+  </div>
+</Steps>
+
+## 四個方案的「個性」
+
+### CheckMate-214（ipilimumab + nivolumab）
+
+- **適應症族群**：IMDC intermediate/poor、體能良好、可承受免疫雙聯毒性。
+- **特色**：CR rate 11%（IMDC I/P subset），5 年 OS 43.0%。Ipi 4 劑後進入 nivolumab 單藥維持，部分長期反應者最終可停藥追蹤。
+- **限制**：前 3–6 個月若無反應，腫瘤可能持續長大（早期 PD ≈ 20%）。需教育病人「免疫合併不像 TKI 立刻縮腫瘤」。
+
+### KEYNOTE-426（pembrolizumab + axitinib）
+
+- **適應症族群**：clear-cell mRCC 全 IMDC 族群（含 favorable）。
+- **特色**：ORR 60%、PD 比例低（11%）、axitinib 半衰期短（6–7 小時）→ 出現嚴重毒性時容易暫停回穩。
+- **限制**：43 個月追蹤後 mPFS 15.7 個月相對較短；長期需持續服用 TKI。
+
+### CheckMate-9ER（nivolumab + cabozantinib）
+
+- **適應症族群**：clear-cell mRCC 全 IMDC 族群。
+- **特色**：mOS 49.5 個月（44 個月追蹤）、cabozantinib 對骨轉移與肝轉移反應率較高，臨床上多骨轉移病人偏好。
+- **限制**：cabozantinib 半衰期長（≈ 99 小時），副作用一旦出現需要較久才能緩解；手足症、腹瀉、肝指數上升常見。
+
+### CLEAR（lenvatinib + pembrolizumab）
+
+- **適應症族群**：clear-cell mRCC 全 IMDC 族群。
+- **特色**：ORR 71%、mPFS 23.9 個月、CR rate 16%，**反應率與深度反應指標皆居四組之冠**。
+- **限制**：高血壓發生率最高（任何級別 > 50%、≥ G3 約 28%），常需劑量調整；前期停藥率較其他方案稍高。
+
+## 適應症（一線治療通用門檻）
+
+- 經影像、組織病理確診的 advanced 或 metastatic clear-cell RCC（非透明細胞型需另行討論）
+- ECOG performance status 0–1
+- 主要器官功能（肝、腎、骨髓、心臟）可耐受
+- 無嚴重活動性自體免疫疾病（影響免疫治療）
+- 無未控制的中樞神經轉移（多數試驗排除症狀性腦轉移）
+
+## 禁忌症與謹慎使用
+
+- **絕對禁忌**
+  - 對藥物成分或其輔料嚴重過敏者
+  - 活動性、嚴重自體免疫疾病（系統性紅斑狼瘡活動期、Crohn's flare 等）需個案評估，不可貿然使用免疫治療
+  - 妊娠與授乳期不可使用
+
+- **謹慎使用**
+  - 控制不佳的高血壓（lenvatinib、cabozantinib）
+  - 嚴重肝功能異常 Child-Pugh B 以上
+  - 近 6 個月內中風、心肌梗塞、肺栓塞（TKI 相關血管事件風險）
+  - 近期重大手術（VEGFR-TKI 影響傷口癒合，術後建議休 ≥ 4 週才開始）
+  - 既往間質性肺炎或活動性肺纖維化（ICI 相關肺炎風險）
+
+## 主要副作用與不良反應
+
+### 免疫治療相關（ipi、nivo、pembro 共通）
+
+- **免疫相關不良反應（irAE）**：肺炎、肝炎、大腸炎、皮膚炎、甲狀腺功能異常、垂體炎、腎上腺功能不全、糖尿病、心肌炎、神經炎等。
+- **嚴重 irAE（≥ G3）比例**：ipi + nivo 約 47%（多數於前 4 個月內出現）、pembro 單藥約 8–10%。
+- 嚴重時須暫停或永久停藥，並使用高劑量類固醇（prednisolone 1–2 mg/kg）；類固醇難治者需用 infliximab、mycophenolate 等。
+
+### TKI 相關（axitinib、cabozantinib、lenvatinib 各有偏重）
+
+- 高血壓（lenva > cabo > axi）：常需 ACEI/ARB 或鈣離子阻斷劑控制。
+- 手足症候群、口腔黏膜炎（cabo、lenva 較顯著）。
+- 疲倦、腹瀉、噁心、食慾下降、體重下降。
+- 蛋白尿、肝指數上升、甲狀腺功能異常。
+- 罕見但嚴重：腸穿孔、瘻管、出血、靜脈血栓、可逆性後腦症候群（PRES）。
+
+### 整體 ≥ G3 不良反應比例（pivotal 試驗）
+
+| 方案 | 治療相關 ≥ G3 AE | 因 AE 停藥（任一藥） |
+|---|---|---|
+| Ipi + Nivo | 約 47% | 約 22% |
+| Pembro + Axi | 約 70% | 約 30% |
+| Nivo + Cabo | 約 65% | 約 27% |
+| Lenva + Pembro | 約 82% | 約 37% |
+
+數據來源為各試驗 ≥ 4 年追蹤之安全性更新；不同試驗對 AE 的歸因與通報標準不一致。
+
+## 健保與台灣實務
+
+<Callout type="warning" title="健保給付條件每年異動">
+截至 2026 年 5 月，台灣健保已將部分免疫+TKI 組合（含 pembrolizumab + axitinib、nivolumab + cabozantinib、lenvatinib + pembrolizumab）以及 ipilimumab + nivolumab 納入晚期腎癌一線給付，但條件嚴格：限 IMDC intermediate/poor、PS 0–1、需事前審查與每療程審查。實務上仍有相當比例病人因條件不符需自費或申請 PAP（病人協助方案）。**請以健保署最新公告及主治醫師、個案管理師確認的當期條件為準**。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認組織學與 IMDC 分組
+
+    開始討論一線之前，先請主治醫師確認：(1) 病理是否為透明細胞型？是否含 sarcomatoid 分化？(2) IMDC 是 favorable、intermediate 還是 poor？這兩項決定可以從哪幾個 category 1 方案中選。
+  </div>
+  <div>
+    ### 主動詢問四個方案的取捨
+
+    可以問：「以我目前的 IMDC 風險與腫瘤位置（骨轉、肝轉、肺轉），ipi+nivo、pembro+axi、nivo+cabo、lenva+pembro 各有什麼適不適合的理由？」醫師會依腫瘤負荷、症狀急迫性、共病、毒性 profile 給建議。
+  </div>
+  <div>
+    ### 帶到診間的問題清單
+
+    1. 我的組織學是透明細胞嗎？有沒有 sarcomatoid？
+    2. 我的 IMDC 是哪一組？算給我看（透明寫出 6 個因子的結果）。
+    3. 四個 category 1 方案，為什麼選 A 而不選 B？
+    4. 健保是否給付？需要事前審查嗎？若不給付，自費約多少？有沒有 PAP？
+    5. 副作用怎麼監測？哪些症狀要打電話回診間、哪些要急診（如疑似免疫性肺炎、心肌炎、大腸炎）？
+    6. 如果第一線失效，後線有哪些選項（cabozantinib、tivozanib、belzutifan、臨床試驗）？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Motzer RJ, Tannir NM, McDermott DF, et al. **Nivolumab plus Ipilimumab versus Sunitinib in Advanced Renal-Cell Carcinoma** (CheckMate 214). *N Engl J Med.* 2018;378(14):1277-1290. [doi:10.1056/NEJMoa1712126](https://doi.org/10.1056/NEJMoa1712126)
+2. Rini BI, Plimack ER, Stus V, et al. **Pembrolizumab plus Axitinib versus Sunitinib for Advanced Renal-Cell Carcinoma** (KEYNOTE-426). *N Engl J Med.* 2019;380(12):1116-1127. [doi:10.1056/NEJMoa1816714](https://doi.org/10.1056/NEJMoa1816714)
+3. Choueiri TK, Powles T, Burotto M, et al. **Nivolumab plus Cabozantinib versus Sunitinib for Advanced Renal-Cell Carcinoma** (CheckMate 9ER). *N Engl J Med.* 2021;384(9):829-841. [doi:10.1056/NEJMoa2026982](https://doi.org/10.1056/NEJMoa2026982)
+4. Motzer R, Alekseev B, Rha SY, et al. **Lenvatinib plus Pembrolizumab or Everolimus for Advanced Renal Cell Carcinoma** (CLEAR). *N Engl J Med.* 2021;384(14):1289-1300. [doi:10.1056/NEJMoa2035716](https://doi.org/10.1056/NEJMoa2035716)
+5. Heng DY, Xie W, Regan MM, et al. **External Validation and Comparison with Other Models of the International Metastatic Renal-Cell Carcinoma Database Consortium Prognostic Model**: A Population-Based Study. *J Clin Oncol.* 2013;31(8):1066-1073. [doi:10.1200/JCO.2012.47.4940](https://doi.org/10.1200/JCO.2012.47.4940)
+6. Motzer RJ, McDermott DF, Escudier B, et al. **Conditional survival and long-term efficacy with nivolumab plus ipilimumab versus sunitinib in patients with advanced renal cell carcinoma** (CheckMate 214 5-year update). *Cancer.* 2022;128(11):2085-2097. [doi:10.1002/cncr.34180](https://doi.org/10.1002/cncr.34180)
+7. Plimack ER, Powles T, Stus V, et al. **Pembrolizumab plus axitinib versus sunitinib as first-line treatment of advanced renal cell carcinoma: 43-month follow-up of the phase 3 KEYNOTE-426 study.** *Eur Urol.* 2023;84(4):449-454. [doi:10.1016/j.eururo.2023.06.006](https://doi.org/10.1016/j.eururo.2023.06.006)
+8. Powles T, Plimack ER, Soulières D, et al. **Pembrolizumab plus axitinib versus sunitinib monotherapy as first-line treatment of advanced renal cell carcinoma (KEYNOTE-426): extended follow-up from a randomised, open-label, phase 3 trial.** *Lancet Oncol.* 2020;21(12):1563-1573. [doi:10.1016/S1470-2045(20)30436-8](https://doi.org/10.1016/S1470-2045(20)30436-8)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

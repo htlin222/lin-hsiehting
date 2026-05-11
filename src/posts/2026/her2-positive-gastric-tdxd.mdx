@@ -1,0 +1,219 @@
+---
+title: "HER2 陽性胃癌的當代治療：trastuzumab deruxtecan 與雙標靶免疫策略"
+titleEn: "HER2-positive gastric cancer: T-DXd and immuno-combined first line"
+date: "05/11/2026"
+frontmatter: "HER2 陽性轉移性胃 / 胃食道接合處腺癌一線從 ToGA 三劑進化為 KEYNOTE-811「化療 + trastuzumab + pembrolizumab」（PD-L1 CPS ≥ 1 mOS 約 20 個月）；二線 trastuzumab deruxtecan（DESTINY-Gastric01/02）改寫標準；本文整理 HER2 檢測流程、ILD 監測與台灣健保現況。"
+tags: ["胃癌", "HER2", "trastuzumab deruxtecan", "T-DXd", "pembrolizumab", "衛教"]
+medical: true
+medicalCondition: "HER2 陽性轉移性胃 / 胃食道接合處腺癌 (HER2-positive metastatic gastric / GEJ adenocarcinoma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "胃癌打 Enhertu（trastuzumab deruxtecan, T-DXd）有效嗎？"
+    a: "對 HER2 陽性、已接受過 trastuzumab 為基礎一線治療後惡化的轉移性胃癌或胃食道接合處腺癌，DESTINY-Gastric01（亞洲族群）顯示 T-DXd 客觀反應率約 51%、整體存活中位數 12.5 個月，相較化療顯著延長；DESTINY-Gastric02（歐美族群）反應率約 42%、存活中位數 12.1 個月。FDA 已於 2021 年核准用於二線，台灣食藥署亦已於 2023 年核准；健保部分給付條件仍在更新中。"
+  - q: "HER2 IHC 3+ 跟 IHC 2+ 有什麼差別？"
+    a: "IHC 3+ 屬於 HER2 強表現，可直接判定為 HER2 陽性，無需再做原位雜交（ISH）；IHC 2+ 屬於 ambiguous，必須加做 ISH（FISH 或 DISH）確認基因放大，ISH 陽性才算 HER2 陽性。胃癌 HER2 染色具有顯著異質性，建議至少取 6 塊以上組織、避免只用細針切片判讀；轉移後若有重新切片應再驗一次 HER2。"
+  - q: "KEYNOTE-811 是什麼？"
+    a: "KEYNOTE-811 是一項第三期試驗，比較「化療 + trastuzumab ± pembrolizumab」於 HER2 陽性、未曾接受治療的轉移性胃 / 胃食道接合處腺癌一線。Janjigian 等人 2021 年 Nature 報告中期 ORR 由 52% 提升至 74%；2023 年 Lancet 公布最終整體存活，於 PD-L1 CPS ≥ 1 族群（佔約 78%）mOS 從 15.7 延長至 20.0 個月（HR 0.81）。CPS < 1 族群未見明顯獲益，因此 FDA 於 2023 年將適應症修訂為 CPS ≥ 1。"
+  - q: "T-DXd 的間質性肺炎（ILD）副作用怎麼預防？"
+    a: "T-DXd 相關 ILD/pneumonitis 在跨適應症 pooled analysis 中發生率約 10–15%、≥ 3 級約 2%、致死率 < 1%。預防核心是：(1) 治療前 baseline 高解析度胸部 CT 與肺功能；(2) 每次治療前主動詢問新出現咳嗽、喘、胸悶、發燒；(3) 任何 ≥ 1 級 ILD 立即暫停 T-DXd 並啟動類固醇（≥ 2 級 prednisone 1 mg/kg 至少 4 週後逐步減量）；(4) ≥ 2 級永久停藥。早期發現與類固醇介入是降低致死率的關鍵。"
+doi: "10.5281/zenodo.20115049"
+conceptDoi: "10.5281/zenodo.20115048"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+HER2 陽性轉移性胃癌 / 胃食道接合處（gastroesophageal junction, GEJ）腺癌的治療版圖在 2020 年後出現兩個關鍵轉折：**KEYNOTE-811** 把 pembrolizumab 加進 ToGA 既有的「化療 + trastuzumab」一線方案，於 PD-L1 CPS ≥ 1 族群將中位整體存活從 15.7 個月推進到 20.0 個月；**DESTINY-Gastric01 與 02** 則確立 trastuzumab deruxtecan（T-DXd，Enhertu）為二線標準。本文整理 HER2 檢測流程、四個關鍵試驗的對照、ILD 監測與台灣 2026 現況。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知胃癌或胃食道接合處腺癌復發 / 轉移，且病理報告提到 HER2 陽性的病友與家屬，以及對 KEYNOTE-811、DESTINY-Gastric 系列、ILD 監測有興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼 HER2 在胃癌特別重要？
+
+HER2（human epidermal growth factor receptor 2，又稱 ERBB2）是一個受體酪胺酸激酶。胃癌與胃食道接合處腺癌中，約有 **15–20% 為 HER2 陽性**（IHC 3+ 或 IHC 2+/ISH+），且 GEJ 與腸型（intestinal type）腺癌的比例高於彌漫型。HER2 陽性意味著腫瘤對 trastuzumab、T-DXd 等 HER2 標靶有反應；而 PD-L1 CPS ≥ 1（佔 HER2 陽性族群約七至八成）則進一步預測 pembrolizumab 加入後的獲益。
+
+| 標記 | HER2 陽性胃癌中比例 | 臨床意涵 |
+|---|---|---|
+| HER2 IHC 3+ | ≈ 10–12% | 一線可加 trastuzumab，二線可用 T-DXd |
+| HER2 IHC 2+/ISH+ | ≈ 5–8% | 同上 |
+| PD-L1 CPS ≥ 1 | HER2+ 中約 78% | KEYNOTE-811 顯示 pembrolizumab 加上後有 mOS 獲益 |
+| MSI-H | < 5%（HER2+ 內罕見） | 若同時為 MSI-H，免疫治療反應特別好 |
+
+<Callout type="tip" title="檢測時機與切片來源">
+胃癌 HER2 表現具顯著腫瘤內異質性。**建議取 ≥ 6 塊組織以提高代表性**；轉移病灶與原發病灶若皆可取，應分別檢測。若一線治療後病程進展再切片，HER2 狀態有可能改變（estimated discordance 約 5–15%），需重新驗證。
+</Callout>
+
+## HER2 檢測流程
+
+<Steps>
+  <div>
+    ### 第一步：IHC 染色
+
+    病理科以抗 HER2 抗體（常用 4B5 或 HercepTest）對腫瘤組織染色，依細胞膜染色完整性與強度分為 0、1+、2+、3+：
+
+    - **IHC 0 或 1+**：HER2 陰性，**不**進入 HER2 標靶適應症。
+    - **IHC 3+**：HER2 強表現，直接判定為陽性，無需 ISH。
+    - **IHC 2+（ambiguous）**：必須加做 ISH 確認。
+  </div>
+  <div>
+    ### 第二步：ISH（僅 IHC 2+ 需要）
+
+    原位雜交以螢光（FISH）或銀染（SISH/DISH）方式測 HER2 基因放大：
+
+    - **HER2/CEP17 ratio ≥ 2.0**（或單探針 HER2 ≥ 6 copies/cell）→ ISH 陽性 → HER2 陽性。
+    - 比值 < 2.0 → ISH 陰性 → HER2 陰性。
+  </div>
+  <div>
+    ### 第三步：合併 PD-L1 CPS 與 MSI 判讀
+
+    HER2 陽性者再加驗：
+
+    - **PD-L1 CPS（22C3）**：決定是否加 pembrolizumab。
+    - **MMR/MSI**：若為 dMMR/MSI-H，免疫治療反應極佳，治療策略需重新考量。
+    - **EBV 狀態**：少數中心會檢測，EBV+ 對免疫治療反應佳。
+  </div>
+</Steps>
+
+<Divider />
+
+## 第一線：從 ToGA 到 KEYNOTE-811
+
+2010 年 Bang 等人發表的 **ToGA 試驗**（Lancet）將 HER2 陽性轉移性胃 / GEJ 腺癌的一線標準從化療單獨改為**化療 + trastuzumab**：N = 594，加上 trastuzumab 後中位整體存活從 11.1 延長到 13.8 個月（HR 0.74），HER2 IHC 3+ 或 IHC 2+/FISH+ 族群獲益更大（mOS 16 個月）。
+
+2021 年 Janjigian 等人於 Nature 發表 **KEYNOTE-811** 中期分析：在 ToGA 既有方案上再加 pembrolizumab，客觀反應率從 52% 提升至 74%（差異 22 個百分點，P < 0.0001）。2023 年 Lancet 公布最終存活：PD-L1 CPS ≥ 1 族群（佔 78%）mOS 由 15.7 延長至 20.0 個月（HR 0.81，95% CI 0.67–0.98）。CPS < 1 族群未見統計顯著獲益，FDA 因此在 2023 年將適應症限縮為 **HER2 陽性且 PD-L1 CPS ≥ 1**。
+
+## 第二線：T-DXd 改寫標準
+
+2020 年 Shitara 等人於 NEJM 發表 **DESTINY-Gastric01**（亞洲族群，N = 188）：trastuzumab deruxtecan 6.4 mg/kg vs. 醫師選擇之化療（irinotecan 或 paclitaxel），ORR 51% vs. 14%，mOS 12.5 vs. 8.4 個月（HR 0.59）。2023 年 Van Cutsem 等人於 Lancet Oncology 發表 **DESTINY-Gastric02**（歐美族群、單臂 phase II，N = 79）：ORR 41.8%、mPFS 5.6 個月、mOS 12.1 個月，與亞洲族群結果方向一致。2024 年 ASCO 報告之 **DESTINY-Gastric04**（phase III，T-DXd vs. ramucirumab + paclitaxel）進一步在 trastuzumab 暴露後族群展示 T-DXd 的存活優勢，是目前最關鍵的 head-to-head 對比，完整論文預計近期公布。
+
+### 主要試驗對照
+
+| 試驗 | 設計 | 線數 | n | ORR | mPFS | mOS |
+|---|---|---|---|---|---|---|
+| ToGA (2010) | 化療 ± trastuzumab | 一線 | 594 | 47% vs. 35% | 6.7 vs. 5.5 mo | 13.8 vs. 11.1 mo |
+| KEYNOTE-811 (2021/2023) | 化療 + trastuzumab ± pembrolizumab | 一線（CPS ≥ 1） | 698 | 74% vs. 52% | 10.9 vs. 7.3 mo | 20.0 vs. 15.7 mo |
+| DESTINY-Gastric01 (2020, 亞洲) | T-DXd vs. 化療 | ≥ 2 線 | 188 | 51% vs. 14% | 5.6 vs. 3.5 mo | 12.5 vs. 8.4 mo |
+| DESTINY-Gastric02 (2023, 歐美單臂) | T-DXd 單臂 | ≥ 2 線 | 79 | 41.8% | 5.6 mo | 12.1 mo |
+
+<Callout type="warning" title="跨試驗比較的限制">
+上表四個試驗的族群（地區、線數、HER2 判定標準、是否曾接受免疫治療、PD-L1 比例）並不一致。DESTINY-Gastric01 為亞洲族群、Gastric02 為歐美族群，不能直接比較反應率；ToGA 與 KEYNOTE-811 的歷史對照年代相差十年，支持治療水準已大幅進步。數字僅供概念對照，不應用於跨試驗排序選藥。
+</Callout>
+
+<Divider />
+
+## 適應症（試驗中或已核准）
+
+- HER2 陽性（IHC 3+ 或 IHC 2+/ISH+）轉移或局部晚期不可切除之胃 / 胃食道接合處腺癌
+- 病理已確認、有可評估病灶
+- 體能狀態 ECOG PS 0–1，主要器官功能可耐受
+- 一線方案：未曾接受過治療；PD-L1 CPS ≥ 1 者可加 pembrolizumab
+- 二線 T-DXd：已接受過 trastuzumab 為基礎之治療後惡化
+- 已接受過完整 staging、HER2 重驗（若距上次切片較久）
+
+## 禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- **活動性間質性肺病（ILD）或非感染性肺炎史**：T-DXd 與 pembrolizumab 均屬絕對謹慎
+- 嚴重未控制之心衰竭（trastuzumab、T-DXd 均影響 LVEF）
+- 嚴重肝功能異常（Child-Pugh C）
+- 活動期自體免疫疾病或目前使用全身性免疫抑制（影響 pembrolizumab）
+- 妊娠與授乳期應避免使用
+- 治療前未接受 HER2 重驗、PD-L1 CPS 未檢測者，應補做後再決策
+
+## 副作用：T-DXd 的 ILD 是最關鍵安全議題
+
+### 常見不良反應（任何級別）
+
+- **腸胃道**：噁心、嘔吐、食慾不振、腹瀉
+- **血液**：嗜中性白血球下降、貧血、血小板下降
+- **全身**：疲倦、掉髮
+- **肝功能**：AST/ALT 上升
+- **心臟**：LVEF 下降（與 trastuzumab 類似）
+- **肺**：**間質性肺病 / pneumonitis（ILD）**
+
+### ILD 流行病學
+
+Powell 等人 2022 年於 ESMO Open 發表跨適應症 pooled analysis（n = 1,150）：T-DXd 相關 ILD 發生率 **15.4%**，其中 ≥ 3 級 2.2%、第 5 級（致死）0.9%。胃癌族群的 ILD 比例與整體相當。中位發生時間約 5.4 個月，但少數可在第一週期就出現。
+
+<Callout type="warning" title="ILD 監測流程（必讀）">
+**治療前 baseline**：高解析度胸部 CT、基礎肺功能（如可行）、紀錄基線症狀。
+
+**每次治療前主動詢問**：新出現的咳嗽、喘、胸悶、發燒、運動耐受度下降？
+
+**疑似 ILD 立即動作**：
+
+- **無症狀放射學變化（≥ 1 級）**：暫停 T-DXd，每 1–2 週影像追蹤；若 28 天內完全消退可恢復；未消退視同 ≥ 2 級。
+- **≥ 2 級（有症狀）**：**永久停用 T-DXd**，立即啟動類固醇（prednisone 至少 1 mg/kg/day，視嚴重度可更高），維持 ≥ 4 週後逐步減量、療程通常 ≥ 6 週。
+- **≥ 3 級**：住院、考慮高劑量靜脈類固醇 + 經驗性抗生素，必要時呼吸科共同照護。
+
+早期發現與及時類固醇是降低致死率的核心。
+</Callout>
+
+### Pembrolizumab 免疫相關 AE
+
+- 免疫相關肺炎、肝炎、大腸炎、甲狀腺異常、腎上腺功能不全、垂體炎
+- KEYNOTE-811 中 ≥ 3 級免疫相關 AE 約 9%
+- 嚴重時需暫停或永久停藥並使用類固醇 ± 其他免疫抑制劑
+
+### Trastuzumab 心臟毒性
+
+- LVEF 下降（無症狀或心衰竭）
+- 治療前測 LVEF，每 3 個月追蹤；LVEF 絕對值下降 ≥ 10% 且低於正常下限應暫停
+
+<Divider />
+
+## 台灣 2026 現況與健保
+
+- **Trastuzumab + 化療一線**：台灣健保自 2011 年起對 HER2 IHC 3+ 或 IHC 2+/FISH+ 之轉移性胃 / GEJ 腺癌給付 trastuzumab，需事前審查。
+- **Pembrolizumab + trastuzumab + 化療一線（KEYNOTE-811）**：食藥署已核准適應症（HER2+ 且 CPS ≥ 1），健保給付條件仍隨時間更新，目前部分需自費或申請藥廠 PAP。
+- **Trastuzumab deruxtecan 二線**：台灣食藥署於 2023 年核准 HER2+ 轉移性胃 / GEJ 腺癌二線適應症；健保給付條件仍在審議與更新，多數醫療中心已可取得自費或臨床試驗用藥。
+- **臨床試驗管道**：DESTINY-Gastric 系列、KEYNOTE 系列、後線新 ADC（如 disitamab vedotin, zanidatamab）在台灣多家醫學中心仍有開放試驗，可向主治醫師詢問。
+
+實際給付條件以中央健康保險署公告為準，且隨時可能更新。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認 HER2 與 PD-L1 都驗了
+
+    開始討論一線治療之前，必備：(1) HER2 IHC（必要時加 ISH）、(2) PD-L1 CPS（22C3 抗體）、(3) MMR/MSI 狀態。三項任一缺失就可能漏掉合適的標靶或免疫策略。HER2 IHC 2+ 而未做 ISH 是常見漏洞。
+  </div>
+  <div>
+    ### 主動詢問 KEYNOTE-811 是否適用
+
+    若您是 HER2 陽性且 PD-L1 CPS ≥ 1，一線多了「化療 + trastuzumab + pembrolizumab」這條路。請主治醫師說明您屬於哪一線、健保給付狀態、自費差異與 PAP 申請可能性。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 HER2 IHC 是幾分？是否需要做 ISH？切片組織量足夠嗎？
+    2. PD-L1 CPS 多少？用的是 22C3 抗體嗎？
+    3. MMR/MSI 結果？若是 MSI-H，策略會不會更動？
+    4. 一線打完之後，二線是否可使用 T-DXd？台灣健保 / 自費狀況？
+    5. T-DXd 的 ILD 風險如何監測？基線胸部 CT 與肺功能評估排了嗎？
+    6. 體能、共病、心功能、肺功能是否足以耐受目前選定方案？
+    7. 是否有適合的臨床試驗管道？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Bang YJ, Van Cutsem E, Feyereislova A, et al. **Trastuzumab in combination with chemotherapy versus chemotherapy alone for treatment of HER2-positive advanced gastric or gastro-oesophageal junction cancer (ToGA): a phase 3, open-label, randomised controlled trial.** *Lancet.* 2010;376(9742):687-697. [doi:10.1016/S0140-6736(10)61121-X](https://doi.org/10.1016/S0140-6736(10)61121-X)
+2. Janjigian YY, Kawazoe A, Yañez P, et al. **The KEYNOTE-811 trial of dual PD-1 and HER2 blockade in HER2-positive gastric cancer.** *Nature.* 2021;600(7890):727-730. [doi:10.1038/s41586-021-04161-3](https://doi.org/10.1038/s41586-021-04161-3)
+3. Janjigian YY, Kawazoe A, Bai Y, et al. **Pembrolizumab plus trastuzumab and chemotherapy for HER2-positive gastric or gastro-oesophageal junction adenocarcinoma: interim analyses from the phase 3 KEYNOTE-811 randomised placebo-controlled trial.** *Lancet.* 2023;402(10418):2197-2208. [doi:10.1016/S0140-6736(23)02033-0](https://doi.org/10.1016/S0140-6736(23)02033-0)
+4. Shitara K, Bang YJ, Iwasa S, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Positive Gastric Cancer** (DESTINY-Gastric01). *N Engl J Med.* 2020;382(25):2419-2430. [doi:10.1056/NEJMoa2004413](https://doi.org/10.1056/NEJMoa2004413)
+5. Van Cutsem E, di Bartolomeo M, Smyth E, et al. **Trastuzumab deruxtecan in patients in the USA and Europe with HER2-positive advanced gastric or gastroesophageal junction adenocarcinoma with disease progression on or after a trastuzumab-containing regimen (DESTINY-Gastric02): primary and updated analyses from a single-arm, phase 2 study.** *Lancet Oncol.* 2023;24(7):744-756. [doi:10.1016/S1470-2045(23)00215-2](https://doi.org/10.1016/S1470-2045(23)00215-2)
+6. Powell CA, Modi S, Iwata H, et al. **Pooled analysis of drug-related interstitial lung disease and/or pneumonitis in nine trastuzumab deruxtecan monotherapy studies.** *ESMO Open.* 2022;7(4):100554. [doi:10.1016/j.esmoop.2022.100554](https://doi.org/10.1016/j.esmoop.2022.100554)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Gastric Cancer, current version.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；台灣健保給付條件以中央健康保險署最新公告為準。

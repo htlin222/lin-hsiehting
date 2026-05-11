@@ -1,0 +1,190 @@
+---
+title: "晚期肝癌一線治療：Atezo+Bev、Durva+Treme、Nivo+Ipi 怎麼選"
+titleEn: "First-line systemic therapy in advanced HCC: 2026 update"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "晚期肝癌一線從 sorafenib 單藥時代進入免疫合併時代——IMbrave150（atezo+bev）mOS 19.2 個月、HIMALAYA STRIDE（durva+treme）mOS 16.4 個月、CheckMate-9DW（nivo+ipi）亦展現對 lenva/sora 的存活優勢；本文整理食道靜脈瘤篩檢、Child-Pugh 評估與選擇邏輯。"
+tags: ["肝癌", "HCC", "atezolizumab", "bevacizumab", "durvalumab", "tremelimumab", "免疫治療", "衛教"]
+medical: true
+medicalCondition: "晚期肝細胞癌 (Advanced hepatocellular carcinoma, HCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "肝癌一線是『打針』還是『吃藥』？"
+    a: "目前晚期肝細胞癌（HCC）BCLC C 期 Child-Pugh A 的優先選項是『打針的免疫合併治療』：包括 atezolizumab + bevacizumab（IMbrave150，mOS 19.2 個月）、durvalumab + tremelimumab（HIMALAYA STRIDE，mOS 16.4 個月）、nivolumab + ipilimumab（CheckMate-9DW，2024 ASCO 報告對 lenva/sora 有顯著 OS 優勢）。口服 TKI（lenvatinib、sorafenib）仍是免疫禁忌或不可及時的替代選擇。"
+  - q: "免疫治療肝癌健保有給付嗎？"
+    a: "截至 2026 年 5 月，台灣健保針對晚期 HCC 第一線『有條件給付』atezolizumab + bevacizumab，需符合 BCLC B（不適合 TACE）或 C 期、Child-Pugh A5–A6、ECOG 0–1、食道靜脈瘤已評估與處理等條件；durvalumab + tremelimumab 已取得 TFDA 核准但給付狀態請以最新健保署公告為準。建議直接請主治醫師或個案管理師查詢個別案件可否事前審查。"
+  - q: "我有食道靜脈瘤，可以打 atezolizumab + bevacizumab 嗎？"
+    a: "IMbrave150 試驗要求 6 個月內完成內視鏡篩檢，若有高風險靜脈瘤（中重度、紅色記號、Child B 以上）須先處理（結紮或非選擇性 β-blocker）才可使用 bevacizumab；活動性出血或近期出血（< 6 個月）為禁忌。若無法接受 bevacizumab，可考慮 durvalumab + tremelimumab（HIMALAYA STRIDE 不含 VEGF 抑制劑，出血風險較低）。"
+  - q: "Durvalumab + tremelimumab 對 Child-Pugh B 的人也可以嗎？"
+    a: "HIMALAYA 主試驗只收 Child-Pugh A，因此 Child B 的療效與安全性『證據等級較弱』。HIMALAYA 後續 Child-Pugh B subset 與真實世界資料顯示部分病人可耐受、但 ≥ Grade 3 免疫相關 AE 比例較高（約 25–30%）。一般建議 Child-Pugh B7 且代償穩定可個案討論；B8–B9 或失代償（腹水、肝性腦病活動期）應避免。所有免疫治療在 Child C 都不建議。"
+doi: "10.5281/zenodo.20115047"
+conceptDoi: "10.5281/zenodo.20115046"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+晚期肝細胞癌（advanced hepatocellular carcinoma, HCC）的一線治療在 2020 年起進入「免疫合併治療」時代：**IMbrave150** 確立 atezolizumab + bevacizumab（atezo+bev）對 sorafenib 的存活優勢（mOS 19.2 個月 vs. 13.4 個月，HR 0.66）；**HIMALAYA** 確立 durvalumab + tremelimumab 單次起始（STRIDE 方案）相對 sorafenib 的優勢（mOS 16.4 個月 vs. 13.8 個月，HR 0.78）；2024 ASCO 公布的 **CheckMate-9DW** 進一步顯示 nivolumab + ipilimumab 對 lenvatinib／sorafenib 有 OS 優勢（mOS 23.7 個月 vs. 20.6 個月，HR 0.79）。本文整理三大組合的機轉、療效、毒性與選擇邏輯，並回答「食道靜脈瘤可以打嗎？」「Child-Pugh B 可以嗎？」這兩個臨床最常被問到的問題。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知肝細胞癌已無法手術或局部治療、正在考慮全身性治療的病友與家屬，以及對 IMbrave150、HIMALAYA、CheckMate-9DW 等試驗變動感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 從 SHARP 到免疫合併：18 年的演進
+
+2008 年 Llovet 等人在 NEJM 發表 **SHARP 試驗**，sorafenib 對安慰劑 mOS 10.7 vs. 7.9 個月（HR 0.69），讓 HCC 首次有了系統性治療的證據；2018 年 **REFLECT** 顯示 lenvatinib 對 sorafenib 不劣性（mOS 13.6 vs. 12.3 個月）。但 TKI 單藥時代的 mOS 都未能突破 14 個月。
+
+2020 年 IMbrave150 改變這一切：atezolizumab（抗 PD-L1） + bevacizumab（抗 VEGF）以 mOS 19.2 個月成為第一個明確優於 sorafenib 的方案，被 BCLC 2022 指引納為「Child-Pugh A、ECOG 0–1、無禁忌症」的首選。2022 年 HIMALAYA 加上 **STRIDE 方案**（單次 tremelimumab 300 mg + 每 4 週 durvalumab 1500 mg）作為第二個選項；2024 年 CheckMate-9DW 又加上 nivolumab + ipilimumab。一線治療從「sorafenib 或 lenvatinib 二選一」變成「免疫合併三選一 + TKI 兩選一」。
+
+## 三大免疫合併治療的並列比較
+
+| 試驗 | 機轉 | mPFS | mOS | ORR | 適合誰 |
+|---|---|---|---|---|---|
+| **IMbrave150**（atezo+bev vs. sorafenib） | 抗 PD-L1 + 抗 VEGF | 6.9 vs. 4.3 mo (HR 0.65) | **19.2 vs. 13.4 mo** (HR 0.66) | 30% vs. 11% | Child A、無高風險靜脈瘤、無近期出血 |
+| **HIMALAYA STRIDE**（durva+treme vs. sorafenib） | 抗 PD-L1 + 抗 CTLA-4（單次） | 3.8 vs. 4.1 mo (HR 0.90) | **16.4 vs. 13.8 mo** (HR 0.78) | 20.1% vs. 5.1% | Child A；有靜脈瘤或抗凝/出血顧慮者 |
+| **CheckMate-9DW**（nivo+ipi vs. lenva/sora） | 抗 PD-1 + 抗 CTLA-4 | 9.1 vs. 9.2 mo (HR 0.87, NS) | **23.7 vs. 20.6 mo** (HR 0.79) | 36.1% vs. 13.2% | Child A、可耐受較高 ≥ G3 irAE 比例 |
+| REFLECT（lenvatinib vs. sorafenib） | 多激酶 TKI | 7.4 vs. 3.7 mo (HR 0.66) | 13.6 vs. 12.3 mo（不劣性） | 24.1% vs. 9.2% | 免疫禁忌、合併自體免疫疾病 |
+| SHARP（sorafenib vs. 安慰劑） | 多激酶 TKI | n/a | 10.7 vs. 7.9 mo (HR 0.69) | 2% vs. 1% | 歷史對照（已少用於一線） |
+
+<Callout type="warning" title="跨試驗比較的限制">
+IMbrave150、HIMALAYA、CheckMate-9DW 三者試驗族群（HBV/HCV/non-viral 比例、區域、AFP 水準、總膽紅素分布）並不完全一致；CheckMate-9DW 的對照組是 lenvatinib／sorafenib 二選一，而 IMbrave150 與 HIMALAYA 是 sorafenib。上述數字僅供概念性對照，不應用於跨試驗排序選藥。實際選擇仍以個別病人 Child-Pugh、靜脈瘤狀態、共病、自體免疫病史與藥物可及性綜合判斷。
+</Callout>
+
+## 一線該怎麼選？
+
+<Steps>
+  <div>
+    ### Step 1 — 確認可不可以打全身性治療
+
+    - **Child-Pugh A5–A6** 是所有一線試驗的入選條件；Child B7 可個案討論；B8–B9 與 Child C 不建議。
+    - **ECOG PS 0–1**；PS 2 以上需個別評估。
+    - **BCLC C 期**（血管侵犯或遠端轉移），或 **BCLC B 期不適合／已 fail TACE** 者。
+    - 完成 baseline 影像、AFP、Child-Pugh 評分、HBV/HCV 病毒量與抗病毒治療評估。
+  </div>
+  <div>
+    ### Step 2 — 6 個月內食道胃靜脈瘤內視鏡篩檢
+
+    這一步直接決定能不能用 bevacizumab：
+
+    - **高風險靜脈瘤**（中重度、紅色記號、Child B 以上、或近期出血）→ 先處理（內視鏡結紮 EVL 或非選擇性 β-blocker）再評估。
+    - **近 6 個月內 GI 出血** → bevacizumab 禁忌；改走 HIMALAYA STRIDE 或 nivo+ipi。
+    - **無靜脈瘤或低風險（小、無紅色記號）** → 可使用 atezo+bev。
+  </div>
+  <div>
+    ### Step 3 — HBV / HCV 抗病毒治療不可省略
+
+    - **HBsAg(+) 或 HBV DNA 可測** → 開始系統治療前先給 entecavir 或 TDF/TAF；免疫治療下 HBV reactivation 可達 5–10%。
+    - **HCV 可治療者** → 同步或先期 DAA（direct-acting antiviral）治療。
+    - 治療期間定期追蹤 HBV DNA、ALT。
+  </div>
+  <div>
+    ### Step 4 — 三選一
+
+    - **首選 atezo+bev**：若無靜脈瘤／出血／抗凝禁忌且健保符合給付條件。
+    - **HIMALAYA STRIDE**：有靜脈瘤、需抗凝、近期出血、或不耐 bevacizumab 高血壓／蛋白尿者。
+    - **Nivo+ipi（CheckMate-9DW）**：對較高 irAE 風險（≥ Grade 3 約 41%）有準備、且可頻繁回診評估者；台灣可及性與健保給付請以最新公告為準。
+    - **Lenvatinib / Sorafenib**：免疫治療絕對禁忌（活動性自體免疫疾病、近期實體器官移植、嚴重間質性肺病）或免疫不可及時的選項。
+  </div>
+</Steps>
+
+## 食道靜脈瘤與出血風險
+
+IMbrave150 在 protocol 中要求所有受試者於治療開始前 6 個月內完成上消化道內視鏡，且高風險靜脈瘤須先處理。即便如此，atezo+bev 組的 ≥ Grade 3 出血事件約 6–7%（vs. sorafenib 組 4–5%）。
+
+<Callout type="warning" title="什麼狀況不能用 bevacizumab？">
+（1）近 6 個月內任何 Grade ≥ 3 出血事件；（2）未處理的中／重度食道胃靜脈瘤；（3）需治療劑量抗凝（therapeutic anticoagulation）者，雖非絕對禁忌但須與多專科團隊個別權衡；（4）未控制高血壓（≥ 160/100 mmHg）；（5）近 28 天內接受重大手術；（6）尿蛋白 ≥ 2 g/24h。以上任一條件成立時，建議改走 HIMALAYA STRIDE 或免疫單藥（如 atezo＋bev 不可用且 STRIDE 不可及）。
+</Callout>
+
+## Child-Pugh B 的灰色地帶
+
+主要試驗都只收 Child A。但臨床上 BCLC C 期病人中相當比例為 Child B：
+
+- **Atezo+bev 在 Child B7**：GO30140 與真實世界資料顯示部分 B7 可耐受，但 mOS 顯著縮短（約 6–8 個月）、≥ Grade 3 AE 較高。
+- **STRIDE 在 Child B**：HIMALAYA 後續 Child B subset 顯示安全性可接受但 OS 數據有限。
+- **TKI 在 Child B**：sorafenib 在 GIDEON registry 顯示 Child B 病人 mOS 約 5–6 個月。
+- **Child C 或失代償（活動腹水、肝性腦病）**：所有全身治療都不建議；轉為支持性治療與症狀控制。
+
+<Callout type="note" title="Child-Pugh B 的決策原則">
+若代償穩定（Child B7、無活動腹水、無肝性腦病、白蛋白 ≥ 2.8 g/dL、總膽紅素 ≤ 3 mg/dL），可在多專科團隊討論下嘗試免疫合併或免疫單藥；B8–B9 一般以支持治療為主。決策時應與病人與家屬討論「療效不確定 vs. 副作用風險升高」的取捨。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+### Atezolizumab + bevacizumab 常見不良反應
+
+- **bevacizumab 相關**：高血壓（30–40%）、蛋白尿、出血（任何等級 25%，≥ G3 約 6–7%）、傷口癒合不良、血栓事件。
+- **atezolizumab 相關（免疫相關 AE）**：肝炎（≥ G3 約 3–5%，HCC 族群本就肝功能不佳，須與疾病惡化鑑別）、肺炎、大腸炎、甲狀腺異常、皮疹。
+- 黑盒警告：bevacizumab 之 GI 穿孔、嚴重出血、傷口癒合不良。
+
+### Durvalumab + tremelimumab (STRIDE) 常見不良反應
+
+- 任何級別：疲倦、皮疹、腹瀉、瘙癢、甲狀腺功能異常。
+- 免疫相關 AE：肝炎（≥ G3 約 7–9%）、大腸炎（≥ G3 約 4–5%）、肺炎、腎上腺功能不全。
+- 整體 ≥ G3 AE 約 25.8%（HIMALAYA），低於 nivo+ipi 的 41%。
+- 因為 tremelimumab 只給一次劑量（priming dose），長期累積 irAE 較持續用 ipilimumab 為低。
+
+### Nivolumab + ipilimumab (CheckMate-9DW) 常見不良反應
+
+- ≥ G3 治療相關 AE 約 41%（vs. lenva/sora 約 42%）；治療相關死亡 < 1% 但仍須警覺。
+- 免疫相關 AE：肝炎、大腸炎、肺炎、內分泌異常；irAE 起始可快（第一週期內）。
+
+### Lenvatinib / Sorafenib 常見不良反應
+
+- **lenvatinib**：高血壓、蛋白尿、疲倦、腹瀉、手足症候群、甲狀腺功能異常、體重下降。
+- **sorafenib**：手足症候群、腹瀉、疲倦、皮疹、高血壓、體重下降。
+- 多以劑量調整（dose hold + dose reduction）管理。
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者。
+- **活動性自體免疫疾病**（紅斑性狼瘡、IBD、活動期 RA 等）→ 免疫合併治療相對禁忌。
+- **實體器官移植病史**（含肝移植）→ 排斥風險，免疫治療多不建議。
+- **活動性間質性肺病**或嚴重 COPD → 免疫治療謹慎。
+- **未控制 HBV / HCV** → 先抗病毒治療。
+- **近 6 個月內 GI 出血、未處理高風險靜脈瘤、活動性抗凝需求** → bevacizumab 禁忌或謹慎。
+- 妊娠與授乳期應避免使用。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認三件事：Child-Pugh、靜脈瘤、病毒
+
+    開始討論一線治療之前，必備：(1) Child-Pugh 分數（A5/A6/B7…）；(2) 6 個月內上消化道內視鏡；(3) HBV/HCV 狀態與是否已開始抗病毒治療。三項缺一就有可能漏掉重要禁忌或可調整因素。
+  </div>
+  <div>
+    ### 主動詢問三大免疫合併治療誰最適合
+
+    向主治醫師問清楚：「以我的 Child-Pugh、靜脈瘤、共病、自體免疫病史與健保條件，三個免疫合併治療各自的優缺點？」「如果免疫不適合，lenvatinib 與 sorafenib 哪個合適？」「健保給付申請會卡在哪一條？」
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 Child-Pugh 分數是多少？是 A5、A6 還是 B7？
+    2. 我有沒有做過上消化道內視鏡？最近一次是什麼時候？有沒有靜脈瘤？
+    3. 我有 HBV / HCV 嗎？已經在吃抗病毒藥了嗎？
+    4. 三個免疫合併方案，以我的狀況哪個最適合？為什麼？
+    5. 副作用怎麼監測？（肝功能、甲狀腺、血壓、蛋白尿、腸胃道出血徵兆）
+    6. 健保給付目前涵蓋哪些方案？需要哪些事前審查文件？
+    7. 如果一線治療失效，二線有什麼選項？（cabozantinib、regorafenib、ramucirumab AFP ≥ 400、TKI 切換等）
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Finn RS, Qin S, Ikeda M, et al. **Atezolizumab plus Bevacizumab in Unresectable Hepatocellular Carcinoma** (IMbrave150). *N Engl J Med.* 2020;382(20):1894-1905. [doi:10.1056/NEJMoa1915745](https://doi.org/10.1056/NEJMoa1915745)
+2. Cheng AL, Qin S, Ikeda M, et al. **Updated efficacy and safety data from IMbrave150.** *J Hepatol.* 2022;76(4):862-873. [doi:10.1016/j.jhep.2021.11.030](https://doi.org/10.1016/j.jhep.2021.11.030)
+3. Abou-Alfa GK, Lau G, Kudo M, et al. **Tremelimumab plus Durvalumab in Unresectable Hepatocellular Carcinoma** (HIMALAYA). *NEJM Evid.* 2022;1(8):EVIDoa2100070. [doi:10.1056/EVIDoa2100070](https://doi.org/10.1056/EVIDoa2100070)
+4. Llovet JM, Ricci S, Mazzaferro V, et al. **Sorafenib in Advanced Hepatocellular Carcinoma** (SHARP). *N Engl J Med.* 2008;359(4):378-390. [doi:10.1056/NEJMoa0708857](https://doi.org/10.1056/NEJMoa0708857)
+5. Kudo M, Finn RS, Qin S, et al. **Lenvatinib versus sorafenib in first-line treatment of unresectable hepatocellular carcinoma** (REFLECT). *Lancet.* 2018;391(10126):1163-1173. [doi:10.1016/S0140-6736(18)30207-1](https://doi.org/10.1016/S0140-6736(18)30207-1)
+6. Reig M, Forner A, Rimola J, et al. **BCLC strategy for prognosis prediction and treatment recommendation: 2022 update.** *J Hepatol.* 2022;76(3):681-693. [doi:10.1016/j.jhep.2021.11.018](https://doi.org/10.1016/j.jhep.2021.11.018)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

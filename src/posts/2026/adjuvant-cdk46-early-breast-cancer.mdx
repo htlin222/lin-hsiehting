@@ -1,0 +1,215 @@
+---
+title: "早期 HR+ 乳癌的 CDK4/6 輔助治療：abemaciclib 與 ribociclib 怎麼選"
+titleEn: "Adjuvant CDK4/6 inhibitors in early HR+ breast cancer"
+date: "05/11/2026"
+frontmatter: "monarchE 5 年追蹤顯示 abemaciclib + 內分泌治療在高風險 N1+ 早期 HR+/HER2− 乳癌絕對降低 7.6% IDFS 事件；NATALEE 再把 ribociclib 推廣到 II/III 期較廣的族群；palbociclib 於 PALLAS 與 PENELOPE-B 均為陰性。本文整理選藥邏輯、副作用差異與健保現況。"
+tags: ["乳癌", "CDK4-6抑制劑", "abemaciclib", "ribociclib", "輔助治療", "衛教"]
+medical: true
+medicalCondition: "早期 HR 陽性 / HER2 陰性乳癌 (Early-stage HR+/HER2− breast cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "術後吃 abemaciclib 兩年到底有沒有差？"
+    a: "有差。monarchE 5 年追蹤（JCO 2024，N = 5,637）顯示，高風險 HR+/HER2− 早期乳癌術後 abemaciclib 加標準內分泌治療 2 年，相較單純內分泌治療，5 年無侵犯性疾病存活（IDFS）83.6% vs. 76.0%，絕對降低 7.6% 復發事件（HR 0.680, 95% CI 0.599–0.772）；無遠端復發存活也同步改善。療效在停藥後仍可維持，並不會在 2 年結束時消失。"
+  - q: "ribociclib 跟 abemaciclib 哪個比較好？"
+    a: "目前沒有 head-to-head 試驗，不能直接比較。abemaciclib 在 monarchE 限定高風險族群（N ≥ 4，或 N1–3 加 grade 3／T3 以上／Ki-67 ≥ 20%），追蹤 5 年仍有效；ribociclib 在 NATALEE 把適合族群放寬到 II/III 期、甚至部分 N0 高風險，3 年追蹤 IDFS 90.7% vs. 87.6%（HR 0.749, 95% CI 0.628–0.892），但療程是 3 年。族群、療程、副作用差異都不同，應依個別風險因子、可耐受性與健保給付決定。"
+  - q: "副作用嚴重嗎？什麼時候要停藥？"
+    a: "abemaciclib 最常見的是腹瀉（任何級別約 84%，第 3 級以上 8%），多數可用 loperamide 與劑量調整控制；其他要注意間質性肺病、靜脈血栓栓塞、肝指數上升、嗜中性白血球下降。ribociclib 常見嗜中性白血球下降（第 3 級以上約 44%）、肝指數異常與 QTc 延長，需要前 6 個月每 2 週驗血、定期心電圖。出現第 3 級以上腹瀉、間質性肺炎、QTc > 500 ms、ALT/AST > 5 × ULN 應立即停藥並聯絡主治醫師。"
+  - q: "健保有給付嗎？費用大概多少？"
+    a: "在台灣，abemaciclib（Verzenio）自 2024 年 11 月起在「高風險 HR+/HER2− 早期乳癌輔助治療」有條件給付（限 N ≥ 4，或 N1–3 加 grade 3／T3／Ki-67 ≥ 20%），療程 2 年。ribociclib（Kisqali）目前健保僅給付於轉移性 HR+/HER2− 乳癌，輔助適應症尚未納入給付，自費約每月新台幣 8–12 萬元（依劑量與劑型）。確切條件與最新公告請見健保署網站或與醫院藥師確認。"
+  - q: "palbociclib 為什麼不能用於輔助治療？"
+    a: "PALLAS（Lancet Oncol 2021，N = 5,796）與 PENELOPE-B（JCO 2021，N = 1,250）兩個第三期試驗都未能證明 palbociclib 加內分泌治療在早期 HR+ 乳癌輔助治療有效——PALLAS 4 年 IDFS 84.2% vs. 84.5%（HR 0.96，P = 0.65），PENELOPE-B 4 年 IDFS 73.0% vs. 72.4%（HR 0.93，P = 0.53）。因此 palbociclib 目前不建議用於早期乳癌輔助治療，僅限轉移性疾病。"
+doi: "10.5281/zenodo.20115017"
+conceptDoi: "10.5281/zenodo.20115016"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+早期 HR+/HER2− 乳癌的輔助治療在過去 5 年因 CDK4/6 抑制劑改寫——**monarchE 5 年追蹤（JCO 2024）證實 abemaciclib 加內分泌治療在高風險 N1+ 族群絕對降低 7.6% 復發事件**，療效並於停藥後維持；**NATALEE（NEJM 2024）則把 ribociclib 推到更廣的 II/III 期族群**，3 年 IDFS 提升 3.1%；而 palbociclib 在 PALLAS 與 PENELOPE-B 兩個第三期試驗均為陰性，已不建議用於輔助治療。本文整理選藥邏輯、適合對象、副作用差異與台灣健保現況。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛接受乳癌手術、被告知病理為 HR+/HER2− 並在考慮是否加 CDK4/6 抑制劑輔助治療的病友與家屬，以及對 monarchE、NATALEE 5 年資料與 palbociclib 陰性結果想要快速整理的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼 HR+/HER2− 乳癌要加 CDK4/6 抑制劑？
+
+HR+/HER2− 乳癌約佔所有乳癌的 65–70%，是最大的亞型。雖然整體預後比三陰性或 HER2 陽性好，但因族群龐大，**「絕對復發人數」反而最高**，而且復發時間可長達術後 10–20 年（late recurrence）。傳統輔助治療為 5–10 年的內分泌治療（tamoxifen、aromatase inhibitor，加上停經前可加 ovarian function suppression）；但在淋巴結轉移、grade 3、Ki-67 高的族群，5 年復發風險仍可達 20–30%。
+
+CDK4/6 抑制劑能阻斷 cyclin D1–CDK4/6–Rb 路徑，**讓殘存的 ER 陽性細胞停在 G1 期、無法分裂**。在轉移性 HR+/HER2− 乳癌（MONARCH-3、MONALEESA、PALOMA 等），加 CDK4/6 抑制劑可把 mPFS 從約 14 個月延長到 24–28 個月，已是標準治療。把這個策略往前推到輔助階段，就是 monarchE、NATALEE、PALLAS、PENELOPE-B 四個第三期試驗想回答的問題。
+
+## 四個試驗一張表看完
+
+| 試驗 | 藥物 / 療程 | 收案族群 | 主要結果 | 結論 |
+|---|---|---|---|---|
+| **monarchE** | abemaciclib 150 mg BID × 2 年 + ET | HR+/HER2−、高風險（N ≥ 4；或 N1–3 加 grade 3／T3／Ki-67 ≥ 20%）N = 5,637 | 5 年 IDFS 83.6% vs. 76.0%（HR 0.680, 95% CI 0.599–0.772，P < 0.0001），絕對差 7.6% | **陽性**，療效於停藥後維持 |
+| **NATALEE** | ribociclib 400 mg QD × 3 週 on / 1 週 off × 3 年 + ET | HR+/HER2−、II/III 期，含 N0 高風險（T3，或 T2 加 grade 3／Ki-67 ≥ 20%）N = 5,101 | 3 年 IDFS 90.7% vs. 87.6%（HR 0.749, 95% CI 0.628–0.892，P = 0.003），絕對差 3.1% | **陽性**，FDA 2024/09 核准 |
+| **PALLAS** | palbociclib 125 mg QD × 3 週 on / 1 週 off × 2 年 + ET | HR+/HER2−、II/III 期，未篩高風險 N = 5,796 | 4 年 IDFS 84.2% vs. 84.5%（HR 0.96, 95% CI 0.81–1.14，P = 0.65） | **陰性**，提前終止 |
+| **PENELOPE-B** | palbociclib 125 mg QD × 3 週 on / 1 週 off × 1 年 + ET | 新輔助化療後未達 pCR、CPS-EG ≥ 3 N = 1,250 | 4 年 IDFS 73.0% vs. 72.4%（HR 0.93, 95% CI 0.74–1.17，P = 0.53） | **陰性** |
+
+<Callout type="tip" title="為什麼 palbociclib 失敗、abemaciclib／ribociclib 成功？">
+目前尚無定論。可能與以下因素有關：(1) abemaciclib 是 continuous dosing，CDK4 抑制效力較強；(2) PALLAS 早期停藥比率達 42%，曝藥不足；(3) PENELOPE-B 療程只有 1 年；(4) 三個藥物分子設計與 CDK4 vs. CDK6 選擇性不同。實務結論：**class effect 不成立，輔助治療必須依個別藥物的試驗證據選擇**。
+</Callout>
+
+## 適合對象：誰該加 CDK4/6 抑制劑？
+
+依 NCCN v2.2026、ASCO 2024 update 與 ESMO 2024 建議：
+
+<Steps>
+  <div>
+    ### 高風險、優先考慮 abemaciclib（monarchE 適應症）
+
+    符合以下任一條件之 HR+/HER2− 早期乳癌：
+
+    - **腋下淋巴結 ≥ 4 顆陽性**，或
+    - **腋下淋巴結 1–3 顆陽性**，並合併下列任一項：
+      - 腫瘤 grade 3
+      - 腫瘤 T3（≥ 5 cm）
+      - Ki-67 ≥ 20%
+
+    療程：abemaciclib 150 mg BID 共 2 年，同時併用內分泌治療（aromatase inhibitor 或 tamoxifen ± OFS），內分泌治療總計 5–10 年。
+  </div>
+  <div>
+    ### 中度風險、可考慮 ribociclib（NATALEE 適應症）
+
+    符合以下任一條件之 HR+/HER2− 早期乳癌：
+
+    - 解剖期別 IIA 加 N1，或 grade 2/3，或 Ki-67 ≥ 20%
+    - 解剖期別 IIB、III
+    - 部分高風險 N0（T2 加 grade 3 或 Ki-67 ≥ 20%；或 T3）
+
+    療程：ribociclib 400 mg QD（3 週 on / 1 週 off）共 3 年，同時併用 AI ± OFS。注意 NATALEE 用的劑量（400 mg）比轉移性的 600 mg 低，毒性也較低。
+  </div>
+  <div>
+    ### 不建議加 CDK4/6 抑制劑的族群
+
+    - 低風險族群（T1N0 grade 1–2、Ki-67 < 20%）：絕對獲益太小，毒性／費用不划算
+    - 純粹接受 palbociclib 輔助治療：證據不支持
+    - HER2 陽性、三陰性乳癌：適應症不同，不適用此策略
+    - 主動性間質性肺病、QTc > 480 ms（ribociclib）、第 3 級以上肝指數異常者：禁忌或謹慎使用
+  </div>
+</Steps>
+
+## 副作用比較：abemaciclib vs. ribociclib
+
+兩個藥的不良反應 profile 差很多，**副作用 profile 常常才是實務選藥的主因**。
+
+### Abemaciclib 常見不良反應（monarchE）
+
+- **腹瀉**：任何級別 83.5%，第 3 級以上 7.8%。多數發生於前 1 個月內，loperamide + 劑量調整通常可控；嚴重時需暫停。
+- **嗜中性白血球下降**：任何級別 45.8%，第 3 級以上 19.6%
+- **疲倦**：任何級別 40.8%
+- **間質性肺病（ILD）／肺炎**：任何級別約 3%，少見但可能致命；出現咳嗽、喘、發燒應立即就醫
+- **靜脈血栓栓塞（VTE）**：約 2.5%（vs. 對照組 0.6%），尤其是 tamoxifen 同時併用時風險升高
+- **肝指數上升**：ALT 第 3 級以上約 2.7%
+
+### Ribociclib 常見不良反應（NATALEE 400 mg）
+
+- **嗜中性白血球下降**：第 3 級以上 43.8%（但 febrile neutropenia 罕見，< 1%）
+- **肝指數異常**：ALT 第 3 級以上 8.6%，AST 第 3 級以上 5.6%
+- **QTc 延長**：QTc > 480 ms 約 1.0%，**前 6 個月應每 2 週驗血並做心電圖**
+- **腹瀉**：任何級別 23.7%，第 3 級以上 0.6%（明顯比 abemaciclib 輕）
+- **皮膚反應**：少數可能出現 SJS/TEN，極罕見
+- **ILD**：約 1.5%
+
+### 一張表選副作用
+
+| 副作用 | abemaciclib | ribociclib | 臨床意義 |
+|---|---|---|---|
+| 腹瀉 (≥ G3) | 7.8% | 0.6% | abemaciclib 顯著較多；有大腸激躁症、慢性腹瀉的病人偏好 ribociclib |
+| 嗜中性白血球下降 (≥ G3) | 19.6% | 43.8% | ribociclib 較多，但 febrile neutropenia 罕見 |
+| 肝指數異常 (≥ G3) | 2.7% | 5.6–8.6% | ribociclib 較多；肝炎帶原、脂肪肝者要謹慎 |
+| QTc 延長 | 罕見 | 1.0% | 既有心律不整或併用 QT-prolonging 藥（amiodarone、ondansetron、某些抗生素）者偏好 abemaciclib |
+| VTE | 2.5% | < 1% | 既往有 DVT/PE 病史者偏好 ribociclib |
+| ILD | ≈ 3% | ≈ 1.5% | 兩者都要小心，咳嗽、喘要立刻評估 |
+| 服藥頻率 | BID（一天兩次） | QD × 3 週 / 停 1 週 | 服藥依從性差者偏好 ribociclib QD，但要記得休 1 週 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+monarchE 與 NATALEE 收案族群、療程長度、CDK4/6 抑制劑選擇性與劑量都不同，**絕對不能直接拿 7.6% vs. 3.1% 的 IDFS 改善幅度排序兩個藥**。真正比較需要 head-to-head 試驗（目前無）。實務上請依個別病人的風險因子、共病、可耐受性與健保給付綜合判斷。
+</Callout>
+
+## 適應症、禁忌症與停藥時機
+
+### 適應症（已核准）
+
+- **abemaciclib**：HR+/HER2− 早期乳癌、淋巴結陽性、高復發風險（N ≥ 4；或 N1–3 加 grade 3／T3／Ki-67 ≥ 20%），術後輔助治療共 2 年
+- **ribociclib**：HR+/HER2− 早期乳癌、解剖期別 II 或 III（含部分 N0 高風險），術後輔助治療共 3 年（FDA 2024/09 核准）
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 嚴重肝功能異常（Child-Pugh C）：abemaciclib 與 ribociclib 都需謹慎
+- 嚴重腎功能不全：劑量需調整
+- ribociclib：基線 QTc > 450 ms、長 QT 症候群、未矯正的低血鉀／低血鎂
+- abemaciclib：既往嚴重 VTE 病史者需評估風險／效益
+- 妊娠與授乳期應避免使用，治療期間應持續避孕
+
+### 何時應該停藥？
+
+- **第 3 級以上腹瀉（abemaciclib）**：暫停，待恢復至 G1 以下再減量重啟；反覆出現 → 永久停藥
+- **第 3 級以上嗜中性白血球下降**：暫停，待恢復至 G2 以下再減量
+- **ALT/AST > 5 × ULN，或 ALT/AST > 3 × ULN 合併 bilirubin > 2 × ULN**：暫停並評估是否藥物性肝炎
+- **QTc > 500 ms 或變化 > 60 ms（ribociclib）**：永久停藥
+- **任何級別的間質性肺病／肺炎**：暫停評估；G2 以上永久停藥
+- **症狀性 VTE（abemaciclib）**：暫停並抗凝
+- **療程結束**：abemaciclib 滿 2 年、ribociclib 滿 3 年後停藥；內分泌治療獨自繼續至滿 5–10 年
+
+## 台灣健保現況（截至 2026 年 5 月）
+
+- **abemaciclib（Verzenio）**：2024 年 11 月起健保有條件給付於高風險 HR+/HER2− 早期乳癌輔助治療，給付條件對應 monarchE Cohort 1（N ≥ 4，或 N1–3 加 grade 3／T3／Ki-67 ≥ 20%），療程上限 2 年。轉移性乳癌仍依既有條件給付。
+- **ribociclib（Kisqali）**：健保目前僅給付於轉移性 HR+/HER2− 乳癌。**早期輔助治療尚未納入給付**，需自費，每月約新台幣 8–12 萬元；部分商業保險可申請給付。
+- **palbociclib（Ibrance）**：給付限轉移性疾病，輔助治療無證據，**不建議自費使用**。
+
+最新給付條件、限縮對象與申報方式請以健保署「藥物給付規定」最新公告與醫院藥師說明為準。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 開始前要確認的事
+
+    - 病理確認 HR+（ER 與 PR 至少一個 ≥ 1%）、HER2−（IHC 0 / 1+，或 IHC 2+/ISH−）
+    - 確認分期、淋巴結轉移顆數、grade、Ki-67、T 期別 → 套用 monarchE 或 NATALEE 適應症
+    - 基線抽血：完整血球計數、肝腎功能、空腹血脂、HBV／HCV 篩檢
+    - ribociclib 前：心電圖、電解質（K、Mg、Ca）；既往心律不整應請心臟科會診
+    - 確認目前用藥有沒有 CYP3A4 強抑制／誘導劑、QT-prolonging 藥
+  </div>
+  <div>
+    ### 治療期間的監測節奏
+
+    - **abemaciclib**：前 2 個月每 2 週驗血、第 3–6 個月每月，之後每 2–3 個月；隨時注意腹瀉並備 loperamide
+    - **ribociclib**：前 2 個療程每 2 週驗血並做心電圖（baseline、D14、D28、D14 of cycle 2），之後每月；持續監測肝指數
+    - 出現第 3 級以上副作用立刻聯絡主治醫師，不要自行停藥或硬撐
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理屬於 monarchE 還是 NATALEE 的適應症？兩個都符合嗎？
+    2. 我有沒有 Ki-67 報告？如果沒有，可以加做嗎？
+    3. 健保給付涵蓋我嗎？自費的話一個月多少錢？
+    4. 我目前的內分泌治療（letrozole、tamoxifen、OFS）會不會跟 CDK4/6 抑制劑互相影響？
+    5. 我有 ___（高血壓／心律不整／脂肪肝／慢性腹瀉），對選藥有影響嗎？
+    6. 副作用出現要打哪個電話？哪些情況要直接掛急診？
+    7. 治療 2/3 年後若復發，後續還能不能再用 CDK4/6 抑制劑？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Johnston SRD, Harbeck N, Hegg R, et al. **Abemaciclib Combined With Endocrine Therapy for the Adjuvant Treatment of HR+, HER2−, Node-Positive, High-Risk, Early Breast Cancer (monarchE).** *J Clin Oncol.* 2020;38(34):3987-3998. [doi:10.1200/JCO.20.02514](https://doi.org/10.1200/JCO.20.02514)
+2. Rastogi P, O'Shaughnessy J, Martin M, et al. **Adjuvant Abemaciclib Plus Endocrine Therapy for Hormone Receptor–Positive, Human Epidermal Growth Factor Receptor 2–Negative, High-Risk Early Breast Cancer: Results From a Preplanned monarchE Overall Survival Interim Analysis, Including 5-Year Efficacy Outcomes.** *J Clin Oncol.* 2024;42(9):987-993. [doi:10.1200/JCO.23.02750](https://doi.org/10.1200/JCO.23.02750)
+3. Slamon D, Lipatov O, Nowecki Z, et al. **Ribociclib plus Endocrine Therapy in Early Breast Cancer (NATALEE).** *N Engl J Med.* 2024;390(12):1080-1091. [doi:10.1056/NEJMoa2305488](https://doi.org/10.1056/NEJMoa2305488)
+4. Gnant M, Dueck AC, Frantal S, et al. **Adjuvant palbociclib for early breast cancer: The PALLAS trial results (ABCSG-42/AFT-05/BIG-14-03).** *Lancet Oncol.* 2021;22(2):212-222. [doi:10.1016/S1470-2045(21)00301-6](https://doi.org/10.1016/S1470-2045(21)00301-6)
+5. Loibl S, Marmé F, Martin M, et al. **Palbociclib for Residual High-Risk Invasive HR-Positive and HER2-Negative Early Breast Cancer—The Penelope-B Trial.** *J Clin Oncol.* 2021;39(14):1518-1530. [doi:10.1200/JCO.20.03639](https://doi.org/10.1200/JCO.20.03639)
+6. Goetz MP, Toi M, Campone M, et al. **MONARCH 3: Abemaciclib As Initial Therapy for Advanced Breast Cancer.** *J Clin Oncol.* 2017;35(32):3638-3646. [doi:10.1200/JCO.2017.75.6155](https://doi.org/10.1200/JCO.2017.75.6155)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Breast Cancer, v2.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+8. 中央健康保險署. **藥物給付規定 — 抗癌瘤藥物 (abemaciclib).** 2024 年 11 月公告。
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

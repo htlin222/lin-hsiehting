@@ -1,0 +1,194 @@
+---
+title: "大腸癌 KRAS G12C 標靶來了：sotorasib、adagrasib 與 anti-EGFR 雙重打擊"
+titleEn: "KRAS G12C in metastatic colorectal cancer: combination targeting"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "KRAS G12C 突變占大腸癌 3–4%，CodeBreaK 300（NEJM 2023）證實 sotorasib 960 mg + panitumumab 第二／三線 mPFS 5.6 個月、ORR 26.4%，HR 0.49；KRYSTAL-1 adagrasib + cetuximab ORR 46%。本文整理單藥 vs. 合併、副作用與抗藥性機制。"
+tags: ["大腸癌", "KRAS G12C", "sotorasib", "adagrasib", "標靶治療", "衛教"]
+medical: true
+medicalCondition: "KRAS G12C 突變轉移性大腸直腸癌 (KRAS G12C metastatic colorectal cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "sotorasib 治療大腸癌有效嗎？"
+    a: "單獨使用效果有限：在 CodeBreaK 100 的 KRAS G12C 大腸癌族群，sotorasib 單藥 ORR 只有 9.7%、mPFS 約 4 個月。但合併 anti-EGFR 抗體 panitumumab 後（CodeBreaK 300, NEJM 2023），sotorasib 960 mg + panitumumab 的 ORR 升到 26.4%、mPFS 5.6 個月，相對標準治療 HR 0.49，這也是 FDA 在 2024 年 1 月加速核准的依據。"
+  - q: "為什麼大腸癌 KRAS G12C 必須合併 panitumumab？"
+    a: "因為大腸癌細胞在 KRAS G12C 被抑制後，會迅速透過上游 EGFR / RTK 反饋活化重新打開 MAPK 訊號，這是非小細胞肺癌少見的逃脫機制。前臨床與臨床轉譯研究顯示，同時阻斷 KRAS G12C 與 EGFR 可顯著延長 MAPK 抑制時間，這是大腸癌與肺癌反應率差距的主要原因。"
+  - q: "adagrasib 和 sotorasib 有什麼差別？"
+    a: "兩者都是 KRAS G12C 共價抑制劑、機轉相近。在大腸癌的 KRYSTAL-1 試驗中，adagrasib 600 mg BID + cetuximab ORR 46%、mPFS 6.9 個月（n = 32）；CodeBreaK 300 的 sotorasib 960 mg + panitumumab ORR 26.4%、mPFS 5.6 個月（n = 53）。兩個試驗族群與評估方式不同，無法直接比較。adagrasib 較易引起 QT 延長與胃腸副作用，sotorasib 較易引起肝指數上升。第三期 KRYSTAL-10 仍在進行中。"
+  - q: "我哪一線就應該做基因檢測？"
+    a: "依 NCCN 與 ESMO 指引，所有轉移性大腸直腸癌病人於確診時即應做完整分子檢測，包含 RAS（KRAS / NRAS）、BRAF、HER2、MSI / dMMR、NTRK、以及 KRAS G12C 次型。台灣健保自 2024 年起給付 BRCA、EGFR、KRAS 等次世代定序檢測（NGS）於符合條件的實體腫瘤，KRAS G12C 大腸癌已涵蓋在內。"
+doi: "10.5281/zenodo.20115033"
+conceptDoi: "10.5281/zenodo.20115032"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+KRAS 突變在大腸直腸癌中約占 40%，過去被視為「無藥可用」的標靶。**2023 年 NEJM 的 CodeBreaK 300 試驗**首度證明：在 KRAS G12C 突變的轉移性大腸癌第二／三線，**sotorasib 960 mg + panitumumab 的 mPFS 5.6 個月（vs. 標準治療 2.2 個月，HR 0.49, 95% CI 0.30–0.80）**，ORR 26.4%；同年 KRYSTAL-1 公布 adagrasib + cetuximab ORR 46%。FDA 於 2024 年 1 月加速核准 sotorasib + panitumumab 為第二線用藥，NCCN 也已將兩個組合列入 2L+ 選項。本文整理大腸癌 KRAS G12C 的單藥 vs. 合併治療數據、副作用、抗藥性機制、以及次世代 RAS(ON) 抑制劑（divarasib、RMC-6236）的最新進展。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為被告知 KRAS G12C 突變大腸癌、想了解為什麼需要合併標靶的病友與家屬，以及對 RAS 標靶在大腸癌與肺癌差異感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 大腸癌 KRAS G12C 是什麼？為什麼到 2023 年才有藥？
+
+KRAS 是一個位於細胞膜內側的小型 GTPase，正常情況下會在「GTP 結合（活化）」與「GDP 結合（休息）」兩種狀態之間切換，把上游受體（如 EGFR）的訊號往下傳到 MAPK 與 PI3K 通路，控制細胞增生與存活。**G12C 是指 KRAS 第 12 位胺基酸由甘胺酸（glycine）被取代成半胱胺酸（cysteine）**——這個突變會讓 KRAS 卡在活化狀態，下游訊號持續打開。
+
+過去四十年 KRAS 被視為「undruggable」，原因有二：
+
+1. KRAS 表面平滑、缺乏可供小分子結合的口袋
+2. 細胞內 GTP 濃度非常高，傳統競爭性抑制劑根本搶不過
+
+**直到 2013 年 Shokat 實驗室發現 G12C 突變引入的 cysteine 含 SH 反應基**，可被共價結合，並在 KRAS 處於 GDP 狀態時鎖死於非活化型——這個「allele-specific」策略開啟了一連串 G12C 抑制劑的開發。Sotorasib（AMG-510）first-in-human 結果於 2020 年 NEJM 公布，2021 年再以 CodeBreaK 100 在非小細胞肺癌（NSCLC）取得 ORR 37.1% 的成績獲 FDA 加速核准；adagrasib（MRTX849）緊接著於 2022 年 NEJM 在 NSCLC 公布 ORR 42.9%。
+
+| Biomarker | 比例（mCRC） | 怎麼影響治療 |
+|---|---|---|
+| **KRAS G12C** | ≈ 3–4% | 第二線可用 sotorasib + panitumumab（CodeBreaK 300）或 adagrasib + cetuximab（NCCN 2L+） |
+| **其他 RAS 突變（KRAS G12D/V、NRAS）** | ≈ 36–40% | 排除 anti-EGFR；目前 G12D 標靶 MRTX1133 臨床試驗中 |
+| **BRAF V600E** | ≈ 7–10% | encorafenib + cetuximab（BEACON CRC, 2L+） |
+| **HER2 擴增 / MSI-H** | 各 ≈ 3–5% | trastuzumab + tucatinib / pembrolizumab |
+
+## 為什麼大腸癌反應比肺癌差？EGFR 反饋活化
+
+Sotorasib 與 adagrasib 在 NSCLC 單藥都能拿到 30–43% 的 ORR，但在大腸癌單藥 ORR 只有 9–13%。**這個落差來自 EGFR / 上游 RTK 反饋活化**：
+
+當 KRAS G12C 被共價鎖死於非活化狀態後，大腸癌細胞會在 24–48 小時內快速上調 EGFR、ERBB2、ERBB3、FGFR1 等受體型酪胺酸激酶（RTK）的表現量，把上游 RAS / MAPK 訊號重新打開——這條 adaptive resistance 路徑在大腸癌特別明顯，因為大腸癌本身的 EGFR 訊號依賴度比肺癌高。**前臨床模型顯示，KRAS G12C 抑制劑必須合併 anti-EGFR 抗體（cetuximab 或 panitumumab）**才能維持 MAPK 通路關閉，這也是所有大腸癌 KRAS G12C 第三期試驗都採用合併策略的原因。
+
+<Callout type="tip" title="基因檢測時機">
+所有轉移性大腸直腸癌（mCRC）病人於確診時應同步檢測：(1) RAS（KRAS exon 2/3/4 + NRAS exon 2/3/4，含 KRAS G12C 次型）、(2) BRAF V600E、(3) HER2 擴增、(4) MSI / dMMR、(5) NTRK 融合。台灣健保自 2024 年起給付 NGS panel 涵蓋上述目標基因。
+</Callout>
+
+## CodeBreaK 300 與 KRYSTAL-1：合併策略證據
+
+<Steps>
+  <div>
+    ### CodeBreaK 300（sotorasib + panitumumab, NEJM 2023）
+
+    第三期、開放標籤、隨機分配試驗，收 160 位先前接受過化療的 KRAS G12C 突變轉移性大腸癌：
+
+    - **Sotorasib 960 mg QD + panitumumab**（n = 53）：mPFS 5.6 個月，ORR 26.4%
+    - **Sotorasib 240 mg QD + panitumumab**（n = 53）：mPFS 3.9 個月，ORR 5.7%
+    - **標準治療**（trifluridine-tipiracil 或 regorafenib，n = 54）：mPFS 2.2 個月，ORR 0%
+    - **960 mg 組 vs. 標準治療** HR for PFS 0.49（95% CI 0.30–0.80, P = 0.006）
+    - OS 數據尚未成熟（資料截止 2023/07）
+  </div>
+  <div>
+    ### KRYSTAL-1 大腸癌族群（adagrasib ± cetuximab, NEJM 2023）
+
+    第一／二期、單臂試驗：
+
+    - **Adagrasib 600 mg BID 單藥**（n = 44）：mPFS 5.6 個月，ORR 19%
+    - **Adagrasib + cetuximab**（n = 32）：mPFS 6.9 個月，ORR 46%、DCR 100%
+    - 第三期確認性試驗 **KRYSTAL-10**（NCT04793958, adagrasib + cetuximab vs. 化療，n ≈ 420）2024 年完成收案，主要終點 PFS / OS 預計 2026 年公布
+  </div>
+  <div>
+    ### NCCN 與 FDA 監管狀態
+
+    - **FDA 2024/01**：加速核准 sotorasib 960 mg + panitumumab，適應症為先前接受過 fluoropyrimidine、oxaliplatin、irinotecan 化療的 KRAS G12C 轉移性大腸癌
+    - **NCCN v2.2026**：sotorasib + panitumumab、adagrasib + cetuximab 並列為 KRAS G12C mCRC 第二／三線「其他建議」（other recommended）
+    - 第一線仍以化療 ± bevacizumab 或 anti-EGFR（限 RAS / BRAF wild-type 左側腫瘤）為主，**KRAS G12C 第一線標靶尚未有第三期數據**
+  </div>
+</Steps>
+
+## 單藥 vs. 合併治療效益對照
+
+| 試驗 | 藥物 | n | ORR | mPFS | mOS | 線數 |
+|---|---|---|---|---|---|---|
+| CodeBreaK 100 (CRC) | Sotorasib 單藥 | 62 | 9.7% | 4.0 mo | 10.6 mo | ≥ 2L |
+| CodeBreaK 300 | Sotorasib 960 mg + panitumumab | 53 | 26.4% | 5.6 mo | NR | 2L+ |
+| KRYSTAL-1 (CRC) | Adagrasib 單藥 | 44 | 19% | 5.6 mo | 19.8 mo | ≥ 2L |
+| KRYSTAL-1 (CRC) | Adagrasib + cetuximab | 32 | 46% | 6.9 mo | 13.4 mo | ≥ 2L |
+| KRYSTAL-10 | Adagrasib + cetuximab vs. 化療 | ≈ 420 | — | — | — | 2L, 進行中 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+CodeBreaK 300 為隨機第三期、KRYSTAL-1 為單臂第一／二期，族群、評估基準、隨訪時間均不一致；上表 ORR / mPFS 不應用於跨藥比較選擇。實際選擇仍以個別病人共病、QT 風險、肝功能、藥物可及性綜合判斷。OS 數字在小樣本單臂試驗特別容易被中後線交叉治療稀釋，解讀需保守。
+</Callout>
+
+## 副作用、適應症與禁忌症
+
+### Sotorasib + panitumumab 常見不良反應
+
+- 任何級別：皮膚毒性（痤瘡樣皮疹 67%、甲溝炎、乾燥）、腹瀉（57%）、噁心、疲倦、低血鎂
+- 第 3 級以上：皮膚毒性 9%、腹瀉 6%、低血鎂 5%
+- Sotorasib 特有：肝指數（ALT/AST）上升 10–15%，多數可恢復；先前接受過免疫治療者風險升高
+- Panitumumab 黑盒警告：嚴重輸注反應、皮膚毒性需主動 prophylaxis
+
+### Adagrasib + cetuximab 常見不良反應
+
+- 任何級別：噁心 (62%)、腹瀉 (54%)、嘔吐 (44%)、疲倦、皮疹、口腔黏膜炎、低血鎂
+- 第 3 級以上：噁心 5%、QT 延長 6%、貧血 6%
+- Adagrasib 特有：QT 間期延長——治療前應評估 ECG、電解質（K、Mg），避免併用 CYP3A 強抑制劑與其他 QT 延長藥物
+- Cetuximab 黑盒警告：嚴重輸注反應、肺毒性
+
+### 適應症
+
+- 組織或液態活檢確認 **KRAS p.G12C 突變**之轉移性大腸直腸癌
+- 已接受過 fluoropyrimidine、oxaliplatin、irinotecan 化療（CodeBreaK 300 / KRYSTAL-1 收案條件）
+- 體能狀態 ECOG PS 0–1，主要器官功能可耐受
+- 已排除其他可治療之標的（如 BRAF V600E、HER2 擴增、MSI-H）
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 嚴重肝功能異常（sotorasib，Child-Pugh B/C 不建議）
+- 基線 QTcF > 470 ms 或先天 QT 延長症候群（adagrasib）
+- 活動性間質性肺病或非感染性肺炎史
+- 妊娠與授乳期應避免使用
+- 併用 CYP3A 強抑制劑 / 誘導劑、proton pump inhibitor 與多種抗凝血藥物時需藥物交互作用評估
+
+## 抗藥性機制與第二代 RAS(ON) 抑制劑
+
+<Callout type="warning" title="KRAS G12C 抑制劑也會失效">
+**Awad 等人於 NEJM 2021** 對 38 位 sotorasib 或 adagrasib 失效的病人做循環腫瘤 DNA（ctDNA）分析，發現 7 種重疊的抗藥機制：(1) KRAS G12C 二次突變（Y96D、R68S）、(2) KRAS 擴增、(3) BRAF / MAP2K1 變異、(4) NRAS / HRAS 突變、(5) EGFR / FGFR / ALK 等 RTK 融合或擴增、(6) MET 擴增、(7) PIK3CA / PTEN 變異。**單一病人常合併多個機制**，意謂下一線單純加另一個酪胺酸激酶抑制劑很容易失敗。
+</Callout>
+
+第二代與 multi-RAS 抑制劑正在試圖突破上述限制：
+
+- **Divarasib（GDC-6036, Genentech）**：第二代 KRAS G12C 共價抑制劑，前期數據顯示對 sotorasib 部分抗藥機制（如 Y96D）仍有活性；mCRC + cetuximab 第一期 ORR 約 30%。
+- **RMC-6236（Revolution Medicines）**：所謂「RAS(ON) multi-selective」抑制劑，可同時抑制 KRAS G12X / G13X / Q61X 多種突變，不限 G12C；在胰臟癌與大腸癌的第一期試驗顯示初步活性，但**目前皆為單臂、初期報告**，等待第三期數據。
+- **MRTX1133（KRAS G12D 抑制劑）**：G12D 是大腸癌與胰臟癌最常見的 KRAS 突變類型，目前進入第一／二期試驗。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認 KRAS G12C 突變來源
+
+    KRAS G12C 必須由分子病理報告明確記錄為 **p.G12C（c.34G>T）**，而非泛指「KRAS 突變」。若報告僅寫「KRAS positive」，請主治醫師確認是否為 G12C 次型——其他 KRAS 突變（G12D、G12V、G13D 等）目前仍無核准標靶。
+  </div>
+  <div>
+    ### 第二線之前先評估所有標靶
+
+    KRAS G12C 雖然「終於有藥」，但仍應同步檢查 BRAF V600E、HER2 擴增、MSI / dMMR、NTRK，以避免漏掉更有效的選項（例如 MSI-H 對 pembrolizumab 反應率達 43.8%、mPFS 16.5 個月，遠優於 KRAS G12C 標靶）。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的分子報告是 KRAS p.G12C 嗎？同時有沒有 BRAF / HER2 / MSI 結果？
+    2. 我屬於第二線還是第三線？sotorasib + panitumumab 或 adagrasib + cetuximab 哪一個比較適合我？
+    3. 我有沒有 QT 延長或心律問題？目前在用的藥物會不會與 adagrasib 衝突？
+    4. 健保給付與自費差距怎麼算？臨床試驗是否還有機會？
+    5. 副作用怎麼監測？（皮膚毒性、腹瀉、肝指數、ECG、電解質）
+    6. 若標靶失效，下一步有沒有 ctDNA 檢測可幫忙找抗藥機制？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Fakih MG, Salvatore L, Esaki T, et al. **Sotorasib plus Panitumumab in Refractory Colorectal Cancer with Mutated KRAS G12C** (CodeBreaK 300). *N Engl J Med.* 2023;389(23):2125-2139. [doi:10.1056/NEJMoa2308795](https://doi.org/10.1056/NEJMoa2308795)
+2. Yaeger R, Weiss J, Pelster MS, et al. **Adagrasib with or without Cetuximab in Colorectal Cancer with Mutated KRAS G12C** (KRYSTAL-1). *N Engl J Med.* 2023;388(1):44-54. [doi:10.1056/NEJMoa2212419](https://doi.org/10.1056/NEJMoa2212419)
+3. Skoulidis F, Li BT, Dy GK, et al. **Sotorasib for Lung Cancers with KRAS p.G12C Mutation** (CodeBreaK 100). *N Engl J Med.* 2021;384(25):2371-2381. [doi:10.1056/NEJMoa2103695](https://doi.org/10.1056/NEJMoa2103695)
+4. Jänne PA, Riely GJ, Gadgeel SM, et al. **Adagrasib in Non–Small-Cell Lung Cancer Harboring a KRAS G12C Mutation** (KRYSTAL-1). *N Engl J Med.* 2022;387(2):120-131. [doi:10.1056/NEJMoa2204619](https://doi.org/10.1056/NEJMoa2204619)
+5. Hong DS, Fakih MG, Strickler JH, et al. **KRAS G12C Inhibition with Sotorasib in Advanced Solid Tumors** (AMG-510 First-in-Human). *N Engl J Med.* 2020;383(13):1207-1217. [doi:10.1056/NEJMoa1917239](https://doi.org/10.1056/NEJMoa1917239)
+6. Awad MM, Liu S, Rybkin II, et al. **Acquired Resistance to KRAS G12C Inhibition in Cancer.** *N Engl J Med.* 2021;384(25):2382-2393. [doi:10.1056/NEJMoa2105281](https://doi.org/10.1056/NEJMoa2105281)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Colon Cancer, v2.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文引用全文與 BibTeX 已存於本機 OpenEvidence MCP artifacts 目錄。

@@ -1,0 +1,215 @@
+---
+title: "轉移性去勢抗性攝護腺癌（mCRPC）的 PARP 抑制劑與 HRR 突變"
+titleEn: "PARP inhibitors in metastatic CRPC: olaparib, talazoparib, niraparib"
+date: "05/11/2026"
+frontmatter: "mCRPC 帶 BRCA1/2 變異的病人，olaparib 單藥 PROfound 試驗 mOS 19.1 vs. 14.7 個月（HR 0.69）；PROpel、TALAPRO-2、MAGNITUDE 將 PARP 推進到一線合併 abi/enza。本文整理 HRR panel、檢測時機與台灣健保條件。"
+tags: ["攝護腺癌", "mCRPC", "PARP", "olaparib", "BRCA", "HRR", "衛教"]
+medical: true
+medicalCondition: "轉移性去勢抗性攝護腺癌 (Metastatic castration-resistant prostate cancer, mCRPC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "Olaparib 治療攝護腺癌的效果如何？"
+    a: "在 PROfound 第三期試驗（NEJM 2020），帶有 BRCA1/2 或 ATM 變異、且對 abiraterone 或 enzalutamide 失效的 mCRPC 病人，olaparib 相較 enza/abi 切換的影像學無惡化存活（rPFS）為 7.4 vs. 3.6 個月（HR 0.34），更新後總存活 19.1 vs. 14.7 個月（HR 0.69），其中 BRCA2 變異族群效益最明顯。"
+  - q: "HRR 突變要驗哪些基因？"
+    a: "PROfound 採用的 HRR panel 含 15 個基因：BRCA1、BRCA2、ATM、CDK12、CHEK1、CHEK2、BARD1、BRIP1、FANCL、PALB2、PPP2R2A、RAD51B、RAD51C、RAD51D、RAD54L。其中以 BRCA2 體細胞或胚系變異效益最強，ATM、CDK12 反應較差。檢測順序通常是先做組織體細胞 NGS，再補做血液胚系 BRCA 確認遺傳性。"
+  - q: "PARP 抑制劑一定要合併 abiraterone 或 enzalutamide 才有效嗎？"
+    a: "不一定。BRCA1/2 變異族群在 olaparib 單藥（PROfound 二線）已有顯著效益；但一線合併策略（PROpel、TALAPRO-2、MAGNITUDE）對 BRCA 族群再延長 rPFS 與 mOS，是目前 NCCN v3.2026 首選。非 BRCA 的 HRR 病人在合併策略中效益較不一致，是否合併要看基因型與毒性負擔權衡。"
+  - q: "台灣健保有給付嗎？"
+    a: "截至 2026 年 5 月，台灣健保 olaparib 給付限縮於：BRCA1/2 致病性變異（胚系或體細胞）、曾接受過 abiraterone 或 enzalutamide 失效之 mCRPC。一線合併方案（abi + olaparib、enza + talazoparib、abi + niraparib + ZYTIGA fixed-dose 組合）目前皆為自費或在事前審查討論中，請與主治醫師、個案管理師確認最新給付公告。"
+doi: "10.5281/zenodo.20115051"
+conceptDoi: "10.5281/zenodo.20115050"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+轉移性去勢抗性攝護腺癌（mCRPC）自 2020 年 PROfound 試驗（de Bono, *NEJM*）之後，**PARP 抑制劑（PARPi）成為帶有同源重組修復（HRR）基因變異族群的標準後線治療**：olaparib 對 BRCA1/2 與 ATM 變異 mCRPC 的影像學無惡化存活（rPFS）為 7.4 vs. 3.6 個月，更新後總存活 19.1 vs. 14.7 個月（HR 0.69）。2022–2023 年 PROpel、TALAPRO-2、MAGNITUDE 三大第三期試驗進一步把 PARPi 推到一線合併 abiraterone 或 enzalutamide。本文整理四個試驗的線數、合併策略、BRCA 與 HRR 表現，並說明 HRR panel 檢測時機與台灣健保條件。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知轉成 mCRPC、想了解基因檢測與 PARP 抑制劑是否適用的病友與家屬，以及對一線合併策略選擇與 HRR panel 解讀感興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼攝護腺癌也要驗 BRCA？
+
+過去常被視為「乳癌、卵巢癌專屬」的 BRCA1/2 致病性變異，其實在 mCRPC 並不少見。**Pritchard 等人 2016 年 *NEJM* 研究**（n = 692）發現轉移性攝護腺癌的胚系（germline）HRR 致病性變異率達 11.8%，其中 BRCA2 約 5.3%、ATM 約 1.6%、BRCA1 約 0.9%。加上體細胞（somatic）變異，**mCRPC 的整體 HRR 突變盛行率約 20–25%**——這個比例足以讓「常規分子檢測」成為標準作業。
+
+| 基因 | mCRPC 大約頻率 | 對 PARP 反應 |
+|---|---|---|
+| **BRCA2** | 5–10% | 反應最強，rPFS、OS 皆有顯著效益 |
+| BRCA1 | 1–2% | 反應佳，但個案數少 |
+| ATM | 5–7% | 反應較弱，單藥效益不一致 |
+| CHEK2 | 2–3% | 反應中等，合併策略中可見效益 |
+| CDK12 | 3–7% | 通常反應差，視為獨立亞型 |
+| PALB2、FANCA、RAD51 家族 | < 1% 各 | 個案級證據，BRCA-like 反應 |
+
+<Callout type="tip" title="檢測時機與順序">
+NCCN v3.2026 與 EAU 2025 建議所有 mCRPC 病人在診斷時即接受體細胞 NGS（組織或循環腫瘤 DNA, ctDNA），並同步排程胚系 BRCA1/2 檢測；若組織不足，ctDNA 可作為替代。等到二線、三線才補檢測，往往已錯過 PARPi 最佳介入時機。
+</Callout>
+
+## 四大第三期試驗比較
+
+四個試驗的線數、合併策略、族群與療效並不一致，跨試驗比較須謹慎。
+
+| 試驗 | 線數 | 合併藥 | 族群 | 主要終點 | BRCA 子集 | HRR 整體 |
+|---|---|---|---|---|---|---|
+| **PROfound**（olaparib） | abi/enza 失效後 | 單藥 | HRR mut | rPFS | rPFS 7.4 vs. 3.6 mo（HR 0.34）；mOS 19.1 vs. 14.7（HR 0.69） | rPFS 5.8 vs. 3.5（HR 0.49，含 cohort B） |
+| **PROpel**（olaparib + abi） | 1L mCRPC | abiraterone | 全收，HRR 不挑 | rPFS | BRCA 子集 mOS 未達 vs. 23.0（HR 0.29） | 整體 rPFS 24.8 vs. 16.6（HR 0.66）；mOS 42.1 vs. 34.7（HR 0.81） |
+| **TALAPRO-2**（talazoparib + enza） | 1L mCRPC | enzalutamide | All-comers + HRR cohort | rPFS | HRR+ 子集 rPFS NR vs. 13.8（HR 0.46）；BRCA NR vs. 11.0（HR 0.20） | 整體 rPFS NR vs. 21.9（HR 0.63） |
+| **MAGNITUDE**（niraparib + abi） | 1L mCRPC | abiraterone | HRR+ 與 HRR− 分層 | rPFS | BRCA1/2 子集 rPFS 19.5 vs. 10.9（HR 0.55） | HRR+ rPFS 16.5 vs. 13.7（HR 0.73）；HRR− 提早終止（無效） |
+
+<Callout type="warning" title="跨試驗比較的限制">
+PROfound 是「二線、單藥、HRR-selected」，PROpel 是「一線、合併、不挑 HRR」，TALAPRO-2 與 MAGNITUDE 是「一線、合併、HRR 分層」。族群、線數、合併藥都不同；上述數字僅供概念性對照，不應用於跨試驗排序選藥。實際選擇仍以個別病人 BRCA 狀態、共病、可及性、健保條件綜合判斷。
+</Callout>
+
+### BRCA1/2 子集的一致訊號
+
+四個試驗在 **BRCA1/2 變異子集** 的訊號高度一致：
+
+- **PROfound BRCA**：rPFS 9.8 vs. 3.0 個月（HR 0.22）；BRCA2 子集 mOS HR 0.59。
+- **PROpel BRCA**：mOS 未達 vs. 23.0 個月（HR 0.29），第二次 OS 分析仍顯著。
+- **TALAPRO-2 BRCA**：rPFS 未達 vs. 11.0 個月（HR 0.20）。
+- **MAGNITUDE BRCA1/2**：rPFS 19.5 vs. 10.9 個月（HR 0.55）。
+
+**結論**：只要驗到 BRCA1/2 致病性變異，無論一線或後線，PARPi 都應該被認真考慮。
+
+### 非 BRCA 的 HRR 變異效益較弱
+
+ATM、CDK12 等非 BRCA HRR 變異對 PARPi 反應較不一致。例如 PROfound 的 cohort B（BRCA、ATM 以外的 HRR 變異）效益較小，MAGNITUDE 在 BRCA1/2 以外的 HRR 子集 rPFS HR 約 0.99（無效益）。**這也是為什麼 FDA 核准 niraparib + abi 限定 BRCA1/2，而 olaparib + abi、talazoparib + enza 在歐洲核准範圍較寬。**
+
+## 該怎麼選 PARP 抑制劑？
+
+<Steps>
+  <div>
+    ### 一線（剛轉成 mCRPC）：先確認 BRCA / HRR 狀態
+
+    若已有 BRCA1/2 致病性變異 → 考慮一線合併（NCCN v3.2026 列為 category 1）：
+
+    - **Olaparib + abiraterone**（PROpel）：BRCA 子集 mOS HR 0.29。
+    - **Talazoparib + enzalutamide**（TALAPRO-2）：BRCA 子集 rPFS HR 0.20。
+    - **Niraparib + abiraterone**（MAGNITUDE / Akeega 固定劑量複方）：限 BRCA1/2，rPFS HR 0.55。
+
+    若 HRR 陰性 → 仍以 abiraterone 或 enzalutamide ± docetaxel 為主，PARPi 暫不加入。
+  </div>
+  <div>
+    ### 二線（abi 或 enza 失效）：PROfound 路線
+
+    HRR 變異（含 BRCA、ATM、PALB2 等 15 個基因）→ olaparib 單藥（rPFS 7.4 vs. 3.6，HR 0.34，mOS 19.1 vs. 14.7，HR 0.69）。此線目前是台灣健保 olaparib 給付主場景。
+
+    無 HRR 變異 → 多走 docetaxel、cabazitaxel、Lu-177 PSMA-617（VISION 試驗）或臨床試驗。
+  </div>
+  <div>
+    ### 三線以後：考慮 Lu-PSMA、cabazitaxel、臨床試驗
+
+    PARPi 失效後再用 PARPi 的證據不足；可考慮 Lu-177 PSMA-617（VISION）、cabazitaxel，或進入臨床試驗（如 AKT 抑制劑、BTK / NK cell 試驗、HRR-D 新藥）。
+  </div>
+</Steps>
+
+## 適應症、禁忌症與副作用
+
+### 適應症（已核准或試驗中）
+
+- **Olaparib 單藥**：HRR 變異 mCRPC，曾接受 abi 或 enza 失效後（PROfound 適應症）。
+- **Olaparib + abiraterone**：1L mCRPC，依當地核准範圍（歐洲 EMA 廣泛核准，FDA 限 BRCA1/2）。
+- **Talazoparib + enzalutamide**：1L mCRPC，HRR 變異或不挑（依當地核准）。
+- **Niraparib + abiraterone（Akeega）**：1L mCRPC，限 BRCA1/2 致病性變異。
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者。
+- 嚴重肝功能異常（Child-Pugh C）；中度肝功能異常（Child-Pugh B）需減量。
+- 嚴重腎功能異常（CrCl < 30 mL/min）需減量或避免。
+- 妊娠與授乳期（攝護腺癌族群極少，但仍應記載）。
+- 合併強效 CYP3A 抑制劑或誘導劑時需調整劑量。
+- 既往接受過多線骨髓抑制治療、骨髓儲備不足者要格外小心。
+
+### 常見不良反應
+
+| 不良反應 | Olaparib | Talazoparib | Niraparib |
+|---|---|---|---|
+| 貧血（任一級別） | 約 50% | 約 65% | 約 50% |
+| ≥ Grade 3 貧血 | 15–22% | 約 39% | 約 30% |
+| 噁心 | 約 40% | 約 35% | 約 25% |
+| 疲倦 | 約 35% | 約 35% | 約 35% |
+| 嗜中性白血球下降（任一級別） | 約 15% | 約 35% | 約 20% |
+| ≥ Grade 3 血小板下降 | < 5% | 約 15% | 約 15% |
+
+- 貧血是最主要的劑量限制毒性。建議治療前後密集監測 CBC（前三個月每週、之後每月）。
+- 噁心通常在前 1–2 個月最明顯，可用止吐藥對症處理；分次劑量、隨餐服用有助緩解。
+
+<Callout type="warning" title="MDS / AML 風險（黑盒警告）">
+所有 PARP 抑制劑都附帶骨髓化生不良症候群（myelodysplastic syndrome, MDS）與急性骨髓性白血病（acute myeloid leukemia, AML）的黑盒警告，整體發生率約 **0.5–1.5%**，潛伏期中位數約 12–24 個月，與既往化療、放射線暴露相關。**任何持續或加劇的血球低下都應排查 MDS / AML，必要時轉介血液科做骨髓抽吸**。治療滿一年後仍需定期追蹤 CBC、網狀紅血球與血片。
+</Callout>
+
+## HRR panel 與檢測流程
+
+<Steps>
+  <div>
+    ### 1. 體細胞 NGS（組織或 ctDNA）
+
+    首選針對組織切片（diagnostic biopsy、轉移病灶活檢、TURP 檢體）跑 HRR-15 panel，至少含 BRCA1/2、ATM、CDK12、CHEK2、PALB2 與 RAD51 家族；組織不足或檢體老舊（> 5 年）時可改用 ctDNA。
+  </div>
+  <div>
+    ### 2. 胚系 BRCA1/2（血液檢測）
+
+    無論體細胞結果為何，**所有轉移性攝護腺癌都應主動建議胚系 BRCA1/2 檢測**——除了影響本人治療，也牽涉一等親（乳癌、卵巢癌、胰臟癌、攝護腺癌風險）的遺傳諮詢。
+  </div>
+  <div>
+    ### 3. 結果分類與後續
+
+    結果分三類：(a) 致病性 / 可能致病性變異（pathogenic / likely pathogenic, P/LP）→ 直接影響治療；(b) 意義未明變異（VUS）→ 不依此決策；(c) 無變異 → 仍可考慮其他標靶（如 PSMA、AR-LBD 突變、PI3K/AKT 路徑）。BRCA P/LP 病人應同步轉介遺傳諮詢。
+  </div>
+</Steps>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 第一次討論 PARP 之前的檢查清單
+
+    1. 是否已做組織體細胞 NGS？panel 是否含 HRR-15 基因？
+    2. 是否已做胚系 BRCA1/2？若無，先排血液檢測。
+    3. 目前 PSA、影像（骨掃描、CT 或 PSMA PET）、ECOG PS、共病（心血管、糖尿病、骨髓儲備）如何？
+    4. 過去用過幾線藥物？哪一線、何時失效？
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題
+
+    1. 我的 HRR 變異是哪一個基因？是體細胞還是胚系？
+    2. 一線該選 abi + olaparib、enza + talazoparib，還是 abi + niraparib（限 BRCA）？依據是什麼？
+    3. 健保有沒有給付？若自費，藥費與療程預估？
+    4. 副作用如何監測？多久回診抽 CBC？
+    5. 若 PARPi 失效，下一步有哪些選項（Lu-PSMA、cabazitaxel、臨床試驗）？
+    6. 家族中是否需要做遺傳諮詢？哪些一等親要考慮自費檢測？
+  </div>
+</Steps>
+
+## 台灣健保與可及性概要
+
+截至 2026 年 5 月，台灣健保 olaparib 對 mCRPC 的給付重點：
+
+- 限 BRCA1/2 致病性變異（胚系或體細胞，需附報告）。
+- 需曾接受過 abiraterone 或 enzalutamide 治療且失效。
+- 事前審查制，需附完整 NGS 報告與影像／PSA 進展證據。
+- 一線合併（abi + olaparib、enza + talazoparib、abi + niraparib）目前**未在常規給付範圍**，多以自費或恩慈方案、臨床試驗取得；費用、療程與適應症請與個案管理師確認最新公告。
+
+NGS 檢測本身的給付則隨健保「次世代基因定序檢測」政策逐步擴大，部分醫學中心提供攝護腺癌組合套組，請事先詢問院內檢驗科或精準醫療中心。
+
+<Divider />
+
+## 參考文獻
+
+1. de Bono J, Mateo J, Fizazi K, et al. **Olaparib for Metastatic Castration-Resistant Prostate Cancer** (PROfound). *N Engl J Med.* 2020;382(22):2091-2102. [doi:10.1056/NEJMoa1911440](https://doi.org/10.1056/NEJMoa1911440)
+2. Hussain M, Mateo J, Fizazi K, et al. **Survival with Olaparib in Metastatic Castration-Resistant Prostate Cancer** (PROfound final OS). *N Engl J Med.* 2020;383(24):2345-2357. [doi:10.1056/NEJMoa2022485](https://doi.org/10.1056/NEJMoa2022485)
+3. Saad F, Armstrong AJ, Thiery-Vuillemin A, et al. **PROpel: Phase III Trial of Olaparib Combined with Abiraterone for Patients with Metastatic Castration-Resistant Prostate Cancer.** *NEJM Evid.* 2022;1(9):EVIDoa2200043. [doi:10.1056/EVIDoa2200043](https://doi.org/10.1056/EVIDoa2200043)
+4. Agarwal N, Azad AA, Carles J, et al. **Talazoparib plus enzalutamide in men with first-line metastatic castration-resistant prostate cancer** (TALAPRO-2). *Lancet.* 2023;402(10398):291-303. [doi:10.1016/S0140-6736(23)01055-3](https://doi.org/10.1016/S0140-6736(23)01055-3)
+5. Chi KN, Rathkopf D, Smith MR, et al. **Niraparib and Abiraterone Acetate for Metastatic Castration-Resistant Prostate Cancer** (MAGNITUDE). *J Clin Oncol.* 2023;41(18):3339-3351. [doi:10.1200/JCO.22.01649](https://doi.org/10.1200/JCO.22.01649)
+6. Pritchard CC, Mateo J, Walsh MF, et al. **Inherited DNA-Repair Gene Mutations in Men with Metastatic Prostate Cancer.** *N Engl J Med.* 2016;375(5):443-453. [doi:10.1056/NEJMoa1603144](https://doi.org/10.1056/NEJMoa1603144)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Prostate Cancer, v3.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

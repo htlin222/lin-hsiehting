@@ -1,0 +1,243 @@
+---
+title: "化療發燒就一定要急診嗎？嗜中性球低下發燒（FN）紅綠燈"
+titleEn: "Febrile neutropenia: when to head to ER, when to use oral antibiotics"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "化療後發燒 ≥ 38.3℃ 且 ANC < 500 即為嗜中性球低下發燒（FN）；MASCC ≥ 21 屬低風險、可考慮口服 ciprofloxacin + amoxicillin/clavulanate，MASCC < 21 一律急診靜脈 cefepime 或 pip-tazo。本文整理紅綠燈決策、G-CSF 預防時機與居家口服方案。"
+tags: ["FN", "嗜中性球低下", "發燒", "MASCC", "G-CSF", "衛教"]
+medical: true
+medicalCondition: "嗜中性球低下伴隨發燒 (Febrile neutropenia, FN)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "化療後發燒一定要立刻去急診嗎？"
+    a: "不一定。關鍵不是體溫本身，而是嗜中性球絕對值（ANC）與整體風險。若耳溫 ≥ 38.3℃（或持續 ≥ 38.0℃ 超過 1 小時）且 ANC < 500/µL，就符合嗜中性球低下發燒（FN）。MASCC score ≥ 21 的低風險病人，臨床上可以考慮在血液腫瘤科照會後改成口服抗生素居家治療；MASCC < 21、或評估為高風險，就應該到急診接受靜脈抗生素與住院觀察。在不確定的情況下，請以急診為優先。"
+  - q: "白血球多少算危險？"
+    a: "判讀重點是嗜中性球絕對值（ANC），不是總白血球。ANC < 1000/µL 為 neutropenia、< 500/µL 為 severe neutropenia、< 100/µL 為 profound neutropenia 且風險最高。當 ANC 預期會在 7 天內持續 < 500，或在血液惡性腫瘤接受高強度化療時，發燒併發菌血症與敗血症的機率顯著上升，這也是 IDSA 2010 與 ASCO 2018 指引把 ANC < 500 + 發燒列為 FN 的原因。"
+  - q: "MASCC score 是什麼？"
+    a: "MASCC（Multinational Association for Supportive Care in Cancer）index 是 2000 年由 Klastersky 等人發表的 FN 風險分層工具，總分 26，項目包含『症狀負荷』、『無低血壓』、『無慢性阻塞性肺病』、『實體腫瘤或無真菌感染病史』、『無脫水』、『門診狀態』與『年齡 < 60』。≥ 21 分為低風險，預測併發症與死亡率 < 5%，可作為口服居家治療的依據之一；< 21 分屬高風險，建議住院靜脈抗生素。CISNE score 則是專門針對實體腫瘤門診病人開發的補強工具。"
+  - q: "出院後口服抗生素方案是什麼？"
+    a: "依 IDSA 2010 與 ASCO 2018 指引，低風險 FN 成人可考慮 ciprofloxacin 750 mg 口服 q12h + amoxicillin/clavulanate 875/125 mg 口服 q12h 的雙藥組合。對 β-lactam 過敏者可改用 ciprofloxacin + clindamycin。前提是：MASCC ≥ 21、無嚴重共病、能可靠口服、家人照顧支援足夠、住處距離急診 < 1 小時、發燒後 24 小時內接受過完整評估，並於 48–72 小時回診。任何一條沒達到就回到靜脈方案。"
+doi: "10.5281/zenodo.20115045"
+conceptDoi: "10.5281/zenodo.20115044"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+化療後發燒最危險的不是體溫，而是嗜中性球絕對值（ANC）。當 **ANC < 500/µL 加上單次耳溫 ≥ 38.3℃，或持續 ≥ 38.0℃ 超過一小時**，即診斷為嗜中性球低下發燒（Febrile Neutropenia, FN），是腫瘤治療最常見、也最致命的急症之一。IDSA 2010、ASCO 2018 與 NCCN 2024 指引都建議：以 MASCC score 做風險分層，≥ 21 分為低風險、可考慮口服 ciprofloxacin + amoxicillin/clavulanate 居家治療；< 21 分為高風險、應急診靜脈 cefepime 或 piperacillin-tazobactam 並住院。本文整理「紅綠燈」決策樹、G-CSF 一級／二級預防使用時機，以及實體腫瘤病人專用的 CISNE 補強工具。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為正在接受化療、可能在家中遇到發燒的病友與家屬，以及第一線需要分流 FN 病人的住院醫師、腫瘤科 fellow 與門診護理師。所有個別治療決策請以您的主治醫師或當班血液腫瘤科醫師為準；本文不能取代急診醫療。
+</Callout>
+
+<Divider />
+
+## FN 的標準定義：兩個數字一起看
+
+**嗜中性球低下發燒（FN）= 嗜中性球絕對值（ANC）+ 體溫**，兩個條件缺一不可：
+
+| 項目 | 標準（IDSA 2010 / ASCO 2018） |
+|---|---|
+| 嗜中性球絕對值（ANC） | < 500/µL，或預期 48 小時內會降至 < 500/µL |
+| 體溫（耳溫或口溫） | 單次 ≥ 38.3℃（101°F），或持續 ≥ 38.0℃（100.4°F）超過 1 小時 |
+
+<Callout type="tip" title="ANC 怎麼算？">
+ANC = 總白血球 × (中性球 % + 帶狀球 %) ÷ 100。例如 WBC 1,500/µL、segmented 25%、band 5%，ANC = 1500 × 0.30 = 450/µL。實務上 CBC with diff 報告通常會直接列出 ANC，不需自行換算。
+</Callout>
+
+**為什麼這個閾值很重要？** 在 ANC < 500 時，皮膚與腸黏膜的免疫防線同時失能，菌血症在 48 小時內可演變為敗血性休克。IDSA 2010 指引明確指出：**只要符合 FN 定義，60 分鐘內必須打第一劑經驗性廣效抗生素**。
+
+## MASCC index：低風險與高風險的分水嶺
+
+MASCC 是 Klastersky 等人於 2000 年發表（n = 756）的 FN 風險分層工具，預測「嚴重併發症」（持續發燒、需 ICU、死亡）的能力已在多國驗證。**滿分 26 分，≥ 21 分為低風險**。
+
+### MASCC index 計分表
+
+| 項目 | 分數 |
+|---|---|
+| 症狀負荷：無症狀或輕度 | 5 |
+| 症狀負荷：中度 | 3 |
+| 症狀負荷：嚴重（含敗血症徵象） | 0 |
+| 收縮壓 ≥ 90 mmHg（無低血壓） | 5 |
+| 無慢性阻塞性肺病（COPD） | 4 |
+| 實體腫瘤，或血液惡性腫瘤但既往無侵襲性真菌感染 | 4 |
+| 無需點滴補液的脫水 | 3 |
+| 發燒當下為門診狀態（非住院期間發病） | 3 |
+| 年齡 < 60 歲 | 2 |
+| **總分** | **26（≥ 21 = 低風險）** |
+
+> 註：症狀負荷三個分數互斥，只能擇一計入；其餘項目符合就加分。
+
+### MASCC ≥ 21（低風險）：可考慮口服居家治療的條件
+
+但 **MASCC ≥ 21 只是必要條件，不是充分條件**。ASCO 2018 指引額外要求以下都成立才能走口服居家路線：
+
+- 能可靠吞嚥口服藥、無噁心嘔吐到無法服藥
+- 沒有導管相關感染徵象（紅腫、化膿、沿走向疼痛）
+- 過去 4 週內未接受過 fluoroquinolone 預防
+- 家中有照顧者、住處 1 小時車程內可達急診
+- 已在急診或門診接受過完整評估（理學檢查、血液培養、CBC、化學）
+- 能於 24–72 小時回診追蹤
+
+任一條沒達到 → 回到靜脈方案。
+
+### CISNE score：實體腫瘤門診病人的補強工具
+
+Carmona-Bayonas 等人 2015 年於 JCO 發表 **CISNE（Clinical Index of Stable Febrile Neutropenia）**，專為「看起來穩定」的實體腫瘤門診 FN 病人設計（n = 1,133）。CISNE 在這群病人中將「看似低風險、實則高風險」的比例從 MASCC 單獨使用時的 ~10% 降到 ~5%。**建議實體腫瘤門診 FN 病人同時跑 MASCC 與 CISNE：兩者都低風險才走口服路線。**
+
+## 紅綠燈決策流程
+
+<Steps>
+  <div>
+    ### 1. 量體溫（耳溫或口溫，不要量腋溫）
+
+    耳溫 ≥ 38.3℃ 一次，或 ≥ 38.0℃ 持續 1 小時以上 → 進入下一步。化療期間任何發燒都不應自行服用退燒藥『先觀察看看』，因為退燒會掩蓋 FN 早期徵兆。
+  </div>
+  <div>
+    ### 2. 立刻聯絡腫瘤科或急診，安排 CBC with diff
+
+    在電話中提供：化療藥物名稱、最後一次化療日期（第幾天 nadir 是線索）、目前體溫、有無寒顫、有無新近症狀（咳嗽、腹痛、排尿不適）。**化療後第 7–14 天最容易 nadir**，這段期間發燒高度懷疑 FN。
+  </div>
+  <div>
+    ### 3. 確認 ANC
+
+    ANC < 500/µL + 發燒 → 診斷 FN。**60 分鐘內打第一劑廣效抗生素**，不要等培養結果。培養應在抗生素前抽，但不可因為等培養而延遲第一劑。
+  </div>
+  <div>
+    ### 4. 計算 MASCC（與 CISNE，若為實體腫瘤）
+
+    MASCC ≥ 21 + 所有條件達標 → 急診觀察 4–24 小時後可考慮口服居家。MASCC < 21、或任一條件不達 → 住院靜脈抗生素。
+  </div>
+  <div>
+    ### 5. 居家後 48–72 小時必回診
+
+    回診重點：體溫趨勢、有無新症狀、CBC 看 ANC 是否回升、培養結果出來後依結果調整抗生素 spectrum。任何病情惡化（持續高燒 > 72 小時、低血壓、意識改變）→ 立即急診。
+  </div>
+</Steps>
+
+## 抗生素方案：紅綠燈對照
+
+### 低風險 vs. 高風險經驗性抗生素
+
+| 風險分層 | 第一線方案 | 替代方案（過敏或在地抗藥型） |
+|---|---|---|
+| 低風險（MASCC ≥ 21、所有條件達標） | Ciprofloxacin 750 mg PO q12h + amoxicillin/clavulanate 875/125 mg PO q12h | Ciprofloxacin 750 mg PO q12h + clindamycin 600 mg PO q8h（青黴素過敏） |
+| 高風險（MASCC < 21、住院） | Cefepime 2 g IV q8h，或 piperacillin-tazobactam 4.5 g IV q6h | Meropenem 1 g IV q8h（懷疑 ESBL 或既往有 resistance），或 cefepime + vancomycin（懷疑導管相關感染、皮膚／軟組織感染、嚴重黏膜炎） |
+| 任何一組過敏／血流動力不穩 | Cefepime + vancomycin + 視情況加 aminoglycoside | 依抗生素管理小組決定 |
+
+### 何時需要住院（即使 MASCC ≥ 21 也要住院的條件）
+
+| 情境 | 為何需要住院 |
+|---|---|
+| 血流動力不穩（收縮壓 < 90、心跳 > 120） | 敗血性休克風險 |
+| 嚴重黏膜炎、無法口服 | 無法執行口服方案 |
+| 急性意識改變、新發神經學症狀 | 中樞神經感染、腦病變 |
+| 導管相關感染（出口處紅腫、化膿） | 可能需移除導管、IV 治療 |
+| 急性腹痛、腹瀉伴血便 | 中性球低下性腸炎（typhlitis） |
+| 既往住院期間培養出多重抗藥菌（MDRO） | 經驗性抗生素需升階 |
+| 肝腎功能異常使口服藥代謝不可預期 | 血中濃度難掌握 |
+
+<Callout type="warning" title="MASCC 不是萬靈丹">
+MASCC 與 CISNE 都是基於統計，仍有 ~5% 的低風險病人會發展嚴重併發症。臨床判斷永遠優先：若病人或家屬感覺「不對勁」、體溫趨勢上升、有任何敗血症徵兆（心跳快、呼吸快、意識混亂、皮膚花斑），即使分數低也應住院。**寧可多收一晚，也不要漏掉敗血症。**
+</Callout>
+
+## G-CSF 預防：一級 vs. 二級
+
+ASCO 2015（Smith 等人 JCO）與 NCCN 指引建議：**化療方案預期 FN 發生率 ≥ 20% 時，從第一個療程起就給 G-CSF 一級預防（primary prophylaxis）**。
+
+### G-CSF 預防使用時機
+
+| 情境 | 建議 |
+|---|---|
+| 化療方案 FN 風險 ≥ 20%（如 R-CHOP、TAC、TC、docetaxel-cyclophosphamide） | 一級預防：每個療程化療後 24–72 小時皮下注射 |
+| 化療方案 FN 風險 10–20% | 看病人風險因子：年齡 ≥ 65、既往 FN、骨髓功能不佳、肝腎功能異常、傷口未癒、晚期病灶；若有任一項可考慮一級預防 |
+| 化療方案 FN 風險 < 10% | 一般不建議常規 G-CSF |
+| 上個療程曾發生 FN，且下個療程仍需維持劑量強度 | 二級預防：下次化療開始即給 G-CSF |
+| FN 已發生，治療中是否加 G-CSF？ | ASCO/IDSA 不建議常規加；可考慮於高死亡風險（年齡 > 65、ANC < 100、預期 ANC 低下 > 10 天、肺炎、低血壓、敗血症、侵襲性真菌感染、住院時發病）使用 |
+
+### 常用 G-CSF 藥物
+
+- **Filgrastim**：5 µg/kg/day SC，每天打到 ANC > 1,000/µL 連兩天
+- **Pegfilgrastim**：6 mg SC，每療程一次，於化療後 24–72 小時。Holmes 等人 JCO 2002 樞紐試驗顯示與 daily filgrastim 等效，且更方便
+- **Lipegfilgrastim / efbemalenograstim alfa**：類似 pegfilgrastim 的長效製劑
+
+### Fluoroquinolone 預防：只給血液惡性腫瘤高風險族群
+
+IDSA 2010 與 ASCO 2018 指引建議：**僅在預期 ANC < 100/µL 持續 > 7 天的高風險族群（如急性白血病誘導期、自體／異體幹細胞移植前後）**，可考慮 levofloxacin 500 mg/day 或 ciprofloxacin 預防。**實體腫瘤一般化療不建議常規 fluoroquinolone 預防**，因為對死亡率影響有限，反而會養出抗藥菌與增加 C. difficile 風險。
+
+## 適應症、禁忌症與副作用
+
+### 適應症
+
+- **經驗性抗生素**：任何符合 FN 定義（ANC < 500 + 發燒）的病人，60 分鐘內第一劑
+- **G-CSF 一級預防**：化療方案預期 FN 風險 ≥ 20%，或 10–20% 風險加上額外風險因子
+- **G-CSF 二級預防**：上個療程曾發生 FN，下個療程需維持劑量強度
+- **口服居家方案**：MASCC ≥ 21、CISNE 低風險（若實體腫瘤）、無住院指徵、照顧支援充足
+
+### 禁忌症 / 不建議
+
+- 對 ciprofloxacin、amoxicillin/clavulanate、cefepime、pip-tazo 或對應 β-lactam 過敏
+- 既往 fluoroquinolone 預防（過去 4 週內）→ 改非 quinolone 方案
+- 血流動力不穩、急性意識改變、無法口服 → 一律住院 IV
+- G-CSF 於急性骨髓性白血病誘導期 controversies 仍存（部分研究顯示無傷害，但不視為標準）
+- 重度過敏體質、嚴重肝腎功能異常 → 抗生素需調整劑量
+
+### 副作用 / 不良反應
+
+| 藥物 | 常見副作用 | 嚴重不良反應（≥ Grade 3） |
+|---|---|---|
+| Ciprofloxacin | 噁心、腹瀉、頭暈、QT 延長 | Tendinopathy、跟腱斷裂、神經病變、C. difficile colitis、QT 延長 → torsades |
+| Amoxicillin/clavulanate | 腹瀉、皮疹、肝指數上升 | 嚴重肝毒性、Stevens-Johnson、過敏性休克 |
+| Cefepime | 皮疹、注射部位反應 | Cefepime-induced encephalopathy（尤其腎功能不全時）、C. difficile |
+| Piperacillin-tazobactam | 腹瀉、皮疹 | AKI（與 vancomycin 合用時風險上升）、過敏 |
+| Pegfilgrastim | 骨頭酸痛（40–60%）、注射部位反應 | 脾臟破裂（罕見）、ARDS、毛細血管滲漏症候群、過敏 |
+
+<Callout type="warning" title="退燒藥不能取代抗生素">
+Acetaminophen 或 NSAIDs 可以暫時把體溫壓下來，但不會處理菌血症。**化療期間發燒不可自行服用退燒藥而不就醫**，這會掩蓋 FN 早期徵兆、延誤抗生素時間，是 FN 死亡率上升的常見原因之一。若懷疑 FN，請先到急診抽完培養再考慮對症處置。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 在家準備一支耳溫槍與一張化療日程
+
+    化療後第 7–14 天為 nadir，是 FN 最高風險時期。把這段時間用紅筆圈在月曆上，提醒自己每天量一次體溫（早晚各一次更好）。
+  </div>
+  <div>
+    ### 任何 ≥ 38.0℃ 都先打電話到腫瘤科或急診
+
+    不要『先吃普拿疼觀察看看』。先打電話、先抽 CBC、先看 ANC。等到自行退燒，48 小時後燒回來時可能已經敗血。
+  </div>
+  <div>
+    ### 隨身帶『化療卡』
+
+    一張卡片寫上：化療方案、最後一次化療日、主治醫師與腫瘤科電話、用藥過敏史。轉院或夜間急診時這張卡比病歷還快。
+  </div>
+  <div>
+    ### 可以與主治醫師討論的問題
+
+    1. 我的化療方案預期 FN 風險多少？需不需要 G-CSF 一級預防？
+    2. 預期 nadir 是第幾天？
+    3. 出現發燒時，我該打哪支電話、到哪間急診？
+    4. 如果評估為低風險，可以走口服居家方案嗎？回診時程怎麼安排？
+    5. 我有沒有需要避開的食物或活動（如生食、整理花園、清貓砂）來降低感染風險？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Klastersky J, Paesmans M, Rubenstein EB, et al. **The Multinational Association for Supportive Care in Cancer risk index: a multinational scoring system for identifying low-risk febrile neutropenic cancer patients.** *J Clin Oncol.* 2000;18(16):3038-3051. [doi:10.1200/JCO.2000.18.16.3038](https://doi.org/10.1200/JCO.2000.18.16.3038)
+2. Freifeld AG, Bow EJ, Sepkowitz KA, et al. **Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer: 2010 Update by the Infectious Diseases Society of America.** *Clin Infect Dis.* 2011;52(4):e56-e93. [doi:10.1093/cid/cir073](https://doi.org/10.1093/cid/cir073)
+3. Taplitz RA, Kennedy EB, Bow EJ, et al. **Outpatient Management of Fever and Neutropenia in Adults Treated for Malignancy: ASCO and IDSA Clinical Practice Guideline Update.** *J Clin Oncol.* 2018;36(14):1443-1453. [doi:10.1200/JCO.2017.77.6211](https://doi.org/10.1200/JCO.2017.77.6211)
+4. Carmona-Bayonas A, Jiménez-Fonseca P, Virizuela Echaburu J, et al. **Prediction of Serious Complications in Patients With Seemingly Stable Febrile Neutropenia: Validation of the Clinical Index of Stable Febrile Neutropenia in a Prospective Cohort of Patients From the FINITE Study.** *J Clin Oncol.* 2015;33(5):465-471. [doi:10.1200/JCO.2014.57.2347](https://doi.org/10.1200/JCO.2014.57.2347)
+5. Smith TJ, Bohlke K, Lyman GH, et al. **Recommendations for the Use of WBC Growth Factors: American Society of Clinical Oncology Clinical Practice Guideline Update.** *J Clin Oncol.* 2015;33(28):3199-3212. [doi:10.1200/JCO.2015.62.3488](https://doi.org/10.1200/JCO.2015.62.3488)
+6. Holmes FA, O'Shaughnessy JA, Vukelja S, et al. **Phase III Trial of a Single Dose of Pegfilgrastim Compared With Daily Filgrastim to Support Neutrophil Recovery in Patients With Breast Cancer Receiving Chemotherapy.** *J Clin Oncol.* 2002;20(3):727-731. [doi:10.1200/JCO.2002.20.3.727](https://doi.org/10.1200/JCO.2002.20.3.727)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文 6 篇核心引用與 IDSA / ASCO / NCCN 指引交互比對。
