@@ -17,6 +17,7 @@
 		"og": "node scripts/og-image.mjs",
 		"pdf": "node scripts/render-pdfs.mjs",
 		"pdf:force": "node scripts/render-pdfs.mjs --force",
+		"pdf:cv": "node scripts/render-cv-pdfs.mjs",
 		"audit:posts": "node scripts/audit-posts.mjs",
 		"audit:doi": "node scripts/audit-doi.mjs",
 		"audit:all": "pnpm run audit:posts && pnpm run audit:doi",

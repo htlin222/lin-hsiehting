@@ -1,0 +1,25 @@
+---
+import "../styles/print-cv.css";
+
+interface Props {
+    title: string;
+    lang: "zh-TW" | "en";
+}
+
+const { title, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{title}</title>
+        <meta name="robots" content="noindex, follow" />
+    </head>
+    <body>
+        <main class="cv-shell">
+            <slot />
+        </main>
+    </body>
+</html>

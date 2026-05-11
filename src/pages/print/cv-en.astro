@@ -1,0 +1,119 @@
+---
+import PrintCv from "@/layouts/PrintCv.astro";
+import {
+    positions,
+    experience,
+    education,
+    publications,
+    presentations,
+    certificationsEn,
+    cvHeader,
+} from "@/data/cv";
+---
+
+<PrintCv title={`${cvHeader.nameEn} ${cvHeader.credentialsZh} — CV`} lang="en">
+    <header class="cv-header">
+        <h1 class="cv-name">{cvHeader.nameEn}, {cvHeader.credentialsZh}</h1>
+        <p class="cv-tagline">{cvHeader.taglineEn}</p>
+        <ul class="cv-contact">
+            <li>
+                <a href={`mailto:${cvHeader.email}`}>{cvHeader.email}</a>
+            </li>
+            <li>
+                <a href="https://orcid.org/0009-0002-3974-4528">ORCID 0009-0002-3974-4528</a>
+            </li>
+            <li>
+                <a
+                    href="https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=en"
+                    >Google Scholar</a
+                >
+            </li>
+            <li>
+                <a href="https://github.com/htlin222">GitHub @htlin222</a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="cv-section">
+        <h2 class="cv-section-title">Current Position &amp; Clinical Training</h2>
+        <ul class="cv-list">
+            {
+                [...positions, ...experience].map((p) => (
+                    <li>
+                        <span class="cv-period">{p.period}</span>
+                        <div>
+                            <p class="cv-entry-title">{p.titleEn}</p>
+                            <p class="cv-entry-org">{p.orgEn}</p>
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="cv-section">
+        <h2 class="cv-section-title">Education</h2>
+        <ul class="cv-list">
+            {
+                education.map((e) => (
+                    <li>
+                        <span class="cv-period">{e.period}</span>
+                        <div>
+                            <p class="cv-entry-title">{e.titleEn}</p>
+                            <p class="cv-entry-org">{e.orgEn}</p>
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="cv-section">
+        <h2 class="cv-section-title">Publications</h2>
+        <ol class="cv-pubs">
+            {
+                publications.map((p) => (
+                    <li>
+                        <span class="cv-pub-authors">{p.authors}</span>{" "}
+                        {p.url ? (
+                            <a href={p.url} class="cv-pub-link">
+                                {p.title}
+                            </a>
+                        ) : (
+                            <span>{p.title}</span>
+                        )}{" "}
+                        <span class="cv-pub-venue">{p.venue}</span>
+                    </li>
+                ))
+            }
+        </ol>
+    </section>
+
+    <section class="cv-section">
+        <h2 class="cv-section-title">Oral Presentations</h2>
+        <ul class="cv-presentations">
+            {
+                presentations.map((t) => (
+                    <li>
+                        <span class="cv-period">{t.date}</span>
+                        <div>
+                            <p class="cv-presentation-title">{t.title}</p>
+                            <p class="cv-presentation-venue">{t.venueEn}</p>
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
+
+    <section class="cv-section">
+        <h2 class="cv-section-title">Board Certifications</h2>
+        <ul class="cv-certs">
+            {certificationsEn.map((c) => <li>{c}</li>)}
+        </ul>
+    </section>
+
+    <div class="cv-footer">
+        {cvHeader.nameEn} ({cvHeader.nameZh}) · {cvHeader.email} · ORCID 0009-0002-3974-4528 · lin.hsiehting.com/cv
+    </div>
+</PrintCv>

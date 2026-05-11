@@ -1,0 +1,255 @@
+/*
+ * One-page A4 CV stylesheet (used by /print/cv-zh and /print/cv-en).
+ * Tuned to fit on a single page; bump down --cv-font / --cv-line / --cv-gap if content grows.
+ */
+
+@page {
+    size: A4;
+    margin: 12mm 14mm 12mm 14mm;
+}
+
+:root {
+    --cv-font: 8.6pt;
+    --cv-line: 1.32;
+    --cv-gap: 4.5pt;
+    --cv-section-gap: 8pt;
+    --cv-color-fg: #000;
+    --cv-color-muted: #444;
+    --cv-color-border: #000;
+}
+
+html,
+body {
+    background: #fff !important;
+    color: var(--cv-color-fg) !important;
+    font-family:
+        "Inter", "Helvetica Neue", "Helvetica", "Arial",
+        "Source Han Sans TC", "Noto Sans CJK TC", "PingFang TC",
+        "Microsoft JhengHei", sans-serif;
+    font-size: var(--cv-font);
+    line-height: var(--cv-line);
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.cv-shell {
+    max-width: 100%;
+    margin: 0 auto;
+    color: var(--cv-color-fg);
+}
+
+/* Header */
+
+.cv-header {
+    border-bottom: 0.8pt solid var(--cv-color-border);
+    padding-bottom: 4.5pt;
+    margin-bottom: 7pt;
+}
+
+.cv-name {
+    font-size: 16pt;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.005em;
+}
+
+.cv-tagline {
+    font-size: 9pt;
+    font-weight: 500;
+    color: var(--cv-color-fg);
+    margin: 2pt 0 0;
+    line-height: 1.25;
+}
+
+.cv-contact {
+    margin: 3pt 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1pt 9pt;
+    font-size: 8pt;
+    color: var(--cv-color-muted);
+    line-height: 1.3;
+}
+
+.cv-contact a {
+    color: var(--cv-color-muted);
+    text-decoration: none;
+}
+
+/* Sections */
+
+.cv-section {
+    margin-top: var(--cv-section-gap);
+    break-inside: avoid;
+}
+
+.cv-section:first-of-type {
+    margin-top: 4pt;
+}
+
+.cv-section-title {
+    font-size: 9.5pt;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--cv-color-fg);
+    margin: 0 0 3pt;
+    padding: 0 0 1.5pt;
+    border-bottom: 0.4pt solid var(--cv-color-border);
+}
+
+.cv-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-list > li {
+    display: grid;
+    grid-template-columns: 68pt 1fr;
+    gap: 0 8pt;
+    padding: 0;
+    margin: 0 0 var(--cv-gap);
+}
+
+.cv-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.cv-period {
+    font-size: 7.6pt;
+    color: var(--cv-color-muted);
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.5pt;
+    white-space: nowrap;
+}
+
+.cv-entry-title {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.cv-entry-org {
+    margin: 0.5pt 0 0;
+    color: var(--cv-color-muted);
+    font-size: 8.1pt;
+    line-height: 1.3;
+}
+
+/* Publications */
+
+.cv-pubs {
+    margin: 0;
+    padding-left: 11pt;
+    counter-reset: pub;
+}
+
+.cv-pubs > li {
+    margin: 0 0 var(--cv-gap);
+    line-height: 1.32;
+    padding-left: 0;
+}
+
+.cv-pubs > li::marker {
+    color: var(--cv-color-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.cv-pub-authors {
+    color: var(--cv-color-muted);
+}
+
+.cv-pub-venue {
+    color: var(--cv-color-muted);
+    font-style: italic;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cv-pub-link {
+    text-decoration: underline;
+    text-decoration-color: var(--cv-color-muted);
+    text-underline-offset: 1.5pt;
+}
+
+/* Presentations */
+
+.cv-presentations {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-presentations > li {
+    display: grid;
+    grid-template-columns: 68pt 1fr;
+    gap: 0 8pt;
+    margin: 0 0 var(--cv-gap);
+}
+
+.cv-presentation-title {
+    margin: 0;
+    line-height: 1.3;
+}
+
+.cv-presentation-venue {
+    margin: 0.5pt 0 0;
+    color: var(--cv-color-muted);
+    font-size: 7.6pt;
+    line-height: 1.3;
+}
+
+/* Certifications */
+
+.cv-certs {
+    list-style: disc;
+    margin: 0;
+    padding-left: 12pt;
+}
+
+.cv-certs > li {
+    margin: 0 0 1.5pt;
+    line-height: 1.3;
+}
+
+.cv-certs > li::marker {
+    color: var(--cv-color-muted);
+}
+
+/* Footer */
+
+.cv-footer {
+    margin-top: 8pt;
+    padding-top: 3pt;
+    border-top: 0.4pt solid var(--cv-color-border);
+    font-size: 7.4pt;
+    color: var(--cv-color-muted);
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Tight density variant — applied automatically if data grows */
+
+.cv-tight {
+    --cv-font: 8.1pt;
+    --cv-line: 1.26;
+    --cv-gap: 3.5pt;
+    --cv-section-gap: 6.5pt;
+}
+
+.cv-tight .cv-name {
+    font-size: 15pt;
+}
+
+.cv-tight .cv-section-title {
+    font-size: 9pt;
+}
