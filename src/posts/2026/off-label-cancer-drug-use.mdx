@@ -1,0 +1,186 @@
+---
+title: "仿單外使用（off-label）：醫師為什麼會建議？病人能不能用？"
+titleEn: "Off-label drug use in oncology: why doctors prescribe and what patients should know"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "off-label = 藥物用於「未經主管機關核准的適應症、劑量、年齡或給藥途徑」。腫瘤領域 off-label 比例極高（30–50%），原因包括 NCCN compendium 已收錄但 FDA / TFDA 尚未核准、罕見癌缺臨床試驗、新適應症在他國已核准。本文整理 off-label 與 unapproved 的差別、健保 / 自費 / PAP 給付邏輯、IRB 與 informed consent。"
+tags: ["off-label", "仿單外", "藥物使用", "健保", "病人安全", "衛教"]
+medical: true
+medicalCondition: "腫瘤藥物仿單外使用 (Off-label drug use in oncology)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "仿單外使用是不是「實驗性治療」？"
+    a: "**不是。off-label ≠ unapproved**。**off-label**：藥物已通過 FDA / TFDA 核准、可以合法處方，只是用於「未列入仿單的適應症、劑量、年齡或給藥途徑」。**unapproved / investigational**：藥物本身尚未核准，仍在臨床試驗中。**腫瘤領域 off-label 比例極高**（30–50%），多數有 NCCN compendium 或大型試驗支持。**例如**：trastuzumab 仿單原本只給乳癌，後來大量證據用於 HER2 陽性胃癌（已成標準）；rituximab 用於眾多 B 細胞淋巴瘤亞型。**off-label 不是「亂用」**，但需有實證依據與病人 informed consent。"
+  - q: "off-label 健保會給付嗎？"
+    a: "**看情境**。台灣健保藥品給付規定有「列載適應症」，**off-label 多需自費**。例外情境：(1) **NCCN compendium 已收錄**且健保署逐案審查通過；(2) **健保藥品共擬會議擴大適應症**（會在公告中明列）；(3) **罕見癌專案申請**：透過特定流程可獲補助。**實際處理**：(a) 主治醫師先送事前審查、(b) 健保未通過則考慮自費、藥廠恩慈、PAP、試驗。**自費費用**依藥物而異，常見每月新台幣 6–30 萬。"
+  - q: "醫師建議 off-label 我該怎麼問？"
+    a: "**5 個關鍵問題**：(1) **這個 off-label 用法有哪些證據？**（試驗、NCCN、實證 case series）(2) **與標準療法的療效預期差別？**（ORR、PFS、OS）(3) **副作用與標準療法相比？**（特別是少見副作用）(4) **費用怎麼算？**（健保、自費、PAP、試驗）(5) **如果不做這個 off-label，標準替代方案是什麼？**（plan B）。**請主治醫師寫下推薦依據**——若日後保險爭議、不良事件追蹤，有書面紀錄較好。"
+  - q: "off-label 有沒有法律風險？醫師可不可以開？"
+    a: "**台灣醫師依《醫師法》與《醫療法》得依個案專業判斷處方藥物**，包含合理依據的 off-label。**前提**：(1) 有實證依據（試驗、NCCN、case series）、(2) 醫病充分溝通並取得 informed consent（建議書面）、(3) 個案診療紀錄完整。**藥廠不能主動廣告 off-label 用法**（這是違法），但醫師處方不受限。**對病人風險**：(a) **副作用可能與仿單記載不同**，需密切監測；(b) **保險核退可能爭議**（多數實支實付仍會核退合理 off-label 費用，但需證明）；(c) **不良事件責任**通常由醫師與醫療團隊承擔，前提是有適當 informed consent。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**Off-label（仿單外使用）= 藥物已合法核准、但用於未列入仿單的適應症、劑量、年齡或給藥途徑。** 腫瘤領域 off-label 比例極高（30–50%），多有 NCCN compendium、大型試驗或 case series 支持。本文釐清 off-label 與 unapproved 的差別、為什麼腫瘤特別多 off-label、健保 / 自費 / PAP / 恩慈的給付路徑、與「醫師建議 off-label 時該問什麼」。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為被主治醫師建議 off-label 用藥的病友與家屬。實際處方決策由主治醫師依個案判斷；本文不取代專業諮詢。
+</Callout>
+
+<Divider />
+
+## off-label vs. unapproved：兩個常被混淆的概念
+
+| 概念 | 藥物是否核准？ | 用法是否列在仿單？ | 例子 |
+|---|---|---|---|
+| **on-label** | ✓ | ✓ | trastuzumab 用於 HER2+ 乳癌 |
+| **off-label** | ✓ | ✗ | trastuzumab 用於 HER2+ 胃癌（部分線數）、salivary gland |
+| **investigational / unapproved** | ✗ | — | 試驗藥；新分子 |
+| **compassionate use** | ✗ 在台灣 | — | 透過 TFDA 個案申請 |
+
+## 為什麼腫瘤特別多 off-label？
+
+1. **NCCN compendium**：NCCN（美國最大腫瘤指引組織）收錄了大量「有實證但仿單未列」的用法。例如：rituximab 用於眾多 B 細胞淋巴瘤亞型、bevacizumab 用於多種癌、TKI 跨適應症使用。
+2. **罕見癌缺試驗**：罕見癌人數少，無法做隨機試驗證明適應症；只能靠 case series 與小型試驗。
+3. **新適應症在他國已核准**：FDA 早台灣 1–2 年核准新適應症的情形常見。
+4. **NGS 後罕見變異**：NTRK、ROS1、RET、BRAF、HER2 等變異跨多癌別有效，但每個小亞群人數少，仿單不一定逐一收錄。
+
+## 常見 off-label 範例（腫瘤）
+
+| 藥物 | 仿單適應症 | 常見 off-label |
+|---|---|---|
+| Trastuzumab | HER2+ 乳癌 | HER2+ 胃癌（部分線數）、唾液腺癌、肺癌 HER2+ |
+| Rituximab | B 細胞 NHL、CLL | 多種自體免疫疾病、Waldenström macroglobulinemia |
+| Bevacizumab | 大腸、肺、卵巢、腎細胞癌 | 第二線後使用、罕見肉瘤 |
+| Pembrolizumab | 多適應症 | MSI-H / dMMR 跨癌（部分已轉 on-label） |
+| Olaparib | BRCA+ 乳卵巢攝護腺 | HRD+ 其他癌 |
+| Sotorasib / Adagrasib | KRAS G12C 肺癌 | KRAS G12C 大腸（部分線數已轉 on-label） |
+| Cetuximab / Panitumumab | RAS WT 大腸 | 頭頸癌維持線數 |
+
+## 法源與規範
+
+| 國家 / 機構 | 規範 |
+|---|---|
+| **美國 FDA** | 「FDA 不規範醫師處方」；藥廠不可廣告 off-label；但醫師可依專業判斷處方 |
+| **台灣 TFDA** | 同上，醫師依《醫師法》得個案判斷 |
+| **健保署** | 給付限「列載適應症」；off-label 多需自費或個案專案 |
+| **NCCN compendium** | 美國多數保險公司以此為核退依據；台灣健保部分認可 |
+| **IRB** | off-label 用於系統性研究時需 IRB 審查 |
+
+## 健保給付路徑（台灣 2026）
+
+<Steps>
+  <div>
+    ### 第一步 — 確認是否屬「擴大適應症」
+
+    健保署藥品共擬會議會逐年擴大部分藥的適應症。例如 trastuzumab 從乳癌擴大到胃癌、rituximab 從濾泡淋巴瘤擴大到 DLBCL。
+  </div>
+  <div>
+    ### 第二步 — 事前審查送件
+
+    主治醫師依 NCCN compendium、實證資料、生物標記送審。多數高價標靶 / 免疫藥都需事前審查。
+  </div>
+  <div>
+    ### 第三步 — 不通過則探索其他路徑
+
+    自費、PAP 病人扶助、藥廠恩慈、商業保險、臨床試驗。
+  </div>
+  <div>
+    ### 第四步 — Informed consent
+
+    主治醫師應書面告知 off-label 性質、實證依據、可能副作用、費用結構。
+  </div>
+</Steps>
+
+## off-label 的風險
+
+| 風險 | 說明 |
+|---|---|
+| **療效不確定性** | 多數 off-label 證據強度低於 on-label（case series、小型試驗） |
+| **副作用差異** | 用於不同癌別、不同病人族群，副作用譜可能不同 |
+| **健保拒絕給付** | 經濟負擔大 |
+| **保險核退爭議** | 商業保險核退可能挑戰 off-label 合理性 |
+| **不良事件責任** | 醫師與醫療團隊承擔（有 informed consent 為前提） |
+
+## 該問醫師的 5 個問題
+
+<Steps>
+  <div>
+    ### 1. 這個 off-label 用法有哪些證據？
+
+    請主治醫師列出 NCCN compendium、PubMed 文獻、機構經驗。
+  </div>
+  <div>
+    ### 2. 與標準療法的療效預期差別？
+
+    ORR、PFS、OS 的合理估計。
+  </div>
+  <div>
+    ### 3. 副作用與標準療法相比？
+
+    特別是少見、長期副作用。
+  </div>
+  <div>
+    ### 4. 費用怎麼算？哪些單位會付？
+
+    健保事前審查、自費、PAP、商業保險、試驗。
+  </div>
+  <div>
+    ### 5. 如果不做這個 off-label，標準替代方案是什麼？
+
+    Plan B 與其差別。
+  </div>
+</Steps>
+
+## 與「臨床試驗」「藥廠恩慈」的區別
+
+| 路徑 | 性質 | 費用 |
+|---|---|---|
+| **on-label 健保給付** | 標準 | 健保部分負擔（重大傷病可免） |
+| **off-label 健保給付（事前審查）** | NCCN compendium 等支持 | 健保部分負擔 |
+| **off-label 自費** | 已上市藥用於未核准適應症 | 自費 |
+| **臨床試驗** | 研究藥 / 研究適應症 | 多免費（試驗贊助） |
+| **藥廠恩慈用藥** | 未上市藥個案使用 | 多免費（藥廠提供） |
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 被建議 off-label 用藥的病友與家屬
+- 想了解 off-label 法規架構的同業
+- 第一線住院醫師、家醫科衛教
+
+### 本文不適用
+- 取代主治醫師對個案的處方判斷
+- 個別藥物的詳細副作用清單（請查仿單與 NCCN）
+
+## 副作用 / 風險揭露
+
+每種 off-label 用法的副作用譜不同。**通用原則**：
+- 在開始 off-label 前，主治醫師應給予 informed consent
+- 監測頻率多需較密集
+- 出現非預期副作用立刻回報
+- 保留書面 informed consent 與診療紀錄
+
+### 主要禁忌
+- 對該藥已知過敏
+- 嚴重共病、ECOG 3–4
+- 懷孕（依藥物個別評估）
+- 與其他藥物嚴重交互作用
+
+<Divider />
+
+## 參考文獻
+
+1. Stafford RS. **Regulating Off-Label Drug Use — Rethinking the Role of the FDA.** *N Engl J Med.* 2008;358(14):1427–1429. [doi:10.1056/NEJMp0802107](https://doi.org/10.1056/NEJMp0802107)
+2. Conti RM, et al. **Prevalence of Off-Label Use and Spending in 2010 Among Patent-Protected Chemotherapies in a Population-Based Cohort of Medical Oncologists.** *J Clin Oncol.* 2013;31(9):1134–1139. [doi:10.1200/JCO.2012.42.7252](https://doi.org/10.1200/JCO.2012.42.7252)
+3. Eguale T, et al. **Association of Off-label Drug Use and Adverse Drug Events in an Adult Population.** *JAMA Intern Med.* 2016;176(1):55–63. [doi:10.1001/jamainternmed.2015.6058](https://doi.org/10.1001/jamainternmed.2015.6058)
+4. National Comprehensive Cancer Network. **NCCN Drugs & Biologics Compendium.** [nccn.org/professionals/drug_compendium](https://www.nccn.org/professionals/drug_compendium/content/)
+5. Saiyed MM, et al. **Off-Label Drug Use in Oncology: A Systematic Review of Literature.** *J Clin Pharm Ther.* 2017;42(3):251–258. [doi:10.1111/jcpt.12507](https://doi.org/10.1111/jcpt.12507)
+6. 衛生福利部食品藥物管理署. **藥品仿單核准適應症外使用（off-label use）參考原則.** [fda.gov.tw](https://www.fda.gov.tw/TC/site.aspx?sid=10146)
+
+> 引用整理協力：NCCN compendium、ASCO Off-Label Policy、Conti 2013 JCO、Eguale 2016 JAMA Intern Med、TFDA off-label 參考原則 (2026/05/12)。

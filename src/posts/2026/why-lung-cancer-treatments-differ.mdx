@@ -1,0 +1,201 @@
+---
+title: "為什麼同樣是肺癌，不同人的治療差這麼多？"
+titleEn: "Why does the same lung cancer get such different treatment?"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "「同樣肺癌」其實涵蓋十幾種不同生物學行為的疾病——小細胞 vs. 非小細胞、腺癌 vs. 鱗癌、EGFR vs. ALK vs. KRAS vs. PD-L1 vs. HER2、Stage I 局部 vs. Stage IV 全身。本文用病人語言拆解「為什麼鄰床用藥不一樣」的 6 個決定變數。"
+tags: ["肺癌", "NSCLC", "SCLC", "標靶治療", "精準醫療", "衛教"]
+medical: true
+medicalCondition: "肺癌異質性 (Lung cancer heterogeneity)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "為什麼我跟鄰床都是肺癌，吃的藥完全不一樣？"
+    a: "因為「肺癌」是統稱，內部其實是十幾種不同疾病的集合。**主要分流變數**：(1) 病理型態（小細胞 SCLC vs. 非小細胞 NSCLC；後者再分腺癌、鱗癌、大細胞）、(2) 分期（Stage I–IV，影響手術 vs. 放化療 vs. 全身治療）、(3) 驅動基因（EGFR、ALK、ROS1、BRAF、KRAS、MET、RET、HER2、NTRK）、(4) PD-L1 表現、(5) 體能狀態與共病、(6) 病人偏好與健保條件。**同樣是 Stage IV NSCLC，EGFR 陽性吃 osimertinib，ALK 陽性吃 alectinib，PD-L1 高用 pembrolizumab，沒驅動基因可能用化療 + 免疫**——完全不同藥。"
+  - q: "小細胞肺癌跟非小細胞肺癌差在哪？"
+    a: "**小細胞肺癌（SCLC）** 約佔 15%，生長極快、早期轉移、對化療放療反應好但易復發；治療以化療 + 免疫療法（atezolizumab 或 durvalumab）為主，極少手術。**非小細胞肺癌（NSCLC）** 約佔 85%，含腺癌（最常見）、鱗癌、大細胞癌；早期可手術，晚期看分子標記分流治療。**最大差別**：SCLC 進展速度以週為單位、預後較差；NSCLC 可從幾年治癒到數年慢性病管理都有。診斷後第一個問題就是「我是小細胞還是非小細胞」。"
+  - q: "什麼是「驅動基因」？為什麼會決定治療？"
+    a: "**驅動基因（driver mutation）= 引起癌症的關鍵突變**，這些基因讓細胞「停不下來分裂」。**特殊之處**：若找到驅動基因，就有「對應的標靶藥」可以精準關掉那個訊號。例如 EGFR 突變 → osimertinib；ALK 重排 → alectinib；KRAS G12C → sotorasib／adagrasib；HER2 exon 20 → trastuzumab deruxtecan；RET 重排 → selpercatinib；NTRK 重排 → larotrectinib。**沒有驅動基因（約 50% 肺腺癌）**：以 PD-L1 為主決定免疫治療策略，或化療 + 免疫合併。建議所有非鱗 NSCLC 都做完整 NGS。"
+  - q: "PD-L1 高一定要用免疫療法嗎？"
+    a: "**PD-L1 高（TPS ≥ 50%）**：免疫單藥（pembrolizumab）是 KEYNOTE-024 證實的首選，5 年 OS 達 32% vs. 化療 16%。**PD-L1 1–49%**：免疫單藥可選，但多數研究顯示「免疫 + 化療」效果更好（KEYNOTE-189 / KEYNOTE-407）。**PD-L1 < 1%**：化療 + 免疫合併較合適。**例外**：(1) 若驅動基因陽性（EGFR、ALK），標靶優先於免疫，因為標靶 ORR 70–80% 遠高於免疫，且 EGFR 後給免疫易有 ILD；(2) 嚴重自體免疫疾病者免疫療法相對禁忌。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**「肺癌」是統稱，不是單一疾病。** 同樣的兩個字底下，藏著小細胞 vs. 非小細胞、腺癌 vs. 鱗癌、EGFR vs. ALK vs. KRAS vs. PD-L1 等十幾種不同的生物學行為。本文用病人語言拆解 6 個讓「鄰床用藥完全不同」的決定變數：病理型態、分期、驅動基因、PD-L1、體能狀態、健保 / 自費條件。並提供「拿到診斷報告該問清楚什麼」清單。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷肺癌、發現家人或鄰床用藥跟自己不一樣的病友與家屬。實際治療方案依主治醫師判斷；本文不取代個別醫療決策。
+</Callout>
+
+<Divider />
+
+## 6 個讓肺癌治療「分流」的變數
+
+| 變數 | 影響 |
+|---|---|
+| 1. **病理型態** | SCLC vs. NSCLC（腺、鱗、大細胞）—— 完全不同治療策略 |
+| 2. **分期 Stage** | I–II 早期可手術；III 多模式；IV 系統性治療 |
+| 3. **驅動基因** | EGFR / ALK / ROS1 / BRAF / KRAS / MET / RET / HER2 / NTRK |
+| 4. **PD-L1 TPS** | 高 / 中 / 低決定免疫單藥 vs. 合併化療 |
+| 5. **體能與共病** | ECOG 0–1 可標準療法；3–4 多以症狀為主 |
+| 6. **健保 / 自費 / 試驗** | 給付線數、生物標記要求 |
+
+## 第一層：小細胞 vs. 非小細胞
+
+| 項目 | 小細胞（SCLC） | 非小細胞（NSCLC） |
+|---|---|---|
+| 佔比 | ~15% | ~85% |
+| 與吸菸關聯 | 強 | 中（腺癌可在不吸菸者） |
+| 生長速度 | 極快 | 中等 |
+| 早期可手術？ | 極少（< 5%） | 是（Stage I–II） |
+| 主要治療 | 化療 + 免疫（atezo / durva） | 視分期 + 分子標記 |
+| 標靶藥 | 有限（tarlatamab、lurbinectedin） | 多 |
+| 預後 | 廣泛期中位 OS 12–15 月 | 異質性大，EGFR 陽性 IV 可 ~4 年 |
+
+## 第二層：NSCLC 內部的分子分流
+
+### 腺癌 vs. 鱗癌
+
+| 項目 | 腺癌 | 鱗癌 |
+|---|---|---|
+| 佔比 | ~50% NSCLC | ~30% NSCLC |
+| 不吸菸者 | 常見 | 罕見 |
+| 驅動基因 | 多（50% 可找到） | 少（< 5%） |
+| Bevacizumab | 可用 | 禁忌（出血風險） |
+| Pemetrexed | 常用 | 不用 |
+
+### 驅動基因地圖（腺癌）
+
+| 基因 | 佔比 | 標靶藥 | 健保情況（台灣 2026） |
+|---|---|---|---|
+| **EGFR**（exon 19 del、L858R） | ~50% 亞洲 | osimertinib、gefitinib、erlotinib | 給付（事前審查） |
+| **ALK** 重排 | 3–7% | alectinib、brigatinib、lorlatinib | 給付 |
+| **ROS1** 重排 | 1–2% | crizotinib、entrectinib、repotrectinib | 給付 |
+| **BRAF V600E** | 1–3% | dabrafenib + trametinib | 給付 |
+| **KRAS G12C** | 10–15% | sotorasib、adagrasib | 部分給付 / 自費 |
+| **MET exon 14** | 3% | capmatinib、tepotinib | 部分自費 |
+| **RET 重排** | 1–2% | selpercatinib、pralsetinib | 自費 |
+| **HER2 exon 20** | 2–3% | trastuzumab deruxtecan（T-DXd） | 自費 |
+| **NTRK 重排** | < 1% | larotrectinib、entrectinib | 自費 / 恩慈 |
+
+<Callout type="warning" title="所有非鱗 NSCLC 都該做 NGS">
+NCCN 與 IASLC 共識：晚期非鱗 NSCLC 一律做完整 NGS（含上述 9 個基因 + PD-L1）。早期 Stage IB–IIIA 也建議測 EGFR（決定是否輔助 osimertinib，ADAURA）與 ALK。**只測 EGFR 是不夠的**——錯過 ALK、ROS1 等罕見但可治療的變異。
+</Callout>
+
+### PD-L1 表現分層
+
+| TPS | 一線方案 | 試驗 |
+|---|---|---|
+| **≥ 50%** | Pembrolizumab 單藥（首選）或 + 化療 | KEYNOTE-024、KEYNOTE-189 |
+| **1–49%** | Pembrolizumab + 化療（PFS 較佳） | KEYNOTE-189 / KEYNOTE-407 |
+| **< 1%** | 化療 + 免疫合併 | KEYNOTE-189 |
+| 不論 TPS（鱗癌） | Carboplatin + paclitaxel + pembrolizumab | KEYNOTE-407 |
+| 不論 TPS（非鱗） | Carboplatin + pemetrexed + pembrolizumab | KEYNOTE-189 |
+
+## 第三層：分期決定治療目標
+
+| 分期 | 治療目標 | 方案概念 |
+|---|---|---|
+| **I**（< 3 cm，無淋巴結） | 治癒 | 手術 ± 輔助化療 |
+| **II** | 治癒 | 手術 + 輔助化療 ± osimertinib（EGFR） |
+| **III 可切除** | 治癒 | 新輔助 nivolumab + 化療 → 手術 → 輔助（CheckMate-816） |
+| **III 不可切除** | 治癒嘗試 | 同步化放療 → durvalumab 維持 1 年（PACIFIC） |
+| **IV 驅動基因 +** | 長期控制 | 對應標靶藥；中位 OS 3–4 年 |
+| **IV PD-L1 ≥ 50%、無驅動** | 長期控制 | Pembro 單藥；5 年 OS 32%（KEYNOTE-024） |
+| **IV 其他** | 控制症狀 + 延長 | 化療 + 免疫 |
+
+## 第四層：個人因素
+
+| 因素 | 影響 |
+|---|---|
+| **年齡與共病** | 心肺功能、肝腎、糖尿病、活動性自體免疫疾病 |
+| **ECOG 體能狀態** | 0–1 可標準療法；2 減量；3–4 多以症狀控制 |
+| **吸菸狀態** | 持續吸菸者治療反應較差，建議戒菸 |
+| **既往放化療** | 累積毒性、心毒性、肺纖維化 |
+| **病人偏好** | 口服 vs. 注射、頻率、副作用接受度 |
+
+## 「拿到診斷」的問題清單
+
+<Steps>
+  <div>
+    ### 我是小細胞還是非小細胞？
+
+    這是第一個分流。
+  </div>
+  <div>
+    ### 病理是腺癌、鱗癌還是其他？
+
+    決定可用化療藥與是否能用 bevacizumab。
+  </div>
+  <div>
+    ### NGS 做了沒？所有驅動基因都驗了嗎？
+
+    請確認至少含 EGFR / ALK / ROS1 / BRAF / KRAS / MET / RET / HER2 / NTRK。
+  </div>
+  <div>
+    ### PD-L1 TPS 是多少？用什麼抗體驗的？
+
+    台灣常見 22C3、SP263。
+  </div>
+  <div>
+    ### 我的分期是 cTNM 還是 pTNM？
+
+    cTNM 是臨床推估，pTNM 是手術後確認；後者較精準。
+  </div>
+  <div>
+    ### 我的方案是治癒目標還是控制目標？
+
+    決定治療強度與副作用接受度。
+  </div>
+  <div>
+    ### 健保給付嗎？需要事前審查嗎？
+
+    依生物標記與線數而異。
+  </div>
+</Steps>
+
+## 副作用 / 風險揭露
+
+不同治療有不同主要副作用：
+
+- **化療**：骨髓抑制、噁心、神經病變
+- **EGFR TKI**：皮疹、腹瀉、ILD
+- **ALK TKI**：肝酵素升、ILD、視覺異常
+- **免疫療法（PD-1/PD-L1）**：irAE 各系統
+- **放療**：放射性肺炎、食道炎、心毒性
+- **手術**：傷口感染、肺功能下降
+
+### 主要禁忌
+- **EGFR / ALK TKI**：對應變異不存在 → 沒效益
+- **免疫療法**：嚴重活動性自體免疫疾病、ILD 病史
+- **Bevacizumab**：鱗癌、咳血、近期手術
+- **化療**：嚴重共病、ECOG 3–4 多以症狀控制為主
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷肺癌、想了解「為什麼跟別人不一樣」的病友與家屬
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- 取代肺癌專科團隊個案決策
+- 兒科肺部惡性腫瘤（極罕見）
+
+<Divider />
+
+## 參考文獻
+
+1. Reck M, et al. **Pembrolizumab versus Chemotherapy for PD-L1-Positive Non-Small-Cell Lung Cancer (KEYNOTE-024).** *N Engl J Med.* 2016;375(19):1823–1833. [doi:10.1056/NEJMoa1606774](https://doi.org/10.1056/NEJMoa1606774)
+2. Gandhi L, et al. **Pembrolizumab plus Chemotherapy in Metastatic Non-Small-Cell Lung Cancer (KEYNOTE-189).** *N Engl J Med.* 2018;378(22):2078–2092. [doi:10.1056/NEJMoa1801005](https://doi.org/10.1056/NEJMoa1801005)
+3. Soria JC, et al. **Osimertinib in Untreated EGFR-Mutated Advanced Non-Small-Cell Lung Cancer (FLAURA).** *N Engl J Med.* 2018;378(2):113–125. [doi:10.1056/NEJMoa1713137](https://doi.org/10.1056/NEJMoa1713137)
+4. Peters S, et al. **Alectinib versus Crizotinib in Untreated ALK-Positive Non-Small-Cell Lung Cancer (ALEX).** *N Engl J Med.* 2017;377(9):829–838. [doi:10.1056/NEJMoa1704795](https://doi.org/10.1056/NEJMoa1704795)
+5. Forde PM, et al. **Neoadjuvant Nivolumab plus Chemotherapy in Resectable Lung Cancer (CheckMate 816).** *N Engl J Med.* 2022;386(21):1973–1985. [doi:10.1056/NEJMoa2202170](https://doi.org/10.1056/NEJMoa2202170)
+6. Wu YL, et al. **Osimertinib in resected EGFR-mutated non-small-cell lung cancer (ADAURA).** *N Engl J Med.* 2020;383(18):1711–1723. [doi:10.1056/NEJMoa2027071](https://doi.org/10.1056/NEJMoa2027071)
+7. Lindeman NI, et al. **Updated Molecular Testing Guideline for Lung Cancer Patients.** *J Mol Diagn.* 2018;20(2):129–159. [doi:10.1016/j.jmoldx.2017.11.004](https://doi.org/10.1016/j.jmoldx.2017.11.004)
+
+> 引用整理協力：NCCN 2026 NSCLC / SCLC、IASLC 分子檢測共識、KEYNOTE-024 / 189、FLAURA、ALEX、CheckMate-816、ADAURA (2026/05/12)。

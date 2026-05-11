@@ -1,0 +1,190 @@
+---
+title: "質子治療、重粒子治療跟一般放療差別"
+titleEn: "Proton vs carbon-ion vs photon radiotherapy: physics, evidence, costs"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "質子（proton）與重粒子（carbon-ion / heavy-ion）利用 Bragg peak 讓劑量集中於腫瘤、減少正常組織照射。本文整理三者物理差異、目前有臨床證據優於 photon 的癌別（兒童腦瘤、深部頭頸癌、椎旁脊索瘤）、自費差價（質子 200–400 萬、重粒子 250–500 萬），以及哪些癌別「沒有更好的證據」。"
+tags: ["放療", "質子治療", "重粒子治療", "Bragg peak", "腫瘤放射", "衛教"]
+medical: true
+medicalCondition: "粒子治療 (Particle therapy in cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "質子治療真的比較好嗎？什麼癌別適合？"
+    a: "**質子治療對「正常組織保護」物理上確實較佳**（利用 Bragg peak，深度集中、後方幾乎無劑量）。**但臨床證據優於 photon 的癌別有限**：(1) **兒童腦瘤、髓母細胞瘤**：減少正常腦、心臟、肺照射，降低長期認知與第二原發癌風險（PCG 共識）；(2) **深部頭頸癌、鼻腔副鼻竇癌、顱底脊索瘤**：保護視神經、腦幹、腦下垂體；(3) **食道癌、肝癌部分情境**：減少肺、心臟劑量。**多數常見癌（早期肺癌、乳癌、攝護腺癌）目前 RCT 顯示 photon vs. proton 長期存活與毒性類似**。費用是 photon 的 3–5 倍。"
+  - q: "重粒子（carbon-ion）跟質子差在哪？"
+    a: "**重粒子（carbon-ion / heavy-ion）= 用碳離子或更重的粒子，相對生物效應（RBE）約是 photon 的 2–3 倍**，對「對放療抵抗的腫瘤」殺傷力更強。**質子的 RBE 僅 ~1.1**（接近 photon），優勢主要在劑量分布。**目前重粒子有臨床證據的癌別**：(1) **脊索瘤、軟骨肉瘤**：5 年局部控制率 > 70%（NIRS、CNAO 經驗），(2) **唾液腺癌、黑色素瘤鼻腔型**：對光子抗性高的癌；(3) **早期肝癌**：日本經驗。**台灣目前有重粒子設備的醫院**：台北榮民總醫院（亞洲第一個重粒子治療中心，2022 啟用）。"
+  - q: "質子治療要自費多少？健保有給付嗎？"
+    a: "**台灣健保不給付**質子與重粒子治療。**自費差價**：(1) **質子**：總療程約 **200–400 萬**（依療程長度、部位、機構不同），(2) **重粒子**：約 **250–500 萬**。**健保 photon（IMRT、VMAT、SBRT）多有給付**，自費 0–10 萬（依特殊耗材而異）。**保險核退**：實支實付保險可能核退部分；新型癌症險「自費放療」項目視保單條款。**建議**：先確認你的癌別是否有「實證上比 photon 更好」的證據，再評估費用。多數情境 photon SBRT / IMRT 已足夠。"
+  - q: "兒童癌症放療為什麼特別建議用質子？"
+    a: "**兒童放療最大的長期顧慮是「第二原發癌」與「正常組織發育傷害」**——大腦、心臟、肺、生殖腺、骨骼發育期對輻射特別敏感。**質子的優勢**：(1) Bragg peak 後方幾乎無劑量，**減少「出射劑量區」（exit dose）的器官照射**，(2) 多項追蹤研究顯示**質子治療的兒童髓母細胞瘤、橫紋肌肉瘤、Ewing 肉瘤**長期心毒性、肺纖維化、第二原發癌風險均較 photon 低，(3) **認知功能保留較佳**（特別是大腦發育期）。**NCCN 與兒癌共識：兒童腦瘤、肉瘤建議優先考慮質子**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**粒子治療（質子、重粒子）vs. 傳統 photon（X 光）放療**：物理上粒子有「Bragg peak」可讓劑量集中、減少正常組織照射；但**臨床長期存活與毒性優於 photon 的證據在多數癌別仍有限**。本文整理三者物理原理、目前有實證的癌別（兒童、頭頸、肝、食道、脊索瘤）、台灣可用機構與自費差價（200–500 萬）、與「該不該選粒子治療」的決策原則。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被建議放療、考慮粒子治療的病友與家屬，以及第一線轉介的住院醫師、家醫科。實際選擇由放射腫瘤科團隊個別評估；本文不取代專業判斷。
+</Callout>
+
+<Divider />
+
+## 三種放療的物理差異
+
+| 項目 | Photon（X 光） | Proton（質子） | Carbon-ion（重粒子） |
+|---|---|---|---|
+| **粒子** | 光子（電磁波） | 氫核（質子） | 碳離子 |
+| **劑量分布** | 進入後逐漸衰減；前後皆有 | Bragg peak 集中，後方幾乎無劑量 | Bragg peak 更尖、RBE 較高 |
+| **相對生物效應（RBE）** | 1.0（參考） | ~1.1 | ~2–3 |
+| **對放療抵抗腫瘤** | 一般 | 一般（RBE 接近 photon） | 較強 |
+| **設備成本** | 數千萬至 1 億台幣 | 約 30–50 億台幣 | 約 50–80 億台幣 |
+| **療程費用（台灣）** | 健保給付（多數） | **自費 200–400 萬** | **自費 250–500 萬** |
+
+## 什麼是 Bragg peak？
+
+**X 光照進人體**：表面劑量最高，往深處衰減；目標腫瘤前後的正常組織都被照到。
+
+**質子 / 重粒子**：劑量在進入時較低，**到特定深度形成「劑量峰值」（Bragg peak）後幾乎為零**。可以調整能量讓 peak 對準腫瘤、後方幾乎不受劑量。
+
+這在臨床意義：**減少正常組織的「出射劑量」（exit dose）**，特別重要於：
+- 兒童（發育中組織）
+- 重要器官旁的腫瘤（脊髓、視神經、腦幹、心臟、肺）
+- 預期長期存活的病人（避免第二原發癌）
+
+## 哪些癌別有「優於 photon」的證據？
+
+### 強證據
+
+| 癌別 | 為什麼建議粒子 | 共識來源 |
+|---|---|---|
+| **兒童腦瘤、髓母細胞瘤** | 減少正常腦、心、肺照射；降低長期認知傷害與第二癌 | 兒癌共識、PCG |
+| **脊索瘤（chordoma）、軟骨肉瘤** | 對 photon 抗性高；鄰近脊髓、腦幹 | NCCN、NIRS |
+| **顱底腫瘤** | 保護視神經、腦幹、垂體 | PTCOG |
+| **深部頭頸癌（鼻腔副鼻竇）** | 保護眼、視神經、唾液腺 | NCCN |
+
+### 中等證據（個案評估）
+
+| 癌別 | 證據強度 |
+|---|---|
+| **食道癌**（縱膈劑量重） | 部分減少心肺毒性的觀察研究 |
+| **肝細胞癌（早期、肝功能差）** | 對 photon 不耐受者的選項 |
+| **肺癌再次照射** | 對既往放療部位再治療 |
+| **左側乳癌（心臟劑量）** | 減少心臟劑量；長期 OS 等效 |
+| **直腸癌再次照射** | 個案評估 |
+
+### 證據不足（與 photon 等效）
+
+| 癌別 | 證據 |
+|---|---|
+| **早期攝護腺癌** | PARTIQoL 等試驗：質子 vs. IMRT 短期生活品質類似 |
+| **多數早期 NSCLC** | SBRT photon 已標準 |
+| **多數早期乳癌** | photon IMRT 已足夠 |
+| **早期肝癌** | SBRT 結果相當 |
+
+<Callout type="warning" title="物理優勢 ≠ 臨床優勢">
+質子在「劑量分布」上確實較優，但**「劑量分布優」不等於「長期存活更好」**。許多 RCT 顯示質子 vs. photon 長期 OS 與毒性類似。**買單 200–400 萬之前**，請主治醫師說明：(1) 你的癌別有沒有 RCT 或大型觀察研究支持，(2) 你個人的長期存活預期，(3) 預期能避開的具體器官（哪個器官、降多少劑量、預估降多少風險）。
+</Callout>
+
+## 台灣可用的粒子治療中心
+
+| 機構 | 設備 | 主要治療癌別 |
+|---|---|---|
+| **林口長庚** | 質子（2015 啟用，亞洲第一個多功能機型之一） | 頭頸、肝、攝護腺、兒童 |
+| **高雄長庚** | 質子（2018 啟用） | 同上 |
+| **台北榮民總醫院** | 重粒子（2022 啟用，東南亞第一個 carbon-ion） | 脊索瘤、肉瘤、肝、頭頸 |
+| **中國醫藥大學附設醫院** | 質子（2022 啟用） | 各癌別 |
+| **新光醫院** | 質子（規劃中） | — |
+
+## 費用與保險
+
+| 項目 | 健保 | 自費（粗估） |
+|---|---|---|
+| Photon IMRT / VMAT / SBRT | 給付 | 0–10 萬（特殊耗材） |
+| Photon 質子化療同步 | 給付 | — |
+| 質子治療（總療程） | **不給付** | **200–400 萬** |
+| 重粒子治療（總療程） | **不給付** | **250–500 萬** |
+| 商業保險核退 | — | 視保單條款，部分實支實付可核退 30–80% |
+
+## 決策原則
+
+<Steps>
+  <div>
+    ### 第一步 — 確認你的癌別有強證據
+
+    兒童腦瘤、脊索瘤、深部頭頸、複雜顱底 → 粒子有優勢。其他 → photon 多半已足夠。
+  </div>
+  <div>
+    ### 第二步 — 評估「能避開的器官」具體效益
+
+    請放射腫瘤科做 plan comparison：photon vs. proton 對心、肺、視神經、脊髓的劑量差異。
+  </div>
+  <div>
+    ### 第三步 — 評估費用與保險
+
+    自費總額、商業保險核退、家庭經濟。
+  </div>
+  <div>
+    ### 第四步 — 與多專科團隊（MDT）討論
+
+    腫瘤外科、放射腫瘤、內科一起評估整體治療策略。
+  </div>
+  <div>
+    ### 第五步 — 詢問是否有臨床試驗
+
+    部分粒子治療試驗免費或大幅折扣（特別是兒童、罕見癌）。
+  </div>
+</Steps>
+
+## 不適合粒子治療的情境
+
+- 腫瘤太大、需要照射範圍超出粒子可達深度
+- 腫瘤太靠近表面（粒子優勢消失）
+- 多重轉移病灶（photon SBRT 更彈性）
+- 經濟負擔過重而無顯著臨床獲益
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛被建議放療、考慮粒子治療的病友與家屬
+- 第一線住院醫師、家醫科衛教
+
+### 本文不適用
+- 取代放射腫瘤科專科醫師的個別判斷
+- 急性放療情境（脊髓壓迫、上腔靜脈症候群、症狀緩解）通常 photon 為主
+
+## 副作用 / 風險揭露
+
+### 共通放療副作用
+- 急性：皮膚反應、疲勞、局部炎症
+- 慢性：纖維化、繼發癌（長期）、特定器官損傷
+
+### 質子特殊
+- 對某些深部腫瘤的距離不確定性（range uncertainty）
+- 治療規劃複雜度較高
+
+### 重粒子特殊
+- RBE 高 → 對正常組織傷害若失準也較強
+- 經驗中心少、長期資料較有限
+
+### 主要禁忌
+- 體內金屬植入物對劑量規劃影響
+- 嚴重共病無法配合定位
+- 懷孕（相對禁忌）
+
+<Divider />
+
+## 參考文獻
+
+1. Liao Z, et al. **Bayesian Adaptive Randomization Trial of Passive Scattering Proton Therapy and Intensity-Modulated Photon Radiotherapy for Locally Advanced Non-Small-Cell Lung Cancer.** *J Clin Oncol.* 2018;36(18):1813–1822. [doi:10.1200/JCO.2017.74.0720](https://doi.org/10.1200/JCO.2017.74.0720)
+2. Yock TI, et al. **Long-term toxic effects of proton radiotherapy for paediatric medulloblastoma: a phase 2 single-arm study.** *Lancet Oncol.* 2016;17(3):287–298. [doi:10.1016/S1470-2045(15)00167-9](https://doi.org/10.1016/S1470-2045(15)00167-9)
+3. Kamada T, et al. **Carbon ion radiotherapy in Japan: an assessment of 20 years of clinical experience.** *Lancet Oncol.* 2015;16(2):e93–e100. [doi:10.1016/S1470-2045(14)70412-7](https://doi.org/10.1016/S1470-2045(14)70412-7)
+4. Mishra MV, et al. **Establishing Evidence-Based Indications for Proton Therapy: An Overview of Current Clinical Trials.** *Int J Radiat Oncol Biol Phys.* 2017;97(2):228–235. [doi:10.1016/j.ijrobp.2016.10.045](https://doi.org/10.1016/j.ijrobp.2016.10.045)
+5. Bekelman JE, et al. **Comparative Effectiveness of Proton vs Photon Therapy as Part of Concurrent Chemoradiotherapy for Locally Advanced Cancer.** *JAMA Oncol.* 2020;6(2):237–246. [doi:10.1001/jamaoncol.2019.4889](https://doi.org/10.1001/jamaoncol.2019.4889)
+6. Particle Therapy Co-Operative Group (PTCOG). **Patient statistics: particle therapy facilities operating worldwide.** [ptcog.site](https://www.ptcog.site/)
+
+> 引用整理協力：PTCOG 共識、NCCN 各癌別 2026、Liao 2018 JCO、Mizumoto 2017、Kamada 2015 Lancet Oncol、Bekelman 2020 JAMA Oncol (2026/05/12)。

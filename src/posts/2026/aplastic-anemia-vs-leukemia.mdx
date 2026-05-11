@@ -1,0 +1,205 @@
+---
+title: "再生不良性貧血（Aplastic Anemia）跟血癌一樣嗎？"
+titleEn: "Aplastic anemia vs leukemia: bone marrow failure, not malignancy"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "再生不良性貧血（AA）是骨髓造血衰竭，不是癌症——但與 MDS / PNH / 白血病鑑別困難，治療路徑也部分重疊。本文整理 AA 與 MDS / PNH / 白血病的差別、嚴重度分類（NIH severe / very severe AA）、免疫抑制（ATG + cyclosporine + eltrombopag）vs. 異體幹細胞移植的選擇。"
+tags: ["再生不良性貧血", "AA", "MDS", "PNH", "ATG", "eltrombopag", "衛教"]
+medical: true
+medicalCondition: "再生不良性貧血 (Aplastic anemia)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "再生不良性貧血是癌嗎？"
+    a: "**不是癌**——AA 是「**骨髓造血幹細胞衰竭**」，多數為自體免疫攻擊造血幹細胞造成。**但**：(1) **被歸入「重大傷病」範圍**（健保可申請），因為治療強度與長期管理類似血液腫瘤；(2) **與 MDS、PNH、低度血癌鑑別困難**——這三者都會造成血球低下；(3) **長期風險**：~10% 進展為 MDS / AML，~10–20% 出現 PNH clone。**處理流程**：先排除其他可治原因（藥物、毒素、感染、營養），再依嚴重度與年齡決定免疫抑制治療或異體幹細胞移植。"
+  - q: "AA 跟 MDS 怎麼分？"
+    a: "**AA**：骨髓「**空蕩蕩**」（hypocellular）、無不典型造血、無增加 blast、無細胞遺傳異常（多數）。**MDS（hypocellular MDS, hMDS）**：骨髓也可能空蕩蕩，但有不典型造血、可能增加 blast、染色體異常（如 −7、−5q、複雜核型）、基因突變（TET2、DNMT3A、ASXL1、SF3B1 等）。**鑑別工具**：(1) 骨髓抹片 + 切片組織學、(2) **染色體分析（cytogenetics）**、(3) **NGS panel**（含 MDS 相關基因）、(4) PNH flow cytometry。**約 10–20% 初診 AA 實為 hMDS**，需專科判讀。"
+  - q: "AA 治療該選免疫抑制還是移植？"
+    a: "**取決於年齡、嚴重度、捐贈者來源**。**< 40 歲 + 有完全相符兄弟姊妹捐贈者**：**首選異體幹細胞移植（matched sibling allo-SCT）**，治癒率 75–90%。**> 40 歲 或 無相符兄弟姊妹**：**首選免疫抑制（ATG + cyclosporine + eltrombopag）**——RACE 試驗（2022 NEJM）顯示加 eltrombopag 後 3 個月反應率達 68% vs. 41%。**對 IST 失效或復發**：替代型移植（matched unrelated donor、haploidentical）。**極嚴重 AA**：可考慮跳過 IST 直接移植。**台灣可申請重大傷病**，多數醫學中心可執行 IST 與 allo-SCT。"
+  - q: "AA 病人為什麼會出現 PNH？"
+    a: "**陣發性夜間血色素尿症（PNH）= 紅血球缺乏 GPI-anchored proteins（CD55、CD59）而易被補體溶解**。AA 病人約 10–20% 可偵測 PNH clone（小至大不等）；**有 PNH clone 的 AA 對免疫抑制反應較好**（可能反映自體免疫病理）。**有症狀的 PNH**：(1) 血紅素尿（早晨深色尿）、(2) 溶血、(3) 血栓（特殊位置：肝、腎、腸繫膜）、(4) LDH 升、haptoglobin 低。**治療**：eculizumab、ravulizumab（C5 補體抑制）；新一代 C3 抑制 pegcetacoplan、口服 factor B 抑制 iptacopan。**所有 AA 病人都應做 PNH flow cytometry**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**再生不良性貧血（aplastic anemia, AA）不是血癌——是骨髓造血幹細胞衰竭。** 但治療強度、長期管理、與 MDS / PNH / 低度血癌的鑑別困難，讓 AA 常被誤以為是「血癌」。本文整理 AA 與 MDS / PNH / 白血病的差別、嚴重度分類（severe / very severe AA）、免疫抑制治療（ATG + cyclosporine + eltrombopag，RACE 試驗）vs. 異體幹細胞移植的決策、與長期進展為 MDS / AML / PNH 的監測。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛診斷 AA 的病友與家屬。實際治療由血液腫瘤科團隊個案決定；本文不取代專業諮詢。
+</Callout>
+
+<Divider />
+
+## AA 是什麼？跟血癌差在哪？
+
+| 疾病 | 機轉 | 骨髓 | 血球數 |
+|---|---|---|---|
+| **AA（再生不良性貧血）** | 造血幹細胞免疫攻擊（多數） | **Hypocellular（空蕩蕩）** | 全血球低下 |
+| **MDS（骨髓增生不良）** | 造血幹細胞質變、無效造血 | 多數 Hypercellular，少數 Hypo | 血球低下 + 不典型細胞 |
+| **AML（急性白血病）** | Blast 急速增生 | **Hypercellular，blast ≥ 20%** | Blast 出現、血球變化 |
+| **CLL / CMML / MPN** | 各自不同的慢性增生 | 多 Hypercellular | 因型而異 |
+| **PNH** | GPI anchor 缺失 → 補體溶解紅血球 | 多正常或合併 AA | 慢性溶血 |
+
+## AA 的常見原因
+
+| 類型 | 來源 |
+|---|---|
+| **特發性（idiopathic）** | 80–85%，多為自體免疫攻擊造血幹細胞 |
+| **藥物 / 毒素相關** | Benzene、化療、氯黴素、抗甲狀腺藥、卡馬西平 |
+| **病毒** | EBV、HIV、肝炎（HAV/HBV/HEV 後 AA）、parvovirus B19 |
+| **遺傳性** | Fanconi anemia、Dyskeratosis congenita、Shwachman-Diamond |
+| **懷孕** | 罕見 |
+| **放射線** | 高劑量 |
+
+## 嚴重度分類（Camitta criteria）
+
+| 等級 | 條件 |
+|---|---|
+| **Severe AA（SAA）** | 骨髓細胞 < 25%（或 25–50% 且 < 30% 為造血細胞）+ 至少 2 項：ANC < 500、PLT < 20K、網狀紅血球絕對值 < 60K |
+| **Very Severe AA（vSAA）** | SAA + ANC < 200 |
+| **Non-severe AA（NSAA）** | 不達 SAA 標準 |
+
+## 治療決策
+
+<Steps>
+  <div>
+    ### 第一步 — 確診與排除
+
+    骨髓 + 染色體 + NGS（排除 hMDS）+ PNH flow + 病毒篩檢 + 維生素 B12 / 葉酸 / 鐵 / 自體免疫 panel + 遺傳性 AA（年輕者）。
+  </div>
+  <div>
+    ### 第二步 — 確認嚴重度與年齡
+
+    SAA / vSAA 需立即治療；NSAA 可觀察或免疫抑制。
+  </div>
+  <div>
+    ### 第三步 — 治療路徑
+
+    **< 40 歲 + matched sibling donor** → **異體 SCT 為首選**（5 年 OS 75–90%）。
+    **> 40 歲 或 無 matched sibling** → **IST（ATG + cyclosporine + eltrombopag）**（RACE 試驗，3 個月反應率 68%）。
+  </div>
+  <div>
+    ### 第四步 — 支持治療
+
+    輸血、血小板輸注（避免 HLA-immunization）、感染預防、嗜中性低下時隔離。
+  </div>
+</Steps>
+
+## 免疫抑制治療（IST）：RACE 試驗
+
+**RACE trial（NEJM 2022）**：嚴重 AA 一線。
+
+| 組別 | 3 個月反應率 | 6 個月 |
+|---|---|---|
+| Horse ATG + cyclosporine | 41% | 58% |
+| Horse ATG + cyclosporine **+ eltrombopag** | **68%** | **74%** |
+
+**eltrombopag**（口服 thrombopoietin receptor agonist）已成 IST 標準合併用藥。
+
+### IST 後追蹤
+
+- 反應評估在 3、6 個月
+- 部分反應者持續追蹤至 12 個月
+- 復發者考慮再次 IST 或移植
+
+## 異體幹細胞移植（allo-SCT）
+
+| 來源 | 適合 |
+|---|---|
+| Matched sibling donor | 首選；< 40 歲、有兄弟姊妹 HLA 相符 |
+| Matched unrelated donor（MUD） | IST 失效後二線 |
+| Haploidentical | 無 MUD 時的選項 |
+| Umbilical cord blood | 兒童或無其他來源 |
+
+**移植前處置**：低強度 conditioning（fludarabine + cyclophosphamide ± ATG），減少毒性。**全身放療**避免在 AA（增加第二原發癌）。
+
+## 長期監測：3 個進展風險
+
+| 進展 | 累積風險 | 監測 |
+|---|---|---|
+| **MDS / AML** | 10 年 ~10% | 每 3–6 個月 CBC、抹片；異常時骨髓 + 染色體 + NGS |
+| **PNH** | 10–20% 病人出現 PNH clone | 每 6–12 個月 PNH flow cytometry |
+| **AA 復發** | IST 後 30–40% | 持續追蹤 CBC |
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷 AA 的病友與家屬
+- 想了解 AA / MDS / PNH 鑑別的同業
+- 第一線住院醫師、家醫科衛教
+
+### 本文不適用
+- 取代血液腫瘤科專科醫師個案決策
+- 兒童 AA 詳細處置（遺傳性疾病需獨立評估）
+- 罕見遺傳性 AA 詳細管理
+
+## 副作用 / 風險揭露
+
+### IST 主要副作用
+- **ATG**：血清病、發燒、皮疹、過敏反應
+- **Cyclosporine**：腎毒性、高血壓、神經毒性、牙齦增生、感染風險
+- **Eltrombopag**：肝酵素升、骨髓纖維化（罕見）
+
+### Allo-SCT 主要副作用
+- 移植物抗宿主病（GVHD）
+- 感染（CMV、PJP、黴菌）
+- 不孕（多數）
+- 第二原發癌長期風險
+
+### 主要禁忌
+- 嚴重共病、ECOG 3–4 不適合 SCT
+- 嚴重感染未控制
+- ATG 過敏史
+- 懷孕（多數藥物）
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我是 AA 還是 MDS / PNH / 其他？
+
+    確認染色體、NGS、PNH flow 都做了。
+  </div>
+  <div>
+    ### 我屬 SAA、vSAA 還是 NSAA？
+
+    決定治療強度。
+  </div>
+  <div>
+    ### 我有 HLA 相符的兄弟姊妹嗎？
+
+    決定 IST vs. 移植順序。
+  </div>
+  <div>
+    ### IST 反應評估在第幾個月？
+
+    多在 3、6 個月。
+  </div>
+  <div>
+    ### 我的重大傷病可以申請嗎？
+
+    AA 在範圍內。
+  </div>
+  <div>
+    ### 長期 MDS / AML / PNH 風險如何監測？
+
+    定期 CBC、抹片、PNH flow、必要時骨髓檢查。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Peffault de Latour R, et al. **Eltrombopag Added to Immunosuppression in Severe Aplastic Anemia (RACE).** *N Engl J Med.* 2022;386(1):11–23. [doi:10.1056/NEJMoa2109965](https://doi.org/10.1056/NEJMoa2109965)
+2. Townsley DM, et al. **Eltrombopag Added to Standard Immunosuppression for Aplastic Anemia.** *N Engl J Med.* 2017;376(16):1540–1550. [doi:10.1056/NEJMoa1613878](https://doi.org/10.1056/NEJMoa1613878)
+3. Bacigalupo A. **How I treat acquired aplastic anemia.** *Blood.* 2017;129(11):1428–1436. [doi:10.1182/blood-2016-08-693481](https://doi.org/10.1182/blood-2016-08-693481)
+4. Killick SB, et al. **Guidelines for the diagnosis and management of adult aplastic anaemia.** *Br J Haematol.* 2016;172(2):187–207. [doi:10.1111/bjh.13853](https://doi.org/10.1111/bjh.13853)
+5. Young NS. **Aplastic Anemia.** *N Engl J Med.* 2018;379(17):1643–1656. [doi:10.1056/NEJMra1413485](https://doi.org/10.1056/NEJMra1413485)
+6. Hill A, et al. **Paroxysmal nocturnal haemoglobinuria.** *Nat Rev Dis Primers.* 2017;3:17028. [doi:10.1038/nrdp.2017.28](https://doi.org/10.1038/nrdp.2017.28)
+
+> 引用整理協力：NCCN AA 2026、RACE NEJM 2022、Bacigalupo 2017 Blood、BSH 2016 guidelines、Young 2018 NEJM review (2026/05/12)。

@@ -1,0 +1,186 @@
+---
+title: "中藥、靈芝、雲芝、舞菇可以跟化療一起吃嗎"
+titleEn: "TCM, mushroom supplements, and chemotherapy: safety and evidence"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "靈芝、雲芝（PSK/PSP）、舞菇（D-fraction）多酚多醣體在亞洲廣泛使用，部分小型試驗顯示可改善生活品質、調節免疫；但證據強度不足以「治療」癌症。中藥更需注意 CYP450 交互作用（聖約翰草、銀杏、黃芩）與肝毒性。本文整理該避免、可考慮、與必須告知主治醫師的清單。"
+tags: ["中藥", "靈芝", "雲芝", "舞菇", "補充療法", "藥物交互作用", "衛教"]
+medical: true
+medicalCondition: "中草藥與菇類補充劑配合化療 (TCM and mushroom supplements with chemotherapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "靈芝、雲芝、舞菇能治癌嗎？"
+    a: "**不能取代標準治療，但部分情境作為輔助有合理證據**。**證據相對較強**：(1) **雲芝（Trametes versicolor）的 PSK（克癌靈）**：日本胃癌、大腸癌術後輔助大型 RCT 顯示可改善存活；台灣健保收載。**部分日本醫院的標準輔助**。(2) **PSP（雲芝多醣）**：肺癌、乳癌、肝癌部分小型試驗顯示改善生活品質、免疫。(3) **舞菇 D-fraction**：免疫調節證據。(4) **靈芝（Ganoderma lucidum）**：Cochrane review 2016 顯示**可能改善化療相關生活品質**，但「治癌」證據不足。**核心結論**：可作為「**標準治療的輔助**」，不能取代化療、放療、手術；使用前必須告知主治醫師（避免交互作用）。"
+  - q: "中藥和化療一起吃會不會有交互作用？"
+    a: "**有，且部分非常嚴重**。**常見高風險中藥**：(1) **聖約翰草（St. John's wort）**：強效誘導 CYP3A4，**降低多種化療與標靶藥血中濃度**（imatinib、irinotecan、docetaxel、erlotinib 等）——**絕對禁用**；(2) **銀杏**：抑制血小板，與化療雙重出血風險；(3) **大蒜（高劑量補充劑）**：抗血小板、降低部分藥物濃度；(4) **生薑（高劑量）**：可能增加出血；(5) **甘草**：高鉀、影響類固醇；(6) **黃芩、柴胡**：肝毒性可能加劇化療肝損；(7) **何首烏**：肝毒性已記載多起報告。**建議**：化療期間任何中藥使用都要主動告知主治醫師、中醫師、藥師。"
+  - q: "中醫到底能不能跟西醫配合？"
+    a: "**台灣已有「中西醫合療」健保試辦計畫**，部分醫學中心（台大、長庚、中國醫、台中榮總、奇美等）有正式整合中醫部，提供：(1) **化療副作用支持**：止吐、改善疲憊、口腔黏膜炎、神經病變、潮熱；(2) **手術後復原**：傷口、體力；(3) **末期緩和支持**。**「合療」的關鍵是「公開、共同診治」**——主治醫師與中醫師互通資訊、避開高風險中藥、不取代標準療法。**該避免**：(a) 自行去外面中藥行抓藥不告知西醫；(b) 拿到「不知成分的祕方、家傳藥粉」；(c) 接受「停所有西藥用中藥取代」建議。"
+  - q: "蜂膠、薑黃、紅麴、人參能吃嗎？"
+    a: "**個別風險不一**：(1) **蜂膠（propolis）**：少量似乎安全，但**過敏風險**；對 5-FU、bortezomib 部分試驗顯示無臨床影響；(2) **薑黃（curcumin）**：抗發炎訊號強，但口服生物利用率低；**部分研究顯示與 cyclophosphamide、doxorubicin 可能拮抗**；建議與化療隔開或避免；(3) **紅麴（red yeast rice）**：含 monacolin K（類他汀），**與部分藥物（含 statin、抗凝血、化療代謝）有交互作用**——慎用；(4) **人參（特別是高麗參）**：免疫調節與化療互動複雜；**多數試驗顯示對化療相關疲憊（CRF）有改善訊號**（Wisconsin Ginseng RCT）；化療期間建議低劑量、避開治療當天前後 1–2 天。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**亞洲文化中，中藥、靈芝、雲芝、舞菇與化療同用極常見。** 部分有合理證據作為「**輔助**」（改善生活品質、調節免疫、減輕副作用），但**沒有任何證據支持取代化療、放療、手術**。更重要的是**藥物交互作用**——聖約翰草、銀杏、薑黃、紅麴等可能影響化療代謝，個別嚴重者甚至致命。本文整理證據等級、高風險清單、台灣中西醫合療制度、與「該怎麼跟主治醫師討論」。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為使用或考慮使用中藥、菇類補充劑的癌友與家屬。實際使用請務必告知主治醫師、中醫師、藥師；本文不取代個別專業評估。
+</Callout>
+
+<Divider />
+
+## 為什麼要特別小心？
+
+| 風險 | 機轉 |
+|---|---|
+| **CYP450 交互作用** | 中草藥多含影響肝臟代謝酶的成分（特別 CYP3A4） |
+| **抗血小板 / 抗凝血** | 銀杏、大蒜、薑、人參、丹參 |
+| **肝毒性** | 何首烏、土三七、千里光 |
+| **免疫調節** | 部分中藥可能拮抗免疫療法或加劇 irAE |
+| **未知純度與摻偽** | 部分中藥含西藥成分、重金屬污染 |
+| **取代標準療法** | 「相信偏方而停化療」的悲劇案例 |
+
+## 高風險清單（化療期間應避免或謹慎）
+
+| 中藥 / 草本 | 風險 |
+|---|---|
+| **聖約翰草（St. John's wort）** | 強誘導 CYP3A4，**絕對禁用** |
+| **銀杏（Ginkgo biloba）高劑量** | 抗血小板、出血風險 |
+| **大蒜補充劑高劑量** | 同上 |
+| **生薑（高劑量補充劑）** | 抗血小板 |
+| **何首烏** | 肝毒性 |
+| **土三七、千里光、白屈菜** | 肝毒性、含吡咯里西啶 |
+| **甘草（高劑量）** | 高鉀、低鈉、與類固醇交互作用 |
+| **柴胡（含 saikosaponins）** | 肝毒性 |
+| **薑黃（高劑量補充劑）** | 與部分化療可能拮抗、抗凝 |
+| **紅麴（高劑量）** | 含類他汀，與多種藥交互作用 |
+| **黃連、黃芩** | 抗血小板、肝毒性 |
+| **「不知成分的祕方、藥粉、藥膏」** | 摻偽、重金屬、西藥污染 |
+
+## 可能有證據的「輔助」（仍需個別評估）
+
+### 雲芝（PSK / PSP）
+
+- **PSK（克癌靈）**：日本核准用於胃癌、大腸癌術後輔助；多項 RCT 顯示 5 年存活率改善 5–10%
+- **PSP**：肺癌、乳癌、肝癌部分小型試驗顯示改善生活品質、免疫指標
+- **台灣健保收載** PSK 用於部分癌症術後
+
+### 靈芝（Ganoderma lucidum）
+
+- **Cochrane review 2016**：可能改善化療相關生活品質與免疫；治癌證據不足
+- 多為**輔助**而非主要治療
+
+### 舞菇（Maitake D-fraction）
+
+- 免疫調節證據（NK 細胞活性、T 細胞）
+- 多數研究在動物與小型人類試驗
+
+### 美國紅景天人參（American/Wisconsin Ginseng）
+
+- **Wisconsin Ginseng RCT（JNCI 2013）**：對化療相關疲憊（CRF）有改善訊號
+- 化療期間建議低劑量、避開治療當天前後 1–2 天
+
+### 蜂膠（propolis）
+
+- 部分試驗顯示不影響 5-FU、bortezomib 代謝
+- 注意過敏
+
+## 台灣中西醫合療制度
+
+| 機構 | 整合範圍 |
+|---|---|
+| **台大、長庚、中國醫、台中榮總、奇美等** | 有整合中醫部，提供合療諮詢 |
+| **健保中西醫合療試辦** | 部分癌別、部分療程可健保給付中醫介入 |
+| **中醫個案管理** | 主治醫師 + 中醫師 + 藥師共同照護 |
+
+**合療的關鍵**：
+1. **公開使用**：主治醫師、中醫師、藥師互通
+2. **避開高風險中藥**：依西藥清單調整
+3. **不取代標準療法**：作為輔助
+4. **定期評估**：療效、副作用、藥物濃度
+
+## 該避免的「紅旗」
+
+| 紅旗 | 為什麼 |
+|---|---|
+| 「停所有西藥，用中藥取代」 | 醫療法 §87 招徠紅線、療效未證實 |
+| 「百分百能治癒癌症」這類絕對宣稱 | 違反醫療法 §87 |
+| 不告知成分的「祕方、藥粉、藥膏」 | 摻偽風險高 |
+| 不告知主治醫師 | 無法評估交互作用 |
+| 來路不明的網購中藥 | 重金屬、農藥、摻西藥 |
+| 「親戚朋友推薦」非合格中醫師處方 | 缺乏個別評估 |
+
+## 該怎麼跟主治醫師討論？
+
+<Steps>
+  <div>
+    ### 1. 主動告知
+
+    任何中藥、補充劑、保健品都告知。不要「先吃看看」。
+  </div>
+  <div>
+    ### 2. 帶完整清單
+
+    成分、品牌、劑量、來源、開始時間。
+  </div>
+  <div>
+    ### 3. 詢問是否有交互作用
+
+    主治醫師、藥師、合療中醫師可協助評估。
+  </div>
+  <div>
+    ### 4. 評估「目的」
+
+    是否為「治癌」、「改善副作用」、「補身體」？目的不同建議不同。
+  </div>
+  <div>
+    ### 5. 定期重新檢視
+
+    化療方案變動、新加標靶 / 免疫療法時重新評估。
+  </div>
+</Steps>
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 使用或考慮使用中藥、菇類補充劑的癌友
+- 中西醫合療諮詢者
+- 第一線住院醫師、家醫科、藥師衛教
+
+### 本文不適用
+- 取代主治醫師、中醫師、藥師個別評估
+- 詳細中藥配方建議（請找合格中醫師）
+
+## 副作用 / 風險揭露
+
+### 一般風險
+- 過敏反應
+- 肝腎毒性
+- 與西藥交互作用
+- 摻偽 / 重金屬污染
+
+### 主要禁忌
+- 聖約翰草（與多數化療、標靶藥禁用）
+- 不明來源中藥
+- 嚴重肝腎功能不全
+- 凝血異常 + 抗血小板中藥
+- 自行停西藥取代
+
+<Divider />
+
+## 參考文獻
+
+1. Eliza WLY, et al. **Efficacy of Yun Zhi (Coriolus versicolor) on survival in cancer patients: systematic review and meta-analysis.** *Recent Pat Inflamm Allergy Drug Discov.* 2012;6(1):78–87. [doi:10.2174/187221312798889310](https://doi.org/10.2174/187221312798889310)
+2. Jin X, et al. **Ganoderma lucidum (Reishi mushroom) for cancer treatment.** *Cochrane Database Syst Rev.* 2016;4:CD007731. [doi:10.1002/14651858.CD007731.pub3](https://doi.org/10.1002/14651858.CD007731.pub3)
+3. Barton DL, et al. **Wisconsin Ginseng (Panax quinquefolius) to Improve Cancer-Related Fatigue: A Randomized, Double-Blind Trial, N07C2.** *J Natl Cancer Inst.* 2013;105(16):1230–1238. [doi:10.1093/jnci/djt181](https://doi.org/10.1093/jnci/djt181)
+4. Mathijssen RH, et al. **Effects of St. John's wort on irinotecan metabolism.** *J Natl Cancer Inst.* 2002;94(16):1247–1249. [doi:10.1093/jnci/94.16.1247](https://doi.org/10.1093/jnci/94.16.1247)
+5. Heine-Bröring RC, et al. **Dietary supplement use and colorectal cancer risk: a systematic review and meta-analyses of prospective cohort studies.** *Int J Cancer.* 2015;136(10):2388–2401. [doi:10.1002/ijc.29277](https://doi.org/10.1002/ijc.29277)
+6. Nakazato H, et al. **Efficacy of immunochemotherapy as adjuvant treatment after curative resection of gastric cancer (PSK).** *Lancet.* 1994;343(8906):1122–1126. [doi:10.1016/S0140-6736(94)90233-X](https://doi.org/10.1016/S0140-6736(94)90233-X)
+7. Greenlee H, et al. **Clinical Practice Guidelines on the Evidence-Based Use of Integrative Therapies During and After Breast Cancer Treatment.** *CA Cancer J Clin.* 2017;67(3):194–232. [doi:10.3322/caac.21397](https://doi.org/10.3322/caac.21397)
+
+> 引用整理協力：Cochrane Ganoderma 2016、Wisconsin Ginseng JNCI 2013、PSK Lancet 1994、SIO 2017 整合腫瘤指引 (2026/05/12)。

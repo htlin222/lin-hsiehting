@@ -1,0 +1,203 @@
+---
+title: "真性紅血球增多症（PV）、原發性血小板增多症（ET）：該怎麼追蹤"
+titleEn: "Polycythemia vera and essential thrombocythemia: how to monitor and treat"
+date: "05/12/2026"
+updatedDate: "05/12/2026"
+frontmatter: "PV 與 ET 是骨髓增生性腫瘤（MPN）的低度型——多由 JAK2 V617F（PV 95%、ET 50–60%）、CALR、MPL 突變驅動，預後相對好但血栓與轉變骨髓纖維化／AML 是長期風險。本文整理 IPSET 血栓風險分層、aspirin + 放血／hydroxyurea / ruxolitinib 的選擇、追蹤頻率。"
+tags: ["PV", "ET", "MPN", "JAK2", "ruxolitinib", "hydroxyurea", "衛教"]
+medical: true
+medicalCondition: "真性紅血球增多症與原發性血小板增多症 (PV and ET)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/12/2026"
+citable: true
+faq:
+  - q: "PV 跟 ET 是癌嗎？嚴重嗎？"
+    a: "**是，PV（polycythemia vera）與 ET（essential thrombocythemia）被 WHO 列為「骨髓增生性腫瘤」（MPN）**，屬血液腫瘤類別。**但屬「低度」**——多數病人可長期管理 10–20+ 年，預後相對良好。**主要風險不是「立刻致命」**，而是：(1) **血栓 / 出血**：紅血球或血小板過多增加心肌梗塞、腦中風、深部靜脈栓塞風險；(2) **轉變骨髓纖維化（10–15 年累積 10–20%）或 AML（5–10%）**：少數會進入較難治的階段。**治療目標**：控制血球數、降低血栓、延緩進展。多數 PV / ET 病人**屬重大傷病範圍**，可申請。"
+  - q: "JAK2 V617F 是什麼？陽性代表什麼？"
+    a: "**JAK2 V617F 是一個基因點突變**，造成 JAK-STAT 訊號持續開啟、骨髓細胞過度增生。**陽性率**：PV ~95%、ET ~50–60%、PMF（原發性骨髓纖維化）~50–60%。**ET 與 PMF 其他驅動基因**：CALR（25–30%）、MPL（5–10%）、三重陰性（triple-negative，~10%）。**JAK2 V617F 陽性 ET**：血栓風險較高，多數需積極處理。**CALR+ ET**：血栓風險較低但仍需依年齡與既往血栓史評估。**JAK2 V617F 不是 hereditary 突變**——是體細胞突變，不會遺傳給子女。"
+  - q: "ET / PV 需要吃什麼藥？要不要放血？"
+    a: "**PV 標準**：(1) **放血（phlebotomy）**：目標 Hct < 45%（CYTO-PV 試驗）；(2) **低劑量 aspirin 81–100 mg**：所有 PV 都建議用，除非有出血禁忌；(3) **細胞抑制治療**（hydroxyurea 或 ruxolitinib）：高風險（年齡 > 60 或既往血栓）、或對放血不耐受 / 進展者；(4) **ruxolitinib**：JAK 抑制劑，對 hydroxyurea 不耐受或失效者（RESPONSE 試驗）。**ET 標準**：(1) 依 IPSET-thrombosis 分層；(2) 低風險可只 aspirin；(3) 高風險加 hydroxyurea（首選）或 anagrelide、interferon-α。**懷孕 / 育齡**：避免 hydroxyurea（致畸），改用 interferon-α 或 pegylated interferon。"
+  - q: "PV / ET 病人多久追蹤一次？"
+    a: "**典型追蹤頻率**（依風險與穩定度調整）：(1) **新診斷或調藥期**：每 4–8 週抽 CBC、肝腎、評估症狀；(2) **穩定期**：每 3 個月 CBC、每 6–12 個月骨髓檢查（依進展徵兆）；(3) **症狀導向**：發燒、體重減輕、夜間盜汗、脾臟突然腫大 → 立刻評估是否轉變骨髓纖維化；血栓事件 → 立刻就醫。**追蹤項目**：CBC、LDH、JAK2 mutation burden（變異等位基因比例）、脾臟大小（觸診或超音波）、MPN-SAF（症狀量表）。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**真性紅血球增多症（PV）與原發性血小板增多症（ET）是骨髓增生性腫瘤（MPN）的「低度」型**——多由 JAK2 V617F、CALR、MPL 驅動，預後相對良好但**血栓、出血、轉變骨髓纖維化／AML** 是長期風險。本文整理 IPSET 血栓風險分層、PV 放血 + aspirin + hydroxyurea / ruxolitinib 階梯、ET 治療決策、追蹤頻率，以及哪些症狀代表「進展中、需立刻評估」。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛診斷 PV / ET 的病友與家屬。實際治療由血液腫瘤科團隊依個案決定；本文不取代專業諮詢。
+</Callout>
+
+<Divider />
+
+## PV vs. ET vs. PMF：MPN 的三大主角
+
+| 疾病 | 主要表現 | JAK2 V617F 陽性率 | 中位 OS |
+|---|---|---|---|
+| **PV（真性紅血球增多症）** | Hct 升高、紅臉、頭暈、搔癢、血栓 | ~95% | > 15 年 |
+| **ET（原發性血小板增多症）** | 血小板升高、血栓 / 出血 | ~50–60%（其餘 CALR、MPL、三重陰性） | > 15–20 年 |
+| **PMF（原發性骨髓纖維化）** | 脾大、貧血、虛弱、體重減輕 | ~50–60% | 3–10 年（依風險） |
+
+## 為什麼要追蹤？三個長期風險
+
+1. **血栓 / 出血**：PV 與 ET 血栓事件年發生率 1–3%（依風險分層）；最高風險是動脈血栓（心肌梗塞、腦中風）
+2. **轉變骨髓纖維化（post-PV / post-ET MF）**：10–15 年累積 10–20%
+3. **轉變急性白血病（AML）**：5 年 1–2%、20 年 5–10%
+
+## ET 的 IPSET-thrombosis 風險分層
+
+| 變數 | 分數 |
+|---|---|
+| 年齡 ≥ 60 | +1 |
+| 既往血栓事件 | +2 |
+| 心血管危險因子（吸菸、糖尿病、高血壓） | +1 |
+| JAK2 V617F 陽性 | +2 |
+
+| 總分 | 風險 | 處置 |
+|---|---|---|
+| 0 | 低 | 觀察 ± low-dose aspirin |
+| 1–2 | 中 | Aspirin |
+| ≥ 3 | 高 | Aspirin + 細胞抑制治療（hydroxyurea） |
+
+## PV 治療階梯
+
+<Steps>
+  <div>
+    ### 第一步 — 放血（phlebotomy）
+
+    所有 PV 都需控制 Hct < 45%（CYTO-PV 試驗：< 45% vs. 45–50%，血栓 / 死亡顯著降低）。
+  </div>
+  <div>
+    ### 第二步 — Low-dose aspirin 81–100 mg
+
+    除非有出血禁忌，所有 PV 都建議。降低動脈血栓。
+  </div>
+  <div>
+    ### 第三步 — 細胞抑制治療
+
+    **適應症**：年齡 > 60、既往血栓事件、放血需求高、脾臟腫大、症狀嚴重。**首選**：hydroxyurea。**替代**：interferon-α / pegylated interferon（年輕、育齡）、ruxolitinib。
+  </div>
+  <div>
+    ### 第四步 — Ruxolitinib
+
+    對 hydroxyurea 不耐受或失效者（RESPONSE 試驗）。JAK 抑制劑、改善脾大、控制血球、降低症狀。
+  </div>
+</Steps>
+
+## ET 治療
+
+| 風險 | 處置 |
+|---|---|
+| 低（< 60、無既往血栓、JAK2 陰性） | 觀察 ± aspirin |
+| 中（中等 IPSET） | Aspirin |
+| 高（≥ 60 或既往血栓） | Aspirin + hydroxyurea（首選） |
+| 高 + 不耐受 hydroxyurea | Anagrelide 或 interferon-α |
+| 懷孕 / 育齡女性 | Pegylated interferon-α（避免 hydroxyurea） |
+
+## 藥物比較
+
+| 藥 | 機轉 | 主要副作用 |
+|---|---|---|
+| **Hydroxyurea** | 抑制核酸合成 | 黏膜潰瘍、皮膚改變、骨髓抑制、致畸（避免懷孕） |
+| **Interferon-α / PEG-IFN** | 免疫調節 | 流感樣症狀、憂鬱、肝酵素升 |
+| **Anagrelide** | 抑制血小板成熟 | 心悸、頭痛、心律不整 |
+| **Ruxolitinib** | JAK1/2 抑制 | 骨髓抑制、感染、皰疹再活化 |
+| **Aspirin 81–100 mg** | 抗血小板 | 胃腸出血、消化不良 |
+
+## 追蹤指標
+
+| 項目 | 頻率 |
+|---|---|
+| CBC（含網狀紅血球） | 每 3 個月（穩定期） |
+| 肝腎、LDH、尿酸 | 每 3–6 個月 |
+| 鐵蛋白（PV，放血造成缺鐵） | 每 6–12 個月 |
+| 脾臟大小（觸診 ± 超音波） | 每 6–12 個月 |
+| JAK2 mutation burden（變異等位基因比例） | 視臨床需求 |
+| MPN-SAF（症狀量表） | 每 3 個月 |
+| 骨髓檢查 | 診斷時 + 進展徵兆出現時 |
+
+## 進展徵兆（立刻就醫）
+
+| 徵兆 | 可能含意 |
+|---|---|
+| 不明原因發燒、夜間盜汗、體重減輕 | 轉變骨髓纖維化 / AML |
+| 脾臟快速增大 | 同上 |
+| 嚴重貧血、血小板下降 | 同上 |
+| 血液抹片出現 blast | AML 轉化 |
+| 突發胸痛、呼吸困難、肢體無力 | 血栓 / 心肌梗塞 / 腦中風 |
+| 嚴重出血 | 血小板功能異常或藥物不良反應 |
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 新診斷 PV / ET 的病友與家屬
+- 已知 JAK2 / CALR / MPL 突變者的長期追蹤
+- 第一線住院醫師、家醫科衛教
+
+### 本文不適用
+- 取代血液腫瘤科個案決策
+- PMF（原發性骨髓纖維化）詳細處置
+- 兒科 MPN（罕見、處置不同）
+
+## 副作用 / 風險揭露
+
+### 各藥物常見不良反應（見上表）
+
+### 主要禁忌
+- Hydroxyurea：懷孕、嚴重骨髓抑制
+- Interferon-α：嚴重憂鬱、未控制甲狀腺疾病
+- Anagrelide：嚴重心臟病、QT 延長
+- Ruxolitinib：嚴重感染、活動性 HBV
+- Aspirin：活動性消化道出血、過敏
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的 JAK2 / CALR / MPL 狀態？
+
+    決定血栓風險與藥物選擇。
+  </div>
+  <div>
+    ### 我的 IPSET 分數？
+
+    分層處置。
+  </div>
+  <div>
+    ### Aspirin、放血、hydroxyurea 哪幾項適合我？
+
+    依年齡、共病、既往血栓決定。
+  </div>
+  <div>
+    ### 多久追蹤一次？
+
+    穩定期每 3 個月 CBC。
+  </div>
+  <div>
+    ### 我可以申請重大傷病嗎？
+
+    多數 PV / ET 在範圍內。
+  </div>
+  <div>
+    ### 哪些症狀代表進展、要立刻就醫？
+
+    發燒、夜汗、體重減、脾大、血栓徵兆。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Marchioli R, et al. **Cardiovascular events and intensity of treatment in polycythemia vera (CYTO-PV).** *N Engl J Med.* 2013;368(1):22–33. [doi:10.1056/NEJMoa1208500](https://doi.org/10.1056/NEJMoa1208500)
+2. Vannucchi AM, et al. **Ruxolitinib versus standard therapy for the treatment of polycythemia vera (RESPONSE).** *N Engl J Med.* 2015;372(5):426–435. [doi:10.1056/NEJMoa1409002](https://doi.org/10.1056/NEJMoa1409002)
+3. Barbui T, et al. **Development and validation of an International Prognostic Score of thrombosis in World Health Organization-essential thrombocythemia (IPSET-thrombosis).** *Blood.* 2012;120(26):5128–5133. [doi:10.1182/blood-2012-07-444067](https://doi.org/10.1182/blood-2012-07-444067)
+4. Tefferi A, et al. **Polycythemia vera and essential thrombocythemia: 2023 update on diagnosis, risk-stratification and management.** *Am J Hematol.* 2023;98(9):1465–1487. [doi:10.1002/ajh.27002](https://doi.org/10.1002/ajh.27002)
+5. Harrison CN, et al. **Hydroxyurea compared with anagrelide in high-risk essential thrombocythemia.** *N Engl J Med.* 2005;353(1):33–45. [doi:10.1056/NEJMoa043800](https://doi.org/10.1056/NEJMoa043800)
+6. Gisslinger H, et al. **Ropeginterferon alfa-2b versus standard therapy for polycythaemia vera (PROUD-PV and CONTINUATION-PV).** *Lancet Haematol.* 2020;7(3):e196–e208. [doi:10.1016/S2352-3026(19)30236-4](https://doi.org/10.1016/S2352-3026(19)30236-4)
+
+> 引用整理協力：NCCN MPN 2026、CYTO-PV、RESPONSE、IPSET-thrombosis、Tefferi 2023 review、PROUD-PV (2026/05/12)。
