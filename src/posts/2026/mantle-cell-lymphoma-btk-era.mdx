@@ -1,0 +1,186 @@
+---
+title: "套細胞淋巴瘤（Mantle Cell Lymphoma）為什麼 BTK 抑制劑這麼重要？"
+titleEn: "Mantle cell lymphoma in the BTK inhibitor era"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "套細胞淋巴瘤（MCL）兼具 indolent 與 aggressive 兩種行為，傳統治癒率不高。本文整理 SHINE 試驗（一線 ibrutinib + bendamustine-R）、TRIANGLE 試驗（一線 ibrutinib 加入年輕病人方案）、共價 BTKi vs. 非共價 BTKi（pirtobrutinib）、BCL-2 抑制劑、CAR-T 與雙特異性抗體在 MCL 的角色。"
+tags: ["Mantle Cell Lymphoma", "BTK 抑制劑", "ibrutinib", "pirtobrutinib", "CAR-T", "衛教"]
+medical: true
+medicalCondition: "套細胞淋巴瘤 (Mantle cell lymphoma, MCL)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "MCL 為什麼比一般淋巴瘤難治？"
+    a: "**MCL 帶有 t(11;14) 染色體易位，造成 cyclin D1 過度表現**——這讓 B 細胞「不應該分裂卻一直分裂」。傳統化療反應率高但容易復發，且 MCL 病人多 60–70 歲、共病多、骨髓侵犯常見。**MCL 的特殊地方**是兼具 indolent（少數可 watch-and-wait）與 aggressive（多數需立刻治療、易進入中樞神經）兩種行為。**Blastoid / pleomorphic 變異型、TP53 突變、Ki-67 > 30% 為高風險**，預後較差。"
+  - q: "為什麼 BTK 抑制劑這麼重要？"
+    a: "**BTK（Bruton tyrosine kinase）是 B 細胞訊號路徑的核心**，BTK 抑制劑（ibrutinib、acalabrutinib、zanubrutinib）阻斷 BCR 訊號，誘發 B 細胞凋亡。**MCL 對 BTKi 反應特別好**：單藥 ORR > 65%。**SHINE 試驗（2022 NEJM）**：65 歲以上無法移植病人，第一線 ibrutinib + bendamustine-rituximab，mPFS 80.6 個月 vs. 安慰劑組 52.9 個月。**TRIANGLE 試驗**：年輕病人在 R-CHOP/R-DHAP 加入 ibrutinib，3 年 FFS 88% vs. 72%，可能取代自體移植角色。"
+  - q: "ibrutinib 副作用太多，可以換 acalabrutinib 嗎？"
+    a: "**第二代共價 BTKi（acalabrutinib、zanubrutinib）對非 BTK 靶點脫靶較少**，心房顫動、出血、高血壓的副作用較 ibrutinib 低。**ELEVATE-RR 試驗**（CLL 中比較）：acalabrutinib vs. ibrutinib，心房顫動 9% vs. 16%。**MCL 領域**：ECHO 試驗 acalabrutinib + BR vs. BR，mPFS 顯著延長。台灣健保已給付 acalabrutinib 與 zanubrutinib 用於部分 MCL 適應症。"
+  - q: "BTK 抑制劑失效後還有什麼選項？"
+    a: "**BTKi 失效是 MCL 最棘手的狀況**，2025 已有突破：(1) **Pirtobrutinib（非共價 BTKi）**：對共價 BTKi 失效後 ORR 58%（BRUIN 試驗），用於 BTK C481S 突變等抗藥；(2) **Brexucabtagene autoleucel（CD19 CAR-T）**：ZUMA-2 試驗 ORR 91%、CR 68%；(3) **BCL-2 抑制劑 venetoclax + BTKi**：對 TP53 突變高風險 MCL；(4) **CD3×CD20 雙特異性抗體（glofitamab）**：ORR 73%。**台灣已可在符合條件醫學中心執行 CAR-T**，健保條件持續更新。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**MCL 是被 BTK 抑制劑改寫的疾病。** 從過去「一線化療 + 自體移植 → 反覆復發」的傳統路徑，演變為「**化療 + 共價 BTKi → 復發換非共價 BTKi 或 CAR-T**」的多層次架構。本文整理 MCL 的特殊性（t(11;14)、cyclin D1、TP53、blastoid 變異）、SHINE 與 TRIANGLE 試驗如何把 ibrutinib 帶進一線、共價 BTKi 比較（ibrutinib vs. acalabrutinib vs. zanubrutinib）、Pirtobrutinib 對共價 BTKi 失效的角色、CAR-T 與雙特異性抗體。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛診斷 MCL、需了解新治療架構的病友與家屬，以及住院醫師、第一線醫療同仁。實際治療由血液腫瘤科團隊個別決定。
+</Callout>
+
+<Divider />
+
+## MCL 的生物學特色
+
+| 特徵 | 解釋 |
+|---|---|
+| **t(11;14)(q13;q32)** | IGH-CCND1 融合，cyclin D1 過度表現 |
+| **CD5+, CD23−, CD20+** | 與 CLL（CD5+、CD23+）區別 |
+| **SOX11+** | 95% 典型 MCL 陽性；leukemic non-nodal MCL 多陰性 |
+| **TP53 突變** | 高風險，傳統治療反應差 |
+| **Ki-67** | > 30% 高風險 |
+| **變異型** | Classic / blastoid（高度增生）/ pleomorphic |
+
+## 分期、症狀、診斷
+
+- 多以**廣泛淋巴結病、脾腫大、骨髓侵犯**表現
+- 易有「**腸道淋巴息肉樣病變**」（multiple lymphomatous polyposis），大腸鏡常意外發現
+- **中樞神經侵犯（CNS）**：診斷時 < 5%，blastoid 變異型較高
+- **MIPI 預後分數**（Mantle Cell Lymphoma International Prognostic Index）：年齡、ECOG、LDH、WBC
+
+## 治療：依年齡、體能、TP53 分流
+
+### < 65 歲、體能好、無 TP53 突變
+
+| 方案 | 試驗 |
+|---|---|
+| **R-CHOP/R-DHAP 交替 + 自體幹細胞移植 + rituximab 維持** | LyMa（鞏固 ASCT） |
+| **TRIANGLE 模式**：R-CHOP/R-DHAP **+ ibrutinib** ± ASCT | TRIANGLE（2024 Lancet） |
+
+**TRIANGLE 試驗**：年輕 MCL 病人在誘導加入 ibrutinib，**可能省略 ASCT**（3 年 FFS 88% vs. ASCT 組 72% vs. ASCT + ibrutinib 組 88%）。2025 NCCN 已將「ibrutinib + 化學免疫療法 ± ASCT」列為年輕首選。
+
+### ≥ 65 歲或不適合 ASCT
+
+| 方案 | 試驗 |
+|---|---|
+| **SHINE 模式**：bendamustine-rituximab **+ ibrutinib** → rituximab 維持 | SHINE（2022 NEJM） |
+| **R-CHOP → rituximab 維持** | Older fit patients |
+| **VR-CAP（bortezomib 取代 vincristine）** | LYM-3002 |
+| **Lenalidomide + rituximab** | 不耐受化療者 |
+
+### TP53 突變（高風險）
+
+傳統化療反應差，建議直接走 **BTKi-based** 或 **CAR-T**，或進入臨床試驗。
+
+## 共價 BTK 抑制劑比較
+
+| 藥 | 給藥 | 心房顫動 | 出血 | 高血壓 |
+|---|---|---|---|---|
+| **Ibrutinib** | qd | ~15% | 中 | 中 |
+| **Acalabrutinib** | bid | ~5% | 中低 | 中低 |
+| **Zanubrutinib** | bid | ~5% | 中低 | 中低 |
+
+**頭對頭比較**：ELEVATE-RR（CLL，acala vs. ibru）、ALPINE（CLL，zanu vs. ibru）證實第二代心毒性較低。MCL 領域中 ECHO 試驗（acala + BR）也已讀出 OS 訊號。
+
+## 復發治療路徑
+
+### Pirtobrutinib（非共價 BTKi）
+
+**BRUIN 試驗**：對共價 BTKi 失效的 MCL，pirtobrutinib ORR 58%、CR 25%、mPFS 5.7 個月。**對 BTK C481S 突變等抗藥仍有效**。FDA 2023 已核准；台灣陸續引進。
+
+### CAR-T（Brexucabtagene autoleucel）
+
+**ZUMA-2 試驗**：BTKi 失效後 MCL，ORR 91%、CR 68%、24 個月 PFS 33%。**單次治療、可能達長期緩解**。台灣自 2024 起部分醫學中心可執行。
+
+### BCL-2 抑制劑（Venetoclax）
+
+對 TP53 突變高風險 MCL：venetoclax + BTKi 組合 ORR 71%（CR 62%）（AIM 試驗）。
+
+### 雙特異性抗體（CD3×CD20）
+
+| 藥 | 試驗 | ORR / CR |
+|---|---|---|
+| Glofitamab | NP30179 | ORR 73%、CR 33% |
+| Epcoritamab | EPCORE NHL-1 | ORR 84%、CR 60% |
+
+## Watch-and-wait 的少數情境
+
+MCL 多需立刻治療，**但極少數**：
+- Indolent leukemic non-nodal MCL（SOX11-, t(11;14)+, IGHV mutated）
+- 無症狀、低腫瘤負擔、Ki-67 < 10%
+- 可考慮 watch-and-wait
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷 MCL、想了解 BTKi 時代治療地圖的病友
+- 復發 / 難治 MCL 想了解新藥的病友
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- 取代血液腫瘤科專科醫師的個別決策
+- 兒童或極罕見變異型
+
+## 副作用 / 風險揭露
+
+### BTK 抑制劑常見不良反應
+- 心房顫動、出血、高血壓（ibrutinib > 二代）
+- 腹瀉、皮疹、感染
+- 累積感染風險：B 肝再活化、PJP、CMV
+
+### CAR-T 主要副作用
+- CRS（細胞激素釋放症候群）：發燒、低血壓、缺氧；多數可用 tocilizumab 控制
+- ICANS（神經毒性）：意識改變、抽搐
+- 長期 B 細胞低下、感染風險、低免疫球蛋白
+
+### 主要禁忌
+- BTKi：嚴重心衰、活動性嚴重出血、強效 CYP3A 抑制劑同用
+- CAR-T：嚴重心肺功能不全、活動性感染、孕婦
+- 化療：嚴重共病、ECOG 3–4
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的 TP53 突變、Ki-67、變異型？
+
+    這決定走年輕方案、TRIANGLE 模式還是高風險試驗。
+  </div>
+  <div>
+    ### 第一線會用 SHINE、TRIANGLE 還是 BR + rituximab？
+
+    依年齡、共病、TP53 個別決定。
+  </div>
+  <div>
+    ### 共價 BTKi 我用 ibrutinib、acalabrutinib 還是 zanubrutinib？
+
+    依共病（心衰、心房顫動）與藥物交互作用。
+  </div>
+  <div>
+    ### 我有沒有資格做 CAR-T？
+
+    BTKi 失效後是台灣健保的給付情境之一。
+  </div>
+  <div>
+    ### B 肝、C 肝、CNS 評估都做了嗎？
+
+    rituximab + BTKi 開始前必查。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Wang ML, et al. **Ibrutinib plus Bendamustine and Rituximab in Untreated Mantle-Cell Lymphoma (SHINE).** *N Engl J Med.* 2022;386(26):2482–2494. [doi:10.1056/NEJMoa2201817](https://doi.org/10.1056/NEJMoa2201817)
+2. Dreyling M, et al. **Ibrutinib combined with immunochemotherapy with or without autologous stem-cell transplantation in younger patients with newly diagnosed mantle cell lymphoma (TRIANGLE).** *Lancet.* 2024;403(10441):2293–2306. [doi:10.1016/S0140-6736(24)00184-3](https://doi.org/10.1016/S0140-6736(24)00184-3)
+3. Wang M, et al. **KTE-X19 CAR T-Cell Therapy in Relapsed or Refractory Mantle-Cell Lymphoma (ZUMA-2).** *N Engl J Med.* 2020;382(14):1331–1342. [doi:10.1056/NEJMoa1914347](https://doi.org/10.1056/NEJMoa1914347)
+4. Mato AR, et al. **Pirtobrutinib in relapsed or refractory B-cell malignancies (BRUIN).** *Lancet.* 2021;397(10277):892–901. [doi:10.1016/S0140-6736(21)00224-5](https://doi.org/10.1016/S0140-6736(21)00224-5)
+5. Tam CS, et al. **Ibrutinib plus venetoclax for the treatment of mantle-cell lymphoma (AIM).** *N Engl J Med.* 2018;378(13):1211–1223. [doi:10.1056/NEJMoa1715519](https://doi.org/10.1056/NEJMoa1715519)
+6. Phillips TJ, et al. **Glofitamab in relapsed/refractory mantle cell lymphoma.** *J Clin Oncol.* 2025;43(7):725–736. [doi:10.1200/JCO.24.00921](https://doi.org/10.1200/JCO.24.00921)
+
+> 引用整理協力：NCCN 2026 MCL、SHINE、TRIANGLE、ZUMA-2、BRUIN、AIM、glofitamab MCL (2026/05/11)。

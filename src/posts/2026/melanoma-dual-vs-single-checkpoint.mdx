@@ -1,0 +1,224 @@
+---
+title: "黑色素瘤雙免疫 vs 單一免疫：心、肝、大腸副作用怎麼權衡"
+titleEn: "Dual versus single checkpoint blockade in melanoma: weighing efficacy and toxicity"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "Nivolumab + ipilimumab 雙免疫在第四期黑色素瘤 10 年 OS 達 43%（CheckMate-067），是癌症免疫治療的標竿。但代價是 ≥ Grade 3 免疫副作用 60%。本文整理雙免疫 vs. 單免疫 vs. nivolumab + relatlimab（LAG-3）的取捨、BRAF 突變者用標靶 vs. 免疫的順序、輔助 / 新輔助免疫的角色（SWOG S1801），與 irAE 的早期辨識。"
+tags: ["黑色素瘤", "免疫治療", "ipilimumab", "nivolumab", "relatlimab", "irAE", "衛教"]
+medical: true
+medicalCondition: "黑色素瘤 (Melanoma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "雙免疫的副作用真的比單免疫多很多嗎？"
+    a: "**是的。CheckMate-067 試驗**：第四期黑色素瘤一線。≥ Grade 3 治療相關不良反應比例：nivolumab + ipilimumab 60% > nivolumab 單藥 24% > ipilimumab 單藥 28%。**雙免疫常見嚴重副作用**：大腸炎、肝炎、皮疹、內分泌（甲狀腺、垂體、腎上腺）、肺炎、心肌炎。多在前 12 週發生。**但 10 年 OS：雙免疫 43% > 單 nivolumab 37% > 單 ipilimumab 19%**。是「**多承受短期副作用、換來長期存活**」的取捨。"
+  - q: "BRAF 突變者要先用標靶還是免疫？"
+    a: "**這是黑色素瘤領域長期辯論。** DREAMseq 試驗（2022 NEJM）：BRAF V600E 突變第四期黑色素瘤，**先免疫（nivo+ipi）→ 進展後換標靶（dabrafenib+trametinib）」優於「先標靶→ 進展後換免疫」**（2 年 OS 71.8% vs. 51.5%）。原因：標靶反應快但易產生抗藥（多 6–10 個月）；免疫反應慢但部分病人達長期緩解。**例外**：腫瘤負擔極大、症狀嚴重、需要快速縮腫瘤（內臟危險、神經壓迫）→ 先標靶縮量後再換免疫。"
+  - q: "Nivolumab + relatlimab（LAG-3 抑制劑）是雙免疫嗎？"
+    a: "**是雙免疫的「溫和版」**——nivolumab（PD-1）+ relatlimab（LAG-3）。**RELATIVITY-047 試驗**：第四期黑色素瘤，nivo + rela vs. nivo 單藥，mPFS 10.1 vs. 4.6 個月。**毒性遠低於 nivo + ipi**：≥ Grade 3 治療相關副作用 ~21%（雙免疫 60%）。**已 FDA 核准**。對於不適合或不願意承擔 nivo+ipi 高毒性的病人，nivo + rela 是新的中間選項。台灣 2024 後陸續引進。"
+  - q: "輔助和新輔助免疫治療在黑色素瘤的角色？"
+    a: "**輔助**：早期高風險（Stage III、IIB–IIC）術後 nivolumab 或 pembrolizumab 1 年；BRAF V600+ 者可選 dabrafenib + trametinib（COMBI-AD）。**新輔助**：SWOG S1801 試驗（2023 NEJM）證實 pembrolizumab 3 個療程**新輔助**+ 手術 + 14 個療程輔助，**比全部 18 個療程都在術後使用，2 年 EFS 72% vs. 49%**。**NADINA 試驗（2024 NEJM）**：新輔助 nivo + ipi vs. 輔助 nivo，1 年 EFS 83.7% vs. 57.2%。**新輔助免疫已是 Stage III 黑色素瘤新標準**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**黑色素瘤是癌症免疫治療的標竿。** CheckMate-067 雙免疫 10 年 OS 43%——這在 2010 年代是不可想像的數字。但代價是 ≥ Grade 3 免疫副作用 60%。本文整理雙免疫（nivo + ipi）、單免疫（nivo / pembro）、LAG-3 雙抗（nivo + rela）三條路的取捨、BRAF 突變者用標靶 vs. 免疫的順序（DREAMseq）、輔助 / 新輔助免疫（SWOG S1801、NADINA），以及 irAE 的早期辨識與處置。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛診斷黑色素瘤、需了解免疫治療選項的病友與家屬，以及住院醫師、第一線醫療同仁。實際治療由腫瘤內科專科醫師依個案決定。
+</Callout>
+
+<Divider />
+
+## 黑色素瘤的免疫治療地圖
+
+| 方案 | 適應症 | 標誌試驗 |
+|---|---|---|
+| **Nivolumab + ipilimumab（PD-1 + CTLA-4）** | 第四期、新輔助、高風險 | CheckMate-067、NADINA |
+| **Nivolumab 單藥** | 第四期、輔助 | CheckMate-067、CheckMate-238 |
+| **Pembrolizumab 單藥** | 第四期、輔助、新輔助 | KEYNOTE-006、KEYNOTE-054、SWOG S1801 |
+| **Nivolumab + relatlimab（PD-1 + LAG-3）** | 第四期 | RELATIVITY-047 |
+| **Dabrafenib + trametinib（BRAF + MEK）** | BRAF V600+ 第四期或輔助 | COMBI-AD、COMBI-d |
+| **Encorafenib + binimetinib** | BRAF V600+ 第四期 | COLUMBUS |
+| **Talimogene laherparepvec（T-VEC，溶瘤病毒）** | 局部不可切除 | OPTiM |
+| **Lifileucel（TIL 細胞療法）** | 多線失效 | C-144-01 |
+
+## 第四期一線：雙免疫 vs. 單免疫 vs. LAG-3 雙抗
+
+### CheckMate-067（10 年追蹤）
+
+| 組別 | 中位 OS | 5 年 OS | 10 年 OS |
+|---|---|---|---|
+| **Nivo + ipi** | 71.9 月 | 52% | **43%** |
+| **Nivo 單藥** | 36.9 月 | 44% | 37% |
+| **Ipi 單藥** | 19.9 月 | 26% | 19% |
+
+### RELATIVITY-047（nivo + rela vs. nivo）
+
+| 終點 | Nivo + rela | Nivo |
+|---|---|---|
+| mPFS | 10.1 月 | 4.6 月 |
+| ≥ Grade 3 治療相關 TRAE | 21.1% | 11.1% |
+
+<Callout type="warning" title="如何在雙免疫、單免疫、LAG-3 之間選">
+- **腦轉移、肝轉移、症狀嚴重、年輕體能好**：傾向 nivo + ipi
+- **共病多、年齡大、輕度症狀**：傾向 nivo + rela 或單 nivo / pembro
+- **自體免疫疾病史**：免疫療法都需謹慎，nivo + ipi 風險最高
+</Callout>
+
+## BRAF 突變者：DREAMseq 答案
+
+**DREAMseq 試驗（2022 NEJM）**：BRAF V600E/K 第四期黑色素瘤，隨機分為「先免疫 → 進展後標靶」或「先標靶 → 進展後免疫」。
+
+| 順序 | 2 年 OS |
+|---|---|
+| **先 nivo + ipi → dab + tram** | 71.8% |
+| **先 dab + tram → nivo + ipi** | 51.5% |
+
+**結論：BRAF 突變者一線優先免疫，標靶留作二線**（除非急需縮量）。
+
+## 輔助治療
+
+| 風險 | 方案 |
+|---|---|
+| **Stage IIB–IIC**（KEYNOTE-716） | Pembrolizumab 1 年 |
+| **Stage III**（CheckMate-238） | Nivolumab 1 年；BRAF+ 可選 dab+tram（COMBI-AD） |
+| **Stage IV NED**（術後無病） | Nivolumab 1 年 |
+
+## 新輔助免疫：SWOG S1801 與 NADINA
+
+### SWOG S1801（NEJM 2023）
+
+Stage IIIB–IV 可切除黑色素瘤，pembrolizumab 18 個療程：
+- **3 個療程術前 + 15 個術後**（新輔助 + 輔助）
+- vs. **全部 18 個術後**（全部輔助）
+
+| 終點 | 新輔助組 | 全輔助組 |
+|---|---|---|
+| 2 年 EFS | 72% | 49% |
+
+### NADINA（NEJM 2024）
+
+Stage III 黑色素瘤：
+- **新輔助 nivo + ipi（2 cycles）→ 手術 → 視反應決定後續**
+- vs. **手術 → 輔助 nivo 1 年**
+
+| 終點 | 新輔助組 | 輔助組 |
+|---|---|---|
+| 1 年 EFS | 83.7% | 57.2% |
+
+**新輔助免疫已是 Stage III 黑色素瘤的新標準**。
+
+## irAE（免疫相關副作用）早期辨識
+
+| 系統 | 警訊 | 處理時機 |
+|---|---|---|
+| **大腸** | 腹瀉 ≥ 4 次 / 日 + 黏液血便 + 腹痛 | 立刻就醫；輕度可用 loperamide，中重度需住院、類固醇 |
+| **肝臟** | AST/ALT > 3× ULN、無症狀 | 抽血追蹤；> 5× ULN 啟用類固醇 |
+| **肺** | 呼吸困難、新發乾咳 | 影像（HRCT）、聽診；可進展極快 |
+| **內分泌** | 疲憊、心搏緩 / 速、低血糖、低血鈉 | 甲狀腺、皮質醇、葡萄糖；類固醇替代 |
+| **皮膚** | 紅疹 > 30% 體表、水泡 | 類固醇外用 / 全身性 |
+| **心臟** | 胸悶、ECG 變化、肌鈣蛋白升 | 立刻心臟科會診；可致命 |
+| **神經** | 肌無力（重症肌無力樣）、Guillain-Barré | 神經科 + 高劑量類固醇 |
+
+**多數 irAE 在治療前 12 週發生**，但晚發性可在 6 個月、甚至治療結束後出現。
+
+<Callout type="warning" title="高警覺的「短時間極致命」併發症">
+- **心肌炎**：可在第 1–2 劑後致命；任何胸悶 / ECG 異常 / 肌鈣蛋白升必須認真評估
+- **猛爆性肝炎**
+- **垂體炎合併腎上腺危象**
+- **重症肌無力 + 心肌炎合併症候群**
+
+任何病人開始免疫治療前都應有「**衛教卡 / 緊急聯絡電話**」，急診就醫時告知正在使用免疫療法。
+</Callout>
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷黑色素瘤、面對雙免疫 vs. 單免疫選擇的病友與家屬
+- 輔助 / 新輔助免疫對象
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- 葡萄膜黑色素瘤（uveal melanoma，治療策略完全不同；tebentafusp）
+- 黏膜黑色素瘤（治療反應通常較差）
+- 取代腫瘤內科專科醫師的個別判斷
+
+## 副作用 / 風險揭露
+
+### 雙免疫（nivo + ipi）
+
+- ≥ Grade 3 TRAE 60%
+- 永久性內分泌損傷（甲狀腺、垂體、腎上腺）累積 10–20%
+- 致死率約 1–2%
+
+### 單免疫（nivo / pembro）
+
+- ≥ Grade 3 TRAE 20–25%
+- 致死率約 0.4%
+
+### Nivolumab + relatlimab
+
+- ≥ Grade 3 TRAE 21%
+- 心肌炎較罕見
+
+### BRAF + MEK 抑制劑
+
+- 高燒（pyrexia）、皮疹、視網膜病變、心室功能下降、肝毒性
+- 多在前 4 週發生
+
+### 禁忌
+
+- 嚴重活動性自體免疫疾病（特別是器官移植、發炎性腸道疾病嚴重者）
+- 嚴重心功能不全、肺纖維化
+- 懷孕 / 哺乳
+- 活動性感染未控制
+- BRAF 標靶：對應抑制劑過敏
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的 BRAF V600 突變狀態？
+
+    決定是否有標靶選項。
+  </div>
+  <div>
+    ### 我適合雙免疫、單免疫還是 nivo + rela？
+
+    依年齡、共病、自體免疫史、腦轉移、症狀嚴重度。
+  </div>
+  <div>
+    ### Stage III 我可以做新輔助免疫嗎？
+
+    SWOG S1801 / NADINA 已是新標準。
+  </div>
+  <div>
+    ### irAE 監測排程是什麼？
+
+    甲狀腺、皮質醇、肝腎、ECG、肌鈣蛋白、影像。
+  </div>
+  <div>
+    ### 出現副作用時急診誰負責？
+
+    需有 24 小時聯絡管道，重大 irAE 不可拖延。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Wolchok JD, et al. **Long-Term Outcomes With Nivolumab Plus Ipilimumab or Nivolumab Alone Versus Ipilimumab in Patients With Advanced Melanoma (CheckMate-067).** *J Clin Oncol.* 2022;40(2):127–137. [doi:10.1200/JCO.21.02229](https://doi.org/10.1200/JCO.21.02229)
+2. Atkins MB, et al. **Combination dabrafenib and trametinib versus combination nivolumab and ipilimumab for patients with advanced BRAF-mutant melanoma (DREAMseq).** *J Clin Oncol.* 2023;41(2):186–197. [doi:10.1200/JCO.22.01763](https://doi.org/10.1200/JCO.22.01763)
+3. Tawbi HA, et al. **Relatlimab and Nivolumab versus Nivolumab in Untreated Advanced Melanoma (RELATIVITY-047).** *N Engl J Med.* 2022;386(1):24–34. [doi:10.1056/NEJMoa2109970](https://doi.org/10.1056/NEJMoa2109970)
+4. Patel SP, et al. **Neoadjuvant–Adjuvant or Adjuvant-Only Pembrolizumab in Advanced Melanoma (SWOG S1801).** *N Engl J Med.* 2023;388(9):813–823. [doi:10.1056/NEJMoa2211437](https://doi.org/10.1056/NEJMoa2211437)
+5. Blank CU, et al. **Neoadjuvant Nivolumab and Ipilimumab in Resectable Stage III Melanoma (NADINA).** *N Engl J Med.* 2024;391(18):1696–1708. [doi:10.1056/NEJMoa2402604](https://doi.org/10.1056/NEJMoa2402604)
+6. Long GV, et al. **Adjuvant Dabrafenib plus Trametinib in Stage III BRAF-Mutated Melanoma (COMBI-AD).** *N Engl J Med.* 2017;377(19):1813–1823. [doi:10.1056/NEJMoa1708539](https://doi.org/10.1056/NEJMoa1708539)
+7. Weber JS, et al. **Adjuvant Nivolumab versus Ipilimumab in Resected Stage III or IV Melanoma (CheckMate-238).** *N Engl J Med.* 2017;377(19):1824–1835. [doi:10.1056/NEJMoa1709030](https://doi.org/10.1056/NEJMoa1709030)
+
+> 引用整理協力：NCCN 2026 Melanoma、CheckMate-067、RELATIVITY-047、DREAMseq、SWOG S1801、NADINA、COMBI-AD、CheckMate-238 (2026/05/11)。

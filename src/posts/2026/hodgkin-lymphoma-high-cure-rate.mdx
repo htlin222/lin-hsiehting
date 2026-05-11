@@ -1,0 +1,203 @@
+---
+title: "何杰金氏淋巴瘤（Hodgkin）為什麼治癒率特別高？"
+titleEn: "Why does Hodgkin lymphoma have such a high cure rate?"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "Hodgkin lymphoma 是少數可在第四期仍達高治癒率的癌症。早期（Stage I–II）5 年無事件存活率 85–95%；晚期（Stage III–IV）也可達 70–85%。本文整理為什麼治癒率高（單一染色體核分裂相、對化療放療極敏感）、ABVD vs. BV-AVD（brentuximab vedotin）vs. N-AVD（nivolumab + AVD）的演進、PET-Deauville 評分中期反應驅動治療調整。"
+tags: ["Hodgkin lymphoma", "ABVD", "brentuximab vedotin", "nivolumab", "PET-Deauville", "衛教"]
+medical: true
+medicalCondition: "何杰金氏淋巴瘤 (Hodgkin lymphoma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "何杰金氏淋巴瘤是不是「年輕人的癌」？"
+    a: "**Hodgkin lymphoma 有雙峰年齡分布**：15–35 歲與 55 歲以上各一個高峰。約 80–90% 屬「典型 Hodgkin」（classical HL，CHL），其餘為「結節性淋巴球為主型」（NLPHL，現多歸到「結節性淋巴球為主 B 細胞淋巴瘤」）。常見以「無痛性頸部或縱膈淋巴結腫大」表現，可合併發燒、夜間盜汗、不明原因體重減輕（B symptoms）。**多數病人為健康青年**，這也是「治癒率特別重要」的原因——治好之後還有 50+ 年生活。"
+  - q: "ABVD 已經夠好了，為什麼還要換 BV-AVD 或 N-AVD？"
+    a: "**ABVD（doxorubicin + bleomycin + vinblastine + dacarbazine）是 30 年的標準**，治癒率高但有兩個代價：(1) bleomycin 肺毒性（5–10% 嚴重）、(2) 長期心毒性與第二原發癌（leukemia、breast、lung）。**ECHELON-1 試驗**用 brentuximab vedotin（CD30 ADC）取代 bleomycin（BV-AVD），晚期 6 年 OS 改善（93.9% vs. 89.4%）。**SWOG S1826 試驗（2024 NEJM）**用 nivolumab 取代 BV（N-AVD vs. BV-AVD），1 年 PFS 94% vs. 86%，且毒性較低。**2025 NCCN 已把 N-AVD 列入晚期 Hodgkin 首選之一**。"
+  - q: "PET-Deauville 評分是什麼？影響治療嗎？"
+    a: "**Deauville 評分（1–5 分）是 PET-CT 看 FDG 攝取與肝、縱膈血池比較**：1（無攝取）、2（≤縱膈）、3（>縱膈但≤肝）、4（>肝）、5（>肝且病灶增大或新病灶）。**Deauville 1–3 視為陰性、4–5 為陽性**。**中期 PET（2–3 個療程後）**用來決定升階 / 降階：陰性者可考慮減少療程或不放療（如 RAPID、HD16），陽性者需強化治療（如 BEACOPP 升階）。**RATHL 試驗**證實中期 PET 陰性後省略 bleomycin 不影響療效，且毒性降低。"
+  - q: "復發了還能治癒嗎？"
+    a: "**Hodgkin 復發後仍有相當高的治癒率**。標準二線：salvage 化療（ICE、DHAP、IGEV）+ 高劑量化療 + 自體幹細胞移植（ASCT）；治癒率 50–60%。**自體移植失敗後**：brentuximab vedotin、PD-1 抑制劑（nivolumab、pembrolizumab）、allo-SCT、CD30 CAR-T 都是選項。**KEYNOTE-204** 試驗顯示 pembrolizumab 比 brentuximab 在復發 / 難治 Hodgkin 表現更好（mPFS 13.2 vs. 8.3 個月）。**整體即使復發，5 年存活率仍可達 60–80%**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**Hodgkin lymphoma 是腫瘤學的「成功故事」**：早期（Stage I–II）5 年無事件存活率 85–95%、晚期（III–IV）70–85%、即使復發仍有 60–80% 機會長期存活。本文整理為什麼治癒率這麼高（Reed-Sternberg 細胞背景免疫微環境特別、對化療放療極敏感）、ABVD → BV-AVD → N-AVD 的世代演進、PET-Deauville 中期反應如何驅動「升階 / 降階」、復發治療路徑（自體移植、PD-1 抑制劑、CAR-T），以及青年病友最關心的長期副作用（心臟、肺、不孕、第二癌症）與減毒策略。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷的青年病友與家屬，以及住院醫師、第一線醫療同仁。實際治療由主治醫師與血液腫瘤團隊決定；本文不取代個別醫療判斷。
+</Callout>
+
+<Divider />
+
+## 為什麼 Hodgkin 治癒率高？
+
+| 因素 | 解釋 |
+|---|---|
+| **少量 Reed-Sternberg 細胞** | 腫瘤組織中真正的癌細胞（RS / HRS）只佔 < 5%，其餘 95% 是反應性免疫細胞 |
+| **對化療、放療極敏感** | 化療反應率超過 90% |
+| **明確的分期路徑** | Ann Arbor / Cotswold 修訂 + Lugano 2014 |
+| **PET 對 FDG 攝取良好** | 中期 PET 反應預測精準 |
+| **CD30 高表現** | 為 brentuximab vedotin（CD30 ADC）提供標靶 |
+| **PD-L1/PD-L2 染色體 9p24.1 擴增** | 對 PD-1 抑制劑反應特別好 |
+
+## 分期、症狀與診斷
+
+### Ann Arbor 分期 + Lugano 修訂
+
+| 分期 | 範圍 |
+|---|---|
+| **I** | 單一淋巴結區或單一結外部位 |
+| **II** | 橫膈同側 ≥ 2 個淋巴結區 |
+| **III** | 橫膈兩側皆有淋巴結 |
+| **IV** | 多重結外侵犯（肝、骨髓、肺實質） |
+
+**B symptoms**：發燒 > 38°C、夜間盜汗、6 個月內非自主減重 > 10%。任一即為「B」，預後較差。
+
+### 確診方式
+
+**外科切片（excisional biopsy）**：細針抽吸（FNA）不夠，必須切片才能看到 RS 細胞與背景。
+
+- **典型 Hodgkin**：HRS 細胞，CD15+、CD30+、CD20−（多數）、PAX5+ 弱
+- **NLPHL**：LP 細胞（lymphocyte predominant），CD20+、CD15−、CD30−
+
+## 治療：依分期分流
+
+| 分期 / 風險 | 標準方案 |
+|---|---|
+| **Stage I–II 早期 favorable**（GHSG / EORTC 定義） | ABVD ×2–4 → 放療 20–30 Gy（合併模式） |
+| **Stage I–II 早期 unfavorable** | ABVD ×4–6 → 放療 30 Gy |
+| **Stage III–IV 晚期** | **N-AVD ×6（SWOG S1826）或 BV-AVD ×6（ECHELON-1）或 ABVD ×6**（PET-adapted） |
+| **不適合化療的高齡者** | BV + bendamustine、brentuximab 單藥 |
+
+### ABVD vs. BV-AVD vs. N-AVD
+
+| 方案 | 試驗 | 主要優點 | 主要缺點 |
+|---|---|---|---|
+| **ABVD** | RATHL、Tata Memorial | 30 年經驗、可省略 bleomycin | bleomycin 肺毒性、長期心毒性 |
+| **BV-AVD** | ECHELON-1 | 6 年 OS 93.9% vs. ABVD 89.4% | 周邊神經病變、骨髓抑制 |
+| **N-AVD** | SWOG S1826（NEJM 2024） | 1 年 PFS 94% vs. BV-AVD 86%，毒性較低 | 免疫副作用（甲狀腺、肺炎、皮疹） |
+
+<Callout type="warning" title="跨試驗比較限制">
+ECHELON-1 與 SWOG S1826 病人族群、年齡、隨訪時間不同；SWOG S1826 短期 PFS 優於 BV-AVD，但長期 OS 仍需追蹤。**2026 年 NCCN 將 N-AVD 與 BV-AVD 並列為晚期一線首選**。
+</Callout>
+
+## PET-Deauville 中期反應：升階 / 降階決策
+
+**RATHL 試驗（NEJM 2016）**：晚期 Hodgkin 用 ABVD 2 個療程後做中期 PET。
+
+- **Deauville 1–3（陰性）**：後續省略 bleomycin（改 AVD），3 年 PFS 與 OS 類似但毒性降低。
+- **Deauville 4–5（陽性）**：升階 BEACOPP escalated，3 年 PFS ~67%。
+
+**HD16 / HD17 試驗**：早期 favorable Hodgkin 中期 PET 陰性者可省略放療，減少長期副作用。
+
+## 復發 / 難治治療
+
+| 一線失效後選項 | 適應症 / 時機 |
+|---|---|
+| **Salvage 化療 + 自體幹細胞移植（ASCT）** | 標準二線；治癒率 50–60% |
+| **Brentuximab vedotin（BV）** | ASCT 後鞏固（AETHERA）或復發 |
+| **Nivolumab、Pembrolizumab** | ASCT 失敗或多線失效（KEYNOTE-204、CheckMate-205） |
+| **Allo-SCT** | 多線失效、年輕、體能好 |
+| **CD30 CAR-T** | 試驗中 |
+
+## 長期副作用：年輕病友的特別考量
+
+| 風險 | 發生時機 | 預防 / 監測 |
+|---|---|---|
+| **心臟（蒽環類 + 縱膈放療）** | 10+ 年後 | 心臟超音波每 5 年 |
+| **肺（bleomycin + 縱膈放療）** | 早期可逆 / 晚期纖維化 | 中期省略 bleomycin（RATHL） |
+| **甲狀腺低下（頸部放療）** | 5–10 年後 | TSH 每年 |
+| **第二原發癌（乳癌、肺癌、白血病）** | 10–25 年後 | 乳癌：女性 25 歲或診斷後 8 年起每年 MRI（NCCN）；肺癌：戒菸 + LDCT |
+| **不孕** | 化療立即 | 化療前冷凍精子 / 卵子 / 卵巢組織 |
+| **慢性疲憊與認知症狀** | 變動 | 運動處方、心理支持 |
+
+<Callout type="tip" title="青年病友的「治療前準備」">
+診斷時就應安排：(1) 心臟超音波 baseline、(2) 肺功能（DLCO）、(3) 甲狀腺功能、(4) **生育保存諮詢**（化療前）、(5) HIV / B 肝 / C 肝篩檢。這些紀錄會成為 20–30 年追蹤的對照基線。
+</Callout>
+
+## NLPHL：另一個世界的 Hodgkin
+
+NLPHL（結節性淋巴球為主型）目前 WHO 2022 已歸為「結節性淋巴球為主 B 細胞淋巴瘤」（NLPBL）。
+
+- 多以單一淋巴結區、無 B symptoms 表現
+- 對 rituximab 反應良好
+- 早期可單純放療或觀察
+- 預後極佳（5 年 OS > 95%）
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛被診斷的 Hodgkin lymphoma 病友與家屬
+- 想了解長期副作用與生育保存的青年病友
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- 取代血液腫瘤科醫師對個案的治療決策
+- 兒童 Hodgkin（兒科方案不同，毒性管控更嚴）
+- 罕見變異型（如 lymphocyte-rich CHL、NLPBL）
+
+## 副作用 / 風險揭露
+
+### 急性期常見不良反應
+- **化療**：噁心、嘔吐、骨髓抑制、嗜中性低下發燒、口腔黏膜炎、神經病變
+- **brentuximab vedotin**：周邊神經病變、皮疹、骨髓抑制
+- **nivolumab**：irAE（肺炎、肝炎、大腸炎、甲狀腺、皮疹）
+- **放療**：皮膚變化、咽痛、食道炎、急性肺炎
+
+### ≥ Grade 3 比例
+- BV-AVD：周邊神經病變 ~7%、嗜中性低下 ~58%
+- N-AVD：免疫相關副作用約 30% （多為 Grade 1–2）
+
+### 禁忌與謹慎使用
+- 嚴重肺纖維化、活動性自體免疫疾病（PD-1 相對禁忌）
+- 嚴重心衰
+- 懷孕 / 哺乳
+- 活動性感染未控制
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的分期、B symptoms、IPS 分數是什麼？
+
+    這決定 favorable vs. unfavorable，與療程強度。
+  </div>
+  <div>
+    ### 第一線方案會用 ABVD、BV-AVD 還是 N-AVD？
+
+    視年齡、共病、體能、生育需求權衡。
+  </div>
+  <div>
+    ### 我需要先做生育保存諮詢嗎？
+
+    化療前先做精子 / 卵子 / 卵巢組織冷凍。
+  </div>
+  <div>
+    ### 中期 PET 在第幾療程後做？
+
+    多在第 2 療程後評估 Deauville 分數。
+  </div>
+  <div>
+    ### 長期副作用怎麼追蹤？
+
+    心臟、肺、甲狀腺、第二原發癌的監測排程。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Herrera AF, et al. **Nivolumab plus AVD in advanced-stage classic Hodgkin lymphoma (SWOG S1826).** *N Engl J Med.* 2024;391(15):1379–1389. [doi:10.1056/NEJMoa2405888](https://doi.org/10.1056/NEJMoa2405888)
+2. Connors JM, et al. **Brentuximab Vedotin with Chemotherapy for Stage III or IV Hodgkin's Lymphoma (ECHELON-1).** *N Engl J Med.* 2018;378(4):331–344. [doi:10.1056/NEJMoa1708984](https://doi.org/10.1056/NEJMoa1708984)
+3. Johnson P, et al. **Adapted treatment guided by interim PET-CT scan in advanced Hodgkin's lymphoma (RATHL).** *N Engl J Med.* 2016;374(25):2419–2429. [doi:10.1056/NEJMoa1510093](https://doi.org/10.1056/NEJMoa1510093)
+4. Kuruvilla J, et al. **Pembrolizumab versus brentuximab vedotin in relapsed or refractory classical Hodgkin lymphoma (KEYNOTE-204).** *Lancet Oncol.* 2021;22(4):512–524. [doi:10.1016/S1470-2045(21)00005-X](https://doi.org/10.1016/S1470-2045(21)00005-X)
+5. Cheson BD, et al. **Recommendations for initial evaluation, staging, and response assessment of Hodgkin and non-Hodgkin lymphoma: the Lugano classification.** *J Clin Oncol.* 2014;32(27):3059–3068. [doi:10.1200/JCO.2013.54.8800](https://doi.org/10.1200/JCO.2013.54.8800)
+6. Moskowitz CH, et al. **Brentuximab vedotin as consolidation after autologous stem-cell transplantation in Hodgkin lymphoma (AETHERA).** *Lancet.* 2015;385(9980):1853–1862. [doi:10.1016/S0140-6736(15)60165-9](https://doi.org/10.1016/S0140-6736(15)60165-9)
+
+> 引用整理協力：NCCN 2026 Hodgkin、SWOG S1826、ECHELON-1、RATHL、KEYNOTE-204、Lugano classification、AETHERA (2026/05/11)。

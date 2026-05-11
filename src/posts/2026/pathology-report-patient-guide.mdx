@@ -1,0 +1,207 @@
+---
+title: "病理報告怎麼看？分化、Ki-67、ER/PR/HER2 病人版"
+titleEn: "Reading a pathology report: differentiation, Ki-67, ER/PR/HER2 — a patient guide"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "病理報告是癌症治療的「身分證」。本文用病人語言解析最常見的欄位：腫瘤類型、分化（grade）、Ki-67、ER/PR/HER2、淋巴結、邊界（margin）、MSI/MMR、PD-L1、HER2-low、EGFR/ALK，並提醒哪些欄位若缺失要主動回頭問。"
+tags: ["病理報告", "Ki-67", "ER PR HER2", "MSI", "PD-L1", "衛教"]
+medical: true
+medicalCondition: "腫瘤病理報告判讀 (Tumor pathology report interpretation)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "病理報告的「分化」grade 1、2、3 是什麼意思？"
+    a: "分化（differentiation）描述癌細胞**長得多像原本的正常組織**。Grade 1（well-differentiated，高分化）= 長得比較像，惡性度低、增長慢；Grade 3（poorly differentiated，低分化）= 長得不像，惡性度高、增長快；Grade 2 居中。**同樣大小的腫瘤，分化越差預後通常越差**，但分化只是預後因子之一，還要看分期、生物標記、治療反應。乳癌用 Nottingham grade（1–3），攝護腺用 Gleason grade group（1–5），肉瘤用 FNCLCC grade（1–3），系統不同不要混用。"
+  - q: "Ki-67 是什麼？百分比越高越糟嗎？"
+    a: "Ki-67 是細胞核裡的增生標記，**百分比代表正在分裂的細胞比例**。乳癌一般以 20% 為界（< 20% 低、> 20% 高），用於 Luminal A vs. Luminal B 分類與是否需要化療。神經內分泌瘤用 Ki-67 + mitotic count 分 G1（< 3%）、G2（3–20%）、G3（> 20%）。**但 Ki-67 的判讀方法（手動 vs. 數位、看 hot spot vs. 平均區）在不同實驗室差異可達 20%**——同一個檢體在 A 醫院測 18%，B 醫院測 25% 是有可能的。重要的是「在你的醫院內、和其他病人比較」這個數字代表什麼，不要單看絕對值。"
+  - q: "HER2 弱陽性（HER2-low）是什麼？"
+    a: "傳統 HER2 二分法：陽性（IHC 3+ 或 ISH 擴增）= 給 trastuzumab 等 HER2 標靶；陰性 = 不用。但 2022 年 DESTINY-Breast04 試驗（Modi S, NEJM）顯示，**HER2 弱陽性（IHC 1+ 或 IHC 2+/ISH 陰性）**的轉移性乳癌，用 trastuzumab deruxtecan（T-DXd）仍可延長存活。FDA 因此核准 HER2-low 適應症。**HER2 弱陽性不是「弱的癌症」，而是「弱的訊號也能被新藥利用」**。請務必確認病理報告上的 IHC 分數，不要只看「陰性 / 陽性」一行字。"
+  - q: "MSI-H / dMMR 是什麼？跟基因檢測一樣嗎？"
+    a: "MMR（mismatch repair）是 DNA 修復系統，dMMR = 修復系統失靈，會造成微衛星不穩定（microsatellite instability，MSI）。**MSI-H / dMMR 腫瘤對免疫療法（pembrolizumab）反應特別好**，FDA 已核准 pembrolizumab 跨癌別治療 MSI-H 實體瘤（KEYNOTE-158）。判讀方法：(1) MMR IHC（MLH1、MSH2、MSH6、PMS2 四個蛋白），(2) MSI PCR，(3) NGS。**這三個是檢測同一件事的不同方法**，臨床上 MMR IHC 是最便宜、最快的篩檢，NGS 是最完整的版本。MSI-H 約佔大腸癌 15%、子宮內膜癌 25%、胃癌 5–10%、其他實體瘤更低。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**病理報告是癌症治療的「身分證」。** 沒看懂這張紙，就等於沒看懂自己的病。本文用病人語言把最常見的欄位拆開講：腫瘤類型、分化（grade）、Ki-67、ER/PR/HER2（包括 HER2-low）、淋巴結與邊界、MSI/MMR、PD-L1 CPS/TPS、EGFR/ALK/KRAS、HER2 ISH，並列出「報告上沒寫但你應該主動問」的清單。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛拿到病理報告、想看懂醫師說明的病友與家屬。所有實際治療決策請與主治醫師討論；本文不取代個別醫療判斷。
+</Callout>
+
+<Divider />
+
+## 病理報告的結構
+
+一份標準的病理報告通常分以下幾個欄位：
+
+| 欄位 | 內容 |
+|---|---|
+| **檢體 (Specimen)** | 切片位置、切除方式（切片、部分切除、全切） |
+| **大體 (Gross)** | 肉眼描述：腫瘤大小、顏色、位置 |
+| **顯微 (Microscopic)** | 顯微鏡下細胞型態 |
+| **診斷 (Final diagnosis)** | 最終診斷：腫瘤類型 + 等級 |
+| **TNM 分期** | pT、pN、cM 三個欄位 |
+| **邊界 (Margins)** | 是否切到腫瘤邊緣（R0/R1/R2） |
+| **生物標記 (Biomarkers)** | IHC、ISH、PCR、NGS 結果 |
+| **附註 (Comments)** | 病理醫師的補充判斷 |
+
+<Callout type="warning" title="報告的「最終診斷」才是定論">
+病理報告的「印象 / 初步 / suggestive of」可能保留空間；最終診斷（final diagnosis）才是定論。若報告是中間階段（preliminary 或 frozen section），請等正式的最終病理報告。**冷凍切片（frozen section）只是手術中即時判讀，不能取代正式的常規切片**。
+</Callout>
+
+## 腫瘤類型與分化
+
+### 腫瘤類型
+
+最基本的欄位。例如：
+
+- **腺癌（adenocarcinoma）**：來自腺上皮的癌，常見於肺、大腸、胃、攝護腺、胰臟、乳房、子宮內膜。
+- **鱗狀細胞癌（squamous cell carcinoma）**：常見於皮膚、頭頸、食道、肺、子宮頸。
+- **小細胞癌（small cell carcinoma）**：常見於肺；神經內分泌起源。
+- **淋巴瘤、白血病、骨髓瘤**：血液系統腫瘤。
+- **肉瘤（sarcoma）**：來自結締組織（骨、軟骨、肌肉、脂肪、神經）。
+- **黑色素瘤（melanoma）**：來自黑色素細胞。
+
+### 分化（grade）
+
+| 系統 | 應用 | 含意 |
+|---|---|---|
+| **Nottingham grade（1–3）** | 乳癌 | 腺管形成、核分化、有絲分裂的綜合分數 |
+| **Gleason grade group（1–5）** | 攝護腺癌 | 從 ISUP 2014 起改用 grade group |
+| **FNCLCC grade（1–3）** | 軟組織肉瘤 | 分化、有絲分裂、壞死綜合 |
+| **WHO grade（1–4）** | 中樞神經系統腫瘤 | grade 4 即膠質母細胞瘤（GBM） |
+| **NET grade（G1/G2/G3）** | 神經內分泌瘤 | 依 Ki-67 與 mitotic count 分組 |
+
+## 增生標記：Ki-67
+
+Ki-67 是細胞核蛋白，**只有正在分裂的細胞會表現**。陽性比例越高，腫瘤增生越快。
+
+- **乳癌**：< 20% 低 / > 20% 高（界線非絕對，依實驗室與最新指引調整）
+- **神經內分泌瘤**：G1（< 3%）、G2（3–20%）、G3（> 20%）
+- **淋巴瘤**：DLBCL 常 > 80%，FL 常 < 30%
+- **GIST**：mitotic count > 5/50 HPF 為高風險
+
+<Callout type="tip" title="Ki-67 與化療決策的關係">
+早期 HR+/HER2- 乳癌的化療決策，過去以 Ki-67 為主要依據之一；現在加入 Oncotype DX、MammaPrint 等基因分數。**Ki-67 不是單一指標**，請與主治醫師討論完整風險評估。
+</Callout>
+
+## 乳癌生物標記：ER / PR / HER2 / Ki-67
+
+| 標記 | 判讀 | 臨床意義 |
+|---|---|---|
+| **ER（雌激素受體）** | IHC，陽性比例 + 強度（Allred 0–8 或 H-score） | ≥ 1% 即陽性，可考慮抗荷爾蒙治療 |
+| **PR（黃體素受體）** | IHC | 配合 ER 預測荷爾蒙反應 |
+| **HER2** | IHC 0/1+/2+/3+；2+ 再做 ISH | 3+ 或 ISH 擴增 = 陽性（給 HER2 標靶）；HER2-low（IHC 1+ 或 2+/ISH-） = T-DXd 適應症 |
+| **Ki-67** | % | Luminal A vs. Luminal B 分類 |
+
+### 乳癌分子亞型
+
+| 亞型 | ER/PR | HER2 | Ki-67 | 治療 |
+|---|---|---|---|---|
+| **Luminal A** | + | − | 低 | 抗荷爾蒙為主 |
+| **Luminal B (HER2-)** | + | − | 高 | 抗荷爾蒙 + 化療 / CDK4/6 抑制劑 |
+| **Luminal B (HER2+)** | + | + | 變動 | 抗荷爾蒙 + HER2 標靶 + 化療 |
+| **HER2-enriched** | − | + | 變動 | HER2 標靶 + 化療 |
+| **Triple-negative（三陰性）** | − | − | 常高 | 化療 ± 免疫治療（PD-L1+） |
+
+## 大腸癌、胃癌、子宮內膜癌：MSI / MMR / dMMR
+
+| 檢測 | 方法 | 解讀 |
+|---|---|---|
+| **MMR IHC** | 4 個蛋白（MLH1、MSH2、MSH6、PMS2） | 任一缺失 = dMMR |
+| **MSI PCR** | 5 個微衛星位點 | ≥ 2 個不穩定 = MSI-H |
+| **NGS-based MSI** | 計算微衛星指數 | 高分 = MSI-H |
+
+**MSI-H / dMMR 大腸癌**：對 5-FU 化療反應較差、對免疫治療反應較好；早期可考慮先用 immune therapy（如 dostarlimab、pembrolizumab）做新輔助。**dMMR 也是 Lynch syndrome 篩檢線索**——MLH1 啟動子甲基化排除後若仍有蛋白缺失，建議做胚系基因檢測。
+
+## 免疫治療標記：PD-L1
+
+| 指標 | 算法 | 應用 |
+|---|---|---|
+| **TPS（Tumor Proportion Score）** | 染色的腫瘤細胞 ÷ 所有腫瘤細胞 | 肺癌、頭頸癌 |
+| **CPS（Combined Positive Score）** | （染色的腫瘤細胞 + 染色的免疫細胞）÷ 所有腫瘤細胞 × 100 | 三陰性乳癌、胃癌、食道癌、子宮頸癌、頭頸癌 |
+| **IC%（Immune Cell %）** | 染色的免疫細胞佔腫瘤面積 % | 早期使用，現多被 TPS/CPS 取代 |
+
+**不同 PD-L1 抗體（22C3、SP142、SP263、28-8）的判讀標準不同**，跨抗體比較需要謹慎。請主治醫師確認用的是哪一個抗體、cut-off 是多少。
+
+## 肺腺癌標靶生物標記
+
+| 基因 | 檢測方式 | 標靶藥 |
+|---|---|---|
+| **EGFR**（exon 19 del、L858R、exon 20 insertion） | PCR / NGS | osimertinib、erlotinib、gefitinib |
+| **ALK 重排** | IHC / FISH / NGS | alectinib、brigatinib、lorlatinib |
+| **ROS1 重排** | FISH / NGS | crizotinib、entrectinib、repotrectinib |
+| **BRAF V600E** | PCR / NGS | dabrafenib + trametinib |
+| **MET exon 14** | NGS | capmatinib、tepotinib |
+| **RET 重排** | NGS | selpercatinib、pralsetinib |
+| **NTRK 重排** | IHC / FISH / NGS | larotrectinib、entrectinib |
+| **KRAS G12C** | PCR / NGS | sotorasib、adagrasib |
+| **HER2 exon 20** | NGS | trastuzumab deruxtecan |
+
+## 淋巴結與邊界
+
+| 欄位 | 範例寫法 | 意義 |
+|---|---|---|
+| **淋巴結（LN）** | 2/15 | 取出 15 個淋巴結中 2 個有轉移 |
+| **包膜外侵犯（ENE / ECE）** | + / − | 預後較差，可能影響輔助治療 |
+| **邊界（margin）** | R0（陰性）、R1（顯微）、R2（肉眼） | R0 = 完全切除 |
+| **淋巴血管侵犯（LVI）** | + / − | 預後因子 |
+| **神經周圍侵犯（PNI）** | + / − | 攝護腺、胰臟、頭頸癌常見 |
+
+## 「報告沒寫」但你該主動問的清單
+
+<Steps>
+  <div>
+    ### 我的生物標記做了哪些、結果是什麼？
+
+    乳癌 → ER/PR/HER2/Ki-67、HER2-low IHC 分數；肺腺癌 → 完整 NGS（含 EGFR/ALK/ROS1/BRAF/KRAS/MET/RET/NTRK/HER2/PD-L1）；大腸癌 → RAS/BRAF/MSI；胃癌 → HER2/MSI/PD-L1 CPS。
+  </div>
+  <div>
+    ### 報告日期、檢體切了多久才送病理
+
+    冷缺血時間（cold ischemia time）影響 ER/PR/HER2 染色精度。標準 < 1 小時。
+  </div>
+  <div>
+    ### 邊界（margin）是 R0、R1 還是 R2？
+
+    切除邊緣狀態決定是否需追加放療或再次手術。
+  </div>
+  <div>
+    ### 是否有 LVI、PNI、ENE？
+
+    這些「隱性高風險」欄位常被忽略，但會影響輔助治療決策。
+  </div>
+  <div>
+    ### NGS 報告什麼時候會出？
+
+    NGS 平均 7–21 個工作天。若初始病理是「常規切片」沒做 NGS，需要主動爭取（健保條件、自費約 4–10 萬）。
+  </div>
+</Steps>
+
+## 病理報告適用對象 / 不適用對象
+
+### 本文適用
+- 拿到病理報告、想看懂專有名詞的病友與家屬
+- 想與主治醫師討論治療選擇時的準備材料
+
+### 本文不適用
+- 取代主治醫師對個案的整體評估
+- 兒童腫瘤（兒科病理欄位定義不同）
+- 罕見肉瘤、未分化癌（需更細緻的免疫表型分析）
+
+<Divider />
+
+## 參考文獻
+
+1. Modi S, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer.** *N Engl J Med.* 2022;387(1):9–20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+2. Marabelle A, et al. **Efficacy of Pembrolizumab in Patients With Noncolorectal High Microsatellite Instability/Mismatch Repair-Deficient Cancer: Results From the Phase II KEYNOTE-158 Study.** *J Clin Oncol.* 2020;38(1):1–10. [doi:10.1200/JCO.19.02105](https://doi.org/10.1200/JCO.19.02105)
+3. Allison KH, et al. **Estrogen and Progesterone Receptor Testing in Breast Cancer: ASCO/CAP Guideline Update.** *J Clin Oncol.* 2020;38(12):1346–1366. [doi:10.1200/JCO.19.02309](https://doi.org/10.1200/JCO.19.02309)
+4. Wolff AC, et al. **Human Epidermal Growth Factor Receptor 2 Testing in Breast Cancer: ASCO/CAP Clinical Practice Guideline Focused Update.** *J Clin Oncol.* 2018;36(20):2105–2122. [doi:10.1200/JCO.2018.77.8738](https://doi.org/10.1200/JCO.2018.77.8738)
+5. Nielsen TO, et al. **Assessment of Ki67 in Breast Cancer: Updated Recommendations from the International Ki67 in Breast Cancer Working Group.** *J Natl Cancer Inst.* 2021;113(7):808–819. [doi:10.1093/jnci/djaa201](https://doi.org/10.1093/jnci/djaa201)
+6. Lindeman NI, et al. **Updated Molecular Testing Guideline for the Selection of Lung Cancer Patients for Treatment With Targeted Tyrosine Kinase Inhibitors: Guideline From the College of American Pathologists, the International Association for the Study of Lung Cancer, and the Association for Molecular Pathology.** *J Mol Diagn.* 2018;20(2):129–159. [doi:10.1016/j.jmoldx.2017.11.004](https://doi.org/10.1016/j.jmoldx.2017.11.004)
+
+> 引用整理協力：ASCO/CAP 指引、KEYNOTE-158、DESTINY-Breast04、IKWG 2021、CAP/IASLC/AMP 肺癌分子檢測共識 (2026/05/11)。

@@ -27,6 +27,7 @@ export const siteConfig: SiteConfig = {
         twitter: "",
         linkedin: "",
         line: "https://line.me/R/ti/p/@927pjtfa",
+        email: "mail@hsiehting.com",
     },
     postsPerPage: 5,
     analytics: {

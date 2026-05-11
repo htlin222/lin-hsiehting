@@ -1,0 +1,246 @@
+---
+title: "化療後感染風險與預防：G-CSF、抗生素 prophylaxis 怎麼用"
+titleEn: "Infection prophylaxis after chemotherapy: G-CSF, antibiotics, antivirals, antifungals"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "化療後嗜中性低下發燒（FN）是腫瘤急診之首。本文整理 ASCO/NCCN/ESMO 三大指引的 G-CSF 預防分層（高 / 中 / 低風險療程）、原發 vs. 次發預防、生物相似藥怎麼選、PJP / HSV / HBV / 黴菌預防條件、新冠肺炎與流感疫苗時機。"
+tags: ["G-CSF", "嗜中性低下發燒", "感染預防", "PJP", "B 肝再活化", "衛教"]
+medical: true
+medicalCondition: "化療後感染預防 (Infection prophylaxis in chemotherapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "G-CSF 是什麼？每個化療療程都要打嗎？"
+    a: "**G-CSF（granulocyte colony-stimulating factor）= 顆粒球生長激素**，常見藥物有 filgrastim、pegfilgrastim、lipegfilgrastim 與多種生物相似藥（biosimilar）。**它的角色是縮短嗜中性低下時間、降低嗜中性低下發燒（FN）風險**。**不是每個化療都要打**：ASCO/NCCN 把化療療程分為三類——**高風險（FN > 20%）**：原發預防，每療程都打；**中風險（10–20%）**：依個案危險因子決定；**低風險（< 10%）**：不打。**個別危險因子**：年齡 > 65、既往 FN 史、低白血球基線、肝腎功能不良、開放性傷口、營養不良。"
+  - q: "Filgrastim 跟 pegfilgrastim 差在哪？要打幾天？"
+    a: "**Filgrastim**：短效，化療結束後 24–72 小時開始，每天皮下注射，連續 5–10 天直到 ANC 恢復。**Pegfilgrastim**：長效（pegylated），化療結束後 24 小時打一針，一個療程一針即可。**兩者效果相當**（NHL、乳癌、肺癌試驗），pegfilgrastim 方便、總體成本可能較低（少打針、少回診）。**Lipegfilgrastim、Eflapegrastim、Efbemalenograstim** 為新一代長效 G-CSF，效果類似。**生物相似藥**（biosimilar）已上市多年，FDA / EMA / TFDA 認證等效，價格較便宜。"
+  - q: "PJP 預防什麼時候要做？"
+    a: "**PJP（Pneumocystis jirovecii pneumonia）預防的關鍵條件**：(1) **長期類固醇 ≥ 20 mg prednisolone equivalent ≥ 4 週**、(2) **fludarabine、bendamustine、temozolomide、特定免疫抑制方案**、(3) **CD4 T cell < 200**、(4) **allogeneic 或 autologous SCT 後**、(5) **CAR-T 治療後**。**預防藥物**：trimethoprim-sulfamethoxazole（TMP-SMX）是首選，800/160 mg 每週 3 次或 400/80 mg 每天一次。**對磺胺過敏者**：dapsone（注意 G6PD）、atovaquone、aerosolized pentamidine。預防期持續到免疫抑制結束後 3–6 個月。"
+  - q: "我是 B 肝帶原者，化療會不會引發肝衰竭？"
+    a: "**B 肝再活化（HBV reactivation）是癌症治療的隱藏危機**。**高風險療程**：(1) **anti-CD20 單株抗體（rituximab、obinutuzumab）**：B 肝再活化率達 20–50%，**所有病人必須抗病毒預防**；(2) **高劑量類固醇、anthracyclines、anti-CD52、SCT**：高危；(3) **TKIs、免疫療法**：中危，主動篩檢。**標準作法**：(1) **化療前篩 HBsAg、anti-HBc、HBV DNA**；(2) **HBsAg+ 者治療期間用 entecavir 或 tenofovir，化療後續用 12 個月以上**；(3) **HBsAg-/anti-HBc+ 者**用 rituximab：建議抗病毒預防或密切監測 HBV DNA。**未做篩檢與預防可導致猛爆性肝炎、肝衰竭、死亡**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**化療後感染是腫瘤急診之首。** 嗜中性低下發燒（FN）的院內死亡率 5–10%；B 肝再活化、PJP 肺炎、CMV 感染、伺機性黴菌、皰疹病毒再活化都是治療相關感染。本文整理 G-CSF 預防分層（高 / 中 / 低風險療程 + 個別危險因子）、PJP / HSV / HBV / 黴菌預防條件、新冠肺炎與流感疫苗時機、實際給藥方案與監測。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛開始化療、想了解感染預防全貌的病友與家屬，以及住院醫師、第一線醫療同仁。實際處方由主治醫師依個案決定；本文不取代個別判斷。
+</Callout>
+
+<Divider />
+
+## 化療後感染風險來源
+
+| 機轉 | 受影響細胞 | 高峰時間 | 持續 |
+|---|---|---|---|
+| 骨髓抑制 | 嗜中性球、淋巴球、單核球 | 化療後 7–14 天 | 5–10 天 |
+| 黏膜屏障破壞 | 口腔、腸道黏膜 | 化療後 5–10 天 | 7–14 天 |
+| T 細胞功能受損 | 細胞免疫 | 持續 | 數月 |
+| B 細胞 / 抗體 | 體液免疫 | rituximab 後持續 | 6–12 月 |
+| 中心靜脈導管 | 皮膚屏障 | 整個療程 | — |
+
+## G-CSF 預防：三層風險分流
+
+### 高風險療程（FN > 20%）— 原發預防
+
+| 化療方案 | 用於 | FN 風險 |
+|---|---|---|
+| **TAC** (docetaxel + doxorubicin + cyclophosphamide) | 乳癌輔助 | ~25% |
+| **AC-T**（密集化療） | 乳癌 | ~20–25% |
+| **R-DHAP、ICE** | 淋巴瘤救援 | ~25–30% |
+| **R-CHOP-14 / dose-dense** | DLBCL | ~20% |
+| **BEACOPP escalated** | Hodgkin | ~70% |
+| **MEC、HiDAC、FLAG-Ida** | AML 誘導 | ~80% |
+
+### 中風險療程（FN 10–20%）— 視個別危險因子
+
+| 方案 | FN 風險 |
+|---|---|
+| FOLFIRINOX | ~10–15% |
+| Docetaxel q3w | ~10–15% |
+| R-CHOP-21 | ~17% |
+| ABVD | ~12% |
+
+**個別危險因子（任一即升級）**：
+- 年齡 > 65
+- 既往 FN 史
+- 開放性傷口或活動性感染
+- 低基線白血球
+- 肝腎功能不良
+- 廣泛骨髓侵犯
+- 營養不良
+- HIV、長期類固醇、其他免疫抑制
+
+### 低風險療程（FN < 10%）— 不常規 G-CSF
+
+例如 CMF、5-FU 單藥、單藥 capecitabine、TKIs（多數）。
+
+### 給藥方案
+
+| 藥物 | 給藥 |
+|---|---|
+| **Filgrastim**（短效） | 化療後 24–72 小時起，5 μg/kg/day 皮下，連續 5–10 天 |
+| **Pegfilgrastim**（長效） | 化療後 24 小時內，6 mg 皮下，一療程一針 |
+| **Lipegfilgrastim** | 6 mg 皮下，一療程一針 |
+| **Eflapegrastim**（含 SC1010） | 13.2 mg 皮下，一療程一針 |
+
+<Callout type="warning" title="G-CSF 注意事項">
+1. **不要與化療同日打**：化療後至少 24 小時才開始，否則骨髓抑制可能加重
+2. **骨痛是常見副作用**：可用 loratadine、NSAIDs 緩解
+3. **罕見：脾破裂、急性肺損傷、毛細血管滲漏**——出現左上腹痛、呼吸困難立刻就醫
+4. **白血病、骨髓增生性疾病**：謹慎使用（部分情境禁忌）
+</Callout>
+
+## 原發 vs. 次發預防
+
+| 名稱 | 時機 | 適用 |
+|---|---|---|
+| **原發預防** | 第一個化療療程開始就打 | 高風險方案、有個別危險因子的中風險方案 |
+| **次發預防** | 某次化療後曾發生 FN 或延誤治療，下次起打 | 中風險方案曾出問題者 |
+
+## PJP（Pneumocystis）預防
+
+### 必要適應症
+
+- 長期類固醇 ≥ 20 mg prednisolone equivalent ≥ 4 週
+- Fludarabine、bendamustine、temozolomide
+- Allogeneic / autologous SCT
+- CAR-T 後（建議至少 6 個月）
+- CD4 < 200
+
+### 預防藥物
+
+| 藥 | 劑量 | 注意 |
+|---|---|---|
+| **TMP-SMX 400/80 mg** | 每天 1 顆，或 800/160 每週 3 次 | 首選 |
+| **Dapsone** | 100 mg qd | G6PD 必查；不適合 G6PD 缺乏者 |
+| **Atovaquone** | 1,500 mg qd | 餐後吃 |
+| **Pentamidine（吸入）** | 300 mg q4w | 局部 |
+
+## 抗病毒預防：HSV / VZV / HBV
+
+### HSV / VZV 預防
+
+| 適應症 | 藥 | 劑量 |
+|---|---|---|
+| 異體 SCT、Bortezomib、Daratumumab、CAR-T | Acyclovir 400 mg bid 或 valacyclovir 500 mg qd | 持續至免疫恢復 |
+
+### HBV（B 肝再活化）
+
+**篩檢項目（化療前）**：HBsAg、anti-HBc、HBV DNA。
+
+| 狀態 | 處置 |
+|---|---|
+| **HBsAg+** | 抗病毒治療（entecavir 或 tenofovir），化療後續用 12 個月以上 |
+| **HBsAg−/anti-HBc+，用 rituximab** | 抗病毒預防 + HBV DNA 每 1–3 個月監測 |
+| **HBsAg−/anti-HBc+，其他治療** | 監測 HBV DNA 每 3 個月（依風險） |
+| **皆陰性** | 視風險決定是否需 HBV 疫苗 |
+
+### CMV
+
+- 異體 SCT、CAR-T、淋巴瘤多線治療者需監測
+- Letermovir 為新的預防選項（CMV 陽性 SCT 受贈者）
+
+## 抗黴菌預防
+
+| 高風險 | 預防藥 |
+|---|---|
+| AML 誘導 / consolidation | Posaconazole、isavuconazole |
+| Allogeneic SCT | Fluconazole / posaconazole / micafungin |
+| 長期類固醇 + 中性球低下 | Fluconazole |
+
+## 疫苗時機
+
+| 疫苗 | 適合化療期間？ | 何時最佳 |
+|---|---|---|
+| **流感（不活化）** | ✓ | 化療前 2 週、或治療間期、或化療後 ≥ 3 個月 |
+| **COVID-19（mRNA）** | ✓ | 同上 |
+| **肺炎雙球菌（PCV20 + PPSV23）** | ✓ | 化療前 ≥ 2 週理想；不能延誤治療 |
+| **HBV** | ✓（不活化） | 化療前；化療後抗體可能不夠 |
+| **HPV** | ✓ | 不影響化療 |
+| **MMR、水痘、黃熱病、BCG（活疫苗）** | **禁忌** | 治療期間不可施打 |
+
+## 中心靜脈導管照護
+
+- 換藥每週至少一次，發紅 / 滲液 / 發燒立刻評估
+- 沖管：生理食鹽水 → heparin（依規程）
+- 拔管時機：療程結束、感染嚴重、堵塞
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 即將開始或正在化療的病友與家屬
+- 想了解 G-CSF 與感染預防架構的同業
+- 第一線住院醫師、家醫科、感染科參考
+
+### 本文不適用
+- 取代個別療程的個別感染預防計畫
+- 兒科（劑量與適應症不同）
+- 異體移植細節（屬移植專科範疇）
+
+## 副作用 / 風險揭露
+
+### G-CSF
+- 骨痛、肌肉痠痛、注射部位疼痛
+- 罕見：脾破裂、急性肺損傷、毛細血管滲漏
+- 慎用：鐮刀型紅血球、骨髓增生性疾病
+
+### 抗生素 / 抗病毒 / 抗黴菌預防
+- TMP-SMX：磺胺過敏、血球抑制、高鉀、肌酐升高
+- Acyclovir：腎毒性、神經症狀（高劑量）
+- Posaconazole：肝毒性、QT 延長、藥物交互作用
+- Entecavir / tenofovir：腎、骨密度（tenofovir）
+
+### 主要禁忌
+- 個別藥物過敏
+- 嚴重肝腎功能不全（依藥物個別評估）
+- 懷孕（部分藥物為相對禁忌）
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的化療方案 FN 風險是多少？需要 G-CSF 嗎？
+
+    與主治醫師確認高 / 中 / 低分類與個別危險因子。
+  </div>
+  <div>
+    ### 我需要 PJP / HSV / HBV / 黴菌預防嗎？
+
+    依藥物與免疫抑制深度個別評估。
+  </div>
+  <div>
+    ### 我的 B 肝、C 肝、HIV、結核都篩了嗎？
+
+    化療前必查。
+  </div>
+  <div>
+    ### 我打了流感、新冠、肺炎雙球菌疫苗嗎？
+
+    最好在化療前 2 週完成。
+  </div>
+  <div>
+    ### 我家有沒有人感染 / 帶狀皰疹 / 水痘？
+
+    免疫低下期間避免接觸活動性感染。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Smith TJ, et al. **Recommendations for the Use of WBC Growth Factors: ASCO Clinical Practice Guideline Update.** *J Clin Oncol.* 2015;33(28):3199–3212. [doi:10.1200/JCO.2015.62.3488](https://doi.org/10.1200/JCO.2015.62.3488)
+2. Klastersky J, et al. **Management of febrile neutropaenia: ESMO Clinical Practice Guidelines.** *Ann Oncol.* 2016;27(suppl 5):v111–v118. [doi:10.1093/annonc/mdw325](https://doi.org/10.1093/annonc/mdw325)
+3. Aapro MS, et al. **2010 update of EORTC guidelines for the use of granulocyte-colony stimulating factor.** *Eur J Cancer.* 2011;47(1):8–32. [doi:10.1016/j.ejca.2010.10.013](https://doi.org/10.1016/j.ejca.2010.10.013)
+4. Styczynski J, et al. **ECIL guidelines on diagnosis and management of HBV and HCV infections in patients with hematologic malignancies and stem cell transplant.** *Lancet Infect Dis.* 2016;16(5):606–617. [doi:10.1016/S1473-3099(16)00118-3](https://doi.org/10.1016/S1473-3099(16)00118-3)
+5. Hwang JP, et al. **Hepatitis B Virus Screening and Management for Patients With Cancer Prior to Therapy: ASCO Provisional Clinical Opinion Update.** *J Clin Oncol.* 2020;38(31):3698–3715. [doi:10.1200/JCO.20.01757](https://doi.org/10.1200/JCO.20.01757)
+6. Cooley LA, et al. **Consensus guidelines for diagnosis, prophylaxis and management of Pneumocystis jirovecii pneumonia in patients with haematological and solid malignancies, 2014.** *Intern Med J.* 2014;44(12b):1350–1363. [doi:10.1111/imj.12599](https://doi.org/10.1111/imj.12599)
+7. Rubin LG, et al. **2013 IDSA Clinical Practice Guideline for Vaccination of the Immunocompromised Host.** *Clin Infect Dis.* 2014;58(3):e44–e100. [doi:10.1093/cid/cit684](https://doi.org/10.1093/cid/cit684)
+
+> 引用整理協力：ASCO G-CSF、ASCO HBV、ESMO FN、ECIL-7 antiviral、IDSA 免疫抑制病人疫苗指引 (2026/05/11)。

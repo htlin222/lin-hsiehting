@@ -7,6 +7,7 @@ import {
     ShieldCheck,
     ExternalLink,
     Github,
+    Mail,
 } from "@lucide/astro";
 
 import { Image } from "astro:assets";
@@ -234,6 +235,19 @@ const profileLinks = [
             >
             聯絡。
         </p>
+        {siteConfig.socials.email && (
+            <p class="text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
+                <Mail size={16} class="text-muted-foreground shrink-0" />
+                <span>
+                    <strong class="text-foreground">Email</strong>：
+                    <a
+                        href={`mailto:${siteConfig.socials.email}`}
+                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >{siteConfig.socials.email}</a>
+                    （勘誤、衛教提問、學術合作；<strong class="text-foreground">不提供個別診療建議</strong>）
+                </span>
+            </p>
+        )}
         {siteConfig.socials.line && (
             <p class="text-sm text-muted-foreground leading-relaxed">
                 <strong class="text-foreground">讀者回饋管道</strong>：LINE 官方帳號

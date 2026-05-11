@@ -1,0 +1,217 @@
+---
+title: "三陰性乳癌的免疫治療：誰有效？PD-L1 CPS 是什麼"
+titleEn: "Immunotherapy in triple-negative breast cancer: who benefits? Decoding PD-L1 CPS"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "三陰性乳癌（TNBC）佔乳癌 15–20%，過去最難治。pembrolizumab + 化療在早期（KEYNOTE-522）與轉移（KEYNOTE-355）都改寫標準。本文整理 PD-L1 CPS 怎麼算、22C3 與 SP142 抗體差異、誰該用免疫療法、新輔助免疫的減毒策略、輔助 olaparib 與 capecitabine 的角色。"
+tags: ["三陰性乳癌", "TNBC", "pembrolizumab", "PD-L1 CPS", "KEYNOTE-522", "衛教"]
+medical: true
+medicalCondition: "三陰性乳癌 (Triple-negative breast cancer, TNBC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "PD-L1 CPS 和 TPS 差在哪？三陰性乳癌看哪個？"
+    a: "**TPS（Tumor Proportion Score）= 染色的腫瘤細胞 ÷ 所有腫瘤細胞**——用於肺癌、頭頸癌。**CPS（Combined Positive Score）= （染色的腫瘤細胞 + 染色的免疫細胞）÷ 所有腫瘤細胞 × 100**——用於三陰性乳癌、胃癌、食道癌、子宮頸癌。**三陰性乳癌看 CPS（用 22C3 抗體）**，**轉移性 TNBC 一線 pembrolizumab + 化療的給付線是 CPS ≥ 10**（KEYNOTE-355）；**早期 TNBC 新輔助 pembrolizumab + 化療不分 CPS** 都核准（KEYNOTE-522）。"
+  - q: "為什麼早期 TNBC 不論 PD-L1 都用免疫療法？"
+    a: "**KEYNOTE-522 試驗**：早期高風險 TNBC（≥ T2 或淋巴結+），新輔助 pembrolizumab + carboplatin/paclitaxel + AC vs. 安慰劑 + 同化療。結果：(1) pCR 64.8% vs. 51.2%（+13.6%），(2) **3 年 EFS 84.5% vs. 76.8%**（HR 0.63），(3) **PD-L1 陽性與陰性病人都有獲益**，但陽性者較大。原因可能是新輔助時腫瘤負擔大，化療造成腫瘤抗原釋放，加上 PD-1 阻斷可激活全身免疫。**FDA / NCCN 因此不論 CPS 都核准早期新輔助 pembrolizumab**。"
+  - q: "新輔助免疫治療的副作用值得嗎？"
+    a: "**新輔助 pembrolizumab + 化療的 ≥ Grade 3 不良反應**：總體比單獨化療多約 10%，多為免疫相關副作用（甲狀腺、皮疹、肝炎、肺炎、大腸炎）。**最嚴重風險**：(1) 永久性內分泌損傷（甲狀腺、腦下垂體、腎上腺）約 3–5%，(2) 嚴重肺炎、大腸炎、肝炎需停藥 + 類固醇治療，(3) **長期免疫副作用持續到輔助期甚至治療結束後**。但在 3 年 EFS 84.5% vs. 76.8% 的差距下（每 100 個病人多救回 8 個免於復發），多數高風險早期 TNBC 病人權衡仍是值得的。應與主治醫師討論個別風險。"
+  - q: "TNBC 有 BRCA 突變要怎麼治？"
+    a: "**TNBC 中約 20% 帶 BRCA1/2 胚系突變**，這群病人的治療有專屬選項：(1) **早期 TNBC + BRCA 突變**：OlympiA 試驗顯示輔助 olaparib 1 年（PARP 抑制劑），3 年 iDFS 從 77.1% 提升到 85.9%（HR 0.58）；4 年 OS 89.8% vs. 86.4%。(2) **轉移 TNBC + BRCA 突變**：olaparib、talazoparib 為一二線選項；OlympiAD、EMBRACA 試驗皆顯示優於化療。(3) **預防**：BRCA 突變者建議與遺傳諮詢師討論預防性手術（乳房、卵巢）。**所有 TNBC 病人都應接受 BRCA1/2 與 HRD 檢測**。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**三陰性乳癌（TNBC）佔乳癌 15–20%，過去因「無 ER/PR、無 HER2 標靶」而最難治。** Pembrolizumab + 化療改寫了 TNBC：早期 KEYNOTE-522 不論 PD-L1 CPS 皆受益（pCR 65% vs. 51%；3 年 EFS 84.5% vs. 76.8%）；轉移 KEYNOTE-355 限 CPS ≥ 10 才獲益。本文釐清 PD-L1 CPS 算法、22C3 vs. SP142 抗體差異、早期 / 轉移 TNBC 的決策邏輯、BRCA 突變者的 olaparib、新輔助免疫的副作用權衡與監測，以及 sacituzumab govitecan、T-DXd 等 ADC 在 TNBC 的角色。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷 TNBC、想了解免疫治療適不適合的病友與家屬，以及住院醫師、第一線醫療同仁。實際治療由主治醫師依個案決定。
+</Callout>
+
+<Divider />
+
+## TNBC 的定義與基本檢查
+
+### 定義
+- **ER（雌激素受體）< 1%**
+- **PR（黃體素受體）< 1%**
+- **HER2 IHC 0/1+ 或 IHC 2+/ISH 陰性**
+
+### 初診必查
+- **BRCA1/2 胚系基因檢測**（NCCN 建議所有 TNBC）
+- **HRD（同源重組缺陷）狀態**
+- **PD-L1 CPS**（22C3 抗體，含腫瘤 + 免疫細胞）
+- 完整影像分期：乳房 MRI、胸腹 CT、骨掃描（高風險者考慮 PET-CT）
+
+## PD-L1 CPS 怎麼算
+
+**CPS（Combined Positive Score）公式：**
+
+> **CPS = (PD-L1 陽性的腫瘤細胞數 + PD-L1 陽性的單核淋巴球 + PD-L1 陽性的巨噬細胞) ÷ 所有可數的腫瘤細胞 × 100**
+
+| 分數 | 解讀 |
+|---|---|
+| CPS < 1 | 陰性 |
+| CPS 1–9 | 弱陽性 |
+| CPS ≥ 10 | 陽性（TNBC 一線 pembrolizumab 的給付線） |
+
+<Callout type="warning" title="不同抗體用法不同">
+- **22C3（Dako）**：TNBC、胃癌、食道癌、子宮頸癌、頭頸癌 — 用 CPS
+- **SP142（Ventana）**：早期使用於 IMpassion130 的 atezolizumab，看 IC% （免疫細胞）
+- **SP263（Ventana）**：肺癌
+- **28-8（Dako）**：肺癌、黑色素瘤
+
+抗體不同 → 染色強度與 cut-off 不同 → **不可直接互換**。請主治醫師確認用的是哪個抗體與 cut-off。
+</Callout>
+
+## 早期 TNBC：新輔助 + 輔助免疫
+
+### KEYNOTE-522 模式（標準）
+
+| 階段 | 用藥 | 週期 |
+|---|---|---|
+| 新輔助 | Pembrolizumab + carboplatin + paclitaxel | 12 週 |
+| 新輔助 | Pembrolizumab + AC（doxorubicin + cyclophosphamide） | 12 週 |
+| 手術 | 乳房 + 腋下手術 | — |
+| 輔助 | Pembrolizumab 單藥 | 9 個療程（27 週） |
+
+**對象**：≥ Stage II（T1c–T2 N+ 或 T3–T4），不論 PD-L1 CPS。
+
+**結果**：pCR 65%、3 年 EFS 84.5%。
+
+### 達 pCR 後是否繼續 pembrolizumab？
+
+KEYNOTE-522 設計**不論 pCR 與否，全部完成 1 年 pembrolizumab**。試驗未直接比較「達 pCR 後停藥 vs. 繼續」，目前 NCCN 建議完成計畫療程。
+
+### 未達 pCR 的後續
+
+| 情境 | 後續輔助 |
+|---|---|
+| 未達 pCR + BRCA 突變 | Olaparib 1 年（OlympiA） |
+| 未達 pCR + 無 BRCA | Capecitabine（CREATE-X，但 KEYNOTE-522 後的角色尚不明確） + pembrolizumab |
+| 達 pCR | 繼續 pembrolizumab 至完成 1 年 |
+
+## 轉移性 TNBC：PD-L1 CPS 是關鍵
+
+### 第一線
+
+| CPS | 標準方案 |
+|---|---|
+| **CPS ≥ 10** | Pembrolizumab + 化療（paclitaxel / nab-paclitaxel / gemcitabine + carboplatin），KEYNOTE-355 |
+| **CPS < 10** | 化療 ± BRCA 突變者用 PARPi |
+
+### KEYNOTE-355 結果（CPS ≥ 10 亞群）
+
+- mPFS 9.7 vs. 5.6 個月
+- mOS 23.0 vs. 16.1 個月
+- ORR 53% vs. 41%
+
+### 第二線後的選項
+
+| 藥 | 試驗 | ORR | mPFS / mOS |
+|---|---|---|---|
+| **Sacituzumab govitecan**（Trop-2 ADC） | ASCENT | 35% | mOS 12.1 vs. 6.7 個月 |
+| **T-DXd（HER2-low）** | DESTINY-Breast04 | 50% | mOS 23.4 vs. 16.8 個月（hormone receptor-positive cohort 主體；TNBC 亞群較少） |
+| **Datopotamab deruxtecan**（Trop-2 ADC） | TROPION-Breast01 | 36% | mPFS 6.9 vs. 4.9 個月 |
+| **Olaparib / Talazoparib**（BRCA 突變） | OlympiAD / EMBRACA | 60% | mPFS 7.0 vs. 4.2 個月 |
+
+## BRCA 突變的 TNBC：另一條路
+
+### 早期 + BRCA 突變
+
+**OlympiA 試驗**：早期高風險 HER2− 乳癌（含 TNBC）+ BRCA1/2 突變，輔助 olaparib 1 年：
+- 3 年 iDFS 85.9% vs. 77.1%
+- 4 年 OS 89.8% vs. 86.4%
+
+### 轉移 + BRCA 突變
+
+**OlympiAD（olaparib vs. 化療）、EMBRACA（talazoparib vs. 化療）**：PARPi 顯著優於化療。可作為一二線。
+
+## 副作用 / 風險揭露
+
+### Pembrolizumab + 化療常見不良反應
+
+- **化療**：骨髓抑制、噁心、神經病變、脫髮
+- **免疫相關（irAE）**：
+  - 甲狀腺（hypo / hyper）20–30%
+  - 皮疹 10–20%
+  - 大腸炎 5–10%（嚴重 < 2%）
+  - 肺炎 3–5%
+  - 肝炎 5–10%
+  - 1 型糖尿病、垂體炎、腎上腺功能不全（罕見但需立刻處置）
+
+### ≥ Grade 3 比例（KEYNOTE-522）
+
+新輔助階段 ≥ Grade 3 治療相關不良反應 78%（pembro 組）vs. 73%（安慰劑組）。
+
+### 主要禁忌
+
+- 活動性自體免疫疾病（重度）
+- 嚴重器官功能不全
+- 懷孕 / 哺乳
+- 嚴重感染未控制
+
+### PARP 抑制劑禁忌
+
+- 嚴重骨髓抑制
+- 懷孕
+- 同時使用其他強效骨髓抑制藥物
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷 TNBC、考慮新輔助 / 輔助免疫的病友與家屬
+- 想了解 PD-L1 CPS 判讀的同業
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- 取代腫瘤內科專科醫師的個別判斷
+- 罕見變異型（metaplastic、apocrine、神經內分泌 TNBC）
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的 PD-L1 CPS（22C3）是多少？
+
+    早期不分 CPS 都用 pembrolizumab；轉移 CPS ≥ 10 才獲益。
+  </div>
+  <div>
+    ### 我有沒有 BRCA1/2 胚系突變？
+
+    影響 olaparib / talazoparib 的使用。
+  </div>
+  <div>
+    ### KEYNOTE-522 我可以做嗎？費用怎麼計算？
+
+    健保條件依分期、淋巴結狀態。
+  </div>
+  <div>
+    ### 我會接受哪些免疫副作用監測？
+
+    甲狀腺 / 肝腎 / 腎上腺 / 血糖 / 皮膚 / 腸胃。
+  </div>
+  <div>
+    ### 復發後我有哪些選項？
+
+    sacituzumab、T-DXd（若 HER2-low）、PARPi（若 BRCA+）、臨床試驗。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Schmid P, et al. **Event-free survival with pembrolizumab in early triple-negative breast cancer (KEYNOTE-522).** *N Engl J Med.* 2022;386(6):556–567. [doi:10.1056/NEJMoa2112651](https://doi.org/10.1056/NEJMoa2112651)
+2. Cortes J, et al. **Pembrolizumab plus chemotherapy in advanced triple-negative breast cancer (KEYNOTE-355).** *N Engl J Med.* 2022;387(3):217–226. [doi:10.1056/NEJMoa2202809](https://doi.org/10.1056/NEJMoa2202809)
+3. Tutt ANJ, et al. **Adjuvant Olaparib for Patients with BRCA1- or BRCA2-Mutated Breast Cancer (OlympiA).** *N Engl J Med.* 2021;384(25):2394–2405. [doi:10.1056/NEJMoa2105215](https://doi.org/10.1056/NEJMoa2105215)
+4. Bardia A, et al. **Sacituzumab Govitecan in Metastatic Triple-Negative Breast Cancer (ASCENT).** *N Engl J Med.* 2021;384(16):1529–1541. [doi:10.1056/NEJMoa2028485](https://doi.org/10.1056/NEJMoa2028485)
+5. Modi S, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer (DESTINY-Breast04).** *N Engl J Med.* 2022;387(1):9–20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+6. Robson M, et al. **Olaparib for Metastatic Breast Cancer in Patients with a Germline BRCA Mutation (OlympiAD).** *N Engl J Med.* 2017;377(6):523–533. [doi:10.1056/NEJMoa1706450](https://doi.org/10.1056/NEJMoa1706450)
+7. Bardia A, et al. **Datopotamab Deruxtecan versus Chemotherapy in Previously Treated Inoperable/Metastatic Hormone Receptor-Positive, HER2-Negative Breast Cancer (TROPION-Breast01).** *J Clin Oncol.* 2024;42(suppl):LBA1000. [doi:10.1200/JCO.2024.42.17_suppl.LBA1000](https://doi.org/10.1200/JCO.2024.42.17_suppl.LBA1000)
+
+> 引用整理協力：NCCN 2026 Breast Cancer、KEYNOTE-522、KEYNOTE-355、OlympiA、OlympiAD、ASCENT、DESTINY-Breast04、TROPION-Breast01 (2026/05/11)。

@@ -1,0 +1,223 @@
+---
+title: "濾泡性淋巴瘤（Follicular Lymphoma）是慢性病嗎？"
+titleEn: "Is follicular lymphoma a chronic disease?"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "Follicular lymphoma 是「慢病化」的低度淋巴瘤：中位存活 > 15 年，但目前無治癒方案。本文整理 watch-and-wait 何時適用、第一線 rituximab-bendamustine vs. R-CHOP、復發治療路徑（lenalidomide、tazemetostat、CD19/CD20 雙特異性抗體、CAR-T），與「轉型」（transformation to DLBCL）的警訊。"
+tags: ["Follicular Lymphoma", "watch and wait", "R-bendamustine", "tazemetostat", "CAR-T", "衛教"]
+medical: true
+medicalCondition: "濾泡性淋巴瘤 (Follicular lymphoma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "為什麼診斷濾泡性淋巴瘤可以先不治療？"
+    a: "**Follicular lymphoma（FL）是「indolent / 低度」淋巴瘤**——生長慢、可能多年不變或自發消退。多項試驗（包括 NLPHL、Ardeshna 2003 Lancet）顯示：**無症狀、低腫瘤負擔的 FL 病人，立刻治療與「watch-and-wait（觀察等待）」相比，整體存活率沒有差別**。原因是早期治療不能根除疾病、反而帶來副作用，等到出現症狀再治療效果一樣好。GELF（Groupe d'Étude des Lymphomes Folliculaires）有列出「需開始治療」的條件（淋巴結 > 7 cm、B symptoms、骨髓侵犯 > 25%、進展速度快等）。"
+  - q: "第一線該用 R-bendamustine 還是 R-CHOP？"
+    a: "**StiL NHL1 與 BRIGHT 試驗**：R-bendamustine 在無進展存活（PFS）優於 R-CHOP（StiL：mPFS 69.5 vs. 31.2 個月），且毒性較低（無周邊神經病變、骨髓抑制較輕）。**R-bendamustine 已成為晚期 FL 第一線首選**。R-CHOP 仍用於：(1) 懷疑轉型成 DLBCL、(2) 高腫瘤負擔需快速減量、(3) 對 bendamustine 過敏或不耐受。**Obinutuzumab + bendamustine（GALLIUM）**也是選項，PFS 略優於 R-bendamustine 但毒性稍重。"
+  - q: "復發治療有哪些新選項？"
+    a: "**FL 復發後選項在 2020–2025 大幅擴展**：(1) **CAR-T 細胞**：axicabtagene ciloleucel（ZUMA-5）、tisagenlecleucel（ELARA），對多線難治 FL ORR > 80%，CR > 60%；(2) **CD3×CD20 雙特異性抗體**：mosunetuzumab（皮下注射）、epcoritamab、glofitamab，ORR 70–80%；(3) **tazemetostat（EZH2 抑制劑）**：EZH2 突變 FL ORR 69%（CR 13%），對 EZH2 野生型 ORR 35%；(4) **lenalidomide + rituximab（R²）**：AUGMENT 試驗 mPFS 39 個月。**這些療法多數已 FDA 核准、台灣健保陸續引進**。"
+  - q: "什麼是「轉型」（histologic transformation）？怎麼發現？"
+    a: "**FL 約 2–3% 每年「轉型」為侵犯性淋巴瘤**（多為 DLBCL），15 年累積風險 30%。**警訊**：(1) 某一淋巴結快速長大（不對稱進展）、(2) 新的 B symptoms、(3) LDH 突然升高、(4) PET 顯示某個病灶 SUVmax 特別高（> 13）。**確診靠切片**——必須切剛長大的那顆淋巴結，不能假設「都是 FL」。**轉型後預後較差**，需以 DLBCL 方案（R-CHOP / Pola-R-CHP / CAR-T）治療。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**Follicular lymphoma（FL）是「indolent」（低度）B 細胞淋巴瘤，中位存活 > 15 年，但目前無治癒方案。** 治療目標是「**控制症狀、延長無進展時間、減少累積毒性**」。本文整理 watch-and-wait 何時適用（GELF criteria）、第一線 R-bendamustine vs. R-CHOP vs. Obinutuzumab-CHOP、復發治療路徑（lenalidomide + rituximab、tazemetostat、CD3×CD20 雙特異性抗體、CAR-T），以及「轉型」成 DLBCL 的警訊與處理。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛診斷 FL、面對「先不治療」建議感到困惑的病友與家屬，以及住院醫師、第一線醫療同仁。實際治療由血液腫瘤科醫師依個案決定；本文不取代個別判斷。
+</Callout>
+
+<Divider />
+
+## 為什麼 FL 是「慢性病」
+
+| 特徵 | 解釋 |
+|---|---|
+| **腫瘤生物學** | t(14;18) BCL-2 過度表現，阻斷凋亡但不快速增生 |
+| **臨床表現** | 多以無痛性淋巴結腫大、有時自發消退 |
+| **進程** | 反覆復發與緩解的模式 |
+| **預後** | 中位 OS > 15 年；多數死因不是 FL 本身 |
+| **目前極限** | 無治癒方案（除少數 limited stage I 放療可長期無病） |
+
+## 分期與評估
+
+### Ann Arbor / Lugano 分期
+
+同 Hodgkin。FL 多診斷時即 Stage III–IV。
+
+### 病理分級
+
+| 分級 | 中央區大細胞比例 / HPF | 處理 |
+|---|---|---|
+| **Grade 1–2** | 0–15 個 centroblast | 視為 indolent |
+| **Grade 3A** | > 15 個 centroblast，仍有 centrocytes | indolent / 看臨床 |
+| **Grade 3B** | 完全是 centroblast 構成的 sheet | 視為 DLBCL，用 R-CHOP |
+
+### 風險分數
+
+**FLIPI（Follicular Lymphoma International Prognostic Index）**：年齡 > 60、Stage III–IV、Hb < 12、LDH 升高、淋巴結區 > 4 個。0–1 低風險、2 中風險、≥ 3 高風險。
+
+**FLIPI-2** 加入腫瘤直徑、骨髓侵犯、β2-microglobulin。
+
+**m7-FLIPI**：加入 7 個基因突變（EZH2、ARID1A、MEF2B、EP300、FOXO1、CREBBP、CARD11），預測效能更佳。
+
+## 治療決策
+
+### Watch-and-wait（觀察等待）
+
+**Ardeshna 2003 Lancet** 與 Solal-Céligny 系列研究確立：**無症狀、低腫瘤負擔的 FL，立刻治療與觀察等待 OS 沒差別**。GELF criteria 為「需要治療」門檻：
+
+| 條件（GELF / BNLI） | 任一即建議治療 |
+|---|---|
+| 單一病灶 > 7 cm | ✓ |
+| ≥ 3 個病灶 > 3 cm | ✓ |
+| B symptoms | ✓ |
+| 脾腫大過肋下 7 cm | ✓ |
+| 壓迫症狀（腎、胃腸、上腔靜脈） | ✓ |
+| 漿膜液（腹水、胸水） | ✓ |
+| 細胞減少（Hb < 10、PLT < 100、ANC < 1.5） | ✓ |
+| LDH 或 β2-microglobulin 升高 | ✓ |
+
+### 第一線方案
+
+| 分期 | 方案 |
+|---|---|
+| **Stage I–II（局限）** | 放療 24 Gy（可治癒約 50%） |
+| **Stage III–IV 高腫瘤負擔** | **R-bendamustine ×6 → rituximab 維持** 或 obinutuzumab-bendamustine（GALLIUM） |
+| **Stage III–IV 低腫瘤負擔** | Watch-and-wait 或 rituximab 單藥 |
+
+### 試驗比較
+
+| 試驗 | 設計 | 結果 |
+|---|---|---|
+| **StiL NHL1** | R-bendamustine vs. R-CHOP | mPFS 69.5 vs. 31.2 個月，R-bendamustine 勝 |
+| **BRIGHT** | R-bendamustine vs. R-CHOP/R-CVP | CR 31% vs. 25%，毒性較低 |
+| **GALLIUM** | O-chemo vs. R-chemo（含 G-bendamustine） | mPFS 86.6 vs. 73.3 個月，OBI 勝；G-bendamustine 感染較多 |
+| **PRIMA** | Rituximab 維持 vs. 觀察（誘導後） | mPFS 顯著延長 |
+
+## 復發治療：2020 年代爆發的選項
+
+### Lenalidomide + Rituximab（R²）
+
+**AUGMENT 試驗**：R² vs. rituximab 單藥，mPFS 39.4 vs. 14.1 個月。R² 已是復發 FL 的標準二線之一。
+
+### Tazemetostat（EZH2 抑制劑）
+
+口服 EZH2 抑制劑，FDA 2020 核准復發 FL（≥ 2 線後）：
+- EZH2 突變 ORR 69%（CR 13%）
+- EZH2 野生型 ORR 35%（CR 4%）
+- 毒性溫和，口服方便
+
+### CD3×CD20 雙特異性抗體
+
+| 藥 | 給藥 | ORR / CR |
+|---|---|---|
+| **Mosunetuzumab** | 皮下 / 靜脈，分期遞增 | ORR 80%、CR 60%（≥ 3 線後） |
+| **Epcoritamab** | 皮下 | ORR 82%、CR 63%（≥ 2 線後） |
+| **Glofitamab** | 靜脈 | ORR 81%、CR 70% |
+
+### CAR-T 細胞療法
+
+| 產品 | 試驗 | ORR / CR |
+|---|---|---|
+| **Axicabtagene ciloleucel** | ZUMA-5 | ORR 94%、CR 79%（24 個月 PFS 57%） |
+| **Tisagenlecleucel** | ELARA | ORR 86%、CR 69% |
+| **Lisocabtagene maraleucel** | TRANSCEND FL | ORR 97%、CR 94% |
+
+**台灣 2025–2026 起**：CAR-T 已陸續可在符合條件的醫學中心執行；健保條件持續更新。
+
+## 轉型成 DLBCL：年累積風險 2–3%
+
+| 警訊 | 處理 |
+|---|---|
+| 某顆淋巴結快速長大（不對稱進展） | 切片那顆 |
+| 新出現 B symptoms | 影像 + LDH |
+| LDH 突然升高 | PET-CT 找 SUVmax 高的病灶切片 |
+| PET 顯示 SUVmax > 13 | 切片 |
+
+**確診轉型後**：以 DLBCL 方案治療（R-CHOP / Pola-R-CHP），考慮自體幹細胞移植或 CAR-T。轉型後預後較差但仍有治癒可能。
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛診斷 FL、考慮 watch-and-wait 的病友
+- 復發 FL 想了解新選項的病友與家屬
+- 第一線住院醫師、家醫科參考
+
+### 本文不適用
+- Grade 3B FL（應視為 DLBCL）
+- 取代血液腫瘤科醫師對個案的判斷
+- 兒童 / 少見變異型
+
+## 副作用 / 風險揭露
+
+### 化療免疫療法常見不良反應
+- R-bendamustine：感染風險、骨髓抑制、藥物熱、長期免疫低下
+- R-CHOP：周邊神經病變（vincristine）、心毒性（doxorubicin）、嗜中性低下發燒
+- Obinutuzumab：輸注反應（首劑常見、需減速分次給）、感染、B 肝再活化
+
+### 新藥常見不良反應
+- Lenalidomide：嗜中性低下、皮疹、靜脈血栓、催畸（女性禁孕）
+- Tazemetostat：噁心、疲憊、骨髓抑制（少數 MDS / AML 風險）
+- 雙特異性抗體：CRS（細胞激素釋放症候群）、ICANS（神經毒性）
+- CAR-T：CRS、ICANS、長期 B 細胞低下、感染風險
+
+### 主要禁忌
+- B 肝帶原未抗病毒治療（rituximab 可能誘發 HBV 再活化）
+- 活動性感染未控制
+- 嚴重共病、ECOG 3–4
+- 懷孕 / 哺乳（rituximab、lenalidomide、bendamustine 均不可用）
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我符合 GELF criteria 嗎？需要立刻治療嗎？
+
+    無症狀低負擔者可考慮 watch-and-wait。
+  </div>
+  <div>
+    ### 我的 grade 是 1、2、3A 還是 3B？
+
+    Grade 3B 應視為 DLBCL，治療策略不同。
+  </div>
+  <div>
+    ### 我的 FLIPI 分數？有沒有做 m7-FLIPI 基因突變？
+
+    高風險者治療更積極。
+  </div>
+  <div>
+    ### 第一線會用 R-bendamustine 還是 R-CHOP？
+
+    多以 R-bendamustine 為首選；R-CHOP 在懷疑轉型或高腫瘤負擔時。
+  </div>
+  <div>
+    ### 復發後我有哪些選項？
+
+    R²、tazemetostat、雙特異性抗體、CAR-T 都在台灣可用。
+  </div>
+  <div>
+    ### B 肝、C 肝、結核篩檢都做了嗎？
+
+    rituximab 前必須。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Rummel MJ, et al. **Bendamustine plus rituximab versus CHOP plus rituximab as first-line treatment for patients with indolent and mantle-cell lymphomas (StiL NHL1).** *Lancet.* 2013;381(9873):1203–1210. [doi:10.1016/S0140-6736(12)61763-2](https://doi.org/10.1016/S0140-6736(12)61763-2)
+2. Marcus R, et al. **Obinutuzumab for the First-Line Treatment of Follicular Lymphoma (GALLIUM).** *N Engl J Med.* 2017;377(14):1331–1344. [doi:10.1056/NEJMoa1614598](https://doi.org/10.1056/NEJMoa1614598)
+3. Leonard JP, et al. **AUGMENT: A Phase III Study of Lenalidomide Plus Rituximab Versus Placebo Plus Rituximab in Relapsed or Refractory Indolent Lymphoma.** *J Clin Oncol.* 2019;37(14):1188–1199. [doi:10.1200/JCO.19.00010](https://doi.org/10.1200/JCO.19.00010)
+4. Morschhauser F, et al. **Tazemetostat for patients with relapsed or refractory follicular lymphoma: an open-label, single-arm, multicentre, phase 2 trial.** *Lancet Oncol.* 2020;21(11):1433–1442. [doi:10.1016/S1470-2045(20)30441-1](https://doi.org/10.1016/S1470-2045(20)30441-1)
+5. Budde LE, et al. **Single-agent mosunetuzumab shows durable complete responses in patients with relapsed or refractory B-cell lymphomas.** *Lancet Oncol.* 2022;23(8):1055–1065. [doi:10.1016/S1470-2045(22)00335-7](https://doi.org/10.1016/S1470-2045(22)00335-7)
+6. Jacobson CA, et al. **Axicabtagene ciloleucel in relapsed or refractory indolent non-Hodgkin lymphoma (ZUMA-5).** *Lancet Oncol.* 2022;23(1):91–103. [doi:10.1016/S1470-2045(21)00591-X](https://doi.org/10.1016/S1470-2045(21)00591-X)
+7. Ardeshna KM, et al. **Long-term effect of a watch and wait policy versus immediate systemic treatment for asymptomatic advanced-stage non-Hodgkin lymphoma.** *Lancet.* 2003;362(9383):516–522. [doi:10.1016/S0140-6736(03)14110-4](https://doi.org/10.1016/S0140-6736(03)14110-4)
+
+> 引用整理協力：NCCN 2026 FL、StiL NHL1、BRIGHT、GALLIUM、AUGMENT、tazemetostat、mosunetuzumab、ZUMA-5、ELARA、Ardeshna 2003 (2026/05/11)。

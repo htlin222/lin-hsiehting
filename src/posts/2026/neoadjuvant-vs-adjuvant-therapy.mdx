@@ -1,0 +1,198 @@
+---
+title: "新輔助治療 vs 輔助治療：差別與選擇邏輯"
+titleEn: "Neoadjuvant vs adjuvant therapy: difference and decision logic"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "新輔助 = 開刀前先治療、輔助 = 開刀後追加治療。新輔助能縮腫瘤、保器官、看治療反應、補充微小殘存疾病（MRD）資訊；輔助則針對「看不見的微轉移」。本文以乳癌、大腸癌、直腸癌、肺癌、頭頸癌、膀胱癌為例，整理兩者的決策邏輯與最新試驗（KEYNOTE-522、NIAGARA、CheckMate-816、PROSPECT、NICHE-2）。"
+tags: ["新輔助治療", "輔助治療", "pCR", "MRD", "衛教"]
+medical: true
+medicalCondition: "新輔助與輔助治療 (Neoadjuvant and adjuvant therapy)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "為什麼有些癌要先開刀、有些要先化療？"
+    a: "**先開刀（輔助治療）的條件**：腫瘤局限、可完整切除、術後病理才確定分期與生物標記（典型：早期大腸癌、早期肺腺癌、早期前列腺癌）。**先化療 / 免疫治療（新輔助）的條件**：(1) 想縮小腫瘤、保留器官（乳房保留、膀胱保留、肛門保留），(2) 想觀察治療反應 → 預測預後（pCR = pathological complete response），(3) 腫瘤已知對該藥反應好（HER2+ 乳癌、三陰性乳癌、dMMR 大腸癌、PD-L1 高的肺癌）。決策由多專科團隊（MDT）共同討論。"
+  - q: "pCR 是什麼？達到 pCR 是不是就治好了？"
+    a: "**pCR（pathological complete response）= 手術切下來的標本看不到殘存癌細胞**。在三陰性乳癌（KEYNOTE-522）、HER2+ 乳癌、膀胱癌（NIAGARA）、頭頸癌等，pCR 是強的預後因子——達 pCR 者長期無復發存活率明顯較高。**但 pCR 不等於治癒**：少數病人即使達 pCR 仍會復發；多數試驗顯示 pCR 病人的後續輔助治療仍能進一步降低復發風險。"
+  - q: "新輔助治療如果沒有縮小或反而長大怎麼辦？"
+    a: "**新輔助治療效果不佳（pPR、SD、PD）時的處理**：(1) 立刻 MDT 討論是否提前手術，(2) 評估換二線藥物，(3) 重新核對生物標記（PD-L1、HER2、MMR 是否準確？是否有罕見變異）。**新輔助治療的「失敗」反而是寶貴資訊**——它告訴你「這個藥對你不管用」，可在術後輔助階段換策略（例如三陰性乳癌 KEYNOTE-522 失敗者改 capecitabine / olaparib）。"
+  - q: "ctDNA / MRD 怎麼影響輔助治療決策？"
+    a: "**MRD（minimal residual disease）= 用 ctDNA 測手術後血液中是否殘留腫瘤 DNA**。MRD 陽性 → 復發風險高，輔助治療可能有用；MRD 陰性 → 復發風險低，可考慮「降階」輔助治療。**DYNAMIC（大腸癌）、IMvigor010（膀胱癌）、CIRCULATE 系列**等試驗已證實 MRD 的預後價值。但 2026 年標準臨床指引仍以分期與生物標記為主，MRD 為輔助參考。健保尚未常規給付。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**新輔助治療 = 開刀前先治療；輔助治療 = 開刀後追加治療。** 兩者目標都是「降低微轉移、減少復發」，但新輔助多了三個額外功能：縮小腫瘤、保留器官、即時觀察治療反應。本文以乳癌、大腸／直腸癌、肺癌、頭頸癌、膀胱癌為例整理兩者的決策邏輯、近年改變遊戲規則的試驗（KEYNOTE-522、CheckMate-816、PROSPECT、NIAGARA、NICHE-2），以及 ctDNA / MRD 開始影響輔助決策的方式。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知早期或局部晚期癌症、需要思考治療順序的病友與家屬，以及住院醫師與第一線醫療同仁。實際治療由主治醫師與多專科團隊（MDT）共同決定。
+</Callout>
+
+<Divider />
+
+## 三個治療順序的名稱
+
+| 名稱 | 時序 | 目標 |
+|---|---|---|
+| **新輔助（neoadjuvant）** | 手術 / 放療**之前** | 縮腫瘤、保器官、看反應、降微轉移 |
+| **輔助（adjuvant）** | 手術 / 放療**之後** | 清除手術看不到的微小殘存細胞 |
+| **同步（concurrent）** | 與放療同時 | 放療增敏 + 系統性治療（頭頸、子宮頸、食道、肛門癌常用） |
+| **完全新輔助治療（TNT）** | 手術前**完成所有**新輔助 + 輔助等價療程 | 直腸癌：先完整化學放療 + 全身化療，才考慮手術或 watch-and-wait |
+
+## 為什麼要在手術之前先治療？4 個動機
+
+1. **縮小腫瘤 → 提高 R0 切除率、保留器官**（乳房保留、膀胱保留、肛門保留）
+2. **早期處理微轉移**：手術前血液循環中已有微小腫瘤細胞，系統性治療越早越好
+3. **取得「**體內活體藥敏」**資訊**：手術病理看 pCR / pPR，預測預後與決定後續是否升階／降階
+4. **病人耐受度較好**：手術前體力較佳，能完成完整治療強度
+
+## 為什麼要在手術之後再治療？
+
+1. **準確分期**：術後病理才確認 pT、pN、邊界、淋巴血管侵犯（LVI）、神經周圍侵犯（PNI）
+2. **針對殘留風險量身訂作**：早期低風險者免化療；高風險者多管齊下
+3. **避免延後手術**：對「化療反應不確定」的腫瘤類型（如多數早期大腸癌、攝護腺癌），手術仍是第一順位
+
+## 各癌別的決策邏輯（重點試驗）
+
+### 乳癌
+
+| 情境 | 順序 | 重要試驗 |
+|---|---|---|
+| HER2+ 早期（≥ T2 或淋巴結+） | **新輔助 THP（docetaxel + trastuzumab + pertuzumab）→ 手術 → 輔助** | NeoSphere、TRYPHAENA、KATHERINE |
+| 三陰性乳癌（≥ T2 或淋巴結+） | **新輔助 pembrolizumab + 化療 → 手術 → pembrolizumab 輔助** | KEYNOTE-522 |
+| HR+ HER2-（早期） | 多數先手術 → 輔助內分泌 ± CDK4/6 抑制劑 ± 化療（依基因分數） | monarchE、NATALEE |
+
+### 直腸癌
+
+| 情境 | 順序 | 重要試驗 |
+|---|---|---|
+| 局部晚期直腸腺癌 | **完全新輔助治療（TNT）**：化學放療 + 化療 → 手術 / 觀察 | PRODIGE 23、RAPIDO、OPRA |
+| 早期、可不接受新輔助放療者 | 化療 → 手術 → 輔助 | PROSPECT（FOLFOX 取代化學放療，特定族群） |
+| dMMR 局部晚期直腸 | **單用免疫治療**（dostarlimab）→ 多數達 cCR，可免手術 | NICHE-2、dostarlimab 臨床試驗 |
+
+### 大腸癌
+
+| 情境 | 順序 |
+|---|---|
+| Stage II 低風險 | 手術即可，多數不需輔助 |
+| Stage II 高風險（T4、低分化、LVI+） | 手術 → 輔助 FOLFOX 3–6 個月（IDEA 試驗 short vs. long） |
+| Stage III | 手術 → 輔助 FOLFOX / CAPOX 3–6 個月 |
+| dMMR / MSI-H Stage II–III | 考慮 NICHE-2 模式：新輔助 nivo + ipi |
+
+### 肺癌（NSCLC）
+
+| 情境 | 順序 | 重要試驗 |
+|---|---|---|
+| Stage IB–IIIA（可切除） | **新輔助 nivolumab + 化療 → 手術** | CheckMate-816 |
+| Stage IIB–IIIA 完全切除後 | 輔助 atezolizumab（PD-L1 ≥ 1%）或 pembrolizumab | IMpower010、KEYNOTE-091 |
+| EGFR 突變 Stage IB–IIIA | 輔助 osimertinib 3 年 | ADAURA |
+| Stage III 不可切除 | 同步化學放療 → durvalumab 維持 1 年 | PACIFIC |
+
+### 膀胱癌（urothelial）
+
+| 情境 | 順序 | 重要試驗 |
+|---|---|---|
+| 肌肉侵犯型膀胱癌（MIBC） | **新輔助 cisplatin-based 化療 → 膀胱切除** | SWOG 8710 |
+| 2024 突破 | **新輔助 durvalumab + 化療 → 膀胱切除 → 輔助 durvalumab** | NIAGARA |
+
+### 頭頸癌
+
+| 情境 | 順序 |
+|---|---|
+| 局部晚期（Stage III–IVA） | **同步化學放療**（concurrent chemoradiation, cisplatin + RT） |
+| 喉保留策略 | 誘導化療（induction）→ 評估反應 → 同步化放療 vs. 全喉切除 |
+
+## pCR：手術病理的關鍵欄位
+
+**pCR（pathological complete response）= 手術切下來的標本看不到殘存癌**。意義：
+
+- **三陰性乳癌**：KEYNOTE-522 試驗中 pCR 達 64.8%（pembro 組）vs. 51.2%（placebo），且 pCR 與長期 EFS 高度相關。
+- **HER2+ 乳癌**：新輔助 THP 後 pCR ~60%；未達 pCR 者改 T-DM1（KATHERINE）可進一步降低復發。
+- **膀胱癌**：新輔助化療達 pCR 者，5 年 OS > 80%。
+- **直腸癌**：完全臨床反應（cCR）者可考慮 watch-and-wait，免造口（OPRA）。
+
+<Callout type="warning" title="pCR 不是「治癒」">
+pCR 是強的預後因子，但**不等於治癒**。即使達 pCR，後續輔助治療（HER2+ 給 trastuzumab、三陰性給 pembrolizumab）多數試驗仍建議完成，因為微小殘存疾病仍可能存在。
+</Callout>
+
+## MRD / ctDNA 開始改變決策
+
+| 試驗 | 癌別 | 設計 | 結論 |
+|---|---|---|---|
+| **DYNAMIC** | Stage II 大腸癌 | 術後 ctDNA + 才給化療 | 減少 50% 病人接受不必要的化療，無病存活不劣於常規 |
+| **IMvigor010 二次分析** | 膀胱癌術後 | ctDNA+ 者用 atezolizumab | ctDNA+ 者顯著獲益 |
+| **CIRCULATE-AU/US** | 大腸癌 | MRD-driven 輔助治療 | 進行中 |
+| **MRD-based 試驗（多種）** | 乳癌、肺癌、攝護腺、卵巢 | 進行中 | 尚未常規納入指引 |
+
+**2026 年標準臨床指引仍以分期與生物標記為主，MRD 為輔助參考**；健保未常規給付，自費 NGS-based MRD 約新台幣 2–5 萬。
+
+## 適用對象 / 不適用對象
+
+### 本文適用
+- 剛被告知早期或局部晚期癌症、需思考治療順序的病友與家屬
+- 想了解 pCR、MRD 概念的同業
+- 第一線解釋治療順序的醫療同仁
+
+### 本文不適用
+- 第四期遠端轉移：以系統性治療為主，順序邏輯不同
+- 罕見病理類型（如黏液性腺癌、印戒細胞癌）：請依個別 MDT 判斷
+
+## 副作用、禁忌與風險揭露
+
+### 新輔助治療的潛在風險
+- **延後手術可能讓少數對藥物無反應的腫瘤進展**：因此需要每 2–3 週評估反應，必要時提前手術
+- **化療 / 免疫治療相關副作用**：骨髓抑制、神經病變、心毒性、皮膚 / 大腸 / 肺 / 內分泌 irAE
+- **影響手術困難度**：化療後組織纖維化、免疫治療後局部反應可能改變解剖層次
+
+### 輔助治療的潛在風險
+- **副作用發生在手術後，可能影響恢復**
+- **可能「過度治療」**：低風險病人接受輔助化療收益小、風險大；近年靠基因分數（Oncotype DX、MammaPrint）避免不必要化療
+
+### 禁忌與謹慎使用
+- 嚴重共病（心衰 NYHA III–IV、肝腎衰竭、感染未控制）
+- ECOG 體能狀態 3–4
+- 懷孕（多數標靶 / 免疫療法為相對禁忌；化療依藥物個別評估）
+
+## 帶去診間的問題清單
+
+<Steps>
+  <div>
+    ### 我的腫瘤是不是「新輔助有效」的類型？
+
+    HER2+、三陰性、dMMR、PD-L1 高的乳癌 / 大腸 / 肺 / 膀胱常用新輔助。
+  </div>
+  <div>
+    ### 新輔助多久要評估一次反應？
+
+    多數每 6–9 週影像 + 臨床評估；若無反應提前手術。
+  </div>
+  <div>
+    ### 達 pCR / 未達 pCR 之後的策略是什麼？
+
+    例如 KEYNOTE-522 不論 pCR 與否，全部完成 1 年 pembrolizumab；KATHERINE 則是未達 pCR 者升階 T-DM1。
+  </div>
+  <div>
+    ### MRD / ctDNA 對我有幫助嗎？
+
+    若是 Stage II 大腸癌、肌肉侵犯型膀胱癌、術後乳癌追蹤，可以與主治醫師討論。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Schmid P, et al. **Event-free survival with pembrolizumab in early triple-negative breast cancer (KEYNOTE-522).** *N Engl J Med.* 2022;386(6):556–567. [doi:10.1056/NEJMoa2112651](https://doi.org/10.1056/NEJMoa2112651)
+2. Forde PM, et al. **Neoadjuvant nivolumab plus chemotherapy in resectable lung cancer (CheckMate 816).** *N Engl J Med.* 2022;386(21):1973–1985. [doi:10.1056/NEJMoa2202170](https://doi.org/10.1056/NEJMoa2202170)
+3. Powles T, et al. **Perioperative durvalumab with neoadjuvant chemotherapy in operable bladder cancer (NIAGARA).** *N Engl J Med.* 2024;391(19):1773–1786. [doi:10.1056/NEJMoa2408154](https://doi.org/10.1056/NEJMoa2408154)
+4. Schrag D, et al. **Preoperative treatment of locally advanced rectal cancer (PROSPECT).** *N Engl J Med.* 2023;389(4):322–334. [doi:10.1056/NEJMoa2303269](https://doi.org/10.1056/NEJMoa2303269)
+5. Chalabi M, et al. **Neoadjuvant immunotherapy in locally advanced mismatch repair-deficient colon cancer (NICHE-2).** *N Engl J Med.* 2024;390(21):1949–1958. [doi:10.1056/NEJMoa2400634](https://doi.org/10.1056/NEJMoa2400634)
+6. Tie J, et al. **Circulating tumor DNA analysis guiding adjuvant therapy in stage II colon cancer (DYNAMIC).** *N Engl J Med.* 2022;386(24):2261–2272. [doi:10.1056/NEJMoa2200075](https://doi.org/10.1056/NEJMoa2200075)
+7. Wu YL, et al. **Osimertinib in resected EGFR-mutated non-small-cell lung cancer (ADAURA).** *N Engl J Med.* 2020;383(18):1711–1723. [doi:10.1056/NEJMoa2027071](https://doi.org/10.1056/NEJMoa2027071)
+8. von Minckwitz G, et al. **Trastuzumab emtansine for residual invasive HER2-positive breast cancer (KATHERINE).** *N Engl J Med.* 2019;380(7):617–628. [doi:10.1056/NEJMoa1814017](https://doi.org/10.1056/NEJMoa1814017)
+
+> 引用整理協力：NCCN 2026 各癌別指引、KEYNOTE-522、CheckMate-816、NIAGARA、PROSPECT、NICHE-2、DYNAMIC、ADAURA、KATHERINE (2026/05/11)。

@@ -1,6 +1,6 @@
 ---
 import { siteConfig } from "@/config";
-import { Github, Twitter, Linkedin, MessageCircle } from "@lucide/astro";
+import { Github, Twitter, Linkedin, MessageCircle, Mail } from "@lucide/astro";
 ---
 
 <footer class="border-t border-border mt-20 py-10 px-10 lg:px-20">
@@ -72,6 +72,18 @@ import { Github, Twitter, Linkedin, MessageCircle } from "@lucide/astro";
                         class="text-muted-foreground hover:text-primary transition-colors"
                     >
                         <MessageCircle size={18} />
+                    </a>
+                )
+            }
+            {
+                siteConfig.socials.email && (
+                    <a
+                        href={`mailto:${siteConfig.socials.email}`}
+                        aria-label={`Email ${siteConfig.socials.email}（勘誤／衛教提問／學術合作，不提供個別診療建議）`}
+                        title={`${siteConfig.socials.email}（勘誤／衛教提問／學術合作，不提供個別診療建議）`}
+                        class="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                        <Mail size={18} />
                     </a>
                 )
             }

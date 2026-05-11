@@ -1,0 +1,187 @@
+---
+title: "PET-CT、MRI、CT、超音波怎麼選？癌症影像比較"
+titleEn: "PET-CT vs MRI vs CT vs ultrasound: choosing the right imaging in cancer"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "影像四大工具沒有「最強」只有「最適合」：CT 看肺與腹腔結構與分期、MRI 看軟組織與腦／肝／攝護腺、PET-CT 看全身代謝、超音波看肝與甲狀腺。本文以癌別 × 情境矩陣告訴你「初診分期、追蹤、復發確認」分別該做哪一個。"
+tags: ["影像", "PET-CT", "MRI", "CT", "超音波", "衛教"]
+medical: true
+medicalCondition: "癌症影像檢查 (Imaging in oncology)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科專科醫師"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "PET-CT 是「最厲害」的影像嗎？要不要自費做？"
+    a: "PET-CT 強在「**全身代謝**」一次掃完，特別適合淋巴瘤、頭頸癌、肺癌、食道癌、不明原發部位的轉移搜尋。但它**不擅長腦、肝臟小病灶、攝護腺小區域**（這些有專屬的 MRI 模組），而且輻射劑量高（10–15 mSv，相當於 4–5 年自然背景）。健保僅給付特定癌別在特定時機，自費約新台幣 2.5–4 萬。**不是每個癌都需要 PET-CT**——早期乳癌、早期大腸癌、初期攝護腺癌反而以 MRI 或標準 CT 更精準。"
+  - q: "聽說 MRI 沒輻射，是不是比 CT 安全？"
+    a: "MRI 確實沒有游離輻射，使用磁場與射頻訊號。但 MRI 的限制是：(1) 檢查時間 30–60 分鐘，需要靜止，密閉空間（幽閉恐懼者困難），(2) 體內有非 MRI-safe 金屬植入物（早期心臟節律器、人工耳蝸、部分血管支架）為禁忌，(3) 重度腎功能不全者打 gadolinium 對比劑有 NSF 風險，(4) 費用較高、健保排程較久。**「沒輻射」不等於「絕對安全」**，仍需依個別情境權衡。"
+  - q: "肝臟有腫塊到底做超音波、CT 還是 MRI？"
+    a: "**B/C 肝帶原或肝硬化的長期追蹤**：每 6 個月一次肝臟超音波 + AFP（AASLD 指引）。**超音波發現可疑病灶**：依大小分流——< 1 cm 短期追蹤；≥ 1 cm → 上腹**動態 CT 或 MRI**，按 LI-RADS 分類。**肝細胞癌的確診**：MRI 對 < 2 cm 的小肝癌敏感度優於 CT，特別是搭配肝特異性對比劑 Gd-EOB-DTPA（保栓通酸）。**轉移性肝腫瘤**：CT 已足以分期，MRI 用在 CT 模稜兩可、要動手術前的精準定位。"
+  - q: "做完 PET-CT 結果有「亮點」是不是就是癌？"
+    a: "不是。PET-CT 的 FDG 攝取（SUVmax 升高）是「**糖代謝旺盛**」的訊號，**癌、發炎、感染、肉芽腫、結核、術後修復、棕色脂肪、肌肉收縮都會亮**。臨床上要看：(1) 形態與位置是否符合腫瘤特徵，(2) SUVmax 與背景比值，(3) 是否合併解剖學異常，(4) 隨時間變化。**單一「亮點」不等於確診**，多數需要切片或追蹤影像確認。"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+**影像四大工具沒有「最強」只有「最適合」。** CT 是癌症分期的工作馬，全身可掃、速度快、解剖細節清；MRI 在腦、肝臟、攝護腺、骨盆腔軟組織比 CT 更精準；PET-CT 提供全身代謝資訊，適合淋巴瘤、頭頸癌、肺癌的全身分期；超音波則是肝、甲狀腺、淋巴結的第一線無輻射工具。本文以「癌別 × 情境（初診分期 / 治療反應 / 追蹤 / 復發）」矩陣告訴你該選哪一個、健保給付邏輯、輻射劑量比較，以及做完之後怎麼讀懂報告關鍵字。
+
+<Callout type="note" title="閱讀對象">
+  本文設定讀者為剛要排癌症影像檢查的病友、家屬，以及第一線轉介的醫療同仁。實際檢查選擇請依主治醫師臨床判斷；本文不取代個別醫療決策。
+</Callout>
+
+<Divider />
+
+## 四大影像工具比較表
+
+| 工具                | 原理              | 強項                             | 弱項                         | 輻射劑量（mSv） | 約檢查時間            | 自費價（台幣） |
+| ------------------- | ----------------- | -------------------------------- | ---------------------------- | --------------- | --------------------- | -------------- |
+| **CT（電腦斷層）**  | X 光 + 電腦重組   | 肺、腹腔、結構分期、緊急         | 軟組織對比差、有輻射         | 5–15            | 5–10 分鐘             | 5,000–15,000   |
+| **MRI（磁振造影）** | 磁場 + 射頻       | 腦、肝、攝護腺、骨盆腔、脊髓     | 慢、密閉、金屬植入物禁忌     | 0               | 30–60 分鐘            | 15,000–30,000  |
+| **PET-CT**          | 18F-FDG 代謝 + CT | 全身代謝、淋巴瘤、頭頸癌、肺癌   | 腦、肝小灶、攝護腺差，輻射高 | 10–15           | 90–120 分鐘（含靜置） | 25,000–40,000  |
+| **超音波**          | 高頻聲波          | 肝、甲狀腺、淋巴結、即時引導切片 | 操作者依賴、骨骼遮蔽         | 0               | 10–30 分鐘            | 1,500–5,000    |
+
+<Callout type="warning" title="輻射劑量參考">
+  1 mSv 約相當於 6 個月台灣自然背景輻射；單次胸部 CT 約 5–7 mSv；PET-CT 約 10–15
+  mSv（FDG 注射 5–7 mSv + CT 部分 5–8
+  mSv）。對年輕、需多次掃描的病人，**累積劑量應由放射科醫師依 ALARA 原則調整**。
+</Callout>
+
+## 癌別 × 情境矩陣
+
+### 肺癌
+
+| 情境           | 首選                          | 備註                              |
+| -------------- | ----------------------------- | --------------------------------- |
+| 低劑量 CT 篩檢 | LDCT                          | 30 包年 + 50–80 歲（USPSTF 2021） |
+| 初診分期       | **胸腹 CT + PET-CT + 腦 MRI** | PET-CT 對縱膈淋巴結與遠端轉移敏感 |
+| 化放療反應     | CT（每 2 週期）               | 套用 RECIST 1.1                   |
+| 復發追蹤       | CT                            | 異常時加 PET-CT 鑑別              |
+
+### 肝細胞癌（HCC）
+
+| 情境                                      | 首選                          |
+| ----------------------------------------- | ----------------------------- |
+| 高風險族群（B/C 肝、肝硬化）每 6 個月追蹤 | **超音波 + AFP**              |
+| 超音波可疑（≥ 1 cm）                      | **動態 CT 或 MRI（LI-RADS）** |
+| < 2 cm 小肝癌、需精準定位                 | **MRI + Gd-EOB-DTPA**         |
+| 治療反應（TACE、消融、標靶）              | mRECIST + 動態 CT / MRI       |
+
+### 乳癌
+
+| 情境                  | 首選                                      |
+| --------------------- | ----------------------------------------- |
+| 篩檢                  | 乳房攝影 ± 超音波（緻密乳房）             |
+| 初診分期（早期）      | 乳房 MRI + 腋下超音波 ± 胸 CT             |
+| 高風險族群（BRCA1/2） | 乳房 MRI（30 歲起）                       |
+| 局部晚期、第三期      | 乳房 MRI + 胸腹 CT + 骨骼掃描（± PET-CT） |
+| 治療反應              | 乳房 MRI                                  |
+
+### 攝護腺癌
+
+| 情境                 | 首選                           |
+| -------------------- | ------------------------------ |
+| PSA 升高初評         | **多參數 MRI（mpMRI）**        |
+| 切片前               | mpMRI 引導靶切片（PI-RADS）    |
+| 中高風險分期         | mpMRI + 骨掃 ± **PSMA PET-CT** |
+| 生化復發（PSA 再升） | **PSMA PET-CT** 優於骨掃 + CT  |
+
+### 大腸直腸癌
+
+| 情境               | 首選                     |
+| ------------------ | ------------------------ |
+| 篩檢               | FIT → 大腸鏡             |
+| 直腸癌分期（T、N） | **直腸 MRI + 胸腹 CT**   |
+| 大腸癌分期         | 胸腹 CT（PET-CT 不常規） |
+| 治療反應           | CT                       |
+| 復發監測           | CT + CEA                 |
+
+### 淋巴瘤
+
+| 情境                       | 首選                                |
+| -------------------------- | ----------------------------------- |
+| 初診分期                   | **PET-CT（FDG）+ 骨髓檢查**         |
+| 治療反應（中期、療程結束） | **PET-CT + Deauville score**        |
+| 追蹤                       | CT（多數情境）；高復發風險再 PET-CT |
+
+### 頭頸癌、食道癌、胃癌
+
+- **頭頸癌**：頸部 MRI + 胸腹 CT + **PET-CT**（適合搜尋未知原發、淋巴結轉移）
+- **食道癌**：胸腹 CT + **PET-CT** + EUS（食道內視鏡超音波）
+- **胃癌**：胸腹 CT + EUS（早期）；PET-CT 不常規
+
+### 不明原發部位（CUP）
+
+- **首選 PET-CT**：搜尋原發灶、評估全身轉移範圍。
+
+## 健保給付邏輯（2026 年）
+
+- **CT**：多數癌別初診分期、追蹤皆有給付。腦轉移搜尋有條件給付。
+- **MRI**：腦腫瘤、攝護腺、肝臟（依 LI-RADS）、骨盆腔（婦科、直腸）有給付；其他需事前審查。
+- **PET-CT**：僅給付特定癌別在特定時機（淋巴瘤分期與療效評估、頭頸癌、食道癌、肺癌等），其餘須自費。
+- **超音波**：腹部、甲狀腺、乳房、頸部淋巴結、心臟均有給付。
+
+<Callout type="tip" title="健保給付條件常變動">
+  給付條件以健保署公告為準，且**會隨年度調整**。實務上請與主治醫師、放射科確認當下的給付規範與排程時間。本文僅提供原則性介紹。
+</Callout>
+
+## 影像對比劑的注意事項
+
+| 對比劑                   | 用於                   | 主要禁忌                                      | 風險                                                |
+| ------------------------ | ---------------------- | --------------------------------------------- | --------------------------------------------------- |
+| **碘對比劑（CT 用）**    | 動態 CT、CT 血管攝影   | 碘過敏、嚴重氣喘、嚴重腎功能不全（eGFR < 30） | 過敏反應、對比劑腎病（CIN）                         |
+| **Gadolinium（MRI 用）** | 動態 MRI、肝特異性 MRI | 嚴重腎功能不全（eGFR < 30）                   | 腎源性系統性纖維化（NSF，新一代藥劑風險已大幅下降） |
+| **超音波微氣泡**         | 對比增強超音波（CEUS） | 嚴重心肺疾病                                  | 過敏反應（罕見）                                    |
+| **FDG（PET-CT）**        | 葡萄糖代謝顯像         | 糖尿病控制不良（影響攝取）                    | 輻射；檢查前需禁食 6 小時                           |
+
+## 哪些情境不適合做影像？
+
+- **健康無症狀人士做「全身癌症篩檢」**：偽陽性與輻射累積遠超過實際救人效益（USPSTF、NCCN、台灣國健署均不建議）。
+- **腎功能極差**：要慎用碘對比與 gadolinium。
+- **懷孕期間**：CT、PET-CT 屬相對禁忌；除非有不可延遲的臨床需要，否則延後或改用 MRI（無對比劑）/ 超音波。
+- **植入未經 MRI 認證的金屬物**：早期心臟節律器、人工耳蝸、部分血管支架、彈片。
+
+## 怎麼讀懂報告關鍵字
+
+<Steps>
+  <div>
+    ### 看「印象 / Impression」段
+
+    報告最後一段是放射科醫師的綜合判讀。先看這段，再回去比對細項。
+
+  </div>
+  <div>
+    ### 看「對比前後變化」
+
+    與前次比較是「縮小 / 穩定 / 增大 / 新出現病灶」，這比單次絕對大小更重要。RECIST 1.1 用「target lesion 直徑加總」判讀治療反應。
+
+  </div>
+  <div>
+    ### 注意「可疑、待追蹤、無法排除」字眼
+
+    這代表放射科醫師沒有 100% 把握，需要：(1) 另一個影像確認，(2) 短期追蹤，或 (3) 切片。
+
+  </div>
+  <div>
+    ### PET-CT 看 SUVmax 與形態並用
+
+    SUVmax > 2.5 多數有意義，但形態（圓形、邊緣銳利 vs. 模糊）與位置（腫瘤可能位、肺門淋巴結 vs. 縱膈良性肉芽腫）是判讀關鍵。
+
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Eisenhauer EA, et al. **New response evaluation criteria in solid tumours: revised RECIST guideline (version 1.1).** _Eur J Cancer._ 2009;45(2):228–247. [doi:10.1016/j.ejca.2008.10.026](https://doi.org/10.1016/j.ejca.2008.10.026)
+2. Marrero JA, et al. **Diagnosis, Staging, and Management of Hepatocellular Carcinoma: 2018 Practice Guidance by AASLD.** _Hepatology._ 2018;68(2):723–750. [doi:10.1002/hep.29913](https://doi.org/10.1002/hep.29913)
+3. Cheson BD, et al. **Recommendations for initial evaluation, staging, and response assessment of Hodgkin and non-Hodgkin lymphoma: the Lugano classification.** _J Clin Oncol._ 2014;32(27):3059–3068. [doi:10.1200/JCO.2013.54.8800](https://doi.org/10.1200/JCO.2013.54.8800)
+4. Eiber M, et al. **Prostate Cancer Molecular Imaging Standardized Evaluation (PROMISE): proposed miTNM classification for the interpretation of PSMA-ligand PET/CT.** _J Nucl Med._ 2018;59(3):469–478. [doi:10.2967/jnumed.117.198119](https://doi.org/10.2967/jnumed.117.198119)
+5. Mandelblatt JS, et al. **Collaborative modeling of the benefits and harms associated with different US breast cancer screening strategies.** _Ann Intern Med._ 2016;164(4):215–225. [doi:10.7326/M15-1536](https://doi.org/10.7326/M15-1536)
+6. American College of Radiology. **LI-RADS v2018 CT/MRI Manual.** ACR. [https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/LI-RADS](https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/LI-RADS)
+7. American College of Radiology. **PI-RADS v2.1.** ACR. [https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/PI-RADS](https://www.acr.org/Clinical-Resources/Reporting-and-Data-Systems/PI-RADS)
+
+> 引用整理協力：NCCN、ACR LI-RADS / PI-RADS、AASLD、Lugano classification、台灣健保署影像給付規範 (2026/05/11)。
