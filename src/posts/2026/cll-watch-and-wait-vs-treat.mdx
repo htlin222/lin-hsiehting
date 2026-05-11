@@ -1,0 +1,217 @@
+---
+title: "慢性淋巴性白血病（CLL）什麼時候要治療？BTK 與 venetoclax 時代"
+titleEn: "Chronic lymphocytic leukemia: when to watch, when to treat"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "CLL 早期診斷不等於要立刻治療：IWCLL 2018 列出明確的治療啟動指標。本文整理 Rai/Binet 分期、del(17p)/TP53 與 IGHV 突變如何挑藥，以及 ibrutinib、acalabrutinib、zanubrutinib 與 venetoclax + obinutuzumab 的差別、Richter 轉化警訊。"
+tags: ["CLL", "慢性淋巴性白血病", "ibrutinib", "venetoclax", "BTK", "Richter", "衛教"]
+medical: true
+medicalCondition: "慢性淋巴性白血病 (Chronic lymphocytic leukemia, CLL)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "醫師說先觀察可以嗎？不治療會不會惡化？"
+    a: "可以。IWCLL 2018 指引明確指出：早期 Rai 0–II 或 Binet A 期、且沒有任何治療啟動指標的 CLL 病人，提早給藥並不會延長存活，反而增加副作用。建議每 3–6 個月追蹤血液學、淋巴結與全身症狀；一旦出現進行性血球下降、明顯淋巴結腫大、B 症狀或淋巴球倍增時間 < 6 個月才開始治療。"
+  - q: "ibrutinib 要吃一輩子嗎？有沒有可能停藥？"
+    a: "BTK 抑制劑（ibrutinib、acalabrutinib、zanubrutinib）目前的標準用法是持續服用直到疾病惡化或無法耐受；多數病人需長期服藥。固定療程的選項是 venetoclax + obinutuzumab（CLL14）共 12 個月療程，或 venetoclax + rituximab（MURANO）24 個月療程，這兩條路允許治療結束後停藥追蹤。實際選擇要看 del(17p)/TP53、IGHV 與心律共病。"
+  - q: "Richter 轉化是什麼？要怎麼提早發現？"
+    a: "Richter 轉化指 CLL 演變成更具侵襲性的淋巴瘤，最常見為瀰漫性大 B 細胞淋巴瘤（DLBCL），發生率約 2–10%。警訊包括：單一淋巴結快速腫大、發燒/盜汗/體重下降等 B 症狀、LDH 急速上升、血鈣升高。一旦懷疑要立刻安排 PET-CT 與該淋巴結切片，確診後治療策略與 DLBCL 類似，必要時轉介 CAR-T 或臨床試驗。"
+doi: "10.5281/zenodo.20115212"
+conceptDoi: "10.5281/zenodo.20115211"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+慢性淋巴性白血病（CLL）是一種惰性 B 細胞腫瘤，**確診不等於要立刻治療**。約三分之一的病人一輩子不需要用藥，只需定期追蹤。但對需要治療的族群，過去十年的格局已被 BTK 抑制劑（ibrutinib、acalabrutinib、zanubrutinib）與 BCL-2 抑制劑 venetoclax 改寫——傳統 FCR、BR 化療免疫療法已退居二線。本文整理 IWCLL 2018 治療啟動指標、del(17p)/TP53 與 IGHV 突變如何挑藥、四個主要方案的差別，以及病人最常問的 Richter 轉化與健保給付。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知 CLL、正在「觀察等待」階段或準備開始第一線治療的病友與家屬，以及希望快速回顧 BTK / venetoclax 時代治療地圖的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼「先觀察」是 CLL 的標準做法？
+
+CLL 是骨髓與血液中的成熟 B 淋巴球無法正常凋亡而堆積。多數病人是健檢時血液檢查偶然發現「淋巴球數偏高」，沒有任何不舒服。1980 年代以來多個隨機試驗顯示：在沒有症狀的 CLL 病人提早給化療**不會延長存活**，反而帶來副作用與感染風險。因此 IWCLL 2018 國際共識仍將「觀察等待（watch and wait）」列為早期、無症狀 CLL 的標準照顧。
+
+### 兩個常用分期系統
+
+| 系統 | 分期 | 定義（簡述） | 中位存活（歷史） |
+|---|---|---|---|
+| **Rai** | 0 | 僅淋巴球增多 | > 10 年 |
+|  | I | + 淋巴結腫大 | 約 9 年 |
+|  | II | + 脾或肝腫大 | 約 7 年 |
+|  | III | + 貧血（Hb < 11） | 約 5 年 |
+|  | IV | + 血小板低下（< 100） | 約 5 年 |
+| **Binet** | A | < 3 個淋巴結區受侵犯 | > 10 年 |
+|  | B | ≥ 3 個淋巴結區 | 約 7 年 |
+|  | C | 貧血或血小板低下 | 約 5 年 |
+
+<Callout type="tip" title="分期≠要治療">
+Rai III–IV 或 Binet C 雖然分期較高，**也要先看是不是 CLL 直接造成的血球低下**（而非自體免疫溶血、脾隔離、化療後骨髓抑制等其他原因），才符合啟動治療的條件。
+</Callout>
+
+### IWCLL 2018 啟動治療的指標
+
+只要符合下列**任一項**，就算進入「需要治療」階段：
+
+1. **進行性骨髓衰竭**：Hb < 10 g/dL 或血小板 < 100 × 10⁹/L，且為 CLL 直接侵犯骨髓造成。
+2. **巨大或進行性脾腫大**：脾下緣超出左肋緣 6 公分以上、或快速進展。
+3. **巨大或進行性淋巴結腫大**：單一淋巴結 ≥ 10 公分、或快速進展。
+4. **淋巴球倍增時間 < 6 個月**（且起始淋巴球 ≥ 30 × 10⁹/L）。
+5. **自體免疫併發症**（溶血性貧血、免疫性血小板低下）對類固醇等標準治療無反應。
+6. **症狀性器官侵犯**（皮膚、腎、肺等少見部位）。
+7. **B 症狀**：6 個月內體重下降 ≥ 10%、嚴重疲倦影響日常、發燒 > 38°C 超過 2 週無感染證據、夜間盜汗 > 1 個月。
+
+只是「淋巴球很高」（即使到 200 × 10⁹/L）本身**不是**啟動治療的理由——CLL 病人很少因為高白血球發生高黏滯症候群。
+
+## 治療前必做的三項分子檢測
+
+選藥之前，**del(17p)/TP53 mutation** 與 **IGHV mutation status** 是兩個會改變第一線決策的關鍵指標。
+
+| 標誌 | 比例（初診） | 臨床意義 |
+|---|---|---|
+| **del(17p) / TP53 mutation** | 5–10% | 對化療免疫療法（FCR、BR）反應差，**第一線就要用 BTK 或 venetoclax 為主的標靶治療**。 |
+| **IGHV unmutated**（同一性 ≥ 98%） | 50–60% | 預後較差，傳統化療免疫療法效果有限，BTK / venetoclax 較有優勢。 |
+| **IGHV mutated**（< 98%） | 40–50% | 預後較好，部分仍可考慮固定療程 venetoclax + obinutuzumab。 |
+| **複雜核型**（≥ 3 個異常） | 約 15% | 預後較差，治療反應偏短。 |
+
+<Callout type="warning" title="del(17p)/TP53 不能用 FCR/BR">
+帶有 del(17p) 或 TP53 突變的 CLL 病人，傳統 FCR（fludarabine + cyclophosphamide + rituximab）的中位無惡化存活只有 11–12 個月，且 5 年存活率低於 40%。這類病人**第一線就應該採用 BTK 抑制劑或 venetoclax 為主的方案**，並儘早納入臨床試驗或 CAR-T 評估。
+</Callout>
+
+## 第一線治療選項：BTK vs. venetoclax
+
+2024–2026 年 NCCN 與 ESMO 指引都把第一線分成兩條主軸：**持續服用的 BTK 抑制劑** 或 **固定療程的 venetoclax + obinutuzumab**。
+
+### 主要試驗與藥物比較
+
+| 方案 | 試驗 | n | mPFS（一線） | 心房顫動 | 適合誰 |
+|---|---|---|---|---|---|
+| **Ibrutinib**（一代 BTKi） | RESONATE-2、E1912 | 269、529 | 約 70 mo | 12–16% | 既有用藥經驗多，但心律副作用最高 |
+| **Acalabrutinib**（二代 BTKi） | ELEVATE-TN | 535 | 未達 mPFS，4 年 PFS 78% | 4–6% | 心律共病者首選 BTKi 之一 |
+| **Zanubrutinib**（二代 BTKi） | SEQUOIA、ALPINE | 479、652 | 30-mo PFS 86%（SEQUOIA） | 2–5% | 對心血管事件更安全，ALPINE 直接優於 ibrutinib |
+| **Venetoclax + obinutuzumab**（12 個月固定療程） | CLL14 | 432 | 約 76 mo | n/a | 想要有「結束日期」、能耐受腫瘤溶解症候群風險者 |
+
+ALPINE（NEJM 2023）是少數的 BTKi 對 BTKi 直接比較試驗：zanubrutinib vs. ibrutinib，2 年 PFS 79.5% vs. 67.3%（HR 0.65），心房顫動 5.2% vs. 13.3%。CLL14 七年追蹤（Fischer NEJM 2019 + 後續更新）顯示固定 12 個月 venetoclax + obinutuzumab 在 IGHV 突變族群可達多年免治療期。
+
+<Callout type="warning" title="跨試驗比較的限制">
+RESONATE-2、ELEVATE-TN、SEQUOIA、CLL14 各試驗的族群（年齡、體能狀態、是否含 del(17p)、評估時間點）不一致；上述數字只能作為粗略對照，不能用於排序選藥。實際選擇需要主治醫師依個別 del(17p)/TP53、IGHV、心律共病、用藥習慣與健保給付狀況綜合判斷。
+</Callout>
+
+## 怎麼依病人狀況挑藥？
+
+<Steps>
+  <div>
+    ### 沒有 del(17p)/TP53、IGHV mutated、年紀較長
+
+    **首選：venetoclax + obinutuzumab（12 個月固定療程）**。CLL14 顯示 6 年仍有約半數病人保持無惡化，且療程結束後可停藥追蹤，對年長病人是「打完就結束」的吸引力選項。前提是腎功能與腫瘤溶解症候群風險可控（venetoclax 開始時需要逐步爬升劑量並監測尿酸、磷、鉀）。
+  </div>
+  <div>
+    ### 有 del(17p)/TP53 突變
+
+    **避開化療免疫療法**。建議直接用持續服用的 BTK 抑制劑（acalabrutinib 或 zanubrutinib 較常作為新案例的首選），或考慮 venetoclax 為主之方案。可同時評估臨床試驗（CAR-T、BTK 降解劑）。
+  </div>
+  <div>
+    ### 有心血管共病或心房顫動病史
+
+    **避開 ibrutinib**。ELEVATE-RR（acalabrutinib head-to-head ibrutinib）與 ALPINE（zanubrutinib head-to-head ibrutinib）都顯示二代 BTKi 心房顫動與高血壓風險較低。已在使用抗凝劑的病人也要評估出血風險（BTKi 與抗血小板/抗凝藥併用會增加出血）。
+  </div>
+  <div>
+    ### 復發或難治
+
+    **MURANO** 證實 venetoclax + rituximab 24 個月療程在復發 CLL 比 BR 更佳，4 年 PFS 57.3% vs. 4.6%。若第一線用 BTKi 後復發，可換到 venetoclax 方案；反之亦然。雙重耐藥（BTKi + venetoclax 都失效）者，建議評估 CAR-T（lisocabtagene maraleucel，TRANSCEND CLL 004）或非共價 BTK 抑制劑（pirtobrutinib）。
+  </div>
+</Steps>
+
+## 適應症、禁忌症、副作用速覽
+
+### Ibrutinib / acalabrutinib / zanubrutinib（BTK 抑制劑）
+
+- **常見副作用**：腹瀉、肌肉關節痛、瘀青、感染、疲倦、皮疹。
+- **重要心血管事件**：心房顫動（ibrutinib 12–16%、acalabrutinib 4–6%、zanubrutinib 2–5%）、高血壓、罕見但致命的心室性心律不整。
+- **出血風險**：與抗凝劑或抗血小板藥併用會放大；牙科或手術前 3–7 天需停藥。
+- **禁忌**：嚴重肝功能異常、活動性出血、強力 CYP3A 抑制劑併用（如 ketoconazole）。
+- **適應症**：未治療或復發 CLL／SLL；台灣健保 ibrutinib 給付限第一線 del(17p) 或 17p 缺失且 CD20 抗體治療失敗者，acalabrutinib、zanubrutinib 給付規定請以最新公告為準。
+
+### Venetoclax + obinutuzumab / rituximab
+
+- **常見副作用**：嗜中性白血球下降（第 3–4 級約 50%）、輸注反應（obinutuzumab 第一劑）、腹瀉、上呼吸道感染。
+- **腫瘤溶解症候群（TLS）**：venetoclax 開始 5 週內需週週爬升劑量並住院或門診密集監測尿酸、磷、鉀、肌酐酸；高 TLS 風險者需更密集監測。
+- **B 型肝炎再活化**：開始抗 CD20 治療前需檢測 HBsAg / anti-HBc，必要時預防性抗病毒。
+- **禁忌**：嚴重肝腎功能異常未經調整劑量、活動性嚴重感染、對成分過敏。
+
+### 一般禁忌與謹慎使用
+
+- 妊娠與授乳期應避免。
+- 活動性感染需先控制。
+- 計畫接受外科手術或拔牙：BTKi 至少術前 3–7 天停藥。
+- 計畫接種疫苗：盡量在開始治療前完成，治療中可打不活化疫苗，避免活性疫苗。
+
+## Richter 轉化：CLL 病人最該警覺的併發症
+
+<Callout type="warning" title="Richter 轉化是急症">
+Richter 轉化指 CLL 演變成更具侵襲性的淋巴瘤，最常見為瀰漫性大 B 細胞淋巴瘤（DLBCL，占 90%），少數為何杰金氏淋巴瘤。累積發生率約 2–10%，BTKi 時代並未明顯下降。一旦發生，**中位存活只有 8–12 個月**，遠較單純 CLL 差。
+
+警訊：
+- 單一淋巴結快速腫大、與其他部位淋巴結變化不成比例
+- 持續發燒、夜間盜汗、6 個月內體重下降 ≥ 10%
+- LDH 急速上升（常 > 2 倍正常上限）
+- 高血鈣
+
+**處置：立即安排全身 PET-CT（找 SUVmax 最高的那顆切片）、淋巴結組織切片**確診。確診後治療策略類似 DLBCL（R-CHOP 或 R-EPOCH），多數需要評估 CAR-T 或臨床試驗。請主動告知主治醫師，不要拖。
+</Callout>
+
+## CAR-T 與新藥：難治 CLL 的選項
+
+對於 BTKi + venetoclax 雙重耐藥的 CLL，過去幾年最重要的進展是 **lisocabtagene maraleucel**（liso-cel，CD19 CAR-T）。TRANSCEND CLL 004 第一/二期試驗（Lancet 2024）顯示完全反應率約 18–20%、整體反應率約 47%；2024 年 FDA 加速核准用於 ≥ 2 線、含 BTKi 與 venetoclax 失效的 CLL／SLL。
+
+另一條路是 **非共價 BTK 抑制劑 pirtobrutinib**（BRUIN 試驗）：對於 BTKi 共價結合位 C481S 突變的耐藥 CLL，仍有約 70% 反應率，已成為共價 BTKi 失效後的橋接選項。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 接受診斷不等於接受治療
+
+    多數早期 CLL 可以「觀察等待」數年甚至一輩子。**主動詢問主治醫師：我目前符合 IWCLL 治療啟動指標嗎？**如果沒有，就放心追蹤（通常每 3–6 個月抽血、看淋巴結與症狀）。
+  </div>
+  <div>
+    ### 治療前確認三件事
+
+    1. 是否做了 **del(17p) FISH** 與 **TP53 突變** 檢測？
+    2. 是否做了 **IGHV 突變狀態**？
+    3. 心血管共病評估（心電圖、血壓、有無心房顫動病史）？是否合併使用抗凝或抗血小板藥？
+
+    這三件事直接影響「該用 BTKi 還是 venetoclax」、「該用 ibrutinib 還是 acalabrutinib/zanubrutinib」、「該不該採固定療程」。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我目前是 Rai 幾期 / Binet 哪一級？符合 IWCLL 啟動治療指標嗎？
+    2. 我有沒有 del(17p) 或 TP53 突變？IGHV 突變狀態？
+    3. 第一線您建議 BTKi 還是 venetoclax + obinutuzumab？為什麼？
+    4. 健保給付與自費差異？台灣目前 ibrutinib / acalabrutinib / zanubrutinib / venetoclax 給付規定？
+    5. 治療期間怎麼監測心律、感染、TLS？
+    6. 如果之後復發或出現 Richter 轉化警訊，怎麼處置？
+    7. 是否適合納入 CAR-T 或臨床試驗？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Hallek M, Cheson BD, Catovsky D, et al. **iwCLL guidelines for diagnosis, indications for treatment, response assessment, and supportive management of CLL.** *Blood.* 2018;131(25):2745-2760. [doi:10.1182/blood-2017-09-806398](https://doi.org/10.1182/blood-2017-09-806398)
+2. Fischer K, Al-Sawaf O, Bahlo J, et al. **Venetoclax and Obinutuzumab in Patients with CLL and Coexisting Conditions** (CLL14). *N Engl J Med.* 2019;380(23):2225-2236. [doi:10.1056/NEJMoa1815281](https://doi.org/10.1056/NEJMoa1815281)
+3. Seymour JF, Kipps TJ, Eichhorst B, et al. **Venetoclax–Rituximab in Relapsed or Refractory Chronic Lymphocytic Leukemia** (MURANO). *N Engl J Med.* 2018;378(12):1107-1120. [doi:10.1056/NEJMoa1713976](https://doi.org/10.1056/NEJMoa1713976)
+4. Sharman JP, Egyed M, Jurczak W, et al. **Acalabrutinib with or without obinutuzumab versus chlorambucil and obinutuzumab for treatment-naive chronic lymphocytic leukaemia** (ELEVATE-TN). *Lancet.* 2020;395(10232):1278-1291. [doi:10.1016/S0140-6736(20)30262-2](https://doi.org/10.1016/S0140-6736(20)30262-2)
+5. Brown JR, Eichhorst B, Hillmen P, et al. **Zanubrutinib or Ibrutinib in Relapsed or Refractory Chronic Lymphocytic Leukemia** (ALPINE). *N Engl J Med.* 2023;388(4):319-332. [doi:10.1056/NEJMoa2211582](https://doi.org/10.1056/NEJMoa2211582)
+6. Tam CS, Brown JR, Kahl BS, et al. **Zanubrutinib versus bendamustine and rituximab in untreated chronic lymphocytic leukaemia and small lymphocytic lymphoma** (SEQUOIA). *Lancet Oncol.* 2022;23(8):1031-1043. [doi:10.1016/S1470-2045(22)00293-5](https://doi.org/10.1016/S1470-2045(22)00293-5)
+7. Byrd JC, Brown JR, O'Brien S, et al. **Ibrutinib versus Ofatumumab in Previously Treated Chronic Lymphoid Leukemia** (RESONATE). *N Engl J Med.* 2014;371(3):213-223. [doi:10.1056/NEJMoa1400376](https://doi.org/10.1056/NEJMoa1400376)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

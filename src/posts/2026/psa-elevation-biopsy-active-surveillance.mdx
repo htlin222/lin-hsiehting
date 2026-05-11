@@ -1,0 +1,238 @@
+---
+title: "PSA 升高就要切片嗎？攝護腺癌主動監測適合誰"
+titleEn: "PSA elevation: when to biopsy and active surveillance criteria"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "PSA 介於 4–10 ng/mL 多數不是攝護腺癌；2018 NEJM PRECISION 試驗顯示 MRI-targeted biopsy 對臨床顯著癌的偵測率優於系統性切片；ProtecT 15 年數據顯示低風險病人主動監測 OS 與積極性治療相當。本文整理切片時機、Gleason 分級與主動監測適應對象。"
+tags: ["攝護腺癌", "PSA", "主動監測", "Gleason", "MRI", "USPSTF", "衛教"]
+medical: true
+medicalCondition: "侷限性攝護腺癌 (Localized prostate cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "PSA 6.5 一定要切片嗎？"
+    a: "不一定。PSA 4–10 ng/mL 屬於灰色地帶，多數並非攝護腺癌。2018 年 NEJM PRECISION 試驗（n = 500）建議先做多參數 MRI（mpMRI）：PI-RADS 1–2 可避免切片（約 28% 病人因此免去），PI-RADS 3–5 則行 MRI-targeted biopsy，臨床顯著癌（Gleason ≥ 3+4）偵測率 38% 優於傳統系統性切片的 26%。實際決策仍須與泌尿科醫師討論年齡、家族史、PSA 速率與肛門指診結果。"
+  - q: "主動監測會不會錯過治療時機？"
+    a: "在嚴格篩選對象下不會。ProtecT 第三期試驗追蹤 15 年（NEJM 2023, n = 1643）顯示低風險局限性攝護腺癌病人，主動監測組與根除性手術／放射治療組的攝護腺癌特異存活率（97% vs. 98% vs. 97%）與整體存活率均無顯著差異；雖然主動監測組轉移率較高（9.4% vs. 4.7% vs. 5.0%），但因可隨時轉為積極治療，整體死亡風險未升高。關鍵是規律追蹤 PSA、定期 mpMRI 與重複切片。"
+  - q: "Gleason 分數 6 與 Grade Group 1 是什麼意思？"
+    a: "Gleason 分級系統依癌細胞分化程度給 1–5 分，取最常見與次常見兩個型態相加得 Gleason score（如 3+3=6）。2014 年 ISUP 改為 Grade Group (GG) 1–5：GG1 = Gleason 3+3=6（低風險，預後最好），GG2 = 3+4=7，GG3 = 4+3=7，GG4 = 8，GG5 = 9–10。GG1 與部分 GG2 是主動監測主要對象；GG3 以上通常建議積極性治療。"
+doi: "10.5281/zenodo.20115200"
+conceptDoi: "10.5281/zenodo.20115199"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+PSA（攝護腺特異抗原）升高最常見的原因不是癌症，而是良性攝護腺肥大、攝護腺發炎或近期射精／騎乘活動。**2018 年 NEJM 公布的 PRECISION 試驗改寫了切片流程**：先以多參數 MRI（mpMRI）分流，PI-RADS 1–2 可暫緩切片，PI-RADS 3–5 才行 MRI-targeted biopsy。同年 USPSTF 將 55–69 歲的 PSA 篩檢由 D（不建議）改為 C（共享決策），強調個別化討論。本文整理 PSA 升高的判讀、切片時機、Gleason Grade Group 與主動監測的適應對象，以及 2023 年 NEJM 公布的 ProtecT 15 年存活資料。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為 PSA 報告異常、被建議切片或剛被告知低風險攝護腺癌的病友與家屬，以及希望快速回顧主動監測收案標準與 ProtecT 15 年數據的同業。所有臨床決策請與您的泌尿科或腫瘤科主治醫師討論。
+</Callout>
+
+<Divider />
+
+## PSA 升高代表什麼？先釐清三個變數
+
+PSA 是攝護腺上皮分泌的醣蛋白，並非癌症專屬。升高的原因依比例約略為：
+
+- **良性攝護腺肥大（BPH）**：年齡越大越常見，占多數
+- **攝護腺發炎（prostatitis）**：可暫時升高數倍至十數倍
+- **近期擾動**：肛門指診後、射精後、騎自行車、導尿
+- **攝護腺癌**：約占 PSA 4–10 ng/mL 病人的 25–30%
+
+| 變數 | 內容 | 臨床意義 |
+|---|---|---|
+| **絕對值** | PSA 4–10 ng/mL 為灰色地帶；> 10 ng/mL 切片陽性率明顯升高 | 單一數值非診斷依據 |
+| **年齡校正（age-adjusted）** | 40s ≤ 2.5；50s ≤ 3.5；60s ≤ 4.5；70s ≤ 6.5 ng/mL | 年輕族群門檻較低 |
+| **PSA 速率（PSA velocity）** | 連續兩年升高 > 0.75 ng/mL/年（或 0.35 在低基準者）視為異常 | 須至少 3 次穩定條件下測得 |
+| **PSA density** | PSA / 攝護腺體積（mL）> 0.15 提高癌症可能 | 需經 MRI 或經直腸超音波估算 |
+| **free / total PSA 比** | < 0.10 偏向惡性；> 0.25 偏向良性 | 4–10 ng/mL 區段較有意義 |
+
+<Callout type="tip" title="PSA 該怎麼追蹤？">
+首次發現 PSA 異常時，建議停止激烈活動、避免近期射精，並於 4–6 週後重測一次以排除暫時性干擾；同步檢查尿液與肛門指診，必要時試一段抗生素或攝護腺發炎評估，再決定是否進入 MRI 流程。
+</Callout>
+
+## 從 PSA 異常到切片：MRI 改寫了流程
+
+2018 年以前的標準做法是「PSA 升高 + 異常指診 → 直接做 12 針系統性經直腸切片」。PRECISION 試驗改寫了這條 SOP：
+
+<Steps>
+  <div>
+    ### Step 1 — 重複 PSA、排除可逆原因
+
+    4–6 週後重測，必要時加做 free/total PSA 比與尿液檢查；發炎或暫時性升高常會自行回降。
+  </div>
+  <div>
+    ### Step 2 — 多參數 MRI（mpMRI）
+
+    PRECISION 試驗（NEJM 2018, n = 500，未曾切片者）以 PI-RADS（Prostate Imaging Reporting and Data System）分級：
+
+    - **PI-RADS 1–2**：可避免切片（28% 病人因此免做）
+    - **PI-RADS 3–5**：行 MRI-targeted biopsy
+
+    結果：MRI 路徑偵測「臨床顯著癌」（Gleason ≥ 3+4）為 **38%**，傳統系統性切片為 26%（P = 0.005）；過度偵測 Gleason 6 比例則由 22% 降至 9%。
+  </div>
+  <div>
+    ### Step 3 — MRI-targeted biopsy
+
+    依 PI-RADS lesion 行融合導引切片（cognitive、software fusion 或 in-bore），每個 lesion 取 2–4 針；部分中心仍會加做系統性切片做為對照，依機構流程略有差異。
+  </div>
+  <div>
+    ### Step 4 — 病理判讀與分期
+
+    依 Gleason Grade Group、陽性針數比例、最大連續癌灶長度（mm）與 PSA、TNM 綜合分風險（NCCN very-low / low / intermediate-favorable / intermediate-unfavorable / high / very-high）。
+  </div>
+</Steps>
+
+<Callout type="warning" title="MRI 不會完全取代切片">
+mpMRI 對 Gleason ≥ 3+4 的偵測敏感度約 88–93%，但仍有偽陰性（特別是前位、移行區小病灶），且確診攝護腺癌仍需病理證實。PI-RADS 1–2 的病人若 PSA 持續上升、PSA density 高或家族史強，仍應與醫師討論再切片。
+</Callout>
+
+## Gleason Grade Group 與風險分層
+
+2014 年 ISUP 共識重新整理 Gleason 分級為 Grade Group（GG）1–5，與 NCCN 風險分類對應：
+
+| Grade Group | Gleason score | 占新診斷比例 | 主要治療選項 |
+|---|---|---|---|
+| **GG1** | 3+3 = 6 | ≈ 30–40% | **主動監測為優先**；選擇性積極性治療 |
+| **GG2** | 3+4 = 7 | ≈ 25–30% | 部分（favorable intermediate, < 50% positive cores, PSA < 10）可主動監測；多數行積極性治療 |
+| **GG3** | 4+3 = 7 | ≈ 10–15% | 根除性手術或放射治療 ± 短期 ADT |
+| **GG4** | 4+4、3+5、5+3 = 8 | ≈ 5–10% | 放射治療 + ADT 18–36 個月；或根除性手術 |
+| **GG5** | 9–10 | ≈ 5% | 多模式治療：RT + ADT ± 加強 ARSI；高風險評估遠端轉移 |
+
+<Callout type="note" title="風險分層不只看 Gleason">
+NCCN 將「低風險」定義為 GG1 + PSA < 10 + cT1–T2a；「very-low」進一步要求 PSA density < 0.15、陽性針數 < 3 且每針 < 50%。Intermediate 又分 favorable / unfavorable，主要看 GG3、PSA 10–20、超過一條件以上等因素，會直接影響治療強度。
+</Callout>
+
+## 主動監測適合誰？
+
+主動監測（active surveillance, AS）不是「不治療」，而是「以規律 PSA、mpMRI 與重複切片監測，發現進展再轉為積極性治療」。GAP-3 國際聯盟（Bratt et al., Eur Urol 2018）整合 15 個 cohort、超過 14,000 名 AS 病人，目前最大規模長期數據。
+
+### 主流收案標準（NCCN 2026 / GAP-3 / ProtecT）
+
+- **GG1（Gleason 6）為主要對象**
+- 部分 **favorable intermediate（GG2，3+4，< 50% positive cores、PSA < 10）**
+- PSA < 10–15 ng/mL；cT1–T2a
+- 預期餘命 ≥ 10 年（也適用於更高年齡的 GG1 病人）
+- 無顯著家族遺傳風險（BRCA2、Lynch 需個別評估）
+
+### 監測頻率（多數機構）
+
+- **PSA**：每 3–6 個月
+- **肛門指診**：每 6–12 個月
+- **mpMRI**：第 1 年、之後每 1–2 年（PRIAS、Movember 共識）
+- **確認性切片**：6–18 個月內進行；之後每 2–5 年（或 MRI 進展時）
+- 部分中心加做 polygenic risk、Decipher 等基因預後檢測
+
+## 主動監測 vs. 根除性手術 vs. 放射治療
+
+ProtecT 試驗（Hamdy et al., NEJM 2023, n = 1643）是目前少數長期、隨機比較三條路徑的大型研究，追蹤中位數 15 年：
+
+| 終點 | 主動監測 | 根除性手術 | 放射治療 |
+|---|---|---|---|
+| 攝護腺癌特異死亡 | 3.1% | 2.2% | 2.9% |
+| 整體存活率 | 78.4% | 78.7% | 77.5% |
+| 遠端轉移 | 9.4% | 4.7% | 5.0% |
+| 局部進展 / 臨床轉變 | 25.9%（多數隨時轉積極性治療） | 較低 | 較低 |
+
+副作用與生活品質：
+
+- **手術組**：尿失禁與性功能障礙最明顯，影響可持續多年
+- **放射治療組**：早期較少尿失禁，但晚期排便不適與腸道症狀比例較高；性功能下降幅度與手術相近
+- **主動監測組**：避免立即副作用，但需承受重複切片與心理負擔；後續轉積極性治療仍會經歷相同副作用
+
+<Callout type="tip" title="ProtecT 試驗的限制">
+納入病人中位年齡 62 歲、PSA 多 4–10 ng/mL、77% 為 Gleason 6（依現代標準屬低風險），且 AS 組多採傳統 PSA 監測（並無常規 mpMRI 與融合切片）。當代主動監測引入 mpMRI 與基因預後檢測後，轉介積極性治療的時機可能更精準。
+</Callout>
+
+## ERSPC 與台灣篩檢策略
+
+ERSPC（European Randomized Study of Screening for Prostate Cancer, NEJM 2009; 後續更新 2014, 2019）追蹤超過 16 年顯示，PSA 篩檢於 55–69 歲族群可降低攝護腺癌死亡風險約 20%，但需付出可觀的過度診斷代價。Cochrane systematic review（Ilic et al., 2013）整合五個 RCT、341,342 名男性，認為 PSA 篩檢對整體死亡率沒有顯著影響、且過度診斷與過度治療負擔明顯。
+
+USPSTF 2018（Grossman et al., JAMA 2018）依此將建議調整為：
+
+- **55–69 歲**：等級 C（個別化共享決策）；需與病人討論潛在獲益（每 1,000 人約 1.3 名避免攝護腺癌死亡）與風險（過度診斷 ≈ 240 人、過度治療相關尿失禁與性功能障礙）
+- **≥ 70 歲**：等級 D（不建議常規篩檢）
+- **< 55 歲**：證據不足，但非裔、家族史、BRCA2 等高風險族群可提早討論
+
+台灣現況：
+
+- 健保**未將 PSA 列入一般成人健檢給付項目**
+- 國健署成人預防保健（40 歲以上）也未含 PSA
+- 多以自費（健檢、自主送驗）或臨床懷疑時送驗
+- 多數泌尿科共識建議 50 歲（家族史 45 歲）後與醫師共享決策
+
+## 適應症、禁忌症與副作用速覽
+
+### 切片適應症（MRI 流程後）
+
+- PI-RADS 3–5 lesion，或 PSA 持續上升 / PSA velocity 升高
+- PSA density > 0.15、free/total PSA < 0.10
+- 異常肛門指診（DRE）
+- 家族史強或帶有 BRCA2 致病性變異
+- 後續主動監測中再評估、進展時再切片
+
+### 切片禁忌與謹慎
+
+- 活動性攝護腺炎或泌尿道感染未控制
+- 嚴重凝血異常或無法暫停抗凝劑
+- 嚴重肛門 / 直腸疾病者考慮經會陰路徑
+- 預期餘命 < 5–10 年且無症狀進展疑慮（衡量獲益）
+
+### 切片可能不良反應
+
+- 出血（血尿、血精、直腸出血）多為輕度
+- 感染（包含敗血症 < 1–3%，經會陰路徑風險較低）
+- 排尿障礙、暫時急性尿滯留
+- 焦慮與心理負擔
+
+### 主動監測常見負擔
+
+- 重複 PSA、MRI、切片帶來的心理壓力
+- 約 25–40% 病人在 5–10 年內轉為積極性治療
+- 確認性切片發現 upgrading（GG2 以上）約 20–30%
+
+<Callout type="warning" title="重要提醒">
+個別病人是否切片、是否進入主動監測、何時轉積極性治療，仍受年齡、共病、家族史、攝護腺體積、PSA 走勢、mpMRI 與分子預後等多項因素影響。本文整理的數字為試驗族群平均值，不能取代與您的泌尿科 / 腫瘤科醫師共同決策。
+</Callout>
+
+## 與主治醫師討論時可帶的問題
+
+<Steps>
+  <div>
+    ### PSA 與 MRI 怎麼看
+    1. 我的 PSA 絕對值、PSA velocity、PSA density 多少？是否做過 free / total PSA？
+    2. 是否該先做 mpMRI 而非直接切片？我的 PI-RADS 分數是？
+    3. 如果 PI-RADS 1–2，多久後重測 PSA / 重做 MRI？
+  </div>
+  <div>
+    ### 病理與風險分層
+    1. 我的 Gleason 與 Grade Group 是？陽性針數比例、最大連續癌灶長度（mm）？
+    2. NCCN 屬於 very-low / low / favorable intermediate / 其他哪一群？
+    3. 是否需要做 Decipher 或其他預後分子檢測？
+  </div>
+  <div>
+    ### 治療選項與監測計畫
+    1. 我適合主動監測嗎？理由與排除條件？
+    2. 若選 AS，PSA / DRE / MRI / 重複切片的時程？
+    3. 根除性手術與放射治療在我的年齡與共病下，副作用差異？
+    4. 健保與自費差別？台灣可用的設備與檢測？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Kasivisvanathan V, Rannikko AS, Borghi M, et al. **MRI-Targeted or Standard Biopsy for Prostate-Cancer Diagnosis** (PRECISION). *N Engl J Med.* 2018;378(19):1767-1777. [doi:10.1056/NEJMoa1801993](https://doi.org/10.1056/NEJMoa1801993)
+2. Hamdy FC, Donovan JL, Lane JA, et al. **Fifteen-Year Outcomes after Monitoring, Surgery, or Radiotherapy for Prostate Cancer** (ProtecT). *N Engl J Med.* 2023;388(17):1547-1558. [doi:10.1056/NEJMoa2214122](https://doi.org/10.1056/NEJMoa2214122)
+3. US Preventive Services Task Force; Grossman DC, Curry SJ, et al. **Screening for Prostate Cancer: USPSTF Recommendation Statement.** *JAMA.* 2018;319(18):1901-1913. [doi:10.1001/jama.2018.3710](https://doi.org/10.1001/jama.2018.3710)
+4. Schröder FH, Hugosson J, Roobol MJ, et al. **Screening and Prostate-Cancer Mortality in a Randomized European Study** (ERSPC). *N Engl J Med.* 2009;360(13):1320-1328. [doi:10.1056/NEJMoa0810084](https://doi.org/10.1056/NEJMoa0810084)
+5. Bratt O, Carlsson S, Holmberg E, et al. **The Movember Foundation's GAP3 Cohort: Global Active Surveillance Project.** *Eur Urol.* 2018;74(4):527-535. [doi:10.1016/j.eururo.2018.04.023](https://doi.org/10.1016/j.eururo.2018.04.023)
+6. Ilic D, Neuberger MM, Djulbegovic M, Dahm P. **Screening for prostate cancer.** *Cochrane Database Syst Rev.* 2013;(1):CD004720. [doi:10.1002/14651858.CD004720.pub3](https://doi.org/10.1002/14651858.CD004720.pub3)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Prostate Cancer (Early Detection, Treatment), 2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 經 Crossref 驗證通過。

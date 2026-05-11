@@ -1,0 +1,261 @@
+---
+title: "腫瘤急症紅旗：上腔靜脈症候群（SVC）與脊髓壓迫（MSCC）"
+titleEn: "Oncologic emergencies: SVC syndrome and malignant spinal cord compression"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "癌症病人若出現臉頸腫脹、頸靜脈擴張，或新的背痛合併下肢無力，可能是上腔靜脈症候群（SVC）或惡性脊髓壓迫（MSCC）。本文整理紅旗症狀、Yu 與 ESCC 分級、影像安排，以及高劑量類固醇、放療、手術與血管支架的時間窗。"
+tags: ["腫瘤急症", "SVC syndrome", "脊髓壓迫", "MSCC", "dexamethasone", "衛教"]
+medical: true
+medicalCondition: "腫瘤急症 (Oncologic emergencies — SVC and MSCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "臉腫、脖子粗，要不要急診？"
+    a: "若是癌症（特別是肺癌、淋巴瘤、胸腺瘤）病人短時間內出現臉部與頸部腫脹、頸靜脈與胸壁靜脈擴張、躺下加重、合併喘鳴、聲音沙啞或意識改變，應立刻急診評估上腔靜脈症候群（SVC）。Yu 分級 4–5（喘鳴、腦水腫、血流動力學不穩）屬危及生命層級，需即時氣道與血管處置；其他多數 SVC 可在 24–72 小時內排程影像與治療。"
+  - q: "下肢無力、走不穩，是不是脊髓壓迫？"
+    a: "癌症（尤其肺癌、乳癌、攝護腺癌、骨髓瘤）病人若新出現背痛合併下肢無力、感覺異常、或大小便失禁，需在數小時內排全脊椎 MRI 以排除惡性脊髓壓迫（MSCC）。發病時仍能走路的人，治療後約七至八成保有行走功能；已經癱瘓再開始治療，恢復行走比例低於兩成，時間窗非常關鍵。"
+  - q: "黃金治療時間是多久？放療還是手術？"
+    a: "MSCC 的處置原則是「懷疑就先打類固醇、24–48 小時內完成 MRI 與決策」。Patchell 2005 Lancet 隨機試驗顯示，單一節段壓迫且預期壽命較長的病人，手術減壓加術後放療在行走保留率（84% vs. 57%）優於單獨放療；預後較差或多節段擴散者以放療為主，依 SCORAD 試驗單次 8 Gy 與 20 Gy 分次放療在行走結果無差異。SVC 則依病因與嚴重度個別化：化療敏感腫瘤（SCLC、淋巴瘤）可優先化療，肺鱗癌與外壓型常以血管內支架或放療快速解壓。"
+doi: "10.5281/zenodo.20115198"
+conceptDoi: "10.5281/zenodo.20115197"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+上腔靜脈症候群（SVC）與惡性脊髓壓迫（MSCC）是腫瘤科病房最怕錯過的兩個急症。SVC 在惡性腫瘤族群每年約 1.5/萬人發生，最常見的原因為非小細胞肺癌、小細胞肺癌、淋巴瘤與胸腺瘤；MSCC 則發生於約 5–10% 的固體癌病人，肺癌、乳癌、攝護腺癌合計超過半數。兩者皆有清楚的紅旗症狀與分級，且**「能不能走路」幾乎全由治療開始的時間決定**。本文整理 Yu 分級、ESCC 量表、Patchell 手術 + 放療試驗，以及高劑量 dexamethasone、血管內支架的角色。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為癌症病友與家屬，希望在出現特定症狀時能盡早就醫；同時提供住院醫師與第一線 fellow 對 SVC、MSCC 的分級與決策架構。所有實際處置請與您的主治團隊討論。
+</Callout>
+
+<Divider />
+
+## 上腔靜脈症候群（SVC）：臉頸腫脹、上肢靜脈擴張
+
+### 為什麼會發生？
+
+上腔靜脈（superior vena cava, SVC）位於右胸縱膈，被胸腺、淋巴結與右肺包圍。當這些結構出現腫瘤或纖維化，SVC 受到外壓或內栓塞時，頭頸與上肢靜脈血回流受阻，於是出現臉部腫脹、頸靜脈與胸壁側支靜脈擴張、上肢水腫；若側支循環來不及建立，可能進展到呼吸道狹窄、腦水腫與循環不穩。
+
+惡性病因約佔 60–85%，依大型回顧依序為：
+
+| 排序 | 病因 | 比例（成人 SVC） | 備註 |
+|---|---|---|---|
+| 1 | 非小細胞肺癌（NSCLC） | ≈ 50% | 右上葉鱗癌外壓最常見 |
+| 2 | 小細胞肺癌（SCLC） | ≈ 22% | 化療反應快，常作為首選 |
+| 3 | 非何杰金氏淋巴瘤 | ≈ 12% | 縱膈大 B 細胞淋巴瘤 |
+| 4 | 胸腺瘤、生殖細胞瘤 | ≈ 5% | 年輕族群可考慮 |
+| 5 | 中央靜脈導管 / 起搏器電極血栓 | ≈ 30%（含良性） | 越來越常見，建議都做對比影像 |
+
+### 紅旗症狀與 Yu 嚴重度分級
+
+Yu 等人 2008 年 J Thorac Oncol 提出 5 級分級系統，把症狀嚴重度與治療急迫性掛鉤：
+
+| 等級 | 標籤 | 典型表現 | 比例 | 處置時程 |
+|---|---|---|---|---|
+| 1 | 無症狀 | 影像偶然發現 SVC 阻塞、無臨床症狀 | ≈ 10% | 門診評估，不急 |
+| 2 | 輕度 | 頭頸腫脹、靜脈擴張，無功能影響 | ≈ 25% | 一週內安排組織學與影像 |
+| 3 | 中度 | 輕微臉腫、咳嗽、活動性呼吸困難、輕度吞嚥困難 | ≈ 45% | 24–72 小時內治療 |
+| 4 | 重度 | 腦水腫（頭痛、視覺模糊、意識改變）、喉水腫、明顯心肺受影響 | ≈ 15% | **緊急（小時級）** |
+| 5 | 危及生命 | 明顯腦水腫、意識昏迷、呼吸衰竭、血流動力學不穩 | ≈ 5% | **立刻氣道、血管支架或放療** |
+
+<Callout type="warning" title="不要被「臉腫就是過敏」誤導">
+SVC 的腫脹特徵為躺下加重、頭部低位（彎腰、綁鞋帶）後更明顯，並伴隨頸靜脈與胸壁側支靜脈擴張。若合併喘鳴、意識改變、視乳突水腫或循環不穩，立即視為 Yu 4–5 級急症處理。
+</Callout>
+
+### 影像與組織學
+
+- **首選影像**：胸部對比強化電腦斷層（contrast-enhanced CT），同時看 SVC 阻塞程度（部分、完全、血栓）、原發腫瘤、淋巴結負荷與肺栓塞。
+- **靜脈攝影 / MR venography**：若 CT 與症狀不一致或計劃血管內介入，可加做。
+- **組織學**：若病人尚未確診，**只要呼吸與循環穩定，先取組織再開始治療**，因為 SCLC、淋巴瘤與生殖細胞瘤的化療策略截然不同；類固醇可能讓淋巴瘤切片失去診斷價值。
+
+### 治療選擇
+
+依病因與 Yu 等級分層：
+
+1. **Yu 4–5 級**：先穩定氣道與血流動力學；血管內支架（SVC stent）能在 24–72 小時內讓 80–90% 病人症狀緩解，常作為腦水腫或呼吸窘迫的橋接治療。
+2. **化療敏感腫瘤**（SCLC、淋巴瘤、生殖細胞瘤）：化療通常 1–2 週內就能讓 SVC 症狀緩解；長期反應率高，不必常規加放療或支架。
+3. **NSCLC、胸腺瘤、外壓型**：放療（多為 30 Gy / 10 fx 或 20 Gy / 5 fx）為傳統首選，2–3 週內逐步緩解；若症狀嚴重或需快速減壓，支架仍是合理首選。
+4. **導管 / 電極相關血栓**：抗凝（LMWH 或 DOAC）為主，視情況拔除導管或行血栓移除術。
+5. **類固醇**：對淋巴瘤、胸腺瘤與腦水腫有效；對 NSCLC 缺乏隨機試驗證據，但臨床仍常給予 dexamethasone 4–8 mg q6h，作為短期橋接。
+
+依 Cochrane 系統性回顧（Rachapalli 2014），SVC stent 在症狀緩解速度上優於放化療，但長期通暢率與整體存活並無顯著差異；血栓、出血與穿孔等併發症總風險約 3–5%。
+
+<Divider />
+
+## 惡性脊髓壓迫（MSCC）：背痛、下肢無力、大小便失禁
+
+### 為什麼會發生？
+
+MSCC 指惡性腫瘤直接侵犯硬脊膜外腔，壓迫脊髓或馬尾。每年約 5–10% 的固體癌病人會在病程中經歷 MSCC，最常見的原發部位為肺癌、乳癌、攝護腺癌（合計 ≈ 60%），其次為骨髓瘤、淋巴瘤、腎細胞癌與消化道癌。約 70% 發生在胸椎、20% 在腰薦椎、10% 在頸椎，且超過三分之一有多節段同時受侵。
+
+### 紅旗症狀
+
+- **新發或加重的背痛**（最早期、最敏感，但不專一）：夜間躺平更痛、平躺壓迫呼吸的「機械性疼痛」需提高警覺。
+- 下肢無力、走路不穩、跌倒
+- 感覺改變（皮節分布感覺異常、馬鞍區麻木）
+- 大小便功能異常（尿滯留、新發失禁、便祕）
+- 反射改變（深部肌腱反射增強、Babinski 陽性）
+
+<Callout type="warning" title="疼痛先於癱瘓——別等癱了才照 MRI">
+MSCC 的疼痛通常**領先神經學症狀 7 週**才出現無力或失禁。已知有骨轉移且新出現背痛者，門檻就要降低，**直接安排 MRI 全脊椎**（涵蓋頸–薦椎），避免漏掉多節段壓迫。
+</Callout>
+
+### ESCC 量表與行走能力預測
+
+Bilsky 等人提出的 Epidural Spinal Cord Compression (ESCC) 6 分量表，用 MRI T2 影像評估硬脊膜外腫瘤壓迫程度，是手術規劃與放療勾選的核心工具：
+
+| 等級 | T2 影像所見 | 臨床意義 |
+|---|---|---|
+| 0 | 僅骨內病灶 | 無需減壓 |
+| 1a | 硬脊膜外延伸，無脊膜內凹 | 觀察、放療 |
+| 1b | 脊膜壓迫但脊髓無變形 | 放療為主 |
+| 1c | 脊膜壓迫且脊髓接觸 | 視個別狀況，多放療 |
+| 2 | 脊髓受壓但仍可見腦脊髓液 | 預後仍佳，常需手術 |
+| 3 | 脊髓受壓且腦脊髓液消失 | 高風險，多需手術減壓 |
+
+行走能力同時是預後最強指標。彙整文獻：
+
+| 治療開始時的狀態 | 治療後仍可行走比例 | 重點 |
+|---|---|---|
+| 仍能獨立行走 | 70–80% 保留 | **時間窗 24–48 小時，黃金期** |
+| 需助行器或攙扶 | 30–50% 改善 | 緊急處置仍有意義 |
+| 已癱瘓 < 48 小時 | < 20% 恢復 | 仍應嘗試，但期望要校準 |
+| 已癱瘓 > 48 小時 | < 5% 恢復 | 主要為止痛、避免進展與翻身照護 |
+
+### 急診流程：紅旗到治療
+
+<Steps>
+  <div>
+    ### 1. 認出紅旗
+
+    癌症病人**新發背痛 ± 下肢無力、感覺異常、大小便失禁**，或非癌病人合併消瘦、夜間痛、定位性壓痛，立即視為 MSCC 疑慮，**0 小時** 啟動流程。
+  </div>
+  <div>
+    ### 2. 立刻給類固醇
+
+    在進行影像同時開始 dexamethasone：神經學缺損明確者 NICE 建議至少 16 mg/day（常用 IV 10 mg loading → 4 mg q6h），逐步減量。Sorensen 1994 的隨機試驗顯示高劑量類固醇可顯著提高放療後行走率（81% vs. 63%）。極輕微症狀、有相對禁忌（高血糖、感染、消化潰瘍）者可考慮較低起始劑量並早期評估減量。
+  </div>
+  <div>
+    ### 3. MRI 全脊椎（24 小時內）
+
+    NICE 與 ASCO/Cancer Care Ontario 都建議在 **24 小時內**完成 MRI 全脊椎（含頸、胸、腰、薦椎），同時尋找多節段壓迫；無法接受 MRI 者改 CT myelography。
+  </div>
+  <div>
+    ### 4. 多專科決策（24–48 小時內）
+
+    腫瘤內科、放射腫瘤、神經外科、復健、安寧團隊共同決定：
+
+    - **手術 + 術後放療**：單一節段壓迫、預期壽命 ≥ 3 個月、ESCC 2–3、機械性不穩、骨性壓迫或放療無效。
+    - **單獨放療**：多節段、預期壽命 < 3 個月、化療敏感腫瘤、或手術風險過高；SCORAD 試驗顯示單次 8 Gy 與 20 Gy/5 fx 在行走結果上無顯著差異，對預後較短者可採單次治療。
+    - **化療為主**：對化療敏感的淋巴瘤、骨髓瘤、生殖細胞瘤、SCLC 可考慮。
+  </div>
+  <div>
+    ### 5. 後續復健與骨保護
+
+    無論治療路徑，均需安排骨穩定性評估、骨保護（denosumab 或 bisphosphonate）、復健介入與安寧整合照護。
+  </div>
+</Steps>
+
+### Patchell 試驗：手術 + 放療的證據基礎
+
+Patchell 2005 在 Lancet 發表的隨機試驗（N = 101）將單一節段、MRI 確診 MSCC 的病人隨機分為手術後加放療 vs. 單獨放療：
+
+- 治療後可行走者：手術 + 放療組 **84%**，單獨放療組 **57%**（OR 6.2，95% CI 2.0–19.8，P = 0.001）
+- 維持行走時間中位數：**122 天 vs. 13 天**（P = 0.003）
+- 進入試驗時不能行走者：手術組 62% 重新走路、放療組 19%（P = 0.01）
+- 類固醇與嗎啡用量顯著降低
+- 整體存活：手術組中位 126 天 vs. 100 天（P = 0.033）
+
+<Callout type="warning" title="不是每個 MSCC 都該開刀">
+Patchell 試驗排除多節段壓迫、預期壽命 < 3 個月、神經缺損 > 48 小時、化療極敏感腫瘤（淋巴瘤、生殖細胞瘤、骨髓瘤）。實務上必須整合 ESCC 分級、整體預後（如 Tomita、修訂 Tokuhashi score）、共病與病人意願；機械性穩定的 1b–1c 病灶並不一定需要手術。
+</Callout>
+
+### 單次放療還是分次放療？SCORAD III
+
+Hoskin 等人 2019 年在 Lancet Oncology 發表 SCORAD III 試驗（N = 686，預期壽命 < 6 個月的 MSCC），單次 8 Gy 與 20 Gy/5 fx 比較：
+
+- 8 週後行走狀態：單次 69.3% vs. 分次 72.7%（差異 −3.5%，非劣性邊界 11%，**未達非劣性**但臨床差異有限）
+- 整體存活、再放療率、副作用無顯著差異
+- 對預後較短的病人，單次 8 Gy 仍是合理選擇，減少醫療負擔
+
+<Divider />
+
+## 適應症（誰會用到這些處置）
+
+- 已確診或高度懷疑惡性腫瘤，且出現 SVC 或 MSCC 紅旗症狀的成人
+- 體能狀態與整體預後足以從緊急處置中獲益（手術通常要求預期壽命 ≥ 3 個月，放療門檻較低）
+- 同意接受對比影像、放療、手術或血管介入
+
+## 禁忌症與謹慎使用
+
+- **類固醇**：未控制的感染（特別是中樞神經感染）、活動性消化潰瘍出血、嚴重糖尿病未控制、活動性精神症狀；可調整劑量並併用胃黏膜保護與血糖監測。
+- **放療**：同部位已達總劑量上限、無法平躺、不穩定脊椎（須先固定）。
+- **SVC 支架**：嚴重凝血異常、活動性出血、血管解剖不適合、無法配合抗凝。
+- **手術減壓**：預期壽命 < 3 個月、多節段瀰漫性壓迫、極差的體能狀態（ECOG 4）、嚴重共病。
+- **化療**：嚴重骨髓抑制、活動性感染、肝腎功能嚴重異常、孕期。
+
+## 常見副作用 / 不良反應
+
+- **Dexamethasone（高劑量）**：高血糖、失眠、情緒變化、消化道潰瘍、感染、肌肉病變、長期使用骨質疏鬆與腎上腺抑制。
+- **放療（脊椎、縱膈）**：疲倦、皮膚反應、食道炎（縱膈）、放射性脊髓病（罕見）。
+- **SVC 血管支架**：血栓再阻塞（1–2 年內 11%）、支架移位、血管穿孔（< 1%）、出血、感染。
+- **脊椎手術**：傷口感染、深部靜脈栓塞、腦脊髓液漏、術後癱瘓加重（< 5%）。
+- **化療**：依方案而異，需評估神經毒性、骨髓抑制與感染風險。
+
+<Callout type="warning" title="跨研究比較限制">
+SVC stent 的成功率（80–90%）與 MSCC 手術 + 放療的行走保留率（84%）皆來自個別試驗，族群、分級與隨訪不一致；不可跨機構直接外推到所有病人。每位病人的處置仍應由腫瘤、放射腫瘤、神經外科、影像團隊共同討論。
+</Callout>
+
+<Divider />
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 紅旗症狀清單，請印出來貼冰箱
+
+    癌症病人或家屬只要看到下列任一狀況，**立刻就醫或撥 119**：
+
+    - 短時間內臉部、頸部、上肢腫脹，躺下加重，伴隨呼吸急促或聲音沙啞
+    - 看東西模糊、頭痛、意識變差（可能腦水腫）
+    - 新出現的劇烈背痛，平躺更痛、夜間痛
+    - 雙腿無力、走不穩、馬鞍區麻木、尿滯留或失禁
+  </div>
+  <div>
+    ### 急診時要主動講的三件事
+
+    1. 我有什麼癌症、第幾期、目前用什麼治療
+    2. 症狀是什麼時候開始、變化多快
+    3. 過去骨轉移、縱膈淋巴轉移、抗凝藥使用情形
+
+    這些資訊能讓急診醫師更快啟動 SVC 或 MSCC 流程。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題
+
+    1. 我的 SVC 屬於 Yu 哪一級？需要支架還是先化療？
+    2. MRI 結果的 ESCC 是幾分？多少節段被壓迫？
+    3. 手術 + 放療與單獨放療，對我這個情境哪個合理？預期壽命如何估？
+    4. 類固醇要打多久？怎麼安全減量？血糖怎麼追？
+    5. 出院後復健、骨保護、止痛怎麼安排？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Yu JB, Wilson LD, Detterbeck FC. **Superior Vena Cava Syndrome — A Proposed Classification System and Algorithm for Management.** *J Thorac Oncol.* 2008;3(8):811-814. [doi:10.1097/JTO.0b013e3181804791](https://doi.org/10.1097/JTO.0b013e3181804791)
+2. Patchell RA, Tibbs PA, Regine WF, et al. **Direct decompressive surgical resection in the treatment of spinal cord compression caused by metastatic cancer: a randomised trial.** *Lancet.* 2005;366(9486):643-648. [doi:10.1016/S0140-6736(05)66954-1](https://doi.org/10.1016/S0140-6736(05)66954-1)
+3. Loblaw DA, Perry J, Chambers A, Laperriere NJ. **Systematic Review of the Diagnosis and Management of Malignant Extradural Spinal Cord Compression: The Cancer Care Ontario Practice Guidelines Initiative's Neuro-Oncology Disease Site Group.** *J Clin Oncol.* 2005;23(9):2028-2037. [doi:10.1200/JCO.2005.00.067](https://doi.org/10.1200/JCO.2005.00.067)
+4. Loblaw DA, Mitera G, Ford M, Laperriere NJ. **A 2011 Updated Systematic Review and Clinical Practice Guideline for the Management of Malignant Extradural Spinal Cord Compression.** *Int J Radiat Oncol Biol Phys.* 2012;84(2):312-317. [doi:10.1016/j.ijrobp.2012.01.014](https://doi.org/10.1016/j.ijrobp.2012.01.014)
+5. Hoskin PJ, Hopkins K, Misra V, et al. **Effect of Single-Fraction vs Multifraction Radiotherapy on Ambulatory Status Among Patients With Spinal Canal Compression From Metastatic Cancer: The SCORAD Randomized Clinical Trial.** *Lancet Oncol.* 2019;20(9):1320-1330. [doi:10.1016/S1470-2045(19)30527-3](https://doi.org/10.1016/S1470-2045(19)30527-3)
+6. Sørensen S, Helweg-Larsen S, Mouridsen H, Hansen HH. **Effect of High-Dose Dexamethasone in Carcinomatous Metastatic Spinal Cord Compression Treated With Radiotherapy: A Randomised Trial.** *Eur J Cancer.* 1994;30A(1):22-27. [doi:10.1016/0959-8049(94)90299-2](https://doi.org/10.1016/0959-8049(94)90299-2)
+7. Nunnerley H, Watkinson A, et al. **Interventions for the Treatment of Superior Vena Cava Obstruction in Lung Cancer (Cochrane Review).** *Cochrane Database Syst Rev.* 2014;(7):CD009923. [doi:10.1002/14651858.CD009923.pub2](https://doi.org/10.1002/14651858.CD009923.pub2)
+8. National Institute for Health and Care Excellence. **NG234: Spinal Metastases and Metastatic Spinal Cord Compression.** London: NICE; 2023. [nice.org.uk/guidance/ng234](https://www.nice.org.uk/guidance/ng234)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)，加上 PubMed 直接驗證所有 DOI。

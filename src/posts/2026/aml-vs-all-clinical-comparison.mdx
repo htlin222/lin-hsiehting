@@ -1,0 +1,235 @@
+---
+title: "急性骨髓性白血病（AML）vs 急性淋巴性白血病（ALL）：兩種急性白血病差在哪"
+titleEn: "Acute myeloid versus acute lymphoblastic leukemia: clinical contrast"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "AML 與 ALL 同樣是急性白血病，但細胞起源、驅動基因、化療骨架、移植角色、長期存活率都不一樣。本文整理 7+3、CPX-351、midostaurin、venetoclax + AZA、blinatumomab、inotuzumab、CAR-T 的位置與依據。"
+tags: ["AML", "ALL", "白血病", "venetoclax", "blinatumomab", "FLT3", "BCR-ABL", "衛教"]
+medical: true
+medicalCondition: "急性白血病 (Acute leukemia)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "AML 跟 ALL 治療一樣嗎？"
+    a: "不一樣。AML 為骨髓系芽細胞惡性增生，標準誘導為 7+3 cytarabine + daunorubicin，並依 FLT3、IDH、TP53、染色體風險決定是否加 midostaurin、CPX-351 或走 venetoclax + azacitidine。ALL 為淋巴系芽細胞惡性增生，骨架為多藥組合（vincristine、anthracycline、類固醇、asparaginase、methotrexate），並依 Ph+、B/T、MRD 決定是否加 TKI、blinatumomab、inotuzumab 或 CAR-T，兩者藥物與療程結構完全不同。"
+  - q: "都叫白血病，為什麼治療差這麼多？"
+    a: "因為兩者起源細胞不同：AML 來自骨髓系（會分化為紅血球、血小板、顆粒球的祖細胞），ALL 來自淋巴系（會分化為 B、T 細胞的祖細胞）。細胞表面標記、驅動突變、對化療敏感度都不同，因此即便臨床都呈現感染、出血、貧血，治療策略仍須各自設計。"
+  - q: "兒童 ALL 跟成人差別在哪？"
+    a: "兒童 ALL 五年整體存活率超過 85%，成人 ALL 約 40–50%。差異來自：兒童族群 Ph+、低 hypodiploid、KMT2A 重排等高風險細胞遺傳學比例較低；兒童耐受高強度、長療程的「兒童式」方案；MRD 監測與依風險升降階梯較成熟。許多 AYA（青年）研究顯示，把兒童式方案套用到 ≤40 歲成年人也能改善預後。"
+  - q: "venetoclax + azacitidine 是給誰用的？"
+    a: "用於不適合強效誘導化療（unfit）的 AML 病人，包含年齡 ≥ 75 歲、或因共病無法耐受 7+3 者。依 VIALE-A 試驗，venetoclax + azacitidine 較 azacitidine 單藥 mOS 14.7 vs. 9.6 個月（HR 0.66），完全反應或 CRi 達 66%。但需小心 tumor lysis syndrome 與骨髓抑制，誘導期住院密集監測為標準作法。"
+doi: "10.5281/zenodo.20115106"
+conceptDoi: "10.5281/zenodo.20115105"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+急性骨髓性白血病（AML）與急性淋巴性白血病（ALL）雖然名字只差一個字，臨床上卻是兩條完全不同的路。AML 由骨髓系芽細胞失控增生，標準誘導為 **7+3（cytarabine + daunorubicin）**，並依 FLT3、IDH、TP53 等基因加上 midostaurin、CPX-351 或 venetoclax + azacitidine；ALL 由淋巴系芽細胞失控增生，骨架是多藥長療程，並依 Ph+ 加 TKI、依 MRD 決定 blinatumomab、inotuzumab 或 CAR-T。兒童 ALL 五年存活率超過 85%，成人 AML 約 30–40%——同樣是急性白血病，預後天差地遠。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知「急性白血病」、想知道 AML 跟 ALL 差在哪、為什麼治療策略不同的病友與家屬，以及想複習兩者主流誘導與標靶位置的住院醫師與同業。實際治療決策請與您的血液腫瘤科主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼分 AML 跟 ALL？從細胞起源說起
+
+骨髓裡的造血幹細胞會分化成兩條支線：
+
+- **骨髓系（myeloid）**：紅血球、血小板、顆粒球（嗜中性、嗜酸性、嗜鹼性）、單核球。
+- **淋巴系（lymphoid）**：B 細胞、T 細胞、自然殺手細胞。
+
+當骨髓系祖細胞在分化早期卡住、無限增生 → **AML（acute myeloid leukemia）**；當淋巴系祖細胞卡住、無限增生 → **ALL（acute lymphoblastic leukemia）**。兩者臨床表現都來自正常造血被擠掉：貧血（疲倦、喘）、血小板低下（出血、瘀青）、顆粒球低下（感染、發燒）。但起源細胞不同，**表面標記、驅動突變、對化療敏感度都不同**，因此分流治療。
+
+### AML vs. ALL 一覽
+
+| 項目 | AML | ALL |
+|---|---|---|
+| 細胞起源 | 骨髓系芽細胞（myeloblast） | 淋巴系芽細胞（lymphoblast，B 或 T） |
+| 流行病學 | 成人為主，中位 68 歲，發生隨年齡上升 | 雙峰：兒童 2–5 歲為高峰，第二高峰 > 50 歲 |
+| 主要驅動基因 | FLT3-ITD/TKD、NPM1、CEBPA、IDH1/2、TP53、RUNX1、複雜核型 | BCR::ABL1（Ph+）、KMT2A 重排、TCF3-PBX1、ETV6-RUNX1、Ph-like、T-ALL（NOTCH1） |
+| 誘導化療骨架 | 7+3 cytarabine + daunorubicin（fit）；venetoclax + AZA（unfit） | 多藥長療程：vincristine + anthracycline + 類固醇 + asparaginase + methotrexate ± TKI ± immunotherapy |
+| 同種異體幹細胞移植角色 | 中／高風險於 CR1 評估移植 | Ph+ 或高風險 MRD 持續陽性者於 CR1 評估移植；兒童 standard-risk 多以化療治癒 |
+| 五年整體存活率 | 成人約 30–40%（< 60 歲較好，≥ 75 歲 < 15%） | 兒童 > 85%、成人約 40–50% |
+
+<Callout type="tip" title="共同初步檢查">
+不分 AML 或 ALL，懷疑急性白血病時都會做：CBC + 周邊血抹片、骨髓穿刺與切片、流式細胞儀（免疫表現型確認 myeloid vs. lymphoid）、細胞遺傳學（核型）、分子檢測（FLT3、NPM1、IDH、BCR::ABL1 等）、腰椎穿刺（ALL 尤須）。確診後 24–72 小時內須與血液腫瘤團隊確認治療路徑。
+</Callout>
+
+<Divider />
+
+## AML：依「能不能扛強效化療」與「驅動基因」分流
+
+成人 AML 治療策略首先看 **fit vs. unfit**：
+
+- **Fit（適合強效誘導）**：年齡較輕、體能 ECOG 0–2、心肝腎肺功能足夠、無嚴重共病。
+- **Unfit**：年齡 ≥ 75 歲、或 < 75 歲但有重大共病（嚴重心衰竭、間質性肺病、肝硬化、失能性 frailty）。
+
+接著看 ELN 2022 風險分層（依細胞遺傳學 + 分子標記分為 favorable / intermediate / adverse），決定是否要走 CR1 移植。
+
+<Steps>
+  <div>
+    ### Fit AML 一線：7+3 ± 標靶
+
+    - **骨架**：cytarabine 100–200 mg/m² 連續 7 天 + daunorubicin（或 idarubicin）3 天。CR 率約 60–80%。
+    - **FLT3 突變（ITD 或 TKD）**：加 midostaurin。RATIFY 試驗（NEJM 2017，N = 717）顯示 7+3 + midostaurin 較 7+3 + 安慰劑 mOS 74.7 vs. 25.6 個月（HR 0.78, P = 0.009）。
+    - **t-AML 或 AML-MRC（治療相關／骨髓化生不良相關）**：以 CPX-351（脂質體 cytarabine + daunorubicin，固定 5:1 比例）取代 7+3。Lancet 試驗（JCO 2018，N = 309）顯示 CPX-351 較 7+3 mOS 9.56 vs. 5.95 個月（HR 0.69, P = 0.003）。
+    - **IDH1 / IDH2 突變**：可考慮 ivosidenib 或 enasidenib（多於復發或 unfit 場景）。
+  </div>
+  <div>
+    ### Unfit AML 一線：venetoclax + 低強度去甲基化藥物
+
+    **VIALE-A 試驗**（DiNardo et al., NEJM 2020，N = 431）：venetoclax + azacitidine 較 azacitidine 單藥於不適合強效化療的新診斷 AML：
+
+    - **mOS 14.7 vs. 9.6 個月（HR 0.66, P < 0.001）**
+    - 完全反應或 CRi 66.4% vs. 28.3%
+    - ≥ Grade 3 嗜中性白血球減少 42% vs. 28%、感染 64% vs. 52%
+
+    現已是 ≥ 75 歲或有重大共病者的標準一線。誘導期須住院、密集監測 tumor lysis syndrome（TLS）與感染。
+  </div>
+  <div>
+    ### CR 後的鞏固
+
+    - **Favorable risk（如 t(8;21)、inv(16)、NPM1 突變且無 FLT3-ITD）**：以大劑量 cytarabine（HiDAC）鞏固，多不需移植。
+    - **Intermediate / adverse risk**：CR1 評估同種異體幹細胞移植（allo-HCT），尤其有 HLA-matched donor、ECOG 良好者。
+    - **MRD 監測**：以流式或分子技術（NPM1、RUNX1::RUNX1T1 PCR）追蹤，若 MRD 持續陽性或復現，移植或加強治療優先。
+  </div>
+</Steps>
+
+<Divider />
+
+## ALL：依「Ph+/Ph−」、「B/T」、「MRD」分流
+
+ALL 治療骨架是「兒童式」多藥長療程：
+
+- **誘導（induction，4–6 週）**：vincristine + anthracycline + 類固醇 + asparaginase。
+- **鞏固（consolidation）**：高劑量 methotrexate、cytarabine、cyclophosphamide 輪替。
+- **中樞神經系統（CNS）預防**：腰椎內（IT）methotrexate ± cytarabine ± 類固醇，全程進行。
+- **維持治療（maintenance，2–3 年）**：低劑量 6-MP + methotrexate + 週期性 vincristine + 類固醇。
+
+在這條骨架上，依分子標記與 MRD 加上標靶／免疫治療：
+
+### Ph+ ALL（BCR::ABL1 陽性）
+
+- 標準作法：化療 + TKI（imatinib、dasatinib、ponatinib）。
+- ponatinib + blinatumomab 化療精簡方案近年於試驗中展現高 MRD 陰性率，正取代部分傳統高強度化療角色。
+- 多數仍建議 CR1 評估 allo-HCT，但 MRD 持續深度陰性者，是否略過移植仍在累積證據。
+
+### Ph− B-ALL：MRD 與 blinatumomab 一線進場
+
+**E1910 試驗**（Litzow et al., NEJM 2024，N = 488）：MRD 陰性的 BCR::ABL1 陰性 B-ALL 病人（25–70 歲）於鞏固期加 blinatumomab 較單純化療：
+
+- **三年整體存活率 85% vs. 68%（HR 0.41, P = 0.002）**
+- 中位追蹤 4.5 年，blinatumomab 組 mOS 尚未達到，對照組約 71.4 個月
+
+這是把 CD19 雙特異性 T-cell engager（BiTE）從「復發／難治」場域推到 **MRD 陰性鞏固一線**的關鍵研究，2024 年起改寫成人 B-ALL 標準。
+
+### 復發／難治（r/r）B-ALL：免疫治療三選一
+
+| 藥物 | 機轉 | 主要試驗 | 關鍵結果 |
+|---|---|---|---|
+| Blinatumomab | CD19 × CD3 BiTE | TOWER 等 | 提升 CR + 至 MRD 陰性比例 |
+| Inotuzumab ozogamicin | 抗 CD22 ADC（calicheamicin） | INO-VATE（Kantarjian et al., NEJM 2016, N = 326） | CR 80.7% vs. 29.4%；mOS 7.7 vs. 6.7 個月（HR 0.77） |
+| Tisagenlecleucel（CAR-T） | CD19 CAR-T | ELIANA（Maude et al., NEJM 2018，n = 75，≤ 25 歲 r/r B-ALL） | 三個月內整體緩解率 81%、6 個月 EFS 73% |
+
+CAR-T 在 ≤ 25 歲 r/r／第二次以上復發 B-ALL 為合法選項；成人 r/r B-ALL 則有 brexucabtagene autoleucel（ZUMA-3）等選項。詳見 [CAR-T 療法在台灣的現況](/posts/2026/car-t-therapy-taiwan-2026)。
+
+### T-ALL
+
+骨架類似 B-ALL，但加 **nelarabine**（嘌呤類似物）改善早期 T 細胞前驅 ALL／淋巴瘤（ETP-ALL）預後。CD19 / CD22 標靶不適用（T-ALL 不表現 CD19）。CAR-T 在 T-ALL 仍多在試驗階段。
+
+<Callout type="tip" title="兒童 ALL 為什麼比成人好？">
+1. 兒童族群 Ph+、KMT2A 重排、低 hypodiploid 等高風險細胞遺傳學比例較低。
+2. 兒童可耐受更長、更密集的多藥誘導與鞏固。
+3. MRD-driven 升降階梯（risk-adapted）方案在兒童族群成熟。
+4. 同樣的「兒童式方案」套用至 AYA（青年，15–39 歲）成年人，多項研究顯示也能顯著改善預後。
+</Callout>
+
+<Divider />
+
+## 適應症、禁忌症、副作用要點
+
+### AML 主要藥物副作用
+
+- **7+3（cytarabine + daunorubicin）**：≥ Grade 3 嗜中性白血球減少幾乎 100%、感染／敗血症 30–50%、心肌毒性（anthracycline 累積劑量限制）、黏膜炎、肝功能異常。
+- **Midostaurin**：噁心、嘔吐、QT 延長、皮疹；多疊加於 7+3 之上。
+- **CPX-351**：類似 7+3 但骨髓抑制更深、恢復較慢；給藥方式為 90 分鐘靜脈輸注，不可與 7+3 互換劑量。
+- **Venetoclax + azacitidine**：TLS 風險（誘導期須劑量逐步上升、住院監測尿酸、磷、鉀、肌酸酐、LDH）、嗜中性白血球減少 ≥ 42%、感染 ≥ Grade 3 約 64%、噁心、腹瀉。
+
+### ALL 主要藥物副作用
+
+- **化療骨架**：嗜中性白血球減少、感染、黏膜炎、肝毒性、asparaginase 相關凝血異常與胰臟炎、vincristine 神經病變。
+- **Blinatumomab**：細胞激素釋放症候群（CRS，多為 Grade 1–2，少數 Grade 3–4）、神經毒性（震顫、語言障礙、癲癇，連續輸注期間發生率 20–30%）、感染。
+- **Inotuzumab ozogamicin**：肝靜脈閉塞症（VOD / SOS，特別是後續接 allo-HCT 者，發生率約 11%；建議移植前洗藥期 ≥ 60 日）、骨髓抑制。
+- **Tisagenlecleucel（CAR-T）**：CRS（≥ Grade 3 約 47%）、ICANS 神經毒性、長期 B 細胞缺失與低丙種球蛋白血症。
+
+### 適應症（已核准或主要試驗群體）
+
+- **AML**：年齡與體能狀態足以耐受對應方案（fit 走 7+3；unfit 走 venetoclax + AZA），骨髓切片確認 ≥ 20% 芽細胞或有 AML-defining 細胞遺傳學異常。
+- **ALL**：骨髓切片確認 ≥ 20% 淋巴系芽細胞並有免疫表現型支持；Ph+ 須有 BCR::ABL1 證據才上 TKI；CAR-T、blinatumomab、inotuzumab 依各自試驗收案條件。
+
+### 一般禁忌症與謹慎使用
+
+- 嚴重未控制的感染（須先穩定再啟動化療）
+- 嚴重心臟功能不全（影響 anthracycline 使用）
+- 嚴重肝功能異常（影響 venetoclax、vincristine、inotuzumab 等代謝）
+- 活動性中樞神經出血（影響高凝血風險方案）
+- 妊娠、活動性精神病或失能性 frailty（影響長療程承擔）
+
+<Callout type="warning" title="急診早期警訊：TLS、感染、白血球停滯">
+急性白血病初次就診或誘導期常見三個高致死性併發症：
+
+1. **腫瘤溶解症候群（TLS）**：高尿酸、高磷、高鉀、低鈣、急性腎損傷。Venetoclax 起始期與高白血球 ALL／AML 風險最高，必須水化、allopurinol 或 rasburicase 預防，密集抽血監測。
+2. **發燒性嗜中性白血球低下（febrile neutropenia）**：ANC < 500/µL + 體溫 ≥ 38.3 ℃，須一小時內廣效抗生素。詳見 [發燒性嗜中性白血球低下的急診抉擇](/posts/2026/febrile-neutropenia-er-decision)。
+3. **白血球停滯（leukostasis / hyperleukocytosis）**：WBC > 100,000/µL，可造成呼吸衰竭、中樞神經缺血、肺出血。AML 風險高於 ALL，必要時白血球分離術（leukapheresis）。
+</Callout>
+
+<Divider />
+
+## 同樣是急性白血病，給病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 一週內確認分流診斷
+
+    急性白血病的治療「越快開始預後越好」並不等於「越快下藥越好」。骨髓切片、流式細胞儀、細胞遺傳學、分子檢測（含 FLT3、NPM1、IDH1/2、TP53、BCR::ABL1、KMT2A）多在 3–7 天內出結果，這些結果直接決定要不要加 midostaurin、走 venetoclax、加 TKI 或預備 CAR-T，**不應在分流還沒出爐前匆促啟動非標準誘導**。
+  </div>
+  <div>
+    ### 跟主治醫師確認的問題清單
+
+    1. 我是 AML 還是 ALL？依 ELN 2022（AML）或 NCCN ALL 風險分層，我屬於 favorable / intermediate / adverse 哪一群？
+    2. 我有沒有 FLT3、NPM1、IDH、TP53（AML）／BCR::ABL1、Ph-like、KMT2A（ALL）？
+    3. 我適合 7+3 / 兒童式高強度方案，還是須走低強度（venetoclax + AZA）？評估依據是什麼？
+    4. CR 之後是否要 allo-HCT？目前 HLA 配對狀況？
+    5. MRD 怎麼追蹤？多久一次？陽性後的下一步？
+    6. 是否符合 CAR-T、blinatumomab、inotuzumab 的健保／自費條件？
+    7. 急診碰到發燒、出血、喘怎麼處理？
+  </div>
+  <div>
+    ### 治療前的支持性照護
+
+    - 牙科：完成必要拔牙與牙周治療（誘導期一旦感染風險極高）。
+    - 生殖：年輕病人討論精／卵保存。
+    - 中央靜脈導管：規劃 PICC / port-a，減少周邊靜脈反覆破壞。
+    - 預防性抗病毒、抗黴菌、抗 Pneumocystis 用藥依各機構準則安排。
+    - 家屬照顧能量：誘導期住院多 4–6 週，家屬輪班與心理支持要先安排好。
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. DiNardo CD, Jonas BA, Pullarkat V, et al. **Azacitidine and Venetoclax in Previously Untreated Acute Myeloid Leukemia** (VIALE-A). *N Engl J Med.* 2020;383(7):617-629. [doi:10.1056/NEJMoa2012971](https://doi.org/10.1056/NEJMoa2012971)
+2. Stone RM, Mandrekar SJ, Sanford BL, et al. **Midostaurin plus Chemotherapy for Acute Myeloid Leukemia with a FLT3 Mutation** (RATIFY). *N Engl J Med.* 2017;377(5):454-464. [doi:10.1056/NEJMoa1614359](https://doi.org/10.1056/NEJMoa1614359)
+3. Lancet JE, Uy GL, Cortes JE, et al. **CPX-351 (Cytarabine and Daunorubicin) Liposome for Injection Versus Conventional Cytarabine plus Daunorubicin in Older Patients With Newly Diagnosed Secondary Acute Myeloid Leukemia.** *J Clin Oncol.* 2018;36(26):2684-2692. [doi:10.1200/JCO.2017.77.6112](https://doi.org/10.1200/JCO.2017.77.6112)
+4. Litzow MR, Sun Z, Mattison RJ, et al. **Blinatumomab for MRD-Negative Acute Lymphoblastic Leukemia in Adults** (E1910). *N Engl J Med.* 2024;391(4):320-333. [doi:10.1056/NEJMoa2312948](https://doi.org/10.1056/NEJMoa2312948)
+5. Kantarjian HM, DeAngelo DJ, Stelljes M, et al. **Inotuzumab Ozogamicin versus Standard Therapy for Acute Lymphoblastic Leukemia** (INO-VATE). *N Engl J Med.* 2016;375(8):740-753. [doi:10.1056/NEJMoa1509277](https://doi.org/10.1056/NEJMoa1509277)
+6. Maude SL, Laetsch TW, Buechner J, et al. **Tisagenlecleucel in Children and Young Adults with B-Cell Lymphoblastic Leukemia** (ELIANA). *N Engl J Med.* 2018;378(5):439-448. [doi:10.1056/NEJMoa1709866](https://doi.org/10.1056/NEJMoa1709866)
+7. Döhner H, Wei AH, Appelbaum FR, et al. **Diagnosis and management of AML in adults: 2022 recommendations from an international expert panel on behalf of the ELN.** *Blood.* 2022;140(12):1345-1377. [doi:10.1182/blood.2022016867](https://doi.org/10.1182/blood.2022016867)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

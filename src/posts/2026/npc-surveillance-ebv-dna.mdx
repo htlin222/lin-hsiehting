@@ -1,0 +1,196 @@
+---
+title: "鼻咽癌治療後 EBV DNA 追蹤與復發處置"
+titleEn: "Post-treatment surveillance in nasopharyngeal carcinoma and EBV DNA monitoring"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "鼻咽癌結束治療後最關鍵的兩個問題是『要追蹤多久』與『EBV DNA 上升要不要處理』。本文整理 NCCN 追蹤節奏、Chan 2017 NEJM 香港 20,174 人篩檢資料，以及 JUPITER-02／CAPTAIN-1st／RATIONALE-309 三個復發轉移期免疫合併治療試驗。"
+tags: ["鼻咽癌", "NPC", "EBV DNA", "toripalimab", "camrelizumab", "衛教"]
+medical: true
+medicalCondition: "鼻咽癌 (Nasopharyngeal carcinoma, NPC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "鼻咽癌治療完還要追蹤多久？"
+    a: "依 NCCN 頭頸癌指引，鼻咽癌完成治療後建議至少追蹤 5 年：第 1 年每 1–3 個月、第 2 年每 2–6 個月、第 3–5 年每 4–8 個月、第 5 年後每年一次。每次回診包含理學檢查（含鼻咽鏡）、血液 EBV DNA、頭頸與胸部影像。高風險（原發 T3–T4 或 N2–N3）建議延長至 10 年以上。"
+    a_short: "至少 5 年；高風險者建議 10 年以上，追蹤頻率前 2 年最密集。"
+  - q: "治療後 EBV DNA 又驗到陽性怎麼辦？"
+    a: "治療完 8–12 週仍可偵測到血漿 EBV DNA、或從陰轉陽，是復發或殘存疾病的強烈警訊，與後續無惡化存活與整體存活顯著相關。處置原則：先在 4–6 週內以同一實驗室方法重驗一次，同步做 MRI（鼻咽 + 頸部）與胸部 CT、必要時加做 PET-CT；確認復發部位再依照局部、區域、遠端轉移分流到再程放療、手術或全身性藥物治療。"
+    a_short: "重驗 + 影像定位復發位置，再依部位選擇再程放療、手術或全身性藥物。"
+  - q: "Toripalimab 是什麼？跟 pembrolizumab 有什麼不同？"
+    a: "Toripalimab（拓益）是一個 anti-PD-1 單株抗體，是美國 FDA 於 2023 年核准的第一個鼻咽癌全身性藥物。JUPITER-02 第三期試驗顯示 toripalimab 加 gemcitabine／cisplatin 相比安慰劑加化療，於復發或轉移鼻咽癌第一線把中位無惡化存活從 8.2 延長到 21.4 個月（HR 0.52），整體存活也顯著延長（HR 0.63）。Pembrolizumab 雖也是 anti-PD-1，但在鼻咽癌仍以 NCCN category 2A 收錄，臨床試驗證據比 toripalimab 弱。"
+    a_short: "Toripalimab 是首個獲 FDA 核准的鼻咽癌藥物，JUPITER-02 顯示明顯延長無惡化存活與整體存活。"
+  - q: "家裡有人得鼻咽癌，我要不要篩檢？"
+    a: "依 2017 年 NEJM 香港 Chan 等發表的 20,174 人前瞻篩檢研究，血漿 cell-free EBV DNA 篩檢對無症狀鼻咽癌的靈敏度 97.1%、特異度 98.6%；篩檢出來的個案有 71% 為早期（第 I／II 期），3 年無惡化存活 97%。在台灣，目前一般族群並未例行性公費篩檢；若有一等親鼻咽癌家族史，可與耳鼻喉科或腫瘤科討論自費 EBV DNA／鼻咽鏡的篩檢計畫。"
+    a_short: "一般族群非例行，但一等親家族史者可考慮自費 EBV DNA 加鼻咽鏡篩檢。"
+doi: "10.5281/zenodo.20115196"
+conceptDoi: "10.5281/zenodo.20115195"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+鼻咽癌（NPC）完成同步化放療後，多數病人的下一個問題不是「要不要再做治療」，而是「要追蹤多久、追蹤什麼」。本文以 NCCN 頭頸癌指引、AJCC 第 9 版分期（2024 JAMA Oncology 發表，2025 年起全球啟用）、以及香港中文大學 Chan 等於 NEJM 2017 發表的 20,174 人 cell-free EBV DNA 前瞻 cohort 為基礎，整理 (1) 治療後追蹤節奏、(2) 血漿 EBV DNA 升高的處置流程、(3) 復發或轉移期已有 FDA／NMPA 核准的三個 PD-1 抑制劑（toripalimab、camrelizumab、tislelizumab）合併化療的試驗數據。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為：(a) 鼻咽癌完成放療或同步化放療、剛開始進入追蹤期的病友與家屬；(b) 想了解 EBV DNA 監測與復發轉移期免疫合併治療最新試驗的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼鼻咽癌的追蹤特別重要？
+
+鼻咽癌是少數能用「一支血液檢驗」追蹤的實體腫瘤。腫瘤細胞被 EBV（Epstein-Barr virus）感染，會把病毒的 DNA 釋放到血漿，形成 cell-free EBV DNA；治療有效時這個訊號會掉到偵測極限以下，復發時又會回升。再加上鼻咽位於顱底深處，理學檢查能看到的範圍有限，**血漿 EBV DNA 加上影像是追蹤期最重要的兩個工具**。
+
+依 AJCC 第 9 版分期（2024 年發表，2025 年元月全球啟用），鼻咽癌的非轉移期改回 I–III 期（不再有 IVA），遠端轉移統一歸到第 IV 期，並依轉移病灶數量再細分為 IVA（M1a，≤ 3 處）與 IVB（M1b，> 3 處）；高度淋巴結外侵犯（advanced radiological extranodal extension）被列入 N3 的判定條件之一。這次改版的意義是：分期 I–II 期之後 5 年存活率可達 90% 以上，但 III–IV 期復發風險仍顯著，因此**分期愈高者，追蹤頻率與時間都應該拉長**。
+
+## 治療後追蹤節奏（依 NCCN 頭頸癌指引）
+
+| 時間 | 回診頻率 | 必做項目 | 視情況加做 |
+|---|---|---|---|
+| 第 1 年 | 每 1–3 個月 | 病史、理學檢查、鼻咽鏡、TSH（若曾頸部放療）、血漿 EBV DNA | 鼻咽與頸部 MRI、胸部 CT |
+| 第 2 年 | 每 2–6 個月 | 同上 | 鼻咽與頸部 MRI、胸部 CT |
+| 第 3–5 年 | 每 4–8 個月 | 同上 | MRI 與胸部 CT（高風險每年） |
+| 第 5 年後 | 每 12 個月 | 同上，TSH 每年 | 影像視風險判斷 |
+
+<Callout type="tip" title="關於 EBV DNA 的兩個小提醒">
+1. 不同實驗室的 PCR 引子（多用 BamHI-W 重複序列）與報告單位（copies/mL 或 IU/mL）不同，**追蹤一定要在同一間實驗室進行**，數值才能直接比較。
+2. 治療後 8–12 週的 EBV DNA 是最有預後價值的時間點：若此時仍可偵測，後續復發或轉移風險明顯較高。
+</Callout>
+
+## EBV DNA 升高了該怎麼辦？
+
+<Steps>
+  <div>
+    ### 第一步：在同一實驗室重驗一次
+
+    單次陽性可能是短暫感染、近期 EBV 病毒再活化、或檢驗變異。建議 4–6 週內以同一檢驗方法、同一實驗室重驗。若兩次都陽性（或數值持續上升），才視為「持續性陽性」。
+  </div>
+  <div>
+    ### 第二步：影像定位復發部位
+
+    同步安排鼻咽 + 頸部 MRI（含對比劑）與胸部 CT；視情況加做腹部影像或全身 PET-CT。常見復發部位依比例：頸部淋巴結、鼻咽局部、肺部、骨、肝。
+  </div>
+  <div>
+    ### 第三步：依復發位置分流
+
+    - **局部復發（鼻咽）**：依範圍與初次放療劑量，考慮再程放療（IMRT 或 proton），或選擇性內視鏡／開放手術；需多專科團隊評估。
+    - **區域復發（頸部淋巴結）**：頸部廓清術 ± 再程放療。
+    - **遠端轉移（M1）**：優先全身性治療，依轉移病灶數量（AJCC 9 之 M1a vs. M1b）與器官受影響程度分流到下一節介紹的免疫合併化療。
+  </div>
+  <div>
+    ### 第四步：與主治醫師討論臨床試驗與支持性照護
+
+    台灣多家醫學中心有再程放療、質子治療、以及 PD-1 抑制劑試驗在收。請主動詢問是否符合納入條件。
+  </div>
+</Steps>
+
+<Callout type="warning" title="EBV DNA 升高 ≠ 立刻開始全身性治療">
+血漿 EBV DNA 是非常敏感的訊號，但沒有影像證據之前，**不建議直接開化療或免疫治療**。先用影像定位、必要時做切片病理確認再啟動治療，是目前指引一致的立場。
+</Callout>
+
+## 復發 / 轉移期第一線：三個 PD-1 抑制劑合併化療
+
+過去復發或轉移鼻咽癌的標準治療是 gemcitabine（健擇）加 cisplatin（順鉑），中位無惡化存活約 7–8 個月。2021 年起三個第三期試驗陸續報告 PD-1 抑制劑加上 GP 化療能顯著改善預後：
+
+### 三大試驗比較
+
+| 試驗 | PD-1 抑制劑 | n | mPFS（藥／安慰劑） | mPFS HR | mOS HR | 試驗族群 |
+|---|---|---|---|---|---|---|
+| JUPITER-02（JAMA 2023） | Toripalimab + GP | 289 | 21.4 vs. 8.2 mo | 0.52 | 0.63 | 全為 RM-NPC，主要在華人地區 |
+| CAPTAIN-1st（Lancet Oncol 2021） | Camrelizumab + GP | 263 | 9.7 vs. 6.9 mo | 0.54 | 未報告 | 中國大陸 RM-NPC |
+| RATIONALE-309（JAMA Oncol 2026 三年追蹤） | Tislelizumab + GP | 263 | 9.6 vs. 7.4 mo | 0.53 | 0.73（27.5 個月 FU） | 亞洲 RM-NPC |
+
+<Callout type="warning" title="跨試驗比較的限制">
+JUPITER-02、CAPTAIN-1st、RATIONALE-309 三個試驗的族群、追蹤時間、PFS 判讀方式都不完全一致。JUPITER-02 的中位 PFS 21.4 個月特別亮眼，部分原因是試驗設計與獨立中央評估方式較嚴格、且追蹤時間最長。**請勿直接用數字排名選藥**；同樣是「PD-1 + GP」，三個藥物的療效相對誤差通常落在 HR 0.5–0.6 之間，臨床上仍應依可及性、副作用 profile 與健保／自費條件決定。
+</Callout>
+
+### Toripalimab：第一個 FDA 核准的鼻咽癌藥物
+
+JUPITER-02（Mai 等，JAMA 2023）以 289 位復發或轉移鼻咽癌病人隨機 1:1 分到 toripalimab + GP 或安慰劑 + GP，主要終點為獨立中央判讀的無惡化存活。最終分析中位 PFS 21.4 vs. 8.2 個月（HR 0.52, 95% CI 0.37–0.73）；追蹤 36 個月時整體存活也顯著延長（HR 0.63, 95% CI 0.45–0.89, P = 0.008），且不論 PD-L1 表現高低都有一致的存活效益。基於此結果，**美國 FDA 於 2023 年 10 月核准 toripalimab + GP 為復發或轉移鼻咽癌第一線**——這是美國 FDA 第一次核准用於鼻咽癌的全身性藥物。
+
+### Camrelizumab：CAPTAIN-1st
+
+CAPTAIN-1st（Yang 等，Lancet Oncol 2021）以 263 位中國大陸復發或轉移鼻咽癌病人隨機分配，camrelizumab + GP 組中位 PFS 9.7 vs. 6.9 個月（HR 0.54, 95% CI 0.39–0.76, 單側 P = 0.0002）。Camrelizumab 特有副作用是「反應性皮膚毛細血管增生（RCCEP）」——皮膚上會冒出像紅痣的小血管瘤，多數為 1–2 級可自行緩解，但需要先衛教。
+
+### Tislelizumab：RATIONALE-309 三年追蹤
+
+RATIONALE-309 第三期試驗在 2021 年首次報告時即顯示 tislelizumab + GP 對比安慰劑 + GP 顯著延長 PFS。最新的三年追蹤（Yang 等，JAMA Oncology 2026）中位追蹤 27.5 個月，PFS HR 0.53（中位 9.6 vs. 7.4 個月），中位 OS 45.3 vs. 31.8 個月（HR 0.73, 95% CI 0.51–1.05）；考慮到安慰劑組有約 50% 在進展後 crossover 到 tislelizumab，以 RPSFT 方法校正後 HR 為 0.56，與 JUPITER-02 接近。
+
+## 適應症、禁忌症與副作用
+
+### 適應症
+
+- 復發或轉移鼻咽癌（recurrent or metastatic NPC, RM-NPC），未曾接受過全身性化療
+- 體能狀態 ECOG PS 0–1，主要器官功能可耐受
+- 已完成 staging（鼻咽 + 頸部 MRI、胸部 CT、必要時 PET-CT）
+
+### 禁忌症與謹慎使用
+
+- 對藥物成分過敏
+- 活動性自體免疫疾病（紅斑性狼瘡、發炎性腸道疾病、嚴重乾癬等）使用免疫治療需特別謹慎
+- 活動性感染（B 型肝炎、結核、HIV 未控制）
+- 妊娠與授乳期應避免
+- 過去曾因免疫相關副作用永久停藥者不建議再次使用
+
+### 常見副作用（依 JUPITER-02 / CAPTAIN-1st / RATIONALE-309 統整）
+
+- **化療相關**：嗜中性白血球下降（≥ 第 3 級 60–66%）、貧血、血小板下降、噁心嘔吐、疲倦
+- **免疫相關不良反應（irAE）**：甲狀腺功能異常（最常見，10–15%）、肺炎（2–4%）、肝炎、大腸炎、皮膚反應、罕見但嚴重的心肌炎與腦下垂體發炎
+- **Camrelizumab 特有**：反應性皮膚毛細血管增生（RCCEP），多為輕度
+- 任何疑似免疫相關副作用都應立即與醫療團隊聯絡；嚴重時須暫停藥物並使用全身性類固醇。
+
+## 家族史與 EBV DNA 篩檢
+
+Chan 等於 NEJM 2017 發表的香港前瞻 cohort 收 20,174 位無症狀中年男性（40–62 歲），先驗血漿 cell-free EBV DNA，第一次陽性者於約 4 週後重驗；持續性陽性者進一步做鼻咽鏡與 MRI。最終確診 34 位鼻咽癌，其中 71% 為第 I–II 期（歷史對照族群只有 20%）；3 年無惡化存活從歷史對照的 70% 拉高到 97%（HR 0.10, 95% CI 0.05–0.18）。整體靈敏度 97.1%、特異度 98.6%。
+
+但這個策略在「低盛行率族群」做篩檢的陽性預測值會明顯下降，因此目前**並未在台灣一般族群常規施行**。對應到台灣實務：
+
+- **一等親鼻咽癌家族史**：可與耳鼻喉科或腫瘤科討論自費 EBV DNA + 鼻咽鏡篩檢；建議 30–40 歲後每 1–2 年一次。
+- **有持續性頸部腫塊、單側鼻塞、流鼻血、單側耳悶或耳鳴**：不要等家族史，直接安排鼻咽鏡。
+- **無家族史的一般族群**：目前不建議例行性 EBV DNA 篩檢，因為陽性預測值偏低，會帶來不必要的後續檢查與焦慮。
+
+<Callout type="note" title="台灣本土族群提醒">
+鼻咽癌在台灣每年新發約 1,500 例，男性遠多於女性，盛行年齡 40–60 歲。台灣本土研究與 NCCN 都把「持續性單側頸部淋巴結腫大」列為高度警訊；門診若摸到 ≥ 1.5 cm、超過 2–3 週未退的頸部腫塊，請主動要求鼻咽鏡，不要先按「淋巴腺發炎」治療延誤診斷。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 整理一份「治療摘要」隨身帶
+
+    包含原發分期（AJCC 第 8 或 9 版）、放療總劑量與部位、化療藥物與劑量、最後一次 EBV DNA 數值與檢驗實驗室、共病、過敏。回診或求第二意見時直接帶去。
+  </div>
+  <div>
+    ### 每次抽血 EBV DNA 都到同一間實驗室
+
+    不同實驗室使用的 PCR 引子與報告單位不同，數值無法直接比較。若必須換醫院，請主治醫師說明該院使用的方法。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我目前的 AJCC 9 分期是？復發風險屬於哪一級？
+    2. 治療結束後 8–12 週的 EBV DNA 數值是多少？是否回到 0？
+    3. 多久回診一次？影像（MRI／CT／PET）排程是？
+    4. 萬一 EBV DNA 上升或影像懷疑復發，下一步流程是什麼？
+    5. 我所在的醫院或鄰近醫學中心，有沒有 toripalimab／tislelizumab／camrelizumab + 化療的臨床試驗或健保／自費可用？
+    6. 我有甲狀腺、皮膚、肝臟、大腸的舊病史，使用免疫治療要特別注意什麼？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Chan KCA, Woo JKS, King A, et al. **Analysis of Plasma Epstein-Barr Virus DNA to Screen for Nasopharyngeal Cancer.** *N Engl J Med.* 2017;377(6):513-522. [doi:10.1056/NEJMoa1701717](https://doi.org/10.1056/NEJMoa1701717)
+2. Mai HQ, Chen QY, Chen D, et al. **Toripalimab Plus Chemotherapy for Recurrent or Metastatic Nasopharyngeal Carcinoma: The JUPITER-02 Randomized Clinical Trial.** *JAMA.* 2023;330(20):1961-1970. [doi:10.1001/jama.2023.20181](https://doi.org/10.1001/jama.2023.20181)
+3. Yang Y, Qu S, Li J, et al. **Camrelizumab versus placebo in combination with gemcitabine and cisplatin as first-line treatment for recurrent or metastatic nasopharyngeal carcinoma (CAPTAIN-1st): a multicentre, randomised, double-blind, phase 3 trial.** *Lancet Oncol.* 2021;22(8):1162-1174. [doi:10.1016/S1470-2045(21)00302-8](https://doi.org/10.1016/S1470-2045(21)00302-8)
+4. Yang Y, Yen CJ, Pan J, et al. **First-Line Tislelizumab Plus Chemotherapy for Recurrent or Metastatic Nasopharyngeal Cancer: Three-Year Follow-Up of the Phase 3 RATIONALE-309 Randomized Clinical Trial.** *JAMA Oncol.* 2026;12(4):384-393. [doi:10.1001/jamaoncol.2026.0020](https://doi.org/10.1001/jamaoncol.2026.0020)
+5. Pan JJ, Mai HQ, Ng WT, et al. **Ninth Version of the AJCC and UICC Nasopharyngeal Cancer TNM Staging Classification.** *JAMA Oncol.* 2024;10(12):1627-1635. [doi:10.1001/jamaoncol.2024.4354](https://doi.org/10.1001/jamaoncol.2024.4354)
+6. Al-Sarraf M, LeBlanc M, Giri PG, et al. **Chemoradiotherapy versus radiotherapy in patients with advanced nasopharyngeal cancer: phase III randomized Intergroup study 0099.** *J Clin Oncol.* 1998;16(4):1310-1317. [doi:10.1200/JCO.1998.16.4.1310](https://doi.org/10.1200/JCO.1998.16.4.1310)
+7. Lee AWM, Tung SY, Ng WT, et al. **A multicenter, phase 3, randomized trial of concurrent chemoradiotherapy plus adjuvant chemotherapy versus radiotherapy alone in patients with regionally advanced nasopharyngeal carcinoma: 10-year outcomes for efficacy and toxicity.** *Cancer.* 2017;123(21):4147-4157. [doi:10.1002/cncr.30850](https://doi.org/10.1002/cncr.30850)
+
+> 引用整理協力：OpenEvidence 與 PubMed (2026/05/11 查詢)；DOI 已通過 `pnpm run audit:doi` Crossref 驗證。

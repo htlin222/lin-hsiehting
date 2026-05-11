@@ -1,0 +1,233 @@
+---
+title: "頭頸癌 HPV 相關 vs HPV 陰性：治療差別、預後與 de-escalation"
+titleEn: "HPV-positive versus HPV-negative head and neck cancer"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "AJCC 第八版起 HPV+ 口咽癌獨立分期，5 年 OS 約 75–85% 顯著優於 HPV− 之 40–50%；RTOG 1016 顯示 cetuximab 不能取代 cisplatin，NRG-HN002 探索放療減量；本文整理 de-escalation 試驗、KEYNOTE-048 一線免疫與 HPV 疫苗初級預防。"
+tags: ["頭頸癌", "HPV", "口咽癌", "cetuximab", "pembrolizumab", "HPV疫苗", "衛教"]
+medical: true
+medicalCondition: "頭頸鱗狀細胞癌 (Head and neck squamous cell carcinoma, HNSCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "口咽癌會傳染嗎？"
+    a: "HPV 相關口咽癌本身不會像感冒那樣傳染，但致病的人類乳突病毒（HPV，多為 16 型）會經口腔與生殖道密切接觸傳播。多數成人感染 HPV 後會自行清除，僅有少數演變為持續性感染，並於數十年後形成口咽癌。已罹病的病人不需與家人隔離，日常共食、擁抱皆無風險；但建議伴侶與子女依公費或自費時程接種 HPV 疫苗以做初級預防。"
+  - q: "HPV 陽性比較好治嗎？"
+    a: "是。HPV+（p16+）口咽鱗狀細胞癌對放療與化療反應較佳，5 年整體存活率約 75–85%，明顯高於 HPV− 的 40–50%。AJCC 第八版因此自 2018 年起為 HPV+ 口咽癌訂定獨立的 TNM 分期，避免高估病情。但這不代表治療可以隨意減量；目前所有 de-escalation 策略都仍在臨床試驗階段。"
+  - q: "可以少打一點放療嗎？"
+    a: "目前不建議在試驗之外減量。NRG-HN002（JCO 2021）將標準 70 Gy 減為 60 Gy 並搭配 cisplatin 或單純加速放療，在挑選過的低風險 HPV+ 病人中觀察到約 90% 的 2 年無惡化存活，但仍屬第二期試驗。RTOG 1016（Lancet 2019）則證實以 cetuximab 取代 cisplatin 會降低存活與局部控制率，不可作為減毒手段。標準治療仍是 cisplatin + 70 Gy 同步放化療。"
+  - q: "HPV 疫苗成人打有用嗎？"
+    a: "9 價 HPV 疫苗（Gardasil 9）已核准至 45 歲。Joura 等 NEJM 2015 試驗顯示，於 16–26 歲女性對 5 種額外型別之高度子宮頸、外陰、陰道病灶可達 96.7% 的保護。對於從未或部分暴露 HPV 的成人，仍可降低未感染型別之風險；對於口咽癌的直接證據雖然有限，間接外推支持初級預防價值。台灣國中女生公費接種兩劑、男生於部分縣市試辦兼跨齡補接種。"
+doi: "10.5281/zenodo.20115182"
+conceptDoi: "10.5281/zenodo.20115181"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+頭頸癌的世界在過去十五年被 HPV 改寫。**HPV 相關（p16 陽性）口咽鱗狀細胞癌的 5 年整體存活率約 75–85%，遠高於 HPV 陰性的 40–50%**，AJCC 第八版自 2018 年起為其訂定獨立分期（Lydiatt CA Cancer J Clin 2017）；但隨之而來的問題是：既然預後這麼好，能不能少打一點放療、少用一點化療？RTOG 1016（Gillison Lancet 2019）給出第一個明確答案——不可以拿 cetuximab 取代 cisplatin；NRG-HN002（Yom JCO 2021）則嘗試把放療從 70 Gy 減到 60 Gy。本文整理 HPV+ 與 HPV− 頭頸癌在流行病學、分期、治療強度與預後上的差異，並說明 de-escalation 仍處於試驗階段，以及 9 價 HPV 疫苗在初級預防上的角色。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知口咽癌或下咽／喉／口腔癌診斷、想了解 HPV 檢測意義與治療選項的病友與家屬，以及對 de-escalation 試驗格局與台灣 HPV 疫苗政策感興趣的同業。所有實際治療決策請與您的耳鼻喉頭頸外科、放射腫瘤科與腫瘤內科團隊討論。
+</Callout>
+
+<Divider />
+
+## 為什麼要分 HPV+ 與 HPV−？
+
+頭頸鱗狀細胞癌（HNSCC）依解剖位置分為口腔、口咽、下咽、喉、鼻咽等。**HPV 相關的腫瘤幾乎集中在口咽**（扁桃腺與舌根），其餘部位仍以菸酒檳榔相關為主。兩種腫瘤儘管組織學都是鱗狀細胞癌，分子驅動、預後、治療反應卻明顯不同：
+
+| 特徵 | HPV+（p16+）口咽癌 | HPV−（多為其他部位） |
+|---|---|---|
+| 主要病因 | 持續性 HPV-16 感染 | 菸、酒、檳榔 |
+| 好發族群 | 中年男性、白領、性伴侶數多 | 重度菸酒史、年齡較高 |
+| 分子特徵 | E6/E7 → p53、Rb 失活；TP53 多為野生型 | TP53 突變、CDKN2A 失活、染色體不穩 |
+| 5 年整體存活率 | 約 75–85% | 約 40–50% |
+| 對放化療反應 | 高 | 中等 |
+| AJCC 第八版分期 | 獨立系統（淋巴結降階） |  傳統 TNM |
+| de-escalation 試驗 | 多 | 少 |
+
+<Callout type="tip" title="p16 IHC 是臨床的代用標記">
+分子層面真正的「HPV 陽性」應為 HPV DNA／RNA 偵測，但臨床常用 p16 免疫組織染色（IHC）作為代用標記，定義為 ≥ 70% 的腫瘤細胞核與細胞質染色強陽性。在口咽部位，p16 與 HPV 高度相關（陽性預測值 > 90%）；但在非口咽（如口腔、下咽）一致性較差，建議搭配 HPV ISH 或 PCR 確認。
+</Callout>
+
+## 分期：AJCC 第八版的關鍵變動
+
+Lydiatt 等於 *CA Cancer J Clin* 2017 提出 AJCC 第八版分期，最重要的調整是把 **HPV+（p16+）口咽癌獨立列為一章**，並大幅放寬淋巴結分期門檻：
+
+- 過去單側 ≤ 3 cm 淋巴結即列入 N1，HPV+ 第八版則容許 **同側多顆 ≤ 6 cm 仍為 N1**。
+- T4a / T4b 細分被精簡。
+- 同樣 T3N2 的 HPV+ 病人，第七版屬第四期，第八版可能下修為第二期；這並不是病情變輕，而是更貼近其 75–85% 的 5 年 OS 真相。
+
+<Callout type="warning" title="分期下修 ≠ 可以減量治療">
+即便 HPV+ 病人分期由第四期下修為第二期，**標準治療仍是 cisplatin + 70 Gy 同步放化療**。AJCC 第八版只是讓統計與預後溝通更準確，不是減量授權書。
+</Callout>
+
+## 治療現況：HPV+ 與 HPV− 的差別在哪？
+
+<Steps>
+  <div>
+    ### 局部晚期 HPV+ 口咽癌（第三期 cT1–T3 / cN0–N2，依第八版）
+
+    標準：**cisplatin 100 mg/m² q3w + 放療 70 Gy / 35 fractions** 同步進行。對無法耐受 cisplatin 者，現行指引允許 carboplatin/5-FU 或單純放療；**RTOG 1016 已排除 cetuximab 作為對等替代**（見下）。
+  </div>
+  <div>
+    ### 局部晚期 HPV− HNSCC
+
+    依部位（口腔、下咽、喉）選擇手術為主或同步放化療為主。HPV− 對放化療反應較差，5 年 OS 約 40–50%，目前無 de-escalation 空間；反而是積極評估手術切除、保留器官策略與術後放化療強度。
+  </div>
+  <div>
+    ### 復發／轉移性 HNSCC（R/M HNSCC）
+
+    依 PD-L1 CPS 分流：
+    - **CPS ≥ 1**：pembrolizumab 單藥或 pembrolizumab + 化療（cisplatin/carboplatin + 5-FU）為第一線首選（KEYNOTE-048, Burtness Lancet 2019）。
+    - **CPS < 1**：EXTREME 方案（cisplatin/carboplatin + 5-FU + cetuximab，Vermorken NEJM 2008）仍是合理選項。
+  </div>
+</Steps>
+
+## RTOG 1016：為什麼不能用 cetuximab 取代 cisplatin？
+
+Gillison 等於 *Lancet* 2019 發表 RTOG 1016 第三期試驗，**將 p16+ 口咽癌局部晚期病人隨機分派至 cisplatin + 放療或 cetuximab + 放療**（n = 805），主要終點為非劣性 OS：
+
+- 5 年 OS：cetuximab 組 77.9% vs. cisplatin 組 84.6%（HR 1.45，非劣性未達）。
+- 5 年局部區域復發率：cetuximab 組 17.3% vs. cisplatin 組 9.9%。
+- 第 3–4 級急性毒性：兩組相當（77.4% vs. 81.7%），但毒性 profile 不同。
+
+**結論：cetuximab 不能取代 cisplatin**，即使預期 cetuximab 較不傷腎、較不引起耳毒性。對於真的不能用 cisplatin 的病人，目前選項仍是 carboplatin/5-FU、單純放療或臨床試驗。
+
+## NRG-HN002：放療減量到 60 Gy 還可行嗎？
+
+Yom 等於 *JCO* 2021 發表 NRG-HN002 第二期試驗，**將精選低風險 HPV+ 口咽癌病人**（T1–T2 N1–N2b 或 T3 N0–N2b、≤ 10 包年菸史）隨機分至：
+
+- **Arm A**：60 Gy IMRT + weekly cisplatin 40 mg/m²
+- **Arm B**：60 Gy 加速 IMRT（六週改五週，無化療）
+
+| 終點 | Arm A（60 Gy + cis） | Arm B（60 Gy 單純放療） |
+|---|---|---|
+| 2 年 PFS | 90.5% | 87.6% |
+| 2 年 OS | 96.7% | 97.3% |
+| 急性 ≥ 第 3 級毒性 | 79.6% | 52.4% |
+| 1 年吞嚥功能（MDADI） | 顯著恢復 | 顯著恢復 |
+
+Arm A 達成預設 PFS 門檻、Arm B 未達。研究結論是**對精選低風險 HPV+ 病人，60 Gy + cisplatin 可作為後續第三期試驗（NRG-HN005）的探索手臂**，但 **60 Gy 單純放療尚未達標**。
+
+<Callout type="warning" title="De-escalation 仍在試驗中，不可外推">
+NRG-HN002 與後續的 NRG-HN005、ECOG E3311、PATHOS、ORATOR2 等試驗仍在收案或追蹤。**目前臨床試驗外的標準治療仍是 70 Gy + cisplatin**。任何「少打一點」的決定，必須在符合資格的臨床試驗下進行，並有正式收案、追蹤、安全性監控。私下減量、不收進試驗，等同剝奪病人應有的存活率。
+</Callout>
+
+## KEYNOTE-048：復發轉移性 HNSCC 一線免疫的依據
+
+Burtness 等於 *Lancet* 2019 發表 KEYNOTE-048 第三期試驗（n = 882），**將復發或轉移性 HNSCC 第一線隨機分為**：
+
+- Pembrolizumab 單藥
+- Pembrolizumab + 化療（cisplatin/carboplatin + 5-FU）
+- EXTREME（cetuximab + 化療，對照組）
+
+主要結果（按 PD-L1 CPS 分層）：
+
+| 族群 | Pembro 單藥 mOS | Pembro + 化療 mOS | EXTREME mOS |
+|---|---|---|---|
+| CPS ≥ 20 | 14.9 個月（HR 0.61） | 14.7 個月（HR 0.60） | 10.7 個月 |
+| CPS ≥ 1 | 12.3 個月（HR 0.78） | 13.6 個月（HR 0.65） | 10.3 個月 |
+| 整體族群 | 11.5 個月（HR 0.83，未達） | 13.0 個月（HR 0.77） | 10.7 個月 |
+
+**結論：CPS ≥ 20 用 pembrolizumab 單藥；CPS ≥ 1 用 pembrolizumab ± 化療；CPS < 1 用 EXTREME**。這套分流寫進 NCCN，影響至今。
+
+## 副作用、適應症與禁忌症摘要
+
+### Cisplatin 同步放化療
+
+- 任何級別：噁心、嘔吐、嗜中性白血球下降、貧血、口腔黏膜炎
+- 嚴重不良反應：腎毒性（須水化）、耳毒性（高頻聽力下降）、周邊神經病變
+- 急性放療毒性：黏膜炎（≥ 第 3 級 約 40%）、吞嚥困難、體重下降
+- 慢性後遺症：口乾、纖維化、骨壞死、頸動脈病變
+
+### Cetuximab + 放療
+
+- 任何級別：痤瘡樣皮疹、低血鎂、輸注反應
+- 嚴重：輸注過敏（首劑優先準備腎上腺素）、嚴重皮膚反應
+- 較不傷腎、聽力，但 RTOG 1016 顯示存活較差，不可作 cisplatin 替代
+
+### Pembrolizumab
+
+- 免疫相關 AE：肺炎、肝炎、大腸炎、甲狀腺異常、腎上腺功能不全、垂體炎、第 1 型糖尿病
+- KEYNOTE-048 中嚴重免疫相關 AE 約 7%
+- 嚴重時須暫停或永久停藥並用類固醇
+
+### 適應症（試驗中或已核准）
+
+- HPV+ 局部晚期口咽癌：cisplatin + 70 Gy 同步放化療
+- 復發／轉移性 HNSCC：依 PD-L1 CPS 分流 pembrolizumab ± 化療 或 EXTREME
+- 體能狀態 ECOG PS 0–1 為主要試驗收案標準
+- 完整 staging（PET-CT、MRI）、聽力評估、腎功能評估、口腔牙科處置已完成
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者（特別是 cetuximab 之 α-gal IgE）
+- 嚴重腎功能不全（cisplatin 禁用）
+- 活動性間質性肺病（pembrolizumab 需謹慎）
+- 活動性自體免疫疾病（影響免疫治療決策）
+- 妊娠與授乳期應避免使用
+- 嚴重共病無法耐受同步放化療者，須考慮單純放療或臨床試驗
+
+## HPV 疫苗：能不能預防口咽癌？
+
+Joura 等於 *NEJM* 2015 發表 9 價 HPV 疫苗（Gardasil 9）的關鍵試驗（n = 14,215，16–26 歲女性），對 5 種額外型別（HPV-31/33/45/52/58）相關之高度子宮頸／外陰／陰道病灶，**保護效力 96.7%**（95% CI 80.9–99.8）。對 HPV-6/11/16/18 之效力與 4 價疫苗一致。
+
+雖然 9 價疫苗對口咽癌的直接 RCT 證據仍有限（口咽癌潛伏期數十年，難以設計直接終點試驗），間接證據顯示：
+
+- 接種 4 價或 9 價疫苗者的口腔 HPV 感染率較未接種者低約 88%。
+- 澳洲、英國等高接種率國家的口咽 HPV 感染率與相關癌症發生率已開始下降。
+
+### 台灣公費 HPV 疫苗
+
+- **國中女生**：全國公費接種，預設兩劑（0、6 個月）。
+- **國中男生**：部分縣市試辦公費接種。
+- **跨齡補接種**：26 歲（部分縣市至 45 歲）以下可自費或經補助接種，9–14 歲兩劑、15 歲以上三劑（0、2、6 個月）。
+- 已罹癌、活動性感染、妊娠期不建議接種；過敏體質者依說明書評估。
+
+<Callout type="tip" title="初級預防 vs de-escalation 的順序">
+公衛意義上，**HPV 疫苗的初級預防**遠比治療階段的 de-escalation 重要。前者可阻止口咽癌與子宮頸癌發生（潛在 5 年 OS = 100%，因為根本沒發病），後者只是讓已發病的病人少受一點放療之苦。鼓勵家中青少年依公費時程接種，是頭頸腫瘤醫師對社會最具影響力的貢獻之一。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認病理報告寫了 p16 IHC
+
+    口咽癌（扁桃腺、舌根）的病理報告應包含 p16 IHC，並建議在非典型口咽部位加做 HPV ISH 或 PCR。p16 結果直接影響分期（AJCC 第八版獨立分期）、預後溝通與治療強度討論。
+  </div>
+  <div>
+    ### 詢問是否符合 de-escalation 試驗條件
+
+    若為 p16+、菸史 ≤ 10 包年、T1–T3、N0–N2b 之低風險族群，可主動詢問所在醫學中心是否有 NRG-HN005、PATHOS、ECOG E3311 之收案。試驗外的減量在現階段不建議。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理報告是 p16 陽性還是陰性？做的是哪一種染色／檢測？
+    2. 用 AJCC 第八版我是第幾期？對應的 5 年 OS 預估範圍是多少？
+    3. 為什麼用 cisplatin 而不是 cetuximab？我的腎功能、聽力能耐受嗎？
+    4. 是否符合任何 de-escalation 臨床試驗？需要在哪裡收案？
+    5. 同步放化療的口腔、吞嚥、口乾後遺症怎麼預防？牙科要先處理嗎？
+    6. 復發或轉移時，PD-L1 CPS 會檢測嗎？影響後線選擇。
+    7. 家中青少年子女或伴侶建議何時接種 HPV 疫苗？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Lydiatt WM, Patel SG, O'Sullivan B, et al. **Head and Neck cancers — major changes in the American Joint Committee on Cancer eighth edition cancer staging manual.** *CA Cancer J Clin.* 2017;67(2):122-137. [doi:10.3322/caac.21389](https://doi.org/10.3322/caac.21389)
+2. Gillison ML, Trotti AM, Harris J, et al. **Radiotherapy plus cetuximab or cisplatin in human papillomavirus-positive oropharyngeal cancer (NRG Oncology RTOG 1016): a randomised, multicentre, non-inferiority trial.** *Lancet.* 2019;393(10166):40-50. [doi:10.1016/S0140-6736(18)32779-X](https://doi.org/10.1016/S0140-6736(18)32779-X)
+3. Yom SS, Torres-Saavedra P, Caudell JJ, et al. **Reduced-Dose Radiation Therapy for HPV-Associated Oropharyngeal Carcinoma (NRG Oncology HN002).** *J Clin Oncol.* 2021;39(9):956-965. [doi:10.1200/JCO.20.03128](https://doi.org/10.1200/JCO.20.03128)
+4. Burtness B, Harrington KJ, Greil R, et al. **Pembrolizumab alone or with chemotherapy versus cetuximab with chemotherapy for recurrent or metastatic squamous cell carcinoma of the head and neck (KEYNOTE-048): a randomised, open-label, phase 3 study.** *Lancet.* 2019;394(10212):1915-1928. [doi:10.1016/S0140-6736(19)32591-7](https://doi.org/10.1016/S0140-6736(19)32591-7)
+5. Vermorken JB, Mesia R, Rivera F, et al. **Platinum-based chemotherapy plus cetuximab in head and neck cancer (EXTREME).** *N Engl J Med.* 2008;359(11):1116-1127. [doi:10.1056/NEJMoa0802656](https://doi.org/10.1056/NEJMoa0802656)
+6. Joura EA, Giuliano AR, Iversen OE, et al. **A 9-valent HPV vaccine against infection and intraepithelial neoplasia in women.** *N Engl J Med.* 2015;372(8):711-723. [doi:10.1056/NEJMoa1405044](https://doi.org/10.1056/NEJMoa1405044)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

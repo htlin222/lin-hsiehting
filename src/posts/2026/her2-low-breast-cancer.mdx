@@ -1,0 +1,207 @@
+---
+title: "HER2 弱陽性（HER2-low）乳癌新分類：trastuzumab deruxtecan 的擴展與後續挑戰"
+titleEn: "HER2-low breast cancer and trastuzumab deruxtecan: redefining the landscape"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "DESTINY-Breast04 (2022) 確立 trastuzumab deruxtecan 於 HER2-low 第二線；DESTINY-Breast06 (2024) 進一步擴展至 HR+ 內分泌治療後、尚未化療的族群。本文整理 HER2-low 定義、流行病學、IHC 判讀一致性、ILD 監測與 NCCN v3.2026 的新分層。"
+tags: ["乳癌", "HER2-low", "trastuzumab deruxtecan", "T-DXd", "DESTINY-Breast", "衛教"]
+medical: true
+medicalCondition: "HER2 低度表現乳癌 (HER2-low breast cancer)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "HER2 IHC 1+ 或 2+/FISH 陰性，算 HER2 陽性嗎？"
+    a: "傳統分類上不算「HER2 陽性」——HER2 陽性的標準仍是 IHC 3+ 或 IHC 2+ 且 FISH 擴增。但自 DESTINY-Breast04 (2022) 起，IHC 1+ 與 IHC 2+/ISH 陰性被定義為「HER2-low」，這是一個可以使用 trastuzumab deruxtecan (T-DXd) 的新分層，並非 HER2 陽性。NCCN v3.2026 已將 HER2-low 列為獨立的治療決策分支。"
+  - q: "T-DXd（Enhertu）適合我嗎？"
+    a: "若您是轉移性乳癌、HER2 IHC 1+ 或 2+/ISH−，且符合下列其一即可考慮：(1) HR+ 已接受至少一線內分泌治療後（DESTINY-Breast06），或 (2) HR+/HR− 已接受過化療（DESTINY-Breast04）。T-DXd 主要風險為間質性肺病（ILD），第 1–2 級約 10–12%、第 5 級（致死）< 1%。需與主治醫師討論呼吸功能與用藥追蹤計畫。"
+  - q: "HER2 IHC 0 與 HER2-low、HER2 ultralow 差別在哪？"
+    a: "HER2 IHC 0 指完全無染色或 < 10% 細胞呈現微弱不完整膜染色；HER2-low 為 IHC 1+ 或 2+/ISH 陰性；HER2 ultralow 是 DESTINY-Breast06 提出的新概念，指 IHC > 0 但 < 1+（極微弱、不完整、< 10% 細胞）。在 DESTINY-Breast06 中，HER2 ultralow 族群也觀察到 T-DXd 優於化療，但目前 NCCN 尚未正式採納 ultralow 為標準分層，HER2 IHC 0 仍不適用 T-DXd。"
+  - q: "DESTINY-Breast06 怎麼讀？"
+    a: "DESTINY-Breast06（Bardia NEJM 2024，N = 866）收 HR+/HER2-low 或 ultralow 轉移性乳癌、已接受至少 2 線內分泌治療（含 CDK4/6 抑制劑）但「尚未化療」的病人，隨機分配 T-DXd vs. 醫師選擇之化療（capecitabine / paclitaxel / nab-paclitaxel）。HER2-low 主要終點：mPFS 13.2 vs. 8.1 個月（HR 0.62, P < 0.0001）。意義在於把 T-DXd 提前到化療之前一線，避開了化療毒性峰值。"
+doi: "10.5281/zenodo.20115186"
+conceptDoi: "10.5281/zenodo.20115185"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+HER2 乳癌的二分法（陽性 vs. 陰性）正在被改寫。**2022 年 NEJM 公布的 DESTINY-Breast04** 證明 trastuzumab deruxtecan（T-DXd, Enhertu）在 HER2 IHC 1+ 或 2+/ISH 陰性的轉移性乳癌第二線 mPFS 10.1 個月（HR 0.50），確立「HER2-low」這個新分層；**2024 年 NEJM 公布的 DESTINY-Breast06** 則進一步把 T-DXd 推到 HR+/HER2-low 病人「化療之前」、僅內分泌治療後就可以使用，mPFS 13.2 個月（HR 0.62）。NCCN Breast Cancer v3.2026 已正式把 HER2-low 列為獨立的治療決策分支。本文整理 HER2-low 的定義、流行病學（佔轉移性乳癌約 60%）、IHC 重判一致性問題、ILD 監測，與 HER2 IHC 0／ultralow／low／3+ 的差異。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為：(1) 拿到病理報告寫著「HER2 IHC 1+」或「IHC 2+, FISH negative」、想知道自己屬於哪一類的乳癌病友與家屬；(2) 想了解 DESTINY-Breast04 / -06 設計差異、與 NCCN v3.2026 變動的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼要有「HER2-low」這個新分類？
+
+傳統 HER2 二分法依 ASCO/CAP 2018 指引：
+
+- **HER2 陽性**：IHC 3+ 或 IHC 2+ 且 FISH/ISH 擴增 → 可用 trastuzumab、pertuzumab、T-DM1 等 HER2 標靶
+- **HER2 陰性**：IHC 0、1+，或 IHC 2+ 但 FISH 陰性 → 過去無 HER2 標靶可用
+
+問題是，HER2 陰性其實涵蓋了相當廣的 HER2 表現光譜——從完全沒有（IHC 0）到「有一點」（IHC 1+ / 2+/ISH−）。**Schettini 等人 2021 年 NPJ Breast Cancer 的整合分析**（涵蓋 1,729 例轉移性乳癌）顯示，HER2-low（IHC 1+ 或 2+/ISH−）佔轉移性乳癌約 **60%**，其中 HR+ 族群比例更高（約 65%），HR− 族群也有 ~ 35%。換句話說，過去被歸為「HER2 陰性」的病人，超過一半其實「有一點 HER2」。
+
+T-DXd 的關鍵在於其 **deruxtecan 連接子的旁觀者效應（bystander effect）**：抗體結合 HER2 後內化、釋出細胞毒性 payload，能擴散至鄰近細胞，因此即便 HER2 表現低也能達到療效——這是 trastuzumab 與 T-DM1 在 HER2-low 失敗、但 T-DXd 成功的生物學基礎。
+
+## HER2 IHC 0 / ultralow / low / 3+ 比較
+
+| 分類 | 定義 | 佔轉移性乳癌比例 | 可用 T-DXd？ | 主要依據 |
+|---|---|---|---|---|
+| **HER2 IHC 0** | 無染色，或 ≤ 10% 細胞微弱不完整膜染色 | ≈ 30–40% | 否（目前不適用） | Tarantino JCO 2022 |
+| **HER2 ultralow** | IHC > 0 但 < 1+（< 10% 細胞、微弱不完整） | ≈ 20–25% | 探索中（DB06 子群獲益） | DESTINY-Breast06 |
+| **HER2-low** | IHC 1+，或 IHC 2+ 且 ISH 陰性 | ≈ 50–60%（HR+ 較高） | 是（NCCN v3.2026 列為標準） | DESTINY-Breast04 / -06 |
+| **HER2 陽性 (IHC 3+ 或 2+/ISH+)** | 強完整膜染色 ≥ 10%，或 IHC 2+ 且 FISH 擴增 | ≈ 15–20% | 是（標準 HER2 治療線上皆可用） | DESTINY-Breast03 |
+
+<Callout type="warning" title="HER2 IHC 判讀一致性低">
+Tarantino 等人 2022 年 JCO 的研究顯示，同一份檢體在不同實驗室重判時，HER2 IHC 0 與 1+ 的一致性僅約 **26%**——亦即四分之三的病人在不同實驗室可能被判到不同類別。這代表病理判讀差異會直接影響 T-DXd 的可及性。若您手上的報告為 IHC 0，且臨床高度懷疑可受益於 T-DXd，可請主治醫師討論是否要重新染色或會診第二意見。
+</Callout>
+
+<Divider />
+
+## DESTINY-Breast04 與 -Breast06 設計差異
+
+兩個試驗都驗證 T-DXd 對 HER2-low 的療效，但收案族群與治療線數不同：
+
+| 項目 | DESTINY-Breast04 (NEJM 2022) | DESTINY-Breast06 (NEJM 2024) |
+|---|---|---|
+| **族群** | HER2-low（IHC 1+ 或 2+/ISH−）轉移性乳癌 | HR+ HER2-low 或 ultralow 轉移性乳癌 |
+| **HR 狀態** | HR+ 88.7% / HR− 11.3% | 全部 HR+ |
+| **前線要求** | 至少 1 線化療（HR+ 須含內分泌失效後） | ≥ 2 線內分泌治療（含 CDK4/6i），**尚未化療** |
+| **n** | 557 | 866 |
+| **對照組** | 醫師選擇之化療（capecitabine / eribulin 等） | 醫師選擇之化療（capecitabine / paclitaxel / nab-paclitaxel） |
+| **主要 mPFS（HER2-low）** | 10.1 vs. 5.4 個月（HR 0.50, P < 0.001） | 13.2 vs. 8.1 個月（HR 0.62, P < 0.0001） |
+| **HR+ subset mPFS** | 10.1 vs. 5.4 個月（HR 0.51） | 同上 |
+| **HR− subset mPFS** | 8.5 vs. 2.9 個月（HR 0.46） | 不適用 |
+| **mOS（HER2-low）** | 23.4 vs. 16.8 個月（HR 0.64） | OS 數據尚未成熟（中期分析趨勢一致） |
+| **臨床意義** | 確立 HER2-low 第二線標準 | 把 T-DXd 提前到化療之前 |
+
+<Callout type="warning" title="跨試驗比較限制">
+DESTINY-Breast04 與 -06 的對照組化療選項、前線要求與 HR 分佈不同，上述數字僅供概念性對照，不宜直接排序。實際選擇仍以個別病人 HR 狀態、CDK4/6 抑制劑使用狀況、化療經驗、與健保／自費可及性綜合判斷。
+</Callout>
+
+## 第一線到第三線該怎麼排？
+
+依 NCCN v3.2026 與 DESTINY-Breast04 / -06 結果，HR+/HER2-low 轉移性乳癌的治療順序：
+
+<Steps>
+  <div>
+    ### 第一線：內分泌治療 + CDK4/6 抑制劑
+
+    HR+ 不論 HER2-low 與否，第一線仍以內分泌治療為主（aromatase inhibitor 或 fulvestrant）併用 CDK4/6 抑制劑（palbociclib / ribociclib / abemaciclib），mPFS 可達 24–28 個月。此階段尚未到 T-DXd 的位置。
+  </div>
+  <div>
+    ### 內分泌失效後：T-DXd（DB06 適用族群）
+
+    若已接受 ≥ 2 線內分泌治療（含 CDK4/6i）後進展、尚未化療，且 HER2-low（IHC 1+ 或 2+/ISH−）—— 依 DESTINY-Breast06，可在化療之前直接用 T-DXd，mPFS 13.2 vs. 8.1 個月。HER2 ultralow 在 DB06 也觀察到獲益，但 NCCN v3.2026 主要建議仍針對 HER2-low。
+  </div>
+  <div>
+    ### 已接受化療後：T-DXd（DB04 適用族群）
+
+    若已用過至少 1 線化療，無論 HR+ 或 HR−，只要 HER2-low → 依 DESTINY-Breast04 適用 T-DXd，mPFS 10.1 vs. 5.4 個月。HR− 族群（涵蓋 HER2-low TNBC）mPFS 8.5 vs. 2.9 個月。
+  </div>
+  <div>
+    ### T-DXd 失效後：回到化療或其他 ADC
+
+    目前 T-DXd 後續尚無大型前瞻性數據；常見策略包含 sacituzumab govitecan（TROP-2 ADC，若 TNBC 表型）、capecitabine、eribulin、或回到內分泌組合。臨床試驗（如 datopotamab deruxtecan、HER3-DXd）也是選項。
+  </div>
+</Steps>
+
+<Divider />
+
+## 適應症、禁忌症與副作用
+
+### 適應症（依 FDA 與 NCCN v3.2026）
+
+- **無法切除或轉移性乳癌**，HER2-low（IHC 1+ 或 2+/ISH−）
+- HR+ 族群：已接受至少 1 線內分泌治療後進展（DB06 路徑），或已接受過化療（DB04 路徑）
+- HR− 族群：已接受至少 1 線化療（DB04 路徑）
+- ECOG PS 0–1，主要器官功能可耐受
+- 已完成 HER2 IHC 病理判讀（建議由乳癌專責病理醫師判讀）
+
+### 禁忌症與需謹慎使用
+
+- 對 trastuzumab 或 deruxtecan 成分過敏者
+- 活動性間質性肺病（ILD）或先前 ILD 病史
+- 嚴重肺功能異常（基礎肺功能不全者風險升高）
+- 嚴重肝功能異常
+- 妊娠與授乳期應避免使用（具胚胎毒性）
+- 嚴重心臟功能異常（LVEF < 50% 需評估）
+
+### 常見不良反應
+
+- 任何級別：噁心嘔吐（約 70%）、疲倦、掉髮、嗜中性白血球下降、貧血、轉氨酶上升
+- 第 3 級以上嗜中性白血球下降約 20–25%
+- 心臟功能（LVEF 下降）：< 5%，但建議每 3 個月監測
+- **間質性肺病（ILD / pneumonitis）**：所有級別約 10–15%；致死性（第 5 級）約 0.5–1.5%
+
+<Callout type="warning" title="間質性肺病（ILD）監測——T-DXd 最重要的安全議題">
+Powell 等人 2022 年 ESMO Open 分析 T-DXd 跨試驗匯總資料（n = 1,150）顯示 ILD 整體發生率約 **15.4%**，第 3–4 級 2.2%，**第 5 級（致死）1.4%**。多數 ILD 發生在治療開始後的 4–12 個月，但任何時間都可能發生。
+
+**監測重點：**
+
+1. 開始 T-DXd 前先做胸部 CT 與基礎肺功能。
+2. 每 6–9 週重做 CT；有症狀（咳嗽、呼吸困難、運動耐受度下降、發燒）立即影像追蹤。
+3. **任何級別** ILD（包含影像上無症狀的浸潤）一律暫停治療、影像複檢、視級別考慮類固醇。
+4. 第 1 級無症狀 ILD 影像復原後可重新開始（須減量）；**第 2 級以上一律永久停藥**。
+5. 與胸腔科醫師合作監測，避免延遲處理。
+</Callout>
+
+## NCCN v3.2026 的 HER2-low 新分層
+
+| 治療階段 | HER2 狀態判斷 | 推薦藥物 |
+|---|---|---|
+| **第一線（HR+）** | 不分 HER2 表現 | AI/fulvestrant + CDK4/6i |
+| **第二線（HR+, 內分泌失效）** | **HER2-low** → DB06 路徑 | T-DXd（category 1） |
+| **第二線（HR+, 內分泌失效）** | HER2 IHC 0 → 標準化療路徑 | Capecitabine、CDK4/6i 更換等 |
+| **後線（HR+/−, 化療經驗）** | **HER2-low** → DB04 路徑 | T-DXd（category 1） |
+| **HER2-low TNBC** | HER2-low + HR− | T-DXd（DB04 HR− subset） |
+| **HER2 IHC 0** | 無 HER2-low 路徑 | 依 HR 狀態與 BRCA / PD-L1 選擇 |
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 拿到病理報告先看 HER2 IHC
+
+    確認報告寫的是 IHC 0、1+、2+，還是 3+。若是 2+，**一定要看 FISH／ISH 結果**——FISH 陰性才屬於 HER2-low；FISH 陽性則屬於 HER2 陽性，治療路徑完全不同。
+  </div>
+  <div>
+    ### 詢問是否符合 DB04 或 DB06 路徑
+
+    若 HR+ 已用過 CDK4/6 抑制劑、尚未化療 → 可問醫師 DESTINY-Breast06 是否適用；若已接受過化療 → 可問 DESTINY-Breast04。
+  </div>
+  <div>
+    ### T-DXd 前先評估肺功能、規劃 ILD 監測
+
+    開始治療前完成胸部 CT 與肺功能檢查，建立基礎影像。治療中如出現新發或加重的咳嗽、呼吸困難、運動耐受度下降，**不要等下次回診**，應立即聯絡治療團隊。
+  </div>
+  <div>
+    ### 與主治醫師討論可帶的問題清單
+
+    1. 我的 HER2 IHC 是幾分？是 0、1+、2+/ISH−，還是 2+/ISH+？
+    2. 若報告寫 IHC 0，但我已治療多線——是否值得重新切片或重新染色？
+    3. 我目前位於 DESTINY-Breast06 還是 -04 的適用區間？
+    4. T-DXd 開始前的胸部 CT 與肺功能怎麼安排？多久追蹤一次？
+    5. 治療中若出現呼吸症狀，要聯絡哪個窗口？
+    6. 副作用如噁心、掉髮、嗜中性白血球下降會怎麼處理？
+    7. 健保是否給付？自費試算？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Modi S, Jacot W, Yamashita T, et al. **Trastuzumab Deruxtecan in Previously Treated HER2-Low Advanced Breast Cancer** (DESTINY-Breast04). *N Engl J Med.* 2022;387(1):9-20. [doi:10.1056/NEJMoa2203690](https://doi.org/10.1056/NEJMoa2203690)
+2. Bardia A, Hu X, Dent R, et al. **Trastuzumab Deruxtecan after Endocrine Therapy in Metastatic Breast Cancer** (DESTINY-Breast06). *N Engl J Med.* 2024;391(22):2110-2122. [doi:10.1056/NEJMoa2407086](https://doi.org/10.1056/NEJMoa2407086)
+3. Modi S, Jacot W, Iwata H, et al. **DESTINY-Breast04 long-term survival update.** *Nat Med.* 2025. [doi:10.1038/s41591-025-03981-4](https://doi.org/10.1038/s41591-025-03981-4)
+4. Schettini F, Chic N, Brasó-Maristany F, et al. **Clinical, pathological, and PAM50 gene expression features of HER2-low breast cancer.** *NPJ Breast Cancer.* 2021;7(1):1. [doi:10.1038/s41523-020-00208-2](https://doi.org/10.1038/s41523-020-00208-2)
+5. Powell CA, Modi S, Iwata H, et al. **Pooled analysis of drug-related interstitial lung disease and/or pneumonitis in nine trials of trastuzumab deruxtecan monotherapy.** *ESMO Open.* 2022;7(4):100554. [doi:10.1016/j.esmoop.2022.100554](https://doi.org/10.1016/j.esmoop.2022.100554)
+6. Tarantino P, Gandini S, Nicolò E, et al. **Evolution of low HER2 expression between early and advanced-stage breast cancer.** *J Clin Oncol.* 2022;40(17_suppl):1000-1009. [doi:10.1200/JCO.21.02105](https://doi.org/10.1200/JCO.21.02105)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Breast Cancer, v3.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。

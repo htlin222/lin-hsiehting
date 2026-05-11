@@ -1,0 +1,235 @@
+---
+title: "MGUS 與燜悶骨髓瘤：要不要擔心會變成骨髓瘤？"
+titleEn: "MGUS and smoldering myeloma: surveillance and risk stratification"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "健檢驗到 M-protein 不一定是骨髓瘤。MGUS 每年進展為惡性疾病的風險僅約 1%，燜悶骨髓瘤則平均 10%／年；本文整理 IMWG 2014 SLiM-CRAB、Mayo 20/2/20 與 IMWG 2020 風險分級、E3A06 試驗對高風險族群的治療、以及 MGRS 與台灣監測建議。"
+tags: ["MGUS", "骨髓瘤", "M-protein", "smoldering myeloma", "IMWG", "衛教"]
+medical: true
+medicalCondition: "不明意義單株免疫球蛋白血症與燜悶骨髓瘤 (MGUS and smoldering multiple myeloma)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "健檢說我的 M-protein 異常，是不是得了骨髓瘤？"
+    a: "不一定。50 歲以上族群有 3–5% 帶有 M-protein 但完全沒有症狀，稱為 MGUS（不明意義單株免疫球蛋白血症）。Kyle 等人 2018 年 NEJM 的 30 年隨訪研究顯示，MGUS 進展為骨髓瘤等惡性疾病的累積風險為 36%，平均每年約 1%，多數人終生不會發病。確診步驟為：抽血 SPEP/IFE、血清自由輕鏈 (FLC) 比值、24 小時尿液 UPEP，並評估有無 CRAB 症狀（高血鈣、腎功能、貧血、骨病灶）。"
+  - q: "燜悶骨髓瘤（smoldering myeloma）一定要立刻治療嗎？"
+    a: "依 IMWG 2014 標準，僅有 SLiM-CRAB（任一條：骨髓漿細胞 ≥ 60%、FLC 比 ≥ 100、MRI ≥ 2 個 ≥ 5 mm 骨病灶）的高度高風險族群直接視為骨髓瘤啟動治療。其餘以 Mayo 20/2/20 或 IMWG 2020 風險模型分級：低／中風險族群觀察追蹤，高風險族群可考慮 E3A06 試驗的 lenalidomide 介入，或在臨床試驗下早期 ASCT（如 GEM-CESAR、ITHACA）。"
+  - q: "MGUS 多久需要回診一次？"
+    a: "依 Mayo MGUS 風險分級（依 M-spike、輕鏈異常、isotype 三項）：低風險（三項皆無異常）首次抽血追蹤 6 個月，之後每 2–3 年；中／高風險建議每年一次抽血追蹤。若出現新發骨痛、貧血、腎功能下降、不明原因疲倦，應提前回診。"
+  - q: "M-protein 會傷害腎臟嗎？"
+    a: "會。即使 M-protein 量不足以診斷骨髓瘤，異常輕鏈仍可能沉積在腎絲球或腎小管，造成 MGRS（monoclonal gammopathy of renal significance, 具腎臟意義的單株免疫球蛋白血症）。常見表現為蛋白尿、腎功能緩慢下降、AL amyloidosis；2019 年 Nat Rev Nephrol 共識建議：若 MGUS／SMM 病人有不明原因蛋白尿或 eGFR 下降，應做腎切片並轉介血液腫瘤科共照。"
+doi: "10.5281/zenodo.20115193"
+conceptDoi: "10.5281/zenodo.20115192"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+健檢報告寫著「血清蛋白電泳發現 M-protein」，多數病人第一個念頭就是「我是不是得了骨髓瘤？」答案幾乎都是：**不一定，而且大多數人不會**。50 歲以上族群有 3–5% 帶有 M-protein，70 歲以上甚至高達 8%，但其中絕大部分都停留在「不明意義單株免疫球蛋白血症 (MGUS)」這個階段，每年進展為骨髓瘤等惡性疾病的風險僅約 **1%**。本文整理 IMWG 2014 SLiM-CRAB 診斷標準、Mayo 20/2/20 與 IMWG 2020 燜悶骨髓瘤 (smoldering multiple myeloma, SMM) 風險分級、E3A06 試驗對高風險 SMM 的早期介入結果、MGRS 的腎臟風險，以及台灣門診實務的監測建議。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為 (a) 健檢發現 M-protein 異常、被建議追蹤的民眾與家屬，以及 (b) 想複習 SLiM-CRAB / 20-2-20 / IMWG 2020 三套分級系統的同業。所有實際監測頻率與治療決定，請與您的血液腫瘤科主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 三個診斷怎麼區分？SLiM-CRAB 是關鍵
+
+骨髓內的漿細胞（plasma cell）會分泌單株免疫球蛋白，當這群細胞發生 clonal expansion，就會在血中驗到 M-protein。依漿細胞比例、M-protein 量與是否出現器官傷害，IMWG 2014 將其分為三個診斷：
+
+| 項目 | MGUS | 燜悶骨髓瘤 (SMM) | 多發性骨髓瘤 (MM) |
+|---|---|---|---|
+| 血清 M-protein | < 3 g/dL | ≥ 3 g/dL **或** 尿液 ≥ 500 mg/24h | 任何量 |
+| 骨髓漿細胞 (clonal) | < 10% | 10–60% | ≥ 10% |
+| CRAB 症狀 | 無 | 無 | 任一條成立 |
+| SLiM 任一條 | 無 | 無 | 任一條成立 |
+| 每年進展風險 | ≈ 1% | ≈ 10%（前 5 年） | — |
+| 處置 | 風險分級追蹤 | 風險分級監測；高風險可考慮介入 | 啟動治療 |
+
+「CRAB」是高血鈣 (Calcium) > 11 mg/dL、腎功能 (Renal) Cr > 2 mg/dL 或 CrCl < 40、貧血 (Anemia) Hb < 10、骨病灶 (Bone) 任一條成立。2014 年 IMWG 在 *Lancet Oncology* 把以下三條「SLiM」加入骨髓瘤定義，等同於 ultra-high-risk SMM：
+
+- **S** — Sixty: 骨髓 clonal plasma cell ≥ 60%
+- **Li** — Light chain: 受影響 / 未受影響 FLC 比值 ≥ 100（且受影響側 ≥ 100 mg/L）
+- **M** — MRI: 全身 MRI 或 PET 顯示 ≥ 2 處 ≥ 5 mm 局部骨髓病灶
+
+只要 SLiM-CRAB 任一條成立，就視為骨髓瘤、應啟動治療，不必再等到典型骨折或腎衰竭。
+
+<Callout type="tip" title="檢驗清單">
+完整 M-protein 評估需四件套：(1) 血清蛋白電泳 (SPEP) + 免疫固定 (IFE)；(2) 血清自由輕鏈 (sFLC, κ/λ 比值)；(3) 24 小時尿液 UPEP + IFE；(4) CBC、Ca、Cr、albumin、LDH、β2-microglobulin。若血清 M-protein ≥ 1.5 g/dL、非 IgG isotype、FLC 比異常任一條，建議轉血液腫瘤科並評估骨髓檢查 / 全身影像。
+</Callout>
+
+## MGUS 真的會變骨髓瘤嗎？Kyle 2018 NEJM 30 年隨訪
+
+Mayo Clinic 的 Kyle 等人 2018 年在 *NEJM* 發表 1,384 位 MGUS 病人、追蹤中位 34 年的世代研究：
+
+- 累積進展為惡性疾病（骨髓瘤、AL amyloidosis、Waldenström、淋巴瘤）的風險：10 年 10%、20 年 18%、**30 年 36%**
+- 多數進展的是多發性骨髓瘤
+- 同期世代相比骨髓瘤死亡風險（HR vs. 一般族群）較高，但 MGUS 病人本身的整體存活與年齡配對族群相當——意思是大多數人是死於別的原因
+
+這就是門診告訴病人「不必驚慌，但要追蹤一輩子」的原始證據來源。
+
+## Mayo MGUS 風險模型：三個變數決定追蹤頻率
+
+Mayo Clinic 的 MGUS risk score 用三個變數：
+
+1. 血清 M-spike ≥ 1.5 g/dL
+2. 非 IgG isotype（IgA、IgM、IgD）
+3. 血清 FLC 比值異常（< 0.26 或 > 1.65）
+
+| 風險族群 | 異常項目 | 20 年累積進展風險 | 追蹤建議 |
+|---|---|---|---|
+| 低風險 | 0 | ≈ 5% | 首次 6 個月複檢；之後每 2–3 年抽血一次，**不需骨髓檢查** |
+| 低-中風險 | 1 | ≈ 21% | 每年抽血追蹤 |
+| 中-高風險 | 2 | ≈ 37% | 每年抽血追蹤；考慮骨髓檢查與影像 |
+| 高風險 | 3 | ≈ 58% | 每 6–12 個月追蹤；骨髓檢查 + 全身 MRI／PET |
+
+低風險 MGUS 約佔 MGUS 族群一半以上，臨床上多數病人屬於這一族——對這些病人，過度檢查反而增加焦慮與輻射暴露。
+
+## 燜悶骨髓瘤 (SMM) 兩套分級系統
+
+SMM 約佔骨髓瘤前驅病灶的 14%，其進展風險明顯高於 MGUS：前 5 年平均每年 10%、整體 10 年累積約 50%，但個體差異很大。臨床上有兩套主流分級方式：
+
+### Mayo 20/2/20（Lakshman, Blood Cancer J 2018）
+
+| 高風險因子 | 閾值 |
+|---|---|
+| 骨髓 clonal plasma cell % | > 20% |
+| 血清 M-protein | > 2 g/dL |
+| sFLC 比值（受影響側 / 未受影響側） | > 20 |
+
+| 風險族群 | 符合項目 | 2 年進展風險 |
+|---|---|---|
+| 低風險 | 0 | ≈ 6% |
+| 中風險 | 1 | ≈ 18% |
+| 高風險 | 2–3 | ≈ 44% |
+
+### IMWG 2020 risk model（Mateos, Blood Cancer J 2020）
+
+IMWG 2020 模型加入細胞遺傳學，分數加總（FLC 比 > 20、M-protein > 2 g/dL、BMPC > 20%、t(4;14)/del(17p)/+1q 任一條 = 1 分）：
+
+| 分數 | 風險 | 2 年進展風險 |
+|---|---|---|
+| 0 | 低 | ≈ 6% |
+| 1 | 中-低 | ≈ 18% |
+| 2 | 中-高 | ≈ 44% |
+| 3–4 | 高 | ≈ 63% |
+
+| 模型 | 變數 | 加入細胞遺傳學？ | 適用情境 |
+|---|---|---|---|
+| Mayo 20/2/20 | 3 項 | 否 | 基層 / 健保門診，無 FISH 也能用 |
+| IMWG 2020 | 4 項 | 是 | 醫學中心、可做 FISH／NGS 的族群 |
+
+<Callout type="warning" title="風險模型不是萬靈丹">
+兩套模型都基於回溯性世代，新發現的高風險表徵（如 evolving M-protein、循環漿細胞 ≥ 5/μL、MRI focal lesion ≥ 1）尚未完整納入。實際分級仍需血液腫瘤科綜合判讀，模型只是輔助、不是宣判。
+</Callout>
+
+## 高風險 SMM 要不要早治療？
+
+過去 SMM 一律觀察，但 2020 年後高風險 SMM 的早期介入逐漸有實證支持。
+
+### E3A06：lenalidomide 單藥（Lonial, JCO 2020）
+
+ECOG-ACRIN E3A06 第三期試驗將 182 位 Mayo 高風險 SMM 隨機分為 lenalidomide 25 mg 單藥 vs. 觀察：
+
+- 3 年無進展存活率：**91% vs. 66%**（HR 0.28, 95% CI 0.12–0.62）
+- 中位追蹤 35 個月，lenalidomide 組整體反應率 50%（多為部分反應）
+- 第 3–4 級不良反應：疲倦、嗜中性白血球下降、皮疹較常見；28% 因毒性停藥
+- OS 數據尚未成熟
+
+這是第一個對高風險 SMM「早治療延後變成骨髓瘤」獲得正面結果的第三期試驗，NCCN 已將 lenalidomide ± dexamethasone 列為高風險 SMM 的 category 2A 選項，但仍以臨床試驗優先。
+
+### GEM-CESAR 與 ITHACA：早期 ASCT 路線
+
+西班牙 GEM-CESAR 試驗對高風險 SMM 採 KRd 誘導 → ASCT → KRd 維持 → 維持治療，5 年 PFS 約 92%、MRD 陰性比例高；ITHACA、ASCENT 等試驗也在評估 isatuximab／daratumumab 加上 IMiD 三合一或四合一方案。**這些方案仍以試驗為主**，常規健保門診不建議直接套用。
+
+<Callout type="warning" title="早期介入的不確定性">
+SMM 早期介入仍存在三個未解問題：(1) 哪些病人真的會獲益（風險模型誤分類率 ≈ 20%）；(2) 早期治療能否延長 OS（多數試驗 OS 尚未成熟）；(3) 長期 IMiD 暴露的次發癌風險。請務必與主治醫師討論臨床試驗選項，不要把 E3A06 套到所有 SMM 病人身上。
+</Callout>
+
+## 別忽略腎臟：MGRS（單株免疫球蛋白血症的腎臟風險）
+
+即使 M-protein 量不足以診斷骨髓瘤，異常輕鏈仍可在腎絲球或腎小管沉積，造成可進展的腎傷害——International Kidney and Monoclonal Gammopathy Research Group 在 2019 年 *Nat Rev Nephrol* 把這群「MGUS／SMM 但有腎臟傷害」族群命名為 **MGRS (monoclonal gammopathy of renal significance)**。
+
+常見組織學表現：
+
+- AL amyloidosis（輕鏈澱粉樣變性）
+- Monoclonal immunoglobulin deposition disease (MIDD)
+- Light chain proximal tubulopathy（Fanconi syndrome 樣表現）
+- C3 glomerulopathy with monoclonal gammopathy
+- Cryoglobulinaemic glomerulonephritis
+
+警訊：MGUS／SMM 病人合併不明原因蛋白尿 > 500 mg/天、血尿、eGFR 下降超過 30%，**就要考慮腎切片並轉介血液腫瘤科**。MGRS 雖然從「漿細胞量」看不像骨髓瘤，但若不處理底層 clonal cell，腎功能可能不可逆惡化——治療目標是壓制 clone、而非單純等待器官衰竭。
+
+## 適應症、禁忌症與副作用摘要
+
+### Lenalidomide 用於高風險 SMM 的適應症（試驗中 / NCCN 2A）
+
+- 符合 Mayo 20/2/20 高風險或 IMWG 2020 ≥ 2 分
+- 體能狀態 ECOG 0–1
+- 充分知情同意，能接受長期口服 IMiD
+- 建議在臨床試驗框架下使用；台灣健保**目前不給付**此適應症
+
+### 禁忌症與謹慎使用
+
+- 懷孕、計畫懷孕或哺乳期間（致畸胎風險，需嚴格避孕）
+- 嚴重腎功能不全（eGFR < 30 須劑量調整，< 15 不建議）
+- 既往血栓栓塞病史（需抗血小板或抗凝血預防）
+- 對 thalidomide 類藥物嚴重過敏
+
+### 常見不良反應（lenalidomide）
+
+- 任何級別：疲倦、嗜中性白血球下降、皮疹、腹瀉、肌肉痠痛
+- 第 3 級以上：嗜中性白血球下降約 20%、貧血約 5–8%、感染約 5%
+- 罕見但嚴重：靜脈血栓（建議 aspirin 預防）、次發性癌症（長期使用累積風險）
+
+### 監測項目
+
+- 開始介入後每月追蹤 CBC、CMP、M-spike、sFLC
+- 觀察組：依風險級別每 3–12 個月抽血、必要時影像
+
+## 病人實務指引
+
+<Steps>
+  <div>
+    ### 拿到 M-protein 異常報告先做四件事
+
+    1. 確認檢驗：要求補齊 SPEP + IFE、sFLC、24h UPEP、CBC + Ca + Cr。
+    2. 把報告整理出來：M-protein 量（g/dL）、isotype（IgG/IgA/IgM/IgD/light chain only）、FLC 比值。
+    3. 評估有無 CRAB 症狀：近期骨痛、不明貧血、腎功能變差、不明原因疲倦或感染。
+    4. 預約血液腫瘤科：尤其當 M-spike ≥ 1.5 g/dL、非 IgG isotype、FLC 比異常任一條時。
+  </div>
+  <div>
+    ### 依風險分級決定回診頻率
+
+    - **MGUS 低風險（Mayo 0 分）**：首次 6 個月複檢；之後每 2–3 年抽血一次。
+    - **MGUS 中／高風險**：每年抽血一次；中-高與高風險族群評估骨髓檢查 + 全身 MRI／PET。
+    - **SMM 低／中風險**：每 3–6 個月抽血；每 12 個月評估骨髓 / 影像。
+    - **SMM 高風險**：每 2–3 個月抽血；討論臨床試驗（E3A06、GEM-CESAR 路線）。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 Mayo MGUS 風險分級或 SMM Mayo 20/2/20 / IMWG 2020 分數是多少？
+    2. 是否需要做骨髓檢查、全身 MRI 或 PET-CT？
+    3. 是否有 MGRS 風險（蛋白尿、eGFR 下降）需要腎切片？
+    4. 我的 isotype 是什麼？是否需要排除 AL amyloidosis（心臟、神經、舌頭症狀）？
+    5. 高風險 SMM 是否適合進入臨床試驗？台灣有哪些醫學中心在收？
+    6. 下次回診的時間？哪些症狀要提前回診？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Kyle RA, Larson DR, Therneau TM, et al. **Long-Term Follow-up of Monoclonal Gammopathy of Undetermined Significance.** *N Engl J Med.* 2018;378(3):241-249. [doi:10.1056/NEJMoa1709974](https://doi.org/10.1056/NEJMoa1709974)
+2. Rajkumar SV, Dimopoulos MA, Palumbo A, et al. **International Myeloma Working Group updated criteria for the diagnosis of multiple myeloma.** *Lancet Oncol.* 2014;15(12):e538-e548. [doi:10.1016/S1470-2045(14)70442-5](https://doi.org/10.1016/S1470-2045(14)70442-5)
+3. Lonial S, Jacobus S, Fonseca R, et al. **Randomized Trial of Lenalidomide Versus Observation in Smoldering Multiple Myeloma (E3A06).** *J Clin Oncol.* 2020;38(11):1126-1137. [doi:10.1200/JCO.19.01740](https://doi.org/10.1200/JCO.19.01740)
+4. Mateos MV, Kumar S, Dimopoulos MA, et al. **International Myeloma Working Group risk stratification model for smoldering multiple myeloma (SMM).** *Blood Cancer J.* 2020;10(10):102. [doi:10.1038/s41408-020-00366-3](https://doi.org/10.1038/s41408-020-00366-3)
+5. Lakshman A, Rajkumar SV, Buadi FK, et al. **Risk stratification of smoldering multiple myeloma incorporating revised IMWG diagnostic criteria.** *Blood Cancer J.* 2018;8(6):59. [doi:10.1038/s41408-018-0077-4](https://doi.org/10.1038/s41408-018-0077-4)
+6. Leung N, Bridoux F, Batuman V, et al. **The evaluation of monoclonal gammopathy of renal significance: a consensus report of the International Kidney and Monoclonal Gammopathy Research Group.** *Nat Rev Nephrol.* 2019;15(1):45-59. [doi:10.1038/s41581-018-0077-4](https://doi.org/10.1038/s41581-018-0077-4)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；DOI 已透過 Crossref API 驗證。

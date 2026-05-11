@@ -1,0 +1,181 @@
+---
+title: "肝內膽管癌（ICC）的 IDH1、FGFR2、HER2 標靶與免疫合併（2026 更新）"
+titleEn: "Targeted therapy in intrahepatic cholangiocarcinoma 2026"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "肝內膽管癌（ICC）2026 年治療地圖：IDH1（ivosidenib）、FGFR2 fusion（pemigatinib、futibatinib）、HER2（zanidatamab）、BRAF V600E 都有對應標靶，一線化療再加上 durvalumab（TOPAZ-1）或 pembrolizumab（KEYNOTE-966）已成新標準。"
+tags: ["膽管癌", "ICC", "ivosidenib", "pemigatinib", "FGFR2", "durvalumab", "衛教"]
+medical: true
+medicalCondition: "肝內膽管癌 (Intrahepatic cholangiocarcinoma, ICC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "膽管癌可以做標靶嗎？"
+    a: "可以。肝內膽管癌（ICC）大約有 40–50% 的病人帶有可治療的分子變異，包含 IDH1 突變（約 13–20%）、FGFR2 fusion／rearrangement（約 10–15%，幾乎集中在 ICC）、HER2 過量表現或擴增（約 5–10%）、BRAF V600E（約 1–5%）等。NCCN v2.2026 建議所有不可切除或轉移性膽道癌一律進行 NGS 多基因檢測，並依結果選擇後線標靶。"
+  - q: "ivosidenib 是什麼？什麼樣的膽管癌可以用？"
+    a: "Ivosidenib 是口服 IDH1 抑制劑，用於帶有 IDH1 突變、化療失敗後的進展期膽管癌。ClarIDHy 第三期試驗（Lancet Oncology 2020，n = 185）顯示相較於安慰劑，mPFS 2.7 vs. 1.4 個月（HR 0.37），疾病控制率 53% vs. 28%，並於 2021 年獲 FDA 核准。常見副作用為噁心、腹瀉、疲倦，少數會出現 QT 延長。"
+  - q: "FGFR2 fusion 在膽管癌的比例是多少？"
+    a: "FGFR2 融合或重排在所有膽道癌約 10–15%，而且幾乎集中在『肝內膽管癌（ICC）』這個亞型；肝外膽管癌與膽囊癌幾乎沒有。對應的口服 FGFR 抑制劑包括 pemigatinib（FIGHT-202, ORR 35.5%）與 futibatinib（FOENIX-CCA2, ORR 41.7%），兩者都已獲 FDA 核准用於化療失敗後的後線治療。"
+  - q: "免疫治療在一線有用嗎？"
+    a: "有。TOPAZ-1（NEJM Evid 2022）證實在 cisplatin + gemcitabine 基礎上加入 durvalumab，mOS 從 11.3 延長到 12.8 個月（HR 0.80），mPFS 7.2 vs. 5.7 個月。KEYNOTE-966（Lancet 2023）以 pembrolizumab 取代 durvalumab 也呈現一致方向（mOS 12.7 vs. 10.9，HR 0.83）。兩個試驗都讓「化療 + 免疫」成為 NCCN v2.2026 一線 category 1 preferred。"
+doi: "10.5281/zenodo.20115190"
+conceptDoi: "10.5281/zenodo.20115189"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+肝內膽管癌（intrahepatic cholangiocarcinoma, ICC）在 2020 年以前幾乎只能依賴 gemcitabine + cisplatin 化療，mOS 約 11 個月。2020–2024 年間，**IDH1、FGFR2、HER2、BRAF 等四個分子變異** 分別有對應藥物獲 FDA 核准，加上 TOPAZ-1 與 KEYNOTE-966 改寫一線標準為「化療 + 免疫」，整個治療地圖已不一樣。本文整理 2026 年最新一線方案、後線標靶選擇，以及為什麼 NGS 多基因檢測在 ICC 是「必做」而不是「考慮」。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知肝內膽管癌、想了解化療之外是否還有標靶選項的病友與家屬，以及對 ICC 分子分型與一線免疫合併治療有興趣的同業。實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## ICC 為什麼一定要做基因檢測？
+
+膽道癌（biliary tract cancer, BTC）依解剖位置分為肝內膽管癌（ICC）、肝外膽管癌（eCCA）、膽囊癌（GBC）三大類。**這三類分子變異分布差異很大**：FGFR2 fusion 與 IDH1 突變幾乎集中在 ICC，而 HER2 擴增則以 eCCA／GBC 較多。換句話說，肝內膽管癌病人若沒有做 NGS，等於放棄一半以上的可治療標靶機會。
+
+| 分子變異 | 在 ICC 比例 | 對應藥物 | 重要試驗 |
+|---|---|---|---|
+| **IDH1 突變** | 13–20% | Ivosidenib（口服 IDH1 抑制劑） | ClarIDHy（Lancet Oncol 2020） |
+| **FGFR2 fusion／rearrangement** | 10–15% | Pemigatinib、Futibatinib（口服 FGFR1–3 抑制劑） | FIGHT-202、FOENIX-CCA2 |
+| **HER2 過量表現／擴增** | 5–10% | Zanidatamab（雙特異性 HER2 抗體） | HERIZON-BTC-01 |
+| **BRAF V600E** | 1–5% | Dabrafenib + Trametinib | ROAR basket |
+| **NTRK fusion / MSI-H / TMB-H** | < 2% | Larotrectinib、Pembrolizumab | tumor-agnostic 核准 |
+
+<Callout type="tip" title="檢體與時機">
+NCCN v2.2026 建議在診斷不可切除／轉移性 ICC 時就送 NGS（建議涵蓋 IDH1、FGFR2、HER2、BRAF、NTRK、MSI、TMB）。腫瘤檢體量不足時可改抽血做 ctDNA panel，但 FGFR2 fusion 與 HER2 擴增的偵測敏感度仍以組織為佳。
+</Callout>
+
+## 一線：化療 + 免疫已是新標準
+
+TOPAZ-1 與 KEYNOTE-966 兩個第三期試驗讓「gemcitabine + cisplatin + 免疫檢查點抑制劑」取代單純化療，成為 NCCN v2.2026 對所有不可切除／轉移性膽道癌的一線 category 1 preferred 方案。
+
+### TOPAZ-1 vs. KEYNOTE-966 對照
+
+| 項目 | TOPAZ-1（durvalumab） | KEYNOTE-966（pembrolizumab） |
+|---|---|---|
+| 收案人數 | 685 | 1,069 |
+| 受試族群 | 不可切除／轉移 BTC（ICC 56%、eCCA 19%、GBC 25%） | 不可切除／轉移 BTC（ICC 59%、eCCA 18%、GBC 22%） |
+| 化療骨幹 | Cis + Gem × 8 cycles，之後 durvalumab 維持 | Cis + Gem 直到進展，pembrolizumab 維持 |
+| mOS（試驗組 vs. 對照組） | 12.8 vs. 11.3 個月 | 12.7 vs. 10.9 個月 |
+| HR for OS（95% CI） | 0.80（0.66–0.97） | 0.83（0.72–0.95） |
+| mPFS | 7.2 vs. 5.7 個月（HR 0.75） | 6.5 vs. 5.6 個月（HR 0.86） |
+| ORR | 26.7% vs. 18.7% | 28.7% vs. 28.5% |
+| ≥ Grade 3 AE | 75.7% vs. 77.8% | 70% vs. 69% |
+
+<Callout type="warning" title="跨試驗比較的限制">
+TOPAZ-1 與 KEYNOTE-966 的受試族群、化療療程設計、PD-L1 採用判讀方式都不完全相同；上表只供概念性對照，不應視為兩種免疫藥的直接 head-to-head。實際選擇要依藥物可及性、健保給付與毒性 profile 個別判斷。
+</Callout>
+
+## 後線：依分子變異分流
+
+一線化療 + 免疫進展之後，2026 年的後線地圖分成「有可治療變異」與「沒有可治療變異」兩條路。
+
+<Steps>
+  <div>
+    ### IDH1 突變：ivosidenib
+
+    **ClarIDHy（Lancet Oncol 2020, n = 185）**：對 IDH1 突變、至少一線化療失敗的進展期膽管癌（91% 為 ICC），ivosidenib 500 mg QD vs. 安慰劑 mPFS 2.7 vs. 1.4 個月（HR 0.37, 95% CI 0.25–0.54）；DCR 53% vs. 28%；經 rank-preserving 校正交叉設計後 mOS 10.3 vs. 5.1 個月。常見副作用為噁心、腹瀉、疲倦；少數 QT 延長與膽紅素上升，需定期心電圖與肝功能監測。
+  </div>
+  <div>
+    ### FGFR2 fusion／rearrangement：pemigatinib 或 futibatinib
+
+    **FIGHT-202（Lancet Oncol 2020, n = 107 FGFR2 fusion subset）**：pemigatinib 13.5 mg QD（2 週用 1 週停）ORR 35.5%、mDOR 7.5 個月、mPFS 6.9 個月、mOS 21.1 個月。
+
+    **FOENIX-CCA2（NEJM 2023, n = 103）**：futibatinib 20 mg QD（連續服用）ORR 41.7%、mDOR 9.7 個月、mPFS 9.0 個月、mOS 20.0 個月。
+
+    兩藥都常見高磷血症（FGFR class effect），需限磷飲食、必要時磷結合劑；其他注意：指甲毒性、視網膜病變（建議基線眼底檢查）、口腔黏膜炎。Pemigatinib 與 futibatinib 之間目前沒有 head-to-head；FGFR2 抑制劑之間有部分交叉抗藥（gatekeeper 突變 V565F 等）。
+  </div>
+  <div>
+    ### HER2 過量／擴增：zanidatamab
+
+    **HERIZON-BTC-01（Lancet Oncol 2024, n = 80）**：zanidatamab（HER2 雙特異性抗體，結合 ECD4 與 ECD2）對 HER2 過量／擴增（IHC 3+ 或 IHC 2+/ISH+，多為 GBC 與 eCCA）化療失敗後的 BTC，ORR 41.3%、mDOR 12.9 個月、mPFS 5.5 個月。膽道癌中 HER2 陽性以 eCCA／GBC 居多，ICC 較少，但有 5–10% 比例仍值得檢測。常見副作用為腹瀉、infusion reaction，心臟毒性（LVEF 下降）發生率低於 trastuzumab + pertuzumab 雙抗體組合。
+  </div>
+  <div>
+    ### BRAF V600E：dabrafenib + trametinib
+
+    **ROAR basket trial（Lancet Oncol 2020, n = 43）**：對 BRAF V600E 的 BTC，dabrafenib 150 mg BID + trametinib 2 mg QD ORR 47%、mDOR 9 個月、mPFS 9 個月、mOS 14 個月。FDA 已對 BRAF V600E 實體腫瘤給予 tumor-agnostic 核准。常見副作用為發燒、皮疹、疲倦。
+  </div>
+  <div>
+    ### 沒有可治療變異：FOLFOX 或臨床試驗
+
+    **ABC-06**：fluorouracil + oxaliplatin（FOLFOX）二線 vs. 最佳支持療法，mOS 6.2 vs. 5.3 個月（HR 0.69）。雖然絕對獲益有限，仍是 NCCN 對「無 actionable mutation」病人的標準後線。建議積極轉介臨床試驗（HER3-DXd、claudin 18.2、TIGIT 等）。
+  </div>
+</Steps>
+
+## 適應症、禁忌症與副作用整理
+
+### 適應症（依各藥仿單）
+
+- **Ivosidenib**：IDH1 突變、至少一線化療後進展之膽管癌成人病人。
+- **Pemigatinib**：FGFR2 fusion／rearrangement、至少一線化療後進展之膽管癌。
+- **Futibatinib**：FGFR2 fusion／rearrangement、至少一線化療後進展之 ICC。
+- **Zanidatamab**：HER2 IHC 3+ 或 IHC 2+/ISH+、化療失敗後之 BTC（FDA 2024 加速核准）。
+- **Durvalumab／Pembrolizumab + Cis/Gem**：不可切除或轉移性 BTC 一線。
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分或相同類別藥物嚴重過敏者
+- 嚴重肝功能異常（Child-Pugh C）
+- 妊娠與授乳期應避免
+- 活動性自體免疫疾病（影響 durvalumab／pembrolizumab）
+- 嚴重心臟疾病、QT 延長病史（影響 ivosidenib）
+- 中／重度視網膜病變（影響 FGFR 抑制劑）
+
+### 各類藥物常見不良反應
+
+| 類別 | 任何級別 AE | ≥ Grade 3 重點 |
+|---|---|---|
+| **Ivosidenib** | 噁心、腹瀉、疲倦、食慾下降 | QT 延長 < 5%、膽紅素上升 < 5% |
+| **FGFR 抑制劑** | 高磷血症（>60%）、指甲毒性、口腔黏膜炎、視網膜剝離 | 高磷血症 ≥ G3 約 12–14%、無症狀 ALT 上升 |
+| **Zanidatamab** | 腹瀉、infusion reaction、疲倦 | LVEF 下降 < 3%、infusion reaction ≥ G3 < 2% |
+| **Durvalumab／Pembrolizumab** | 疲倦、皮疹、甲狀腺異常 | 免疫相關 AE 約 10–15%（肺炎、肝炎、大腸炎、腎上腺功能不全） |
+| **Cis + Gem** | 嗜中性白血球下降、貧血、噁心、腎毒性 | 嗜中性白血球下降 ≥ G3 約 50% |
+
+<Callout type="warning" title="FGFR 抑制劑的視網膜與磷代謝">
+Pemigatinib 與 futibatinib 都需要在開始治療前安排眼底檢查（視網膜下漿液性剝離可逆但需早期偵測），治療期間每月監測血磷；血磷 ≥ 7.0 mg/dL 時建議暫停或減量，並加上低磷飲食與磷結合劑（如 sevelamer）。這是與 IDH1／HER2 抑制劑很不一樣的監測重點。
+</Callout>
+
+## 給病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認是否做了 NGS 多基因檢測
+
+    開始討論二線治療之前必備：(1) IDH1 突變、(2) FGFR2 fusion／rearrangement、(3) HER2 IHC（建議含 FISH 驗證）、(4) BRAF V600E、(5) NTRK fusion、(6) MSI / dMMR。組織量不足可改 ctDNA，但 fusion 與擴增類變異建議以組織為主。
+  </div>
+  <div>
+    ### 一線就先問清楚免疫合併治療
+
+    NCCN v2.2026 已將 cis/gem + durvalumab 或 cis/gem + pembrolizumab 列為一線 category 1 preferred。健保 2025 年起對符合條件的不可切除／轉移性 BTC 有 durvalumab 給付，請主動詢問是否符合資格、與自費差異。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我的 NGS 結果有沒有 IDH1、FGFR2、HER2、BRAF？
+    2. 一線是否加上 durvalumab 或 pembrolizumab？健保是否給付？
+    3. 若進展，二線是化療還是直接走標靶？
+    4. 標靶副作用怎麼監測？（血磷、視網膜、QT、肝功能）
+    5. 有沒有合適的臨床試驗（HER3-DXd、FGFR2 第二代、claudin 18.2）？
+    6. 體能狀態與膽道支架／黃疸控制是否影響用藥？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Zhu AX, Macarulla T, Javle MM, et al. **Final overall survival efficacy results of ivosidenib for patients with advanced cholangiocarcinoma with IDH1 mutation** (ClarIDHy). *Lancet Oncol.* 2020;21(6):796-807. [doi:10.1016/S1470-2045(20)30157-1](https://doi.org/10.1016/S1470-2045(20)30157-1)
+2. Abou-Alfa GK, Sahai V, Hollebecque A, et al. **Pemigatinib for previously treated, locally advanced or metastatic cholangiocarcinoma** (FIGHT-202). *Lancet Oncol.* 2020;21(5):671-684. [doi:10.1016/S1470-2045(20)30109-1](https://doi.org/10.1016/S1470-2045(20)30109-1)
+3. Goyal L, Meric-Bernstam F, Hollebecque A, et al. **Futibatinib for FGFR2-Rearranged Intrahepatic Cholangiocarcinoma** (FOENIX-CCA2). *N Engl J Med.* 2023;388(3):228-239. [doi:10.1056/NEJMoa2206834](https://doi.org/10.1056/NEJMoa2206834)
+4. Oh DY, He AR, Qin S, et al. **Durvalumab plus Gemcitabine and Cisplatin in Advanced Biliary Tract Cancer** (TOPAZ-1). *NEJM Evid.* 2022;1(8):EVIDoa2200015. [doi:10.1056/EVIDoa2200015](https://doi.org/10.1056/EVIDoa2200015)
+5. Kelley RK, Ueno M, Yoo C, et al. **Pembrolizumab in combination with gemcitabine and cisplatin for biliary tract cancer** (KEYNOTE-966). *Lancet.* 2023;401(10391):1853-1865. [doi:10.1016/S0140-6736(23)00727-4](https://doi.org/10.1016/S0140-6736(23)00727-4)
+6. Pant S, Fan J, Oh DY, et al. **Zanidatamab in previously-treated HER2-positive biliary tract cancer** (HERIZON-BTC-01). *Lancet Oncol.* 2024;25(10):1273-1284. [doi:10.1016/S1470-2045(23)00574-0](https://doi.org/10.1016/S1470-2045(23)00574-0)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)；本文引用 DOI 已逐一交叉驗證 Crossref。

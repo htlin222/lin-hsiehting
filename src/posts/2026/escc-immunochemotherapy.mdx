@@ -1,0 +1,202 @@
+---
+title: "食道鱗狀細胞癌的免疫合併化療：誰會獲益最多？"
+titleEn: "Immunochemotherapy in esophageal squamous cell carcinoma"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "晚期食道鱗狀細胞癌（ESCC）一線化療 + nivolumab 或 pembrolizumab 已是 NCCN 標準；本文整理 CheckMate-648、KEYNOTE-590、RATIONALE-306 跨試驗數據、PD-L1 CPS 分層、新輔助 CheckMate-577，並回答「我可不可以做免疫」這個最常見的問題。"
+tags: ["食道癌", "ESCC", "nivolumab", "pembrolizumab", "免疫治療", "衛教"]
+medical: true
+medicalCondition: "食道鱗狀細胞癌 (Esophageal squamous cell carcinoma, ESCC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "食道癌可以做免疫治療嗎？"
+    a: "可以。對於無法手術切除、復發或轉移的食道鱗狀細胞癌（ESCC），一線標準治療已從單純化療升級為『化療 + 免疫檢查點抑制劑』。三個第三期試驗（CheckMate-648、KEYNOTE-590、RATIONALE-306）都顯示總存活期顯著延長，nivolumab、pembrolizumab、tislelizumab 三種藥物均已獲 FDA／EMA 核准。台灣健保自 2023 年起也已給付符合條件的病人，需事前審查。"
+  - q: "PD-L1 CPS 要多少才有效？"
+    a: "依藥物不同：pembrolizumab（KEYNOTE-590）以 CPS ≥ 10 為主要獲益族群，mOS 13.5 vs 9.4 個月（HR 0.62）；nivolumab（CheckMate-648）以 TPS ≥ 1% 為分層，TPS ≥ 1% subgroup mOS 15.4 vs 9.1 個月（HR 0.54）。tislelizumab（RATIONALE-306）則在 PD-L1 TAP ≥ 10% 與 TAP < 10% 都顯示獲益。健保給付條件以 CPS ≥ 10 為主要門檻，但實務上由病理科判讀並送審決定。"
+  - q: "免疫合併化療的副作用會不會比較重？"
+    a: "整體第 3 級以上不良反應比例略高於單純化療，主要差異來自『免疫相關不良反應』：包括肺炎、肝炎、大腸炎、甲狀腺異常、皮膚紅疹等。CheckMate-648 中 nivolumab + 化療組任何級別 trAE 約 96%、第 3 級以上 47%，與單純化療（90% / 36%）相比上升有限，但需特別注意免疫副作用的辨識與早期處理。"
+  - q: "新輔助化放療後做完手術，還要不要打免疫？"
+    a: "建議考慮。CheckMate-577 第三期試驗顯示，食道癌或胃食道交界癌病人接受新輔助化放療 + 手術後仍有殘存病灶（ypTNM 非 pCR），術後給 adjuvant nivolumab 一年，可將無病存活期（DFS）從 11.0 延長至 22.4 個月（HR 0.69）。此策略已寫入 NCCN 指引，並適用於 ESCC 與腺癌兩類。"
+doi: "10.5281/zenodo.20115214"
+conceptDoi: "10.5281/zenodo.20115213"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+晚期食道鱗狀細胞癌（ESCC）的一線標準治療在 2021–2023 年間經歷一次根本性的改寫：**化療 + 免疫檢查點抑制劑**已取代單純化療成為 NCCN category 1 preferred。CheckMate-648（nivolumab + 化療，NEJM 2022）、KEYNOTE-590（pembrolizumab + 化療，Lancet 2021）、RATIONALE-306（tislelizumab + 化療，Lancet Oncol 2023）三個第三期試驗一致顯示總存活期（mOS）延長 3–4 個月，PD-L1 高表現族群獲益最明顯。對於可切除病人，CheckMate-577 進一步確認術後若有殘存病灶（非 pCR），追加 nivolumab 一年可顯著延長無病存活期。本文整理三組一線試驗的設計差異、CPS／TPS 分層數據、副作用 profile，與健保給付實務。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被診斷為食道鱗狀細胞癌、想了解能否接受免疫治療的病友與家屬，以及對 ESCC 與腺癌處置差異、跨試驗 PD-L1 cut-off 比較有興趣的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## 為什麼 ESCC 跟食道腺癌要分開談？
+
+「食道癌」這個詞在台灣與東亞主要指**鱗狀細胞癌（ESCC）**，占所有食道癌約 90%，與抽菸、飲酒、檳榔、熱飲習慣高度相關；西方則以下段食道與胃食道交界（GEJ）的**腺癌（EAC）**為主，與胃食道逆流（GERD）、Barrett's esophagus、肥胖相關。兩者的治療策略並非完全互通：
+
+| 項目 | ESCC（鱗狀） | EAC（腺癌） |
+|---|---|---|
+| 主要族群 | 東亞、中老年男性 | 西方、肥胖、GERD 病史 |
+| 解剖位置 | 多為中上段食道 | 多為下段食道與 GEJ |
+| HER2 陽性 | 罕見 | 約 15–20%，可用 trastuzumab |
+| Claudin 18.2 | 不常規檢測 | 部分陽性，可用 zolbetuximab |
+| 免疫合併化療一線 | CheckMate-648、KEYNOTE-590、RATIONALE-306 | CheckMate-649、KEYNOTE-590（含腺癌） |
+| PD-L1 cut-off | CPS ≥ 10 或 TPS ≥ 1% | CPS ≥ 5（CheckMate-649）|
+
+<Callout type="tip" title="病理報告先看清楚">
+拿到病理報告先確認三件事：(1) 細胞型態（squamous 還是 adenocarcinoma），(2) PD-L1 表現（用的是 CPS、TPS 還是 TAP，以及對應分數），(3) HER2 IHC（腺癌才需要）。這三項會直接決定第一線怎麼開。
+</Callout>
+
+## 一線治療：三個第三期試驗的設計與結果
+
+### 跨試驗比較
+
+| 試驗 | 藥物方案 | n | 主要族群 | mOS（試驗組 vs 對照） | HR | PD-L1 cut-off subgroup mOS |
+|---|---|---|---|---|---|---|
+| **CheckMate-648** | Nivolumab + 5-FU/cisplatin<br/>或 Nivolumab + ipilimumab<br/>vs 5-FU/cisplatin | 970 | 不分 PD-L1 | Nivo+chemo 13.2 vs 10.7（整體）<br/>15.4 vs 9.1（TPS ≥ 1%） | 0.74（整體）<br/>0.54（TPS ≥ 1%） | TPS ≥ 1% subgroup |
+| **KEYNOTE-590** | Pembrolizumab + 5-FU/cisplatin<br/>vs 5-FU/cisplatin | 749（含 ESCC 與腺癌） | 不分 PD-L1 | 12.4 vs 9.8（整體 ESCC）<br/>13.9 vs 8.8（ESCC CPS ≥ 10） | 0.72（ESCC 整體）<br/>0.57（ESCC CPS ≥ 10） | CPS ≥ 10 subgroup |
+| **RATIONALE-306** | Tislelizumab + 化療<br/>vs 化療 | 649 | 不分 PD-L1 | 17.2 vs 10.6（整體） | 0.66 | TAP ≥ 10% 與 < 10% 皆有獲益 |
+
+<Callout type="warning" title="跨試驗比較的限制">
+CheckMate-648 用的是腫瘤細胞 TPS（tumor proportion score）≥ 1%，KEYNOTE-590 用的是 CPS（combined positive score）≥ 10，RATIONALE-306 則用 TAP（tumor area positivity）≥ 10%——三個分數定義、抗體（28-8、22C3、SP263）、判讀都不一樣，**不能直接拿 mOS 數字比高低**。實際選藥仍依個別病人 PD-L1 結果、共病、可及性綜合判斷。
+</Callout>
+
+### CheckMate-648 三組比較（Doki, NEJM 2022）
+
+CheckMate-648 是少數同時測試「免疫 + 化療」與「雙免疫」的試驗：
+
+| 組別 | 整體 mOS | TPS ≥ 1% mOS | 任何級別 trAE | ≥ Grade 3 trAE |
+|---|---|---|---|---|
+| Nivolumab + 5-FU/cisplatin | 13.2 個月 | 15.4 個月 | 96% | 47% |
+| Nivolumab + ipilimumab | 12.7 個月 | 13.7 個月 | 80% | 32% |
+| 5-FU/cisplatin（對照） | 10.7 個月 | 9.1 個月 | 90% | 36% |
+
+雙免疫組（nivo + ipi）副作用較輕，但 PD-L1 TPS < 1% 病人獲益不明顯；化療 + nivolumab 則不論 PD-L1 表現皆有 mOS 獲益，但 TPS ≥ 1% 獲益最大。
+
+## 一線該怎麼選？
+
+<Steps>
+  <div>
+    ### 步驟 1：確認病理與 PD-L1 分數
+
+    病理確認為 ESCC、IHC 染 PD-L1（22C3 抗體較常用於 pembrolizumab 給付審查），並請病理科同時報告 CPS、TPS。若報告只有單一分數，可以請病理科補測或同件玻片重判。
+  </div>
+  <div>
+    ### 步驟 2：依 PD-L1 與體能狀態選藥
+
+    - **PD-L1 CPS ≥ 10 或 TPS ≥ 1%、ECOG PS 0–1**：化療 + nivolumab 或化療 + pembrolizumab 為首選（NCCN category 1）。
+    - **PD-L1 低表現、ECOG PS 0–1**：仍可考慮免疫合併化療（整體族群有 mOS 獲益），但獲益幅度較小；也可考慮單純化療。
+    - **ECOG PS 2 或共病重**：以單純化療或最佳支持療法為主，慎用免疫合併化療。
+  </div>
+  <div>
+    ### 步驟 3：第二線後線策略
+
+    一線失效後，二線標準包括：
+    - **Nivolumab 單藥**（ATTRACTION-3）：mOS 10.9 vs 8.4 個月（HR 0.77）。
+    - **Pembrolizumab 單藥**（KEYNOTE-181，限 PD-L1 CPS ≥ 10）：mOS 9.3 vs 6.7 個月（HR 0.69）。
+    - **化療**（paclitaxel、docetaxel、irinotecan 等）。
+
+    若一線已用過免疫，二線通常以化療為主；具體選擇依過往療效、毒性 profile 與體能狀態而定。
+  </div>
+</Steps>
+
+## 新輔助與術後輔助：CheckMate-577
+
+對於**可切除的局部進展期食道癌**（含 ESCC 與腺癌），標準流程為「新輔助化放療（CROSS regimen 或 5-FU/cisplatin + 41.4 Gy）→ 手術 → 病理評估」。若術後病理顯示**有殘存病灶**（ypTNM 非 pCR），CheckMate-577 第三期試驗（N = 794）顯示：
+
+- 術後追加 nivolumab 240 mg q2w / 480 mg q4w 共 1 年
+- **無病存活期（DFS）：22.4 vs 11.0 個月（HR 0.69, 95% CI 0.56–0.86, P < 0.001）**
+- 任何級別 trAE 71%、第 3 級以上 13%
+- 適用於 ESCC 與腺癌兩類，是目前在此族群有顯著 DFS 獲益的免疫策略
+
+<Callout type="warning" title="新輔助前先做免疫的時機尚未定案">
+目前 NCCN 並未常規建議在新輔助化放療階段就加入免疫；ESCORT-NEO、KEYNOTE-585 等試驗結果仍在累積。建議與主治醫師討論是否進入臨床試驗。
+</Callout>
+
+## 副作用、適應症與禁忌症
+
+### 免疫合併化療常見不良反應
+
+- **化療相關**：噁心、嘔吐、口腔黏膜炎、嗜中性白血球下降、腎毒性（cisplatin）、手足症候群
+- **免疫相關（irAE）**：
+  - 內分泌：甲狀腺低下／亢進（5–10%）、腎上腺功能不全（< 1%）、垂體炎（< 1%）
+  - 肺炎：任何級別 3–5%、嚴重 < 2%（亞洲族群略高）
+  - 肝炎：任何級別 5–10%、≥ Grade 3 約 2%
+  - 大腸炎：任何級別 5–10%
+  - 皮膚：紅疹、搔癢，較少嚴重 SJS／TEN
+- **食道癌特異風險**：食道瘻管（fistula）罕見但嚴重，尤其放療後或腫瘤侵犯氣管時需謹慎
+
+### 適應症
+
+- 病理證實之食道鱗狀細胞癌（ESCC）
+- 不可手術切除、局部復發或遠端轉移
+- 體能狀態 ECOG PS 0–1（PS 2 個案需審慎評估）
+- 主要器官功能足以耐受化療（CrCl、肝功能、骨髓功能）
+- 無嚴重活動性自體免疫疾病或正在使用高劑量類固醇
+
+### 禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 活動性間質性肺病或既往嚴重肺炎史
+- 嚴重活動性自體免疫疾病（紅斑性狼瘡、潰瘍性大腸炎活動期等）
+- 接受實體器官移植者（高排斥風險）
+- 嚴重肝功能異常（Child-Pugh C）
+- 妊娠與授乳期應避免使用
+- 食道內活動性出血或穿孔風險高者
+- 高劑量類固醇使用中（影響免疫療效）
+
+## 健保給付實務（台灣，2026 年）
+
+健保給付條件（截至 2026 年 5 月）：
+
+- **Nivolumab（CheckMate-648 適應症）**：不可切除之晚期、復發或轉移性 ESCC，PD-L1 TPS ≥ 1%，作為一線使用；事前審查通過。
+- **Pembrolizumab（KEYNOTE-590 適應症）**：局部晚期不可切除或轉移性食道癌（含 ESCC 與腺癌），CPS ≥ 10，作為一線使用；事前審查通過。
+- **Nivolumab adjuvant（CheckMate-577 適應症）**：新輔助化放療 + 手術後仍有殘存病灶（非 pCR）的食道或胃食道交界癌；事前審查通過。
+- **二線 nivolumab 或 pembrolizumab**：若一線已使用過免疫，二線通常以化療為主；二線免疫單藥的健保給付限定特定條件。
+
+實際給付項目與分數門檻會隨健保署公告變動，請以病理報告與審查當下的給付規範為準。
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 1. 確認病理型態與 PD-L1 分數
+
+    拿到病理報告先確認：(1) 鱗狀細胞癌還是腺癌，(2) PD-L1 用什麼抗體（22C3、28-8、SP263），(3) 分數是 CPS、TPS 還是 TAP，以及實際數值。這三項決定健保給付與藥物選擇。
+  </div>
+  <div>
+    ### 2. 主動詢問是否符合一線免疫合併化療
+
+    若為 ESCC 且 PD-L1 達門檻、體能狀態尚可，請主治醫師說明：選 nivolumab 還是 pembrolizumab 為基礎、化療搭配什麼（5-FU/cisplatin 或 oxaliplatin-based）、副作用監測排程、健保審查預期時程。
+  </div>
+  <div>
+    ### 3. 與主治醫師討論時可帶的問題清單
+
+    1. 我的病理是 ESCC 還是腺癌？
+    2. PD-L1 分數是多少？用的是 CPS、TPS 還是 TAP？
+    3. 我可以打 nivolumab 或 pembrolizumab 嗎？健保有給付嗎？需要審查多久？
+    4. 副作用怎麼監測？尤其甲狀腺、肝指數、肺部狀況。
+    5. 若是可切除個案，新輔助治療後若沒有達到 pCR，要不要追加 nivolumab？
+    6. 若一線失效，二線有哪些選擇？是否能再用免疫？
+    7. 食道支架、營養支持、放療止血等支持性治療怎麼安排？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Doki Y, Ajani JA, Kato K, et al. **Nivolumab Combination Therapy in Advanced Esophageal Squamous-Cell Carcinoma** (CheckMate-648). *N Engl J Med.* 2022;386(5):449-462. [doi:10.1056/NEJMoa2111380](https://doi.org/10.1056/NEJMoa2111380)
+2. Sun JM, Shen L, Shah MA, et al. **Pembrolizumab plus chemotherapy versus chemotherapy alone for first-line treatment of advanced oesophageal cancer (KEYNOTE-590): a randomised, placebo-controlled, phase 3 study.** *Lancet.* 2021;398(10302):759-771. [doi:10.1016/S0140-6736(21)01234-4](https://doi.org/10.1016/S0140-6736(21)01234-4)
+3. Xu J, Kato K, Raymond E, et al. **Tislelizumab plus chemotherapy versus placebo plus chemotherapy as first-line treatment for advanced or metastatic oesophageal squamous cell carcinoma (RATIONALE-306): a global, randomised, placebo-controlled, phase 3 study.** *Lancet Oncol.* 2023;24(5):483-495. [doi:10.1016/S1470-2045(23)00108-0](https://doi.org/10.1016/S1470-2045(23)00108-0)
+4. Kelly RJ, Ajani JA, Kuzdzal J, et al. **Adjuvant Nivolumab in Resected Esophageal or Gastroesophageal Junction Cancer** (CheckMate-577). *N Engl J Med.* 2021;384(13):1191-1203. [doi:10.1056/NEJMoa2032125](https://doi.org/10.1056/NEJMoa2032125)
+5. Kato K, Cho BC, Takahashi M, et al. **Nivolumab versus chemotherapy in patients with advanced oesophageal squamous cell carcinoma refractory or intolerant to previous chemotherapy (ATTRACTION-3): a multicentre, randomised, open-label, phase 3 trial.** *Lancet Oncol.* 2019;20(11):1506-1517. [doi:10.1016/S1470-2045(19)30626-6](https://doi.org/10.1016/S1470-2045(19)30626-6)
+6. Kojima T, Shah MA, Muro K, et al. **Randomized Phase III KEYNOTE-181 Study of Pembrolizumab Versus Chemotherapy in Advanced Esophageal Cancer.** *J Clin Oncol.* 2020;38(35):4138-4148. [doi:10.1200/JCO.20.01888](https://doi.org/10.1200/JCO.20.01888)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)

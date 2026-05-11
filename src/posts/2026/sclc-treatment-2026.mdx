@@ -1,0 +1,208 @@
+---
+title: "小細胞肺癌（SCLC）2026 治療地圖：化療免疫合併與 DLL3 BiTE 時代"
+titleEn: "Small cell lung cancer in 2026: chemo-immunotherapy and DLL3 era"
+date: "05/11/2026"
+updatedDate: "05/11/2026"
+frontmatter: "廣泛期 SCLC 一線 atezolizumab 或 durvalumab 併 EP（IMpower133、CASPIAN）已是十年標準；侷限期同步化放療後 durvalumab 維持（ADRIATIC，NEJM 2024）改寫教科書；二線 tarlatamab 以 DLL3 BiTE（DeLLphi-301）帶來新工具。本文整理一線、維持與二線實證、CRS 等副作用與病人提問。"
+tags: ["肺癌", "SCLC", "atezolizumab", "durvalumab", "tarlatamab", "DLL3", "衛教"]
+medical: true
+medicalCondition: "小細胞肺癌 (Small cell lung cancer, SCLC)"
+reviewer: "林協霆"
+reviewerCredentials: "MD, 內科專科醫師, 腫瘤內科"
+reviewedDate: "05/11/2026"
+citable: true
+faq:
+  - q: "小細胞肺癌存活多久？"
+    a: "依分期差異很大。侷限期（LS-SCLC）接受同步化放療後再加 durvalumab 維持，ADRIATIC 試驗 3 年總存活率約 57%、中位總存活 55.9 個月；廣泛期（ES-SCLC）一線化療合併免疫治療（IMpower133 atezolizumab 或 CASPIAN durvalumab）中位總存活約 12.3–13.0 個月，2 年存活率約 22%。雖然整體預後仍較肺腺癌差，但 2018 年以後免疫治療已將長期存活的可能性明顯往上推。"
+  - q: "小細胞肺癌跟肺腺癌差很多嗎？"
+    a: "差很多。SCLC 屬神經內分泌腫瘤、生長快、容易早期轉移（診斷時 60–70% 已為廣泛期），與抽菸高度相關；分子上常見 RB1、TP53 失活，目前沒有可用的 EGFR、ALK、KRAS G12C 等驅動基因標靶。治療上不分常見驅動突變、不做 EGFR/ALK 檢測；一線以鉑類化療合併免疫治療為主，反應快但易復發。肺腺癌則八成有可標靶的驅動基因，治療策略完全不同。"
+  - q: "tarlatamab 是什麼？怎麼用？"
+    a: "Tarlatamab 是針對 DLL3（delta-like ligand 3）與 CD3 的雙特異性 T 細胞銜接抗體（BiTE），可把細胞毒性 T 細胞引到 DLL3 高表現的 SCLC 細胞上。DeLLphi-301 第二期試驗（NEJM 2023）中，10 mg 劑量組 ORR 40%、中位反應期 9.7 個月、中位總存活 14.3 個月，於 2024 年 5 月獲 FDA 加速核准用於含鉑化療後進展的 ES-SCLC 二線。最受關注的副作用是細胞激素釋放症候群（CRS，任何級別約 51%）與神經毒性（ICANS），多數為第 1–2 級且發生在前兩次給藥時，需在能 24 小時觀察的環境下執行。"
+  - q: "ADRIATIC 結果怎麼讀？"
+    a: "ADRIATIC（NEJM 2024）是針對侷限期 SCLC 同步化放療後未進展者，隨機分派 durvalumab 維持 vs. 安慰劑（n = 730）。Durvalumab 組中位總存活 55.9 個月 vs. 33.4 個月（HR 0.73, 95% CI 0.57–0.93），3 年總存活率 56.5% vs. 47.6%；中位無惡化存活 16.6 vs. 9.2 個月。免疫相關不良反應比例可接受、未出現新的安全訊號。這是 LS-SCLC 三十年來總存活的重要正向結果，已寫進 NCCN 與 ESMO 指引，成為 LS-SCLC 同步化放療後的新標準。"
+doi: "10.5281/zenodo.20115202"
+conceptDoi: "10.5281/zenodo.20115201"
+---
+
+import Callout from "@/components/ui/Callout.astro";
+import Steps from "@/components/ui/Steps.astro";
+import Divider from "@/components/ui/Divider.astro";
+
+小細胞肺癌（SCLC）約占所有肺癌 13–15%，生長快、轉移早、與抽菸高度相關。2018 年 IMpower133 帶來十多年來第一個正向第三期試驗，奠定廣泛期（ES-SCLC）一線「鉑類 + etoposide + 免疫治療」標準；2019 年 CASPIAN 再以 durvalumab 驗證同樣訊號；2024 年 ADRIATIC 讓侷限期（LS-SCLC）同步化放療後也多了 durvalumab 維持選項；同年 tarlatamab 以 DLL3 雙特異性 T 細胞銜接抗體（BiTE）切入二線，改寫了三十年沒有重大突破的 SCLC 治療版圖。本文整理 2026 年實證地圖與病人最常問的四個問題。
+
+<Callout type="note" title="閱讀對象">
+本文設定讀者為剛被告知小細胞肺癌、想了解一線怎麼選與後線可能性的病友與家屬，以及對 ADRIATIC、tarlatamab DeLLphi-301 與 ES-SCLC 化療免疫合併結果想做整理的同業。所有實際治療決策請與您的主治醫師討論。
+</Callout>
+
+<Divider />
+
+## SCLC 跟肺腺癌差在哪？
+
+SCLC 與非小細胞肺癌（NSCLC）雖同樣源自肺，但臨床行為與分子背景幾乎是兩種疾病：
+
+- **病理**：SCLC 是神經內分泌腫瘤，小細胞、高 mitotic index、TTF-1 與神經內分泌標記（synaptophysin、chromogranin、CD56）多為陽性。
+- **分子**：RB1、TP53 幾乎都失活；很少有 EGFR、ALK、KRAS G12C 等可標靶的驅動突變，所以一線「不需要做」EGFR/ALK 檢測。
+- **臨床行為**：診斷時約 60–70% 已為廣泛期；對化療反應快（首次反應率 60–80%），但中位無惡化存活短、復發率高。
+- **副腫瘤症候群（paraneoplastic syndromes）**：SIADH（低血鈉）、Cushing 症候群、Lambert-Eaton 肌無力、邊緣葉腦炎等比肺腺癌常見。
+
+<Callout type="tip" title="分期用 VALSG 或 TNM？">
+傳統使用 VALSG 二分法（limited stage / extensive stage）：LS-SCLC 大致對應 TNM I–IIIC 且可被涵蓋在單一可耐受放射範圍內，ES-SCLC 對應 TNM IV 或無法涵蓋的多站病灶。AJCC 第 8 版 TNM 也適用，目前指引兩種並存。
+</Callout>
+
+## 一線怎麼選？三個關鍵試驗
+
+依分期與是否能接受同步化放療，2026 年 NCCN 與 ESMO 建議的一線方向：
+
+<Steps>
+  <div>
+    ### 廣泛期 SCLC（ES-SCLC）
+
+    一線標準是**鉑類（cisplatin 或 carboplatin）+ etoposide + PD-L1 抑制劑**，誘導 4 個療程後以免疫治療維持。
+
+    - **IMpower133**（NEJM 2018，N = 403）：carboplatin/etoposide ± atezolizumab。中位總存活 12.3 vs. 10.3 個月（HR 0.70, 95% CI 0.54–0.91），中位無惡化存活 5.2 vs. 4.3 個月。
+    - **CASPIAN**（Lancet 2019，N = 805）：platinum/etoposide ± durvalumab（± tremelimumab）。Durvalumab + EP 組中位總存活 13.0 vs. 10.3 個月（HR 0.73, 95% CI 0.59–0.91）；三年存活率 17.6%。
+  </div>
+  <div>
+    ### 侷限期 SCLC（LS-SCLC）
+
+    可耐受者首選**同步化放療**：cisplatin/etoposide 合併胸腔放療（45 Gy 1.5 Gy BID 或 60–70 Gy QD）。CONVERT 試驗（Lancet Oncol 2017）顯示 BID 45 Gy 與 QD 66 Gy 兩種劑量結果相當（中位總存活 30 vs. 25 個月，未達顯著差異），標準仍以 45 Gy BID 為首選但 QD 66 Gy 為合理替代。
+
+    同步化放療後若未進展，**ADRIATIC**（NEJM 2024，N = 730）顯示 durvalumab 維持可將中位總存活從 33.4 月推到 55.9 月（HR 0.73），3 年總存活 56.5% vs. 47.6%。已成為 LS-SCLC 同步化放療後的新標準。
+  </div>
+  <div>
+    ### 預防性腦放療（PCI）
+
+    SCLC 容易腦轉移。**Slotman 試驗**（NEJM 2007）顯示 ES-SCLC 一線化療有反應者，加 PCI 可降低一年症狀性腦轉移率（14.6% vs. 40.4%），中位總存活 6.7 vs. 5.4 個月。但近年日本試驗顯示若以 MRI 密集追蹤，PCI 對總存活的益處可能縮小，現行指引仍以**個別評估**為主：LS-SCLC 完全反應者建議 PCI（25 Gy/10 fractions）；ES-SCLC 則與病人討論 PCI 或 MRI 監測二擇一。
+  </div>
+</Steps>
+
+## 三個樞紐試驗一頁比較
+
+| 試驗（年） | 分期 / 線數 | n | 介入 | 中位總存活（mOS） | ≥ Grade 3 不良反應 |
+|---|---|---|---|---|---|
+| **IMpower133**（2018） | ES-SCLC, 1L | 403 | Atezo + carbo/etop → atezo maintenance | 12.3 vs. 10.3 mo（HR 0.70）| 67% vs. 64%（任何 ≥G3 AE）|
+| **CASPIAN**（2019） | ES-SCLC, 1L | 537 | Durva + plat/etop → durva maintenance | 13.0 vs. 10.3 mo（HR 0.73）| 62% vs. 62%（任何 ≥G3 AE）|
+| **ADRIATIC**（2024） | LS-SCLC, CCRT 後 | 730 | Durvalumab 維持 vs. placebo | 55.9 vs. 33.4 mo（HR 0.73）| 24% vs. 24%（任何 ≥G3 AE）|
+
+<Callout type="warning" title="跨試驗比較的限制">
+IMpower133、CASPIAN、ADRIATIC 的病人族群、化療骨幹、放療劑量、追蹤時間並不一致；上述數字只能用於概念性對照，不能直接拿來排序「哪個藥較好」。實際選擇仍以個別病人臟器功能、共病、可及性與健保給付綜合判斷。
+</Callout>
+
+## 二線：DLL3 BiTE 時代來了
+
+ES-SCLC 一線化療免疫合併後仍會復發，過去二線多用 topotecan 或 lurbinectedin，中位總存活約 7–9 個月。2024 年 FDA 加速核准的 **tarlatamab** 帶來新的機轉。
+
+### Tarlatamab：DLL3 × CD3 雙特異性 T 細胞銜接抗體
+
+**DeLLphi-301**（NEJM 2023，N = 220）為單臂第二期試驗，分 10 mg 與 100 mg 兩個劑量組，所有病人皆為含鉑化療後進展的 ES-SCLC：
+
+- 10 mg 劑量組：**ORR 40%**、中位反應期 9.7 個月、中位無惡化存活 4.9 個月、**中位總存活 14.3 個月**
+- 100 mg 劑量組：ORR 32%、CRS 比例較高，10 mg 為核准劑量
+- 給藥方式：第 1 天 step-up 1 mg，第 8、15 天起 10 mg，每 2 週靜脈注射
+- 前 2 次給藥需在能 24 小時觀察的環境（住院或臨床試驗單位）執行
+
+### DLL3 是什麼？
+
+Delta-like ligand 3（DLL3）是 Notch ligand 家族成員，在正常組織表現極低，但在約 85% 的 SCLC 與其他神經內分泌腫瘤細胞表面高度表現。DLL3 表現量與療效相關，但目前 DeLLphi-301 並未以 DLL3 IHC 作為篩選條件，臨床使用也尚未強制要求伴隨檢測。
+
+<Callout type="note" title="後續試驗">
+DeLLphi-304 第三期（tarlatamab vs. 醫師選擇之化療）2026 年初已宣布達到主要 OS 終點，正式結果與全文發表預計 2026 下半年。若獲完整核准，二線標準很可能再次改寫。
+</Callout>
+
+## 副作用、適應症與禁忌症摘要
+
+### Atezolizumab、durvalumab（PD-L1 抑制劑）
+
+- **免疫相關不良反應**：肺炎、肝炎、大腸炎、甲狀腺異常、腎上腺功能不全、第 1 型糖尿病、心肌炎
+- IMpower133／CASPIAN ≥ Grade 3 免疫相關不良反應比例約 5–10%
+- 嚴重時須暫停或永久停藥並用類固醇，必要時加 mycophenolate 或 infliximab
+
+### Tarlatamab 特有副作用
+
+- **細胞激素釋放症候群（CRS）**：DeLLphi-301 任何級別 51%、Grade ≥ 3 約 1%；多數第 1–2 級、發生在第 1–2 次給藥
+- **免疫效應細胞相關神經毒性症候群（ICANS）**：任何級別約 8%、Grade ≥ 3 約 2%
+- 預防：給藥前足量水化（IV 1 L），第一次給藥前可考慮 dexamethasone 8 mg
+- 處理：依 ASTCT 分級給予 tocilizumab、類固醇；Grade 3 以上需 ICU
+
+### 鉑類 / etoposide 化療常見副作用
+
+- 骨髓抑制（嗜中性白血球下降、貧血、血小板下降）
+- 噁心嘔吐（需三聯止吐 NK1 + 5-HT3 + dexamethasone）
+- 周邊神經病變（cisplatin）、腎毒性（cisplatin 需水化）
+- 掉髮、聽力下降（cisplatin）
+
+### SCLC 副腫瘤症候群提醒
+
+- **SIADH**：低血鈉、神智改變；治療以限水、tolvaptan 為主
+- **Cushing 症候群（異位 ACTH）**：低血鉀、肌無力、高血糖；可用 metyrapone、ketoconazole 控制
+- **Lambert-Eaton 肌無力**：近端肌無力，與抗 VGCC 抗體相關
+- **邊緣葉腦炎**：記憶、行為、癲癇；抗 Hu、抗 CV2 抗體陽性常見
+
+### 適應症（已核准或試驗中）
+
+- ES-SCLC 一線：atezolizumab 或 durvalumab + 鉑類 + etoposide，誘導後免疫維持
+- LS-SCLC：可耐受同步化放療者首選 CCRT；未進展者後續 durvalumab 維持（ADRIATIC）
+- ES-SCLC 二線（含鉑化療後進展）：tarlatamab 加速核准、lurbinectedin、topotecan
+- 體能狀態 ECOG PS 0–2、主要器官功能可耐受
+
+### 一般禁忌症與謹慎使用
+
+- 對藥物成分過敏者
+- 活動性間質性肺病（免疫治療需謹慎）
+- 嚴重肝腎功能異常（需依肝腎清除率調整化療）
+- 妊娠與授乳期應避免使用
+- 自體免疫疾病活動期（影響免疫治療使用）
+- Tarlatamab：活動性中樞神經病變、嚴重感染未控制時暫緩
+
+<Callout type="warning" title="CRS 不是免疫相關不良反應">
+Tarlatamab 引起的 CRS 機制與 PD-L1 抑制劑的免疫相關不良反應完全不同（CRS 是 T 細胞被銜接後大量分泌細胞激素，類固醇 + tocilizumab 處理；免疫相關 AE 是 T 細胞失調攻擊正常組織，類固醇為主）。混淆兩者可能延誤處理；給 tarlatamab 的單位必須先建立 CRS / ICANS 標準作業流程，並準備 tocilizumab 庫存。
+</Callout>
+
+## 對病人與家屬的實務建議
+
+<Steps>
+  <div>
+    ### 確認分期與體能狀態
+
+    SCLC 治療方向取決於 (1) LS vs. ES 分期、(2) ECOG PS、(3) 主要器官功能（心、肺、肝、腎、骨髓），開始討論前先請主治醫師說明你屬於哪一群、為什麼建議 A 不建議 B。
+  </div>
+  <div>
+    ### 一線把握同步化放療與免疫維持的時機
+
+    LS-SCLC 適合者請主動詢問同步化放療（而非循序）以及 ADRIATIC 之後的 durvalumab 維持；ES-SCLC 一線請確認 atezolizumab 或 durvalumab 是否在化療第 1 個療程就同時開始。
+  </div>
+  <div>
+    ### 二線及早討論 tarlatamab 可行性
+
+    若一線化療免疫合併後復發、體能狀態仍可（ECOG PS 0–1）、無嚴重中樞神經病變，可與主治醫師討論 tarlatamab 的可行性、給藥地點與 CRS 監測安排，並了解後續 DeLLphi-304 結果如何影響選擇。
+  </div>
+  <div>
+    ### 副腫瘤症候群早期辨識
+
+    出現低血鈉、肌無力、記憶或行為改變、新發癲癇等情況，要主動回報；這些都可能是 SCLC 的副腫瘤症候群、處理方向跟單純藥物副作用不同。
+  </div>
+  <div>
+    ### 與主治醫師討論時可帶的問題清單
+
+    1. 我屬於 LS 還是 ES？分期依據是什麼（影像、骨掃描、腦部 MRI）？
+    2. 體能狀態與器官功能是否能承受同步化放療？
+    3. 一線是否會同時開始免疫治療？預計幾個療程後評估？
+    4. 是否需要預防性腦放療（PCI），或改以 MRI 密集追蹤？
+    5. 如果復發，二線是否有 tarlatamab 或臨床試驗的選項？
+    6. 副作用怎麼監測（CBC、肝腎、甲狀腺、CRS / 神經狀態、副腫瘤症候群）？
+  </div>
+</Steps>
+
+<Divider />
+
+## 參考文獻
+
+1. Horn L, Mansfield AS, Szczęsna A, et al. **First-Line Atezolizumab plus Chemotherapy in Extensive-Stage Small-Cell Lung Cancer** (IMpower133). *N Engl J Med.* 2018;379(23):2220-2229. [doi:10.1056/NEJMoa1809064](https://doi.org/10.1056/NEJMoa1809064)
+2. Paz-Ares L, Dvorkin M, Chen Y, et al. **Durvalumab plus platinum-etoposide versus platinum-etoposide in first-line treatment of extensive-stage small-cell lung cancer** (CASPIAN). *Lancet.* 2019;394(10212):1929-1939. [doi:10.1016/S0140-6736(19)32222-6](https://doi.org/10.1016/S0140-6736(19)32222-6)
+3. Spigel DR, Cheng Y, Cho BC, et al. **Durvalumab after Chemoradiotherapy in Limited-Stage Small-Cell Lung Cancer** (ADRIATIC). *N Engl J Med.* 2024;391(14):1313-1327. [doi:10.1056/NEJMoa2404873](https://doi.org/10.1056/NEJMoa2404873)
+4. Ahn MJ, Cho BC, Felip E, et al. **Tarlatamab for Patients with Previously Treated Small-Cell Lung Cancer** (DeLLphi-301). *N Engl J Med.* 2023;389(22):2063-2075. [doi:10.1056/NEJMoa2307980](https://doi.org/10.1056/NEJMoa2307980)
+5. Faivre-Finn C, Snee M, Ashcroft L, et al. **Concurrent once-daily versus twice-daily chemoradiotherapy in patients with limited-stage small-cell lung cancer** (CONVERT). *Lancet Oncol.* 2017;18(8):1116-1125. [doi:10.1016/S1470-2045(17)30318-2](https://doi.org/10.1016/S1470-2045(17)30318-2)
+6. Slotman B, Faivre-Finn C, Kramer G, et al. **Prophylactic Cranial Irradiation in Extensive Small-Cell Lung Cancer.** *N Engl J Med.* 2007;357(7):664-672. [doi:10.1056/NEJMoa071780](https://doi.org/10.1056/NEJMoa071780)
+7. National Comprehensive Cancer Network. **NCCN Clinical Practice Guidelines in Oncology — Small Cell Lung Cancer, v2.2026.** [nccn.org](https://www.nccn.org/guidelines/category_1)
+
+> 引用整理協力：OpenEvidence (Ask OpenEvidence Light, 2026/05/11 查詢)。
