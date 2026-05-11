@@ -25,6 +25,21 @@ const canonicalURL = new URL(
     Astro.site || Astro.url.origin,
 );
 
+// Pick an OG image for every page. Posts and any caller that passes `image`
+// win; otherwise we map well-known pathnames to a hand-rendered page card,
+// and fall back to /og/pages/default.png so social previews never go blank.
+function resolvePageOg(pathname: string): string {
+    const p = pathname.replace(/\/+$/, "") || "/";
+    if (p === "/" || p.startsWith("/page/")) return "/og/pages/home.png";
+    if (p === "/about") return "/og/pages/about.png";
+    if (p === "/cv") return "/og/pages/cv.png";
+    if (p === "/tags" || p.startsWith("/tags/")) return "/og/pages/tags.png";
+    return "/og/pages/default.png";
+}
+
+const ogImage = image ?? resolvePageOg(Astro.url.pathname);
+const ogImageUrl = new URL(ogImage, Astro.site || Astro.url.origin).href;
+
 const normalize = (p: string) => p.replace(/\/+$/, "") || "/";
 
 const isOnCurrentPath = (path: string) => {
@@ -66,26 +81,8 @@ const isOnCurrentPath = (path: string) => {
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonicalURL.href} />
         <meta property="og:type" content={type} />
-        {
-            image && (
-                <meta
-                    property="og:image"
-                    content={
-                        new URL(image, Astro.site || Astro.url.origin).href
-                    }
-                />
-            )
-        }
-        {
-            image && (
-                <meta
-                    name="twitter:image"
-                    content={
-                        new URL(image, Astro.site || Astro.url.origin).href
-                    }
-                />
-            )
-        }
+        <meta property="og:image" content={ogImageUrl} />
+        <meta name="twitter:image" content={ogImageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />

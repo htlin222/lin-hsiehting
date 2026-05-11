@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"prebuild": "node scripts/og-image.mjs --all",
+		"prebuild": "node scripts/og-image.mjs --all && node scripts/og-pages.mjs",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
@@ -15,6 +15,8 @@
 		"new-post:medical": "node --experimental-strip-types scripts/new-post.ts --medical",
 		"og:preview": "node scripts/og-image.mjs",
 		"og": "node scripts/og-image.mjs",
+		"og:pages": "node scripts/og-pages.mjs",
+		"og:pages:force": "node scripts/og-pages.mjs --force",
 		"pdf": "node scripts/render-pdfs.mjs",
 		"pdf:force": "node scripts/render-pdfs.mjs --force",
 		"pdf:cv": "node scripts/render-cv-pdfs.mjs",
