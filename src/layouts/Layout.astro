@@ -34,6 +34,7 @@ function resolvePageOg(pathname: string): string {
     if (p === "/about") return "/og/pages/about.png";
     if (p === "/cv") return "/og/pages/cv.png";
     if (p === "/tags" || p.startsWith("/tags/")) return "/og/pages/tags.png";
+    if (p === "/portfolio") return "/og/pages/portfolio.png";
     return "/og/pages/default.png";
 }
 

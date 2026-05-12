@@ -71,6 +71,12 @@ const PAGES = [
         subtitle: "依主題瀏覽文章",
     },
     {
+        slug: "portfolio",
+        eyebrow: SITE_TITLE,
+        title: "Portfolio",
+        subtitle: "GitHub repos — medical and developer tools",
+    },
+    {
         slug: "default",
         eyebrow: SITE_TITLE,
         title: "腫瘤內科衛教筆記",

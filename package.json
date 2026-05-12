@@ -17,6 +17,8 @@
 		"og": "node scripts/og-image.mjs",
 		"og:pages": "node scripts/og-pages.mjs",
 		"og:pages:force": "node scripts/og-pages.mjs --force",
+		"portfolio:fetch": "node scripts/fetch-github-portfolio.mjs",
+		"portfolio:fetch:no-readme": "node scripts/fetch-github-portfolio.mjs --no-readme",
 		"pdf": "node scripts/render-pdfs.mjs",
 		"pdf:force": "node scripts/render-pdfs.mjs --force",
 		"pdf:cv": "node scripts/render-cv-pdfs.mjs",
