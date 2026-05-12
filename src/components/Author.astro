@@ -9,12 +9,18 @@ import {
     Github,
     Mail,
     Wrench,
+    Languages,
 } from "@lucide/astro";
+
+import { Image } from "astro:assets";
+import avatar from "@/assets/images/avatar.jpg";
+import { siteConfig } from "@/config";
 
 interface SkillGroup {
     title: string;
     titleEn: string;
     body: string;
+    bodyEn: string;
     repos: string[];
 }
 
@@ -26,6 +32,8 @@ const skills: SkillGroup[] = [
         title: "臨床研究方法學",
         titleEn: "Clinical research methodology",
         body: "Meta-analysis、network meta-analysis、survival analysis（含 competing risks、immortal time、left truncation）、Bayesian target trial emulation、causal inference（DAG / propensity / TMLE）、real-world evidence（MMRM / CMH）。R + Quarto IMRAD pipeline，已用於 BTK 抑制劑、PARP 抑制劑、ICI 時序、咖啡因等多個 RCT 統合分析。",
+        bodyEn:
+            "Meta-analysis, network meta-analysis, survival analysis (competing risks, immortal-time bias, left truncation), Bayesian target trial emulation, causal inference (DAG / propensity scores / TMLE), and real-world evidence (MMRM / CMH). R + Quarto IMRAD pipeline applied to BTK inhibitors, PARP inhibitors, ICI timing, and other multi-RCT meta-analyses.",
         repos: [
             "meta-pipe",
             "robust-lit-review",
@@ -46,6 +54,8 @@ const skills: SkillGroup[] = [
         title: "精準腫瘤學與多體學分析",
         titleEn: "Precision oncology & multi-omics",
         body: "NGS tertiary analysis（BAM → ESMO 2024 clinical report，含 OncoKB、AMP/ASCO/CAP、ESCAT 分級）、TCGA / METABRIC / SCAN-B 再分析、單細胞 RNA-seq 與 bulk transcriptomic 拓樸風險分層、機器學習於 AML 多體學藥物反應與乳癌放療反應預測。",
+        bodyEn:
+            "NGS tertiary analysis (BAM → ESMO 2024 clinical report with OncoKB, AMP/ASCO/CAP, ESCAT classification), TCGA / METABRIC / SCAN-B reanalysis, single-cell RNA-seq and bulk transcriptomic topological risk stratification, and machine learning for AML multi-omics drug response and breast cancer radiotherapy response prediction.",
         repos: [
             "ngs-tertiary-analysis-skills",
             "ngs-tertiary-analysis-paper",
@@ -62,6 +72,8 @@ const skills: SkillGroup[] = [
         title: "臨床決策 AI 與 MCP 工具開發",
         titleEn: "Clinical AI tooling & MCP servers",
         body: "建構與維護多個 MCP / Vercel Skills 套件：OpenEvidence 雙向整合 + Crossref 驗證、NCCN PDF 轉結構化 skill、EBMT 8e、Micromedex 風格 DDI、護理實證升等教練、Anki 整合。多套件以「parallel Haiku、anti-hallucination 引用驗證」為設計核心。發表 NEJM AI Perspective 級論文討論 LLM 診斷失敗模式。",
+        bodyEn:
+            "Author and maintainer of multiple MCP and Vercel Skills packages: OpenEvidence bi-directional integration with Crossref verification, NCCN PDF → structured AI skill, EBMT 8e guideline skill, Micromedex-style DDI assessment, Taiwan nursing-evidence promotion coach, and Anki integration. Design centred on parallel Haiku conversion and anti-hallucination citation enforcement. NEJM AI Perspective-style manuscript on LLM failure modes in diagnosis.",
         repos: [
             "openevidence-mcp",
             "openevidence-skill",
@@ -81,6 +93,8 @@ const skills: SkillGroup[] = [
         title: "學術寫作與可重現研究",
         titleEn: "Academic writing & reproducible research",
         body: "Quarto / Pandoc / Typst / LaTeX 全流程；AMA、APA CSL；CrossRef DOI 驗證；BibTeX 多格式輸出；Docker 化 R 環境；醫療專用 cookiecutter 範本；已準備中的手稿涵蓋 NEJM AI、PLOS Medicine、American Psychologist、JCO 等期刊投稿風格。",
+        bodyEn:
+            "Full Quarto / Pandoc / Typst / LaTeX pipeline; AMA and APA CSL; CrossRef DOI verification; multi-format BibTeX output; Docker-ised R environments; medical cookiecutter templates. Manuscripts in preparation target NEJM AI, PLOS Medicine, American Psychologist, and JCO.",
         repos: [
             "academic-manuscript-workflow",
             "cookiecutter-quarto-research",
@@ -97,6 +111,8 @@ const skills: SkillGroup[] = [
         title: "教學與訓練資源",
         titleEn: "Teaching & training resources",
         body: "ABIM 血液內科自製 72 主題 + 216 題、台灣 N1–N4 護理實證升等教練、臨床統計與因果推論視覺化（含 TMLE / DAG / propensity score 動畫）、Network meta-analysis with R 中文教學；ASH 2026 Asia-Pacific 與 ASH B-cell lymphoma 系列 Reveal.js 簡報。",
+        bodyEn:
+            "Self-authored ABIM Hematology bank (72 topics + 216 questions); Taiwan N1–N4 nursing evidence-based promotion coach; visualised clinical statistics and causal inference (TMLE / DAG / propensity score animations); Chinese-language Network Meta-analysis with R tutorial; Reveal.js decks for ASH 2026 Asia-Pacific and ASH B-cell lymphoma updates.",
         repos: [
             "hematology-board-review",
             "pocket-hematology",
@@ -115,6 +131,8 @@ const skills: SkillGroup[] = [
         title: "醫院流程自動化",
         titleEn: "Hospital workflow automation",
         body: "KFSYSCC IRB 文件批次生成（43 表單、11 類別、一鍵）、TMA 月度繼續教育、教育部學術倫理課程、醫學會行事曆 → Google Calendar、北榮泌尿部排班系統、e-portfolio 教學評核、新生兒奶量計算、病理面積六角格量測。",
+        bodyEn:
+            "KFSYSCC IRB document batch generator (43 forms, 11 categories, one command); Taiwan Medical Association monthly CME automation; Ministry of Education research-ethics course completion; medical-society calendar → Google Calendar sync; Taipei VGH urology scheduler; e-portfolio teaching-evaluation filler; neonatal milk calculator; pathology hex-grid area measurement.",
         repos: [
             "irb-in-hurry",
             "irb-time",
@@ -141,16 +159,17 @@ const techStack = [
     "GitHub Actions",
 ];
 
-import { Image } from "astro:assets";
-import avatar from "@/assets/images/avatar.jpg";
-import { siteConfig } from "@/config";
-
-const certifications = [
+const certificationsZh = [
     "台灣內科醫學會 內科專科醫師",
     "台灣癌症醫學會 腫瘤內科專科醫師",
 ];
 
-const principles = [
+const certificationsEn = [
+    "Board-Certified Internist, Taiwan Society of Internal Medicine",
+    "Board-Certified Medical Oncologist, Taiwan Oncology Society",
+];
+
+const principlesZh = [
     {
         title: "依國際指引",
         body: "臨床主題以 NCCN、ASCO、ESMO 最新版指引、以及 PubMed 索引論文為主要來源，並比對台灣腫瘤醫學會、國健署資料。",
@@ -169,6 +188,25 @@ const principles = [
     },
 ];
 
+const principlesEn = [
+    {
+        title: "Guideline-grounded",
+        body: "Clinical topics anchored on current NCCN, ASCO, and ESMO guidelines and PubMed-indexed literature; cross-checked against Taiwan Oncology Society and HPA sources.",
+    },
+    {
+        title: "Signed clinical review with dated stamps",
+        body: "Every medical post is reviewed under my name; review and last-updated dates are shown at the foot of each article and refreshed when guidelines update.",
+    },
+    {
+        title: "Compliant with Medical Care Act §87",
+        body: "This site operates under Article 87.2 as medical news and patient education; absolute terms (e.g. \"guarantee\", \"cure\", \"most effective\", \"no recurrence\") prohibited by the law are avoided.",
+    },
+    {
+        title: "De-identified case material",
+        body: "Any patient case used is fully de-identified — age range only, no unit or date — and used solely for teaching purposes.",
+    },
+];
+
 const profileLinks = [
     {
         label: "ORCID 0009-0002-3974-4528",
@@ -183,9 +221,13 @@ const profileLinks = [
         href: siteConfig.socials.github,
     },
 ].filter((p) => p.href);
+
+const bioEn =
+    "Hematology & Medical Oncology Fellow at Koo Foundation Sun Yat-Sen Cancer Center, Taipei. Clinical notes and reading log.";
 ---
 
-<main class="page flex flex-col space-y-12 max-w-3xl mx-auto pb-20">
+<main class="page flex flex-col space-y-10 max-w-3xl mx-auto pb-20">
+    {/* ── Hero (shared) ── */}
     <section class="pt-6 flex flex-col sm:flex-row gap-6 items-start">
         <Image
             src={avatar}
@@ -198,13 +240,16 @@ const profileLinks = [
         />
         <div class="flex-1 min-w-0">
             <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
-                林協霆 M.D.
+                林協霆 M.D. · Hsieh-Ting Lin
             </h1>
             <p class="text-muted-foreground mt-1">
-                Hsieh-Ting Lin · {siteConfig.author.specialty}
+                {siteConfig.author.specialty}
             </p>
-            <p class="mt-4 text-sm leading-relaxed">
+            <p class="mt-4 text-sm leading-relaxed" data-bio-zh>
                 {siteConfig.author.bio}
+            </p>
+            <p class="mt-4 text-sm leading-relaxed" data-bio-en hidden>
+                {bioEn}
             </p>
             <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm">
                 {profileLinks.map((p) => (
@@ -224,255 +269,691 @@ const profileLinks = [
         </div>
     </section>
 
-    <section class="space-y-3 text-sm leading-relaxed">
-        <h2 class="text-xl font-semibold">關於本站</h2>
-        <p>
-            本站為腫瘤內科臨床筆記、衛教整理與閱讀記錄，主要服務兩種讀者：
-        </p>
-        <ul class="list-disc list-outside ml-5 space-y-1.5">
-            <li>
-                <strong>病友與家屬</strong>：以「病人真正會問」的問題切入，整理治療選項、副作用、與決策時可帶去診間的問題清單。
-            </li>
-            <li>
-                <strong>同業與住院醫師</strong>：整理新藥臨床試驗、跨指引差異、以及臨床上未必能立刻找到實證的灰色地帶。
-            </li>
-        </ul>
-        <p>
-            本站不取代主治醫師之診療判斷，亦不從事醫療業務招徠。實際治療決策請與您的醫療團隊面對面討論。
-        </p>
-    </section>
-
-    <section class="space-y-4">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <ShieldCheck size={20} class="text-primary" /> 編輯方針 · Editorial
-            Policy
-        </h2>
-        <ol
-            class="list-decimal list-outside ml-5 space-y-3 text-sm leading-relaxed marker:text-muted-foreground"
-        >
-            {principles.map((p) => (
-                <li>
-                    <strong class="text-foreground">{p.title}</strong>
-                    <span class="text-muted-foreground"> — {p.body}</span>
-                </li>
-            ))}
-        </ol>
-    </section>
-
-    <section class="space-y-4">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <Wrench size={20} class="text-primary" /> 技能與作品 · Skills
-        </h2>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-            以下技能項目皆對應公開的
-            <a
-                href="/portfolio"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >GitHub repos</a
-            >；點擊任一專案標籤可直接跳到該 repo 檢視程式碼、文件與最近更新。
-        </p>
-
-        <div class="flex flex-wrap gap-1.5 pb-2">
-            {techStack.map((t) => (
-                <span class="inline-flex items-center px-2 py-0.5 rounded border border-border bg-muted text-xs text-muted-foreground">
-                    {t}
-                </span>
-            ))}
-        </div>
-
-        <ol
-            class="list-decimal list-outside ml-5 space-y-5 text-sm leading-relaxed marker:text-muted-foreground"
-        >
-            {skills.map((s) => (
-                <li>
-                    <div>
-                        <strong class="text-foreground">{s.title}</strong>
-                        <span class="text-muted-foreground"> · {s.titleEn}</span>
-                    </div>
-                    <p class="mt-1 text-muted-foreground">{s.body}</p>
-                    <div class="mt-2 flex flex-wrap gap-1.5">
-                        {s.repos.map((r) => (
-                            <a
-                                href={`https://github.com/htlin222/${r}`}
-                                target="_blank"
-                                rel="noopener"
-                                class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-border bg-card text-xs text-foreground/85 hover:text-primary hover:border-primary transition-colors"
-                            >
-                                {r}
-                                <ExternalLink size={9} class="opacity-60" />
-                            </a>
-                        ))}
-                    </div>
-                </li>
-            ))}
-        </ol>
-
-        <p class="text-xs text-muted-foreground leading-relaxed pt-2">
-            完整 210 個公開 repos（醫療 79 + IT 131）依時間排序見
-            <a
-                href="/portfolio"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >/portfolio</a
-            >。學術發表以
-            <a
-                href={siteConfig.author.scholar}
-                target="_blank"
-                rel="me noopener"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >Google Scholar</a
-            >
-            為準；歷年口頭報告與證照見
-            <a
-                href="/cv"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >CV</a
-            >。
-        </p>
-    </section>
-
-    <section class="space-y-3">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <Briefcase size={20} class="text-muted-foreground" /> 現職
-        </h2>
-        <ul class="text-sm leading-relaxed">
-            <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
-                <span class="text-muted-foreground tabular-nums pt-0.5"
-                    >2023.08 –</span
-                >
-                <div>
-                    <p class="font-medium">血液腫瘤科專研醫師（Fellow）</p>
-                    <p class="text-muted-foreground">
-                        {siteConfig.author.affiliationUrl ? (
-                            <a
-                                href={siteConfig.author.affiliationUrl}
-                                target="_blank"
-                                rel="noopener"
-                                class="hover:text-primary transition-colors underline-offset-4 hover:underline"
-                            >
-                                {siteConfig.author.affiliation}
-                            </a>
-                        ) : (
-                            siteConfig.author.affiliation
-                        )}
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <section class="space-y-3">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <GraduationCap size={20} class="text-muted-foreground" /> 學歷
-        </h2>
-        <ul class="text-sm leading-relaxed">
-            <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
-                <span class="text-muted-foreground tabular-nums pt-0.5"
-                    >2013 – 2019</span
-                >
-                <div>
-                    <p class="font-medium">
-                        醫學系（Doctor of Medicine）
-                    </p>
-                    <p class="text-muted-foreground">
-                        國立成功大學 National Cheng Kung University
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <section class="space-y-3">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <IdCard size={20} class="text-muted-foreground" /> 專科證照
-        </h2>
-        <ul
-            class="list-disc list-outside ml-5 space-y-1.5 text-sm marker:text-muted-foreground"
-        >
-            {certifications.map((c) => <li>{c}</li>)}
-        </ul>
-    </section>
-
-    <section class="space-y-3">
-        <h2 class="flex items-center gap-2 text-xl font-semibold">
-            <BookOpen size={20} class="text-muted-foreground" /> 完整學經歷與發表
-        </h2>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-            完整現職、經歷、發表、口頭報告與專科證照清單，請見
-            <a
-                href="/cv"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >CV 頁</a
-            >；學術發表與引用以
-            <a
-                href={siteConfig.author.scholar}
-                target="_blank"
-                rel="me noopener"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >Google Scholar</a
-            >
-            為準。
-        </p>
-    </section>
-
-    <section class="space-y-3 pt-2 border-t border-border">
-        <h2 class="flex items-center gap-2 text-xl font-semibold pt-6">
-            <Github size={20} class="text-muted-foreground" /> 聯絡與更新
-        </h2>
-        <p class="text-sm text-muted-foreground leading-relaxed">
-            本站源碼與版本紀錄公開於
-            <a
-                href={siteConfig.socials.github}
-                target="_blank"
-                rel="me noopener"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >GitHub</a
-            >；內容修訂以 git commit 留下時間戳。學術合作、糾錯、衛教合作請開
-            issue 或透過
-            <a
-                href={siteConfig.author.orcid}
-                target="_blank"
-                rel="me noopener"
-                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >ORCID</a
-            >
-            聯絡。
-        </p>
-        {siteConfig.socials.email && (
-            <p class="text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
-                <Mail size={16} class="text-muted-foreground shrink-0" />
-                <span>
-                    <strong class="text-foreground">Email</strong>：
-                    <a
-                        href={`mailto:${siteConfig.socials.email}`}
-                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                    >{siteConfig.socials.email}</a>
-                    （勘誤、衛教提問、學術合作；<strong class="text-foreground">不提供個別診療建議</strong>）
-                </span>
-            </p>
-        )}
-        {siteConfig.socials.line && (
-            <p class="text-sm text-muted-foreground leading-relaxed">
-                <strong class="text-foreground">讀者回饋管道</strong>：LINE 官方帳號
-                <a
-                    href={siteConfig.socials.line}
-                    target="_blank"
-                    rel="noopener"
-                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                >@927pjtfa</a
-                >
-                ，接受文章勘誤建議、衛教問題提問、學術討論。
-                <strong class="text-foreground">本管道不提供個別診療建議</strong>，亦不受理任何形式之醫療業務預約；具體病情、用藥、治療方案請與您的主治醫師面對面討論。
-            </p>
-        )}
-    </section>
-
-    <footer
-        class="text-xs text-muted-foreground border-t border-border pt-6 leading-relaxed"
+    {/* ── Language tabs ── */}
+    <div
+        role="tablist"
+        aria-label="About language"
+        class="inline-flex rounded-md border border-border overflow-hidden text-sm self-start"
     >
-        <p>
-            本站文章所提供之資訊，僅供醫學新知與病人衛生教育參考，<strong
-                >不構成個別醫療建議</strong
-            >，亦不取代主治醫師之診療判斷。實際治療、用藥、手術選項，請與您的主治團隊討論後決定。
-        </p>
-    </footer>
+        <button
+            type="button"
+            role="tab"
+            id="about-tab-zh"
+            aria-controls="about-panel-zh"
+            aria-selected="true"
+            data-about-tab="zh"
+            class="about-tab inline-flex items-center gap-1.5 px-4 py-1.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary aria-selected:bg-foreground aria-selected:text-background"
+        >
+            <Languages size={14} />
+            繁體中文
+        </button>
+        <button
+            type="button"
+            role="tab"
+            id="about-tab-en"
+            aria-controls="about-panel-en"
+            aria-selected="false"
+            data-about-tab="en"
+            class="about-tab inline-flex items-center gap-1.5 px-4 py-1.5 border-l border-border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary aria-selected:bg-foreground aria-selected:text-background"
+        >
+            <Languages size={14} />
+            English
+        </button>
+    </div>
+
+    {/* ── 繁體中文 ── */}
+    <div
+        id="about-panel-zh"
+        role="tabpanel"
+        aria-labelledby="about-tab-zh"
+        data-about-panel="zh"
+        class="flex flex-col space-y-12"
+    >
+        <section class="space-y-3 text-sm leading-relaxed">
+            <h2 class="text-xl font-semibold">關於我</h2>
+            <p>
+                林協霆，和信治癌中心醫院血液腫瘤科專研醫師（2023–），國立成功大學醫學系畢業，內科與腫瘤內科雙專科。臨床涵蓋肺、乳、大腸、肝、攝護腺等實體瘤，與淋巴瘤、白血病、骨髓瘤、再生不良性貧血等血液腫瘤；熟悉 NCCN／ASCO／ESMO 跨指引差異與台灣健保條件。
+            </p>
+            <p>
+                研究專注於<strong class="text-foreground">統合分析、網絡統合分析、生存分析、Bayesian target trial emulation、因果推論</strong>（DAG／傾向分數／TMLE），以 R + Quarto IMRAD pipeline 完成 BTK 抑制劑、PARP 抑制劑、ICI 時序等多個專案；同時建構 <strong class="text-foreground">NGS tertiary 分析、TCGA／SCAN-B 再分析、AML 多體學機器學習</strong>等精準腫瘤學工具。
+            </p>
+            <p>
+                在「臨床 × AI」交界，釋出多個開源 MCP／Vercel Skills 套件（<strong class="text-foreground">OpenEvidence、NCCN、EBMT、Micromedex 風格 DDI</strong>），核心設計為「parallel Haiku + anti-hallucination 引用驗證」；正在準備 NEJM AI、PLOS Medicine 等期刊投稿。長期目標是把可重現研究、引用驗證與臨床決策整合在一起。
+            </p>
+        </section>
+
+        <section class="space-y-3 text-sm leading-relaxed">
+            <h2 class="text-xl font-semibold">關於本站</h2>
+            <p>本站為腫瘤內科臨床筆記、衛教整理與閱讀記錄，主要服務兩種讀者：</p>
+            <ul class="list-disc list-outside ml-5 space-y-1.5">
+                <li>
+                    <strong>病友與家屬</strong>：以「病人真正會問」的問題切入，整理治療選項、副作用、與決策時可帶去診間的問題清單。
+                </li>
+                <li>
+                    <strong>同業與住院醫師</strong>：整理新藥臨床試驗、跨指引差異、以及臨床上未必能立刻找到實證的灰色地帶。
+                </li>
+            </ul>
+            <p>
+                本站不取代主治醫師之診療判斷，亦不從事醫療業務招徠。實際治療決策請與您的醫療團隊面對面討論。
+            </p>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <ShieldCheck size={20} class="text-primary" /> 編輯方針 · Editorial Policy
+            </h2>
+            <ol class="list-decimal list-outside ml-5 space-y-3 text-sm leading-relaxed marker:text-muted-foreground">
+                {principlesZh.map((p) => (
+                    <li>
+                        <strong class="text-foreground">{p.title}</strong>
+                        <span class="text-muted-foreground"> — {p.body}</span>
+                    </li>
+                ))}
+            </ol>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <Wrench size={20} class="text-primary" /> 技能與作品 · Skills
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                以下技能項目皆對應公開的
+                <a
+                    href="/portfolio"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >GitHub repos</a
+                >；點擊任一專案標籤可直接跳到該 repo 檢視程式碼、文件與最近更新。
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pb-2">
+                {techStack.map((t) => (
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-border bg-muted text-xs text-muted-foreground">
+                        {t}
+                    </span>
+                ))}
+            </div>
+
+            <ol class="list-decimal list-outside ml-5 space-y-5 text-sm leading-relaxed marker:text-muted-foreground">
+                {skills.map((s) => (
+                    <li>
+                        <div>
+                            <strong class="text-foreground">{s.title}</strong>
+                            <span class="text-muted-foreground"> · {s.titleEn}</span>
+                        </div>
+                        <p class="mt-1 text-muted-foreground">{s.body}</p>
+                        <div class="mt-2 flex flex-wrap gap-1.5">
+                            {s.repos.map((r) => (
+                                <a
+                                    href={`https://github.com/htlin222/${r}`}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-border bg-card text-xs text-foreground/85 hover:text-primary hover:border-primary transition-colors"
+                                >
+                                    {r}
+                                    <ExternalLink size={9} class="opacity-60" />
+                                </a>
+                            ))}
+                        </div>
+                    </li>
+                ))}
+            </ol>
+
+            <p class="text-xs text-muted-foreground leading-relaxed pt-2">
+                完整 210 個公開 repos（醫療 79 + IT 131）依時間排序見
+                <a
+                    href="/portfolio"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >/portfolio</a
+                >。學術發表以
+                <a
+                    href={siteConfig.author.scholar}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >Google Scholar</a
+                >
+                為準；歷年口頭報告與證照見
+                <a
+                    href="/cv"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >CV</a
+                >。
+            </p>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <Briefcase size={20} class="text-muted-foreground" /> 現職
+            </h2>
+            <ul class="text-sm leading-relaxed">
+                <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                    <span class="text-muted-foreground tabular-nums pt-0.5">2023.08 –</span>
+                    <div>
+                        <p class="font-medium">血液腫瘤科專研醫師（Fellow）</p>
+                        <p class="text-muted-foreground">
+                            {siteConfig.author.affiliationUrl ? (
+                                <a
+                                    href={siteConfig.author.affiliationUrl}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="hover:text-primary transition-colors underline-offset-4 hover:underline"
+                                >
+                                    {siteConfig.author.affiliation}
+                                </a>
+                            ) : (
+                                siteConfig.author.affiliation
+                            )}
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <GraduationCap size={20} class="text-muted-foreground" /> 學歷
+            </h2>
+            <ul class="text-sm leading-relaxed">
+                <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                    <span class="text-muted-foreground tabular-nums pt-0.5">2013 – 2019</span>
+                    <div>
+                        <p class="font-medium">醫學系（Doctor of Medicine）</p>
+                        <p class="text-muted-foreground">
+                            國立成功大學 National Cheng Kung University
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <IdCard size={20} class="text-muted-foreground" /> 專科證照
+            </h2>
+            <ul class="list-disc list-outside ml-5 space-y-1.5 text-sm marker:text-muted-foreground">
+                {certificationsZh.map((c) => <li>{c}</li>)}
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <BookOpen size={20} class="text-muted-foreground" /> 完整學經歷與發表
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                完整現職、經歷、發表、口頭報告與專科證照清單，請見
+                <a
+                    href="/cv"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >CV 頁</a
+                >；學術發表與引用以
+                <a
+                    href={siteConfig.author.scholar}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >Google Scholar</a
+                >
+                為準。
+            </p>
+        </section>
+
+        <section class="space-y-3 pt-2 border-t border-border">
+            <h2 class="flex items-center gap-2 text-xl font-semibold pt-6">
+                <Github size={20} class="text-muted-foreground" /> 聯絡與更新
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                本站源碼與版本紀錄公開於
+                <a
+                    href={siteConfig.socials.github}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >GitHub</a
+                >；內容修訂以 git commit 留下時間戳。學術合作、糾錯、衛教合作請開 issue 或透過
+                <a
+                    href={siteConfig.author.orcid}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >ORCID</a
+                >
+                聯絡。
+            </p>
+            {siteConfig.socials.email && (
+                <p class="text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
+                    <Mail size={16} class="text-muted-foreground shrink-0" />
+                    <span>
+                        <strong class="text-foreground">Email</strong>：
+                        <a
+                            href={`mailto:${siteConfig.socials.email}`}
+                            class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                            >{siteConfig.socials.email}</a
+                        >
+                        （勘誤、衛教提問、學術合作；<strong class="text-foreground">不提供個別診療建議</strong>）
+                    </span>
+                </p>
+            )}
+            {siteConfig.socials.line && (
+                <p class="text-sm text-muted-foreground leading-relaxed">
+                    <strong class="text-foreground">讀者回饋管道</strong>：LINE 官方帳號
+                    <a
+                        href={siteConfig.socials.line}
+                        target="_blank"
+                        rel="noopener"
+                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                        >@927pjtfa</a
+                    >
+                    ，接受文章勘誤建議、衛教問題提問、學術討論。
+                    <strong class="text-foreground">本管道不提供個別診療建議</strong>，亦不受理任何形式之醫療業務預約；具體病情、用藥、治療方案請與您的主治醫師面對面討論。
+                </p>
+            )}
+        </section>
+
+        <footer class="text-xs text-muted-foreground border-t border-border pt-6 leading-relaxed">
+            <p>
+                本站文章所提供之資訊，僅供醫學新知與病人衛生教育參考，<strong>不構成個別醫療建議</strong>，亦不取代主治醫師之診療判斷。實際治療、用藥、手術選項，請與您的主治團隊討論後決定。
+            </p>
+        </footer>
+    </div>
+
+    {/* ── English ── */}
+    <div
+        id="about-panel-en"
+        role="tabpanel"
+        aria-labelledby="about-tab-en"
+        data-about-panel="en"
+        hidden
+        class="flex flex-col space-y-12"
+    >
+        <section class="space-y-3 text-sm leading-relaxed">
+            <h2 class="text-xl font-semibold">About me</h2>
+            <p>
+                Hsieh-Ting Lin, M.D., is a Hematology and Medical Oncology fellow
+                at Koo Foundation Sun Yat-Sen Cancer Center, Taipei (since 2023).
+                Trained at National Cheng Kung University and double board-certified
+                in Internal Medicine and Medical Oncology, his clinical work spans
+                solid tumors (lung, breast, colorectal, hepatocellular, prostate)
+                and hematologic malignancies (lymphoma, leukemia, myeloma, aplastic
+                anemia), with cross-guideline fluency in NCCN, ASCO, and ESMO
+                alongside Taiwan's NHI reimbursement landscape.
+            </p>
+            <p>
+                His research focuses on
+                <strong class="text-foreground">
+                    meta-analysis, network meta-analysis, survival analysis,
+                    Bayesian target trial emulation, and causal inference
+                </strong>
+                (DAG, propensity scoring, TMLE), built on an R + Quarto IMRAD
+                pipeline. Completed projects cover BTK inhibitors in Waldenström
+                macroglobulinemia, PARP inhibitors in BRCA-mutated breast cancer,
+                and immune checkpoint inhibitor timing in early-stage NSCLC. He
+                also maintains
+                <strong class="text-foreground">
+                    NGS tertiary analysis pipelines, TCGA / SCAN-B reanalyses,
+                    and machine learning for AML multi-omics
+                </strong>
+                drug-response prediction.
+            </p>
+            <p>
+                At the interface of clinical medicine and AI, he is the author of
+                multiple open-source MCP servers and Vercel Skills
+                (<strong class="text-foreground">OpenEvidence, NCCN, EBMT, Micromedex-style DDI</strong>)
+                centred on parallel Haiku conversion and anti-hallucination
+                citation verification; manuscripts are in preparation for NEJM AI
+                and PLOS Medicine. The long-term goal: weave reproducible research,
+                citation-verified AI, and frontline clinical decisions into a
+                single workflow.
+            </p>
+        </section>
+
+        <section class="space-y-3 text-sm leading-relaxed">
+            <h2 class="text-xl font-semibold">About this site</h2>
+            <p>
+                A clinical notebook, patient-education resource, and reading log in
+                medical oncology — written for two audiences:
+            </p>
+            <ul class="list-disc list-outside ml-5 space-y-1.5">
+                <li>
+                    <strong>Patients &amp; families</strong> — starts from the
+                    questions patients actually ask, then organises treatment
+                    options, side effects, and questions to bring back to clinic.
+                </li>
+                <li>
+                    <strong>Peers &amp; residents</strong> — summaries of new
+                    trials, cross-guideline differences, and the grey areas where
+                    evidence has not settled.
+                </li>
+            </ul>
+            <p>
+                The site does not replace clinical judgement and does not solicit
+                medical business. Always discuss specific treatment decisions with
+                your own care team.
+            </p>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <ShieldCheck size={20} class="text-primary" /> Editorial Policy
+            </h2>
+            <ol class="list-decimal list-outside ml-5 space-y-3 text-sm leading-relaxed marker:text-muted-foreground">
+                {principlesEn.map((p) => (
+                    <li>
+                        <strong class="text-foreground">{p.title}</strong>
+                        <span class="text-muted-foreground"> — {p.body}</span>
+                    </li>
+                ))}
+            </ol>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <Wrench size={20} class="text-primary" /> Skills &amp; portfolio
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                Every skill below maps to one or more public
+                <a
+                    href="/portfolio"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >GitHub repos</a
+                >; click any project chip to jump to the source, docs, and
+                latest commits.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pb-2">
+                {techStack.map((t) => (
+                    <span class="inline-flex items-center px-2 py-0.5 rounded border border-border bg-muted text-xs text-muted-foreground">
+                        {t}
+                    </span>
+                ))}
+            </div>
+
+            <ol class="list-decimal list-outside ml-5 space-y-5 text-sm leading-relaxed marker:text-muted-foreground">
+                {skills.map((s) => (
+                    <li>
+                        <div>
+                            <strong class="text-foreground">{s.titleEn}</strong>
+                            <span class="text-muted-foreground"> · {s.title}</span>
+                        </div>
+                        <p class="mt-1 text-muted-foreground">{s.bodyEn}</p>
+                        <div class="mt-2 flex flex-wrap gap-1.5">
+                            {s.repos.map((r) => (
+                                <a
+                                    href={`https://github.com/htlin222/${r}`}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-border bg-card text-xs text-foreground/85 hover:text-primary hover:border-primary transition-colors"
+                                >
+                                    {r}
+                                    <ExternalLink size={9} class="opacity-60" />
+                                </a>
+                            ))}
+                        </div>
+                    </li>
+                ))}
+            </ol>
+
+            <p class="text-xs text-muted-foreground leading-relaxed pt-2">
+                Full 210 public repos (79 medical + 131 dev tooling), sorted by
+                latest push, live at
+                <a
+                    href="/portfolio"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >/portfolio</a
+                >. Publications and citations tracked on
+                <a
+                    href={siteConfig.author.scholar}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >Google Scholar</a
+                >; full training history and oral presentations live at
+                <a
+                    href="/cv"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >CV</a
+                >.
+            </p>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <Briefcase size={20} class="text-muted-foreground" /> Current Position
+            </h2>
+            <ul class="text-sm leading-relaxed">
+                <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                    <span class="text-muted-foreground tabular-nums pt-0.5">2023.08 –</span>
+                    <div>
+                        <p class="font-medium">
+                            Hematology &amp; Medical Oncology Fellow
+                        </p>
+                        <p class="text-muted-foreground">
+                            {siteConfig.author.affiliationUrl ? (
+                                <a
+                                    href={siteConfig.author.affiliationUrl}
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="hover:text-primary transition-colors underline-offset-4 hover:underline"
+                                >
+                                    Department of Hematology &amp; Medical Oncology,
+                                    Koo Foundation Sun Yat-Sen Cancer Center
+                                </a>
+                            ) : (
+                                "Department of Hematology & Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center"
+                            )}
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <GraduationCap size={20} class="text-muted-foreground" /> Education
+            </h2>
+            <ul class="text-sm leading-relaxed">
+                <li class="grid grid-cols-[6rem_1fr] sm:grid-cols-[8rem_1fr] gap-4">
+                    <span class="text-muted-foreground tabular-nums pt-0.5">2013 – 2019</span>
+                    <div>
+                        <p class="font-medium">Doctor of Medicine (M.D.)</p>
+                        <p class="text-muted-foreground">
+                            National Cheng Kung University, Tainan, Taiwan
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <IdCard size={20} class="text-muted-foreground" /> Board Certifications
+            </h2>
+            <ul class="list-disc list-outside ml-5 space-y-1.5 text-sm marker:text-muted-foreground">
+                {certificationsEn.map((c) => <li>{c}</li>)}
+            </ul>
+        </section>
+
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-xl font-semibold">
+                <BookOpen size={20} class="text-muted-foreground" /> Full CV &amp; publications
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                Full clinical training, publications, oral presentations, and
+                board certifications are listed on the
+                <a
+                    href="/cv"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >CV page</a
+                >. Academic publications and citation count are tracked on
+                <a
+                    href={siteConfig.author.scholar}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >Google Scholar</a
+                >.
+            </p>
+        </section>
+
+        <section class="space-y-3 pt-2 border-t border-border">
+            <h2 class="flex items-center gap-2 text-xl font-semibold pt-6">
+                <Github size={20} class="text-muted-foreground" /> Contact &amp; updates
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+                Source code and revision history are public on
+                <a
+                    href={siteConfig.socials.github}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >GitHub</a
+                >; every revision is timestamped via git. For corrections,
+                academic collaboration, or patient-education collaboration,
+                please open an issue or reach me through
+                <a
+                    href={siteConfig.author.orcid}
+                    target="_blank"
+                    rel="me noopener"
+                    class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                    >ORCID</a
+                >.
+            </p>
+            {siteConfig.socials.email && (
+                <p class="text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
+                    <Mail size={16} class="text-muted-foreground shrink-0" />
+                    <span>
+                        <strong class="text-foreground">Email</strong>:
+                        <a
+                            href={`mailto:${siteConfig.socials.email}`}
+                            class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                            >{siteConfig.socials.email}</a
+                        > — corrections, education questions, and academic
+                        collaboration; <strong class="text-foreground">not for individual medical advice</strong>.
+                    </span>
+                </p>
+            )}
+            {siteConfig.socials.line && (
+                <p class="text-sm text-muted-foreground leading-relaxed">
+                    <strong class="text-foreground">Reader feedback channel</strong>:
+                    LINE official account
+                    <a
+                        href={siteConfig.socials.line}
+                        target="_blank"
+                        rel="noopener"
+                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                        >@927pjtfa</a
+                    >
+                    accepts corrections, education questions, and academic
+                    discussion.
+                    <strong class="text-foreground">
+                        This channel does not provide individual medical advice
+                        and does not accept any form of appointment booking
+                    </strong>; specific symptoms, medications, or treatment
+                    plans should be discussed face-to-face with your own
+                    physician.
+                </p>
+            )}
+        </section>
+
+        <footer class="text-xs text-muted-foreground border-t border-border pt-6 leading-relaxed">
+            <p>
+                The content on this site is provided as medical news and patient
+                education only; it
+                <strong>does not constitute individual medical advice</strong>
+                and does not replace the clinical judgement of your treating
+                physician. Treatment, medication, and surgical decisions must
+                be made together with your own care team.
+            </p>
+        </footer>
+    </div>
 </main>
+
+<script>
+    type Lang = "en" | "zh";
+
+    const tabs = Array.from(
+        document.querySelectorAll<HTMLButtonElement>("[data-about-tab]"),
+    );
+    const panels = Array.from(
+        document.querySelectorAll<HTMLElement>("[data-about-panel]"),
+    );
+    const bioZh = document.querySelector<HTMLElement>("[data-bio-zh]");
+    const bioEn = document.querySelector<HTMLElement>("[data-bio-en]");
+
+    function activate(name: Lang) {
+        for (const t of tabs) {
+            const active = t.dataset.aboutTab === name;
+            t.setAttribute("aria-selected", String(active));
+            t.tabIndex = active ? 0 : -1;
+        }
+        for (const p of panels) {
+            p.hidden = p.dataset.aboutPanel !== name;
+        }
+        if (bioZh && bioEn) {
+            bioZh.hidden = name !== "zh";
+            bioEn.hidden = name !== "en";
+        }
+        try {
+            localStorage.setItem("about-lang", name);
+        } catch {}
+        if (location.hash !== `#${name}`) {
+            history.replaceState(null, "", `#${name}`);
+        }
+    }
+
+    function initialLang(): Lang {
+        const hash = location.hash.replace("#", "");
+        if (hash === "en" || hash === "about-en") return "en";
+        if (hash === "zh" || hash === "about-zh") return "zh";
+        try {
+            const saved = localStorage.getItem("about-lang");
+            if (saved === "en") return "en";
+            if (saved === "zh") return "zh";
+        } catch {}
+        // Default to zh-TW since the site is zh-TW first.
+        return "zh";
+    }
+
+    for (const t of tabs) {
+        t.addEventListener("click", () => {
+            const name = t.dataset.aboutTab as Lang | undefined;
+            if (name) activate(name);
+        });
+        t.addEventListener("keydown", (e) => {
+            if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+            e.preventDefault();
+            const order: Lang[] = ["zh", "en"];
+            const current = order.indexOf(t.dataset.aboutTab as Lang);
+            const next =
+                order[
+                    (current + (e.key === "ArrowRight" ? 1 : -1) + order.length) %
+                        order.length
+                ];
+            const target = document.querySelector<HTMLButtonElement>(
+                `[data-about-tab="${next}"]`,
+            );
+            target?.focus();
+            activate(next);
+        });
+    }
+
+    activate(initialLang());
+
+    window.addEventListener("hashchange", () => {
+        const hash = location.hash.replace("#", "");
+        if (hash === "en" || hash === "about-en") activate("en");
+        else if (hash === "zh" || hash === "about-zh") activate("zh");
+    });
+</script>
+
+<style>
+    /* When printing, show both panels so the printed page is complete regardless of tab state. */
+    @media print {
+        [data-about-panel][hidden] {
+            display: block !important;
+        }
+        [data-bio-en][hidden],
+        [data-bio-zh][hidden] {
+            display: block !important;
+        }
+    }
+</style>
