@@ -8,7 +8,138 @@ import {
     ExternalLink,
     Github,
     Mail,
+    Wrench,
 } from "@lucide/astro";
+
+interface SkillGroup {
+    title: string;
+    titleEn: string;
+    body: string;
+    repos: string[];
+}
+
+// Skills inventory grounded in the public repos at github.com/htlin222.
+// Each item below is supported by one or more concrete repos in /portfolio so
+// nothing here is generic AI-flavored padding — drop a repo, drop the claim.
+const skills: SkillGroup[] = [
+    {
+        title: "臨床研究方法學",
+        titleEn: "Clinical research methodology",
+        body: "Meta-analysis、network meta-analysis、survival analysis（含 competing risks、immortal time、left truncation）、Bayesian target trial emulation、causal inference（DAG / propensity / TMLE）、real-world evidence（MMRM / CMH）。R + Quarto IMRAD pipeline，已用於 BTK 抑制劑、PARP 抑制劑、ICI 時序、咖啡因等多個 RCT 統合分析。",
+        repos: [
+            "meta-pipe",
+            "robust-lit-review",
+            "survival-pipe",
+            "sepsis-dynamic-treatment-tt-emulation",
+            "research-in-cancer-center",
+            "hrd-parp-inhibitors",
+            "btk-wm",
+            "early-immuno-timing-nma",
+            "ici-breast-cancer",
+            "causal-tut",
+            "TMLE-explain",
+            "roche-vabysmo-rwe-workshop",
+            "prisma-automation",
+        ],
+    },
+    {
+        title: "精準腫瘤學與多體學分析",
+        titleEn: "Precision oncology & multi-omics",
+        body: "NGS tertiary analysis（BAM → ESMO 2024 clinical report，含 OncoKB、AMP/ASCO/CAP、ESCAT 分級）、TCGA / METABRIC / SCAN-B 再分析、單細胞 RNA-seq 與 bulk transcriptomic 拓樸風險分層、機器學習於 AML 多體學藥物反應與乳癌放療反應預測。",
+        repos: [
+            "ngs-tertiary-analysis-skills",
+            "ngs-tertiary-analysis-paper",
+            "tcga-brca-reanalysis",
+            "topological-stratification-aml",
+            "sctda-cancer-plasticity",
+            "AML-MultiOmics-Predictor",
+            "breast_cancer_radiogenomics",
+            "flt3-signature-ml",
+            "FoundationOne-to-Oncoprinter",
+        ],
+    },
+    {
+        title: "臨床決策 AI 與 MCP 工具開發",
+        titleEn: "Clinical AI tooling & MCP servers",
+        body: "建構與維護多個 MCP / Vercel Skills 套件：OpenEvidence 雙向整合 + Crossref 驗證、NCCN PDF 轉結構化 skill、EBMT 8e、Micromedex 風格 DDI、護理實證升等教練、Anki 整合。多套件以「parallel Haiku、anti-hallucination 引用驗證」為設計核心。發表 NEJM AI Perspective 級論文討論 LLM 診斷失敗模式。",
+        repos: [
+            "openevidence-mcp",
+            "openevidence-skill",
+            "audit-oe-skill",
+            "nccn-skill",
+            "ebmt-handbook-skill",
+            "drug-drug-skill",
+            "cps-skills",
+            "research-guardian-skill",
+            "zh-ebn-report-skill",
+            "llm-diagnosis-perspective",
+            "llm-in-med",
+            "yanki-mcp-server",
+        ],
+    },
+    {
+        title: "學術寫作與可重現研究",
+        titleEn: "Academic writing & reproducible research",
+        body: "Quarto / Pandoc / Typst / LaTeX 全流程；AMA、APA CSL；CrossRef DOI 驗證；BibTeX 多格式輸出；Docker 化 R 環境；醫療專用 cookiecutter 範本；已準備中的手稿涵蓋 NEJM AI、PLOS Medicine、American Psychologist、JCO 等期刊投稿風格。",
+        repos: [
+            "academic-manuscript-workflow",
+            "cookiecutter-quarto-research",
+            "bestseller",
+            "rocker",
+            "meta-pipe-manuscript",
+            "to-comfort-always",
+            "flowdoc",
+            "quarto-doc",
+            "quarto_theme",
+        ],
+    },
+    {
+        title: "教學與訓練資源",
+        titleEn: "Teaching & training resources",
+        body: "ABIM 血液內科自製 72 主題 + 216 題、台灣 N1–N4 護理實證升等教練、臨床統計與因果推論視覺化（含 TMLE / DAG / propensity score 動畫）、Network meta-analysis with R 中文教學；ASH 2026 Asia-Pacific 與 ASH B-cell lymphoma 系列 Reveal.js 簡報。",
+        repos: [
+            "hematology-board-review",
+            "pocket-hematology",
+            "zh-ebn-report-skill",
+            "calculus-for-medstats",
+            "r-nma",
+            "r-with-ai-eng",
+            "learn-r-with-ai",
+            "HOASH-2026-Asia",
+            "ASH-MCL",
+            "qbank2anki",
+            "anki_batch",
+        ],
+    },
+    {
+        title: "醫院流程自動化",
+        titleEn: "Hospital workflow automation",
+        body: "KFSYSCC IRB 文件批次生成（43 表單、11 類別、一鍵）、TMA 月度繼續教育、教育部學術倫理課程、醫學會行事曆 → Google Calendar、北榮泌尿部排班系統、e-portfolio 教學評核、新生兒奶量計算、病理面積六角格量測。",
+        repos: [
+            "irb-in-hurry",
+            "irb-time",
+            "tma-edu-exam",
+            "auto-tms",
+            "society-calendar",
+            "vghtpe-uro",
+            "education-portfolio",
+            "duty_scheduler",
+            "milkCalc",
+            "areacalc",
+            "hemonc-daily-case",
+        ],
+    },
+];
+
+const techStack = [
+    "R / Quarto",
+    "Python",
+    "TypeScript / Astro",
+    "LaTeX / Typst / Pandoc",
+    "Claude Code / Codex / MCP",
+    "Docker / Cloudflare Workers",
+    "GitHub Actions",
+];
 
 import { Image } from "astro:assets";
 import avatar from "@/assets/images/avatar.jpg";
@@ -126,6 +257,77 @@ const profileLinks = [
                 </li>
             ))}
         </ol>
+    </section>
+
+    <section class="space-y-4">
+        <h2 class="flex items-center gap-2 text-xl font-semibold">
+            <Wrench size={20} class="text-primary" /> 技能與作品 · Skills
+        </h2>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+            以下技能項目皆對應公開的
+            <a
+                href="/portfolio"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >GitHub repos</a
+            >；點擊任一專案標籤可直接跳到該 repo 檢視程式碼、文件與最近更新。
+        </p>
+
+        <div class="flex flex-wrap gap-1.5 pb-2">
+            {techStack.map((t) => (
+                <span class="inline-flex items-center px-2 py-0.5 rounded border border-border bg-muted text-xs text-muted-foreground">
+                    {t}
+                </span>
+            ))}
+        </div>
+
+        <ol
+            class="list-decimal list-outside ml-5 space-y-5 text-sm leading-relaxed marker:text-muted-foreground"
+        >
+            {skills.map((s) => (
+                <li>
+                    <div>
+                        <strong class="text-foreground">{s.title}</strong>
+                        <span class="text-muted-foreground"> · {s.titleEn}</span>
+                    </div>
+                    <p class="mt-1 text-muted-foreground">{s.body}</p>
+                    <div class="mt-2 flex flex-wrap gap-1.5">
+                        {s.repos.map((r) => (
+                            <a
+                                href={`https://github.com/htlin222/${r}`}
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border border-border bg-card text-xs text-foreground/85 hover:text-primary hover:border-primary transition-colors"
+                            >
+                                {r}
+                                <ExternalLink size={9} class="opacity-60" />
+                            </a>
+                        ))}
+                    </div>
+                </li>
+            ))}
+        </ol>
+
+        <p class="text-xs text-muted-foreground leading-relaxed pt-2">
+            完整 210 個公開 repos（醫療 79 + IT 131）依時間排序見
+            <a
+                href="/portfolio"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >/portfolio</a
+            >。學術發表以
+            <a
+                href={siteConfig.author.scholar}
+                target="_blank"
+                rel="me noopener"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >Google Scholar</a
+            >
+            為準；歷年口頭報告與證照見
+            <a
+                href="/cv"
+                class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
+                >CV</a
+            >。
+        </p>
     </section>
 
     <section class="space-y-3">
