@@ -9,6 +9,7 @@ export interface SearchItem {
 
 export interface NavLink {
     label: string;
+    labelEn?: string;
     href: string;
 }
 

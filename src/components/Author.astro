@@ -894,7 +894,9 @@ const bioEn =
         }
         try {
             localStorage.setItem("about-lang", name);
+            localStorage.setItem("site-lang", name);
         } catch {}
+        document.documentElement.dataset.lang = name;
         if (location.hash !== `#${name}`) {
             history.replaceState(null, "", `#${name}`);
         }
@@ -905,6 +907,9 @@ const bioEn =
         if (hash === "en" || hash === "about-en") return "en";
         if (hash === "zh" || hash === "about-zh") return "zh";
         try {
+            const site = localStorage.getItem("site-lang");
+            if (site === "en") return "en";
+            if (site === "zh") return "zh";
             const saved = localStorage.getItem("about-lang");
             if (saved === "en") return "en";
             if (saved === "zh") return "zh";

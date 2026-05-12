@@ -457,7 +457,10 @@ import {
         }
         try {
             localStorage.setItem("cv-lang", name);
+            localStorage.setItem("site-lang", name);
         } catch {}
+        // Keep global UI lang in sync.
+        document.documentElement.dataset.lang = name;
         if (location.hash !== `#${name}`) {
             history.replaceState(null, "", `#${name}`);
         }
@@ -469,6 +472,8 @@ import {
             return hash.endsWith("zh") ? "zh" : "en";
         }
         try {
+            const site = localStorage.getItem("site-lang");
+            if (site === "zh" || site === "en") return site;
             const saved = localStorage.getItem("cv-lang");
             if (saved === "zh" || saved === "en") return saved;
         } catch {}

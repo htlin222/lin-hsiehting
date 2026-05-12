@@ -342,3 +342,19 @@
         box-shadow: 0 0 0 6px var(--color-neutral-950, #0a0a0a);
     }
 }
+
+/* Global UI i18n: lang state lives on <html data-lang="zh|en">. */
+/* Elements with data-lang-only="zh" hide when lang=en, and vice versa. */
+html[data-lang="en"] [data-lang-only="zh"] {
+    display: none !important;
+}
+html[data-lang="zh"] [data-lang-only="en"] {
+    display: none !important;
+}
+
+/* Print: show both so the printed page has full bilingual content. */
+@media print {
+    html [data-lang-only] {
+        display: revert !important;
+    }
+}

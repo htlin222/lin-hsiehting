@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { Moon, Sun, Braces, Search, Rss } from "@lucide/astro";
+import { Moon, Sun, Braces, Search, Rss, Languages } from "@lucide/astro";
 import { ClientRouter } from "astro:transitions";
 import { siteConfig } from "@/config";
 import Footer from "@/components/Footer.astro";
@@ -195,6 +195,20 @@ const isOnCurrentPath = (path: string) => {
             };
             setDarkMode();
             document.addEventListener("astro:after-swap", setDarkMode);
+
+            // Global UI language ("zh" | "en") — controls visibility of any
+            // element with `data-lang-only="zh"` / `data-lang-only="en"`.
+            // Default zh-TW; persisted in localStorage under key "site-lang".
+            const setLang = () => {
+                let lang = "zh";
+                try {
+                    const saved = localStorage.getItem("site-lang");
+                    if (saved === "en" || saved === "zh") lang = saved;
+                } catch {}
+                document.documentElement.dataset.lang = lang;
+            };
+            setLang();
+            document.addEventListener("astro:after-swap", setLang);
         </script>
     </head>
     <body class="max-w-page mx-auto min-h-screen flex flex-col">
@@ -221,12 +235,28 @@ const isOnCurrentPath = (path: string) => {
                                             : "nav-link"
                                     }
                                 >
-                                    {link.label}
+                                    <span data-lang-only="zh">{link.label}</span>
+                                    <span data-lang-only="en">
+                                        {link.labelEn ?? link.label}
+                                    </span>
                                 </span>
                             </a>
                         </li>
                     ))
                 }
+                <li>
+                    <button
+                        id="lang-toggle"
+                        type="button"
+                        aria-label="Toggle language"
+                        title="切換語言 · Toggle language"
+                        class="flex items-center gap-1 text-xs font-medium"
+                    >
+                        <Languages size={14} />
+                        <span data-lang-only="zh">EN</span>
+                        <span data-lang-only="en">中</span>
+                    </button>
+                </li>
                 <li>
                     <button
                         id="theme-toggle"
@@ -372,6 +402,31 @@ const isOnCurrentPath = (path: string) => {
             });
 
             document.addEventListener("astro:page-load", () => {
+                const langToggle = document.getElementById("lang-toggle");
+                if (langToggle) {
+                    langToggle.addEventListener("click", () => {
+                        const current =
+                            document.documentElement.dataset.lang === "en"
+                                ? "en"
+                                : "zh";
+                        const next = current === "zh" ? "en" : "zh";
+                        document.documentElement.dataset.lang = next;
+                        try {
+                            localStorage.setItem("site-lang", next);
+                            // Keep /cv and /about local tab state in sync.
+                            localStorage.setItem("cv-lang", next);
+                            localStorage.setItem("about-lang", next);
+                        } catch {}
+                        // If the current page has tab panels keyed to data-cv-panel
+                        // or data-about-panel, re-fire their click handler logic.
+                        document
+                            .querySelectorAll<HTMLButtonElement>(
+                                `[data-cv-tab="${next}"], [data-about-tab="${next}"]`,
+                            )
+                            .forEach((b) => b.click());
+                    });
+                }
+
                 const themeToggle = document.getElementById("theme-toggle");
                 if (!themeToggle) return;
 

@@ -16,11 +16,11 @@ export const siteConfig: SiteConfig = {
 		scholar: "https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=zh-TW",
 	},
 	nav: [
-		{ label: "文章", href: "/" },
-		{ label: "標籤", href: "/tags" },
-		{ label: "Portfolio", href: "/portfolio" },
-		{ label: "CV", href: "/cv" },
-		{ label: "關於", href: "/about" },
+		{ label: "文章", labelEn: "Articles", href: "/" },
+		{ label: "標籤", labelEn: "Tags", href: "/tags" },
+		{ label: "Portfolio", labelEn: "Portfolio", href: "/portfolio" },
+		{ label: "CV", labelEn: "CV", href: "/cv" },
+		{ label: "關於", labelEn: "About", href: "/about" },
 	],
 	socials: {
 		github: "https://github.com/htlin222",
