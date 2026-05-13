@@ -1,0 +1,147 @@
+===
+title: 「暈碳」到底存不存在？正反辯論地圖
+model:
+  mode: strict
+color:
+  colorize: true
+map:
+  rankDir: TB
+===
+
+# 中央命題
+
+[暈碳真實存在]: 一般人在吃完高碳水餐後出現的「想睡 / 頭暈 / 注意力下降」是一個可被量測、機轉清楚、值得正視的生理現象，並非單純心理錯覺。
+  + <碳水會放大嗜睡>
+  + <反應性低血糖在非糖尿病人也會發生>
+  + <餐後低血壓於高碳餐後更明顯>
+  + <Orexin 被葡萄糖直接抑制>
+  + <降低餐後血糖可改善嗜睡與隔日心情>
+  - <碳水並非比例上的兇手>
+  - <脂肪 + CCK 才是更穩的嗜睡訊號>
+  - <Tryptophan-LNAA 在日常飲食裡作用很小>
+  - <暈碳混為一談三種獨立臨床實體>
+  - <效果量遠小於午後生理週期低谷>
+
+# 正方支撐論證
+
+<碳水會放大嗜睡>: 在受控 24 小時恆境研究中，高碳水飲食組相對於高脂飲食組，在飯後 3.5 小時的簡單反應時間變慢、主觀嗜睡上升。
+{
+  source: "10.1016/s0301-0511(03)00114-5"
+  author: Lowden et al.
+  date: 2004
+  title: Performance and sleepiness during a 24 h wake in constant conditions are affected by diet
+  design: cross-over n=7 男性
+}
+
+<反應性低血糖在非糖尿病人也會發生>: 5 小時 OGTT 或混合餐測試下，多囊性卵巢、肥胖等非糖尿族群可呈現血糖低於 3.3 mmol/L 的反應性低血糖，盛行率約 17 至 27 個百分比。
+  + [Mumm 2016]: PCOS 17 個百分比、對照組 0 個百分比。
+  + [Sweatt 2026]: 肥胖非糖尿成人混合餐測試 19/69（約 27 個百分比）。
+
+[Mumm 2016]
+{
+  source: "10.1093/humrep/dew046"
+  author: Mumm et al.
+  date: 2016
+  title: Prevalence and possible mechanisms of reactive hypoglycemia in PCOS
+}
+
+[Sweatt 2026]
+{
+  source: "10.3390/nu18050822"
+  author: Sweatt et al.
+  date: 2026
+  title: Defining and Characterizing Postprandial Reactive Hypoglycemia
+}
+
+<餐後低血壓於高碳餐後更明顯>: 老年族群中約 4 成出現餐後血壓下降至少 20 mmHg，臨床表現以嗜睡、頭暈、暈厥為主，並隨高碳餐及早晨用餐惡化。
+  + [Huang 2024]: 系統性回顧與統合分析。
+  + [Ishikawa 2026]: 機轉、診斷與處置綜述。
+
+[Huang 2024]
+{
+  source: "10.1093/ageing/afae022"
+  author: Huang et al.
+  date: 2024
+  title: Prevalence of postprandial hypotension in older adults
+}
+
+[Ishikawa 2026]
+{
+  source: "10.1111/ggi.70456"
+  author: Ishikawa et al.
+  date: 2026
+  title: Postprandial Hypotension - methods for evaluation and management
+}
+
+<Orexin 被葡萄糖直接抑制>: 下視丘 orexin / hypocretin 神經元在電生理上對葡萄糖呈劑量依賴抑制，提供「血糖升 → 覺醒系統下調」的機轉假說。
+{
+  source: "10.1016/j.smrv.2004.07.007"
+  author: Sakurai
+  date: 2005
+  title: Roles of orexin/hypocretin in regulation of sleep/wakefulness and energy homeostasis
+}
+
+<降低餐後血糖可改善嗜睡與隔日心情>: 隨機交叉雙盲試驗中，桑葉萃取 + 色胺酸的混合補充把晚餐後 1 小時血糖 AUC 降低 21 個百分比，伴隨入睡潛期縮短、隔日 Karolinska 嗜睡量表分數下降。
+{
+  source: "10.1007/s00394-025-03643-8"
+  author: Soon et al.
+  date: 2025
+  title: Mulberry leaf extract combined with tryptophan improves sleep and post wake mood
+  design: randomized cross-over n=42
+}
+
+# 反方支撐論證
+
+<碳水並非比例上的兇手>: 在直接比較固體餐、液體餐與等量水的多導睡眠儀研究中，固體餐確實縮短入睡潛期，但高碳、高脂、混合餐三者之間「沒有顯著差異」。
+{
+  source: "10.1016/s0031-9384(97)00012-7"
+  author: Orr et al.
+  date: 1997
+  title: Meal composition and its effect on postprandial sleepiness
+  design: PSG n=10
+  note: 對「碳水專屬」假說的直接打臉
+}
+
+<脂肪 + CCK 才是更穩的嗜睡訊號>: 與低脂高碳早餐相比，高脂低碳早餐反而讓受試者更想睡、更疲憊，並伴隨膽囊收縮素（CCK）上升，方向與「暈碳」民間說法相反。
+{
+  source: "10.1016/s0031-9384(96)00519-7"
+  author: Wells et al.
+  date: 1997
+  title: Influences of fat and carbohydrate on postprandial sleepiness, mood, and hormones
+  design: n=18
+}
+
+<Tryptophan-LNAA 在日常飲食裡作用很小>: Wurtman 的「碳水誘發胰島素 → tryptophan 比例升 → 腦內 serotonin」機轉只在實驗條件下成立，餐裡只要含有總熱量 2 至 4 個百分比的蛋白質就會阻斷這條路徑。
+{
+  source: "10.1017/s1368980099000555"
+  author: Benton & Donohoe
+  date: 1999
+  title: The effects of nutrients on mood
+}
+
+<暈碳混為一談三種獨立臨床實體>: 民間說的「暈碳」至少把三個機轉不同、處理不同的現象綁在一起：餐後嗜睡（中樞）、反應性低血糖（代謝）、餐後低血壓（自律）。一個詞解釋三種，反而會耽誤評估。
+  + <反應性低血糖在非糖尿病人也會發生>
+  + <餐後低血壓於高碳餐後更明顯>
+
+<效果量遠小於午後生理週期低谷>: 即便給予完全等熱量的對照餐，午後 13 至 15 時的生理嗜睡（post-lunch dip）本身就會出現，把「想睡」全部歸給碳水是錯誤歸因。
+  + <碳水並非比例上的兇手>
+
+# 推論串
+
+<綜合判斷>
+
+(1) 一般成人在固體餐後 1 到 3 小時的確會經歷可量測的嗜睡與注意力下降。
+(2) 在恆境實驗中，高碳水相對高脂的主觀嗜睡與反應時間差異存在但效果量小，且部分研究無法重現。
+(3) 反應性低血糖、餐後低血壓在非糖尿族群並非罕見，可獨立導致頭暈、嗜睡甚至暈厥。
+(4) 民間「暈碳」一詞同時涵蓋上述三種獨立臨床實體。
+-----
+(5) [暈碳真實存在]
+
+[暈碳作為傘狀描述屬實]: 把「暈碳」當成「飯後身體不適」的傘狀描述屬實。
+  + [暈碳真實存在]
+
+[碳水非專屬肇因]: 主張「碳水是專屬肇因、健康成人都會有、不需要評估」的強版本則證據不足。
+  - [暈碳真實存在]
+  + <碳水並非比例上的兇手>
+  + <脂肪 + CCK 才是更穩的嗜睡訊號>
+  + <效果量遠小於午後生理週期低谷>
