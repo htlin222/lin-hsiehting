@@ -343,12 +343,18 @@
     }
 }
 
-/* Global UI i18n: lang state lives on <html data-lang="zh|en">. */
-/* Elements with data-lang-only="zh" hide when lang=en, and vice versa. */
-html[data-lang="en"] [data-lang-only="zh"] {
+/* Global UI i18n: lang state lives on <html data-lang="zh|en|ja">. */
+/* Elements only show when their data-lang-only matches the html lang. */
+html[data-lang="zh"] [data-lang-only="en"],
+html[data-lang="zh"] [data-lang-only="ja"] {
     display: none !important;
 }
-html[data-lang="zh"] [data-lang-only="en"] {
+html[data-lang="en"] [data-lang-only="zh"],
+html[data-lang="en"] [data-lang-only="ja"] {
+    display: none !important;
+}
+html[data-lang="ja"] [data-lang-only="zh"],
+html[data-lang="ja"] [data-lang-only="en"] {
     display: none !important;
 }
 

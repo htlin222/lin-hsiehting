@@ -3,6 +3,7 @@ import type { SiteConfig } from "./types";
 export const siteConfig: SiteConfig = {
 	title: "林協霆 · 臨床筆記",
 	titleEn: "Hsieh-Ting Lin · Clinical Notes",
+	titleJa: "林協霆 · 臨床ノート",
 	description: "腫瘤內科醫師。臨床筆記與閱讀記錄。",
 	siteUrl: "https://lin.hsiehting.com",
 	author: {
@@ -16,11 +17,16 @@ export const siteConfig: SiteConfig = {
 		scholar: "https://scholar.google.com/citations?user=3-HCVDAAAAAJ&hl=zh-TW",
 	},
 	nav: [
-		{ label: "文章", labelEn: "Articles", href: "/" },
-		{ label: "標籤", labelEn: "Tags", href: "/tags" },
-		{ label: "Portfolio", labelEn: "Portfolio", href: "/portfolio" },
-		{ label: "CV", labelEn: "CV", href: "/cv" },
-		{ label: "關於", labelEn: "About", href: "/about" },
+		{ label: "文章", labelEn: "Articles", labelJa: "記事", href: "/" },
+		{ label: "標籤", labelEn: "Tags", labelJa: "タグ", href: "/tags" },
+		{
+			label: "Portfolio",
+			labelEn: "Portfolio",
+			labelJa: "ポートフォリオ",
+			href: "/portfolio",
+		},
+		{ label: "CV", labelEn: "CV", labelJa: "経歴", href: "/cv" },
+		{ label: "關於", labelEn: "About", labelJa: "プロフィール", href: "/about" },
 	],
 	socials: {
 		github: "https://github.com/htlin222",

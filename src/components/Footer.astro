@@ -14,6 +14,9 @@ import { Github, Twitter, Linkedin, MessageCircle, Mail } from "@lucide/astro";
                 <span data-lang-only="en">
                     {siteConfig.titleEn ?? siteConfig.title}
                 </span>
+                <span data-lang-only="ja">
+                    {siteConfig.titleJa ?? siteConfig.titleEn ?? siteConfig.title}
+                </span>
             </span>
             <span class="text-xs text-muted-foreground">
                 Built with <a
@@ -97,6 +100,7 @@ import { Github, Twitter, Linkedin, MessageCircle, Mail } from "@lucide/astro";
             >
                 <span data-lang-only="zh">訂閱 RSS</span>
                 <span data-lang-only="en">Subscribe to RSS</span>
+                <span data-lang-only="ja">RSS を購読</span>
             </a>
         </div>
     </div>

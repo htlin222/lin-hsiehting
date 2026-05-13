@@ -196,14 +196,16 @@ const isOnCurrentPath = (path: string) => {
             setDarkMode();
             document.addEventListener("astro:after-swap", setDarkMode);
 
-            // Global UI language ("zh" | "en") — controls visibility of any
-            // element with `data-lang-only="zh"` / `data-lang-only="en"`.
+            // Global UI language ("zh" | "en" | "ja") — controls visibility
+            // of any element with data-lang-only matching the current lang.
             // Default zh-TW; persisted in localStorage under key "site-lang".
             const setLang = () => {
                 let lang = "zh";
                 try {
                     const saved = localStorage.getItem("site-lang");
-                    if (saved === "en" || saved === "zh") lang = saved;
+                    if (saved === "en" || saved === "zh" || saved === "ja") {
+                        lang = saved;
+                    }
                 } catch {}
                 document.documentElement.dataset.lang = lang;
             };
@@ -239,6 +241,9 @@ const isOnCurrentPath = (path: string) => {
                                     <span data-lang-only="en">
                                         {link.labelEn ?? link.label}
                                     </span>
+                                    <span data-lang-only="ja">
+                                        {link.labelJa ?? link.labelEn ?? link.label}
+                                    </span>
                                 </span>
                             </a>
                         </li>
@@ -249,12 +254,13 @@ const isOnCurrentPath = (path: string) => {
                         id="lang-toggle"
                         type="button"
                         aria-label="Toggle language"
-                        title="切換語言 · Toggle language"
+                        title="切換語言 · Toggle language · 言語切替"
                         class="flex items-center gap-1 text-xs font-medium"
                     >
                         <Languages size={14} />
                         <span data-lang-only="zh">EN</span>
-                        <span data-lang-only="en">中</span>
+                        <span data-lang-only="en">日</span>
+                        <span data-lang-only="ja">中</span>
                     </button>
                 </li>
                 <li>
@@ -405,25 +411,28 @@ const isOnCurrentPath = (path: string) => {
                 const langToggle = document.getElementById("lang-toggle");
                 if (langToggle) {
                     langToggle.addEventListener("click", () => {
+                        const order = ["zh", "en", "ja"] as const;
+                        const raw = document.documentElement.dataset.lang;
                         const current =
-                            document.documentElement.dataset.lang === "en"
-                                ? "en"
+                            (order as readonly string[]).includes(raw ?? "")
+                                ? (raw as (typeof order)[number])
                                 : "zh";
-                        const next = current === "zh" ? "en" : "zh";
+                        const next =
+                            order[(order.indexOf(current) + 1) % order.length];
                         document.documentElement.dataset.lang = next;
                         try {
                             localStorage.setItem("site-lang", next);
-                            // Keep /cv and /about local tab state in sync.
-                            localStorage.setItem("cv-lang", next);
-                            localStorage.setItem("about-lang", next);
+                            // /cv and /about internal tabs only know zh/en —
+                            // map ja → zh for those so they don't break.
+                            const tabLang = next === "ja" ? "zh" : next;
+                            localStorage.setItem("cv-lang", tabLang);
+                            localStorage.setItem("about-lang", tabLang);
+                            document
+                                .querySelectorAll<HTMLButtonElement>(
+                                    `[data-cv-tab="${tabLang}"], [data-about-tab="${tabLang}"]`,
+                                )
+                                .forEach((b) => b.click());
                         } catch {}
-                        // If the current page has tab panels keyed to data-cv-panel
-                        // or data-about-panel, re-fire their click handler logic.
-                        document
-                            .querySelectorAll<HTMLButtonElement>(
-                                `[data-cv-tab="${next}"], [data-about-tab="${next}"]`,
-                            )
-                            .forEach((b) => b.click());
                     });
                 }
 

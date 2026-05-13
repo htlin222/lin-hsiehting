@@ -10,6 +10,7 @@ export interface SearchItem {
 export interface NavLink {
     label: string;
     labelEn?: string;
+    labelJa?: string;
     href: string;
 }
 
@@ -49,6 +50,7 @@ export interface AuthorConfig {
 export interface SiteConfig {
     title: string;
     titleEn?: string;
+    titleJa?: string;
     description: string;
     siteUrl: string;
     author: AuthorConfig;

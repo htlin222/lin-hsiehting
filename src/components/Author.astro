@@ -910,6 +910,7 @@ const bioEn =
             const site = localStorage.getItem("site-lang");
             if (site === "en") return "en";
             if (site === "zh") return "zh";
+            if (site === "ja") return "zh"; // About tabs only support zh/en
             const saved = localStorage.getItem("about-lang");
             if (saved === "en") return "en";
             if (saved === "zh") return "zh";

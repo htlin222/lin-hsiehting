@@ -474,6 +474,7 @@ import {
         try {
             const site = localStorage.getItem("site-lang");
             if (site === "zh" || site === "en") return site;
+            if (site === "ja") return "zh"; // CV tabs only support zh/en
             const saved = localStorage.getItem("cv-lang");
             if (saved === "zh" || saved === "en") return saved;
         } catch {}
