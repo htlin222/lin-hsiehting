@@ -178,8 +178,8 @@ async function main() {
         process.exit(1);
     }
 
-    const fontData = await fetchFont();
-    const avatarDataUrl = await getAvatarDataUrl();
+    let fontData = null;
+    let avatarDataUrl = null;
 
     let targets;
     if (slugArg) {
@@ -220,6 +220,8 @@ async function main() {
             skipped++;
             continue;
         }
+        if (!fontData) fontData = await fetchFont();
+        if (!avatarDataUrl) avatarDataUrl = await getAvatarDataUrl();
         const { bytes } = await renderOne(
             { slug, title: data.title || "(untitled)" },
             { fontData, avatarDataUrl },

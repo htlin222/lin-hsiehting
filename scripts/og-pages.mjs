@@ -170,8 +170,8 @@ async function renderOne(page, { fontData, avatarDataUrl }) {
 }
 
 async function main() {
-    const fontData = await fetchFont();
-    const avatarDataUrl = await getAvatarDataUrl();
+    let fontData = null;
+    let avatarDataUrl = null;
 
     let rendered = 0;
     let skipped = 0;
@@ -182,6 +182,8 @@ async function main() {
             skipped++;
             continue;
         }
+        if (!fontData) fontData = await fetchFont();
+        if (!avatarDataUrl) avatarDataUrl = await getAvatarDataUrl();
         const { bytes } = await renderOne(page, { fontData, avatarDataUrl });
         console.log(
             colors.green(
