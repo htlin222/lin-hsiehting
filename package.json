@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"prebuild": "node scripts/og-image.mjs --all && node scripts/og-pages.mjs",
+		"prebuild": "node scripts/og-pages.mjs",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
@@ -37,7 +37,8 @@
 		"@tailwindcss/vite": "^4.2.1",
 		"astro": "^6.0.5",
 		"astro-expressive-code": "^0.41.7",
-		"tailwindcss": "^4.2.1"
+		"tailwindcss": "^4.2.1",
+		"workers-og": "^0.0.27"
 	},
 	"devDependencies": {
 		"playwright": "^1.49.0",

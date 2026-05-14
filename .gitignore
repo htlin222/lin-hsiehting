@@ -23,3 +23,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# post OG images are now rendered on-demand by functions/og/[[path]].ts.
+# the year-prefixed directories (e.g. public/og/2026/) are no longer built
+# locally and must not shadow the Pages Function at deploy time.
+public/og/[0-9][0-9][0-9][0-9]/
+
+# wrangler pages dev local state (only used when smoke-testing the OG function)
+.wrangler/
