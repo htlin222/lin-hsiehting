@@ -72,7 +72,11 @@ if (post.data.updatedDate) {
 
 // Fall back to the auto-generated OG card (1200x630) when the post does not
 // declare its own cover image. Path matches scripts/og-image.mjs output.
-const ogImage = post.data.image?.src ?? `/og/${post.id}.png`;
+const cover = post.data.image;
+const ogImage = cover?.src ?? `/og/${post.id}.png`;
+const ogImageWidth = cover?.width ?? 1200;
+const ogImageHeight = cover?.height ?? 630;
+const ogImageType = cover?.format ? `image/${cover.format}` : "image/png";
 const postUrl = new URL(
     Astro.url.pathname,
     Astro.site || Astro.url.origin,
@@ -219,6 +223,10 @@ const relatedPosts = allEntries
     description={post.data.frontmatter}
     type="article"
     image={ogImage}
+    imageWidth={ogImageWidth}
+    imageHeight={ogImageHeight}
+    imageType={ogImageType}
+    imageAlt={post.data.title}
 >
     <Fragment slot="head">
         <meta name="citation_title" content={post.data.title} />
