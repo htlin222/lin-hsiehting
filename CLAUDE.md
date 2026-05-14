@@ -204,9 +204,35 @@ NEJM／JCO 等對 HEAD/GET 常 403，但那不代表 DOI 死掉，所以 audit �
 
 ## 9. 部署
 
-`git push origin main` → GitHub Actions → Cloudflare Pages（`lin-hsiehting` project）→ <https://lin.hsiehting.com>。
+`git push origin main` → GitHub Actions（`.github/workflows/deploy.yml`：build + `wrangler pages deploy`）→ Cloudflare Pages（`lin-hsiehting` project）→ <https://lin.hsiehting.com>。
 
 `pnpm run build` 在本地必須先綠燈再 push；CI 失敗會在 Actions 頁顯示。
+
+### 9.1 push 後必盯到底（Claude 不可省略）
+
+Cloudflare Pages 的 deploy 由 GitHub Actions 跑（不是 CF 直連 repo），所以 **Action 綠燈 = 已上線**。每次 push 後：
+
+```bash
+gh run watch --exit-status               # 盯最新一個 run 直到結束，非 0 = 失敗
+gh run list --workflow=deploy.yml -L 3   # 看 deploy.yml 最近三次狀態
+gh run view --log-failed                 # 失敗時抓失敗 step 的 log
+```
+
+如果是醫療文章上稿，DOI mint 也會跟著跑：
+
+```bash
+gh run list --workflow=zenodo-on-push.yml -L 3
+```
+
+Action 全綠後再做一次 live check（驗證 CF 的 edge cache 也更新了）：
+
+```bash
+curl -sI https://lin.hsiehting.com/ | grep -iE 'etag|cf-ray|last-modified'
+# 或抓本次改動的具體 marker（OG tag、新檔名、frontmatter 等）
+curl -s https://lin.hsiehting.com/ | grep -oE '<meta property="og:image:width"[^>]*'
+```
+
+任一步失敗 → **不要**告訴使用者「部署好了」。先讀 log 修，必要時 revert。
 
 ## 11. OG image 自動產生
 
@@ -315,3 +341,4 @@ mint 流程（自動）：
 - 跨試驗比較表必須附 `Callout type="warning"` 警語：不同試驗族群／線數／評估基準不一致。
 - 一律用「副作用 / 不良反應」、「治療反應」、「無惡化存活」這類繁中標準術語，不直接寫 ORR / PFS 的英文縮寫前要先寫一次中文全名。
 - `git push` 是部署動作（會觸發 Cloudflare Pages 重 build），**只在使用者明確說「push」「部署」「上線」時才執行**，不要自己決定。
+- **push 完必盯**：每次 push 後跑 `gh run watch --exit-status` 直到 GitHub Action 綠燈（deploy.yml 內含 `wrangler pages deploy`，綠燈 = 已上線），再用 `curl` 驗證 live site 有出現本次改動的 marker。失敗就讀 log 修，不可以 push 完就走人或宣稱「部署好了」。詳細指令見 §9.1。
