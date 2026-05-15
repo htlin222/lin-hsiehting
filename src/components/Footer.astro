@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "@/config";
-import { Github, Twitter, Linkedin, MessageCircle, Mail } from "@lucide/astro";
+import { Github, Twitter, Linkedin, Mail } from "@lucide/astro";
+import LineAddButton from "@/components/LineAddButton.astro";
 ---
 
 <footer class="border-t border-border mt-20 py-10 px-10 lg:px-20">
@@ -68,20 +69,8 @@ import { Github, Twitter, Linkedin, MessageCircle, Mail } from "@lucide/astro";
                     </a>
                 )
             }
-            {
-                siteConfig.socials.line && (
-                    <a
-                        href={siteConfig.socials.line}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="LINE 官方帳號（讀者回饋專用，不提供個別診療建議）"
-                        title="LINE 讀者回饋（勘誤／衛教提問／學術討論，不提供個別診療建議）"
-                        class="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                        <MessageCircle size={18} />
-                    </a>
-                )
-            }
+            <LineAddButton class="opacity-80 hover:opacity-100 transition-opacity" />
+
             {
                 siteConfig.socials.email && (
                     <a

@@ -15,6 +15,7 @@ import {
 import { Image } from "astro:assets";
 import avatar from "@/assets/images/avatar.jpg";
 import { siteConfig } from "@/config";
+import LineAddButton from "@/components/LineAddButton.astro";
 
 interface SkillGroup {
     title: string;
@@ -536,13 +537,10 @@ const bioEn =
             {siteConfig.socials.line && (
                 <p class="text-sm text-muted-foreground leading-relaxed">
                     <strong class="text-foreground">讀者回饋管道</strong>：LINE 官方帳號
-                    <a
-                        href={siteConfig.socials.line}
-                        target="_blank"
-                        rel="noopener"
-                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                        >@927pjtfa</a
-                    >
+                    <span class="inline-flex items-center gap-2 align-middle">
+                        <span class="text-foreground font-medium">@927pjtfa</span>
+                        <LineAddButton />
+                    </span>
                     ，接受文章勘誤建議、衛教問題提問、學術討論。
                     <strong class="text-foreground">本管道不提供個別診療建議</strong>，亦不受理任何形式之醫療業務預約；具體病情、用藥、治療方案請與您的主治醫師面對面討論。
                 </p>
@@ -835,13 +833,10 @@ const bioEn =
                 <p class="text-sm text-muted-foreground leading-relaxed">
                     <strong class="text-foreground">Reader feedback channel</strong>:
                     LINE official account
-                    <a
-                        href={siteConfig.socials.line}
-                        target="_blank"
-                        rel="noopener"
-                        class="text-foreground font-medium underline-offset-4 hover:underline hover:text-primary"
-                        >@927pjtfa</a
-                    >
+                    <span class="inline-flex items-center gap-2 align-middle">
+                        <span class="text-foreground font-medium">@927pjtfa</span>
+                        <LineAddButton />
+                    </span>
                     accepts corrections, education questions, and academic
                     discussion.
                     <strong class="text-foreground">

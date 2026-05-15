@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
 		github: "https://github.com/htlin222",
 		twitter: "",
 		linkedin: "",
-		line: "https://line.me/R/ti/p/@927pjtfa",
+		line: "https://lin.ee/yKEIpCM",
 		email: "mail@hsiehting.com",
 	},
 	postsPerPage: 5,
