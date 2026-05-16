@@ -188,13 +188,28 @@ const lastUpdatedFormatted = fmt(lastUpdated);
             </div>
             <div class="text-xs text-muted-foreground mt-1 flex flex-wrap gap-x-3 gap-y-1">
                 {reviewedFormatted && (
-                    <span>審稿日期：{reviewedFormatted}</span>
+                    <span>
+                        <span data-lang-only="zh">審稿日期：</span>
+                        <span data-lang-only="en">Reviewed: </span>
+                        <span data-lang-only="ja">査読日：</span>
+                        {reviewedFormatted}
+                    </span>
                 )}
                 {lastUpdatedFormatted && (
-                    <span>最後更新：{lastUpdatedFormatted}</span>
+                    <span>
+                        <span data-lang-only="zh">最後更新：</span>
+                        <span data-lang-only="en">Updated: </span>
+                        <span data-lang-only="ja">最終更新：</span>
+                        {lastUpdatedFormatted}
+                    </span>
                 )}
                 {medicalCondition && (
-                    <span>主題：{medicalCondition}</span>
+                    <span>
+                        <span data-lang-only="zh">主題：</span>
+                        <span data-lang-only="en">Topic: </span>
+                        <span data-lang-only="ja">テーマ：</span>
+                        {medicalCondition}
+                    </span>
                 )}
             </div>
         </div>
@@ -210,9 +225,25 @@ const lastUpdatedFormatted = fmt(lastUpdated);
                 風險揭露 · Risk Disclosure
             </div>
             <p class="mt-1 text-foreground/90">
-                文中所討論之治療多為臨床試驗或國外仿單外使用 (off-label)，可能尚未取得台灣
-                TFDA 核准。實際適應症、禁忌症、副作用、劑量與療程，因個別腫瘤分期、體能狀態
-                (PS)、共病與基因型而異。
+                <span data-lang-only="zh">
+                    文中所討論之治療多為臨床試驗或國外仿單外使用 (off-label)，可能尚未取得台灣
+                    TFDA 核准。實際適應症、禁忌症、副作用、劑量與療程，因個別腫瘤分期、體能狀態
+                    (PS)、共病與基因型而異。
+                </span>
+                <span data-lang-only="en">
+                    Many of the treatments discussed here are clinical-trial
+                    regimens or off-label uses that may not yet have Taiwan
+                    TFDA approval. Indications, contraindications, adverse
+                    effects, dosing, and duration vary with individual tumor
+                    stage, performance status (PS), comorbidities, and
+                    genotype.
+                </span>
+                <span data-lang-only="ja">
+                    本稿で扱う治療の多くは臨床試験または適応外使用 (オフラベル) で、
+                    台湾 TFDA の承認をまだ得ていない場合があります。適応・禁忌・副作用・
+                    用量・治療期間は、個々の病期、パフォーマンス・ステータス (PS)、
+                    併存疾患、遺伝子型によって異なります。
+                </span>
             </p>
         </div>
     </section>
@@ -224,15 +255,46 @@ const lastUpdatedFormatted = fmt(lastUpdated);
                 免責聲明 · Disclaimer
             </div>
             <p class="mt-1 text-muted-foreground">
-                本文整理自公開發表之臨床試驗結果與 NCCN／ASCO／ESMO 治療指引，僅供醫學新知與
-                病人衛生教育參考，不構成個別醫療建議，亦不取代主治醫師之診療判斷。實際治療
-                決策請與您的主治團隊面對面討論。本網站不從事醫療業務招徠。
+                <span data-lang-only="zh">
+                    本文整理自公開發表之臨床試驗結果與 NCCN／ASCO／ESMO 治療指引，僅供醫學新知與
+                    病人衛生教育參考，不構成個別醫療建議，亦不取代主治醫師之診療判斷。實際治療
+                    決策請與您的主治團隊面對面討論。本網站不從事醫療業務招徠。
+                </span>
+                <span data-lang-only="en">
+                    This article summarises publicly available clinical-trial
+                    results and NCCN / ASCO / ESMO treatment guidelines,
+                    intended for medical news and patient education only. It
+                    does not constitute individual medical advice and does not
+                    replace your treating physician's judgment. Discuss actual
+                    treatment decisions face-to-face with your own care team.
+                    This site does not solicit medical business.
+                </span>
+                <span data-lang-only="ja">
+                    本記事は公開された臨床試験成績と NCCN／ASCO／ESMO の治療
+                    ガイドラインをまとめたもので、医学最新情報および患者教育を
+                    目的としています。個別の医療助言ではなく、主治医の診療判断に
+                    代わるものではありません。実際の治療方針は主治医チームと
+                    対面でご相談ください。本サイトは医療業務の勧誘を行いません。
+                </span>
             </p>
             {siteConfig.socials.line && (
                 <p class="mt-2 text-xs text-muted-foreground flex flex-wrap items-center gap-x-2 gap-y-1">
-                    <span>
+                    <span data-lang-only="zh">
                         文章勘誤、衛教提問、學術討論可透過 LINE 官方帳號 @927pjtfa 回饋。
                         <strong>本管道不提供個別診療建議</strong>。
+                    </span>
+                    <span data-lang-only="en">
+                        Corrections, education questions, and academic
+                        discussion via LINE official account @927pjtfa.{" "}
+                        <strong>
+                            This channel does not provide individual medical
+                            advice.
+                        </strong>
+                    </span>
+                    <span data-lang-only="ja">
+                        記事の訂正・教育上の質問・学術的なやり取りは LINE
+                        公式アカウント @927pjtfa までお寄せください。
+                        <strong>本窓口は個別の診療助言を提供しません。</strong>
                     </span>
                     <LineAddButton />
                 </p>
@@ -263,8 +325,10 @@ const lastUpdatedFormatted = fmt(lastUpdated);
                         </a>
                         {conceptDoi && doi && conceptDoi !== doi && (
                             <span class="text-muted-foreground">
-                                {" "}
-                                · 此版本{" "}
+                                {" "}·{" "}
+                                <span data-lang-only="zh">此版本 </span>
+                                <span data-lang-only="en">this version </span>
+                                <span data-lang-only="ja">このバージョン </span>
                                 <a
                                     href={`https://doi.org/${doi}`}
                                     target="_blank"
