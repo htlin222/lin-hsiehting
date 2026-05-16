@@ -77,13 +77,28 @@ const pageItems = buildPageItems(page, totalPages);
 ---
 
 <main class="page">
-    <span class="uppercase text-primary font-medium tracking-widest"
-        >臨床筆記</span
-    >
+    <span class="uppercase text-primary font-medium tracking-widest">
+        <span data-lang-only="zh">臨床筆記</span>
+        <span data-lang-only="en">Clinical Notes</span>
+        <span data-lang-only="ja">臨床ノート</span>
+    </span>
 
-    <h1 class="text-4xl mt-10">近期書寫</h1>
-    <p class="text-lg max-w-122 text-muted-foreground">
-        腫瘤治療新知、衛教整理，以及病房裡指引未盡之處的臨床思考。
+    <h1 class="text-4xl mt-10">
+        <span data-lang-only="zh">近期書寫</span>
+        <span data-lang-only="en">Recent Writing</span>
+        <span data-lang-only="ja">最近の執筆</span>
+    </h1>
+    <p class="text-lg max-w-prose text-muted-foreground">
+        <span data-lang-only="zh">
+            腫瘤治療新知、衛教整理，以及病房裡指引未盡之處的臨床思考。
+        </span>
+        <span data-lang-only="en">
+            Notes on oncology updates, patient education, and the clinical
+            reasoning beyond what guidelines cover.
+        </span>
+        <span data-lang-only="ja">
+            腫瘍診療の最新知見、患者教育、ガイドラインの届かない臨床判断についての覚書。
+        </span>
     </p>
 
     <section class="mt-20 my-5">
