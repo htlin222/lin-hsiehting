@@ -1,15 +1,13 @@
 ---
-// Official LINE "加入好友 / Add Friend" button. The PNG + lin.ee shortlink are
-// LINE's canonical assets, kept here as a single component so every UI surface
-// (footer, medical disclaimer, about page) stays in sync.
+// Custom LINE pill — brand green (#00B900) with rounded corners, kept in a
+// single component so footer / medical disclaimer / about pages stay in sync.
 import { siteConfig } from "@/config";
 
 interface Props {
-    height?: number;
     class?: string;
 }
 
-const { height = 18, class: className = "" } = Astro.props;
+const { class: className = "" } = Astro.props;
 ---
 
 {
@@ -20,15 +18,14 @@ const { height = 18, class: className = "" } = Astro.props;
             rel="noreferrer"
             aria-label="加入 LINE 官方帳號 @927pjtfa（讀者回饋專用，不提供個別診療建議）"
             title="加入 LINE 官方帳號（勘誤／衛教提問／學術討論，不提供個別診療建議）"
-            class:list={["inline-flex items-center align-middle", className]}
+            class:list={[
+                "inline-flex items-center gap-1 align-middle rounded-full px-3 py-0.5 text-xs font-medium text-white no-underline hover:opacity-90 transition-opacity",
+                className,
+            ]}
+            style="background-color:#00B900;"
         >
-            <img
-                src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png"
-                alt="加入好友"
-                height={height}
-                style="border:0"
-                loading="lazy"
-            />
+            <span aria-hidden="true">💬</span>
+            <span>LINE</span>
         </a>
     )
 }
