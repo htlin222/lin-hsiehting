@@ -84,7 +84,9 @@ async function listPosts() {
 }
 
 async function renderOne(browserCtx, post) {
-    const url = `${baseUrl}/print/${post.id}`;
+    // trailingSlash:'always' means dist serves /print/<slug>/index.html;
+    // http-server doesn't auto-rewrite, so request the slash form directly.
+    const url = `${baseUrl}/print/${post.id}/`;
     const dest = path.join(outDir, `${post.id}.pdf`);
     if (!force && existsSync(dest)) {
         const srcStat = await stat(post.file);

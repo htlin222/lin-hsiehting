@@ -64,7 +64,7 @@ function cssFor(d) {
 }
 
 async function renderOne(ctx, target) {
-    const url = `${baseUrl}/print/${target.slug}`;
+    const url = `${baseUrl}/print/${target.slug}/`;
     const dest = path.join(outDir, target.out);
     await mkdir(path.dirname(dest), { recursive: true });
 
