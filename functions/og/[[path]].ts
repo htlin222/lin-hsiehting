@@ -50,17 +50,67 @@ async function getAvatarDataUrl(env: Env, origin: string): Promise<string> {
     return cachedAvatar;
 }
 
-async function getFontData(text: string): Promise<ArrayBuffer> {
-    // Dedup glyph-set so isolates with similar titles reuse the same subset.
-    const key = [...new Set(text)].sort().join("");
-    const hit = fontCache.get(key);
-    if (hit) return hit;
+async function hashGlyphSet(glyphs: string): Promise<string> {
+    const buf = await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder().encode(glyphs),
+    );
+    return Array.from(new Uint8Array(buf), (b) =>
+        b.toString(16).padStart(2, "0"),
+    )
+        .join("")
+        .slice(0, 16);
+}
+
+async function getFontData(
+    text: string,
+    origin: string,
+    waitUntil: (p: Promise<unknown>) => void,
+): Promise<ArrayBuffer> {
+    // Dedup the glyph set — two posts that share the same characters render
+    // the same subset binary.
+    const glyphs = [...new Set(text)].sort().join("");
+
+    // L1: per-isolate memory.
+    const memHit = fontCache.get(glyphs);
+    if (memHit) return memHit;
+
+    // L2: shared edge cache. Survives isolate eviction, shared across all
+    // isolates at the same colo.
+    const cache = (caches as unknown as { default: Cache }).default;
+    const hash = await hashGlyphSet(glyphs);
+    const cacheKey = new Request(`${origin}/__og_font__/${hash}.bin`, {
+        method: "GET",
+    });
+    const edgeHit = await cache.match(cacheKey);
+    if (edgeHit) {
+        const data = await edgeHit.arrayBuffer();
+        fontCache.set(glyphs, data);
+        return data;
+    }
+
+    // L3: Google Fonts dynamic subset.
     const data = await loadGoogleFont({
         family: "Noto Sans TC",
         weight: 700,
         text,
     });
-    fontCache.set(key, data);
+    fontCache.set(glyphs, data);
+
+    // Stash the bytes for the next cold isolate. 30-day TTL — Google's Noto
+    // Sans TC subset is effectively immutable for our purposes.
+    waitUntil(
+        cache.put(
+            cacheKey,
+            new Response(data, {
+                headers: {
+                    "Content-Type": "font/ttf",
+                    "Cache-Control":
+                        "public, max-age=2592000, s-maxage=2592000, immutable",
+                },
+            }),
+        ),
+    );
     return data;
 }
 
@@ -119,7 +169,7 @@ export const onRequestGet = async ({
     // Subset font to just the glyphs that appear on this card.
     const glyphText = title + SITE_TITLE + AUTHOR_LINE + CRED_LINE + SITE_URL;
     const [fontData, avatarDataUrl] = await Promise.all([
-        getFontData(glyphText),
+        getFontData(glyphText, url.origin, waitUntil),
         getAvatarDataUrl(env, url.origin),
     ]);
 
