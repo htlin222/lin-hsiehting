@@ -37,6 +37,7 @@ function rehypeWrapTables() {
 // https://astro.build/config
 export default defineConfig({
   site: "https://lin.hsiehting.com",
+  trailingSlash: "always",
   vite: {
     plugins: [tailwindcss()],
   },

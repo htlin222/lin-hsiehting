@@ -1,0 +1,39 @@
+---
+import { Sparkles } from "@lucide/astro";
+
+interface Props {
+    items?: string[];
+}
+
+const { items = [] } = Astro.props;
+const hasItems = items.length > 0;
+---
+
+{
+    hasItems && (
+        <aside
+            class="tldr not-prose mb-10 border border-border rounded-xl bg-secondary/30 px-5 py-4"
+            aria-label="重點摘要"
+        >
+            <header class="flex items-center gap-2 mb-3">
+                <Sparkles class="text-primary shrink-0" size={16} />
+                <span class="text-xs uppercase tracking-widest text-muted-foreground">
+                    TL;DR · 一分鐘重點
+                </span>
+            </header>
+            <ul class="space-y-2 text-foreground/90">
+                {items.map((item) => (
+                    <li class="flex gap-2 leading-relaxed">
+                        <span
+                            class="text-primary mt-2 shrink-0"
+                            aria-hidden="true"
+                        >
+                            ▍
+                        </span>
+                        <span>{item}</span>
+                    </li>
+                ))}
+            </ul>
+        </aside>
+    )
+}

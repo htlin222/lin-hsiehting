@@ -9,6 +9,8 @@ const post = defineCollection({
     titleEn: z.string().optional(),
     date: z.string(),
     frontmatter: z.string(),
+    metaDescription: z.string().optional(),
+    tldr: z.array(z.string()).optional(),
     tags: z.array(z.string()),
     citable: z.boolean().optional().default(false),
     image: image().optional(),

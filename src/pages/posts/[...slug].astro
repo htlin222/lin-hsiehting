@@ -7,6 +7,8 @@ import DesktopTOC from "@/components/posts/DesktopTOC.astro";
 import ShareButtons from "@/components/posts/ShareButtons.astro";
 import MedicalReview from "@/components/posts/MedicalReview.astro";
 import AuthorBadge from "@/components/posts/AuthorBadge.astro";
+import Tldr from "@/components/posts/Tldr.astro";
+import FaqSection from "@/components/posts/FaqSection.astro";
 import { Image } from "astro:assets";
 import { siteConfig } from "@/config";
 import { parseDate } from "@/utils/date";
@@ -81,10 +83,22 @@ const ogImage =
 const ogImageWidth = cover?.width ?? 1200;
 const ogImageHeight = cover?.height ?? 630;
 const ogImageType = cover?.format ? `image/${cover.format}` : "image/png";
+// Trailing-slash form matches Cloudflare's served URL + sitemap entries.
+const canonicalPath = (() => {
+    const p = Astro.url.pathname;
+    if (p === "/") return "/";
+    return p.endsWith("/") ? p : `${p}/`;
+})();
 const postUrl = new URL(
-    Astro.url.pathname,
+    canonicalPath,
     Astro.site || Astro.url.origin,
 ).href;
+const seoDescription = post.data.metaDescription ?? post.data.frontmatter;
+const primaryTag = post.data.tags?.[0];
+const siteOrigin = (Astro.site ?? new URL(Astro.url.origin)).href.replace(
+    /\/$/,
+    "",
+);
 const pdfUrl = `/pdf/${post.id}.pdf`;
 const pdfAbsoluteUrl = new URL(pdfUrl, Astro.site || Astro.url.origin).href;
 const printAbsoluteUrl = new URL(
@@ -124,14 +138,14 @@ const schemaReviewer: Record<string, unknown> = {
 if (post.data.reviewerCredentials)
     schemaReviewer.description = post.data.reviewerCredentials;
 
-const blogPostingSchema: Record<string, unknown> = {
+const articleSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": post.data.medical ? "MedicalScholarlyArticle" : "BlogPosting",
     headline: post.data.title,
     author: schemaAuthor,
     datePublished: isoDate,
     dateModified: updatedIso,
-    description: post.data.frontmatter,
+    description: seoDescription,
     inLanguage: "zh-TW",
     keywords: post.data.tags.join(", "),
     url: postUrl,
@@ -143,13 +157,13 @@ const blogPostingSchema: Record<string, unknown> = {
     },
 };
 if (ogImage) {
-    blogPostingSchema.image = new URL(
+    articleSchema.image = new URL(
         ogImage,
         Astro.site || Astro.url.origin,
     ).href;
 }
 if (post.data.doi) {
-    blogPostingSchema.identifier = {
+    articleSchema.identifier = {
         "@type": "PropertyValue",
         propertyID: "doi",
         value: post.data.doi,
@@ -158,7 +172,25 @@ if (post.data.doi) {
     if (post.data.conceptDoi && post.data.conceptDoi !== post.data.doi) {
         sameAs.push(`https://doi.org/${post.data.conceptDoi}`);
     }
-    blogPostingSchema.sameAs = sameAs;
+    articleSchema.sameAs = sameAs;
+}
+if (post.data.medical) {
+    articleSchema.about = post.data.medicalCondition
+        ? {
+              "@type": "MedicalCondition",
+              name: post.data.medicalCondition,
+          }
+        : undefined;
+    articleSchema.audience = {
+        "@type": "MedicalAudience",
+        audienceType: "Patient",
+    };
+}
+if (post.data.tldr && post.data.tldr.length > 0) {
+    articleSchema.speakable = {
+        "@type": "SpeakableSpecification",
+        cssSelector: [".tldr"],
+    };
 }
 
 const medicalSchema = post.data.medical
@@ -168,7 +200,7 @@ const medicalSchema = post.data.medical
               "@type": "MedicalWebPage",
               url: postUrl,
               name: post.data.title,
-              description: post.data.frontmatter,
+              description: seoDescription,
               inLanguage: "zh-TW",
               audience: {
                   "@type": "MedicalAudience",
@@ -205,6 +237,27 @@ const faqSchema =
           }
         : null;
 
+const breadcrumbItems: Array<{ name: string; url: string }> = [
+    { name: "Home", url: `${siteOrigin}/` },
+];
+if (primaryTag) {
+    breadcrumbItems.push({
+        name: primaryTag,
+        url: `${siteOrigin}/tags/${encodeURIComponent(primaryTag)}`,
+    });
+}
+breadcrumbItems.push({ name: post.data.title, url: postUrl });
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, idx) => ({
+        "@type": "ListItem",
+        position: idx + 1,
+        name: item.name,
+        item: item.url,
+    })),
+};
+
 const allEntries = await getCollection("post");
 const relatedPosts = allEntries
     .filter((p) => !p.data.draft && p.id !== post.id)
@@ -224,7 +277,7 @@ const relatedPosts = allEntries
 
 <Layout
     title={`${post.data.title} | ${siteConfig.title}`}
-    description={post.data.frontmatter}
+    description={seoDescription}
     type="article"
     image={ogImage}
     imageWidth={ogImageWidth}
@@ -333,11 +386,17 @@ const relatedPosts = allEntries
 
         <div class="flex flex-col lg:flex-row gap-10 relative">
             <div class="flex-1 w-full max-w-full">
+                {post.data.tldr && post.data.tldr.length > 0 && (
+                    <Tldr items={post.data.tldr} />
+                )}
                 <div class="prose-blog">
                     <div class="drop-cap">
                         <Content />
                     </div>
                 </div>
+                {post.data.faq && post.data.faq.length > 0 && (
+                    <FaqSection items={post.data.faq} />
+                )}
                 {
                     post.data.medical && (
                         <MedicalReview
@@ -447,7 +506,12 @@ const relatedPosts = allEntries
     <script
         is:inline
         type="application/ld+json"
-        set:html={JSON.stringify(blogPostingSchema)}
+        set:html={JSON.stringify(articleSchema)}
+    />
+    <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(breadcrumbSchema)}
     />
     {
         medicalSchema && (

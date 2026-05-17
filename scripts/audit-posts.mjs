@@ -66,8 +66,13 @@ function parseFrontmatter(raw) {
     for (const line of yaml.split("\n")) {
         if (!line.trim()) continue;
         const arrayItem = line.match(/^\s+-\s+(.+)$/);
-        if (arrayItem && currentKey && Array.isArray(data[currentKey])) {
-            data[currentKey].push(stripQuotes(arrayItem[1]));
+        if (arrayItem && currentKey) {
+            if (Array.isArray(data[currentKey])) {
+                data[currentKey].push(stripQuotes(arrayItem[1]));
+            } else if (data[currentKey] === "") {
+                // promote empty string placeholder to array for multiline lists
+                data[currentKey] = [stripQuotes(arrayItem[1])];
+            }
             continue;
         }
         const kv = line.match(/^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$/);
@@ -193,6 +198,59 @@ function checkBilingualTitle(file, data) {
     ];
 }
 
+function checkSeoEnhancements(file, data, raw, isMedical) {
+    if (!isMedical) return [];
+    const failures = [];
+    if (!data?.metaDescription) {
+        failures.push({
+            file,
+            line: 1,
+            severity: "warn",
+            message:
+                "缺 `metaDescription`（SEO 用 150–160 字描述，沒設會 fallback 到 frontmatter）",
+        });
+    } else if (
+        typeof data.metaDescription === "string" &&
+        (data.metaDescription.length < 80 ||
+            data.metaDescription.length > 200)
+    ) {
+        failures.push({
+            file,
+            line: 1,
+            severity: "warn",
+            message: `metaDescription 長度 ${data.metaDescription.length} 字，建議 150–160 字（SERP 截斷點）`,
+        });
+    }
+    const tldrCount = Array.isArray(data?.tldr) ? data.tldr.length : 0;
+    if (tldrCount === 0) {
+        failures.push({
+            file,
+            line: 1,
+            severity: "warn",
+            message:
+                "缺 `tldr`（3–5 條 bullet 重點，會自動 render 在文章開頭並進 speakable schema）",
+        });
+    } else if (tldrCount < 3 || tldrCount > 5) {
+        failures.push({
+            file,
+            line: 1,
+            severity: "warn",
+            message: `tldr 有 ${tldrCount} 條，建議 3–5 條`,
+        });
+    }
+    const hasFaqKey = /^faq:/m.test(raw);
+    if (!hasFaqKey) {
+        failures.push({
+            file,
+            line: 1,
+            severity: "warn",
+            message:
+                "缺 `faq`（FAQPage schema + 可見 accordion，AI Overviews 引用率高）",
+        });
+    }
+    return failures;
+}
+
 function checkLeadParagraph(file, body, bodyOffset, isMedical) {
     if (!isMedical) return [];
     const lines = body.split("\n").filter((l) => l.trim() !== "");
@@ -237,6 +295,7 @@ async function main() {
             ...checkBilingualTitle(file, data),
             ...checkReferences(file, body, bodyOffset, isMedical),
             ...checkLeadParagraph(file, body, bodyOffset, isMedical),
+            ...checkSeoEnhancements(file, data, raw, isMedical),
         ];
         if (failures.length === 0) continue;
         const rel = path.relative(root, file);

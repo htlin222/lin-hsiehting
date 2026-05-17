@@ -28,8 +28,16 @@ const {
     imageAlt,
 } = Astro.props;
 
+// Cloudflare Pages serves folder/index.html and 308-redirects bare paths to
+// the trailing-slash form. Match that here so canonical never points at a
+// redirect target — keep Google's canonical signal intact.
+const canonicalPath = (() => {
+    const p = Astro.url.pathname;
+    if (p === "/") return "/";
+    return p.endsWith("/") ? p : `${p}/`;
+})();
 const canonicalURL = new URL(
-    Astro.url.pathname,
+    canonicalPath,
     Astro.site || Astro.url.origin,
 );
 
