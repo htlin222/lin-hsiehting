@@ -33,7 +33,7 @@ const fmt = (d: Date) =>
         day: "2-digit",
     });
 
-const postUrl = `${siteConfig.siteUrl}/posts/${post.id}`;
+const postUrl = `${siteConfig.siteUrl}/posts/${post.id}/`;
 const pageTitle = post.data.titleEn
     ? `${post.data.title} (${post.data.titleEn}) — ${siteConfig.title}`
     : `${post.data.title} — ${siteConfig.title}`;

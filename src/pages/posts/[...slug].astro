@@ -102,7 +102,7 @@ const siteOrigin = (Astro.site ?? new URL(Astro.url.origin)).href.replace(
 const pdfUrl = `/pdf/${post.id}.pdf`;
 const pdfAbsoluteUrl = new URL(pdfUrl, Astro.site || Astro.url.origin).href;
 const printAbsoluteUrl = new URL(
-    `/print/${post.id}`,
+    `/print/${post.id}/`,
     Astro.site || Astro.url.origin,
 ).href;
 const citationPubDate = (() => {
@@ -243,7 +243,7 @@ const breadcrumbItems: Array<{ name: string; url: string }> = [
 if (primaryTag) {
     breadcrumbItems.push({
         name: primaryTag,
-        url: `${siteOrigin}/tags/${encodeURIComponent(primaryTag)}`,
+        url: `${siteOrigin}/tags/${encodeURIComponent(primaryTag)}/`,
     });
 }
 breadcrumbItems.push({ name: post.data.title, url: postUrl });
@@ -310,7 +310,7 @@ const relatedPosts = allEntries
             rel="alternate"
             media="print"
             type="text/html"
-            href={`/print/${post.id}`}
+            href={`/print/${post.id}/`}
         />
     </Fragment>
     <div class="fixed top-0 left-0 w-full z-50 bg-transparent">
@@ -360,7 +360,7 @@ const relatedPosts = allEntries
                             post.data.tags.map((tag: string) => (
                                 <Badge
                                     content={tag}
-                                    href={`/tags/${tag}`}
+                                    href={`/tags/${tag}/`}
                                 />
                             ))
                         }
@@ -436,7 +436,7 @@ const relatedPosts = allEntries
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {relatedPosts.map((related) => (
                             <a
-                                href={`/posts/${related.id}`}
+                                href={`/posts/${related.id}/`}
                                 class="group p-4 border border-border rounded-lg hover:bg-muted transition-colors"
                             >
                                 <h3 class="font-medium group-hover:text-primary transition-colors line-clamp-2">
@@ -460,7 +460,7 @@ const relatedPosts = allEntries
                 {
                     prevPost && (
                         <a
-                            href={`/posts/${prevPost.id}`}
+                            href={`/posts/${prevPost.id}/`}
                             class="group flex flex-col gap-1"
                         >
                             <span class="text-xs text-muted-foreground">
@@ -477,7 +477,7 @@ const relatedPosts = allEntries
                 {
                     nextPost && (
                         <a
-                            href={`/posts/${nextPost.id}`}
+                            href={`/posts/${nextPost.id}/`}
                             class="group flex flex-col gap-1 items-end"
                         >
                             <span class="text-xs text-muted-foreground">

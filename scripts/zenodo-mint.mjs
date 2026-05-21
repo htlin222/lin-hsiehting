@@ -159,7 +159,7 @@ function buildMetadata(post, file) {
         .replace(/\.mdx$/, "")
         .split(path.sep)
         .join("/");
-    const canonicalUrl = `${SITE_URL}/posts/${slug}`;
+    const canonicalUrl = `${SITE_URL}/posts/${slug}/`;
     const pubDate = isoDate(post.date || "");
     const reviewBlock = post.reviewer
         ? `<p><strong>審稿醫師：</strong>${escapeHtml(post.reviewer)}` +

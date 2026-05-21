@@ -18,15 +18,15 @@ export const siteConfig: SiteConfig = {
 	},
 	nav: [
 		{ label: "文章", labelEn: "Articles", labelJa: "記事", href: "/" },
-		{ label: "標籤", labelEn: "Tags", labelJa: "タグ", href: "/tags" },
+		{ label: "標籤", labelEn: "Tags", labelJa: "タグ", href: "/tags/" },
 		{
 			label: "Portfolio",
 			labelEn: "Portfolio",
 			labelJa: "ポートフォリオ",
-			href: "/portfolio",
+			href: "/portfolio/",
 		},
-		{ label: "CV", labelEn: "CV", labelJa: "経歴", href: "/cv" },
-		{ label: "關於", labelEn: "About", labelJa: "プロフィール", href: "/about" },
+		{ label: "CV", labelEn: "CV", labelJa: "経歴", href: "/cv/" },
+		{ label: "關於", labelEn: "About", labelJa: "プロフィール", href: "/about/" },
 	],
 	socials: {
 		github: "https://github.com/htlin222",

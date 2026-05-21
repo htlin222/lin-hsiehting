@@ -51,7 +51,7 @@ const grouped = posts.reduce(
     {} as Record<string, Record<string, MappedPost[]>>,
 );
 
-const pageUrl = (p: number) => (p === 1 ? "/" : `/page/${p}`);
+const pageUrl = (p: number) => (p === 1 ? "/" : `/page/${p}/`);
 
 // Windowed pagination: always show first + last + current ± 1, with "…"
 // fillers for the gaps. Keeps the row to ≤7 items so it fits on a 320px
@@ -120,7 +120,7 @@ const pageItems = buildPageItems(page, totalPages);
                                             <section class="flex flex-col gap-2 group hover:bg-muted px-3 py-8 rounded-md transition-all duration-300 relative overflow-hidden">
                                                 <div class="flex flex-col md:flex-row gap-2 md:justify-between md:items-start">
                                                     <a
-                                                        href={`/posts/${post.slug}`}
+                                                        href={`/posts/${post.slug}/`}
                                                     >
                                                         <h2 class="text-2xl group-hover:text-primary leading-tight">
                                                             {post.title}
@@ -137,7 +137,7 @@ const pageItems = buildPageItems(page, totalPages);
                                                     {post.tags.map((tag) => (
                                                         <Badge
                                                             content={tag}
-                                                            href={`/tags/${tag}`}
+                                                            href={`/tags/${tag}/`}
                                                         />
                                                     ))}
                                                 </section>

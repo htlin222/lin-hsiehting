@@ -10,7 +10,7 @@ export async function GET() {
     date: entry.data.date,
     frontmatter: entry.data.frontmatter,
     tags: entry.data.tags,
-    link: `/posts/${entry.id}`,
+    link: `/posts/${entry.id}/`,
     readTime: calcReadTime(entry.body ?? ""),
   }));
 
