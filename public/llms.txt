@@ -36,18 +36,18 @@
 
 ## 主要 URL
 
-- 首頁：https://lin.hsiehting.com
+- 首頁：https://lin.hsiehting.com/
 - 文章列表：https://lin.hsiehting.com/
-- 標籤：https://lin.hsiehting.com/tags
-- 關於作者：https://lin.hsiehting.com/about
-- CV：https://lin.hsiehting.com/cv
+- 標籤：https://lin.hsiehting.com/tags/
+- 關於作者：https://lin.hsiehting.com/about/
+- CV：https://lin.hsiehting.com/cv/
 - RSS：https://lin.hsiehting.com/feed.xml
 - Sitemap：https://lin.hsiehting.com/sitemap-index.xml
 
 ## 重點文章
 
 - 胰臟癌 KRAS／RAS 標靶治療最新進展 (2024–2026)：
-  https://lin.hsiehting.com/posts/2026/ras-targeted-therapy-pancreatic-cancer
+  https://lin.hsiehting.com/posts/2026/ras-targeted-therapy-pancreatic-cancer/
 
 ## 引用本站
 
