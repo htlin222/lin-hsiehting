@@ -54,6 +54,11 @@ export default defineConfig({
     mdx({
       rehypePlugins: [rehypeWrapTables],
     }),
-    sitemap()
+    // lastmod = build time on every entry. Signals freshness so Googlebot
+    // re-crawls the canonical /tags/X/ pages and retires the historical
+    // bare /tags/X "Page with redirect" entries faster in Search Console.
+    sitemap({
+      lastmod: new Date(),
+    })
   ],
 });
