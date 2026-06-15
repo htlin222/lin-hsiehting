@@ -1,0 +1,556 @@
+---
+// Standalone, chrome-free slideshow for a hand-picked set of portfolio repos.
+// Selection + order arrive via ?repos=name1,name2,… (URL-encoded), built by the
+// bookmark dialog on /portfolio. All repo data is bundled at build; the deck is
+// assembled client-side from the URL. Light/dark follows the site's theme key.
+import "../../styles/global.css";
+import {
+    ChevronLeft,
+    ChevronRight,
+    Sun,
+    Moon,
+    Maximize,
+    ArrowLeft,
+} from "@lucide/astro";
+import portfolio from "@/data/github-portfolio.json";
+
+interface Repo {
+    name: string;
+    description: string;
+    language: string | null;
+    stars: number;
+    forks: number;
+    pushedAt: string;
+    createdAt: string;
+    topics: string[];
+    url: string;
+    homepage: string | null;
+    license: string | null;
+    category: "medical" | "it";
+}
+
+const repos = portfolio.repos as Repo[];
+const repoMap: Record<string, Repo> = {};
+for (const r of repos) {
+    repoMap[r.name] = {
+        name: r.name,
+        description: r.description || "",
+        language: r.language,
+        stars: r.stars,
+        forks: r.forks,
+        pushedAt: r.pushedAt,
+        createdAt: r.createdAt,
+        topics: r.topics || [],
+        url: r.url,
+        homepage: r.homepage,
+        license: r.license,
+        category: r.category,
+    };
+}
+---
+
+<!doctype html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <title>Portfolio · Slides | 林協霆 · Hsieh-Ting Lin</title>
+        <script is:inline>
+            // Apply theme + UI language before paint to avoid a flash.
+            (function () {
+                try {
+                    var t = localStorage.getItem("theme");
+                    if (!t)
+                        t = window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches
+                            ? "dark"
+                            : "light";
+                    if (t === "dark")
+                        document.documentElement.classList.add("dark");
+                    var l = localStorage.getItem("site-lang");
+                    document.documentElement.dataset.lang =
+                        l === "en" || l === "ja" ? l : "zh";
+                } catch (e) {}
+            })();
+        </script>
+    </head>
+    <body class="bg-background text-foreground antialiased">
+        <main id="deck"></main>
+
+        <div
+            id="deck-empty"
+            hidden
+            class="fixed inset-0 flex flex-col items-center justify-center gap-4 text-center px-6"
+        >
+            <p class="text-lg text-muted-foreground">
+                <span data-lang-only="zh">沒有選取任何專案。</span>
+                <span data-lang-only="en">No projects selected.</span>
+                <span data-lang-only="ja">プロジェクトが選択されていません。</span>
+            </p>
+            <a
+                href="/portfolio/"
+                class="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm"
+            >
+                <ArrowLeft size={15} /> Portfolio
+            </a>
+        </div>
+
+        <div class="deck-controls">
+            <a
+                href="/portfolio/"
+                class="ctrl"
+                aria-label="返回 / Back to portfolio"
+                title="Portfolio"
+            >
+                <ArrowLeft size={18} />
+            </a>
+            <button
+                id="deck-theme"
+                type="button"
+                class="ctrl"
+                aria-label="切換主題 / Toggle theme"
+            >
+                <Moon class="block dark:hidden" size={18} />
+                <Sun class="hidden dark:block" size={18} />
+            </button>
+            <button
+                id="deck-fullscreen"
+                type="button"
+                class="ctrl"
+                aria-label="全螢幕 / Fullscreen"
+            >
+                <Maximize size={18} />
+            </button>
+            <span id="deck-counter" class="deck-counter">1 / 1</span>
+            <button
+                id="deck-prev"
+                type="button"
+                class="ctrl"
+                aria-label="上一頁 / Previous"
+            >
+                <ChevronLeft size={20} />
+            </button>
+            <button
+                id="deck-next"
+                type="button"
+                class="ctrl"
+                aria-label="下一頁 / Next"
+            >
+                <ChevronRight size={20} />
+            </button>
+        </div>
+        <div id="deck-progress"></div>
+
+        <script
+            type="application/json"
+            id="repo-data"
+            set:html={JSON.stringify(repoMap)}
+        />
+
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+            #deck {
+                position: fixed;
+                inset: 0;
+            }
+            .slide {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6vmin 9vmin;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease;
+            }
+            .slide.active {
+                opacity: 1;
+                visibility: visible;
+            }
+            .slide-inner {
+                width: 100%;
+                max-width: 62rem;
+            }
+            .slide-inner.center {
+                text-align: center;
+            }
+            .eyebrow {
+                font-size: clamp(0.8rem, 1.6vmin, 1.05rem);
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--muted-foreground);
+                margin: 0 0 2.5vmin;
+            }
+            .deck-title {
+                font-size: clamp(3rem, 11vmin, 7rem);
+                font-weight: 800;
+                line-height: 1.02;
+                letter-spacing: -0.03em;
+                margin: 0;
+            }
+            .deck-sub {
+                font-size: clamp(1.2rem, 3vmin, 2rem);
+                margin: 3vmin 0 0;
+            }
+            .deck-meta {
+                font-size: clamp(0.95rem, 2vmin, 1.25rem);
+                color: var(--muted-foreground);
+                margin: 1.5vmin 0 0;
+                font-variant-numeric: tabular-nums;
+            }
+            .repo-title {
+                font-size: clamp(2rem, 7.5vmin, 4.75rem);
+                font-weight: 800;
+                line-height: 1.08;
+                letter-spacing: -0.02em;
+                margin: 0;
+                word-break: break-word;
+            }
+            .repo-desc {
+                font-size: clamp(1.1rem, 2.7vmin, 1.85rem);
+                color: var(--foreground);
+                opacity: 0.85;
+                line-height: 1.5;
+                margin: 3.5vmin 0 0;
+            }
+            .stats {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.2rem 2.2rem;
+                margin: 4.5vmin 0 0;
+                font-size: clamp(1rem, 2.3vmin, 1.45rem);
+                color: var(--muted-foreground);
+                font-variant-numeric: tabular-nums;
+            }
+            .chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.6rem;
+                margin: 3vmin 0 0;
+            }
+            .chip {
+                font-size: clamp(0.78rem, 1.6vmin, 1rem);
+                padding: 0.25em 0.7em;
+                border: 1px solid var(--border);
+                border-radius: 0.5rem;
+                color: var(--muted-foreground);
+            }
+            .links {
+                margin: 4vmin 0 0;
+                font-size: clamp(0.9rem, 1.9vmin, 1.2rem);
+            }
+            .links a {
+                color: var(--primary);
+                text-decoration: none;
+            }
+            .links a:hover {
+                text-decoration: underline;
+            }
+            .outline-list {
+                list-style: none;
+                padding: 0;
+                margin: 3vmin 0 0;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4vmin;
+                font-size: clamp(1rem, 2.5vmin, 1.7rem);
+            }
+            .outline-list li {
+                display: flex;
+                gap: 1rem;
+                align-items: baseline;
+            }
+            .outline-list .n {
+                color: var(--primary);
+                font-variant-numeric: tabular-nums;
+                min-width: 2.5ch;
+                text-align: right;
+            }
+            .deck-controls {
+                position: fixed;
+                bottom: 1rem;
+                right: 1rem;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                gap: 0.15rem;
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 9999px;
+                padding: 0.3rem 0.45rem;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+            }
+            .ctrl {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 9999px;
+                color: var(--muted-foreground);
+                transition:
+                    color 0.15s ease,
+                    background 0.15s ease;
+            }
+            .ctrl:hover {
+                color: var(--foreground);
+                background: var(--muted);
+            }
+            .deck-counter {
+                font-size: 0.85rem;
+                color: var(--muted-foreground);
+                font-variant-numeric: tabular-nums;
+                padding: 0 0.5rem;
+            }
+            #deck-progress {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                height: 3px;
+                width: 0;
+                background: var(--primary);
+                transition: width 0.3s ease;
+                z-index: 10;
+            }
+        </style>
+
+        <script>
+            interface Repo {
+                name: string;
+                description: string;
+                language: string | null;
+                stars: number;
+                forks: number;
+                pushedAt: string;
+                createdAt: string;
+                topics: string[];
+                url: string;
+                homepage: string | null;
+                license: string | null;
+                category: string;
+            }
+
+            const dataEl = document.getElementById("repo-data");
+            const repoMap: Record<string, Repo> = dataEl
+                ? JSON.parse(dataEl.textContent || "{}")
+                : {};
+            const deck = document.getElementById("deck");
+            const emptyEl = document.getElementById("deck-empty");
+            const counterEl = document.getElementById("deck-counter");
+            const progressEl = document.getElementById("deck-progress");
+
+            function esc(s: string) {
+                return (s || "").replace(
+                    /[&<>"']/g,
+                    (c) =>
+                        ((
+                            {
+                                "&": "&amp;",
+                                "<": "&lt;",
+                                ">": "&gt;",
+                                '"': "&quot;",
+                                "'": "&#39;",
+                            } as Record<string, string>
+                        )[c]),
+                );
+            }
+            function fmtDate(iso: string) {
+                const d = new Date(iso);
+                if (isNaN(d.getTime())) return "";
+                return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+            }
+
+            const params = new URLSearchParams(location.search);
+            const names = (params.get("repos") || "")
+                .split(",")
+                .map((s) => {
+                    try {
+                        return decodeURIComponent(s.trim());
+                    } catch {
+                        return s.trim();
+                    }
+                })
+                .filter((n) => n && repoMap[n]);
+            const selected = names.map((n) => repoMap[n]);
+
+            if (deck && selected.length) {
+                const today = fmtDate(new Date().toISOString());
+                const slides: string[] = [];
+
+                slides.push(
+                    '<section class="slide"><div class="slide-inner center">' +
+                        '<p class="eyebrow">Portfolio</p>' +
+                        '<h1 class="deck-title">Portfolio</h1>' +
+                        '<p class="deck-sub">林協霆 · Hsieh-Ting Lin</p>' +
+                        '<p class="deck-meta">' +
+                        selected.length +
+                        " projects · " +
+                        today +
+                        "</p>" +
+                        "</div></section>",
+                );
+
+                slides.push(
+                    '<section class="slide"><div class="slide-inner">' +
+                        '<p class="eyebrow">Outline · 目錄</p>' +
+                        '<ol class="outline-list">' +
+                        selected
+                            .map(
+                                (r, i) =>
+                                    '<li><span class="n">' +
+                                    (i + 1) +
+                                    ".</span><span>" +
+                                    esc(r.name) +
+                                    "</span></li>",
+                            )
+                            .join("") +
+                        "</ol>" +
+                        "</div></section>",
+                );
+
+                selected.forEach((r) => {
+                    const cat =
+                        r.category === "medical" ? "醫療 · Medical" : "IT · Dev";
+                    const eyebrow =
+                        cat + (r.language ? " · " + esc(r.language) : "");
+                    const stats: string[] = [];
+                    if (r.stars) stats.push("★ " + r.stars);
+                    if (r.forks) stats.push("⑂ " + r.forks);
+                    if (r.pushedAt) stats.push("↑ " + fmtDate(r.pushedAt));
+                    if (r.license) stats.push(esc(r.license));
+                    const chips = (r.topics || [])
+                        .slice(0, 6)
+                        .map((t) => '<span class="chip">#' + esc(t) + "</span>")
+                        .join("");
+                    const homepage = r.homepage
+                        ? ' · <a href="' +
+                          esc(r.homepage) +
+                          '" target="_blank" rel="noopener">homepage</a>'
+                        : "";
+                    slides.push(
+                        '<section class="slide"><div class="slide-inner">' +
+                            '<p class="eyebrow">' +
+                            eyebrow +
+                            "</p>" +
+                            '<h2 class="repo-title">' +
+                            esc(r.name) +
+                            "</h2>" +
+                            (r.description
+                                ? '<p class="repo-desc">' +
+                                  esc(r.description) +
+                                  "</p>"
+                                : "") +
+                            (stats.length
+                                ? '<div class="stats">' +
+                                  stats
+                                      .map((s) => "<span>" + s + "</span>")
+                                      .join("") +
+                                  "</div>"
+                                : "") +
+                            (chips ? '<div class="chips">' + chips + "</div>" : "") +
+                            '<div class="links"><a href="' +
+                            esc(r.url) +
+                            '" target="_blank" rel="noopener">' +
+                            esc(r.url.replace(/^https?:\/\//, "")) +
+                            "</a>" +
+                            homepage +
+                            "</div>" +
+                            "</div></section>",
+                    );
+                });
+
+                deck.innerHTML = slides.join("");
+                const slideEls = Array.from(
+                    deck.querySelectorAll(".slide"),
+                ) as HTMLElement[];
+                let idx = 0;
+                function show(i: number) {
+                    idx = Math.max(0, Math.min(slideEls.length - 1, i));
+                    slideEls.forEach((s, n) =>
+                        s.classList.toggle("active", n === idx),
+                    );
+                    if (counterEl)
+                        counterEl.textContent =
+                            idx + 1 + " / " + slideEls.length;
+                    if (progressEl)
+                        progressEl.style.width =
+                            ((idx + 1) / slideEls.length) * 100 + "%";
+                }
+                const next = () => show(idx + 1);
+                const prev = () => show(idx - 1);
+                show(0);
+
+                document
+                    .getElementById("deck-next")
+                    ?.addEventListener("click", next);
+                document
+                    .getElementById("deck-prev")
+                    ?.addEventListener("click", prev);
+
+                deck.addEventListener("click", (e) => {
+                    if ((e.target as HTMLElement).closest("a,button")) return;
+                    if ((e as MouseEvent).clientX < window.innerWidth * 0.33)
+                        prev();
+                    else next();
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    switch (e.key) {
+                        case "ArrowRight":
+                        case "PageDown":
+                        case " ":
+                        case "l":
+                            e.preventDefault();
+                            next();
+                            break;
+                        case "ArrowLeft":
+                        case "PageUp":
+                        case "h":
+                            prev();
+                            break;
+                        case "Home":
+                            show(0);
+                            break;
+                        case "End":
+                            show(slideEls.length - 1);
+                            break;
+                    }
+                });
+            } else if (emptyEl) {
+                emptyEl.hidden = false;
+            }
+
+            // Theme toggle (shares the site's "theme" localStorage key).
+            document
+                .getElementById("deck-theme")
+                ?.addEventListener("click", () => {
+                    const isDark =
+                        document.documentElement.classList.contains("dark");
+                    const nextTheme = isDark ? "light" : "dark";
+                    document.documentElement.classList.toggle(
+                        "dark",
+                        nextTheme === "dark",
+                    );
+                    try {
+                        localStorage.setItem("theme", nextTheme);
+                    } catch {}
+                });
+
+            document
+                .getElementById("deck-fullscreen")
+                ?.addEventListener("click", () => {
+                    if (document.fullscreenElement) document.exitFullscreen();
+                    else document.documentElement.requestFullscreen?.();
+                });
+        </script>
+    </body>
+</html>

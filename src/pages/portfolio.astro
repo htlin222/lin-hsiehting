@@ -10,6 +10,10 @@ import {
     Calendar,
     Tag,
     Search,
+    Bookmark,
+    BookmarkCheck,
+    TvMinimalPlay,
+    X,
 } from "@lucide/astro";
 import portfolio from "@/data/github-portfolio.json";
 
@@ -100,21 +104,41 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
 
             <!-- Control bar: search + category filter + sort -->
             <div class="mt-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                <div class="relative w-full lg:max-w-xs">
-                    <Search
-                        size={15}
-                        class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
-                    />
-                    <input
-                        id="repo-search"
-                        type="search"
-                        placeholder="搜尋專案…"
-                        data-ph-zh="搜尋專案…"
-                        data-ph-en="Search projects…"
-                        data-ph-ja="プロジェクトを検索…"
-                        autocomplete="off"
-                        class="w-full pl-9 pr-3 py-2 rounded-md border border-border bg-card text-sm outline-none focus:border-primary transition-colors"
-                    />
+                <div class="flex items-center gap-2 w-full lg:max-w-md">
+                    <div class="relative flex-1">
+                        <Search
+                            size={15}
+                            class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+                        />
+                        <input
+                            id="repo-search"
+                            type="search"
+                            placeholder="搜尋專案…"
+                            data-ph-zh="搜尋專案…"
+                            data-ph-en="Search projects…"
+                            data-ph-ja="プロジェクトを検索…"
+                            autocomplete="off"
+                            class="w-full pl-9 pr-3 py-2 rounded-md border border-border bg-card text-sm outline-none focus:border-primary transition-colors"
+                        />
+                    </div>
+                    <button
+                        id="slideshow-open"
+                        type="button"
+                        disabled
+                        aria-haspopup="dialog"
+                        title="投影片播放清單 / Slideshow"
+                        class="shrink-0 inline-flex items-center gap-1.5 px-3 py-2 rounded-md border border-border bg-card text-sm transition-colors hover:border-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        <TvMinimalPlay size={15} />
+                        <span data-lang-only="zh">投影片</span>
+                        <span data-lang-only="en">Slides</span>
+                        <span data-lang-only="ja">スライド</span>
+                        <span
+                            id="bookmark-count"
+                            class="inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full bg-primary text-primary-foreground text-xs tabular-nums"
+                            >0</span
+                        >
+                    </button>
                 </div>
 
                 <div class="flex items-center gap-2 flex-wrap">
@@ -197,6 +221,7 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
             {sorted.map((r) => (
                 <li
                     data-card
+                    data-name={r.name}
                     data-cat={r.category}
                     data-stars={r.stars}
                     data-forks={r.forks}
@@ -229,6 +254,18 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
                                     {r.forks}
                                 </span>
                             )}
+                            <button
+                                type="button"
+                                data-bookmark-btn
+                                data-name={r.name}
+                                aria-pressed="false"
+                                aria-label="加入投影片 / Bookmark"
+                                title="加入投影片 / Bookmark for slideshow"
+                                class="bookmark-btn -my-1 -mr-1 p-1 rounded hover:text-primary transition-colors"
+                            >
+                                <Bookmark size={15} class="bm-off" />
+                                <BookmarkCheck size={15} class="bm-on" />
+                            </button>
                         </div>
                     </div>
 
@@ -237,14 +274,6 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
                             {r.description}
                         </p>
                     )}
-
-                    {r.readmeExcerpt &&
-                        r.readmeExcerpt !== r.description &&
-                        !r.description.includes(r.readmeExcerpt.slice(0, 60)) && (
-                            <p class="text-xs text-muted-foreground mt-2 leading-relaxed line-clamp-3">
-                                {r.readmeExcerpt}
-                            </p>
-                        )}
 
                     <div class="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
                         <span
@@ -308,6 +337,88 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
             <span data-lang-only="ja">条件に一致するプロジェクトがありません。別のキーワードやカテゴリをお試しください。</span>
         </p>
 
+        <!-- Slideshow builder dialog -->
+        <div
+            id="slideshow-dialog"
+            class="fixed inset-0 z-[100] hidden items-start justify-center p-4 pt-20 sm:pt-28"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="slideshow-dialog-title"
+        >
+            <div
+                id="slideshow-backdrop"
+                class="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            >
+            </div>
+            <div
+                class="relative w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl flex flex-col max-h-[80vh]"
+            >
+                <div
+                    class="flex items-center justify-between gap-3 px-5 py-4 border-b border-border"
+                >
+                    <h2
+                        id="slideshow-dialog-title"
+                        class="font-semibold inline-flex items-center gap-2"
+                    >
+                        <TvMinimalPlay size={18} />
+                        <span data-lang-only="zh">投影片清單</span>
+                        <span data-lang-only="en">Slideshow</span>
+                        <span data-lang-only="ja">スライド一覧</span>
+                    </h2>
+                    <button
+                        id="slideshow-close"
+                        type="button"
+                        aria-label="關閉 / Close"
+                        class="p-1 rounded text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                        <X size={18} />
+                    </button>
+                </div>
+                <p class="px-5 pt-3 text-xs text-muted-foreground">
+                    <span data-lang-only="zh">拖曳 ⠿ 調整順序（或用 ▲▼），✕ 移除。</span>
+                    <span data-lang-only="en">Drag ⠿ to reorder (or ▲▼); ✕ to remove.</span>
+                    <span data-lang-only="ja">⠿ をドラッグ（または ▲▼）で並び替え、✕ で削除。</span>
+                </p>
+                <ul
+                    id="bookmark-list"
+                    class="flex-1 overflow-y-auto p-3 flex flex-col gap-1.5"
+                >
+                </ul>
+                <p
+                    id="bookmark-empty"
+                    hidden
+                    class="px-5 py-10 text-center text-sm text-muted-foreground"
+                >
+                    <span data-lang-only="zh">尚未收藏任何專案。點卡片右上角的書籤即可加入。</span>
+                    <span data-lang-only="en">No bookmarks yet — tap the bookmark on a card to add one.</span>
+                    <span data-lang-only="ja">ブックマークがありません。カード右上のブックマークで追加できます。</span>
+                </p>
+                <div
+                    class="flex items-center justify-between gap-3 px-5 py-4 border-t border-border"
+                >
+                    <button
+                        id="slideshow-clear"
+                        type="button"
+                        class="text-sm text-muted-foreground hover:text-red-600 dark:hover:text-red-400 transition-colors"
+                    >
+                        <span data-lang-only="zh">全部清除</span>
+                        <span data-lang-only="en">Clear all</span>
+                        <span data-lang-only="ja">すべて削除</span>
+                    </button>
+                    <button
+                        id="slideshow-start"
+                        type="button"
+                        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+                    >
+                        <TvMinimalPlay size={15} />
+                        <span data-lang-only="zh">開始播放</span>
+                        <span data-lang-only="en">Start slide show</span>
+                        <span data-lang-only="ja">スライド開始</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <footer class="pt-12 mt-12 border-t border-border text-xs text-muted-foreground">
             <p>
                 分類為啟發式（描述 / 名稱 / topics 含醫療關鍵字即歸醫療），如有錯誤分類請開 issue。
@@ -335,6 +446,23 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
     }
     .cat-btn[aria-pressed="false"]:hover {
         color: var(--foreground);
+    }
+
+    /* Bookmark toggle: outline when off, filled check + accent when on. */
+    .bookmark-btn {
+        color: var(--muted-foreground);
+    }
+    .bookmark-btn .bm-on {
+        display: none;
+    }
+    .bookmark-btn[aria-pressed="true"] {
+        color: var(--primary);
+    }
+    .bookmark-btn[aria-pressed="true"] .bm-off {
+        display: none;
+    }
+    .bookmark-btn[aria-pressed="true"] .bm-on {
+        display: inline;
     }
 </style>
 
@@ -375,6 +503,49 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
             attributeFilter: ["data-lang"],
         });
         (window as any).__portfolioLang = obs;
+    }
+
+    const BOOKMARK_KEY = "portfolio-bookmarks";
+    function readBookmarks(): string[] {
+        try {
+            const v = JSON.parse(localStorage.getItem(BOOKMARK_KEY) || "[]");
+            return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+        } catch {
+            return [];
+        }
+    }
+    function writeBookmarks(list: string[]) {
+        try {
+            localStorage.setItem(BOOKMARK_KEY, JSON.stringify(list));
+        } catch {}
+    }
+    function escapeHtml(s: string) {
+        return s.replace(
+            /[&<>"']/g,
+            (c) =>
+                ({
+                    "&": "&amp;",
+                    "<": "&lt;",
+                    ">": "&gt;",
+                    '"': "&quot;",
+                    "'": "&#39;",
+                })[c] as string,
+        );
+    }
+
+    // Esc closes the dialog — registered once (document persists across view
+    // transitions); re-queries the dialog so it always targets the live one.
+    if (!(window as any).__portfolioEsc) {
+        (window as any).__portfolioEsc = true;
+        document.addEventListener("keydown", (e) => {
+            if (e.key !== "Escape") return;
+            const d = document.getElementById("slideshow-dialog");
+            if (d && !d.classList.contains("hidden")) {
+                d.classList.add("hidden");
+                d.classList.remove("flex");
+                document.body.style.overflow = "";
+            }
+        });
     }
 
     function initPortfolio() {
@@ -463,6 +634,154 @@ const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
             render();
         });
 
+        // ---- Bookmarks + slideshow builder ----
+        const bookmarkBtns = Array.from(
+            document.querySelectorAll("[data-bookmark-btn]"),
+        ) as HTMLElement[];
+        const slidesOpenBtn = document.getElementById(
+            "slideshow-open",
+        ) as HTMLButtonElement | null;
+        const countBadge = document.getElementById("bookmark-count");
+        const dialog = document.getElementById("slideshow-dialog");
+        const backdrop = document.getElementById("slideshow-backdrop");
+        const closeBtn = document.getElementById("slideshow-close");
+        const clearBtn = document.getElementById("slideshow-clear");
+        const startBtn = document.getElementById(
+            "slideshow-start",
+        ) as HTMLButtonElement | null;
+        const listEl = document.getElementById("bookmark-list");
+        const emptyHint = document.getElementById("bookmark-empty");
+
+        let bookmarks = readBookmarks();
+
+        function syncBookmarkUI() {
+            const set = new Set(bookmarks);
+            bookmarkBtns.forEach((b) =>
+                b.setAttribute("aria-pressed", String(set.has(b.dataset.name || ""))),
+            );
+            if (countBadge) countBadge.textContent = String(bookmarks.length);
+            if (slidesOpenBtn) slidesOpenBtn.disabled = bookmarks.length === 0;
+            if (startBtn) startBtn.disabled = bookmarks.length === 0;
+        }
+
+        bookmarkBtns.forEach((b) =>
+            b.addEventListener("click", () => {
+                const name = b.dataset.name;
+                if (!name) return;
+                bookmarks = bookmarks.includes(name)
+                    ? bookmarks.filter((n) => n !== name)
+                    : [...bookmarks, name];
+                writeBookmarks(bookmarks);
+                syncBookmarkUI();
+                if (dialog && !dialog.classList.contains("hidden")) renderList();
+            }),
+        );
+
+        function renderList() {
+            if (!listEl) return;
+            listEl.innerHTML = "";
+            if (emptyHint) emptyHint.hidden = bookmarks.length > 0;
+            bookmarks.forEach((name, i) => {
+                const li = document.createElement("li");
+                li.draggable = true;
+                li.dataset.index = String(i);
+                li.className =
+                    "flex items-center gap-2 px-2 py-2 rounded-md border border-border bg-background text-sm";
+                li.innerHTML =
+                    '<span class="cursor-grab select-none text-muted-foreground" aria-hidden="true">⠿</span>' +
+                    '<span class="flex-1 truncate">' +
+                    escapeHtml(name) +
+                    "</span>" +
+                    '<button type="button" data-move="up" aria-label="Move up" class="px-1 text-muted-foreground hover:text-foreground">▲</button>' +
+                    '<button type="button" data-move="down" aria-label="Move down" class="px-1 text-muted-foreground hover:text-foreground">▼</button>' +
+                    '<button type="button" data-remove aria-label="Remove" class="px-1 text-muted-foreground hover:text-red-500">✕</button>';
+                listEl.appendChild(li);
+            });
+        }
+
+        function moveItem(from: number, to: number) {
+            if (to < 0 || to >= bookmarks.length || from === to) return;
+            const moved = bookmarks.splice(from, 1)[0];
+            bookmarks.splice(to, 0, moved);
+            writeBookmarks(bookmarks);
+            renderList();
+            syncBookmarkUI();
+        }
+
+        listEl?.addEventListener("click", (e) => {
+            const target = e.target as HTMLElement;
+            const li = target.closest("li[data-index]") as HTMLElement | null;
+            if (!li) return;
+            const i = Number(li.dataset.index);
+            if (target.closest("[data-remove]")) {
+                bookmarks.splice(i, 1);
+                writeBookmarks(bookmarks);
+                renderList();
+                syncBookmarkUI();
+            } else if (target.closest('[data-move="up"]')) {
+                moveItem(i, i - 1);
+            } else if (target.closest('[data-move="down"]')) {
+                moveItem(i, i + 1);
+            }
+        });
+
+        let dragFrom: number | null = null;
+        listEl?.addEventListener("dragstart", (e) => {
+            const li = (e.target as HTMLElement).closest(
+                "li[data-index]",
+            ) as HTMLElement | null;
+            if (!li) return;
+            dragFrom = Number(li.dataset.index);
+            li.classList.add("opacity-50");
+            const dt = (e as DragEvent).dataTransfer;
+            if (dt) dt.effectAllowed = "move";
+        });
+        listEl?.addEventListener("dragend", (e) => {
+            (e.target as HTMLElement)
+                .closest("li[data-index]")
+                ?.classList.remove("opacity-50");
+        });
+        listEl?.addEventListener("dragover", (e) => e.preventDefault());
+        listEl?.addEventListener("drop", (e) => {
+            e.preventDefault();
+            const li = (e.target as HTMLElement).closest(
+                "li[data-index]",
+            ) as HTMLElement | null;
+            if (!li || dragFrom === null) return;
+            moveItem(dragFrom, Number(li.dataset.index));
+            dragFrom = null;
+        });
+
+        function openDialog() {
+            if (!dialog || !bookmarks.length) return;
+            renderList();
+            dialog.classList.remove("hidden");
+            dialog.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        }
+        function closeDialog() {
+            if (!dialog) return;
+            dialog.classList.add("hidden");
+            dialog.classList.remove("flex");
+            document.body.style.overflow = "";
+        }
+
+        slidesOpenBtn?.addEventListener("click", openDialog);
+        closeBtn?.addEventListener("click", closeDialog);
+        backdrop?.addEventListener("click", closeDialog);
+        clearBtn?.addEventListener("click", () => {
+            bookmarks = [];
+            writeBookmarks(bookmarks);
+            renderList();
+            syncBookmarkUI();
+        });
+        startBtn?.addEventListener("click", () => {
+            if (!bookmarks.length) return;
+            const q = bookmarks.map(encodeURIComponent).join(",");
+            window.open(`/portfolio/show/?repos=${q}`, "_blank");
+        });
+
+        syncBookmarkUI();
         syncPortfolioLang();
         render();
     }
