@@ -80,7 +80,7 @@ async function fetchRepoList() {
         "--no-archived",
         "--source",
         "--json",
-        "name,description,primaryLanguage,stargazerCount,pushedAt,createdAt,repositoryTopics,url,homepageUrl,licenseInfo,isFork,isArchived,defaultBranchRef",
+        "name,description,primaryLanguage,stargazerCount,forkCount,pushedAt,createdAt,repositoryTopics,url,homepageUrl,licenseInfo,isFork,isArchived,defaultBranchRef",
     ]);
 }
 
@@ -135,6 +135,7 @@ async function main() {
             description: r.description ?? "",
             language: r.primaryLanguage?.name ?? null,
             stars: r.stargazerCount ?? 0,
+            forks: r.forkCount ?? 0,
             pushedAt: r.pushedAt,
             createdAt: r.createdAt,
             topics: (r.repositoryTopics ?? []).map((t) => t.name),

@@ -1,0 +1,64 @@
+name: Refresh portfolio (GitHub stars/forks)
+
+# Daily cron that re-fetches htlin222's public repos (stars, forks, pushedAt,
+# READMEs) into src/data/github-portfolio.json. If the snapshot changed in any
+# way other than the fetch timestamp, it commits the JSON to main and triggers a
+# redeploy. The /portfolio page reads this snapshot at build time.
+
+on:
+  schedule:
+    # 04:00 UTC daily ≈ 12:00 Asia/Taipei. Adjust the cron if you want another slot.
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit + push the refreshed snapshot
+  actions: write # `gh workflow run deploy.yml` (workflow_dispatch)
+
+concurrency:
+  group: portfolio-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch GitHub portfolio snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/fetch-github-portfolio.mjs
+
+      - name: Commit & redeploy if the snapshot changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          snapshot="src/data/github-portfolio.json"
+
+          # Compare against HEAD ignoring the volatile fetchedAt timestamp, so we
+          # only redeploy when stars/forks/repos actually changed.
+          old="$(git show HEAD:"$snapshot" 2>/dev/null | jq -S 'del(.fetchedAt)' || echo '{}')"
+          new="$(jq -S 'del(.fetchedAt)' "$snapshot")"
+          if [ "$old" = "$new" ]; then
+            echo "No material change (only fetchedAt moved); skipping commit & deploy."
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$snapshot"
+          git commit -m "chore(portfolio): refresh GitHub stars/forks [skip mint]"
+          git push
+
+          # A push made with the default GITHUB_TOKEN does NOT trigger other
+          # workflows (so deploy.yml won't fire on its own). workflow_dispatch IS
+          # allowed from the GITHUB_TOKEN, so kick the deploy explicitly.
+          gh workflow run deploy.yml --ref main
+          echo "Dispatched deploy.yml for the refreshed snapshot."

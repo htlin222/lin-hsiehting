@@ -3,11 +3,13 @@ import Layout from "@/layouts/Layout.astro";
 import {
     Github,
     Star,
+    GitFork,
     Stethoscope,
     Code2,
     ExternalLink,
     Calendar,
     Tag,
+    Search,
 } from "@lucide/astro";
 import portfolio from "@/data/github-portfolio.json";
 
@@ -16,6 +18,7 @@ interface Repo {
     description: string;
     language: string | null;
     stars: number;
+    forks: number;
     pushedAt: string;
     createdAt: string;
     topics: string[];
@@ -30,13 +33,25 @@ interface Repo {
 const repos = portfolio.repos as Repo[];
 const fetchedAt = new Date(portfolio.fetchedAt);
 
-const medical = repos.filter((r) => r.category === "medical");
-const it = repos.filter((r) => r.category === "it");
+// Default order: newest push first (the snapshot is already sorted this way,
+// but re-sort defensively so the server-rendered order matches the JS default).
+const sorted = [...repos].sort(
+    (a, b) => new Date(b.pushedAt).getTime() - new Date(a.pushedAt).getTime(),
+);
+
+const medicalCount = sorted.filter((r) => r.category === "medical").length;
+const itCount = sorted.filter((r) => r.category === "it").length;
 
 const fmtDate = (iso: string) => {
     const d = new Date(iso);
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 };
+
+// Build the lowercased haystack used by the client-side search box.
+const searchKey = (r: Repo) =>
+    [r.name, r.description, r.topics.join(" "), r.language ?? "", r.readmeExcerpt ?? ""]
+        .join(" ")
+        .toLowerCase();
 
 // Stable language colour mapping (top languages only — others use the muted tone).
 const langColor: Record<string, string> = {
@@ -56,30 +71,15 @@ const langClass = (lang: string | null) =>
         ? langColor[lang]
         : "bg-muted text-muted-foreground border-border";
 
-const sections = [
-    {
-        id: "medical",
-        title: "醫療 · Medical & Clinical",
-        Icon: Stethoscope,
-        repos: medical,
-        description: "腫瘤、血液、臨床研究、教學、AI 工具與資料分析。",
-    },
-    {
-        id: "it",
-        title: "IT · Developer Tools",
-        Icon: Code2,
-        repos: it,
-        description: "dev tools、Claude / Codex 整合、生產力與娛樂專案。",
-    },
-];
+const catLabel = (c: Repo["category"]) => (c === "medical" ? "醫療" : "IT");
 ---
 
 <Layout
     title="Portfolio | 林協霆 · Hsieh-Ting Lin"
-    description={`${portfolio.count} 個 GitHub 開源專案，醫療 ${portfolio.medicalCount} + IT ${portfolio.itCount}，依最近更新排序。`}
+    description={`${portfolio.count} 個 GitHub 開源專案，醫療 ${medicalCount} + IT ${itCount}，可搜尋、篩選與依更新／星數／Fork 排序。`}
 >
     <main class="px-6 sm:px-8 max-w-5xl mx-auto pb-20">
-        <header class="pt-6 pb-8 border-b border-border">
+        <header class="pt-6 pb-6 border-b border-border">
             <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">
                 Portfolio
             </h1>
@@ -92,115 +92,226 @@ const sections = [
                 >
                     <Github size={14} /> github.com/htlin222
                 </a>
-                · {portfolio.count} 個 repo · 醫療 {portfolio.medicalCount} · IT {portfolio.itCount}
+                · {sorted.length} 個 repo · 醫療 {medicalCount} · IT {itCount}
             </p>
             <p class="text-xs text-muted-foreground mt-1">
-                最近同步：{fmtDate(fetchedAt.toISOString())} · 自動匯入：
-                <code class="text-xs">pnpm run portfolio:fetch</code>
+                最近同步：{fmtDate(fetchedAt.toISOString())} · 每日自動更新星數／Fork
             </p>
 
-            <nav class="mt-6 flex flex-wrap gap-2 text-sm">
-                {sections.map((s) => (
-                    <a
-                        href={`#${s.id}`}
-                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-border hover:border-primary hover:text-primary transition-colors"
+            <!-- Control bar: search + category filter + sort -->
+            <div class="mt-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div class="relative w-full lg:max-w-xs">
+                    <Search
+                        size={15}
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none"
+                    />
+                    <input
+                        id="repo-search"
+                        type="search"
+                        placeholder="搜尋專案…"
+                        data-ph-zh="搜尋專案…"
+                        data-ph-en="Search projects…"
+                        data-ph-ja="プロジェクトを検索…"
+                        autocomplete="off"
+                        class="w-full pl-9 pr-3 py-2 rounded-md border border-border bg-card text-sm outline-none focus:border-primary transition-colors"
+                    />
+                </div>
+
+                <div class="flex items-center gap-2 flex-wrap">
+                    <div
+                        class="inline-flex rounded-md border border-border overflow-hidden"
+                        role="group"
+                        aria-label="分類篩選 / Filter by category"
                     >
-                        <s.Icon size={14} /> {s.title.split(" · ")[0]} ({s.repos.length})
-                    </a>
-                ))}
-            </nav>
+                        <button
+                            type="button"
+                            data-cat-btn
+                            data-cat="all"
+                            aria-pressed="true"
+                            class="cat-btn px-3 py-2 text-sm transition-colors"
+                        >
+                            <span data-lang-only="zh">全部</span>
+                            <span data-lang-only="en">All</span>
+                            <span data-lang-only="ja">すべて</span>
+                            ({sorted.length})
+                        </button>
+                        <button
+                            type="button"
+                            data-cat-btn
+                            data-cat="medical"
+                            aria-pressed="false"
+                            class="cat-btn px-3 py-2 text-sm transition-colors border-l border-border inline-flex items-center gap-1"
+                        >
+                            <Stethoscope size={13} />
+                            <span data-lang-only="zh">醫療</span>
+                            <span data-lang-only="en">Medical</span>
+                            <span data-lang-only="ja">医療</span>
+                            ({medicalCount})
+                        </button>
+                        <button
+                            type="button"
+                            data-cat-btn
+                            data-cat="it"
+                            aria-pressed="false"
+                            class="cat-btn px-3 py-2 text-sm transition-colors border-l border-border inline-flex items-center gap-1"
+                        >
+                            <Code2 size={13} />
+                            <span data-lang-only="zh">開發</span>
+                            <span data-lang-only="en">Dev</span>
+                            <span data-lang-only="ja">開発</span>
+                            ({itCount})
+                        </button>
+                    </div>
+
+                    <label class="inline-flex items-center gap-1.5 text-sm">
+                        <span class="text-muted-foreground whitespace-nowrap">
+                            <span data-lang-only="zh">排序</span>
+                            <span data-lang-only="en">Sort</span>
+                            <span data-lang-only="ja">並び替え</span>
+                        </span>
+                        <select
+                            id="repo-sort"
+                            class="rounded-md border border-border bg-card text-sm py-2 px-2 outline-none focus:border-primary transition-colors"
+                        >
+                            <option value="date" data-zh="最近更新" data-en="Recently updated" data-ja="最近の更新">最近更新</option>
+                            <option value="stars" data-zh="星數" data-en="Stars" data-ja="スター数">星數</option>
+                            <option value="forks" data-zh="Fork 數" data-en="Forks" data-ja="フォーク数">Fork 數</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+
+            <p
+                id="repo-count"
+                class="mt-3 text-xs text-muted-foreground"
+                aria-live="polite"
+            >
+                <span data-lang-only="zh">顯示</span><span data-lang-only="en"
+                    >Showing</span
+                ><span data-lang-only="ja">表示</span>
+                <span id="repo-count-nums">{sorted.length} / {sorted.length}</span>
+            </p>
         </header>
 
-        {sections.map(({ id, title, Icon, repos: list, description }) => (
-            <section id={id} class="pt-10 scroll-mt-24">
-                <h2 class="flex items-center gap-2 text-2xl font-bold tracking-tight">
-                    <Icon size={22} class="text-muted-foreground" /> {title}
-                </h2>
-                <p class="text-sm text-muted-foreground mt-1">{description}</p>
-
-                <ul class="mt-6 grid gap-4 sm:grid-cols-2">
-                    {list.map((r) => (
-                        <li class="group flex flex-col p-4 rounded-lg border border-border hover:border-primary transition-colors bg-card">
-                            <div class="flex items-start justify-between gap-2">
-                                <h3 class="font-semibold text-base leading-tight">
-                                    <a
-                                        href={r.url}
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="hover:text-primary inline-flex items-center gap-1"
-                                    >
-                                        {r.name}
-                                        <ExternalLink size={11} class="opacity-60" />
-                                    </a>
-                                </h3>
-                                {r.stars > 0 && (
-                                    <span class="shrink-0 inline-flex items-center gap-0.5 text-xs text-muted-foreground tabular-nums">
-                                        <Star size={11} class="text-amber-500 fill-amber-500" />
-                                        {r.stars}
-                                    </span>
-                                )}
-                            </div>
-
-                            {r.description && (
-                                <p class="text-sm text-foreground/85 mt-1.5 leading-relaxed">
-                                    {r.description}
-                                </p>
-                            )}
-
-                            {r.readmeExcerpt &&
-                                r.readmeExcerpt !== r.description &&
-                                !r.description.includes(r.readmeExcerpt.slice(0, 60)) && (
-                                    <p class="text-xs text-muted-foreground mt-2 leading-relaxed line-clamp-3">
-                                        {r.readmeExcerpt}
-                                    </p>
-                                )}
-
-                            <div class="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-                                {r.language && (
-                                    <span class={`inline-flex items-center px-1.5 py-0.5 rounded border ${langClass(r.language)}`}>
-                                        {r.language}
-                                    </span>
-                                )}
-                                {r.topics.slice(0, 4).map((t) => (
-                                    <span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-muted text-muted-foreground border border-border">
-                                        <Tag size={9} />
-                                        {t}
-                                    </span>
-                                ))}
-                                {r.topics.length > 4 && (
-                                    <span class="text-muted-foreground">+{r.topics.length - 4}</span>
-                                )}
-                            </div>
-
-                            <div class="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
-                                <span class="inline-flex items-center gap-1 tabular-nums">
-                                    <Calendar size={10} />
-                                    {fmtDate(r.pushedAt)}
+        <ul id="repo-grid" class="mt-6 grid gap-4 sm:grid-cols-2">
+            {sorted.map((r) => (
+                <li
+                    data-card
+                    data-cat={r.category}
+                    data-stars={r.stars}
+                    data-forks={r.forks}
+                    data-pushed={new Date(r.pushedAt).getTime()}
+                    data-search={searchKey(r)}
+                    class="group flex flex-col p-4 rounded-lg border border-border hover:border-primary transition-colors bg-card"
+                >
+                    <div class="flex items-start justify-between gap-2">
+                        <h3 class="font-semibold text-base leading-tight">
+                            <a
+                                href={r.url}
+                                target="_blank"
+                                rel="noopener"
+                                class="hover:text-primary inline-flex items-center gap-1"
+                            >
+                                {r.name}
+                                <ExternalLink size={11} class="opacity-60" />
+                            </a>
+                        </h3>
+                        <div class="shrink-0 flex items-center gap-2 text-xs text-muted-foreground tabular-nums">
+                            {r.stars > 0 && (
+                                <span class="inline-flex items-center gap-0.5">
+                                    <Star size={11} class="text-amber-500 fill-amber-500" />
+                                    {r.stars}
                                 </span>
-                                {r.license && (
-                                    <span>· {r.license}</span>
-                                )}
-                                {r.homepage && (
-                                    <a
-                                        href={r.homepage}
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="inline-flex items-center gap-1 hover:text-primary"
-                                    >
-                                        <ExternalLink size={10} /> homepage
-                                    </a>
-                                )}
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-        ))}
+                            )}
+                            {r.forks > 0 && (
+                                <span class="inline-flex items-center gap-0.5">
+                                    <GitFork size={11} />
+                                    {r.forks}
+                                </span>
+                            )}
+                        </div>
+                    </div>
+
+                    {r.description && (
+                        <p class="text-sm text-foreground/85 mt-1.5 leading-relaxed">
+                            {r.description}
+                        </p>
+                    )}
+
+                    {r.readmeExcerpt &&
+                        r.readmeExcerpt !== r.description &&
+                        !r.description.includes(r.readmeExcerpt.slice(0, 60)) && (
+                            <p class="text-xs text-muted-foreground mt-2 leading-relaxed line-clamp-3">
+                                {r.readmeExcerpt}
+                            </p>
+                        )}
+
+                    <div class="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
+                        <span
+                            class={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded border ${
+                                r.category === "medical"
+                                    ? "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/30"
+                                    : "bg-teal-500/10 text-teal-700 dark:text-teal-300 border-teal-500/30"
+                            }`}
+                        >
+                            {r.category === "medical" ? (
+                                <Stethoscope size={9} />
+                            ) : (
+                                <Code2 size={9} />
+                            )}
+                            {catLabel(r.category)}
+                        </span>
+                        {r.language && (
+                            <span class={`inline-flex items-center px-1.5 py-0.5 rounded border ${langClass(r.language)}`}>
+                                {r.language}
+                            </span>
+                        )}
+                        {r.topics.slice(0, 4).map((t) => (
+                            <span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-muted text-muted-foreground border border-border">
+                                <Tag size={9} />
+                                {t}
+                            </span>
+                        ))}
+                        {r.topics.length > 4 && (
+                            <span class="text-muted-foreground">+{r.topics.length - 4}</span>
+                        )}
+                    </div>
+
+                    <div class="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
+                        <span class="inline-flex items-center gap-1 tabular-nums">
+                            <Calendar size={10} />
+                            {fmtDate(r.pushedAt)}
+                        </span>
+                        {r.license && <span>· {r.license}</span>}
+                        {r.homepage && (
+                            <a
+                                href={r.homepage}
+                                target="_blank"
+                                rel="noopener"
+                                class="inline-flex items-center gap-1 hover:text-primary"
+                            >
+                                <ExternalLink size={10} /> homepage
+                            </a>
+                        )}
+                    </div>
+                </li>
+            ))}
+        </ul>
+
+        <p
+            id="repo-empty"
+            hidden
+            class="py-16 text-center text-sm text-muted-foreground"
+        >
+            <span data-lang-only="zh">沒有符合條件的專案，試試其他關鍵字或分類。</span>
+            <span data-lang-only="en">No matching projects — try another keyword or category.</span>
+            <span data-lang-only="ja">条件に一致するプロジェクトがありません。別のキーワードやカテゴリをお試しください。</span>
+        </p>
 
         <footer class="pt-12 mt-12 border-t border-border text-xs text-muted-foreground">
             <p>
                 分類為啟發式（描述 / 名稱 / topics 含醫療關鍵字即歸醫療），如有錯誤分類請開 issue。
-                完整列表與最新狀態請見
+                星數與 Fork 數每日自動同步。完整列表與最新狀態請見
                 <a
                     href="https://github.com/htlin222"
                     target="_blank"
@@ -213,3 +324,149 @@ const sections = [
         </footer>
     </main>
 </Layout>
+
+<style>
+    .cat-btn[aria-pressed="true"] {
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+    }
+    .cat-btn[aria-pressed="false"] {
+        color: var(--muted-foreground);
+    }
+    .cat-btn[aria-pressed="false"]:hover {
+        color: var(--foreground);
+    }
+</style>
+
+<script>
+    function currentLang() {
+        const l = document.documentElement.dataset.lang;
+        return l === "en" || l === "ja" ? l : "zh";
+    }
+
+    // Search placeholder + <option> text are plain attributes that cannot hold
+    // data-lang-only spans, so sync them to the global UI language by hand.
+    function syncPortfolioLang() {
+        const lang = currentLang();
+        const input = document.getElementById(
+            "repo-search",
+        ) as HTMLInputElement | null;
+        if (input) {
+            const ph = input.dataset["ph" + lang[0].toUpperCase() + lang.slice(1)];
+            if (ph) input.placeholder = ph;
+        }
+        const sel = document.getElementById(
+            "repo-sort",
+        ) as HTMLSelectElement | null;
+        if (sel) {
+            Array.from(sel.options).forEach((o) => {
+                const t = o.dataset[lang];
+                if (t) o.textContent = t;
+            });
+        }
+    }
+
+    // <html> persists across Astro view transitions — register the lang
+    // observer once so navigations never stack duplicate observers.
+    if (!(window as any).__portfolioLang) {
+        const obs = new MutationObserver(syncPortfolioLang);
+        obs.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ["data-lang"],
+        });
+        (window as any).__portfolioLang = obs;
+    }
+
+    function initPortfolio() {
+        const grid = document.getElementById("repo-grid");
+        if (!grid || grid.dataset.bound === "1") return;
+        grid.dataset.bound = "1";
+        const cards = Array.from(
+            grid.querySelectorAll("li[data-card]"),
+        ) as HTMLElement[];
+        const searchInput = document.getElementById(
+            "repo-search",
+        ) as HTMLInputElement | null;
+        const sortSelect = document.getElementById(
+            "repo-sort",
+        ) as HTMLSelectElement | null;
+        const catButtons = Array.from(
+            document.querySelectorAll("[data-cat-btn]"),
+        ) as HTMLElement[];
+        const numsEl = document.getElementById("repo-count-nums");
+        const emptyEl = document.getElementById("repo-empty");
+
+        let activeCat = "all";
+        let query = "";
+        let sortKey = "date";
+
+        const num = (el: HTMLElement, k: string) => Number(el.dataset[k] || 0);
+
+        function render() {
+            const visible = cards.filter((c) => {
+                const catOk = activeCat === "all" || c.dataset.cat === activeCat;
+                const qOk = !query || (c.dataset.search || "").includes(query);
+                return catOk && qOk;
+            });
+
+            visible.sort((a, b) => {
+                if (sortKey === "stars")
+                    return (
+                        num(b, "stars") - num(a, "stars") ||
+                        num(b, "pushed") - num(a, "pushed")
+                    );
+                if (sortKey === "forks")
+                    return (
+                        num(b, "forks") - num(a, "forks") ||
+                        num(b, "pushed") - num(a, "pushed")
+                    );
+                return num(b, "pushed") - num(a, "pushed");
+            });
+
+            const visibleSet = new Set(visible);
+            cards.forEach((c) => {
+                c.hidden = !visibleSet.has(c);
+            });
+            visible.forEach((c) => grid!.appendChild(c));
+
+            if (numsEl)
+                numsEl.textContent = `${visible.length} / ${cards.length}`;
+            if (emptyEl) emptyEl.hidden = visible.length > 0;
+        }
+
+        function setCat(cat: string) {
+            activeCat = cat;
+            catButtons.forEach((btn) => {
+                btn.setAttribute(
+                    "aria-pressed",
+                    String(btn.dataset.cat === cat),
+                );
+            });
+            render();
+        }
+
+        let debounce: ReturnType<typeof setTimeout>;
+        searchInput?.addEventListener("input", () => {
+            clearTimeout(debounce);
+            debounce = setTimeout(() => {
+                query = (searchInput.value || "").trim().toLowerCase();
+                render();
+            }, 120);
+        });
+
+        catButtons.forEach((btn) =>
+            btn.addEventListener("click", () => setCat(btn.dataset.cat || "all")),
+        );
+
+        sortSelect?.addEventListener("change", () => {
+            sortKey = sortSelect.value;
+            render();
+        });
+
+        syncPortfolioLang();
+        render();
+    }
+
+    initPortfolio();
+    document.addEventListener("astro:page-load", initPortfolio);
+</script>
