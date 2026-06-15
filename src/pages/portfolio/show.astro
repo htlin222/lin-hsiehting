@@ -148,7 +148,10 @@ for (const r of repos) {
             set:html={JSON.stringify(repoMap)}
         />
 
-        <style>
+        <!-- is:global is REQUIRED: the slides are injected at runtime via
+             innerHTML, so they never receive Astro's scoping attribute and
+             scoped selectors (.slide[data-astro-cid-…]) would not match them. -->
+        <style is:global>
             html,
             body {
                 height: 100%;
