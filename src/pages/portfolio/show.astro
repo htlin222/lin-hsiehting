@@ -159,10 +159,22 @@ for (const r of repos) {
             body {
                 margin: 0;
                 overflow: hidden;
+                background: var(--muted);
             }
+            /* 16:9 stage, centred and letterboxed. container-type: size turns
+               it into a query container so the cqw/cqh font sizes below scale
+               with the stage (filling the frame) instead of the raw viewport. */
             #deck {
                 position: fixed;
-                inset: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: min(100vw, calc(100vh * 16 / 9));
+                height: min(100vh, calc(100vw * 9 / 16));
+                background: var(--background);
+                box-shadow: 0 2vmin 6vmin rgba(0, 0, 0, 0.18);
+                container-type: size;
+                overflow: hidden;
             }
             .slide {
                 position: absolute;
@@ -170,7 +182,7 @@ for (const r of repos) {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 6vmin 9vmin;
+                padding: 7cqh 8cqw;
                 opacity: 0;
                 visibility: hidden;
                 transition: opacity 0.3s ease;
@@ -181,75 +193,74 @@ for (const r of repos) {
             }
             .slide-inner {
                 width: 100%;
-                max-width: 62rem;
             }
             .slide-inner.center {
                 text-align: center;
             }
             .eyebrow {
-                font-size: clamp(0.8rem, 1.6vmin, 1.05rem);
+                font-size: clamp(0.8rem, 2.1cqw, 2rem);
                 letter-spacing: 0.15em;
                 text-transform: uppercase;
                 color: var(--muted-foreground);
-                margin: 0 0 2.5vmin;
+                margin: 0 0 3cqh;
             }
             .deck-title {
-                font-size: clamp(3rem, 11vmin, 7rem);
+                font-size: clamp(3rem, 16cqw, 20rem);
                 font-weight: 800;
-                line-height: 1.02;
+                line-height: 1;
                 letter-spacing: -0.03em;
                 margin: 0;
             }
             .deck-sub {
-                font-size: clamp(1.2rem, 3vmin, 2rem);
-                margin: 3vmin 0 0;
+                font-size: clamp(1.2rem, 4cqw, 4rem);
+                margin: 4cqh 0 0;
             }
             .deck-meta {
-                font-size: clamp(0.95rem, 2vmin, 1.25rem);
+                font-size: clamp(0.95rem, 2.4cqw, 2rem);
                 color: var(--muted-foreground);
-                margin: 1.5vmin 0 0;
+                margin: 2cqh 0 0;
                 font-variant-numeric: tabular-nums;
             }
             .repo-title {
-                font-size: clamp(2rem, 7.5vmin, 4.75rem);
+                font-size: clamp(2rem, 9.5cqw, 11rem);
                 font-weight: 800;
-                line-height: 1.08;
+                line-height: 1.04;
                 letter-spacing: -0.02em;
                 margin: 0;
                 word-break: break-word;
             }
             .repo-desc {
-                font-size: clamp(1.1rem, 2.7vmin, 1.85rem);
+                font-size: clamp(1.1rem, 3.2cqw, 3.4rem);
                 color: var(--foreground);
                 opacity: 0.85;
-                line-height: 1.5;
-                margin: 3.5vmin 0 0;
+                line-height: 1.45;
+                margin: 4cqh 0 0;
             }
             .stats {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 1.2rem 2.2rem;
-                margin: 4.5vmin 0 0;
-                font-size: clamp(1rem, 2.3vmin, 1.45rem);
+                gap: 1cqh 3cqw;
+                margin: 5cqh 0 0;
+                font-size: clamp(1rem, 2.8cqw, 2.6rem);
                 color: var(--muted-foreground);
                 font-variant-numeric: tabular-nums;
             }
             .chips {
                 display: flex;
                 flex-wrap: wrap;
-                gap: 0.6rem;
-                margin: 3vmin 0 0;
+                gap: 0.6em;
+                margin: 4cqh 0 0;
             }
             .chip {
-                font-size: clamp(0.78rem, 1.6vmin, 1rem);
+                font-size: clamp(0.78rem, 1.9cqw, 1.6rem);
                 padding: 0.25em 0.7em;
                 border: 1px solid var(--border);
-                border-radius: 0.5rem;
+                border-radius: 0.5em;
                 color: var(--muted-foreground);
             }
             .links {
-                margin: 4vmin 0 0;
-                font-size: clamp(0.9rem, 1.9vmin, 1.2rem);
+                margin: 5cqh 0 0;
+                font-size: clamp(0.9rem, 2.2cqw, 2rem);
             }
             .links a {
                 color: var(--primary);
@@ -261,15 +272,15 @@ for (const r of repos) {
             .outline-list {
                 list-style: none;
                 padding: 0;
-                margin: 3vmin 0 0;
+                margin: 4cqh 0 0;
                 display: flex;
                 flex-direction: column;
-                gap: 1.4vmin;
-                font-size: clamp(1rem, 2.5vmin, 1.7rem);
+                gap: 1.6cqh;
+                font-size: clamp(1rem, 3.1cqw, 2.8rem);
             }
             .outline-list li {
                 display: flex;
-                gap: 1rem;
+                gap: 1ch;
                 align-items: baseline;
             }
             .outline-list .n {
