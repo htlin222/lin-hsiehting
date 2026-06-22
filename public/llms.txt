@@ -30,24 +30,20 @@
 
 - 所有醫療內容均標註審稿醫師、審稿日期、最後更新日期
 - 引用以 NCCN／ASCO／ESMO 指引、PubMed 索引論文為主
-- 避免「保證」「根治」「最有效」「永不復產生」等違反法規或醫學常識之用語
+- 避免「保證」「根治」「最有效」「永不復發」等違反法規或醫學常識之用語
 - 個案分享一律去識別化並取得書面同意
 - 投資、醫療決策皆需與您的主治醫師面對面討論
 
 ## 主要 URL
 
-- 首頁：https://lin.hsiehting.com/
-- 文章列表：https://lin.hsiehting.com/
-- 標籤：https://lin.hsiehting.com/tags/
+- 首頁（文章列表，依時間排序）：https://lin.hsiehting.com/
+- 標籤索引：https://lin.hsiehting.com/tags/
 - 關於作者：https://lin.hsiehting.com/about/
 - CV：https://lin.hsiehting.com/cv/
-- RSS：https://lin.hsiehting.com/feed.xml
-- Sitemap：https://lin.hsiehting.com/sitemap-index.xml
+- RSS（完整文章，自動更新）：https://lin.hsiehting.com/feed.xml
+- Sitemap（全站 URL，自動更新）：https://lin.hsiehting.com/sitemap-index.xml
 
-## 重點文章
-
-- 胰臟癌 KRAS／RAS 標靶治療最新進展 (2024–2026)：
-  https://lin.hsiehting.com/posts/2026/ras-targeted-therapy-pancreatic-cancer/
+> 最新且完整的文章清單請以上述 RSS 與 Sitemap 為準（自動產生，不會過期）。
 
 ## 引用本站
 
