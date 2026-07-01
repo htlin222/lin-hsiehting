@@ -5,13 +5,20 @@
 // snapshot at build time so no live GitHub API calls happen during build.
 //
 // Usage:
-//   pnpm run portfolio:fetch        # refresh everything (uses gh CLI auth)
+//   pnpm run portfolio:fetch        # refresh; README fetched incrementally
 //   pnpm run portfolio:fetch:no-readme   # metadata only, skip README fetch
+//   node scripts/fetch-github-portfolio.mjs --full-readme  # force full README re-fetch (backfill)
+//
+// Repo metadata (stars/forks/pushedAt) is ALWAYS fetched fresh (one GraphQL
+// call). README excerpts are fetched INCREMENTALLY: a repo's README is only
+// re-hit if it's new or was pushed since the previous snapshot's fetchedAt;
+// otherwise the old excerpt is reused. This skips the heaviest, most
+// rate-limit-prone part of the run. --full-readme forces a full re-fetch.
 //
 // Requires:
 //   - gh CLI (authenticated)
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, readFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
@@ -25,6 +32,7 @@ const outFile = path.join(root, "src", "data", "github-portfolio.json");
 
 const args = process.argv.slice(2);
 const skipReadme = args.includes("--no-readme");
+const forceReadme = args.includes("--full-readme");
 const limit = Number(args.find((a) => a.startsWith("--limit="))?.slice(8)) || 500;
 const concurrency = Number(args.find((a) => a.startsWith("--concurrency="))?.slice(14)) || 6;
 
@@ -70,14 +78,43 @@ async function ghJson(args) {
     return JSON.parse(stdout);
 }
 
+// GitHub's GraphQL endpoint intermittently 502s on the heavy repo-list query.
+// Retry transient 5xx / network errors with exponential backoff so a single
+// blip doesn't waste a whole cron run.
+async function ghJsonRetry(args, { tries = 6, baseMs = 1500 } = {}) {
+    let lastErr;
+    for (let i = 0; i < tries; i++) {
+        try {
+            return await ghJson(args);
+        } catch (e) {
+            lastErr = e;
+            const msg = String(e?.stderr || e?.message || "");
+            const retryable = /HTTP 5\d\d|Bad Gateway|timeout|EAI_AGAIN|ECONNRESET|ETIMEDOUT/i.test(msg);
+            if (!retryable || i === tries - 1) throw e;
+            const wait = baseMs * 2 ** i;
+            console.warn(`  gh transient error, retry ${i + 1}/${tries - 1} in ${wait}ms…`);
+            await new Promise((r) => setTimeout(r, wait));
+        }
+    }
+    throw lastErr;
+}
+
 async function fetchRepoList() {
-    return ghJson([
+    return ghJsonRetry([
         "repo",
         "list",
         USER,
         "--limit",
         String(limit),
         "--no-archived",
+        // PUBLIC ONLY. The daily Action runs with the repo-scoped GITHUB_TOKEN,
+        // which can only see public repos — so the snapshot has always been
+        // public-only. Running this locally with a personal `gh` login would
+        // otherwise pull in PRIVATE repos (unpublished research, patient-facing
+        // drafts) and leak them onto the public /portfolio page. Pin it here so
+        // local and CI runs produce the same public-only result.
+        "--visibility",
+        "public",
         "--source",
         "--json",
         "name,description,primaryLanguage,stargazerCount,forkCount,pushedAt,createdAt,repositoryTopics,url,homepageUrl,licenseInfo,isFork,isArchived,defaultBranchRef",
@@ -152,18 +189,47 @@ async function main() {
         r.category = classify(r);
     }
 
-    // Fetch README excerpts (parallel).
+    // Load the previous snapshot so README excerpts can be reused incrementally.
+    let prev = null;
+    try {
+        prev = JSON.parse(await readFile(outFile, "utf8"));
+    } catch {
+        prev = null; // first run, or file missing/corrupt → fetch everything
+    }
+    const prevFetchedMs = prev?.fetchedAt ? new Date(prev.fetchedAt).getTime() : 0;
+    const prevByName = new Map((prev?.repos ?? []).map((r) => [r.name, r]));
+
+    // Fetch README excerpts (parallel, incremental).
     if (!skipReadme) {
-        console.log(`fetching READMEs (concurrency=${concurrency})…`);
+        let fetched = 0;
+        let reused = 0;
+        console.log(
+            `fetching READMEs (concurrency=${concurrency}, ${forceReadme ? "FULL re-fetch" : "incremental"})…`,
+        );
         const excerpts = await mapLimit(repos, concurrency, async (r, i) => {
+            const prevRepo = prevByName.get(r.name);
+            // Reuse the old excerpt when the repo existed last time, already had
+            // a README excerpt recorded, and hasn't been pushed since that fetch.
+            const unchanged =
+                !forceReadme &&
+                prevRepo &&
+                "readmeExcerpt" in prevRepo &&
+                new Date(r.pushedAt).getTime() <= prevFetchedMs;
+            if (unchanged) {
+                reused++;
+                return prevRepo.readmeExcerpt;
+            }
             const excerpt = await fetchReadmeExcerpt(r.name);
+            fetched++;
             process.stdout.write(`  [${i + 1}/${repos.length}] ${r.name}\r`);
             return excerpt;
         });
         for (let i = 0; i < repos.length; i++) {
             repos[i].readmeExcerpt = excerpts[i];
         }
-        console.log("");
+        console.log(
+            `\n  README: ${fetched} fetched, ${reused} reused from previous snapshot`,
+        );
     }
 
     // Drop repos with truly nothing to show (no description, no topics, no README).

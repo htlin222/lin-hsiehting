@@ -35,6 +35,28 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: node scripts/fetch-github-portfolio.mjs
 
+      # Second line of defense. The fetch script pins --visibility public, but
+      # assert it here too: cross-check every repo in the snapshot against the
+      # authoritative public list and hard-fail (no commit, no push) if ANYTHING
+      # private slipped in. Guards against a hand-edited or locally-generated
+      # snapshot leaking unpublished research / patient-facing drafts.
+      - name: Guard — snapshot must be PUBLIC-only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          snapshot="src/data/github-portfolio.json"
+          gh repo list htlin222 --visibility public --source --no-archived \
+            --limit 500 --json name | jq -r '.[].name' | sort -u > /tmp/public.txt
+          jq -r '.repos[].name' "$snapshot" | sort -u > /tmp/snapshot.txt
+          leaked="$(comm -23 /tmp/snapshot.txt /tmp/public.txt || true)"
+          if [ -n "$leaked" ]; then
+            echo "::error::Non-public repos found in snapshot — refusing to push:"
+            echo "$leaked"
+            exit 1
+          fi
+          echo "Guard passed: all $(wc -l < /tmp/snapshot.txt) snapshot repos are public."
+
       - name: Commit & redeploy if the snapshot changed
         env:
           GH_TOKEN: ${{ github.token }}
