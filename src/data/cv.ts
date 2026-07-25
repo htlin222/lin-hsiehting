@@ -25,15 +25,22 @@ export interface CvPresentation {
 
 export const positions: CvEntry[] = [
     {
-        period: "2023.08 –",
-        title: "血液腫瘤科專研醫師（Fellow）",
-        titleEn: "Hematology & Medical Oncology Fellow",
+        period: "2026.08 –",
+        title: "腫瘤內科專任主治醫師",
+        titleEn: "Attending Physician, Medical Oncology",
         org: "腫瘤內科部，醫療財團法人辜公亮基金會和信治癌中心醫院",
         orgEn: "Department of Hematology & Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center",
     },
 ];
 
 export const experience: CvEntry[] = [
+    {
+        period: "2023.08 – 2026.07",
+        title: "血液腫瘤科專研醫師（Fellow）",
+        titleEn: "Hematology & Medical Oncology Fellow",
+        org: "腫瘤內科部，醫療財團法人辜公亮基金會和信治癌中心醫院",
+        orgEn: "Department of Hematology & Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center",
+    },
     {
         period: "2021.08 – 2023.08",
         title: "內科住院醫師",
@@ -143,9 +150,9 @@ export const cvHeader = {
     nameZh: "林協霆",
     nameEn: "Hsieh-Ting Lin",
     credentialsZh: "M.D.",
-    credentialsEn: "M.D., Hematology & Medical Oncology Fellow",
-    taglineZh: "腫瘤內科專研醫師",
+    credentialsEn: "M.D., Medical Oncologist",
+    taglineZh: "腫瘤內科專任主治醫師",
     taglineEn:
-        "Hematology & Medical Oncology Fellow, Koo Foundation Sun Yat-Sen Cancer Center · Taipei, Taiwan",
+        "Attending Physician, Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center · Taipei, Taiwan",
     email: "mail@hsiehting.com",
 };
