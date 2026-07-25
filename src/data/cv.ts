@@ -26,8 +26,8 @@ export interface CvPresentation {
 export const positions: CvEntry[] = [
     {
         period: "2026.08 –",
-        title: "血液腫瘤科專任主治醫師",
-        titleEn: "Attending Physician, Hematology & Medical Oncology",
+        title: "腫瘤內科專任主治醫師",
+        titleEn: "Attending Physician, Medical Oncology",
         org: "腫瘤內科部，醫療財團法人辜公亮基金會和信治癌中心醫院",
         orgEn: "Department of Hematology & Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center",
     },
@@ -153,6 +153,6 @@ export const cvHeader = {
     credentialsEn: "M.D., Medical Oncologist",
     taglineZh: "腫瘤內科專任主治醫師",
     taglineEn:
-        "Attending Physician, Hematology & Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center · Taipei, Taiwan",
+        "Attending Physician, Medical Oncology, Koo Foundation Sun Yat-Sen Cancer Center · Taipei, Taiwan",
     email: "mail@hsiehting.com",
 };
