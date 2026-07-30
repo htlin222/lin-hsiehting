@@ -1,17 +1,42 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-07-29T06:23:11.778Z",
+  "fetchedAt": "2026-07-30T06:15:24.618Z",
   "count": 144,
   "medicalCount": 75,
   "itCount": 69,
   "repos": [
+    {
+      "name": "curate-course",
+      "description": "把 YouTube 上散落的好內容變成結構完整、連結全數驗證、來源可查的課程網站。主題無關，附一門 371 單元的體態矯正課作為範例。",
+      "language": "Python",
+      "stars": 2,
+      "forks": 0,
+      "pushedAt": "2026-07-30T05:34:48Z",
+      "createdAt": "2026-07-25T19:20:51Z",
+      "topics": [
+        "claude-code",
+        "cloudflare-pages",
+        "course",
+        "curation",
+        "education",
+        "evidence-based",
+        "static-site",
+        "youtube"
+      ],
+      "url": "https://github.com/htlin222/curate-course",
+      "homepage": "https://body-course.pages.dev",
+      "license": null,
+      "defaultBranch": "main",
+      "category": "medical",
+      "readmeExcerpt": "curate-course 把 YouTube 上散落的好內容，變成一門結構完整、連結全數驗證、來源可查的課程網站。 主題無關。附的範例是一門體態矯正課（371 個單元、406 支影片、423 篇 PubMed 引用）， 但框架本身不認識「體態」——換成吉他、統計、烘焙、電銲都一樣跑。 線上範例： --- 為什麼不是又一個播放清單 播放清單解決「收藏」，這個框架解決另外三件事： 一、結構。 章節 → 單元 → 項目三層，配額寫進設定檔，數量不對就建置失敗。 不會出現「這章塞了 40 支、那章只有 3 支」的失衡。 二、連結真的活著。 幾百個格子最大的風險…"
+    },
     {
       "name": "mcq-bank",
       "description": "Collaborative MCQ study system — wiki-style explanations, threaded discussion, timed mock exams. Full-stack Cloudflare (Workers + D1 + R2 + Access), free tier.",
       "language": "TypeScript",
       "stars": 2,
       "forks": 2,
-      "pushedAt": "2026-07-28T12:49:07Z",
+      "pushedAt": "2026-07-30T03:18:37Z",
       "createdAt": "2026-05-23T16:32:43Z",
       "topics": [
         "cloudflare",
@@ -48,7 +73,7 @@
       "language": "JavaScript",
       "stars": 1,
       "forks": 0,
-      "pushedAt": "2026-07-28T12:28:35Z",
+      "pushedAt": "2026-07-29T09:09:03Z",
       "createdAt": "2026-07-24T00:59:23Z",
       "topics": [
         "clinical-guidelines",
@@ -62,14 +87,20 @@
         "pdf-viewer",
         "pwa",
         "serverless",
-        "shadcn"
+        "shadcn",
+        "cloudflare-d1",
+        "fts5",
+        "full-text-search",
+        "healthcare",
+        "workers-ai",
+        "wrangler"
       ],
       "url": "https://github.com/htlin222/nccn-guidelines-downloader",
-      "homepage": null,
+      "homepage": "https://nccn.hsiehting.com",
       "license": null,
       "defaultBranch": "main",
       "category": "medical",
-      "readmeExcerpt": "NCCN Guidelines Downloader Two ways to grab NCCN Clinical Practice Guidelines PDFs with your own NCCN account: 1. CLI — a small curl script that downloads guidelines to your machine. 2. Web app — a Cloudflare Worker that turns your account into a private, installable PWA: a categ…"
+      "readmeExcerpt": "NCCN Guidelines Downloader [](https://github.com/htlin222/nccn-guidelines-downloader/actions/workflows/deploy.yml) [](https://github.com/htlin222/nccn-guidelines-downloader/actions/workflows/update-versions.yml) Two ways to grab NCCN Clinical Practice Guidelines PDFs with your ow…"
     },
     {
       "name": "lin-hsiehting",
@@ -77,7 +108,7 @@
       "language": "MDX",
       "stars": 2,
       "forks": 0,
-      "pushedAt": "2026-07-28T06:16:56Z",
+      "pushedAt": "2026-07-29T06:23:17Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -131,31 +162,6 @@
       "defaultBranch": "main",
       "category": "it",
       "readmeExcerpt": "塔羅解讀課程 把 78 張牌從死背改成推導。四個階段、62 個單元、368 個影片欄位，課程順序來自知識依賴圖而非主題方便——每個單元都寫明「你需要先會什麼」與先修單元連結，卡住的時候知道該回頭補哪一課。 用 curate-course 框架建置。課綱來源見 docs/tarotmastersyllabusv3handoff.md。 bash make build && make audit && make serve # http://localhost:8899 --- 這門課跟其他塔羅課差在哪 一、先備知識鏈是顯性的。 課綱 §1 是一張知識依賴圖…"
-    },
-    {
-      "name": "curate-course",
-      "description": "把 YouTube 上散落的好內容變成結構完整、連結全數驗證、來源可查的課程網站。主題無關，附一門 371 單元的體態矯正課作為範例。",
-      "language": "Python",
-      "stars": 2,
-      "forks": 0,
-      "pushedAt": "2026-07-27T17:04:31Z",
-      "createdAt": "2026-07-25T19:20:51Z",
-      "topics": [
-        "claude-code",
-        "cloudflare-pages",
-        "course",
-        "curation",
-        "education",
-        "evidence-based",
-        "static-site",
-        "youtube"
-      ],
-      "url": "https://github.com/htlin222/curate-course",
-      "homepage": "https://body-course.pages.dev",
-      "license": null,
-      "defaultBranch": "main",
-      "category": "medical",
-      "readmeExcerpt": "curate-course 把 YouTube 上散落的好內容，變成一門結構完整、連結全數驗證、來源可查的課程網站。 主題無關。附的範例是一門體態矯正課（371 個單元、406 支影片、423 篇 PubMed 引用）， 但框架本身不認識「體態」——換成吉他、統計、烘焙、電銲都一樣跑。 線上範例： --- 為什麼不是又一個播放清單 播放清單解決「收藏」，這個框架解決另外三件事： 一、結構。 章節 → 單元 → 項目三層，配額寫進設定檔，數量不對就建置失敗。 不會出現「這章塞了 40 支、那章只有 3 支」的失衡。 二、連結真的活著。 幾百個格子最大的風險…"
     },
     {
       "name": "IMBrave150-mock",
@@ -329,7 +335,7 @@
       "name": "openevidence-mcp",
       "description": "Unofficial OpenEvidence MCP server — query OpenEvidence from Claude Code, Codex, and any MCP client through your own logged-in browser tab (no API key). Fire-and-forget asks, a shared relay daemon for concurrent sessions, BibTeX + Crossref citations.",
       "language": "TypeScript",
-      "stars": 59,
+      "stars": 60,
       "forks": 15,
       "pushedAt": "2026-07-23T04:12:59Z",
       "createdAt": "2026-04-08T13:06:32Z",
@@ -2596,7 +2602,7 @@
       "name": "mini-claw",
       "description": "Telegram bot for persistent Claude/ChatGPT conversations using Pi agent — zero-cost multi-turn AI sessions with file attachments, shell access, and local storage",
       "language": "TypeScript",
-      "stars": 92,
+      "stars": 93,
       "forks": 14,
       "pushedAt": "2026-03-28T02:19:13Z",
       "createdAt": "2026-02-01T03:52:34Z",
@@ -3404,7 +3410,7 @@
       "name": "fbpost",
       "description": "Python CLI for Facebook & Messenger automation — post, reply, send messages, manage comments via GraphQL API + Playwright browser automation with E2E encryption support",
       "language": "Python",
-      "stars": 3,
+      "stars": 4,
       "forks": 1,
       "pushedAt": "2026-03-28T01:52:41Z",
       "createdAt": "2026-03-21T08:31:50Z",
