@@ -1,0 +1,96 @@
+name: Auto-render CV PDFs on push
+
+# Triggered automatically when CV data or the /print/cv-* routes change.
+# Renders the one-page zh-TW + English CV PDFs via Playwright, then commits
+# public/pdf/cv-*.pdf back to main with `[skip cv-pdf]` (so this workflow
+# doesn't re-trigger on its own commit).
+#
+# Path filter intentionally excludes public/pdf/** to avoid loops.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/data/cv.ts"
+      - "src/pages/print/cv-zh.astro"
+      - "src/pages/print/cv-en.astro"
+      - "src/layouts/PrintCv.astro"
+      - "src/styles/print-cv.css"
+      - "scripts/render-cv-pdfs.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    if: ${{ !contains(github.event.head_commit.message, '[skip pdf]') && !contains(github.event.head_commit.message, '[skip cv-pdf]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: pnpm run build
+
+      - name: Start preview server
+        run: |
+          nohup pnpm exec astro preview --host 127.0.0.1 --port 4321 \
+            > /tmp/astro-preview.log 2>&1 &
+          echo $! > /tmp/astro-preview.pid
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:4321 > /dev/null; then
+              echo "preview server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::preview server did not start"
+          cat /tmp/astro-preview.log
+          exit 1
+
+      - name: Render CV PDFs
+        run: node scripts/render-cv-pdfs.mjs --base=http://127.0.0.1:4321
+
+      - name: Stop preview server
+        if: always()
+        run: |
+          if [ -f /tmp/astro-preview.pid ]; then
+            kill "$(cat /tmp/astro-preview.pid)" 2>/dev/null || true
+          fi
+
+      - name: Commit PDFs
+        run: |
+          if git diff --quiet -- 'public/pdf/cv-zh.pdf' 'public/pdf/cv-en.pdf'; then
+            echo "no CV PDF changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'public/pdf/cv-zh.pdf' 'public/pdf/cv-en.pdf'
+          git commit -m "chore: render CV PDFs [skip cv-pdf]"
+          git push
