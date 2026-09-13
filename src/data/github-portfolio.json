@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-09-12T08:09:21.941Z",
+  "fetchedAt": "2026-09-13T08:34:01.711Z",
   "count": 170,
   "medicalCount": 86,
   "itCount": 84,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-09-12T00:17:33Z",
+      "pushedAt": "2026-09-13T00:18:24Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -27,7 +27,7 @@
       "language": "MDX",
       "stars": 3,
       "forks": 0,
-      "pushedAt": "2026-09-11T08:20:51Z",
+      "pushedAt": "2026-09-12T08:09:26Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -151,7 +151,7 @@
       "description": "Automated systematic literature review pipeline generating publication-ready manuscripts from Scopus/PubMed/Embase with PRISMA compliance, GRADE evidence synthesis, and DOI validation for clinical research.",
       "language": "Python",
       "stars": 56,
-      "forks": 25,
+      "forks": 24,
       "pushedAt": "2026-09-09T09:10:04Z",
       "createdAt": "2026-03-24T17:53:03Z",
       "topics": [
@@ -1666,7 +1666,7 @@
       "name": "openevidence-skill",
       "description": "Python CLI skill for querying OpenEvidence clinical evidence assistant — portable stdlib-only alternative to MCP, works with Claude Code and 40+ AI agents",
       "language": "Shell",
-      "stars": 13,
+      "stars": 14,
       "forks": 3,
       "pushedAt": "2026-09-09T09:05:38Z",
       "createdAt": "2026-05-07T15:22:17Z",
@@ -1960,7 +1960,7 @@
       "description": "Collaborative MCQ study system — wiki-style explanations, threaded discussion, timed mock exams. Full-stack Cloudflare (Workers + D1 + R2 + Access), free tier.",
       "language": "TypeScript",
       "stars": 9,
-      "forks": 3,
+      "forks": 4,
       "pushedAt": "2026-09-09T09:05:03Z",
       "createdAt": "2026-05-23T16:32:43Z",
       "topics": [
