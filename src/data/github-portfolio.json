@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-09-27T09:33:21.254Z",
+  "fetchedAt": "2026-09-28T10:12:10.093Z",
   "count": 173,
   "medicalCount": 87,
   "itCount": 86,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-09-27T00:30:29Z",
+      "pushedAt": "2026-09-28T00:30:51Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -27,7 +27,7 @@
       "language": "MDX",
       "stars": 3,
       "forks": 0,
-      "pushedAt": "2026-09-26T08:51:13Z",
+      "pushedAt": "2026-09-27T09:33:26Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -462,7 +462,7 @@
       "description": "Automated systematic literature review pipeline generating publication-ready manuscripts from Scopus/PubMed/Embase with PRISMA compliance, GRADE evidence synthesis, and DOI validation for clinical research.",
       "language": "Python",
       "stars": 57,
-      "forks": 26,
+      "forks": 27,
       "pushedAt": "2026-09-09T09:10:04Z",
       "createdAt": "2026-03-24T17:53:03Z",
       "topics": [
