@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-10-03T09:27:38.127Z",
+  "fetchedAt": "2026-10-04T10:14:50.303Z",
   "count": 173,
   "medicalCount": 87,
   "itCount": 86,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-10-03T00:23:05Z",
+      "pushedAt": "2026-10-04T00:23:10Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -27,7 +27,7 @@
       "language": "MDX",
       "stars": 3,
       "forks": 0,
-      "pushedAt": "2026-10-02T10:06:02Z",
+      "pushedAt": "2026-10-03T09:27:44Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -461,7 +461,7 @@
       "name": "robust-lit-review",
       "description": "Automated systematic literature review pipeline generating publication-ready manuscripts from Scopus/PubMed/Embase with PRISMA compliance, GRADE evidence synthesis, and DOI validation for clinical research.",
       "language": "Python",
-      "stars": 58,
+      "stars": 59,
       "forks": 25,
       "pushedAt": "2026-09-09T09:10:04Z",
       "createdAt": "2026-03-24T17:53:03Z",
@@ -3090,7 +3090,7 @@
       "description": "Automated KFSYSCC IRB document preparation — 43 forms, 11 categories, one command. Because your time is better spent on science, not paperwork.",
       "language": "Python",
       "stars": 31,
-      "forks": 8,
+      "forks": 9,
       "pushedAt": "2026-03-30T17:38:58Z",
       "createdAt": "2026-03-30T07:36:39Z",
       "topics": [
