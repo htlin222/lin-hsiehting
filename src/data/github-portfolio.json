@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-10-22T04:03:09.110Z",
+  "fetchedAt": "2026-10-23T04:01:05.405Z",
   "count": 183,
   "medicalCount": 89,
   "itCount": 94,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-10-22T00:19:19Z",
+      "pushedAt": "2026-10-23T00:20:42Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -27,7 +27,7 @@
       "language": "MDX",
       "stars": 3,
       "forks": 1,
-      "pushedAt": "2026-10-21T04:01:31Z",
+      "pushedAt": "2026-10-22T04:03:15Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
