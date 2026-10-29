@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-10-28T04:01:59.235Z",
+  "fetchedAt": "2026-10-29T04:01:38.627Z",
   "count": 184,
   "medicalCount": 89,
   "itCount": 95,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-10-28T00:20:55Z",
+      "pushedAt": "2026-10-29T00:24:19Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -22,28 +22,12 @@
       "readmeExcerpt": "CCChange 每日一則 Claude Code changelog 中文講義，由 Claude Code 自己出刊。 👉 https://htlin222.github.io/CCChange/ [](https://htlin222.github.io/CCChange/) [](https://github.com/htlin222/CCChange/actions/workflows/ci.yml) [](https://github.com/htlin222/CCChange/actions/workflows/deploy.yml) []…"
     },
     {
-      "name": "mograph-library",
-      "description": "",
-      "language": "JavaScript",
-      "stars": 0,
-      "forks": 0,
-      "pushedAt": "2026-10-26T07:03:19Z",
-      "createdAt": "2026-10-24T03:46:28Z",
-      "topics": [],
-      "url": "https://github.com/htlin222/mograph-library",
-      "homepage": null,
-      "license": null,
-      "defaultBranch": "main",
-      "category": "it",
-      "readmeExcerpt": "mograph-library 用程式碼做動態設計（code to animation）的學習庫：一份 MECE 的學習地圖與語彙，加上兩部完全由程式產生的示範影片的全部原始碼。不使用任何 GUI 動畫軟體，每一格畫面與每一個聲音都是算出來的。 內容 | | 說明 | |---|---| | docs/learning-map/ | 動態設計學習地圖：八個分支、描述公式、大詞索引、五份語彙、提示詞實戰、黑白動態全書 | | docs/physics-reference.md | 物理參數表：恢復係數、終端速度等實測值與出處 | | docs/prompt…"
-    },
-    {
       "name": "lin-hsiehting",
       "description": "Oncologist's clinical notes, medical education & research repository built with Astro + MDX on Cloudflare Pages — regulatory-compliant healthcare content with JSON-LD schema & AI optimization",
       "language": "MDX",
       "stars": 3,
       "forks": 1,
-      "pushedAt": "2026-10-26T04:02:10Z",
+      "pushedAt": "2026-10-28T04:02:04Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -65,6 +49,22 @@
       "defaultBranch": "main",
       "category": "medical",
       "readmeExcerpt": "林協霆 · 臨床筆記 > 腫瘤內科醫師的臨床筆記、衛教與閱讀記錄。 > 站台：lin.hsiehting.com > 作者：林協霆 M.D.（ORCID · Google Scholar） 依醫療法第 87 條第 2 項屬醫學新知與病人衛生教育，不從事醫療業務招徠。 --- Stack - Astro 6 + MDX + Tailwind v4，fork 自 serene-ink 主題並客製為醫學內容站 - 部署：GitHub Actions → Cloudflare Pages（main push 自動 build & deploy） - AI 引用優…"
+    },
+    {
+      "name": "mograph-library",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-10-26T07:03:19Z",
+      "createdAt": "2026-10-24T03:46:28Z",
+      "topics": [],
+      "url": "https://github.com/htlin222/mograph-library",
+      "homepage": null,
+      "license": null,
+      "defaultBranch": "main",
+      "category": "it",
+      "readmeExcerpt": "mograph-library 用程式碼做動態設計（code to animation）的學習庫：一份 MECE 的學習地圖與語彙，加上兩部完全由程式產生的示範影片的全部原始碼。不使用任何 GUI 動畫軟體，每一格畫面與每一個聲音都是算出來的。 內容 | | 說明 | |---|---| | docs/learning-map/ | 動態設計學習地圖：八個分支、描述公式、大詞索引、五份語彙、提示詞實戰、黑白動態全書 | | docs/physics-reference.md | 物理參數表：恢復係數、終端速度等實測值與出處 | | docs/prompt…"
     },
     {
       "name": "ankiweb-add-card",
@@ -2229,7 +2229,7 @@
       "name": "openevidence-skill",
       "description": "Python CLI skill for querying OpenEvidence clinical evidence assistant — portable stdlib-only alternative to MCP, works with Claude Code and 40+ AI agents",
       "language": "Shell",
-      "stars": 16,
+      "stars": 17,
       "forks": 4,
       "pushedAt": "2026-09-09T09:05:38Z",
       "createdAt": "2026-05-07T15:22:17Z",
