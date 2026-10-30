@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-10-29T04:01:38.627Z",
+  "fetchedAt": "2026-10-30T04:01:59.713Z",
   "count": 184,
   "medicalCount": 89,
   "itCount": 95,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-10-29T00:24:19Z",
+      "pushedAt": "2026-10-30T00:25:10Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -27,7 +27,7 @@
       "language": "MDX",
       "stars": 3,
       "forks": 1,
-      "pushedAt": "2026-10-28T04:02:04Z",
+      "pushedAt": "2026-10-29T04:01:45Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -2256,7 +2256,7 @@
       "description": "Chrome extension with LLM integration for clinicians to query OpenEvidence directly from text—AI-powered PICO question rewriting using Groq for evidence-based medicine workflows",
       "language": "JavaScript",
       "stars": 14,
-      "forks": 2,
+      "forks": 3,
       "pushedAt": "2026-09-09T09:05:36Z",
       "createdAt": "2026-06-02T12:39:55Z",
       "topics": [
@@ -3023,7 +3023,7 @@
       "description": "Slidev presentation template with Vue components, Chart.js, live code runners (Python/R/Bash), PDF export, and Tailscale Funnel sharing.",
       "language": "Vue",
       "stars": 1,
-      "forks": 1,
+      "forks": 0,
       "pushedAt": "2026-04-08T16:27:50Z",
       "createdAt": "2026-03-16T08:44:40Z",
       "topics": [
