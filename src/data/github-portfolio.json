@@ -1,9 +1,9 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-10-31T04:01:20.646Z",
-  "count": 184,
+  "fetchedAt": "2026-11-01T04:01:29.510Z",
+  "count": 185,
   "medicalCount": 89,
-  "itCount": 95,
+  "itCount": 96,
   "repos": [
     {
       "name": "CCChange",
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 1,
-      "pushedAt": "2026-10-31T00:21:06Z",
+      "pushedAt": "2026-11-01T00:20:03Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -22,12 +22,28 @@
       "readmeExcerpt": "CCChange 每日一則 Claude Code changelog 中文講義，由 Claude Code 自己出刊。 👉 https://htlin222.github.io/CCChange/ [](https://htlin222.github.io/CCChange/) [](https://github.com/htlin222/CCChange/actions/workflows/ci.yml) [](https://github.com/htlin222/CCChange/actions/workflows/deploy.yml) []…"
     },
     {
+      "name": "ai-agent-material",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-10-31T23:00:39Z",
+      "createdAt": "2026-10-31T22:25:43Z",
+      "topics": [],
+      "url": "https://github.com/htlin222/ai-agent-material",
+      "homepage": null,
+      "license": null,
+      "defaultBranch": "main",
+      "category": "it",
+      "readmeExcerpt": "AI Agents in Clinical Medicine: What Does Not Expire Lecture material for Taipei Medical University (2026), by Hsieh-Ting Lin, MD. Downloads: the slides (PPTX and PDF) and the 16:9 trailer (MP4) are in Releases. What is here | Path | What it is | | --- | --- | | docs/outline.md |…"
+    },
+    {
       "name": "lin-hsiehting",
       "description": "Oncologist's clinical notes, medical education & research repository built with Astro + MDX on Cloudflare Pages — regulatory-compliant healthcare content with JSON-LD schema & AI optimization",
       "language": "MDX",
       "stars": 3,
       "forks": 1,
-      "pushedAt": "2026-10-30T04:02:06Z",
+      "pushedAt": "2026-10-31T04:01:26Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -498,7 +514,7 @@
       "description": "Claude Code skill for multi-persona Bayesian diagnostic reasoning using NEJM Clinical Problem-Solving format with likelihood ratios, evidence-based medicine, and medical AI education",
       "language": "Python",
       "stars": 19,
-      "forks": 6,
+      "forks": 7,
       "pushedAt": "2026-10-05T01:56:46Z",
       "createdAt": "2026-03-30T07:51:31Z",
       "topics": [
@@ -588,7 +604,7 @@
       "description": "Claude Code-powered end-to-end meta-analysis automation: AI-assisted literature review, screening, extraction, analysis, and manuscript generation for systematic reviews and clinical evidence synthesis",
       "language": "Python",
       "stars": 150,
-      "forks": 65,
+      "forks": 66,
       "pushedAt": "2026-09-23T02:16:43Z",
       "createdAt": "2026-02-05T18:15:18Z",
       "topics": [
