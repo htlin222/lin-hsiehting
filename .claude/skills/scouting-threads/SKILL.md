@@ -18,6 +18,12 @@ x-rapidapi-key:  $RAPIDAPI_KEY
 
 If the user has not yet set the env var, ask them to add `RAPIDAPI_KEY=...` to `.env`. Don't paste the value back into the chat after reading it.
 
+`.env` stores it as a 1Password `op://` reference, so `$RAPIDAPI_KEY` is only real inside `op run`. Wrap every curl (or the whole fetch loop) like:
+
+```bash
+op run --env-file=.env -- sh -c 'rtk proxy curl -s "https://threads-scraper.p.rapidapi.com/api/v1/posts/search?query=..." -H "x-rapidapi-host: threads-scraper.p.rapidapi.com" -H "x-rapidapi-key: $RAPIDAPI_KEY"'
+```
+
 ## Two endpoints actually work
 
 | Endpoint | Returns | Use for |

@@ -104,7 +104,8 @@ ci: deploy via direct wrangler invocation
 
 ```bash
 cd ~/lin-hsiehting
-set -a && source .env.local && set +a   # 載入 CF_API_TOKEN, CF_ACCOUNT_ID 等
+# .env.local 的 token 是 op:// 參照，不能 source；需要時改用：
+#   op run --env-file=.env.local -- <cmd>   # 注入 CF_API_TOKEN, CF_ACCOUNT_ID 等
 git status
 git log --oneline -5
 gh run list --repo htlin222/lin-hsiehting --limit 3
