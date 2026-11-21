@@ -31,3 +31,6 @@ public/og/[0-9][0-9][0-9][0-9]/
 
 # wrangler pages dev local state (only used when smoke-testing the OG function)
 .wrangler/
+
+# Home cleanup: generated files and machine-local state
+.claude/scheduled_tasks.lock
