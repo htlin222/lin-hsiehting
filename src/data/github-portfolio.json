@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-11-22T04:01:17.883Z",
+  "fetchedAt": "2026-11-23T04:01:00.855Z",
   "count": 166,
   "medicalCount": 79,
   "itCount": 87,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 2,
-      "pushedAt": "2026-11-22T00:18:54Z",
+      "pushedAt": "2026-11-23T00:19:37Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -20,6 +20,35 @@
       "defaultBranch": "main",
       "category": "it",
       "readmeExcerpt": "CCChange 每日一則 Claude Code changelog 中文講義，由 Claude Code 自己出刊。 👉 https://htlin222.github.io/CCChange/ [](https://htlin222.github.io/CCChange/) [](https://github.com/htlin222/CCChange/actions/workflows/ci.yml) [](https://github.com/htlin222/CCChange/actions/workflows/deploy.yml) []…"
+    },
+    {
+      "name": "lin-hsiehting",
+      "description": "Oncologist's clinical notes, medical education & research repository built with Astro + MDX on Cloudflare Pages — regulatory-compliant healthcare content with JSON-LD schema & AI optimization",
+      "language": "MDX",
+      "stars": 3,
+      "forks": 1,
+      "pushedAt": "2026-11-22T04:01:23Z",
+      "createdAt": "2026-05-10T14:51:34Z",
+      "topics": [
+        "astro",
+        "clinical-notes",
+        "cloudflare-pages",
+        "json-ld",
+        "mdx",
+        "medical-education",
+        "medical-science",
+        "oncology",
+        "regulatory-compliance",
+        "tailwind-css",
+        "healthcare-content",
+        "medical-blogging"
+      ],
+      "url": "https://github.com/htlin222/lin-hsiehting",
+      "homepage": "https://lin.hsiehting.com",
+      "license": null,
+      "defaultBranch": "main",
+      "category": "medical",
+      "readmeExcerpt": "林協霆 · 臨床筆記 > 腫瘤內科醫師的臨床筆記、衛教與閱讀記錄。 > 站台：lin.hsiehting.com > 作者：林協霆 M.D.（ORCID · Google Scholar） 依醫療法第 87 條第 2 項屬醫學新知與病人衛生教育，不從事醫療業務招徠。 --- Stack - Astro 6 + MDX + Tailwind v4，fork 自 serene-ink 主題並客製為醫學內容站 - 部署：GitHub Actions → Cloudflare Pages（main push 自動 build & deploy） - AI 引用優…"
     },
     {
       "name": "claude-session-recorder",
@@ -557,35 +586,6 @@
       "defaultBranch": "main",
       "category": "it",
       "readmeExcerpt": "Lizard Google Slides Module [](https://github.com/htlin222/lizard-gslide-module/stargazers) [](https://github.com/htlin222/lizard-gslide-module/commits/main) [](LICENSE) [](https://developers.google.com/apps-script) A Google Apps Script toolkit that supercharges Google Slides wit…"
-    },
-    {
-      "name": "lin-hsiehting",
-      "description": "Oncologist's clinical notes, medical education & research repository built with Astro + MDX on Cloudflare Pages — regulatory-compliant healthcare content with JSON-LD schema & AI optimization",
-      "language": "MDX",
-      "stars": 3,
-      "forks": 1,
-      "pushedAt": "2026-11-21T06:47:36Z",
-      "createdAt": "2026-05-10T14:51:34Z",
-      "topics": [
-        "astro",
-        "clinical-notes",
-        "cloudflare-pages",
-        "json-ld",
-        "mdx",
-        "medical-education",
-        "medical-science",
-        "oncology",
-        "regulatory-compliance",
-        "tailwind-css",
-        "healthcare-content",
-        "medical-blogging"
-      ],
-      "url": "https://github.com/htlin222/lin-hsiehting",
-      "homepage": "https://lin.hsiehting.com",
-      "license": null,
-      "defaultBranch": "main",
-      "category": "medical",
-      "readmeExcerpt": "林協霆 · 臨床筆記 > 腫瘤內科醫師的臨床筆記、衛教與閱讀記錄。 > 站台：lin.hsiehting.com > 作者：林協霆 M.D.（ORCID · Google Scholar） 依醫療法第 87 條第 2 項屬醫學新知與病人衛生教育，不從事醫療業務招徠。 --- Stack - Astro 6 + MDX + Tailwind v4，fork 自 serene-ink 主題並客製為醫學內容站 - 部署：GitHub Actions → Cloudflare Pages（main push 自動 build & deploy） - AI 引用優…"
     },
     {
       "name": "mcq-bank",
