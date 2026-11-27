@@ -1,6 +1,6 @@
 {
   "user": "htlin222",
-  "fetchedAt": "2026-11-26T04:01:21.393Z",
+  "fetchedAt": "2026-11-27T04:02:17.297Z",
   "count": 167,
   "medicalCount": 79,
   "itCount": 88,
@@ -11,7 +11,7 @@
       "language": "Astro",
       "stars": 2,
       "forks": 2,
-      "pushedAt": "2026-11-26T00:16:12Z",
+      "pushedAt": "2026-11-27T00:14:10Z",
       "createdAt": "2026-08-02T06:03:36Z",
       "topics": [],
       "url": "https://github.com/htlin222/CCChange",
@@ -22,28 +22,12 @@
       "readmeExcerpt": "CCChange 每日一則 Claude Code changelog 中文講義，由 Claude Code 自己出刊。 👉 https://htlin222.github.io/CCChange/ [](https://htlin222.github.io/CCChange/) [](https://github.com/htlin222/CCChange/actions/workflows/ci.yml) [](https://github.com/htlin222/CCChange/actions/workflows/deploy.yml) []…"
     },
     {
-      "name": "action-as-cpu",
-      "description": "",
-      "language": "Python",
-      "stars": 0,
-      "forks": 0,
-      "pushedAt": "2026-11-25T18:28:46Z",
-      "createdAt": "2026-11-13T18:43:57Z",
-      "topics": [],
-      "url": "https://github.com/htlin222/action-as-cpu",
-      "homepage": null,
-      "license": null,
-      "defaultBranch": "develope",
-      "category": "it",
-      "readmeExcerpt": "action-as-cpu Use GitHub Actions as a pool of CPUs: one job is cut into up to 20 shards, each shard runs on its own runner in parallel, the pieces are merged, and the result is published as a release. - SKILL.md: the full instructions, written so an AI agent can follow them. - .g…"
-    },
-    {
       "name": "lin-hsiehting",
       "description": "Oncologist's clinical notes, medical education & research repository built with Astro + MDX on Cloudflare Pages — regulatory-compliant healthcare content with JSON-LD schema & AI optimization",
       "language": "MDX",
       "stars": 3,
       "forks": 1,
-      "pushedAt": "2026-11-25T04:01:09Z",
+      "pushedAt": "2026-11-26T04:01:26Z",
       "createdAt": "2026-05-10T14:51:34Z",
       "topics": [
         "astro",
@@ -65,6 +49,22 @@
       "defaultBranch": "main",
       "category": "medical",
       "readmeExcerpt": "林協霆 · 臨床筆記 > 腫瘤內科醫師的臨床筆記、衛教與閱讀記錄。 > 站台：lin.hsiehting.com > 作者：林協霆 M.D.（ORCID · Google Scholar） 依醫療法第 87 條第 2 項屬醫學新知與病人衛生教育，不從事醫療業務招徠。 --- Stack - Astro 6 + MDX + Tailwind v4，fork 自 serene-ink 主題並客製為醫學內容站 - 部署：GitHub Actions → Cloudflare Pages（main push 自動 build & deploy） - AI 引用優…"
+    },
+    {
+      "name": "action-as-cpu",
+      "description": "",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-11-25T18:28:46Z",
+      "createdAt": "2026-11-13T18:43:57Z",
+      "topics": [],
+      "url": "https://github.com/htlin222/action-as-cpu",
+      "homepage": null,
+      "license": null,
+      "defaultBranch": "develope",
+      "category": "it",
+      "readmeExcerpt": "action-as-cpu Use GitHub Actions as a pool of CPUs: one job is cut into up to 20 shards, each shard runs on its own runner in parallel, the pieces are merged, and the result is published as a release. - SKILL.md: the full instructions, written so an AI agent can follow them. - .g…"
     },
     {
       "name": "nccn-guidelines-downloader",
